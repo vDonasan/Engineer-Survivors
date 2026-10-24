@@ -1,7 +1,7 @@
 # Engineering Survivors — SP1: Fundação jogável + prova online
 
 - **Data:** 2026-10-24
-- **Estado:** aguardando revisão do autor
+- **Estado:** aprovada pelo autor em 2026-10-24 ("faça você mesmo tudo que precisa")
 - **Escopo deste documento:** subprojeto 1 (SP1) de 6. Define também a arquitetura que todos os subprojetos seguintes herdam.
 - **Documento de origem:** prompt mestre "Engineering Survivors — Prompt Mestre de Desenvolvimento" (requisitos completos do jogo).
 
@@ -424,12 +424,18 @@ Host + cliente NGO no mesmo processo: conexão e `Hello/Welcome`, rejeição por
 
 ## 13. Build, hospedagem e pré-requisitos
 
-### 13.1 Pré-requisitos (ações do autor)
+### 13.1 Pré-requisitos
 
-1. **.NET SDK** (LTS atual) instalado em `Z:\Dev\tools\dotnet` com o script oficial `dotnet-install.ps1` da Microsoft — Claude pode executar após confirmação do download.
-2. **Unity Hub**; em Preferências → Instalações, `Z:\Unity\Editors`; **Unity 6.3 LTS** (patch mais recente) com **Web Build Support**; login com Unity ID e licença Personal (somente o autor).
-3. **Unity Cloud:** projeto "Engineering Survivors" com **Relay** e **Lobby** ativados; vincular o projeto no editor. O ID do projeto não é segredo.
-4. Na publicação: conta gratuita na hospedagem e login pela linha de comando (somente o autor).
+| Item | Estado |
+|---|---|
+| Unity Hub (em `Z:\Unity\Unity Hub`), login e licença Personal | Feito pelo autor. |
+| **Unity 6.3 LTS** com **Web Build Support** em `Z:\Unity\Editors` | Instalação pelo Claude via Hub CLI. A Unity 6.6 (6000.6.7f1, não LTS) instalada pelo Hub fica sem uso. |
+| **.NET SDK** LTS em `Z:\Dev\tools\dotnet` (script oficial `dotnet-install.ps1`) | Instalação pelo Claude. |
+| **Unity Cloud:** projeto `cd18869f-06b2-4e03-bc30-32ecff7d27a2` ("Engineering Survivors 2026-10-24_17-43-24"), organização `vitordonasan` | Criado pelo Hub. IDs públicos por natureza. |
+| Relay e Lobby | **Verificados ativos** em 2026-10-24 pela API REST com autenticação anônima: Lobby criou/apagou sala privada; Relay alocou servidor com endpoint `wss` e gerou código de convite. |
+| Conta gratuita na hospedagem + login pela CLI | Na publicação (login somente pelo autor). |
+
+O projeto Unity criado pelo Hub em `Engineering Survivors\` (template 3D, Unity 6.6, Plastic) é substituído por um projeto 2D na raiz do repositório, ligado ao mesmo projeto do Unity Cloud; a pasta antiga vai para a Lixeira.
 
 ### 13.2 Build WebGL
 
