@@ -60,4 +60,4 @@ MonoBehaviour:
       text: +1 feixe
     grants: []
     parameters: []
-  icon: {fileID: 21300000, guid: 0cc69af01a43b6e4cbaf57b793cb4c58, type: 3}
+  icon: {fileID: 21300000, guid: 80b9e0148b38aca4fa5fa1628e761348, type: 3}

@@ -47,12 +47,12 @@ namespace ES.ContentEditor
             db.specials = Sync<SpecialAsset, SpecialDef>("Specials", def.specials, d => d.id, (a, d) =>
             {
                 a.def = d;
-                a.icon = Sprite($"Assets/_Project/Art/Icons/icon_{d.id}.png") ?? a.icon;
+                a.icon = Sprite($"Assets/_Project/Art/Abilities/icon_{d.id}.png") ?? a.icon;
             });
             db.abilities = Sync<AbilityAsset, AbilityDef>("Abilities", def.abilities, d => d.id, (a, d) =>
             {
                 a.def = d;
-                a.icon = Sprite($"Assets/_Project/Art/Icons/icon_{d.id}.png") ?? a.icon;
+                a.icon = Sprite($"Assets/_Project/Art/Abilities/icon_{d.id}.png") ?? a.icon;
             });
             db.enemies = Sync<EnemyAsset, EnemyDef>("Enemies", def.enemies, d => d.id, (a, d) => a.def = d);
             db.synergies = Sync<SynergyAsset, SynergyDef>("Synergies", def.synergies, d => d.id, (a, d) => a.def = d);

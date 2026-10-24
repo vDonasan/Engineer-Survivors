@@ -49,4 +49,4 @@ MonoBehaviour:
       value: 1
     - key: chargeExtraChains
       value: 2
-  icon: {fileID: 21300000, guid: 5fa0c2a1b361efe4fa60116cc095f355, type: 3}
+  icon: {fileID: 21300000, guid: 3f6dc16ef9f0c714796d77bf005a516a, type: 3}

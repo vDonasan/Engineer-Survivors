@@ -68,4 +68,4 @@ MonoBehaviour:
       text: +1 salto, +4 de dano
     grants: []
     parameters: []
-  icon: {fileID: 21300000, guid: 64ecedb794bcc6748806ea5993f5d25b, type: 3}
+  icon: {fileID: 21300000, guid: 72bd24770c8d4034b8be7b05703527b0, type: 3}

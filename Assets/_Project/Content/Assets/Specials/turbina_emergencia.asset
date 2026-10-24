@@ -30,4 +30,4 @@ MonoBehaviour:
     ramDamage: 15
     ramKnockback: 3
     stunTag: 
-  icon: {fileID: 21300000, guid: e769f58e549a98f43919f804ea01befd, type: 3}
+  icon: {fileID: 21300000, guid: 4aa1704154422cd4db932d7ccd560bf8, type: 3}

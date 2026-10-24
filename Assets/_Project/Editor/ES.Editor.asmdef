@@ -2,7 +2,9 @@
     "name": "ES.Editor",
     "rootNamespace": "ES.EditorTools",
     "references": [
-        "ES.Sim"
+        "ES.Sim",
+        "Unity.RenderPipelines.Core.Runtime",
+        "Unity.RenderPipelines.Universal.Runtime"
     ],
     "includePlatforms": [
         "Editor"

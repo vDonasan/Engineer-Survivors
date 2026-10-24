@@ -44,4 +44,4 @@ MonoBehaviour:
       value: 0.6
     - key: turbineArmMultiplier
       value: 2
-  icon: {fileID: 21300000, guid: 64215bcdf00b05e488c8e72552df2cd5, type: 3}
+  icon: {fileID: 21300000, guid: 41cb5f9046e2b8a40b9d0a370ff958dc, type: 3}

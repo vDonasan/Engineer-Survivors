@@ -52,7 +52,7 @@ namespace ES.Tests
             foreach (var a in Database.abilities) Assert.That(a.def.id, Is.Not.Empty);
         }
 
-        [Test, Ignore("Ativado na Task 21, quando a arte existir")]
+        [Test]
         public void Content_AllAbilitiesHaveIcons()
         {
             foreach (var a in Database.abilities) Assert.That(a.icon, Is.Not.Null, a.def.id);

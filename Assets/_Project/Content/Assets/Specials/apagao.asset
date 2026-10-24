@@ -30,4 +30,4 @@ MonoBehaviour:
     ramDamage: 0
     ramKnockback: 0
     stunTag: Maquina
-  icon: {fileID: 21300000, guid: 24aa5c93df7bc694e8635be100d1ddcf, type: 3}
+  icon: {fileID: 21300000, guid: ff67ceb137e8e6f4c843f806cb86bc41, type: 3}

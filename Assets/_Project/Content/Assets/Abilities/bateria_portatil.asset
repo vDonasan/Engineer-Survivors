@@ -31,4 +31,4 @@ MonoBehaviour:
       scope: tag:Energia
       value: -0.06
     parameters: []
-  icon: {fileID: 21300000, guid: 50a2976daabb6224da8b995c4d0812e2, type: 3}
+  icon: {fileID: 21300000, guid: 29f8c6abcbe21a047b1156c321155414, type: 3}

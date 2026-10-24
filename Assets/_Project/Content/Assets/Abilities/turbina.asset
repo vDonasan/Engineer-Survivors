@@ -31,4 +31,4 @@ MonoBehaviour:
       scope: player
       value: 0.06
     parameters: []
-  icon: {fileID: 21300000, guid: 6a949d9ba7be53c468a9f46b9afd9bac, type: 3}
+  icon: {fileID: 21300000, guid: ac59446d6d258744a898a1134d749e5d, type: 3}

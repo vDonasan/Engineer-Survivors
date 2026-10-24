@@ -1,0 +1,4937 @@
+{
+ "sprites": [
+  {
+   "id": "char_mecatronica_idle_down_0",
+   "category": "Characters",
+   "file": "Characters/mecatronica/char_mecatronica_idle_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecatronica_idle_down_1",
+   "category": "Characters",
+   "file": "Characters/mecatronica/char_mecatronica_idle_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecatronica_idle_up_0",
+   "category": "Characters",
+   "file": "Characters/mecatronica/char_mecatronica_idle_up_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecatronica_idle_up_1",
+   "category": "Characters",
+   "file": "Characters/mecatronica/char_mecatronica_idle_up_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecatronica_idle_left_0",
+   "category": "Characters",
+   "file": "Characters/mecatronica/char_mecatronica_idle_left_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecatronica_idle_left_1",
+   "category": "Characters",
+   "file": "Characters/mecatronica/char_mecatronica_idle_left_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecatronica_idle_right_0",
+   "category": "Characters",
+   "file": "Characters/mecatronica/char_mecatronica_idle_right_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecatronica_idle_right_1",
+   "category": "Characters",
+   "file": "Characters/mecatronica/char_mecatronica_idle_right_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecatronica_walk_down_0",
+   "category": "Characters",
+   "file": "Characters/mecatronica/char_mecatronica_walk_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecatronica_walk_down_1",
+   "category": "Characters",
+   "file": "Characters/mecatronica/char_mecatronica_walk_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecatronica_walk_down_2",
+   "category": "Characters",
+   "file": "Characters/mecatronica/char_mecatronica_walk_down_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecatronica_walk_down_3",
+   "category": "Characters",
+   "file": "Characters/mecatronica/char_mecatronica_walk_down_3.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecatronica_walk_up_0",
+   "category": "Characters",
+   "file": "Characters/mecatronica/char_mecatronica_walk_up_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecatronica_walk_up_1",
+   "category": "Characters",
+   "file": "Characters/mecatronica/char_mecatronica_walk_up_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecatronica_walk_up_2",
+   "category": "Characters",
+   "file": "Characters/mecatronica/char_mecatronica_walk_up_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecatronica_walk_up_3",
+   "category": "Characters",
+   "file": "Characters/mecatronica/char_mecatronica_walk_up_3.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecatronica_walk_left_0",
+   "category": "Characters",
+   "file": "Characters/mecatronica/char_mecatronica_walk_left_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecatronica_walk_left_1",
+   "category": "Characters",
+   "file": "Characters/mecatronica/char_mecatronica_walk_left_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecatronica_walk_left_2",
+   "category": "Characters",
+   "file": "Characters/mecatronica/char_mecatronica_walk_left_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecatronica_walk_left_3",
+   "category": "Characters",
+   "file": "Characters/mecatronica/char_mecatronica_walk_left_3.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecatronica_walk_right_0",
+   "category": "Characters",
+   "file": "Characters/mecatronica/char_mecatronica_walk_right_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecatronica_walk_right_1",
+   "category": "Characters",
+   "file": "Characters/mecatronica/char_mecatronica_walk_right_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecatronica_walk_right_2",
+   "category": "Characters",
+   "file": "Characters/mecatronica/char_mecatronica_walk_right_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecatronica_walk_right_3",
+   "category": "Characters",
+   "file": "Characters/mecatronica/char_mecatronica_walk_right_3.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecatronica_attack_down_0",
+   "category": "Characters",
+   "file": "Characters/mecatronica/char_mecatronica_attack_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecatronica_attack_down_1",
+   "category": "Characters",
+   "file": "Characters/mecatronica/char_mecatronica_attack_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecatronica_attack_down_2",
+   "category": "Characters",
+   "file": "Characters/mecatronica/char_mecatronica_attack_down_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecatronica_special_down_0",
+   "category": "Characters",
+   "file": "Characters/mecatronica/char_mecatronica_special_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecatronica_special_down_1",
+   "category": "Characters",
+   "file": "Characters/mecatronica/char_mecatronica_special_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecatronica_special_down_2",
+   "category": "Characters",
+   "file": "Characters/mecatronica/char_mecatronica_special_down_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecatronica_hurt_down_0",
+   "category": "Characters",
+   "file": "Characters/mecatronica/char_mecatronica_hurt_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecatronica_hurt_down_1",
+   "category": "Characters",
+   "file": "Characters/mecatronica/char_mecatronica_hurt_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecatronica_stun_down_0",
+   "category": "Characters",
+   "file": "Characters/mecatronica/char_mecatronica_stun_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecatronica_stun_down_1",
+   "category": "Characters",
+   "file": "Characters/mecatronica/char_mecatronica_stun_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecatronica_downed_down_0",
+   "category": "Characters",
+   "file": "Characters/mecatronica/char_mecatronica_downed_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecatronica_downed_down_1",
+   "category": "Characters",
+   "file": "Characters/mecatronica/char_mecatronica_downed_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecatronica_downed_down_2",
+   "category": "Characters",
+   "file": "Characters/mecatronica/char_mecatronica_downed_down_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecatronica_revive_down_0",
+   "category": "Characters",
+   "file": "Characters/mecatronica/char_mecatronica_revive_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecatronica_revive_down_1",
+   "category": "Characters",
+   "file": "Characters/mecatronica/char_mecatronica_revive_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecatronica_victory_down_0",
+   "category": "Characters",
+   "file": "Characters/mecatronica/char_mecatronica_victory_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecatronica_victory_down_1",
+   "category": "Characters",
+   "file": "Characters/mecatronica/char_mecatronica_victory_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_computacao_idle_down_0",
+   "category": "Characters",
+   "file": "Characters/computacao/char_computacao_idle_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_computacao_idle_down_1",
+   "category": "Characters",
+   "file": "Characters/computacao/char_computacao_idle_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_computacao_idle_up_0",
+   "category": "Characters",
+   "file": "Characters/computacao/char_computacao_idle_up_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_computacao_idle_up_1",
+   "category": "Characters",
+   "file": "Characters/computacao/char_computacao_idle_up_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_computacao_idle_left_0",
+   "category": "Characters",
+   "file": "Characters/computacao/char_computacao_idle_left_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_computacao_idle_left_1",
+   "category": "Characters",
+   "file": "Characters/computacao/char_computacao_idle_left_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_computacao_idle_right_0",
+   "category": "Characters",
+   "file": "Characters/computacao/char_computacao_idle_right_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_computacao_idle_right_1",
+   "category": "Characters",
+   "file": "Characters/computacao/char_computacao_idle_right_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_computacao_walk_down_0",
+   "category": "Characters",
+   "file": "Characters/computacao/char_computacao_walk_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_computacao_walk_down_1",
+   "category": "Characters",
+   "file": "Characters/computacao/char_computacao_walk_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_computacao_walk_down_2",
+   "category": "Characters",
+   "file": "Characters/computacao/char_computacao_walk_down_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_computacao_walk_down_3",
+   "category": "Characters",
+   "file": "Characters/computacao/char_computacao_walk_down_3.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_computacao_walk_up_0",
+   "category": "Characters",
+   "file": "Characters/computacao/char_computacao_walk_up_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_computacao_walk_up_1",
+   "category": "Characters",
+   "file": "Characters/computacao/char_computacao_walk_up_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_computacao_walk_up_2",
+   "category": "Characters",
+   "file": "Characters/computacao/char_computacao_walk_up_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_computacao_walk_up_3",
+   "category": "Characters",
+   "file": "Characters/computacao/char_computacao_walk_up_3.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_computacao_walk_left_0",
+   "category": "Characters",
+   "file": "Characters/computacao/char_computacao_walk_left_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_computacao_walk_left_1",
+   "category": "Characters",
+   "file": "Characters/computacao/char_computacao_walk_left_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_computacao_walk_left_2",
+   "category": "Characters",
+   "file": "Characters/computacao/char_computacao_walk_left_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_computacao_walk_left_3",
+   "category": "Characters",
+   "file": "Characters/computacao/char_computacao_walk_left_3.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_computacao_walk_right_0",
+   "category": "Characters",
+   "file": "Characters/computacao/char_computacao_walk_right_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_computacao_walk_right_1",
+   "category": "Characters",
+   "file": "Characters/computacao/char_computacao_walk_right_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_computacao_walk_right_2",
+   "category": "Characters",
+   "file": "Characters/computacao/char_computacao_walk_right_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_computacao_walk_right_3",
+   "category": "Characters",
+   "file": "Characters/computacao/char_computacao_walk_right_3.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_computacao_attack_down_0",
+   "category": "Characters",
+   "file": "Characters/computacao/char_computacao_attack_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_computacao_attack_down_1",
+   "category": "Characters",
+   "file": "Characters/computacao/char_computacao_attack_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_computacao_attack_down_2",
+   "category": "Characters",
+   "file": "Characters/computacao/char_computacao_attack_down_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_computacao_special_down_0",
+   "category": "Characters",
+   "file": "Characters/computacao/char_computacao_special_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_computacao_special_down_1",
+   "category": "Characters",
+   "file": "Characters/computacao/char_computacao_special_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_computacao_special_down_2",
+   "category": "Characters",
+   "file": "Characters/computacao/char_computacao_special_down_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_computacao_hurt_down_0",
+   "category": "Characters",
+   "file": "Characters/computacao/char_computacao_hurt_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_computacao_hurt_down_1",
+   "category": "Characters",
+   "file": "Characters/computacao/char_computacao_hurt_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_computacao_stun_down_0",
+   "category": "Characters",
+   "file": "Characters/computacao/char_computacao_stun_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_computacao_stun_down_1",
+   "category": "Characters",
+   "file": "Characters/computacao/char_computacao_stun_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_computacao_downed_down_0",
+   "category": "Characters",
+   "file": "Characters/computacao/char_computacao_downed_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_computacao_downed_down_1",
+   "category": "Characters",
+   "file": "Characters/computacao/char_computacao_downed_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_computacao_downed_down_2",
+   "category": "Characters",
+   "file": "Characters/computacao/char_computacao_downed_down_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_computacao_revive_down_0",
+   "category": "Characters",
+   "file": "Characters/computacao/char_computacao_revive_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_computacao_revive_down_1",
+   "category": "Characters",
+   "file": "Characters/computacao/char_computacao_revive_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_computacao_victory_down_0",
+   "category": "Characters",
+   "file": "Characters/computacao/char_computacao_victory_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_computacao_victory_down_1",
+   "category": "Characters",
+   "file": "Characters/computacao/char_computacao_victory_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_eletrica_idle_down_0",
+   "category": "Characters",
+   "file": "Characters/eletrica/char_eletrica_idle_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_eletrica_idle_down_1",
+   "category": "Characters",
+   "file": "Characters/eletrica/char_eletrica_idle_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_eletrica_idle_up_0",
+   "category": "Characters",
+   "file": "Characters/eletrica/char_eletrica_idle_up_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_eletrica_idle_up_1",
+   "category": "Characters",
+   "file": "Characters/eletrica/char_eletrica_idle_up_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_eletrica_idle_left_0",
+   "category": "Characters",
+   "file": "Characters/eletrica/char_eletrica_idle_left_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_eletrica_idle_left_1",
+   "category": "Characters",
+   "file": "Characters/eletrica/char_eletrica_idle_left_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_eletrica_idle_right_0",
+   "category": "Characters",
+   "file": "Characters/eletrica/char_eletrica_idle_right_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_eletrica_idle_right_1",
+   "category": "Characters",
+   "file": "Characters/eletrica/char_eletrica_idle_right_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_eletrica_walk_down_0",
+   "category": "Characters",
+   "file": "Characters/eletrica/char_eletrica_walk_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_eletrica_walk_down_1",
+   "category": "Characters",
+   "file": "Characters/eletrica/char_eletrica_walk_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_eletrica_walk_down_2",
+   "category": "Characters",
+   "file": "Characters/eletrica/char_eletrica_walk_down_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_eletrica_walk_down_3",
+   "category": "Characters",
+   "file": "Characters/eletrica/char_eletrica_walk_down_3.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_eletrica_walk_up_0",
+   "category": "Characters",
+   "file": "Characters/eletrica/char_eletrica_walk_up_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_eletrica_walk_up_1",
+   "category": "Characters",
+   "file": "Characters/eletrica/char_eletrica_walk_up_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_eletrica_walk_up_2",
+   "category": "Characters",
+   "file": "Characters/eletrica/char_eletrica_walk_up_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_eletrica_walk_up_3",
+   "category": "Characters",
+   "file": "Characters/eletrica/char_eletrica_walk_up_3.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_eletrica_walk_left_0",
+   "category": "Characters",
+   "file": "Characters/eletrica/char_eletrica_walk_left_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_eletrica_walk_left_1",
+   "category": "Characters",
+   "file": "Characters/eletrica/char_eletrica_walk_left_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_eletrica_walk_left_2",
+   "category": "Characters",
+   "file": "Characters/eletrica/char_eletrica_walk_left_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_eletrica_walk_left_3",
+   "category": "Characters",
+   "file": "Characters/eletrica/char_eletrica_walk_left_3.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_eletrica_walk_right_0",
+   "category": "Characters",
+   "file": "Characters/eletrica/char_eletrica_walk_right_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_eletrica_walk_right_1",
+   "category": "Characters",
+   "file": "Characters/eletrica/char_eletrica_walk_right_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_eletrica_walk_right_2",
+   "category": "Characters",
+   "file": "Characters/eletrica/char_eletrica_walk_right_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_eletrica_walk_right_3",
+   "category": "Characters",
+   "file": "Characters/eletrica/char_eletrica_walk_right_3.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_eletrica_attack_down_0",
+   "category": "Characters",
+   "file": "Characters/eletrica/char_eletrica_attack_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_eletrica_attack_down_1",
+   "category": "Characters",
+   "file": "Characters/eletrica/char_eletrica_attack_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_eletrica_attack_down_2",
+   "category": "Characters",
+   "file": "Characters/eletrica/char_eletrica_attack_down_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_eletrica_special_down_0",
+   "category": "Characters",
+   "file": "Characters/eletrica/char_eletrica_special_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_eletrica_special_down_1",
+   "category": "Characters",
+   "file": "Characters/eletrica/char_eletrica_special_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_eletrica_special_down_2",
+   "category": "Characters",
+   "file": "Characters/eletrica/char_eletrica_special_down_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_eletrica_hurt_down_0",
+   "category": "Characters",
+   "file": "Characters/eletrica/char_eletrica_hurt_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_eletrica_hurt_down_1",
+   "category": "Characters",
+   "file": "Characters/eletrica/char_eletrica_hurt_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_eletrica_stun_down_0",
+   "category": "Characters",
+   "file": "Characters/eletrica/char_eletrica_stun_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_eletrica_stun_down_1",
+   "category": "Characters",
+   "file": "Characters/eletrica/char_eletrica_stun_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_eletrica_downed_down_0",
+   "category": "Characters",
+   "file": "Characters/eletrica/char_eletrica_downed_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_eletrica_downed_down_1",
+   "category": "Characters",
+   "file": "Characters/eletrica/char_eletrica_downed_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_eletrica_downed_down_2",
+   "category": "Characters",
+   "file": "Characters/eletrica/char_eletrica_downed_down_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_eletrica_revive_down_0",
+   "category": "Characters",
+   "file": "Characters/eletrica/char_eletrica_revive_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_eletrica_revive_down_1",
+   "category": "Characters",
+   "file": "Characters/eletrica/char_eletrica_revive_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_eletrica_victory_down_0",
+   "category": "Characters",
+   "file": "Characters/eletrica/char_eletrica_victory_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_eletrica_victory_down_1",
+   "category": "Characters",
+   "file": "Characters/eletrica/char_eletrica_victory_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_civil_idle_down_0",
+   "category": "Characters",
+   "file": "Characters/civil/char_civil_idle_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_civil_idle_down_1",
+   "category": "Characters",
+   "file": "Characters/civil/char_civil_idle_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_civil_idle_up_0",
+   "category": "Characters",
+   "file": "Characters/civil/char_civil_idle_up_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_civil_idle_up_1",
+   "category": "Characters",
+   "file": "Characters/civil/char_civil_idle_up_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_civil_idle_left_0",
+   "category": "Characters",
+   "file": "Characters/civil/char_civil_idle_left_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_civil_idle_left_1",
+   "category": "Characters",
+   "file": "Characters/civil/char_civil_idle_left_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_civil_idle_right_0",
+   "category": "Characters",
+   "file": "Characters/civil/char_civil_idle_right_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_civil_idle_right_1",
+   "category": "Characters",
+   "file": "Characters/civil/char_civil_idle_right_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_civil_walk_down_0",
+   "category": "Characters",
+   "file": "Characters/civil/char_civil_walk_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_civil_walk_down_1",
+   "category": "Characters",
+   "file": "Characters/civil/char_civil_walk_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_civil_walk_down_2",
+   "category": "Characters",
+   "file": "Characters/civil/char_civil_walk_down_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_civil_walk_down_3",
+   "category": "Characters",
+   "file": "Characters/civil/char_civil_walk_down_3.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_civil_walk_up_0",
+   "category": "Characters",
+   "file": "Characters/civil/char_civil_walk_up_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_civil_walk_up_1",
+   "category": "Characters",
+   "file": "Characters/civil/char_civil_walk_up_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_civil_walk_up_2",
+   "category": "Characters",
+   "file": "Characters/civil/char_civil_walk_up_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_civil_walk_up_3",
+   "category": "Characters",
+   "file": "Characters/civil/char_civil_walk_up_3.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_civil_walk_left_0",
+   "category": "Characters",
+   "file": "Characters/civil/char_civil_walk_left_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_civil_walk_left_1",
+   "category": "Characters",
+   "file": "Characters/civil/char_civil_walk_left_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_civil_walk_left_2",
+   "category": "Characters",
+   "file": "Characters/civil/char_civil_walk_left_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_civil_walk_left_3",
+   "category": "Characters",
+   "file": "Characters/civil/char_civil_walk_left_3.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_civil_walk_right_0",
+   "category": "Characters",
+   "file": "Characters/civil/char_civil_walk_right_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_civil_walk_right_1",
+   "category": "Characters",
+   "file": "Characters/civil/char_civil_walk_right_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_civil_walk_right_2",
+   "category": "Characters",
+   "file": "Characters/civil/char_civil_walk_right_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_civil_walk_right_3",
+   "category": "Characters",
+   "file": "Characters/civil/char_civil_walk_right_3.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_civil_attack_down_0",
+   "category": "Characters",
+   "file": "Characters/civil/char_civil_attack_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_civil_attack_down_1",
+   "category": "Characters",
+   "file": "Characters/civil/char_civil_attack_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_civil_attack_down_2",
+   "category": "Characters",
+   "file": "Characters/civil/char_civil_attack_down_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_civil_special_down_0",
+   "category": "Characters",
+   "file": "Characters/civil/char_civil_special_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_civil_special_down_1",
+   "category": "Characters",
+   "file": "Characters/civil/char_civil_special_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_civil_special_down_2",
+   "category": "Characters",
+   "file": "Characters/civil/char_civil_special_down_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_civil_hurt_down_0",
+   "category": "Characters",
+   "file": "Characters/civil/char_civil_hurt_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_civil_hurt_down_1",
+   "category": "Characters",
+   "file": "Characters/civil/char_civil_hurt_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_civil_stun_down_0",
+   "category": "Characters",
+   "file": "Characters/civil/char_civil_stun_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_civil_stun_down_1",
+   "category": "Characters",
+   "file": "Characters/civil/char_civil_stun_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_civil_downed_down_0",
+   "category": "Characters",
+   "file": "Characters/civil/char_civil_downed_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_civil_downed_down_1",
+   "category": "Characters",
+   "file": "Characters/civil/char_civil_downed_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_civil_downed_down_2",
+   "category": "Characters",
+   "file": "Characters/civil/char_civil_downed_down_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_civil_revive_down_0",
+   "category": "Characters",
+   "file": "Characters/civil/char_civil_revive_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_civil_revive_down_1",
+   "category": "Characters",
+   "file": "Characters/civil/char_civil_revive_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_civil_victory_down_0",
+   "category": "Characters",
+   "file": "Characters/civil/char_civil_victory_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_civil_victory_down_1",
+   "category": "Characters",
+   "file": "Characters/civil/char_civil_victory_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecanica_idle_down_0",
+   "category": "Characters",
+   "file": "Characters/mecanica/char_mecanica_idle_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecanica_idle_down_1",
+   "category": "Characters",
+   "file": "Characters/mecanica/char_mecanica_idle_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecanica_idle_up_0",
+   "category": "Characters",
+   "file": "Characters/mecanica/char_mecanica_idle_up_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecanica_idle_up_1",
+   "category": "Characters",
+   "file": "Characters/mecanica/char_mecanica_idle_up_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecanica_idle_left_0",
+   "category": "Characters",
+   "file": "Characters/mecanica/char_mecanica_idle_left_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecanica_idle_left_1",
+   "category": "Characters",
+   "file": "Characters/mecanica/char_mecanica_idle_left_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecanica_idle_right_0",
+   "category": "Characters",
+   "file": "Characters/mecanica/char_mecanica_idle_right_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecanica_idle_right_1",
+   "category": "Characters",
+   "file": "Characters/mecanica/char_mecanica_idle_right_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecanica_walk_down_0",
+   "category": "Characters",
+   "file": "Characters/mecanica/char_mecanica_walk_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecanica_walk_down_1",
+   "category": "Characters",
+   "file": "Characters/mecanica/char_mecanica_walk_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecanica_walk_down_2",
+   "category": "Characters",
+   "file": "Characters/mecanica/char_mecanica_walk_down_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecanica_walk_down_3",
+   "category": "Characters",
+   "file": "Characters/mecanica/char_mecanica_walk_down_3.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecanica_walk_up_0",
+   "category": "Characters",
+   "file": "Characters/mecanica/char_mecanica_walk_up_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecanica_walk_up_1",
+   "category": "Characters",
+   "file": "Characters/mecanica/char_mecanica_walk_up_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecanica_walk_up_2",
+   "category": "Characters",
+   "file": "Characters/mecanica/char_mecanica_walk_up_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecanica_walk_up_3",
+   "category": "Characters",
+   "file": "Characters/mecanica/char_mecanica_walk_up_3.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecanica_walk_left_0",
+   "category": "Characters",
+   "file": "Characters/mecanica/char_mecanica_walk_left_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecanica_walk_left_1",
+   "category": "Characters",
+   "file": "Characters/mecanica/char_mecanica_walk_left_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecanica_walk_left_2",
+   "category": "Characters",
+   "file": "Characters/mecanica/char_mecanica_walk_left_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecanica_walk_left_3",
+   "category": "Characters",
+   "file": "Characters/mecanica/char_mecanica_walk_left_3.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecanica_walk_right_0",
+   "category": "Characters",
+   "file": "Characters/mecanica/char_mecanica_walk_right_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecanica_walk_right_1",
+   "category": "Characters",
+   "file": "Characters/mecanica/char_mecanica_walk_right_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecanica_walk_right_2",
+   "category": "Characters",
+   "file": "Characters/mecanica/char_mecanica_walk_right_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecanica_walk_right_3",
+   "category": "Characters",
+   "file": "Characters/mecanica/char_mecanica_walk_right_3.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecanica_attack_down_0",
+   "category": "Characters",
+   "file": "Characters/mecanica/char_mecanica_attack_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecanica_attack_down_1",
+   "category": "Characters",
+   "file": "Characters/mecanica/char_mecanica_attack_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecanica_attack_down_2",
+   "category": "Characters",
+   "file": "Characters/mecanica/char_mecanica_attack_down_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecanica_special_down_0",
+   "category": "Characters",
+   "file": "Characters/mecanica/char_mecanica_special_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecanica_special_down_1",
+   "category": "Characters",
+   "file": "Characters/mecanica/char_mecanica_special_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecanica_special_down_2",
+   "category": "Characters",
+   "file": "Characters/mecanica/char_mecanica_special_down_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecanica_hurt_down_0",
+   "category": "Characters",
+   "file": "Characters/mecanica/char_mecanica_hurt_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecanica_hurt_down_1",
+   "category": "Characters",
+   "file": "Characters/mecanica/char_mecanica_hurt_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecanica_stun_down_0",
+   "category": "Characters",
+   "file": "Characters/mecanica/char_mecanica_stun_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecanica_stun_down_1",
+   "category": "Characters",
+   "file": "Characters/mecanica/char_mecanica_stun_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecanica_downed_down_0",
+   "category": "Characters",
+   "file": "Characters/mecanica/char_mecanica_downed_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecanica_downed_down_1",
+   "category": "Characters",
+   "file": "Characters/mecanica/char_mecanica_downed_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecanica_downed_down_2",
+   "category": "Characters",
+   "file": "Characters/mecanica/char_mecanica_downed_down_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecanica_revive_down_0",
+   "category": "Characters",
+   "file": "Characters/mecanica/char_mecanica_revive_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecanica_revive_down_1",
+   "category": "Characters",
+   "file": "Characters/mecanica/char_mecanica_revive_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecanica_victory_down_0",
+   "category": "Characters",
+   "file": "Characters/mecanica/char_mecanica_victory_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_mecanica_victory_down_1",
+   "category": "Characters",
+   "file": "Characters/mecanica/char_mecanica_victory_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_biomedica_idle_down_0",
+   "category": "Characters",
+   "file": "Characters/biomedica/char_biomedica_idle_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_biomedica_idle_down_1",
+   "category": "Characters",
+   "file": "Characters/biomedica/char_biomedica_idle_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_biomedica_idle_up_0",
+   "category": "Characters",
+   "file": "Characters/biomedica/char_biomedica_idle_up_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_biomedica_idle_up_1",
+   "category": "Characters",
+   "file": "Characters/biomedica/char_biomedica_idle_up_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_biomedica_idle_left_0",
+   "category": "Characters",
+   "file": "Characters/biomedica/char_biomedica_idle_left_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_biomedica_idle_left_1",
+   "category": "Characters",
+   "file": "Characters/biomedica/char_biomedica_idle_left_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_biomedica_idle_right_0",
+   "category": "Characters",
+   "file": "Characters/biomedica/char_biomedica_idle_right_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_biomedica_idle_right_1",
+   "category": "Characters",
+   "file": "Characters/biomedica/char_biomedica_idle_right_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_biomedica_walk_down_0",
+   "category": "Characters",
+   "file": "Characters/biomedica/char_biomedica_walk_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_biomedica_walk_down_1",
+   "category": "Characters",
+   "file": "Characters/biomedica/char_biomedica_walk_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_biomedica_walk_down_2",
+   "category": "Characters",
+   "file": "Characters/biomedica/char_biomedica_walk_down_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_biomedica_walk_down_3",
+   "category": "Characters",
+   "file": "Characters/biomedica/char_biomedica_walk_down_3.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_biomedica_walk_up_0",
+   "category": "Characters",
+   "file": "Characters/biomedica/char_biomedica_walk_up_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_biomedica_walk_up_1",
+   "category": "Characters",
+   "file": "Characters/biomedica/char_biomedica_walk_up_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_biomedica_walk_up_2",
+   "category": "Characters",
+   "file": "Characters/biomedica/char_biomedica_walk_up_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_biomedica_walk_up_3",
+   "category": "Characters",
+   "file": "Characters/biomedica/char_biomedica_walk_up_3.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_biomedica_walk_left_0",
+   "category": "Characters",
+   "file": "Characters/biomedica/char_biomedica_walk_left_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_biomedica_walk_left_1",
+   "category": "Characters",
+   "file": "Characters/biomedica/char_biomedica_walk_left_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_biomedica_walk_left_2",
+   "category": "Characters",
+   "file": "Characters/biomedica/char_biomedica_walk_left_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_biomedica_walk_left_3",
+   "category": "Characters",
+   "file": "Characters/biomedica/char_biomedica_walk_left_3.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_biomedica_walk_right_0",
+   "category": "Characters",
+   "file": "Characters/biomedica/char_biomedica_walk_right_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_biomedica_walk_right_1",
+   "category": "Characters",
+   "file": "Characters/biomedica/char_biomedica_walk_right_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_biomedica_walk_right_2",
+   "category": "Characters",
+   "file": "Characters/biomedica/char_biomedica_walk_right_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_biomedica_walk_right_3",
+   "category": "Characters",
+   "file": "Characters/biomedica/char_biomedica_walk_right_3.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_biomedica_attack_down_0",
+   "category": "Characters",
+   "file": "Characters/biomedica/char_biomedica_attack_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_biomedica_attack_down_1",
+   "category": "Characters",
+   "file": "Characters/biomedica/char_biomedica_attack_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_biomedica_attack_down_2",
+   "category": "Characters",
+   "file": "Characters/biomedica/char_biomedica_attack_down_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_biomedica_special_down_0",
+   "category": "Characters",
+   "file": "Characters/biomedica/char_biomedica_special_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_biomedica_special_down_1",
+   "category": "Characters",
+   "file": "Characters/biomedica/char_biomedica_special_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_biomedica_special_down_2",
+   "category": "Characters",
+   "file": "Characters/biomedica/char_biomedica_special_down_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_biomedica_hurt_down_0",
+   "category": "Characters",
+   "file": "Characters/biomedica/char_biomedica_hurt_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_biomedica_hurt_down_1",
+   "category": "Characters",
+   "file": "Characters/biomedica/char_biomedica_hurt_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_biomedica_stun_down_0",
+   "category": "Characters",
+   "file": "Characters/biomedica/char_biomedica_stun_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_biomedica_stun_down_1",
+   "category": "Characters",
+   "file": "Characters/biomedica/char_biomedica_stun_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_biomedica_downed_down_0",
+   "category": "Characters",
+   "file": "Characters/biomedica/char_biomedica_downed_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_biomedica_downed_down_1",
+   "category": "Characters",
+   "file": "Characters/biomedica/char_biomedica_downed_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_biomedica_downed_down_2",
+   "category": "Characters",
+   "file": "Characters/biomedica/char_biomedica_downed_down_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_biomedica_revive_down_0",
+   "category": "Characters",
+   "file": "Characters/biomedica/char_biomedica_revive_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_biomedica_revive_down_1",
+   "category": "Characters",
+   "file": "Characters/biomedica/char_biomedica_revive_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_biomedica_victory_down_0",
+   "category": "Characters",
+   "file": "Characters/biomedica/char_biomedica_victory_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_biomedica_victory_down_1",
+   "category": "Characters",
+   "file": "Characters/biomedica/char_biomedica_victory_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_quimica_idle_down_0",
+   "category": "Characters",
+   "file": "Characters/quimica/char_quimica_idle_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_quimica_idle_down_1",
+   "category": "Characters",
+   "file": "Characters/quimica/char_quimica_idle_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_quimica_idle_up_0",
+   "category": "Characters",
+   "file": "Characters/quimica/char_quimica_idle_up_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_quimica_idle_up_1",
+   "category": "Characters",
+   "file": "Characters/quimica/char_quimica_idle_up_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_quimica_idle_left_0",
+   "category": "Characters",
+   "file": "Characters/quimica/char_quimica_idle_left_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_quimica_idle_left_1",
+   "category": "Characters",
+   "file": "Characters/quimica/char_quimica_idle_left_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_quimica_idle_right_0",
+   "category": "Characters",
+   "file": "Characters/quimica/char_quimica_idle_right_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_quimica_idle_right_1",
+   "category": "Characters",
+   "file": "Characters/quimica/char_quimica_idle_right_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_quimica_walk_down_0",
+   "category": "Characters",
+   "file": "Characters/quimica/char_quimica_walk_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_quimica_walk_down_1",
+   "category": "Characters",
+   "file": "Characters/quimica/char_quimica_walk_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_quimica_walk_down_2",
+   "category": "Characters",
+   "file": "Characters/quimica/char_quimica_walk_down_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_quimica_walk_down_3",
+   "category": "Characters",
+   "file": "Characters/quimica/char_quimica_walk_down_3.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_quimica_walk_up_0",
+   "category": "Characters",
+   "file": "Characters/quimica/char_quimica_walk_up_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_quimica_walk_up_1",
+   "category": "Characters",
+   "file": "Characters/quimica/char_quimica_walk_up_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_quimica_walk_up_2",
+   "category": "Characters",
+   "file": "Characters/quimica/char_quimica_walk_up_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_quimica_walk_up_3",
+   "category": "Characters",
+   "file": "Characters/quimica/char_quimica_walk_up_3.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_quimica_walk_left_0",
+   "category": "Characters",
+   "file": "Characters/quimica/char_quimica_walk_left_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_quimica_walk_left_1",
+   "category": "Characters",
+   "file": "Characters/quimica/char_quimica_walk_left_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_quimica_walk_left_2",
+   "category": "Characters",
+   "file": "Characters/quimica/char_quimica_walk_left_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_quimica_walk_left_3",
+   "category": "Characters",
+   "file": "Characters/quimica/char_quimica_walk_left_3.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_quimica_walk_right_0",
+   "category": "Characters",
+   "file": "Characters/quimica/char_quimica_walk_right_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_quimica_walk_right_1",
+   "category": "Characters",
+   "file": "Characters/quimica/char_quimica_walk_right_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_quimica_walk_right_2",
+   "category": "Characters",
+   "file": "Characters/quimica/char_quimica_walk_right_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_quimica_walk_right_3",
+   "category": "Characters",
+   "file": "Characters/quimica/char_quimica_walk_right_3.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_quimica_attack_down_0",
+   "category": "Characters",
+   "file": "Characters/quimica/char_quimica_attack_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_quimica_attack_down_1",
+   "category": "Characters",
+   "file": "Characters/quimica/char_quimica_attack_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_quimica_attack_down_2",
+   "category": "Characters",
+   "file": "Characters/quimica/char_quimica_attack_down_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_quimica_special_down_0",
+   "category": "Characters",
+   "file": "Characters/quimica/char_quimica_special_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_quimica_special_down_1",
+   "category": "Characters",
+   "file": "Characters/quimica/char_quimica_special_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_quimica_special_down_2",
+   "category": "Characters",
+   "file": "Characters/quimica/char_quimica_special_down_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_quimica_hurt_down_0",
+   "category": "Characters",
+   "file": "Characters/quimica/char_quimica_hurt_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_quimica_hurt_down_1",
+   "category": "Characters",
+   "file": "Characters/quimica/char_quimica_hurt_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_quimica_stun_down_0",
+   "category": "Characters",
+   "file": "Characters/quimica/char_quimica_stun_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_quimica_stun_down_1",
+   "category": "Characters",
+   "file": "Characters/quimica/char_quimica_stun_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_quimica_downed_down_0",
+   "category": "Characters",
+   "file": "Characters/quimica/char_quimica_downed_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_quimica_downed_down_1",
+   "category": "Characters",
+   "file": "Characters/quimica/char_quimica_downed_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_quimica_downed_down_2",
+   "category": "Characters",
+   "file": "Characters/quimica/char_quimica_downed_down_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_quimica_revive_down_0",
+   "category": "Characters",
+   "file": "Characters/quimica/char_quimica_revive_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_quimica_revive_down_1",
+   "category": "Characters",
+   "file": "Characters/quimica/char_quimica_revive_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_quimica_victory_down_0",
+   "category": "Characters",
+   "file": "Characters/quimica/char_quimica_victory_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_quimica_victory_down_1",
+   "category": "Characters",
+   "file": "Characters/quimica/char_quimica_victory_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "enemy_microbo_enxame_0",
+   "category": "Enemies",
+   "file": "Enemies/enemy_microbo_enxame_0.png",
+   "w": 16,
+   "h": 16,
+   "pivot": [
+    8,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "enemy_microbo_enxame_elite_0",
+   "category": "Enemies",
+   "file": "Enemies/enemy_microbo_enxame_elite_0.png",
+   "w": 16,
+   "h": 16,
+   "pivot": [
+    8,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "enemy_microbo_enxame_1",
+   "category": "Enemies",
+   "file": "Enemies/enemy_microbo_enxame_1.png",
+   "w": 16,
+   "h": 16,
+   "pivot": [
+    8,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "enemy_microbo_enxame_elite_1",
+   "category": "Enemies",
+   "file": "Enemies/enemy_microbo_enxame_elite_1.png",
+   "w": 16,
+   "h": 16,
+   "pivot": [
+    8,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "enemy_prensa_ambulante_0",
+   "category": "Enemies",
+   "file": "Enemies/enemy_prensa_ambulante_0.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    3
+   ],
+   "border": null
+  },
+  {
+   "id": "enemy_prensa_ambulante_elite_0",
+   "category": "Enemies",
+   "file": "Enemies/enemy_prensa_ambulante_elite_0.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    3
+   ],
+   "border": null
+  },
+  {
+   "id": "enemy_prensa_ambulante_1",
+   "category": "Enemies",
+   "file": "Enemies/enemy_prensa_ambulante_1.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    3
+   ],
+   "border": null
+  },
+  {
+   "id": "enemy_prensa_ambulante_elite_1",
+   "category": "Enemies",
+   "file": "Enemies/enemy_prensa_ambulante_elite_1.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    3
+   ],
+   "border": null
+  },
+  {
+   "id": "enemy_torreta_inspecao_0",
+   "category": "Enemies",
+   "file": "Enemies/enemy_torreta_inspecao_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "enemy_torreta_inspecao_elite_0",
+   "category": "Enemies",
+   "file": "Enemies/enemy_torreta_inspecao_elite_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "enemy_torreta_inspecao_1",
+   "category": "Enemies",
+   "file": "Enemies/enemy_torreta_inspecao_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "enemy_torreta_inspecao_elite_1",
+   "category": "Enemies",
+   "file": "Enemies/enemy_torreta_inspecao_elite_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "tile_floor_0",
+   "category": "Tilesets",
+   "file": "Tilesets/tile_floor_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "tile_floor_1",
+   "category": "Tilesets",
+   "file": "Tilesets/tile_floor_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "tile_floor_2",
+   "category": "Tilesets",
+   "file": "Tilesets/tile_floor_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "tile_floor_3",
+   "category": "Tilesets",
+   "file": "Tilesets/tile_floor_3.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "tile_hazard_edge",
+   "category": "Tilesets",
+   "file": "Tilesets/tile_hazard_edge.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "tile_wall",
+   "category": "Tilesets",
+   "file": "Tilesets/tile_wall.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "obstacle_bancada",
+   "category": "Environment",
+   "file": "Environment/obstacle_bancada.png",
+   "w": 96,
+   "h": 32,
+   "pivot": [
+    48,
+    16
+   ],
+   "border": [
+    8,
+    8,
+    8,
+    8
+   ]
+  },
+  {
+   "id": "obstacle_armario_v",
+   "category": "Environment",
+   "file": "Environment/obstacle_armario_v.png",
+   "w": 32,
+   "h": 96,
+   "pivot": [
+    16,
+    48
+   ],
+   "border": [
+    8,
+    8,
+    8,
+    8
+   ]
+  },
+  {
+   "id": "obstacle_armario_h",
+   "category": "Environment",
+   "file": "Environment/obstacle_armario_h.png",
+   "w": 96,
+   "h": 32,
+   "pivot": [
+    48,
+    16
+   ],
+   "border": [
+    8,
+    8,
+    8,
+    8
+   ]
+  },
+  {
+   "id": "decal_cables",
+   "category": "Environment",
+   "file": "Environment/decal_cables.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "fx_spark",
+   "category": "Effects",
+   "file": "Effects/fx_spark.png",
+   "w": 8,
+   "h": 8,
+   "pivot": [
+    4,
+    4
+   ],
+   "border": null
+  },
+  {
+   "id": "fx_dot",
+   "category": "Effects",
+   "file": "Effects/fx_dot.png",
+   "w": 4,
+   "h": 4,
+   "pivot": [
+    2,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "fx_arc_0",
+   "category": "Effects",
+   "file": "Effects/fx_arc_0.png",
+   "w": 16,
+   "h": 16,
+   "pivot": [
+    8,
+    8
+   ],
+   "border": null
+  },
+  {
+   "id": "fx_arc_1",
+   "category": "Effects",
+   "file": "Effects/fx_arc_1.png",
+   "w": 16,
+   "h": 16,
+   "pivot": [
+    8,
+    8
+   ],
+   "border": null
+  },
+  {
+   "id": "fx_arc_2",
+   "category": "Effects",
+   "file": "Effects/fx_arc_2.png",
+   "w": 16,
+   "h": 16,
+   "pivot": [
+    8,
+    8
+   ],
+   "border": null
+  },
+  {
+   "id": "fx_laser",
+   "category": "Effects",
+   "file": "Effects/fx_laser.png",
+   "w": 16,
+   "h": 4,
+   "pivot": [
+    8,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "fx_hostile_bolt",
+   "category": "Effects",
+   "file": "Effects/fx_hostile_bolt.png",
+   "w": 8,
+   "h": 8,
+   "pivot": [
+    4,
+    4
+   ],
+   "border": null
+  },
+  {
+   "id": "fx_gem_xp",
+   "category": "Effects",
+   "file": "Effects/fx_gem_xp.png",
+   "w": 8,
+   "h": 8,
+   "pivot": [
+    4,
+    4
+   ],
+   "border": null
+  },
+  {
+   "id": "fx_gem_xp_big",
+   "category": "Effects",
+   "file": "Effects/fx_gem_xp_big.png",
+   "w": 12,
+   "h": 12,
+   "pivot": [
+    6,
+    6
+   ],
+   "border": null
+  },
+  {
+   "id": "fx_heal",
+   "category": "Effects",
+   "file": "Effects/fx_heal.png",
+   "w": 10,
+   "h": 10,
+   "pivot": [
+    5,
+    5
+   ],
+   "border": null
+  },
+  {
+   "id": "fx_explosion_0",
+   "category": "Effects",
+   "file": "Effects/fx_explosion_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "fx_explosion_1",
+   "category": "Effects",
+   "file": "Effects/fx_explosion_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "fx_explosion_2",
+   "category": "Effects",
+   "file": "Effects/fx_explosion_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "fx_explosion_3",
+   "category": "Effects",
+   "file": "Effects/fx_explosion_3.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "fx_smoke",
+   "category": "Effects",
+   "file": "Effects/fx_smoke.png",
+   "w": 16,
+   "h": 16,
+   "pivot": [
+    8,
+    8
+   ],
+   "border": null
+  },
+  {
+   "id": "fx_shadow",
+   "category": "Effects",
+   "file": "Effects/fx_shadow.png",
+   "w": 16,
+   "h": 8,
+   "pivot": [
+    8,
+    4
+   ],
+   "border": null
+  },
+  {
+   "id": "fx_ring",
+   "category": "Effects",
+   "file": "Effects/fx_ring.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "weapon_orbit_arm",
+   "category": "Weapons",
+   "file": "Weapons/weapon_orbit_arm.png",
+   "w": 16,
+   "h": 16,
+   "pivot": [
+    8,
+    8
+   ],
+   "border": null
+  },
+  {
+   "id": "weapon_laser_emitter",
+   "category": "Weapons",
+   "file": "Weapons/weapon_laser_emitter.png",
+   "w": 16,
+   "h": 16,
+   "pivot": [
+    8,
+    8
+   ],
+   "border": null
+  },
+  {
+   "id": "ui_panel",
+   "category": "UI",
+   "file": "UI/ui_panel.png",
+   "w": 24,
+   "h": 24,
+   "pivot": [
+    12,
+    12
+   ],
+   "border": [
+    8,
+    8,
+    8,
+    8
+   ]
+  },
+  {
+   "id": "ui_button",
+   "category": "UI",
+   "file": "UI/ui_button.png",
+   "w": 24,
+   "h": 12,
+   "pivot": [
+    12,
+    6
+   ],
+   "border": [
+    4,
+    4,
+    4,
+    4
+   ]
+  },
+  {
+   "id": "icon_descarga_direcionada",
+   "category": "Abilities",
+   "file": "Abilities/icon_descarga_direcionada.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "icon_braco_giratorio",
+   "category": "Abilities",
+   "file": "Abilities/icon_braco_giratorio.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "icon_laser_industrial",
+   "category": "Abilities",
+   "file": "Abilities/icon_laser_industrial.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "icon_campo_eletromagnetico",
+   "category": "Abilities",
+   "file": "Abilities/icon_campo_eletromagnetico.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "icon_bateria_portatil",
+   "category": "Abilities",
+   "file": "Abilities/icon_bateria_portatil.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "icon_turbina",
+   "category": "Abilities",
+   "file": "Abilities/icon_turbina.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "icon_pulso_amplificado",
+   "category": "Abilities",
+   "file": "Abilities/icon_pulso_amplificado.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "icon_rotor_de_impacto",
+   "category": "Abilities",
+   "file": "Abilities/icon_rotor_de_impacto.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "icon_attr_dano",
+   "category": "Abilities",
+   "file": "Abilities/icon_attr_dano.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "icon_attr_vida",
+   "category": "Abilities",
+   "file": "Abilities/icon_attr_vida.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "icon_attr_recuperacao",
+   "category": "Abilities",
+   "file": "Abilities/icon_attr_recuperacao.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "icon_attr_coleta",
+   "category": "Abilities",
+   "file": "Abilities/icon_attr_coleta.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "icon_attr_vel_ataque",
+   "category": "Abilities",
+   "file": "Abilities/icon_attr_vel_ataque.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "icon_kit_primeiros_socorros",
+   "category": "Abilities",
+   "file": "Abilities/icon_kit_primeiros_socorros.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "icon_apagao",
+   "category": "Abilities",
+   "file": "Abilities/icon_apagao.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "icon_turbina_emergencia",
+   "category": "Abilities",
+   "file": "Abilities/icon_turbina_emergencia.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_mecatronica_raiva",
+   "category": "Portraits",
+   "file": "Portraits/portrait_mecatronica_raiva.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_mecatronica_medo",
+   "category": "Portraits",
+   "file": "Portraits/portrait_mecatronica_medo.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_mecatronica_desespero",
+   "category": "Portraits",
+   "file": "Portraits/portrait_mecatronica_desespero.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_mecatronica_choro",
+   "category": "Portraits",
+   "file": "Portraits/portrait_mecatronica_choro.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_mecatronica_exaustao",
+   "category": "Portraits",
+   "file": "Portraits/portrait_mecatronica_exaustao.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_mecatronica_alivio",
+   "category": "Portraits",
+   "file": "Portraits/portrait_mecatronica_alivio.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_mecatronica_determinacao",
+   "category": "Portraits",
+   "file": "Portraits/portrait_mecatronica_determinacao.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_mecatronica_vitoria",
+   "category": "Portraits",
+   "file": "Portraits/portrait_mecatronica_vitoria.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_mecatronica_derrota",
+   "category": "Portraits",
+   "file": "Portraits/portrait_mecatronica_derrota.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_computacao_raiva",
+   "category": "Portraits",
+   "file": "Portraits/portrait_computacao_raiva.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_computacao_medo",
+   "category": "Portraits",
+   "file": "Portraits/portrait_computacao_medo.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_computacao_desespero",
+   "category": "Portraits",
+   "file": "Portraits/portrait_computacao_desespero.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_computacao_choro",
+   "category": "Portraits",
+   "file": "Portraits/portrait_computacao_choro.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_computacao_exaustao",
+   "category": "Portraits",
+   "file": "Portraits/portrait_computacao_exaustao.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_computacao_alivio",
+   "category": "Portraits",
+   "file": "Portraits/portrait_computacao_alivio.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_computacao_determinacao",
+   "category": "Portraits",
+   "file": "Portraits/portrait_computacao_determinacao.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_computacao_vitoria",
+   "category": "Portraits",
+   "file": "Portraits/portrait_computacao_vitoria.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_computacao_derrota",
+   "category": "Portraits",
+   "file": "Portraits/portrait_computacao_derrota.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_eletrica_raiva",
+   "category": "Portraits",
+   "file": "Portraits/portrait_eletrica_raiva.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_eletrica_medo",
+   "category": "Portraits",
+   "file": "Portraits/portrait_eletrica_medo.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_eletrica_desespero",
+   "category": "Portraits",
+   "file": "Portraits/portrait_eletrica_desespero.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_eletrica_choro",
+   "category": "Portraits",
+   "file": "Portraits/portrait_eletrica_choro.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_eletrica_exaustao",
+   "category": "Portraits",
+   "file": "Portraits/portrait_eletrica_exaustao.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_eletrica_alivio",
+   "category": "Portraits",
+   "file": "Portraits/portrait_eletrica_alivio.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_eletrica_determinacao",
+   "category": "Portraits",
+   "file": "Portraits/portrait_eletrica_determinacao.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_eletrica_vitoria",
+   "category": "Portraits",
+   "file": "Portraits/portrait_eletrica_vitoria.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_eletrica_derrota",
+   "category": "Portraits",
+   "file": "Portraits/portrait_eletrica_derrota.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_civil_raiva",
+   "category": "Portraits",
+   "file": "Portraits/portrait_civil_raiva.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_civil_medo",
+   "category": "Portraits",
+   "file": "Portraits/portrait_civil_medo.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_civil_desespero",
+   "category": "Portraits",
+   "file": "Portraits/portrait_civil_desespero.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_civil_choro",
+   "category": "Portraits",
+   "file": "Portraits/portrait_civil_choro.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_civil_exaustao",
+   "category": "Portraits",
+   "file": "Portraits/portrait_civil_exaustao.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_civil_alivio",
+   "category": "Portraits",
+   "file": "Portraits/portrait_civil_alivio.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_civil_determinacao",
+   "category": "Portraits",
+   "file": "Portraits/portrait_civil_determinacao.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_civil_vitoria",
+   "category": "Portraits",
+   "file": "Portraits/portrait_civil_vitoria.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_civil_derrota",
+   "category": "Portraits",
+   "file": "Portraits/portrait_civil_derrota.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_mecanica_raiva",
+   "category": "Portraits",
+   "file": "Portraits/portrait_mecanica_raiva.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_mecanica_medo",
+   "category": "Portraits",
+   "file": "Portraits/portrait_mecanica_medo.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_mecanica_desespero",
+   "category": "Portraits",
+   "file": "Portraits/portrait_mecanica_desespero.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_mecanica_choro",
+   "category": "Portraits",
+   "file": "Portraits/portrait_mecanica_choro.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_mecanica_exaustao",
+   "category": "Portraits",
+   "file": "Portraits/portrait_mecanica_exaustao.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_mecanica_alivio",
+   "category": "Portraits",
+   "file": "Portraits/portrait_mecanica_alivio.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_mecanica_determinacao",
+   "category": "Portraits",
+   "file": "Portraits/portrait_mecanica_determinacao.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_mecanica_vitoria",
+   "category": "Portraits",
+   "file": "Portraits/portrait_mecanica_vitoria.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_mecanica_derrota",
+   "category": "Portraits",
+   "file": "Portraits/portrait_mecanica_derrota.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_biomedica_raiva",
+   "category": "Portraits",
+   "file": "Portraits/portrait_biomedica_raiva.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_biomedica_medo",
+   "category": "Portraits",
+   "file": "Portraits/portrait_biomedica_medo.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_biomedica_desespero",
+   "category": "Portraits",
+   "file": "Portraits/portrait_biomedica_desespero.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_biomedica_choro",
+   "category": "Portraits",
+   "file": "Portraits/portrait_biomedica_choro.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_biomedica_exaustao",
+   "category": "Portraits",
+   "file": "Portraits/portrait_biomedica_exaustao.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_biomedica_alivio",
+   "category": "Portraits",
+   "file": "Portraits/portrait_biomedica_alivio.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_biomedica_determinacao",
+   "category": "Portraits",
+   "file": "Portraits/portrait_biomedica_determinacao.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_biomedica_vitoria",
+   "category": "Portraits",
+   "file": "Portraits/portrait_biomedica_vitoria.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_biomedica_derrota",
+   "category": "Portraits",
+   "file": "Portraits/portrait_biomedica_derrota.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_quimica_raiva",
+   "category": "Portraits",
+   "file": "Portraits/portrait_quimica_raiva.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_quimica_medo",
+   "category": "Portraits",
+   "file": "Portraits/portrait_quimica_medo.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_quimica_desespero",
+   "category": "Portraits",
+   "file": "Portraits/portrait_quimica_desespero.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_quimica_choro",
+   "category": "Portraits",
+   "file": "Portraits/portrait_quimica_choro.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_quimica_exaustao",
+   "category": "Portraits",
+   "file": "Portraits/portrait_quimica_exaustao.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_quimica_alivio",
+   "category": "Portraits",
+   "file": "Portraits/portrait_quimica_alivio.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_quimica_determinacao",
+   "category": "Portraits",
+   "file": "Portraits/portrait_quimica_determinacao.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_quimica_vitoria",
+   "category": "Portraits",
+   "file": "Portraits/portrait_quimica_vitoria.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_quimica_derrota",
+   "category": "Portraits",
+   "file": "Portraits/portrait_quimica_derrota.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  }
+ ]
+}

@@ -1,0 +1,22 @@
+{
+    "name": "ES.Game.Editor",
+    "rootNamespace": "ES.GameEditor",
+    "references": [
+        "ES.Sim",
+        "ES.Content",
+        "ES.Net",
+        "ES.Game",
+        "ES.Editor"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

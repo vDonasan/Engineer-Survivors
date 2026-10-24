@@ -27,4 +27,4 @@ MonoBehaviour:
     levels: []
     grants: []
     parameters: []
-  icon: {fileID: 21300000, guid: b7766ca41c2e916449837d05b1309c33, type: 3}
+  icon: {fileID: 21300000, guid: 5a228e1f38a3c454d9a04525a5bcd429, type: 3}
