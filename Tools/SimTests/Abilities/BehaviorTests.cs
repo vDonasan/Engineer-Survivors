@@ -4,6 +4,9 @@ namespace ES.SimTests.Abilities
 {
     public class BehaviorTests
     {
+        /// <summary>Afinidade inicial (+4%): as armas testadas são afins à especialização do jogador.</summary>
+        const float Aff = 1.04f;
+
         static World Open(string spec = "eletrica")
         {
             var w = TestWorlds.CreateOpen(spec: spec);
@@ -44,9 +47,9 @@ namespace ES.SimTests.Abilities
             ushort b = w.Enemies.Id[Dummy(w, new Vec2(5.5f, 0))];
             ushort c = w.Enemies.Id[Dummy(w, new Vec2(8, 0))];
             w.Step(TestWorlds.NoInput());
-            Assert.That(70 - HpOfId(w, a), Is.EqualTo(14f).Within(1e-3));
-            Assert.That(70 - HpOfId(w, b), Is.EqualTo(11.9f).Within(1e-3));
-            Assert.That(70 - HpOfId(w, c), Is.EqualTo(10.115f).Within(1e-3));
+            Assert.That(70 - HpOfId(w, a), Is.EqualTo(14f * Aff).Within(1e-3));
+            Assert.That(70 - HpOfId(w, b), Is.EqualTo(11.9f * Aff).Within(1e-3));
+            Assert.That(70 - HpOfId(w, c), Is.EqualTo(10.115f * Aff).Within(1e-3));
             Assert.That(w.Events.Cosmetic.Count(x => x.Kind == CosmeticKind.ChainArc), Is.EqualTo(3));
         }
 
@@ -82,7 +85,7 @@ namespace ES.SimTests.Abilities
             arm.Stats.SetBase(StatId.Knockback, 0f);
             ushort id = w.Enemies.Id[Dummy(w, new Vec2(1.8f, 0))];
             for (int t = 0; t < 57; t++) w.Step(TestWorlds.NoInput()); // 1,9 s
-            Assert.That(70 - HpOfId(w, id), Is.EqualTo(4 * 12f).Within(1e-3));
+            Assert.That(70 - HpOfId(w, id), Is.EqualTo(4 * 12f * Aff).Within(1e-3));
         }
 
         [Test]
@@ -92,7 +95,7 @@ namespace ES.SimTests.Abilities
             Find(w, "braco_giratorio").Stats.SetBase(StatId.Knockback, 0f);
             ushort id = w.Enemies.Id[Dummy(w, new Vec2(0, 1.8f))];
             for (int t = 0; t < 84; t++) w.Step(TestWorlds.NoInput()); // 2,8 s = 2 voltas
-            Assert.That(70 - HpOfId(w, id), Is.EqualTo(2 * 12f).Within(1e-3));
+            Assert.That(70 - HpOfId(w, id), Is.EqualTo(2 * 12f * Aff).Within(1e-3));
         }
 
         [Test]
@@ -127,7 +130,7 @@ namespace ES.SimTests.Abilities
             int e = SpawnDirector.SpawnEnemy(w, w.Db.EnemyIndex("prensa_ambulante"), w.Players[0].Pos + new Vec2(1.5f, 0), false);
             ushort id = w.Enemies.Id[e];
             for (int t = 0; t < 30; t++) w.Step(TestWorlds.NoInput());
-            Assert.That(70 - HpOfId(w, id), Is.EqualTo(12f).Within(1e-3));
+            Assert.That(70 - HpOfId(w, id), Is.EqualTo(12f * Aff).Within(1e-3));
             int i = Enumerable.Range(0, w.Enemies.Count).First(k => w.Enemies.Id[k] == id);
             Assert.That(w.Enemies.SlowAmount[i], Is.EqualTo(0.15f).Within(1e-4));
             Assert.That(w.Enemies.SlowUntil[i], Is.GreaterThan(w.Elapsed));

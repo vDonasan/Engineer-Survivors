@@ -10,6 +10,8 @@ namespace ES.Sim
         public int FireCount;
         /// <summary>Fonte dos modificadores que esta instância concede ao jogador.</summary>
         public int SourceId;
+        /// <summary>Fonte dos bônus de afinidade desta instância.</summary>
+        public int AffinitySourceId;
         /// <summary>Base da habilidade + melhorias de nível.</summary>
         public readonly StatBlock Stats = new StatBlock();
         /// <summary>Estado próprio do comportamento.</summary>

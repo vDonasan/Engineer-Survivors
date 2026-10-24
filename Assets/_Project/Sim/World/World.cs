@@ -91,6 +91,7 @@ namespace ES.Sim
                     Specialization = spec,
                     Radius = Rules.playerRadius,
                     Pos = n == 1 ? center : center + new Vec2((float)Math.Cos(angle), (float)Math.Sin(angle)) * 1.5f,
+                    Synergies = new bool[Db.SynergyCount],
                 };
                 p.Stats.SetBase(StatId.MaxHp, Rules.playerMaxHp);
                 p.Stats.SetBase(StatId.MoveSpeed, Rules.playerSpeed);

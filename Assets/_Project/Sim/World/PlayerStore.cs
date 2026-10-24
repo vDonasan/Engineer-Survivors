@@ -21,6 +21,8 @@ namespace ES.Sim
         public float SpecialActiveLeft;
         public SpecialState Special;
         public readonly PlayerProgress Progress = new PlayerProgress();
+        /// <summary>Sinergias ativas, por índice no banco (alocado pelo World).</summary>
+        public bool[] Synergies = new bool[0];
         /// <summary>Evoluções aplicadas por este jogador.</summary>
         public readonly System.Collections.Generic.HashSet<int> Evolved = new System.Collections.Generic.HashSet<int>();
 

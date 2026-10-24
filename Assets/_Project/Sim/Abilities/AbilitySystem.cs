@@ -38,12 +38,17 @@ namespace ES.Sim
                 return null;
             }
 
-            var a = new AbilityInstance { AbilityIndex = abilityIndex, Def = def, Level = 1, SourceId = w.NextSourceId++ };
+            var a = new AbilityInstance
+            {
+                AbilityIndex = abilityIndex, Def = def, Level = 1,
+                SourceId = w.NextSourceId++, AffinitySourceId = w.NextSourceId++,
+            };
             a.Stats.CopyBaseFrom(def.BaseStats);
             p.Abilities.Add(a);
             ApplyGrants(p, a);
             For(def.Def.behavior).OnAcquire(w, slot, a);
             AffinitySystem.OnAbilityChanged(w, slot, a);
+            SynergySystem.Evaluate(w, slot);
             return a;
         }
 
@@ -61,6 +66,7 @@ namespace ES.Sim
             }
             ApplyGrants(w.Players[slot], a);
             AffinitySystem.OnAbilityChanged(w, slot, a);
+            SynergySystem.Evaluate(w, slot);
             return true;
         }
 
