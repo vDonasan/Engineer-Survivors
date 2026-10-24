@@ -47,10 +47,40 @@ O tempo de tick (desktop, .NET) fica bem abaixo de 1 ms; a medição que vale é
 
 Pendências desta frente (SP4): partidas humanas, afinação das 12 células, comparação entre especializações.
 
-## 2026-10-24 — Prova de rede WebGL (Task 20) — **PENDENTE (bloqueio de rede da máquina)**
+## 2026-10-24 — Prova de rede WebGL (Task 20) — **APROVADA**
 
-- Build WebGL da cena de prova: **OK** (Unity 6000.3.27f1, Brotli, 12 MB, 0 erros) em `Build/WebGL-proof`.
-- Teste automatizado criado: `node Tools/netproof/proof.mjs Build/WebGL-proof 8081` — duas páginas Chromium em contextos separados (identidades anônimas diferentes): host cria a sala (`?mode=host&autostart=2`), cliente entra pelo código, cliente anda e o teste compara o estado das duas (ticks, inimigos, posição do cliente no host). Relatório em `Build/netproof/report.json`.
-- Resultado: **não executado até o fim** — a autenticação anônima da Unity dá *timeout*. Diagnóstico: a rota padrão IPv4 da máquina está na interface **ZeroTier One**; o DNS resolve, mas TCP 443 para `player-auth.services.api.unity.com` (IPv4) e `api.github.com` não conecta; `www.google.com` funciona (IPv6). No início da sessão as mesmas chamadas funcionavam.
-- Ação necessária do autor: desconectar o ZeroTier (ou desativar a rota padrão "Allow Default" nessa rede) e rodar o comando acima de novo.
-- Observação: o painel de navegador do app suspende abas ocultas e não alcançou os serviços externos; por isso a prova usa Chromium sem interface.
+Comando: `node Tools/netproof/proof.mjs Build/WebGL-proof 8081` (com `PLAYWRIGHT_BROWSERS_PATH` apontando para os navegadores do Playwright).
+Duas páginas Chromium sem interface, em contextos separados (identidades anônimas diferentes), na build WebGL da cena de prova
+(Unity 6000.3.27f1, NGO 2.13.3, Multiplayer Services 2.4.1, Unity Transport 2.7.4, Brotli, 12 MB). O host cria a sala
+(`?mode=host&autostart=2`) pelo Relay `wss`, o cliente entra pelo código, o cliente anda para a direita e o teste compara o estado das duas.
+Relatório em `Build/netproof/report.json`, registros e capturas na mesma pasta.
+
+| Execução | Sala | Resultado |
+|---|---|---|
+| 1ª (ZeroTier desconectado) | 9Q78NM | Sala criada, cliente entrou, partida com 2 jogadores; posições, vida e nível iguais nos dois lados. **Falhou** na contagem de inimigos: 41 no cliente × 30 no host. |
+| 2ª (após a correção abaixo) | FB9P9C | **8/8 verificações aprovadas.** |
+
+Estado no tick 548 (2ª execução), igual nos dois lados:
+
+| | Host | Cliente |
+|---|---|---|
+| Tick | 548 | 548 |
+| Inimigos | 35 | 35 |
+| Jogador 0 (host) | (33,5; 32,0), vida 55, nível 2 | (33,5; 32,0), vida 55, nível 2 |
+| Jogador 1 (cliente) | (48,2; 32,0), vida 5, nível 2 | (48,2; 32,0), vida 5, nível 2 |
+
+Verificações: sala criada; partida iniciada com 2; cliente recebe ticks (> 200); os dois veem inimigos; contagens de inimigos
+iguais (tolerância 15%); o movimento do cliente aparece no host (> 3 u); posição do cliente igual nos dois lados (< 2,5 u); nenhum erro de página.
+
+**Bug encontrado pela 1ª execução e corrigido:** um snapshot que chega depois do `EnemyDied` (o snapshot vai por canal não confiável,
+o evento por canal confiável) recriava o inimigo morto no cliente, que nunca mais era removido ("inimigos fantasmas").
+Correção: o `EnemyDied` passou a levar o tick da morte e o cliente ignora registros desse inimigo com tick anterior
+(e por 300 ticks, antes de o ID poder ser reutilizado). Teste: `StaleSnapshotAfterDeath_DoesNotResurrectEnemy` (dotnet, 174/174).
+
+Observações:
+- O console das duas páginas mostra `ERROR: Shader` (texto truncado pelo Unity) ao carregar. Ocorre no Chromium sem GPU (SwiftShader);
+  não impediu o jogo. A verificar no navegador com GPU, na build do jogo (Task 25).
+- Antes, a prova ficou bloqueada porque a rota IPv4 padrão da máquina estava no ZeroTier One (a autenticação anônima da Unity dava *timeout*);
+  resolvido pelo autor desconectando o ZeroTier.
+- O painel de navegador do app suspende abas ocultas e não alcança serviços externos; por isso a prova usa Chromium sem interface.
+- Pendente: o teste em 2 computadores pelo autor (spec §12.4), com a build publicada.
