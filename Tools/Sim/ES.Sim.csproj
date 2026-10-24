@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- Compila os mesmos fontes que a Unity usa (Assets/_Project/Sim), com o
+       mesmo nível de API (netstandard2.1) e de linguagem (C# 9). -->
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <LangVersion>9.0</LangVersion>
+    <Nullable>disable</Nullable>
+    <RootNamespace>ES.Sim</RootNamespace>
+    <AssemblyName>ES.Sim</AssemblyName>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../../Assets/_Project/Sim/**/*.cs" />
+  </ItemGroup>
+</Project>
