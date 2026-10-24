@@ -16,6 +16,7 @@ namespace ES.Sim
             var e = w.Enemies;
             if (i < 0 || i >= e.Count || (e.Flags[i] & EnemyFlags.Dead) != 0 || amount <= 0) return false;
 
+            w.Stats.AddDamage(sourcePlayer, abilityIndex, Math.Min(amount, e.Hp[i]));
             e.Hp[i] -= amount;
             e.FlashUntil[i] = w.Elapsed + FlashSeconds;
             if (knockback > 0)
@@ -29,6 +30,8 @@ namespace ES.Sim
             });
 
             if (e.Hp[i] > 0) return false;
+            w.Stats.Kills++;
+            if (sourcePlayer >= 0 && sourcePlayer < PlayerStore.MaxSlots) w.Stats.KillsBySlot[sourcePlayer]++;
             Kill(w, i);
             return true;
         }
@@ -103,6 +106,7 @@ namespace ES.Sim
             if (p == null || !p.IsActive || w.Elapsed < p.InvulnUntil || amount <= 0) return;
 
             float final = Math.Max(1f, amount - p.Stats.Get(StatId.Armor)) * p.Stats.Get(StatId.DamageTaken);
+            w.Stats.DamageTaken[slot] += Math.Min(final, p.Hp);
             p.Hp -= final;
             p.InvulnUntil = w.Elapsed + w.Rules.hitInvuln;
             w.Events.AddCosmetic(new CosmeticEvent { Kind = CosmeticKind.Hit, A = slot, X = p.Pos.X, Y = p.Pos.Y, Value = final });

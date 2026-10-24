@@ -31,6 +31,8 @@ namespace ES.Sim
         /// <summary>Gerador de SourceId para modificadores concedidos.</summary>
         public int NextSourceId = 1;
 
+        public readonly MatchStats Stats;
+
         /// <summary>Evoluções descobertas nesta partida (códice).</summary>
         public readonly System.Collections.Generic.HashSet<int> Discovered = new System.Collections.Generic.HashSet<int>();
 
@@ -62,6 +64,7 @@ namespace ES.Sim
             Dt = 1f / Rules.tickRate;
             Rng = new Rng(cfg.Seed);
             NextSurgeAt = db.Def.spawn.surgeIntervalSeconds;
+            Stats = new MatchStats(db.AbilityCount);
 
             Enemies = new EnemyStore(Rules.capEnemies);
             Hostile = new ProjectileStore(Rules.capHostileProjectiles);

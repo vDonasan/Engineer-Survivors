@@ -11,6 +11,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SimTests", "SimTests", "{A6
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ES.SimTests", "SimTests\ES.SimTests.csproj", "{0F79F7CE-EB1B-486C-9D57-6D60A6F3EF6D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BalanceRunner", "BalanceRunner", "{42E7796F-D786-FA0E-7BA7-1FD2DFC4137D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ES.BalanceRunner", "BalanceRunner\ES.BalanceRunner.csproj", "{485DD16A-B1C6-4F7B-951D-0129C76B87E8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +49,18 @@ Global
 		{0F79F7CE-EB1B-486C-9D57-6D60A6F3EF6D}.Release|x64.Build.0 = Release|Any CPU
 		{0F79F7CE-EB1B-486C-9D57-6D60A6F3EF6D}.Release|x86.ActiveCfg = Release|Any CPU
 		{0F79F7CE-EB1B-486C-9D57-6D60A6F3EF6D}.Release|x86.Build.0 = Release|Any CPU
+		{485DD16A-B1C6-4F7B-951D-0129C76B87E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{485DD16A-B1C6-4F7B-951D-0129C76B87E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{485DD16A-B1C6-4F7B-951D-0129C76B87E8}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{485DD16A-B1C6-4F7B-951D-0129C76B87E8}.Debug|x64.Build.0 = Debug|Any CPU
+		{485DD16A-B1C6-4F7B-951D-0129C76B87E8}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{485DD16A-B1C6-4F7B-951D-0129C76B87E8}.Debug|x86.Build.0 = Debug|Any CPU
+		{485DD16A-B1C6-4F7B-951D-0129C76B87E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{485DD16A-B1C6-4F7B-951D-0129C76B87E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{485DD16A-B1C6-4F7B-951D-0129C76B87E8}.Release|x64.ActiveCfg = Release|Any CPU
+		{485DD16A-B1C6-4F7B-951D-0129C76B87E8}.Release|x64.Build.0 = Release|Any CPU
+		{485DD16A-B1C6-4F7B-951D-0129C76B87E8}.Release|x86.ActiveCfg = Release|Any CPU
+		{485DD16A-B1C6-4F7B-951D-0129C76B87E8}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -52,5 +68,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{AEFA4240-9099-414A-A472-7538E9E72DCA} = {810A42C1-0309-B29B-2828-D52D429D8E2D}
 		{0F79F7CE-EB1B-486C-9D57-6D60A6F3EF6D} = {A6E45B9F-4E86-75D5-3731-3C8A5DD6AE20}
+		{485DD16A-B1C6-4F7B-951D-0129C76B87E8} = {42E7796F-D786-FA0E-7BA7-1FD2DFC4137D}
 	EndGlobalSection
 EndGlobal
