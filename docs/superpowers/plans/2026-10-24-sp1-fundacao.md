@@ -453,18 +453,19 @@ ArtSource/  AudioSource/  Hosting/  docs/
 
 ## Fase C — Jogo apresentável e publicação
 
-### Task 21: Pipeline de arte
+### Task 21: Pipeline de pixel art (diretriz 32×32)
 
 **Files:**
-- Create: `ArtSource/{package.json,build.mjs,palette.mjs}`, `ArtSource/parts/**/*.svg`, `ArtSource/sprites/**/*.mjs` (composição por código), saída em `Assets/_Project/Art/{Characters,Enemies,Arena,Icons,Portraits,UI,Fx}/`
+- Create: `ArtSource/{package.json,build.mjs}`, `ArtSource/lib/{palette,pixel,png,characters,enemies,tiles,effects,icons,portraits}.mjs`, saída em `Assets/_Project/Art/{Characters,Enemies,Bosses,Weapons,Abilities,Effects,Tilesets,Environment,UI,Portraits}/`, `Assets/_Project/Art/ANIMACOES.md`, `Assets/_Project/Art/manifest.json`
+- Remove: a arte vetorial anterior (SVG → PNG)
 - Test: `ArtSource/test/build.test.mjs` (node:test)
 
 **Interfaces:**
-- Produces: `npm --prefix ArtSource run build` gera PNGs determinísticos; `manifest.json` em `Assets/_Project/Art/` lista cada sprite (id, arquivo, tamanho, pivô, quadros).
-- Dependência: `@resvg/resvg-js@2.6.2`.
+- Produces: `npm --prefix ArtSource run build` grava PNGs pixel a pixel (sem dependências de raster); `manifest.json` com `{ id, category, file, w, h, pivot:[px,py] (em pixels inteiros), border }`.
+- Produces: quadros de personagem `char_<spec>_<anim>_<dir>_<n>` (dir ∈ down/up/left/right; anims sem direção usam `down`), 32×32, para as 7 especializações: mecatronica, computacao, eletrica, civil, mecanica, biomedica, quimica.
 
-- [ ] **Step 1: Teste que falha** — `build gera todos os sprites do manifesto e cada PNG tem o tamanho declarado`; `ícones existem para todas as habilidades do sp1-content.json`; `retratos: 2 × 9 emoções`.
-- [ ] **Step 2:** FAIL. **Step 3:** Implementar paleta noir industrial (spec §10.1), peças SVG, 2 personagens (andar 4 quadros ×4 direções, ataque, especial, caído), 3 inimigos (+ variante elite por contorno/brilho), tileset do Laboratório e obstáculos, ~13 ícones, 18 retratos, texturas de efeitos, tema da UI. **Step 4:** PASS; gerar uma folha de contato (`Build/art-contact.png`) e revisá-la visualmente. **Step 5:** Na Unity: importar como Sprite (PPU 64, filtro bilinear, sem mipmaps), `SpriteAtlas` por pasta; ativar `Content_AllAbilitiesHaveIcons`. **Step 6:** Commit `feat(art): pipeline SVG e arte do SP1`.
+- [ ] **Step 1: Testes que falham** — todo sprite com o tamanho declarado; personagens 32×32; **alfa só 0 ou 255** em personagens, inimigos, tiles, ícones e retratos; cores de personagens e inimigos dentro da paleta; base dos pés na mesma linha em todos os quadros de pé; 7 especializações × conjunto completo de animações; `right` = espelho exato de `left`; silhuetas (máscara de alfa do `idle_down_0`) das 7 engenharias diferem duas a duas em ≥ 12 px; retratos 64×64 × 9 emoções × 7; ícones para todas as habilidades e especiais do conteúdo; build determinística; `ANIMACOES.md` lista cada personagem e animação.
+- [ ] **Step 2:** FAIL. **Step 3:** Implementar codificador PNG próprio (zlib do Node), mapas de pixels ASCII por vista (frente/costas/lado) e camadas por especialização; animações por deslocamento/substituição de pixels e rotação exata de 90° (queda). **Step 4:** PASS; folha de contato ampliada por fator inteiro (vizinho mais próximo) e revisão visual. **Step 5:** Unity: importador com filtro Point, sem compressão, sem mipmaps, PPU 32, pivôs do manifesto; ativar `Content_AllAbilitiesHaveIcons`. **Step 6:** Commit `feat(art): pixel art 32×32 nativo`.
 
 ### Task 22: Pipeline de áudio
 
@@ -484,6 +485,7 @@ ArtSource/  AudioSource/  Hosting/  docs/
 **Interfaces:**
 - Consumes: `MatchHost`/`MatchClient` (Task 19), arte/áudio (Tasks 21–22).
 - Produces: `class ViewPool<T> where T : Component { T Get(); void Release(T); }`; `SettingsStore { float Master, Music, Sfx, Shake, UiScale; EffectsLevel Effects; string SpecialBinding; bool Fullscreen; void Load(); void Save(); }` (PlayerPrefs).
+- Pixel perfect: `UnityEngine.Rendering.Universal.PixelPerfectCamera` (referência 640×360, PixelSnapping), AA/MSAA/HDR desligados; arcos elétricos como carimbos de sprites pixelados (sem LineRenderer suave).
 - Requisitos: visuais por ID com pool; interpolação para inimigos/projéteis; jogador local previsto; câmera segue jogador local (caído → segue aliado); `ChainArc` com `LineRenderer` tremulante; braços/aura derivados do estado; números de dano limitados a 64; luzes 2D e partículas conforme `EffectsLevel`; tremor de câmera × `Shake`; painel F3 (FPS, ms, entidades, bytes/s, latência); retrato muda por evento (vida < 30% → medo; evolução → determinação; vitória/derrota).
 
 - [ ] **Step 1: Testes que falham** — `Solo_StartsWithoutSession_UsesSinglePlayerTransport`, `Solo_LevelUp_PausesSimulation`, `Solo_ChoiceUpdatesHud`, `ViewPool_ReusesInstances`, `Perf_400Enemies_RunsAtLeast45Fps_InEditor` (aviso, não falha, no Editor; a medição oficial é no navegador).

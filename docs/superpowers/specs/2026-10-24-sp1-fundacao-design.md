@@ -354,32 +354,39 @@ Controles: WASD/setas para mover, Espaço (configurável) para o especial, Esc p
 
 ## 10. Arte e áudio
 
+> **Diretriz obrigatória do autor (2026-10-24): pixel art nativo 32×32.** Substitui a direção vetorial anterior.
+
 ### 10.1 Direção
 
-- "Noir industrial": base escura e dessaturada (grafite, ferrugem, verde-petróleo); acento saturado por especialização (Elétrica: âmbar/ciano; Mecânica: laranja/aço).
-- Sombreamento chapado de 2–3 tons, **contorno escuro grosso** para legibilidade na horda.
-- Câmera superior, personagens com leve 3/4 para o rosto aparecer.
+- Pixel art nativo em todo o jogo: personagens **32×32 px** (resolução nativa, sem redução de arte maior, sem vetores imitando pixel art, sem suavização).
+- Paleta fixa e documentada ("noir industrial": base escura e dessaturada; acentos saturados por especialização); sombras definidas e contorno escuro de 1 px.
+- Silhuetas distintas para as **7 engenharias** (arte de todas desde o SP1; jogabilidade das 5 restantes no SP2). Diversidade de gênero, corpo e tom de pele.
+- Profissionais exaustos: roupas rasgadas/sujas, olheiras, curativos, suor — no limite do legível em 32×32. Expressões completas vão nos **retratos 64×64** (mesmo estilo).
+- Inimigos no mesmo padrão: microbô 16×16, torreta 32×32, prensa 48×48; elite com recoloração, contorno magenta e brilho em pixels. Chefes (SP5) maiores, mesma linguagem.
+- Tiles 32×32 com variações; efeitos (faíscas, arcos, laser, explosões em quadros, campo, gemas) em pixel art com tamanhos próprios.
 
 ### 10.2 Pipeline
 
-1. SVGs modulares em `ArtSource/` (corpo, cabeça, roupa, ferramenta, acessórios; variações de gênero, corpo e tom de pele).
-2. Script Node rasteriza para PNG e monta folhas de sprites em `Assets/_Project/Art/`. Um comando regera tudo.
-3. Animação por quadros gerados (andar 4 quadros, ataque, especial, queda) + animação por código (achatar/esticar, balanço, piscar de dano, recuo, tremor).
-4. Retratos com 9 emoções (raiva, medo, desespero, choro, exaustão, alívio, determinação, vitória, derrota) por camadas; o HUD troca conforme eventos (vida baixa, evolução, vitória, derrota).
-5. Efeitos: partículas Unity com texturas geradas, raios com `LineRenderer` e tremulação, luzes 2D da URP; tudo obedece à intensidade de efeitos.
-6. Arte referenciada por ScriptableObjects: trocar por arte de artista = trocar arquivos.
+1. `ArtSource/` contém mapas de pixels escritos à mão (ASCII indexado pela paleta) e regras de composição em camadas (corpo, roupa, cabeça, acessórios, ferramenta).
+2. Um script Node grava cada quadro **pixel a pixel** em PNG (sem rasterizador vetorial, sem redimensionamento). Um comando regera tudo.
+3. Animações por personagem: parado (4 direções × 2), caminhada (4 direções × 4), ataque (3), especial (3), dano (2), atordoado (2), queda (3), reviver aliado (2), vitória (2). Direita = espelho exato da esquerda.
+4. Um quadro por arquivo, organizados por personagem e animação; `ANIMACOES.md` gerado documenta a estrutura e o registro do que está concluído.
+5. Pastas: `Art/Characters`, `Enemies`, `Bosses`, `Weapons`, `Abilities`, `Effects`, `Tilesets`, `Environment`, `UI`, `Portraits`.
+6. Testes automáticos: dimensões nativas, alfa só 0 ou 255 (sem suavização), cores dentro da paleta, base dos pés alinhada em todos os quadros, silhuetas das 7 engenharias distintas entre si, determinismo.
 
-### 10.3 Áudio
+### 10.3 Unity
 
-- Sintetizador próprio em Node (osciladores, ruído, envelopes, filtros) → WAV; parâmetros versionados.
-- 1 loop de música industrial de tensão gerado por sequenciador simples (qualidade modesta, substituível).
+- Importação: filtro Point, sem compressão, sem mipmaps, **PPU 32** para tudo, pivôs em pixels inteiros (pés).
+- Câmera: `UnityEngine.Rendering.Universal.PixelPerfectCamera`, referência **640×360**, `gridSnapping = PixelSnapping`; AA/MSAA/HDR desligados; escala inteira sempre que possível.
+- Interface: fonte pixelada com licença OFL, em tamanho confortável de leitura.
+- Verificação na build WebGL, não só no editor.
+
+### 10.4 Áudio
+
+- Sintetizador próprio em Node (osciladores, ruído, envelopes, filtros) → WAV; parâmetros versionados. 17 efeitos e 1 loop de música no SP1.
 - AudioMixer: Música, Efeitos, Interface; limite de vozes simultâneas por som.
 
-### 10.4 Entregas do SP1
-
-2 personagens (uma engenheira eletricista, um engenheiro mecânico) com animações; 2 retratos × 9 emoções; 3 inimigos (+ variante elite); tileset e obstáculos do Laboratório; ~10 ícones (habilidades, atributos, especiais); tema visual da interface; ~15 efeitos sonoros; 1 loop de música.
-
-Terceiros: apenas uma fonte com licença OFL (Google Fonts), baixada com confirmação do autor, registrada em `CREDITS.md`.
+Terceiros: apenas uma fonte com licença OFL (Google Fonts), registrada em `CREDITS.md`.
 
 ---
 
