@@ -1,0 +1,4 @@
+<!-- Preserva ES.Sim inteiro no IL2CPP: o hash de conteúdo usa reflexão sobre os campos das definições. -->
+<linker>
+    <assembly fullname="ES.Sim" preserve="all" />
+</linker>
