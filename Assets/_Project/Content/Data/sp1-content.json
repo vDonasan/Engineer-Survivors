@@ -1,0 +1,243 @@
+{
+  "rules": {
+    "matchSeconds": 600, "tickRate": 30,
+    "playerMaxHp": 100, "playerSpeed": 4.5, "playerPickup": 1.6, "playerRadius": 0.4, "hitInvuln": 0.5,
+    "xpA": 5, "xpB": 5, "xpC": 0.6,
+    "maxWeapons": 6, "maxComponents": 6,
+    "coopChoiceSeconds": 12, "choiceInvuln": 2,
+    "affinityInitial": 0.04, "affinityIntermediate": 0.04, "affinityIntermediateLevel": 4,
+    "capEnemies": 400, "capGems": 150, "capHostileProjectiles": 200, "capCosmeticEvents": 48,
+    "survivalHpThreshold": 0.5,
+    "eliteHp": 3, "eliteSize": 1.3, "eliteDamage": 1.25, "eliteXp": 4, "eliteHealChance": 0.25,
+    "healAmountFraction": 0.3,
+    "farEnemyDistance": 30, "farEnemyUpdateEvery": 3, "cameraHalfDiagonal": 12
+  },
+  "balance": {
+    "difficulties": [
+      { "id": "easy",   "enemyDamage": 0.65, "enemyHp": 0.9, "spawnBudget": 0.8,  "spawnRamp": 0.8, "compositionShiftMinutes": -1,  "xp": 1.2, "healDropChance": 0.012, "regen": 1.3, "eliteChance": 0.01,  "telegraph": 1.3 },
+      { "id": "normal", "enemyDamage": 1.0,  "enemyHp": 1.0, "spawnBudget": 1.0,  "spawnRamp": 1.0, "compositionShiftMinutes": 0,   "xp": 1.0, "healDropChance": 0.008, "regen": 1.0, "eliteChance": 0.025, "telegraph": 1.0 },
+      { "id": "hard",   "enemyDamage": 1.35, "enemyHp": 1.1, "spawnBudget": 1.25, "spawnRamp": 1.2, "compositionShiftMinutes": 1.5, "xp": 0.9, "healDropChance": 0.005, "regen": 0.7, "eliteChance": 0.05,  "telegraph": 0.8 }
+    ],
+    "teams": [
+      { "size": 1, "enemyCount": 1.0, "enemyHp": 1.0,  "eliteChance": 0.0,  "xpPerGem": 1.0 },
+      { "size": 2, "enemyCount": 1.5, "enemyHp": 1.3,  "eliteChance": 0.01, "xpPerGem": 0.72 },
+      { "size": 3, "enemyCount": 1.9, "enemyHp": 1.55, "eliteChance": 0.02, "xpPerGem": 0.6 },
+      { "size": 4, "enemyCount": 2.2, "enemyHp": 1.75, "eliteChance": 0.03, "xpPerGem": 0.55 }
+    ],
+    "overrides": []
+  },
+  "spawn": {
+    "baseBudget": 1.2, "rampPerMinute": 0.55, "surgeIntervalSeconds": 60, "surgeCount": 24, "spawnPadding": 2,
+    "brackets": [
+      { "fromMinute": 0, "weights": [ { "enemyId": "microbo_enxame", "weight": 1 } ] },
+      { "fromMinute": 2, "weights": [ { "enemyId": "microbo_enxame", "weight": 0.75 }, { "enemyId": "torreta_inspecao", "weight": 0.25 } ] },
+      { "fromMinute": 4, "weights": [ { "enemyId": "microbo_enxame", "weight": 0.6 }, { "enemyId": "torreta_inspecao", "weight": 0.2 }, { "enemyId": "prensa_ambulante", "weight": 0.2 } ] },
+      { "fromMinute": 7, "weights": [ { "enemyId": "microbo_enxame", "weight": 0.5 }, { "enemyId": "torreta_inspecao", "weight": 0.25 }, { "enemyId": "prensa_ambulante", "weight": 0.25 } ] }
+    ]
+  },
+  "arenas": [
+    {
+      "id": "laboratorio", "name": "Laboratório de Pesquisa", "width": 64, "height": 64,
+      "obstacles": [
+        { "x": 12, "y": 12, "w": 7, "h": 2 },
+        { "x": 45, "y": 12, "w": 7, "h": 2 },
+        { "x": 12, "y": 50, "w": 7, "h": 2 },
+        { "x": 45, "y": 50, "w": 7, "h": 2 },
+        { "x": 6, "y": 28, "w": 1.5, "h": 8 },
+        { "x": 56.5, "y": 28, "w": 1.5, "h": 8 },
+        { "x": 28, "y": 20, "w": 8, "h": 1.5 },
+        { "x": 28, "y": 42.5, "w": 8, "h": 1.5 }
+      ]
+    }
+  ],
+  "specializations": [
+    {
+      "id": "eletrica", "name": "Engenharia Elétrica", "startingAbility": "descarga_direcionada", "special": "apagao", "portrait": "eletrica",
+      "affinityTags": [ "Energia", "Eletronica" ],
+      "advancedAffinity": [ { "stat": "Chains", "op": "add", "scope": "self", "value": 1 } ],
+      "advancedAffinityText": "+1 salto nas armas de cadeia afins ao chegar no nível máximo."
+    },
+    {
+      "id": "mecanica", "name": "Engenharia Mecânica", "startingAbility": "braco_giratorio", "special": "turbina_emergencia", "portrait": "mecanica",
+      "affinityTags": [ "Mecanica", "Termico" ],
+      "advancedAffinity": [ { "stat": "Knockback", "op": "mult", "scope": "self", "value": 0.15 }, { "stat": "MoveSpeed", "op": "mult", "scope": "player", "value": 0.05 } ],
+      "advancedAffinityText": "+15% de empurrão e +5% de velocidade ao levar uma arma afim ao nível máximo."
+    }
+  ],
+  "specials": [
+    {
+      "id": "apagao", "name": "Apagão", "kind": "blackout",
+      "description": "Onda elétrica ao redor de você: causa dano, interrompe máquinas e apaga projéteis.",
+      "cooldown": 22, "radius": 6, "expandSeconds": 0.4, "damage": 35, "stunSeconds": 2, "stunTag": "Maquina",
+      "duration": 0, "moveBonus": 0, "damageBonus": 0, "damageTakenMult": 1, "ramDamage": 0, "ramKnockback": 0
+    },
+    {
+      "id": "turbina_emergencia", "name": "Turbina de Emergência", "kind": "turbine",
+      "description": "Por alguns segundos: mais velocidade, mais dano físico, menos dano recebido e atropelamento.",
+      "cooldown": 18, "radius": 0, "expandSeconds": 0, "damage": 0, "stunSeconds": 0, "stunTag": "",
+      "duration": 6, "moveBonus": 0.45, "damageBonus": 0.3, "damageTakenMult": 0.7, "ramDamage": 15, "ramKnockback": 3
+    }
+  ],
+  "abilities": [
+    {
+      "id": "descarga_direcionada", "name": "Descarga Direcionada", "description": "Arco elétrico que salta entre inimigos próximos.",
+      "kind": "weapon", "rarity": "comum", "behavior": "chain", "tags": [ "Energia", "Eletronica" ], "maxLevel": 5, "evolutionOnly": false,
+      "baseStats": [
+        { "stat": "Damage", "value": 14 }, { "stat": "Cooldown", "value": 1.0 }, { "stat": "Range", "value": 6 },
+        { "stat": "Chains", "value": 2 }, { "stat": "ChainRange", "value": 3 }, { "stat": "ChainFalloff", "value": 0.15 }, { "stat": "Count", "value": 1 }
+      ],
+      "levels": [
+        { "add": [ { "stat": "Damage", "value": 4 } ], "mult": [], "text": "+4 de dano" },
+        { "add": [ { "stat": "Chains", "value": 1 }, { "stat": "Damage", "value": 2 } ], "mult": [], "text": "+1 salto, +2 de dano" },
+        { "add": [ { "stat": "Damage", "value": 3 } ], "mult": [ { "stat": "Cooldown", "value": -0.1 } ], "text": "+3 de dano, recarga −10%" },
+        { "add": [ { "stat": "Chains", "value": 1 }, { "stat": "Damage", "value": 4 } ], "mult": [], "text": "+1 salto, +4 de dano" }
+      ],
+      "grants": [], "parameters": []
+    },
+    {
+      "id": "braco_giratorio", "name": "Braço Giratório", "description": "Braço mecânico que gira ao seu redor golpeando e empurrando.",
+      "kind": "weapon", "rarity": "comum", "behavior": "orbit", "tags": [ "Mecanica" ], "maxLevel": 5, "evolutionOnly": false,
+      "baseStats": [
+        { "stat": "Damage", "value": 12 }, { "stat": "Count", "value": 1 }, { "stat": "Range", "value": 1.8 },
+        { "stat": "Duration", "value": 1.4 }, { "stat": "HitInterval", "value": 0.5 }, { "stat": "Knockback", "value": 2 }
+      ],
+      "levels": [
+        { "add": [ { "stat": "Damage", "value": 3 } ], "mult": [], "text": "+3 de dano" },
+        { "add": [ { "stat": "Count", "value": 1 } ], "mult": [], "text": "+1 braço" },
+        { "add": [ { "stat": "Range", "value": 0.4 }, { "stat": "Damage", "value": 3 } ], "mult": [], "text": "+raio, +3 de dano" },
+        { "add": [ { "stat": "Count", "value": 1 } ], "mult": [], "text": "+1 braço" }
+      ],
+      "grants": [], "parameters": []
+    },
+    {
+      "id": "laser_industrial", "name": "Laser Industrial", "description": "Feixe de corte que atravessa vários inimigos em linha.",
+      "kind": "weapon", "rarity": "incomum", "behavior": "projectile", "tags": [ "Energia", "Termico" ], "maxLevel": 5, "evolutionOnly": false,
+      "baseStats": [
+        { "stat": "Damage", "value": 20 }, { "stat": "Cooldown", "value": 1.6 }, { "stat": "Pierce", "value": 3 },
+        { "stat": "ProjectileSpeed", "value": 14 }, { "stat": "Range", "value": 12 }, { "stat": "Count", "value": 1 }
+      ],
+      "levels": [
+        { "add": [ { "stat": "Damage", "value": 5 } ], "mult": [], "text": "+5 de dano" },
+        { "add": [ { "stat": "Pierce", "value": 1 } ], "mult": [], "text": "+1 perfuração" },
+        { "add": [], "mult": [ { "stat": "Cooldown", "value": -0.15 } ], "text": "recarga −15%" },
+        { "add": [ { "stat": "Count", "value": 1 } ], "mult": [], "text": "+1 feixe" }
+      ],
+      "grants": [], "parameters": []
+    },
+    {
+      "id": "campo_eletromagnetico", "name": "Campo Eletromagnético", "description": "Campo ao seu redor que fere e desacelera quem entra.",
+      "kind": "weapon", "rarity": "incomum", "behavior": "aura", "tags": [ "Energia", "Defesa" ], "maxLevel": 5, "evolutionOnly": false,
+      "baseStats": [
+        { "stat": "Damage", "value": 6 }, { "stat": "HitInterval", "value": 0.5 }, { "stat": "Area", "value": 2.2 }, { "stat": "Slow", "value": 0.15 }
+      ],
+      "levels": [
+        { "add": [ { "stat": "Area", "value": 0.3 } ], "mult": [], "text": "+área" },
+        { "add": [ { "stat": "Damage", "value": 2 } ], "mult": [], "text": "+2 de dano" },
+        { "add": [ { "stat": "Slow", "value": 0.05 }, { "stat": "Area", "value": 0.3 } ], "mult": [], "text": "+lentidão, +área" },
+        { "add": [ { "stat": "Damage", "value": 3 } ], "mult": [], "text": "+3 de dano" }
+      ],
+      "grants": [], "parameters": []
+    },
+    {
+      "id": "bateria_portatil", "name": "Bateria Portátil", "description": "Reduz a recarga das armas de Energia.",
+      "kind": "component", "rarity": "comum", "behavior": "passive", "tags": [ "Energia" ], "maxLevel": 5, "evolutionOnly": false,
+      "baseStats": [], "levels": [],
+      "grants": [ { "stat": "Cooldown", "op": "mult", "scope": "tag:Energia", "value": -0.06 } ], "parameters": []
+    },
+    {
+      "id": "turbina", "name": "Turbina", "description": "Aumenta a velocidade de movimento.",
+      "kind": "component", "rarity": "comum", "behavior": "passive", "tags": [ "Mecanica" ], "maxLevel": 5, "evolutionOnly": false,
+      "baseStats": [], "levels": [],
+      "grants": [ { "stat": "MoveSpeed", "op": "mult", "scope": "player", "value": 0.06 } ], "parameters": []
+    },
+    {
+      "id": "pulso_amplificado", "name": "Pulso Amplificado", "description": "Descargas partem de três alvos ao mesmo tempo; a cada terceira, um pulso amplificado.",
+      "kind": "weapon", "rarity": "raro", "behavior": "chain", "tags": [ "Energia", "Eletronica" ], "maxLevel": 1, "evolutionOnly": true,
+      "baseStats": [
+        { "stat": "Damage", "value": 22 }, { "stat": "Cooldown", "value": 0.9 }, { "stat": "Range", "value": 7 },
+        { "stat": "Chains", "value": 3 }, { "stat": "ChainRange", "value": 3.5 }, { "stat": "ChainFalloff", "value": 0.1 }, { "stat": "Count", "value": 3 }
+      ],
+      "levels": [], "grants": [],
+      "parameters": [ { "key": "chargeEvery", "value": 3 }, { "key": "chargeDamageMult", "value": 1 }, { "key": "chargeExtraChains", "value": 2 } ]
+    },
+    {
+      "id": "rotor_de_impacto", "name": "Rotor de Impacto", "description": "Os braços batem mais forte quanto mais rápido você se move; com a Turbina de Emergência, dobram.",
+      "kind": "weapon", "rarity": "raro", "behavior": "orbit", "tags": [ "Mecanica" ], "maxLevel": 1, "evolutionOnly": true,
+      "baseStats": [
+        { "stat": "Damage", "value": 20 }, { "stat": "Count", "value": 3 }, { "stat": "Range", "value": 2.4 },
+        { "stat": "Duration", "value": 1.1 }, { "stat": "HitInterval", "value": 0.4 }, { "stat": "Knockback", "value": 3 }
+      ],
+      "levels": [], "grants": [],
+      "parameters": [ { "key": "speedDamageScale", "value": 0.6 }, { "key": "turbineArmMultiplier", "value": 2 } ]
+    },
+    {
+      "id": "attr_dano", "name": "Dano", "description": "+8% de dano em todas as armas por nível.",
+      "kind": "attribute", "rarity": "comum", "behavior": "attribute", "tags": [], "maxLevel": 5, "evolutionOnly": false,
+      "baseStats": [], "levels": [], "grants": [ { "stat": "Damage", "op": "mult", "scope": "all", "value": 0.08 } ], "parameters": []
+    },
+    {
+      "id": "attr_vida", "name": "Vida Máxima", "description": "+15 de vida máxima por nível.",
+      "kind": "attribute", "rarity": "comum", "behavior": "attribute", "tags": [], "maxLevel": 5, "evolutionOnly": false,
+      "baseStats": [], "levels": [], "grants": [ { "stat": "MaxHp", "op": "add", "scope": "player", "value": 15 } ], "parameters": []
+    },
+    {
+      "id": "attr_recuperacao", "name": "Recuperação", "description": "+0,3 de vida por segundo por nível.",
+      "kind": "attribute", "rarity": "comum", "behavior": "attribute", "tags": [], "maxLevel": 5, "evolutionOnly": false,
+      "baseStats": [], "levels": [], "grants": [ { "stat": "Regen", "op": "add", "scope": "player", "value": 0.3 } ], "parameters": []
+    },
+    {
+      "id": "attr_coleta", "name": "Coleta", "description": "+20% de raio de coleta por nível.",
+      "kind": "attribute", "rarity": "comum", "behavior": "attribute", "tags": [], "maxLevel": 5, "evolutionOnly": false,
+      "baseStats": [], "levels": [], "grants": [ { "stat": "PickupRadius", "op": "mult", "scope": "player", "value": 0.2 } ], "parameters": []
+    },
+    {
+      "id": "attr_vel_ataque", "name": "Velocidade de Ataque", "description": "−5% de recarga em todas as armas por nível.",
+      "kind": "attribute", "rarity": "comum", "behavior": "attribute", "tags": [], "maxLevel": 5, "evolutionOnly": false,
+      "baseStats": [], "levels": [], "grants": [ { "stat": "Cooldown", "op": "mult", "scope": "all", "value": -0.05 } ], "parameters": []
+    },
+    {
+      "id": "kit_primeiros_socorros", "name": "Kit de Primeiros Socorros", "description": "Recupera 30% da vida máxima. Ninguém leu o manual, mas funciona.",
+      "kind": "survival", "rarity": "comum", "behavior": "heal", "tags": [ "Suporte" ], "maxLevel": 0, "evolutionOnly": false,
+      "baseStats": [], "levels": [], "grants": [], "parameters": []
+    }
+  ],
+  "enemies": [
+    {
+      "id": "microbo_enxame", "name": "Microbô de Enxame", "role": "swarm", "behavior": "chase", "tags": [ "Maquina" ],
+      "hp": 10, "speed": 3.0, "contactDamage": 5, "contactInterval": 0.8, "radius": 0.3, "xp": 1, "cost": 1, "knockbackResist": 0,
+      "keepMin": 0, "keepMax": 0, "fireInterval": 0, "telegraph": 0, "projectileSpeed": 0, "projectileDamage": 0
+    },
+    {
+      "id": "prensa_ambulante", "name": "Prensa Ambulante", "role": "heavy", "behavior": "chase", "tags": [ "Maquina" ],
+      "hp": 70, "speed": 1.5, "contactDamage": 14, "contactInterval": 1.0, "radius": 0.7, "xp": 6, "cost": 5, "knockbackResist": 0.8,
+      "keepMin": 0, "keepMax": 0, "fireInterval": 0, "telegraph": 0, "projectileSpeed": 0, "projectileDamage": 0
+    },
+    {
+      "id": "torreta_inspecao", "name": "Torreta de Inspeção", "role": "ranged", "behavior": "kite_shoot", "tags": [ "Maquina" ],
+      "hp": 24, "speed": 2.0, "contactDamage": 3, "contactInterval": 1.0, "radius": 0.45, "xp": 3, "cost": 3, "knockbackResist": 0.2,
+      "keepMin": 5.5, "keepMax": 7, "fireInterval": 2.8, "telegraph": 0.5, "projectileSpeed": 6, "projectileDamage": 8
+    }
+  ],
+  "synergies": [
+    {
+      "id": "carga_acumulada", "name": "Carga Acumulada", "description": "A bateria guarda energia: a cada 4ª descarga, um arco amplificado.",
+      "effect": "charge_every_n", "targetAbility": "descarga_direcionada",
+      "requires": [ { "kind": "ability_level", "target": "descarga_direcionada", "value": 1 }, { "kind": "ability_level", "target": "bateria_portatil", "value": 2 } ],
+      "n": 4, "damageMult": 1, "extraChains": 2
+    }
+  ],
+  "evolutions": [
+    {
+      "id": "evo_pulso_amplificado", "name": "Pulso Amplificado", "description": "Descarga Direcionada no máximo + Bateria Portátil nível 3.",
+      "fromAbility": "descarga_direcionada", "resultAbility": "pulso_amplificado",
+      "requires": [ { "kind": "ability_level", "target": "descarga_direcionada", "value": 5 }, { "kind": "ability_level", "target": "bateria_portatil", "value": 3 } ],
+      "discoverable": false
+    },
+    {
+      "id": "evo_rotor_de_impacto", "name": "Rotor de Impacto", "description": "Uma combinação mecânica ainda não documentada.",
+      "fromAbility": "braco_giratorio", "resultAbility": "rotor_de_impacto",
+      "requires": [ { "kind": "ability_level", "target": "braco_giratorio", "value": 5 }, { "kind": "ability_level", "target": "turbina", "value": 3 } ],
+      "discoverable": true
+    }
+  ]
+}
