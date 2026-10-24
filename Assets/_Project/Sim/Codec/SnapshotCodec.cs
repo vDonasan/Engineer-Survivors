@@ -33,6 +33,7 @@ namespace ES.Sim
         public float SpecialCooldown, SpecialActiveLeft;
         public int Level;
         public float XpProgress;
+        public float MoveSpeed;
         public int Tick;
 
         public const byte FlagInvulnerable = 1, FlagSpecialActive = 2, FlagHasOffer = 4;
@@ -77,8 +78,8 @@ namespace ES.Sim
         const int RunHeaderSize = 2;
 
         const byte RunPlayers = 1, RunEnemies = 2, RunHostile = 3, RunCosmetic = 4;
-        // Jogador: slot, status, x, y, vx, vy, fx, fy, hp, maxHp, flags, seq, recarga, ativo, nível, xp.
-        const int PlayerSize = 21, EnemySize = 7, HostileSize = 7, CosmeticSize = 20;
+        // Jogador: slot, status, x, y, vx, vy, fx, fy, hp, maxHp, flags, seq, recarga, ativo, nível, xp, velocidade.
+        const int PlayerSize = 22, EnemySize = 7, HostileSize = 7, CosmeticSize = 20;
         const byte BitElite = 1 << 5, BitStunned = 1 << 6, BitFlash = 1 << 7;
 
         // Estado do escritor (só o host escreve, numa thread).
@@ -121,6 +122,7 @@ namespace ES.Sim
                 PutU8(Tenths(p.SpecialActiveLeft));
                 PutU8((byte)Math.Min(255, p.Progress.Level));
                 PutU8((byte)Math.Min(255, Math.Round(255f * p.Progress.Xp / Math.Max(1, XpCurve.ToNext(w.Rules, p.Progress.Level)))));
+                PutU8((byte)Math.Min(255, Math.Round(p.Stats.Get(StatId.MoveSpeed) * 10f)));
             }
 
             var h = w.Hostile;
@@ -314,7 +316,7 @@ namespace ES.Sim
             r.TryU8(out byte flags);
             r.TryU16(out ushort seq);
             r.TryU8(out byte cd); r.TryU8(out byte active);
-            r.TryU8(out byte level); r.TryU8(out byte xp);
+            r.TryU8(out byte level); r.TryU8(out byte xp); r.TryU8(out byte speed);
             into.Players[slot] = new PlayerSnap
             {
                 Present = true,
@@ -330,6 +332,7 @@ namespace ES.Sim
                 SpecialActiveLeft = active / 10f,
                 Level = level,
                 XpProgress = xp / 255f,
+                MoveSpeed = speed / 10f,
                 Tick = tick,
             };
         }

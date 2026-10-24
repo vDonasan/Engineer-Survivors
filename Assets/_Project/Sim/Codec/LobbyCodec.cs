@@ -5,6 +5,46 @@ namespace ES.Sim
     /// <summary>Mensagens de sala: boas-vindas, recusa e início de partida.</summary>
     public static class LobbyCodec
     {
+        public static void WriteLobby(ByteWriter w, LobbyState s)
+        {
+            w.U8((byte)s.Difficulty);
+            w.Bool(s.Started);
+            w.U8((byte)s.Players.Count);
+            foreach (var p in s.Players)
+            {
+                w.U8((byte)p.Slot);
+                w.Str(p.Name);
+                w.Str(p.SpecializationId);
+            }
+        }
+
+        public static bool TryReadLobby(byte[] data, int length, LobbyState into)
+        {
+            var r = new ByteReader(data, length);
+            if (!r.TryU8(out byte diff) || !r.TryBool(out bool started) || !r.TryU8(out byte n)) return false;
+            if (diff > (byte)Difficulty.Hard || n > PlayerStore.MaxSlots) return false;
+            var list = new System.Collections.Generic.List<LobbyEntry>(n);
+            for (int i = 0; i < n; i++)
+            {
+                if (!r.TryU8(out byte slot) || slot >= PlayerStore.MaxSlots || !r.TryStr(64, out string name) || !r.TryStr(32, out string spec)) return false;
+                list.Add(new LobbyEntry { Slot = slot, Name = HelloCodec.SanitizeName(name), SpecializationId = spec });
+            }
+            if (r.Remaining != 0) return false;
+            into.Difficulty = (Difficulty)diff;
+            into.Started = started;
+            into.Players.Clear();
+            into.Players.AddRange(list);
+            return true;
+        }
+
+        public static void WritePick(ByteWriter w, string specializationId) => w.Str(specializationId);
+
+        public static bool TryReadPick(byte[] data, int length, out string specializationId)
+        {
+            var r = new ByteReader(data, length);
+            return r.TryStr(32, out specializationId) && r.Remaining == 0;
+        }
+
         public static void WriteWelcome(ByteWriter w, int slot) => w.U8((byte)slot);
 
         public static bool TryReadWelcome(byte[] data, int length, out int slot)
