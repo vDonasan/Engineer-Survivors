@@ -30,6 +30,10 @@ namespace ES.Sim
         /// <summary>XP coletado neste tick, distribuído pela progressão.</summary>
         public float PendingXp;
 
+        public bool SpawningEnabled = true;
+        public float SpawnAccumulator;
+        public float NextSurgeAt;
+
         public World(GameDatabase db, MatchConfig cfg)
         {
             Db = db ?? throw new ArgumentNullException(nameof(db));
@@ -39,6 +43,7 @@ namespace ES.Sim
             Arena = db.Arena(cfg.ArenaId) ?? throw new ArgumentException("arena inexistente: " + cfg.ArenaId);
             Dt = 1f / Rules.tickRate;
             Rng = new Rng(cfg.Seed);
+            NextSurgeAt = db.Def.spawn.surgeIntervalSeconds;
 
             Enemies = new EnemyStore(Rules.capEnemies);
             Hostile = new ProjectileStore(Rules.capHostileProjectiles);
@@ -86,6 +91,8 @@ namespace ES.Sim
             Elapsed += Dt;
 
             MovementSystem.Step(this, inputs);
+            SpawnDirector.Step(this, Dt);
+            EnemyAISystem.Step(this, Dt);
         }
     }
 }

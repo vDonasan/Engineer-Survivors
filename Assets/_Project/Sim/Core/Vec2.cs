@@ -19,6 +19,8 @@ namespace ES.Sim
         public static Vec2 operator *(Vec2 a, float s) => new Vec2(a.X * s, a.Y * s);
         public static Vec2 operator *(float s, Vec2 a) => new Vec2(a.X * s, a.Y * s);
         public static Vec2 operator /(Vec2 a, float s) => new Vec2(a.X / s, a.Y / s);
+        public static bool operator ==(Vec2 a, Vec2 b) => a.X == b.X && a.Y == b.Y;
+        public static bool operator !=(Vec2 a, Vec2 b) => !(a == b);
 
         public float LengthSq() => X * X + Y * Y;
         public float Length() => (float)Math.Sqrt(X * X + Y * Y);
