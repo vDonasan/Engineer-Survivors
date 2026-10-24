@@ -1,47 +1,99 @@
-// Gera a arte do jogo: SVG (por código) -> PNG em Assets/_Project/Art/<Categoria>/<id>.png
-// e um manifest.json com tamanho, pivô e bordas (9-slice) de cada sprite.
+// Gera a pixel art do jogo pixel a pixel em PNG (sem rasterizador, sem redimensionamento).
 // Uso: npm --prefix ArtSource run build
-import { Resvg } from '@resvg/resvg-js';
 import { createHash } from 'node:crypto';
-import { mkdirSync, writeFileSync, readFileSync } from 'node:fs';
-import { join, dirname } from 'node:path';
+import { mkdirSync, writeFileSync, readFileSync, readdirSync, rmSync, existsSync, statSync } from 'node:fs';
+import { join, dirname, relative, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { characterSprites } from './lib/characters.mjs';
+import { encodePng } from './lib/png.mjs';
+import { characterSprites, SPECS, CHAR_ANIMS } from './lib/characters.mjs';
 import { enemySprites } from './lib/enemies.mjs';
-import { arenaSprites } from './lib/arena.mjs';
+import { worldSprites } from './lib/world.mjs';
 import { iconSprites } from './lib/icons.mjs';
-import { portraitSprites } from './lib/portraits.mjs';
-import { fxSprites } from './lib/fx.mjs';
+import { portraitSprites, EMOTIONS } from './lib/portraits.mjs';
+
+export { SPECS, CHAR_ANIMS };
 
 const here = dirname(fileURLToPath(import.meta.url));
 const root = join(here, '..');
+export const CATEGORIES = ['Characters', 'Enemies', 'Bosses', 'Weapons', 'Abilities', 'Effects', 'Tilesets', 'Environment', 'UI', 'Portraits'];
 
 export function allSprites() {
   const content = JSON.parse(readFileSync(join(root, 'Assets', '_Project', 'Content', 'Data', 'sp1-content.json'), 'utf8'));
-  return [...characterSprites(), ...enemySprites(), ...arenaSprites(), ...iconSprites(content), ...portraitSprites(), ...fxSprites()];
+  return [...characterSprites(), ...enemySprites(), ...worldSprites(), ...iconSprites(content), ...portraitSprites()];
 }
 
-export async function buildAll({ outDir = join(root, 'Assets', '_Project', 'Art'), dryRun = false } = {}) {
+function listPngs(dir) {
+  if (!existsSync(dir)) return [];
+  return readdirSync(dir).flatMap((n) => {
+    const f = join(dir, n);
+    return statSync(f).isDirectory() ? listPngs(f) : n.endsWith('.png') ? [f] : [];
+  });
+}
+
+function removeEmptyDirs(dir) {
+  if (!existsSync(dir)) return;
+  for (const n of readdirSync(dir)) { const f = join(dir, n); if (existsSync(f) && statSync(f).isDirectory()) removeEmptyDirs(f); }
+  const left = readdirSync(dir).filter((n) => !n.endsWith('.meta'));
+  if (left.length === 0 && !CATEGORIES.some((c) => dir.endsWith(sep + c))) {
+    rmSync(dir, { recursive: true, force: true });
+    rmSync(dir + '.meta', { force: true });
+  }
+}
+
+function animationsDoc(sprites) {
+  const lines = ['# Animações e spritesheets (gerado por ArtSource — não editar à mão)', '',
+    'Pixel art nativo. Personagens 32×32 px, PPU 32, pivô nos pés (x=16, y=1 a partir de baixo).',
+    'Um quadro por arquivo: `Characters/<engenharia>/char_<engenharia>_<animação>_<direção>_<quadro>.png`.',
+    'Direções: `down`, `up`, `left`, `right` (direita = espelho exato da esquerda). Animações sem direção usam `down`.', '',
+    '| Animação | Direções | Quadros |', '|---|---|---|',
+    ...Object.entries(CHAR_ANIMS).map(([a, { dirs, frames }]) => `| ${a} | ${dirs.join(', ')} | ${frames} |`), '',
+    '## Registro por engenharia', ''];
+  for (const spec of SPECS) {
+    const done = Object.entries(CHAR_ANIMS).map(([a, { dirs, frames }]) => {
+      const ok = dirs.every((d) => [...Array(frames).keys()].every((f) => sprites.some((s) => s.id === `char_${spec}_${a}_${d}_${f}`)));
+      return `${a} ${ok ? '✔' : '✘'}`;
+    });
+    lines.push(`- **${spec}**: ${done.join(' · ')}`);
+  }
+  lines.push('', `## Retratos (64×64)`, '', `Emoções: ${EMOTIONS.join(', ')} — \`Portraits/portrait_<engenharia>_<emoção>.png\`.`);
+  lines.push('', '## Inimigos', '', 'Microbô 16×16, torreta 32×32, prensa 48×48; 2 quadros cada + variante elite (contorno magenta).');
+  return lines.join('\n') + '\n';
+}
+
+export function buildAll({ outDir = join(root, 'Assets', '_Project', 'Art'), dryRun = false } = {}) {
   const sprites = allSprites();
   const ids = new Set();
   const manifest = { sprites: [], hashes: {} };
+  const written = new Set();
   for (const s of sprites) {
     if (ids.has(s.id)) throw new Error(`sprite duplicado: ${s.id}`);
     ids.add(s.id);
-    const png = new Resvg(s.svg, { fitTo: { mode: 'original' }, font: { loadSystemFonts: false } }).render().asPng();
-    const file = `${s.category}/${s.id}.png`;
+    if (s.px.w !== s.w || s.px.h !== s.h) throw new Error(`tamanho incoerente: ${s.id}`);
+    const png = encodePng(s.w, s.h, s.px.toRGBA());
+    const file = s.sub ? `${s.category}/${s.sub}/${s.id}.png` : `${s.category}/${s.id}.png`;
     manifest.hashes[s.id] = createHash('sha1').update(png).digest('hex');
     manifest.sprites.push({ id: s.id, category: s.category, file, w: s.w, h: s.h, pivot: s.pivot, border: s.border || null });
     if (!dryRun) {
-      mkdirSync(join(outDir, s.category), { recursive: true });
-      writeFileSync(join(outDir, file), png);
+      const full = join(outDir, file);
+      mkdirSync(dirname(full), { recursive: true });
+      const old = existsSync(full) ? readFileSync(full) : null;
+      if (!old || !old.equals(png)) writeFileSync(full, png);
+      written.add(full);
     }
   }
-  if (!dryRun) writeFileSync(join(outDir, 'manifest.json'), JSON.stringify({ sprites: manifest.sprites }, null, 2));
+  if (!dryRun) {
+    for (const f of listPngs(outDir)) if (!written.has(f)) { rmSync(f); rmSync(f + '.meta', { force: true }); }
+    for (const c of CATEGORIES) mkdirSync(join(outDir, c), { recursive: true });
+    removeEmptyDirs(outDir);
+    writeFileSync(join(outDir, 'manifest.json'), JSON.stringify({ sprites: manifest.sprites }, null, 1));
+    writeFileSync(join(outDir, 'ANIMACOES.md'), animationsDoc(manifest.sprites));
+    writeFileSync(join(outDir, 'Bosses', 'LEIA-ME.txt'), 'Chefes chegam no SP5 (sprites maiores, mesma linguagem de pixel art).\n');
+  }
+  void relative;
   return manifest;
 }
 
 if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
-  const m = await buildAll();
-  console.log(`${m.sprites.length} sprites gerados.`);
+  const m = buildAll();
+  console.log(`${m.sprites.length} sprites de pixel art gerados.`);
 }

@@ -1,31 +1,26 @@
-// Paleta "noir industrial": base escura e dessaturada, acentos saturados por especialização.
-export const P = {
-  outline: '#14161b',
-  shadow: 'rgba(0,0,0,0.38)',
-
-  graphite: '#2c3038', graphiteL: '#3e444e', graphiteD: '#1d2026',
-  steel: '#7b8592', steelL: '#a7b0bb', steelD: '#525a64',
-  rust: '#8a4b2f', rustL: '#b3683f', rustD: '#5c311e',
-  petrol: '#1f4a4e', petrolL: '#2f6a6f', petrolD: '#143235',
-  hazard: '#e8b923', hazardD: '#9e7a10',
-  concrete: '#4a4f57', concreteL: '#5b616a', concreteD: '#363a40',
-
-  amber: '#ffb52e', amberL: '#ffd683',
-  cyan: '#3fe0ff', cyanL: '#b0f3ff', cyanD: '#1a8fb0',
-  orange: '#ff7a1a', orangeL: '#ffa866', orangeD: '#b44c04',
-  danger: '#ff3b3b', dangerL: '#ff9090', dangerD: '#a51717',
-  elite: '#ff3df0',
-  heal: '#4dff88', healD: '#169a45',
-  xp: '#5fd6ff',
-  white: '#eef1f4',
-  cloth: '#d9d2c3', clothD: '#ada592',
-  denim: '#34465e', denimD: '#243246',
-  boot: '#2a211c',
-
-  skinA: '#8d5a3b', skinAL: '#a9744f', skinAD: '#6a4029',
-  skinB: '#e2b28c', skinBL: '#f0c9a6', skinBD: '#bf8a64',
-  hairA: '#1f1617', hairB: '#5a3a26',
-  bags: '#5b3f4a',
+// Paleta única do jogo ("noir industrial"). Todo pixel de personagem/inimigo vem daqui.
+export const C = {
+  outline: '#14161b', black: '#22252c', white: '#eef1f4', offwhite: '#c9cdd2', dirt: '#8a7e6a',
+  gray1: '#2c3038', gray2: '#3e444e', gray3: '#5a626d', gray4: '#7d8794', gray5: '#a7b0bb',
+  rust1: '#5c311e', rust2: '#8a4b2f', rust3: '#b3683f',
+  petrol1: '#143235', petrol2: '#1f4a4e', petrol3: '#2f6a6f',
+  denim1: '#243246', denim2: '#34465e',
+  purple1: '#2e2346', purple2: '#46356b', purple3: '#6a52a0',
+  teal1: '#1b3b3a', teal2: '#2b5d58',
+  lime1: '#7aa31c', lime2: '#b8e02c',
+  sky1: '#5d8fb5', sky2: '#93c6e6',
+  yellow1: '#a37f12', yellow2: '#e8b923', yellow3: '#ffe27a',
+  orange1: '#b44c04', orange2: '#ff7a1a', orange3: '#ffb066',
+  red1: '#8f1d1d', red2: '#e03a3a', red3: '#ff9090',
+  green1: '#169a45', green2: '#4dff88', toxic: '#a6ff3d',
+  cyan1: '#1a8fb0', cyan2: '#3fe0ff', cyan3: '#b0f3ff',
+  amber: '#ffb52e', magenta: '#ff3df0', magenta2: '#a01f99',
+  skinA1: '#3d2216', skinA2: '#5a3524', skinA3: '#7a4a32',
+  skinB1: '#6a4029', skinB2: '#8d5a3b', skinB3: '#a9744f',
+  skinC1: '#9a6a48', skinC2: '#c08b67', skinC3: '#e2b28c',
+  skinD1: '#b9906f', skinD2: '#e0bfa2', skinD3: '#f4dccb',
+  hairBlack: '#1c1617', hairBrown: '#4a3024', hairAuburn: '#8a3a20', hairTeal: '#1d5a5a',
+  bags: '#4a3540',
 };
 
-export const rarityColor = { comum: P.steelL, incomum: P.cyan, raro: P.amber };
+export const PALETTE_HEX = [...new Set(Object.values(C))];

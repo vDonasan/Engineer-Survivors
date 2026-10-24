@@ -2,12 +2,10 @@
   "name": "es-art-source",
   "private": true,
   "type": "module",
-  "description": "Gera a arte original de Engineering Survivors (SVG -> PNG) para Assets/_Project/Art.",
+  "description": "Gera a pixel art nativa de Engineering Survivors (mapas de pixels -> PNG) para Assets/_Project/Art.",
   "scripts": {
     "build": "node build.mjs",
-    "test": "node --test"
-  },
-  "dependencies": {
-    "@resvg/resvg-js": "2.6.2"
+    "test": "node --test",
+    "sheet": "node sheet.mjs"
   }
 }

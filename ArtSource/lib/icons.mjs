@@ -1,52 +1,48 @@
-import { P, rarityColor } from './palette.mjs';
-import { svg, rect, circle, ellipse, path, line, poly, g, glowFilter, bolt } from './svg.mjs';
+// Ícones de habilidades 32×32 (moldura na cor da raridade).
+import { C } from './palette.mjs';
+import { Px, rect, box, line, disc, ellipse, circleLine, stamp } from './draw.mjs';
 
-// Ícones 64×64: moldura com a cor da raridade e símbolo legível em tamanho pequeno.
-const none = { stroke: 'none', sw: 0 };
+const RARITY = { comum: C.gray5, incomum: C.cyan2, raro: C.amber };
 
-function frame(rarity, inner) {
-  return rect(3, 3, 58, 58, P.graphiteD, { r: 10, stroke: rarityColor[rarity] || P.steelL, sw: 3.5 }) +
-    rect(7, 7, 50, 50, P.graphite, { r: 7, stroke: 'none', sw: 0 }) + inner;
+function frame(rarity) {
+  const p = new Px(32, 32);
+  box(p, 0, 0, 32, 32, RARITY[rarity] || C.gray5);
+  box(p, 1, 1, 30, 30, C.gray1);
+  rect(p, 2, 2, 28, 1, C.gray2);
+  return p;
 }
 
-const glow = (b) => `<g filter="url(#ig)">${b}</g>`;
+const bolt = (p, dx, col) => stamp(p, ['....OOO', '...OYYO', '..OYYO.', '.OYYOOO', 'OYYYYYO', 'OOOYYO.', '..OYYO.', '.OYYO..', '.OYO...', '.OO....'], { O: C.outline, Y: col }, 11 + dx, 10);
 
-const SYMBOLS = {
-  descarga_direcionada: () => glow(poly([[36, 8], [18, 34], [30, 34], [24, 56], [46, 26], [33, 26], [40, 8]], P.cyan, { stroke: P.outline, sw: 2.5 }) +
-    poly([[35, 13], [24, 31], [33, 31], [29, 45], [41, 29], [30, 29]], P.cyanL, { stroke: 'none', sw: 0 })),
-  braco_giratorio: () => circle(32, 32, 7, P.steel, { sw: 2.5 }) + g(rect(-4, -22, 8, 18, P.steelL, { r: 3, sw: 2.5 }) + rect(-8, -26, 16, 7, P.orange, { r: 2, sw: 2.5 }), 'translate(32 32) rotate(35)') +
-    path('M14 44 A20 20 0 0 0 44 50', 'none', { stroke: P.white, sw: 2.5, extra: 'stroke-dasharray="4 4"' }),
-  laser_industrial: () => rect(10, 26, 16, 12, P.steel, { r: 2, sw: 2.5 }) + glow(rect(26, 29.5, 28, 5, P.orange, { r: 2.5, stroke: 'none', sw: 0 }) + rect(26, 31, 28, 2, P.amberL, none)),
-  campo_eletromagnetico: () => glow(circle(32, 32, 20, 'none', { stroke: P.cyan, sw: 2.5, extra: 'stroke-dasharray="6 4"' }) + circle(32, 32, 12, 'none', { stroke: P.cyanL, sw: 2 })) +
-    path('M26 26 v10 a6 6 0 0 0 12 0 v-10', 'none', { stroke: P.danger, sw: 4 }),
-  bateria_portatil: () => rect(18, 16, 28, 38, P.graphiteL, { r: 4, sw: 3 }) + rect(26, 11, 12, 6, P.steel, { r: 2, sw: 2.5 }) +
-    [0, 1, 2].map((i) => rect(22, 42 - i * 10, 20, 7, P.heal, { r: 2, sw: 1.5 })).join(''),
-  turbina: () => circle(32, 32, 20, P.graphiteL, { sw: 3 }) + [0, 1, 2, 3, 4].map((i) => g(path('M0 0 q10 -6 16 -2 q-8 4 -16 2 Z', P.steelL, { sw: 1.8 }), `translate(32 32) rotate(${i * 72})`)).join('') + circle(32, 32, 4, P.orange, { sw: 2 }),
-  pulso_amplificado: () => glow([[-12, P.cyan], [12, P.cyan], [0, P.amber]].map(([dx, c]) =>
-    poly([[36 + dx, 8], [22 + dx, 32], [31 + dx, 32], [26 + dx, 54], [42 + dx, 28], [33 + dx, 28], [39 + dx, 8]], c, { stroke: P.outline, sw: 2 })).join('')),
-  rotor_de_impacto: () => circle(32, 32, 9, P.orange, { sw: 2.5 }) + [0, 1, 2].map((i) => g(rect(-3.5, -24, 7, 15, P.steelL, { r: 2, sw: 2.5 }), `translate(32 32) rotate(${i * 120 + 15})`)).join('') +
-    path('M8 22 h10 M6 32 h10 M8 42 h10', 'none', { stroke: P.white, sw: 2.5 }),
-  attr_dano: () => poly([[32, 8], [37, 24], [54, 22], [41, 33], [50, 50], [32, 40], [14, 50], [23, 33], [10, 22], [27, 24]], P.danger, { sw: 2.5 }),
-  attr_vida: () => path('M32 52 L13 32 a10 10 0 0 1 19 -12 a10 10 0 0 1 19 12 Z', P.danger, { sw: 2.5 }) + path('M14 34 h10 l3 -6 l5 12 l3 -6 h14', 'none', { stroke: P.white, sw: 2.5 }),
-  attr_recuperacao: () => path('M32 12 a20 20 0 1 1 -18 11', 'none', { stroke: P.heal, sw: 4 }) + poly([[10, 18], [20, 18], [14, 28]], P.heal, { sw: 1.5 }) +
-    path('M28 22 h8 v6 h6 v8 h-6 v6 h-8 v-6 h-6 v-8 h6 Z', P.white, { sw: 2 }),
-  attr_coleta: () => path('M18 14 v18 a14 14 0 0 0 28 0 v-18 h-8 v18 a6 6 0 0 1 -12 0 v-18 Z', P.danger, { sw: 2.5 }) + rect(18, 14, 8, 7, P.steelL, { sw: 2 }) + rect(38, 14, 8, 7, P.steelL, { sw: 2 }),
-  attr_vel_ataque: () => circle(32, 34, 18, P.white, { sw: 3 }) + line(32, 34, 32, 22, P.outline, 3) + line(32, 34, 41, 38, P.outline, 3) + rect(28, 10, 8, 6, P.steel, { sw: 2 }) + path('M8 24 h8 M6 32 h8', 'none', { stroke: P.amber, sw: 3 }),
-  kit_primeiros_socorros: () => rect(12, 18, 40, 32, P.white, { r: 5, sw: 3 }) + rect(24, 12, 16, 8, P.steel, { r: 2, sw: 2.5 }) + rect(28, 24, 8, 20, P.danger, none) + rect(22, 30, 20, 8, P.danger, none),
-  apagao: () => glow(circle(32, 32, 22, 'none', { stroke: P.cyan, sw: 3 })) + path('M24 36 a10 10 0 1 1 16 0 v6 h-16 Z', P.graphiteL, { sw: 2.5 }) + rect(25, 42, 14, 6, P.steel, { sw: 2 }) +
-    path('M29 26 l4 6 h-4 l4 6', 'none', { stroke: P.amber, sw: 2.5 }),
-  turbina_emergencia: () => glow(path('M20 52 q12 -14 24 0 q-6 6 -12 4 q-6 2 -12 -4 Z', P.orange, { stroke: P.orangeD, sw: 2 })) + circle(32, 28, 16, P.graphiteL, { sw: 3 }) +
-    [0, 1, 2, 3].map((i) => g(path('M0 0 q8 -5 13 -1 q-7 3 -13 1 Z', P.steelL, { sw: 1.6 }), `translate(32 28) rotate(${i * 90})`)).join(''),
+const SYMBOL = {
+  descarga_direcionada: (p) => bolt(p, 1, C.cyan2),
+  pulso_amplificado: (p) => { bolt(p, -5, C.cyan2); bolt(p, 6, C.cyan2); bolt(p, 1, C.amber); },
+  braco_giratorio: (p) => { disc(p, 15.5, 15.5, 3, C.gray4); line(p, 16, 15, 22, 8, C.outline); line(p, 17, 15, 23, 9, C.gray5); box(p, 21, 5, 6, 5, C.orange2); for (let a = 0; a < 6; a++) p.set(Math.round(15.5 + Math.cos(2 + a * 0.5) * 10), Math.round(15.5 + Math.sin(2 + a * 0.5) * 10), C.white); },
+  rotor_de_impacto: (p) => { disc(p, 15.5, 15.5, 4, C.orange2); for (const [x, y] of [[15, 5], [7, 21], [24, 21]]) { line(p, 15, 15, x, y, C.outline); box(p, x - 2, y - 2, 5, 5, C.gray5); } line(p, 4, 10, 8, 10, C.white); line(p, 3, 14, 7, 14, C.white); },
+  laser_industrial: (p) => { box(p, 5, 12, 9, 8, C.gray4); rect(p, 7, 14, 4, 1, C.cyan2); box(p, 13, 14, 15, 4, C.orange2); rect(p, 14, 15, 13, 2, C.yellow3); },
+  campo_eletromagnetico: (p) => { circleLine(p, 15.5, 15.5, 11, C.cyan2); circleLine(p, 15.5, 15.5, 7, C.cyan3); stamp(p, ['OO..OO', 'OR..RO', 'OR..RO', 'ORRRRO', '.OOOO.'], { O: C.outline, R: C.red2 }, 13, 13); },
+  bateria_portatil: (p) => { box(p, 10, 7, 12, 20, C.gray3); box(p, 13, 5, 6, 3, C.gray5); for (let i = 0; i < 3; i++) box(p, 12, 21 - i * 6, 8, 5, C.green2); },
+  turbina: (p) => { disc(p, 15.5, 15.5, 11, C.gray3); for (let i = 0; i < 5; i++) { const a = i * 1.2566; line(p, 16, 16, Math.round(16 + Math.cos(a) * 9), Math.round(16 + Math.sin(a) * 9), C.gray5); } disc(p, 15.5, 15.5, 2, C.orange2); },
+  attr_dano: (p) => stamp(p, ['......OO......', '.....ORRO.....', 'OO..ORRRRO..OO', 'ORRORRRRRRORRO', '.ORRRRRRRRRRO.', '..ORRRRRRRRO..', '.ORRRRRRRRRRO.', 'ORRRRRRRRRRRRO', '.OOORRRRRROOO.', '....ORROORO...', '.....OO..OO...'], { O: C.outline, R: C.red2 }, 9, 10),
+  attr_vida: (p) => { stamp(p, ['.OOO..OOO.', 'ORRRO ORRRO'.replace(' ', 'O'), 'ORRRRRRRRRO', 'ORRRRRRRRRO', '.ORRRRRRRO.', '..ORRRRRO..', '...ORRRO...', '....ORO....', '.....O.....'], { O: C.outline, R: C.red2 }, 10, 10); line(p, 9, 15, 13, 15, C.white); line(p, 13, 15, 15, 12, C.white); line(p, 15, 12, 17, 18, C.white); line(p, 17, 18, 19, 15, C.white); line(p, 19, 15, 23, 15, C.white); },
+  attr_recuperacao: (p) => { circleLine(p, 15.5, 15.5, 10, C.green2); rect(p, 13, 9, 6, 14, C.white); rect(p, 9, 13, 14, 6, C.white); },
+  attr_coleta: (p) => stamp(p, ['OOOO..OOOO', 'OWWO..OWWO', 'ORRO..ORRO', 'ORRO..ORRO', 'ORRO..ORRO', 'ORROOOORRO', '.ORRRRRRO.', '..OOOOOO..'], { O: C.outline, W: C.gray5, R: C.red2 }, 11, 11),
+  attr_vel_ataque: (p) => { disc(p, 17.5, 17.5, 8, C.white); line(p, 17, 17, 17, 12, C.outline); line(p, 17, 17, 21, 19, C.outline); box(p, 15, 7, 5, 3, C.gray4); line(p, 4, 13, 8, 13, C.amber); line(p, 3, 17, 7, 17, C.amber); line(p, 4, 21, 8, 21, C.amber); },
+  kit_primeiros_socorros: (p) => { box(p, 6, 9, 20, 16, C.white); box(p, 12, 6, 8, 4, C.gray4); rect(p, 14, 12, 4, 10, C.red2); rect(p, 11, 15, 10, 4, C.red2); },
+  apagao: (p) => { circleLine(p, 15.5, 15.5, 12, C.cyan2); disc(p, 15.5, 13.5, 6, C.gray2); box(p, 12, 19, 8, 5, C.gray4); stamp(p, ['.YY', 'YY.', '.YY', 'YY.'], { Y: C.amber }, 14, 10); },
+  turbina_emergencia: (p) => { disc(p, 15.5, 13.5, 9, C.gray3); for (let i = 0; i < 4; i++) { const a = i * 1.5708 + 0.4; line(p, 16, 14, Math.round(16 + Math.cos(a) * 7), Math.round(14 + Math.sin(a) * 7), C.gray5); } stamp(p, ['.O.O.O.', 'OYOYOYO', 'OYYYYYO', '.OOOOO.'], { O: C.orange1, Y: C.orange2 }, 12, 24); },
 };
 
 export function iconSprites(content) {
   const out = [];
-  const rarityOf = new Map(content.abilities.map((a) => [a.id, a.rarity]));
-  for (const s of content.specials) rarityOf.set(s.id, 'raro');
-  for (const [id, rarity] of rarityOf) {
-    const sym = SYMBOLS[id];
-    if (!sym) throw new Error(`sem símbolo para o ícone ${id}`);
-    out.push({ id: `icon_${id}`, category: 'Icons', w: 64, h: 64, pivot: [0.5, 0.5], svg: svg(64, 64, frame(rarity, sym()), glowFilter('ig', 1.6)) });
+  const rarity = new Map(content.abilities.map((a) => [a.id, a.rarity]));
+  for (const s of content.specials) rarity.set(s.id, 'raro');
+  for (const [id, r] of rarity) {
+    const fn = SYMBOL[id];
+    if (!fn) throw new Error(`sem ícone para ${id}`);
+    const p = frame(r);
+    fn(p);
+    out.push({ id: `icon_${id}`, category: 'Abilities', w: 32, h: 32, pivot: [16, 16], px: p });
   }
   return out;
 }
