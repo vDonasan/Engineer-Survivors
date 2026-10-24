@@ -19,6 +19,7 @@ namespace ES.Sim
 
         /// <summary>Tempo restante de um especial com duração (ex.: Turbina).</summary>
         public float SpecialActiveLeft;
+        public SpecialState Special;
 
         public ushort LastInputSeq;
         public PlayerInput LastInput = PlayerInput.None;

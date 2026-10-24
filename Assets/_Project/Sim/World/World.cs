@@ -87,7 +87,11 @@ namespace ES.Sim
             }
 
             for (int i = 0; i < n; i++)
-                AbilitySystem.Grant(this, i, Db.Specialization(Players.Slots[i].Specialization).StartingAbility);
+            {
+                var spec = Db.Specialization(Players.Slots[i].Specialization);
+                Players.Slots[i].Special = new SpecialState { SpecialIndex = spec.Special, SourceId = NextSourceId++ };
+                AbilitySystem.Grant(this, i, spec.StartingAbility);
+            }
         }
 
         public void Step(PlayerInput[] inputs)
@@ -98,9 +102,11 @@ namespace ES.Sim
             Elapsed += Dt;
 
             MovementSystem.Step(this, inputs);
+            SpecialSystem.ApplyInputs(this, inputs);
             SpawnDirector.Step(this, Dt);
             EnemyAISystem.Step(this, Dt);
             AbilitySystem.Step(this, Dt);
+            SpecialSystem.Step(this, Dt);
             CombatSystem.Step(this, Dt);
         }
     }
