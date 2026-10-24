@@ -84,6 +84,8 @@ namespace ES.Sim
             Events.Clear();
             Tick++;
             Elapsed += Dt;
+
+            MovementSystem.Step(this, inputs);
         }
     }
 }
