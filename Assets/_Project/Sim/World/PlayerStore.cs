@@ -15,6 +15,7 @@ namespace ES.Sim
         public float Hp;
         public float InvulnUntil;
         public readonly StatBlock Stats = new StatBlock();
+        public readonly System.Collections.Generic.List<AbilityInstance> Abilities = new System.Collections.Generic.List<AbilityInstance>(12);
 
         /// <summary>Tempo restante de um especial com duração (ex.: Turbina).</summary>
         public float SpecialActiveLeft;

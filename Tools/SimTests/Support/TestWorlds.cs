@@ -18,6 +18,13 @@ namespace ES.SimTests
             return new World(db ?? Db, cfg);
         }
 
+        /// <summary>Remove as armas/habilidades de todos os jogadores (testes de contato e IA).</summary>
+        public static World Disarm(World w)
+        {
+            foreach (var p in w.Players.Slots) p?.Abilities.Clear();
+            return w;
+        }
+
         public static PlayerInput[] NoInput(int count = 4) => new PlayerInput[count].Select(_ => new PlayerInput { ChoiceIndex = -1 }).ToArray();
 
         /// <summary>Remove obstáculos da arena para testes de movimento/IA em campo aberto.</summary>

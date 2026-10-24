@@ -26,6 +26,10 @@ namespace ES.Sim
         public readonly GemStore Gems;
         public readonly EventBuffer Events;
         public readonly SpatialGrid EnemyGrid;
+        public readonly PlayerProjectileStore PlayerProjectiles = new PlayerProjectileStore(256);
+
+        /// <summary>Gerador de SourceId para modificadores concedidos.</summary>
+        public int NextSourceId = 1;
 
         /// <summary>XP coletado neste tick, distribuído pela progressão.</summary>
         public float PendingXp;
@@ -81,6 +85,9 @@ namespace ES.Sim
                 p.Hp = p.Stats.Get(StatId.MaxHp);
                 Players.Slots[i] = p;
             }
+
+            for (int i = 0; i < n; i++)
+                AbilitySystem.Grant(this, i, Db.Specialization(Players.Slots[i].Specialization).StartingAbility);
         }
 
         public void Step(PlayerInput[] inputs)
@@ -93,6 +100,7 @@ namespace ES.Sim
             MovementSystem.Step(this, inputs);
             SpawnDirector.Step(this, Dt);
             EnemyAISystem.Step(this, Dt);
+            AbilitySystem.Step(this, Dt);
             CombatSystem.Step(this, Dt);
         }
     }

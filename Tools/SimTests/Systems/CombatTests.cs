@@ -9,7 +9,7 @@ namespace ES.SimTests.Systems
         {
             var w = TestWorlds.CreateOpen(d);
             w.SpawningEnabled = false;
-            return w;
+            return TestWorlds.Disarm(w);
         }
 
         static int Swarm(World w) => w.Db.EnemyIndex("microbo_enxame");

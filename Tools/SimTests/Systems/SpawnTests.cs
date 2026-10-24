@@ -13,6 +13,7 @@ namespace ES.SimTests.Systems
         static void MakeImmortal(World w)
         {
             foreach (var p in w.Players.Slots) if (p != null) p.InvulnUntil = float.MaxValue;
+            TestWorlds.Disarm(w);
         }
 
         [Test]
@@ -123,7 +124,7 @@ namespace ES.SimTests.Systems
             var w = TestWorlds.CreateOpen();
             w.SpawningEnabled = false;
             w.Players[0].InvulnUntil = float.MaxValue;
-            return w;
+            return TestWorlds.Disarm(w);
         }
 
         [Test]
