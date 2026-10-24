@@ -139,13 +139,19 @@ namespace ES.Sim
         public bool HostBackgrounded;
         /// <summary>Oferta de nível aberta para o jogador local.</summary>
         public LevelUpOffer CurrentOffer;
+        /// <summary>Habilidades de cada jogador (criado no início da partida).</summary>
+        public LoadoutTracker Loadouts;
+        /// <summary>Resultado enviado pelo host no fim da partida.</summary>
+        public MatchSummary Summary;
+        /// <summary>Abates da equipe contados pelos eventos EnemyDied.</summary>
+        public int TeamKills;
 
         public void ApplyRuleEvent(in DecodedRuleEvent d)
         {
             var e = d.Event;
             switch (e.Kind)
             {
-                case RuleEventKind.EnemyDied: Tracks.RemoveEnemy((ushort)e.A, e.C); break;
+                case RuleEventKind.EnemyDied: Tracks.RemoveEnemy((ushort)e.A, e.C); TeamKills++; break;
                 case RuleEventKind.GemSpawned:
                     Gems[(ushort)e.A] = new GemInfo { Pos = new Vec2(e.X, e.Y), Kind = (PickupKind)e.B, Value = e.C };
                     break;
@@ -159,6 +165,7 @@ namespace ES.Sim
                     break;
                 case RuleEventKind.MatchEnded: Phase = (MatchPhase)e.A; break;
             }
+            Loadouts?.Apply(e);
             RuleEvents.Add(d);
         }
     }

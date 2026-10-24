@@ -3,7 +3,7 @@ using System.Collections.Generic;
 namespace ES.Sim
 {
     /// <summary>Tipos de mensagem do jogo (um nome de mensagem NGO por tipo).</summary>
-    public enum MessageType : byte { Welcome = 1, Lobby, Pick, Start, Input, Snapshot, Events, HostBackground }
+    public enum MessageType : byte { Welcome = 1, Lobby, Pick, Start, Input, Snapshot, Events, HostBackground, Summary }
 
     public enum Channel : byte { Reliable, Unreliable }
 

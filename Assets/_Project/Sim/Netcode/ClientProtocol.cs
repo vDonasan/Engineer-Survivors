@@ -67,10 +67,15 @@ namespace ES.Sim
                     if (hash != _db.ContentHash) { ContentMismatch = true; return; }
                     Config = cfg;
                     Started = true;
+                    Feed.Loadouts = new LoadoutTracker(_db);
+                    Feed.Loadouts.Reset(cfg);
                     _arena = _db.Arena(cfg.ArenaId);
                     Prediction = new ClientPrediction(_db.Def.rules, _arena);
                     _sendClock = new TickClock(_db.Def.rules.tickRate, 5);
                     _needsReset = true;
+                    break;
+                case MessageType.Summary:
+                    if (SummaryCodec.TryRead(data, length, out var summary)) Feed.Summary = summary;
                     break;
                 case MessageType.Snapshot:
                     OnSnapshot(data, length);

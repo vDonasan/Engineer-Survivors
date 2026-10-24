@@ -178,6 +178,8 @@ namespace ES.Sim
             };
             World = new World(_db, cfg);
             Feed.LocalSlot = 0;
+            Feed.Loadouts = new LoadoutTracker(_db);
+            Feed.Loadouts.Reset(cfg);
 
             foreach (var e in _byPeer.Values) SendWelcome(e);
             _w.Reset();
@@ -237,6 +239,7 @@ namespace ES.Sim
                     Broadcast(MessageType.Events, Channel.Reliable);
                 }
                 foreach (var e in _rules) Feed.ApplyRuleEvent(Decode(e));
+                foreach (var e in _rules) if (e.Kind == RuleEventKind.MatchEnded) SendSummary();
             }
             if (ev.Cosmetic.Count > 0)
             {
@@ -256,6 +259,15 @@ namespace ES.Sim
                 if (cur != null && cur.OfferId == e.B) d.Options = cur.Options;
             }
             return d;
+        }
+
+        void SendSummary()
+        {
+            Feed.Summary = MatchSummary.FromWorld(World);
+            if (_byPeer.Count == 0) return;
+            _w.Reset();
+            SummaryCodec.Write(_w, Feed.Summary);
+            Broadcast(MessageType.Summary, Channel.Reliable);
         }
 
         void SendSnapshot()
