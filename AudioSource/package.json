@@ -1,0 +1,10 @@
+{
+  "name": "es-audio-source",
+  "private": true,
+  "type": "module",
+  "description": "Sintetiza os efeitos e a música de Engineering Survivors (WAV) para Assets/_Project/Audio.",
+  "scripts": {
+    "build": "node synth.mjs",
+    "test": "node --test"
+  }
+}
