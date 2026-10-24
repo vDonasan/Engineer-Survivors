@@ -31,6 +31,20 @@ namespace ES.Sim
         /// <summary>Gerador de SourceId para modificadores concedidos.</summary>
         public int NextSourceId = 1;
 
+        /// <summary>Evoluções descobertas nesta partida (códice).</summary>
+        public readonly System.Collections.Generic.HashSet<int> Discovered = new System.Collections.Generic.HashSet<int>();
+
+        /// <summary>Solo com oferta aberta: o tempo não avança até a escolha.</summary>
+        public bool PausedForChoice
+        {
+            get
+            {
+                if (Config.Coop) return false;
+                foreach (var p in Players.Slots) if (p != null && p.IsActive && p.Progress.Current != null) return true;
+                return false;
+            }
+        }
+
         /// <summary>XP coletado neste tick, distribuído pela progressão.</summary>
         public float PendingXp;
 
@@ -98,6 +112,11 @@ namespace ES.Sim
         {
             if (Phase != MatchPhase.Running) return;
             Events.Clear();
+            if (PausedForChoice)
+            {
+                ProgressionSystem.ApplyInputs(this, inputs);
+                return;
+            }
             Tick++;
             Elapsed += Dt;
 
@@ -108,6 +127,8 @@ namespace ES.Sim
             AbilitySystem.Step(this, Dt);
             SpecialSystem.Step(this, Dt);
             CombatSystem.Step(this, Dt);
+            ProgressionSystem.ApplyInputs(this, inputs);
+            ProgressionSystem.Step(this, Dt);
         }
     }
 }

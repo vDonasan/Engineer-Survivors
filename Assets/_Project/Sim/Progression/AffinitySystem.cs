@@ -4,5 +4,6 @@ namespace ES.Sim
     public static class AffinitySystem
     {
         public static void OnAbilityChanged(World w, int slot, AbilityInstance a) { }
+        public static void OnAbilityRemoved(World w, int slot, AbilityInstance a) { }
     }
 }
