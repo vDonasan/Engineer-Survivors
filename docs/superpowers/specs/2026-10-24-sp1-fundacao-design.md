@@ -209,7 +209,7 @@ Regras validadas no SP1: evolução só é oferecida com todos os requisitos ate
 ### 6.5 Arena e diretor de surgimento
 
 - **Laboratório de Pesquisa:** 64 × 64 u, paredes nas bordas, bancadas e armários como obstáculos retangulares.
-- Orçamento de surgimento por segundo: `B(t) = (1,2 + 0,55 · rampa · t_min) × orçamento × quantidade`, onde `rampa` e `orçamento` vêm do perfil de dificuldade e `quantidade` do perfil de equipe (§7). Custos: enxame 1, atirador 3, pesado 5.
+- Orçamento de surgimento por segundo: `B(t) = (2,0 + 1,1 · rampa · t_min) × orçamento × quantidade` (era 1,2 + 0,55; elevado após a linha de base com bots mostrar vitória em 72/72 com dano quase nulo — ver `docs/TESTES.md`), onde `rampa` e `orçamento` vêm do perfil de dificuldade e `quantidade` do perfil de equipe (§7). Custos: enxame 1, atirador 3, pesado 5.
 - Composição por minuto: 0–2 só enxame; 2–4 enxame 75% / atirador 25%; 4–7 enxame 60% / atirador 20% / pesado 20%; 7+ enxame 50% / atirador 25% / pesado 25%.
 - A cada 60 s, um **surto**: anel de enxame ao redor dos jogadores.
 - Inimigos nascem num anel fora da visão da câmera, dentro da arena.

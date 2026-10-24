@@ -19,14 +19,16 @@ namespace ES.SimTests.Systems
         [Test]
         public void Budget_Formula_NormalSolo_At5Min()
         {
-            Assert.That(SpawnDirector.Budget(Spawn, B(D.Normal, 1), 300f), Is.EqualTo(1.2f + 0.55f * 5).Within(1e-4));
+            var s = Spawn;
+            Assert.That(SpawnDirector.Budget(s, B(D.Normal, 1), 300f), Is.EqualTo(s.baseBudget + s.rampPerMinute * 5).Within(1e-4));
         }
 
         [Test]
         public void Budget_Hard4Players()
         {
-            float expected = (1.2f + 0.55f * 1.2f * 5f) * 1.25f * 2.2f;
-            Assert.That(SpawnDirector.Budget(Spawn, B(D.Hard, 4), 300f), Is.EqualTo(expected).Within(1e-3));
+            var s = Spawn;
+            float expected = (s.baseBudget + s.rampPerMinute * 1.2f * 5f) * 1.25f * 2.2f;
+            Assert.That(SpawnDirector.Budget(s, B(D.Hard, 4), 300f), Is.EqualTo(expected).Within(1e-3));
         }
 
         [Test]

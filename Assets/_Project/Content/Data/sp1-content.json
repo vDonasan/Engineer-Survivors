@@ -27,7 +27,7 @@
     "overrides": []
   },
   "spawn": {
-    "baseBudget": 1.2, "rampPerMinute": 0.55, "surgeIntervalSeconds": 60, "surgeCount": 24, "spawnPadding": 2,
+    "baseBudget": 2.0, "rampPerMinute": 1.1, "surgeIntervalSeconds": 60, "surgeCount": 30, "spawnPadding": 2,
     "brackets": [
       { "fromMinute": 0, "weights": [ { "enemyId": "microbo_enxame", "weight": 1 } ] },
       { "fromMinute": 2, "weights": [ { "enemyId": "microbo_enxame", "weight": 0.75 }, { "enemyId": "torreta_inspecao", "weight": 0.25 } ] },
