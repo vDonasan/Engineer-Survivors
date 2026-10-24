@@ -93,6 +93,7 @@ namespace ES.Sim
             MovementSystem.Step(this, inputs);
             SpawnDirector.Step(this, Dt);
             EnemyAISystem.Step(this, Dt);
+            CombatSystem.Step(this, Dt);
         }
     }
 }

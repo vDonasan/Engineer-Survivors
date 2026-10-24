@@ -21,6 +21,7 @@ namespace ES.Sim
 
             for (int i = 0; i < e.Count; i++)
             {
+                if ((e.Flags[i] & EnemyFlags.Dead) != 0) continue;
                 bool flashing = e.FlashUntil[i] > w.Elapsed;
                 e.Flags[i] = (byte)(flashing ? e.Flags[i] | EnemyFlags.HitFlash : e.Flags[i] & ~EnemyFlags.HitFlash);
 

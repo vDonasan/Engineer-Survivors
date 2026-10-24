@@ -6,6 +6,8 @@ namespace ES.Sim
         public const byte Stunned = 1 << 1;
         public const byte HitFlash = 1 << 2;
         public const byte Telegraphing = 1 << 3;
+        /// <summary>Morto neste tick; removido no fim do combate.</summary>
+        public const byte Dead = 1 << 4;
     }
 
     /// <summary>Inimigos em estrutura de arrays; remoção por troca com o último.</summary>
