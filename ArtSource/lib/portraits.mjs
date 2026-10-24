@@ -48,7 +48,7 @@ function headgear(p, spec, r) {
     case 'civil': ellipse(p, 31.5, 16, 16, 10, C.orange2); rect(p, 15, 21, 34, 3, C.outline); rect(p, 16, 22, 32, 1, C.orange1); for (const x of [12, 49]) box(p, x, 22, 4, 10, r.H); break;
     case 'mecanica': ellipse(p, 31.5, 18, 16, 8, C.orange2); for (const x of [22, 41]) { disc(p, x, 21, 4, C.gray5); disc(p, x, 21, 2, C.cyan2, null); } break;
     case 'mecatronica': rect(p, 18, 12, 28, 3, C.gray3); for (const x of [13, 46]) box(p, x, 24, 5, 10, C.gray3); box(p, 44, 2, 3, 10, C.gray3); p.set(45, 1, C.red2); box(p, 18, 26, 28, 4, C.cyan2); break;
-    case 'computacao': ellipse(p, 31.5, 26, 21, 22, C.purple2); break;
+    case 'computacao': break; // capuz desenhado antes do rosto em portrait()
     case 'biomedica': disc(p, 31.5, 7, 5, r.H); break;
     case 'quimica': for (const x of [14, 49]) disc(p, x, 22, 5, r.H); for (const x of [24, 39]) { box(p, x - 6, 24, 13, 8, C.gray5); rect(p, x - 4, 26, 9, 4, C.toxic); } break;
   }

@@ -1,0 +1,8 @@
+{
+  "name": "es-netproof",
+  "private": true,
+  "type": "module",
+  "description": "Prova de rede automatizada: duas páginas Chromium (host + cliente) jogando pela internet via Unity Relay.",
+  "scripts": { "proof": "node proof.mjs" },
+  "dependencies": { "playwright": "1.48.2" }
+}

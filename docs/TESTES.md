@@ -46,3 +46,11 @@ Leitura: há gradiente entre as dificuldades e o teto de 400 inimigos é atingid
 O tempo de tick (desktop, .NET) fica bem abaixo de 1 ms; a medição que vale é no navegador (pendente).
 
 Pendências desta frente (SP4): partidas humanas, afinação das 12 células, comparação entre especializações.
+
+## 2026-10-24 — Prova de rede WebGL (Task 20) — **PENDENTE (bloqueio de rede da máquina)**
+
+- Build WebGL da cena de prova: **OK** (Unity 6000.3.27f1, Brotli, 12 MB, 0 erros) em `Build/WebGL-proof`.
+- Teste automatizado criado: `node Tools/netproof/proof.mjs Build/WebGL-proof 8081` — duas páginas Chromium em contextos separados (identidades anônimas diferentes): host cria a sala (`?mode=host&autostart=2`), cliente entra pelo código, cliente anda e o teste compara o estado das duas (ticks, inimigos, posição do cliente no host). Relatório em `Build/netproof/report.json`.
+- Resultado: **não executado até o fim** — a autenticação anônima da Unity dá *timeout*. Diagnóstico: a rota padrão IPv4 da máquina está na interface **ZeroTier One**; o DNS resolve, mas TCP 443 para `player-auth.services.api.unity.com` (IPv4) e `api.github.com` não conecta; `www.google.com` funciona (IPv6). No início da sessão as mesmas chamadas funcionavam.
+- Ação necessária do autor: desconectar o ZeroTier (ou desativar a rota padrão "Allow Default" nessa rede) e rodar o comando acima de novo.
+- Observação: o painel de navegador do app suspende abas ocultas e não alcançou os serviços externos; por isso a prova usa Chromium sem interface.
