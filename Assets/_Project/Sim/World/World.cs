@@ -130,6 +130,7 @@ namespace ES.Sim
             CombatSystem.Step(this, Dt);
             ProgressionSystem.ApplyInputs(this, inputs);
             ProgressionSystem.Step(this, Dt);
+            MatchRules.Step(this);
         }
     }
 }
