@@ -36,6 +36,9 @@ namespace ES.Sim
         readonly Dictionary<ushort, Track> _hostile = new Dictionary<ushort, Track>(256);
         readonly Track[] _players = new Track[PlayerStore.MaxSlots];
         readonly List<ushort> _stale = new List<ushort>(64);
+        // inimigos mortos -> tick da morte: snapshots atrasados não os ressuscitam
+        readonly Dictionary<ushort, int> _deadAt = new Dictionary<ushort, int>(256);
+        const int DeadMemoryTicks = 300;
 
         public int EnemyCount => _enemies.Count;
         public bool TryGetEnemy(ushort id, out Track t) => _enemies.TryGetValue(id, out t);
@@ -52,13 +55,23 @@ namespace ES.Sim
 
         public void SetEnemy(ushort id, Vec2 pos, byte type, byte flags, float hp, int tick)
         {
+            if (_deadAt.TryGetValue(id, out int died))
+            {
+                if (tick <= died) return;
+                if (tick - died < DeadMemoryTicks) return; // ID só é reutilizado bem depois
+                _deadAt.Remove(id);
+            }
             bool isNew = !_enemies.TryGetValue(id, out var t);
             Push(ref t, pos, tick, isNew);
             t.Type = type; t.Flags = flags; t.Hp = hp;
             _enemies[id] = t;
         }
 
-        public void RemoveEnemy(ushort id) => _enemies.Remove(id);
+        public void RemoveEnemy(ushort id, int tick = int.MaxValue)
+        {
+            _enemies.Remove(id);
+            if (tick != int.MaxValue) _deadAt[id] = tick;
+        }
 
         public void SetHostile(ushort id, Vec2 pos, byte type, int tick)
         {
@@ -81,6 +94,7 @@ namespace ES.Sim
         public void Clear()
         {
             _enemies.Clear();
+            _deadAt.Clear();
             _hostile.Clear();
             for (int i = 0; i < _players.Length; i++) _players[i] = default;
         }
@@ -131,7 +145,7 @@ namespace ES.Sim
             var e = d.Event;
             switch (e.Kind)
             {
-                case RuleEventKind.EnemyDied: Tracks.RemoveEnemy((ushort)e.A); break;
+                case RuleEventKind.EnemyDied: Tracks.RemoveEnemy((ushort)e.A, e.C); break;
                 case RuleEventKind.GemSpawned:
                     Gems[(ushort)e.A] = new GemInfo { Pos = new Vec2(e.X, e.Y), Kind = (PickupKind)e.B, Value = e.C };
                     break;

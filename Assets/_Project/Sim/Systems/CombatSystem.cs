@@ -43,7 +43,7 @@ namespace ES.Sim
             e.Flags[i] |= EnemyFlags.Dead;
             var pos = e.Pos[i];
             bool elite = (e.Flags[i] & EnemyFlags.Elite) != 0;
-            w.Events.AddRule(new RuleEvent { Kind = RuleEventKind.EnemyDied, A = e.Id[i], B = e.Type[i], X = pos.X, Y = pos.Y });
+            w.Events.AddRule(new RuleEvent { Kind = RuleEventKind.EnemyDied, A = e.Id[i], B = e.Type[i], C = w.Tick, X = pos.X, Y = pos.Y });
 
             SpawnPickup(w, PickupKind.Xp, pos, e.XpValue[i]);
             float healChance = elite ? w.Rules.eliteHealChance : w.Balance.HealDropChance;

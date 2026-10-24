@@ -26,7 +26,7 @@ namespace ES.Sim
                 switch (e.Kind)
                 {
                     case RuleEventKind.EnemyDied:
-                        w.U16((ushort)e.A); w.U8((byte)e.B); Pos(w, e, aw, ah);
+                        w.U16((ushort)e.A); w.U8((byte)e.B); w.U32((uint)Math.Max(0, e.C)); Pos(w, e, aw, ah);
                         break;
                     case RuleEventKind.GemSpawned:
                         w.U16((ushort)e.A); w.U8((byte)e.B); w.U16((ushort)Math.Min(ushort.MaxValue, e.C)); Pos(w, e, aw, ah);
@@ -89,8 +89,8 @@ namespace ES.Sim
                 switch (e.Kind)
                 {
                     case RuleEventKind.EnemyDied:
-                        ok = r.TryU16(out ushort a1) & r.TryU8(out byte b1) & ReadPos(ref r, arenaW, arenaH, ref e);
-                        e.A = a1; e.B = b1;
+                        ok = r.TryU16(out ushort a1) & r.TryU8(out byte b1) & r.TryU32(out uint c1) & ReadPos(ref r, arenaW, arenaH, ref e);
+                        e.A = a1; e.B = b1; e.C = (int)Math.Min(c1, int.MaxValue);
                         break;
                     case RuleEventKind.GemSpawned:
                         ok = r.TryU16(out ushort a2) & r.TryU8(out byte b2) & r.TryU16(out ushort c2) & ReadPos(ref r, arenaW, arenaH, ref e);

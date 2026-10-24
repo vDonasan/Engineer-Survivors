@@ -44,7 +44,8 @@ async function waitFor(lines, re, timeoutMs) {
 const parseState = (l) => {
   const m = l.match(/tick=(\d+).*?enemies=(\d+)/);
   const players = {};
-  for (const p of l.matchAll(/p(\d)=\((-?[\d.]+),(-?[\d.]+)\)/g)) players[p[1]] = [Number(p[2]), Number(p[3])];
+  // aceita "x.y;z.w" (invariante) e "x,y,z,w" (cultura pt-BR, uma casa decimal)
+  for (const p of l.matchAll(/p(\d)=\((-?\d+)[.,](\d);?,?(-?\d+)[.,](\d)\)/g)) players[p[1]] = [Number(p[2] + '.' + p[3]), Number(p[4] + '.' + p[5])];
   return m ? { tick: Number(m[1]), enemies: Number(m[2]), players } : null;
 };
 
@@ -85,6 +86,7 @@ try {
   report.client = { states: cs.length, last: cLast };
   report.checks.clientReceivesTicks = !!cLast && cLast.tick > 200;
   report.checks.bothSeeEnemies = !!hLast && !!cLast && hLast.enemies > 0 && cLast.enemies > 0;
+  report.checks.enemyCountsAgree = !!hLast && !!cLast && Math.abs(hLast.enemies - cLast.enemies) <= Math.max(3, hLast.enemies * 0.15);
   const firstC = cs.find((s) => s.players['1']), lastC = cLast?.players['1'], lastH = hLast?.players['1'];
   report.checks.clientMovedOnHost = !!(firstC && lastH && Math.abs(lastH[0] - firstC.players['1'][0]) > 3);
   report.checks.positionsAgree = !!(lastC && lastH && Math.hypot(lastC[0] - lastH[0], lastC[1] - lastH[1]) < 2.5);

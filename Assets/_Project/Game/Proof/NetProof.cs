@@ -148,8 +148,8 @@ namespace ES.Game.Proof
         {
             var f = _net.Feed;
             var sb = new StringBuilder();
-            sb.Append($"STATE mode={_net.Mode} slot={_net.LocalSlot} tick={f.Tick} t={f.Elapsed:0.0} enemies={f.Tracks.EnemyCount} phase={f.Phase}");
-            for (int s = 0; s < 4; s++) if (f.Players[s].Present) sb.Append($" p{s}=({f.Players[s].Pos.X:0.0},{f.Players[s].Pos.Y:0.0}) hp={f.Players[s].Hp:0} lv={f.Players[s].Level}");
+            sb.Append(FormattableString.Invariant($"STATE mode={_net.Mode} slot={_net.LocalSlot} tick={f.Tick} t={f.Elapsed:0.0} enemies={f.Tracks.EnemyCount} phase={f.Phase}"));
+            for (int s = 0; s < 4; s++) if (f.Players[s].Present) sb.Append(FormattableString.Invariant($" p{s}=({f.Players[s].Pos.X:0.0};{f.Players[s].Pos.Y:0.0}) hp={f.Players[s].Hp:0} lv={f.Players[s].Level}"));
             Log(sb.ToString());
         }
 

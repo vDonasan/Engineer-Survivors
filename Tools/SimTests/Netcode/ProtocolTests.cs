@@ -52,11 +52,22 @@ namespace ES.SimTests.Netcode
             Pump();
         }
 
+        /// <summary>Retém snapshots (canal não confiável) para simular chegada atrasada.</summary>
+        public bool HoldSnapshots;
+        readonly List<(ulong to, byte[] data)> _held = new();
+
+        public void ReleaseHeldSnapshots()
+        {
+            foreach (var (to, data) in _held) if (Clients.TryGetValue(to, out var c)) c.OnMessage(MessageType.Snapshot, data, data.Length);
+            _held.Clear();
+        }
+
         public void Pump()
         {
             while (_queue.Count > 0)
             {
                 var (from, to, type, data) = _queue.Dequeue();
+                if (HoldSnapshots && type == MessageType.Snapshot) { _held.Add((to, data)); continue; }
                 if (to == Peers.Host) Host.OnMessage(from, type, data, data.Length);
                 else if (Clients.TryGetValue(to, out var c)) c.OnMessage(type, data, data.Length);
             }
@@ -219,6 +230,30 @@ namespace ES.SimTests.Netcode
             CombatSystem.DamageEnemy(w, e, 999, Vec2.Zero, 0, 0, -1);
             net.Run(0.2);
             Assert.That(a.Feed.Tracks.TryGetEnemy(id, out _), Is.False);
+        }
+
+        [Test]
+        public void StaleSnapshotAfterDeath_DoesNotResurrectEnemy()
+        {
+            var net = new LoopbackNet();
+            var (_, a, _) = net.Connect("Ana");
+            net.Host.Start(3);
+            net.Pump();
+            var w = net.Host.World;
+            w.SpawningEnabled = false;
+            TestWorlds.Disarm(w);
+            foreach (var p in w.Players.Slots) if (p != null) p.InvulnUntil = float.MaxValue;
+            int e = SpawnDirector.SpawnEnemy(w, 0, new Vec2(5, 5), false);
+            ushort id = w.Enemies.Id[e];
+            net.Run(0.2);
+            net.HoldSnapshots = true;
+            net.Run(0.1); // snapshots com o inimigo vivo ficam retidos
+            CombatSystem.DamageEnemy(w, e, 999, Vec2.Zero, 0, 0, -1);
+            net.Run(0.1); // o evento de morte chega antes dos snapshots antigos
+            Assert.That(a.Feed.Tracks.TryGetEnemy(id, out _), Is.False);
+            net.HoldSnapshots = false;
+            net.ReleaseHeldSnapshots();
+            Assert.That(a.Feed.Tracks.TryGetEnemy(id, out _), Is.False, "snapshot atrasado ressuscitou o inimigo");
         }
 
         [Test]
