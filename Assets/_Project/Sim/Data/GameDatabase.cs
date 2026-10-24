@@ -320,6 +320,12 @@ namespace ES.Sim
                     foreach (var t in teams) if (t != null && t.size == size) count++;
                     if (count != 1) Err($"balance: equipe de {size} precisa aparecer exatamente 1 vez");
                 }
+                foreach (var o in _def.balance.overrides ?? new CellOverrideDef[0])
+                {
+                    if (!Difficulties.TryParse(o.difficulty, out _)) Err($"balance: ajuste com dificuldade inválida: {o.difficulty}");
+                    if (o.teamSize < 1 || o.teamSize > 4) Err($"balance: ajuste com equipe inválida: {o.teamSize}");
+                    if (!BalanceResolver.IsKnownParam(o.param)) Err($"balance: parâmetro de ajuste desconhecido: {o.param}");
+                }
             }
 
             void ValidateArenas()
