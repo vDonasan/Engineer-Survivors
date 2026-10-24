@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b17302386af2984c83c1077516d7edc, type: 3}
+  m_Name: carga_acumulada
+  m_EditorClassIdentifier: ES.Content::ES.Content.SynergyAsset
+  def:
+    id: carga_acumulada
+    name: Carga Acumulada
+    description: "A bateria guarda energia: a cada 4\xAA descarga, um arco amplificado."
+    effect: charge_every_n
+    targetAbility: descarga_direcionada
+    requires:
+    - kind: ability_level
+      target: descarga_direcionada
+      value: 1
+    - kind: ability_level
+      target: bateria_portatil
+      value: 2
+    n: 4
+    damageMult: 1
+    extraChains: 2

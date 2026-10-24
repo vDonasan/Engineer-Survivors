@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 743fe4cf80f19db468824bd5de5da40a, type: 3}
+  m_Name: laser_industrial
+  m_EditorClassIdentifier: ES.Content::ES.Content.AbilityAsset
+  def:
+    id: laser_industrial
+    name: Laser Industrial
+    description: "Feixe de corte que atravessa v\xE1rios inimigos em linha."
+    kind: weapon
+    rarity: incomum
+    behavior: projectile
+    tags:
+    - Energia
+    - Termico
+    maxLevel: 5
+    evolutionOnly: 0
+    baseStats:
+    - stat: Damage
+      value: 20
+    - stat: Cooldown
+      value: 1.6
+    - stat: Pierce
+      value: 3
+    - stat: ProjectileSpeed
+      value: 14
+    - stat: Range
+      value: 12
+    - stat: Count
+      value: 1
+    levels:
+    - add:
+      - stat: Damage
+        value: 5
+      mult: []
+      text: +5 de dano
+    - add:
+      - stat: Pierce
+        value: 1
+      mult: []
+      text: "+1 perfura\xE7\xE3o"
+    - add: []
+      mult:
+      - stat: Cooldown
+        value: -0.15
+      text: "recarga \u221215%"
+    - add:
+      - stat: Count
+        value: 1
+      mult: []
+      text: +1 feixe
+    grants: []
+    parameters: []
+  icon: {fileID: 21300000, guid: 0cc69af01a43b6e4cbaf57b793cb4c58, type: 3}

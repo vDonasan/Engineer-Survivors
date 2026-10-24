@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 743fe4cf80f19db468824bd5de5da40a, type: 3}
+  m_Name: attr_dano
+  m_EditorClassIdentifier: ES.Content::ES.Content.AbilityAsset
+  def:
+    id: attr_dano
+    name: Dano
+    description: "+8% de dano em todas as armas por n\xEDvel."
+    kind: attribute
+    rarity: comum
+    behavior: attribute
+    tags: []
+    maxLevel: 5
+    evolutionOnly: 0
+    baseStats: []
+    levels: []
+    grants:
+    - stat: Damage
+      op: mult
+      scope: all
+      value: 0.08
+    parameters: []
+  icon: {fileID: 21300000, guid: 0c58c9911af283e4993b42bac0fead45, type: 3}

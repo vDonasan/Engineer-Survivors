@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 743fe4cf80f19db468824bd5de5da40a, type: 3}
+  m_Name: kit_primeiros_socorros
+  m_EditorClassIdentifier: ES.Content::ES.Content.AbilityAsset
+  def:
+    id: kit_primeiros_socorros
+    name: Kit de Primeiros Socorros
+    description: "Recupera 30% da vida m\xE1xima. Ningu\xE9m leu o manual, mas funciona."
+    kind: survival
+    rarity: comum
+    behavior: heal
+    tags:
+    - Suporte
+    maxLevel: 0
+    evolutionOnly: 0
+    baseStats: []
+    levels: []
+    grants: []
+    parameters: []
+  icon: {fileID: 21300000, guid: b7766ca41c2e916449837d05b1309c33, type: 3}

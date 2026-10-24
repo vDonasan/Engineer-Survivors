@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 743fe4cf80f19db468824bd5de5da40a, type: 3}
+  m_Name: attr_recuperacao
+  m_EditorClassIdentifier: ES.Content::ES.Content.AbilityAsset
+  def:
+    id: attr_recuperacao
+    name: "Recupera\xE7\xE3o"
+    description: "+0,3 de vida por segundo por n\xEDvel."
+    kind: attribute
+    rarity: comum
+    behavior: attribute
+    tags: []
+    maxLevel: 5
+    evolutionOnly: 0
+    baseStats: []
+    levels: []
+    grants:
+    - stat: Regen
+      op: add
+      scope: player
+      value: 0.3
+    parameters: []
+  icon: {fileID: 21300000, guid: 859efc7aa4e421748911907a0ab307dd, type: 3}

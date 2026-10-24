@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8d6d3518de6ee74b934259d7767f320, type: 3}
+  m_Name: torreta_inspecao
+  m_EditorClassIdentifier: ES.Content::ES.Content.EnemyAsset
+  def:
+    id: torreta_inspecao
+    name: "Torreta de Inspe\xE7\xE3o"
+    role: ranged
+    behavior: kite_shoot
+    tags:
+    - Maquina
+    hp: 24
+    speed: 2
+    contactDamage: 3
+    contactInterval: 1
+    radius: 0.45
+    xp: 3
+    cost: 3
+    knockbackResist: 0.2
+    keepMin: 5.5
+    keepMax: 7
+    fireInterval: 2.8
+    telegraph: 0.5
+    projectileSpeed: 6
+    projectileDamage: 8

@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 743fe4cf80f19db468824bd5de5da40a, type: 3}
+  m_Name: rotor_de_impacto
+  m_EditorClassIdentifier: ES.Content::ES.Content.AbilityAsset
+  def:
+    id: rotor_de_impacto
+    name: Rotor de Impacto
+    description: "Os bra\xE7os batem mais forte quanto mais r\xE1pido voc\xEA se
+      move; com a Turbina de Emerg\xEAncia, dobram."
+    kind: weapon
+    rarity: raro
+    behavior: orbit
+    tags:
+    - Mecanica
+    maxLevel: 1
+    evolutionOnly: 1
+    baseStats:
+    - stat: Damage
+      value: 20
+    - stat: Count
+      value: 3
+    - stat: Range
+      value: 2.4
+    - stat: Duration
+      value: 1.1
+    - stat: HitInterval
+      value: 0.4
+    - stat: Knockback
+      value: 3
+    levels: []
+    grants: []
+    parameters:
+    - key: speedDamageScale
+      value: 0.6
+    - key: turbineArmMultiplier
+      value: 2
+  icon: {fileID: 21300000, guid: 64215bcdf00b05e488c8e72552df2cd5, type: 3}

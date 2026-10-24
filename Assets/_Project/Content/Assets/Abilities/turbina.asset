@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 743fe4cf80f19db468824bd5de5da40a, type: 3}
+  m_Name: turbina
+  m_EditorClassIdentifier: ES.Content::ES.Content.AbilityAsset
+  def:
+    id: turbina
+    name: Turbina
+    description: Aumenta a velocidade de movimento.
+    kind: component
+    rarity: comum
+    behavior: passive
+    tags:
+    - Mecanica
+    maxLevel: 5
+    evolutionOnly: 0
+    baseStats: []
+    levels: []
+    grants:
+    - stat: MoveSpeed
+      op: mult
+      scope: player
+      value: 0.06
+    parameters: []
+  icon: {fileID: 21300000, guid: 6a949d9ba7be53c468a9f46b9afd9bac, type: 3}

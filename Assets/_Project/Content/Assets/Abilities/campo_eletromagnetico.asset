@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 743fe4cf80f19db468824bd5de5da40a, type: 3}
+  m_Name: campo_eletromagnetico
+  m_EditorClassIdentifier: ES.Content::ES.Content.AbilityAsset
+  def:
+    id: campo_eletromagnetico
+    name: "Campo Eletromagn\xE9tico"
+    description: Campo ao seu redor que fere e desacelera quem entra.
+    kind: weapon
+    rarity: incomum
+    behavior: aura
+    tags:
+    - Energia
+    - Defesa
+    maxLevel: 5
+    evolutionOnly: 0
+    baseStats:
+    - stat: Damage
+      value: 6
+    - stat: HitInterval
+      value: 0.5
+    - stat: Area
+      value: 2.2
+    - stat: Slow
+      value: 0.15
+    levels:
+    - add:
+      - stat: Area
+        value: 0.3
+      mult: []
+      text: "+\xE1rea"
+    - add:
+      - stat: Damage
+        value: 2
+      mult: []
+      text: +2 de dano
+    - add:
+      - stat: Slow
+        value: 0.05
+      - stat: Area
+        value: 0.3
+      mult: []
+      text: "+lentid\xE3o, +\xE1rea"
+    - add:
+      - stat: Damage
+        value: 3
+      mult: []
+      text: +3 de dano
+    grants: []
+    parameters: []
+  icon: {fileID: 21300000, guid: 45ec4abae2b2cff42b8eb1557aca0db8, type: 3}

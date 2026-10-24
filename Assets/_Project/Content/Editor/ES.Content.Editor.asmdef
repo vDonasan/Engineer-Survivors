@@ -1,0 +1,19 @@
+{
+    "name": "ES.Content.Editor",
+    "rootNamespace": "ES.ContentEditor",
+    "references": [
+        "ES.Sim",
+        "ES.Content"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

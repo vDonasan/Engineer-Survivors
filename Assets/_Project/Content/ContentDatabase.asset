@@ -1,0 +1,168 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f31e2f37c39ac604db762b0aa43ef3f5, type: 3}
+  m_Name: ContentDatabase
+  m_EditorClassIdentifier: ES.Content::ES.Content.ContentDatabaseAsset
+  rules:
+    matchSeconds: 600
+    tickRate: 30
+    playerMaxHp: 100
+    playerSpeed: 4.5
+    playerPickup: 1.6
+    playerRadius: 0.4
+    hitInvuln: 0.5
+    xpA: 5
+    xpB: 5
+    xpC: 0.6
+    maxWeapons: 6
+    maxComponents: 6
+    coopChoiceSeconds: 12
+    choiceInvuln: 2
+    affinityInitial: 0.04
+    affinityIntermediate: 0.04
+    affinityIntermediateLevel: 4
+    capEnemies: 400
+    capGems: 150
+    capHostileProjectiles: 200
+    capCosmeticEvents: 48
+    survivalHpThreshold: 0.5
+    eliteHp: 3
+    eliteSize: 1.3
+    eliteDamage: 1.25
+    eliteXp: 4
+    eliteHealChance: 0.25
+    healAmountFraction: 0.3
+    farEnemyDistance: 30
+    farEnemyUpdateEvery: 3
+    cameraHalfDiagonal: 12
+  balance:
+    difficulties:
+    - id: easy
+      enemyDamage: 0.65
+      enemyHp: 0.9
+      spawnBudget: 0.8
+      spawnRamp: 0.8
+      compositionShiftMinutes: -1
+      xp: 1.2
+      healDropChance: 0.012
+      regen: 1.3
+      eliteChance: 0.01
+      telegraph: 1.3
+    - id: normal
+      enemyDamage: 1
+      enemyHp: 1
+      spawnBudget: 1
+      spawnRamp: 1
+      compositionShiftMinutes: 0
+      xp: 1
+      healDropChance: 0.008
+      regen: 1
+      eliteChance: 0.025
+      telegraph: 1
+    - id: hard
+      enemyDamage: 1.35
+      enemyHp: 1.1
+      spawnBudget: 1.25
+      spawnRamp: 1.2
+      compositionShiftMinutes: 1.5
+      xp: 0.9
+      healDropChance: 0.005
+      regen: 0.7
+      eliteChance: 0.05
+      telegraph: 0.8
+    teams:
+    - size: 1
+      enemyCount: 1
+      enemyHp: 1
+      eliteChance: 0
+      xpPerGem: 1
+    - size: 2
+      enemyCount: 1.5
+      enemyHp: 1.3
+      eliteChance: 0.01
+      xpPerGem: 0.72
+    - size: 3
+      enemyCount: 1.9
+      enemyHp: 1.55
+      eliteChance: 0.02
+      xpPerGem: 0.6
+    - size: 4
+      enemyCount: 2.2
+      enemyHp: 1.75
+      eliteChance: 0.03
+      xpPerGem: 0.55
+    overrides: []
+  spawn:
+    baseBudget: 2
+    rampPerMinute: 1.1
+    surgeIntervalSeconds: 60
+    surgeCount: 30
+    spawnPadding: 2
+    brackets:
+    - fromMinute: 0
+      weights:
+      - enemyId: microbo_enxame
+        weight: 1
+    - fromMinute: 2
+      weights:
+      - enemyId: microbo_enxame
+        weight: 0.75
+      - enemyId: torreta_inspecao
+        weight: 0.25
+    - fromMinute: 4
+      weights:
+      - enemyId: microbo_enxame
+        weight: 0.6
+      - enemyId: torreta_inspecao
+        weight: 0.2
+      - enemyId: prensa_ambulante
+        weight: 0.2
+    - fromMinute: 7
+      weights:
+      - enemyId: microbo_enxame
+        weight: 0.5
+      - enemyId: torreta_inspecao
+        weight: 0.25
+      - enemyId: prensa_ambulante
+        weight: 0.25
+  arenas:
+  - {fileID: 11400000, guid: 9c6f9020acc7e844386eb0645069efa4, type: 2}
+  specializations:
+  - {fileID: 11400000, guid: 01a478c9ee2559248a2b07bd343c8cdd, type: 2}
+  - {fileID: 11400000, guid: 95ee5db03bf15684d9b1261fdb5c8eaf, type: 2}
+  specials:
+  - {fileID: 11400000, guid: 52df002d94814f045b7cdefcf7541fdb, type: 2}
+  - {fileID: 11400000, guid: b9ffdf2710a4f35448f0abb7988da050, type: 2}
+  abilities:
+  - {fileID: 11400000, guid: 916d139a108783343bfdb589326e19a8, type: 2}
+  - {fileID: 11400000, guid: 207cb8adcb1aadf4ba6c19dc123dc2a2, type: 2}
+  - {fileID: 11400000, guid: d52c70293b49c3747af0fe5515e7b266, type: 2}
+  - {fileID: 11400000, guid: ca64439c64be9a94d8d9ae3b68f51ece, type: 2}
+  - {fileID: 11400000, guid: 0d8a983e770fc8049a78378b523598b5, type: 2}
+  - {fileID: 11400000, guid: c6b51c47c7535474c85db4ed6f720d2c, type: 2}
+  - {fileID: 11400000, guid: 1c1f2ceea9dadbc4aa278cde415ef076, type: 2}
+  - {fileID: 11400000, guid: 163269df3951c4240833e89a0af56133, type: 2}
+  - {fileID: 11400000, guid: a51b1aa6a42c92f42b69b1ec71aaddba, type: 2}
+  - {fileID: 11400000, guid: 8e1adcfcddf220b478d07b085729a589, type: 2}
+  - {fileID: 11400000, guid: 1c017f6766a0065438d7e67ee5c11097, type: 2}
+  - {fileID: 11400000, guid: 66d90924d6f0f754bb9b4db657ab64aa, type: 2}
+  - {fileID: 11400000, guid: 0816caa2adb6c094491087aafa83b261, type: 2}
+  - {fileID: 11400000, guid: eb445a7ee69b21e4886624236ee61bc1, type: 2}
+  enemies:
+  - {fileID: 11400000, guid: be3a23cfb4b940e468891f3dda86ceb3, type: 2}
+  - {fileID: 11400000, guid: caca7a0c0b4509040896d6c712b6473f, type: 2}
+  - {fileID: 11400000, guid: f8c6b6ac38361f74da81d6a6230852c4, type: 2}
+  synergies:
+  - {fileID: 11400000, guid: bcac7a67ecd50254580813ef8874022b, type: 2}
+  evolutions:
+  - {fileID: 11400000, guid: 2fadaf54ce53b7f46b3d019555374284, type: 2}
+  - {fileID: 11400000, guid: a02cd8ed4f8820445be85f1a5f433b22, type: 2}

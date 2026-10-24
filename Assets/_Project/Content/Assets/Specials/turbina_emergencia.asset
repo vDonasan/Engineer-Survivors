@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee07bc3fde7682a4a839289f2562677d, type: 3}
+  m_Name: turbina_emergencia
+  m_EditorClassIdentifier: ES.Content::ES.Content.SpecialAsset
+  def:
+    id: turbina_emergencia
+    name: "Turbina de Emerg\xEAncia"
+    kind: turbine
+    description: "Por alguns segundos: mais velocidade, mais dano f\xEDsico, menos
+      dano recebido e atropelamento."
+    cooldown: 18
+    radius: 0
+    expandSeconds: 0
+    damage: 0
+    stunSeconds: 0
+    duration: 6
+    moveBonus: 0.45
+    damageBonus: 0.3
+    damageTakenMult: 0.7
+    ramDamage: 15
+    ramKnockback: 3
+    stunTag: 
+  icon: {fileID: 21300000, guid: e769f58e549a98f43919f804ea01befd, type: 3}
