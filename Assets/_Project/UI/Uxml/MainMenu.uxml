@@ -1,0 +1,13 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+    <ui:VisualElement name="screen-menu" class="screen center dim">
+        <ui:Label text="#titulo_jogo" class="title" />
+        <ui:Label text="#subtitulo_jogo" class="subtitle" />
+        <ui:VisualElement class="panel menu-panel">
+            <ui:Button name="btn-solo" text="#menu_solo" class="btn big" />
+            <ui:Button name="btn-coop" text="#menu_coop" class="btn big" />
+            <ui:Button name="btn-settings" text="#menu_config" class="btn big" />
+            <ui:Button name="btn-credits" text="#menu_creditos" class="btn big" />
+        </ui:VisualElement>
+        <ui:Label name="label-version" class="footer" />
+    </ui:VisualElement>
+</ui:UXML>

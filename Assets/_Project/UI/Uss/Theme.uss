@@ -1,0 +1,114 @@
+/* Tema "noir industrial" — mesma paleta da pixel art (ArtSource/lib/palette.mjs). */
+.root {
+    flex-grow: 1;
+    color: rgb(238, 241, 244);
+    font-size: 26px;
+}
+
+.screen {
+    position: absolute;
+    left: 0; top: 0; right: 0; bottom: 0;
+    padding: 24px;
+}
+
+.dim { background-color: rgba(20, 22, 27, 0.92); }
+.dim-light { background-color: rgba(20, 22, 27, 0.6); }
+.center { align-items: center; justify-content: center; }
+.row { flex-direction: row; align-items: center; }
+.wrap { flex-wrap: wrap; }
+.grow { flex-grow: 1; }
+
+.title { font-size: 72px; color: rgb(232, 185, 35); -unity-text-align: middle-center; }
+.subtitle { font-size: 28px; color: rgb(167, 176, 187); -unity-text-align: middle-center; margin-bottom: 24px; }
+.heading { font-size: 40px; color: rgb(232, 185, 35); margin-bottom: 12px; }
+.small { font-size: 22px; color: rgb(167, 176, 187); }
+.warn { color: rgb(255, 144, 144); }
+.ok { color: rgb(77, 255, 136); }
+.footer { position: absolute; bottom: 12px; right: 18px; font-size: 20px; color: rgb(125, 135, 148); }
+
+.panel {
+    background-color: rgb(44, 48, 56);
+    border-width: 3px;
+    border-color: rgb(90, 98, 109);
+    border-top-color: rgb(232, 185, 35);
+    padding: 18px;
+    margin: 8px;
+}
+
+.menu-panel { width: 460px; }
+
+.btn {
+    background-color: rgb(62, 68, 78);
+    border-width: 2px;
+    border-color: rgb(125, 135, 148);
+    border-radius: 0;
+    color: rgb(238, 241, 244);
+    font-size: 28px;
+    padding: 6px 14px;
+    margin: 6px;
+    -unity-text-align: middle-center;
+}
+.btn:hover { background-color: rgb(90, 98, 109); border-color: rgb(232, 185, 35); }
+.btn:active { background-color: rgb(31, 74, 78); }
+.btn.selected { border-color: rgb(63, 224, 255); background-color: rgb(31, 74, 78); }
+.btn:disabled { color: rgb(125, 135, 148); }
+.big { height: 58px; font-size: 32px; }
+
+.spec-card { width: 420px; min-height: 220px; flex-direction: row; align-items: flex-start; -unity-text-align: upper-left; white-space: normal; }
+.spec-card .portrait { width: 128px; height: 128px; margin-right: 12px; flex-shrink: 0; }
+.spec-card Label { white-space: normal; font-size: 22px; }
+.spec-card .spec-name { font-size: 30px; color: rgb(232, 185, 35); }
+
+TextField { font-size: 28px; }
+TextField > .unity-text-field__input {
+    background-color: rgb(20, 22, 27);
+    border-color: rgb(125, 135, 148);
+    color: rgb(238, 241, 244);
+    font-size: 28px;
+    -unity-font-style: normal;
+}
+.unity-base-field__label { color: rgb(201, 205, 210); min-width: 260px; font-size: 26px; }
+Slider { margin: 8px 0; }
+Toggle { margin: 8px 0; }
+
+/* HUD */
+.bar { height: 22px; background-color: rgb(20, 22, 27); border-width: 2px; border-color: rgb(90, 98, 109); }
+.bar-fill { height: 100%; }
+.hp-fill { background-color: rgb(224, 58, 58); }
+.xp-fill { background-color: rgb(63, 224, 255); }
+.ally-fill { background-color: rgb(77, 255, 136); }
+.timer-fill { background-color: rgb(232, 185, 35); }
+.hud-top { position: absolute; top: 12px; left: 12px; right: 12px; flex-direction: row; justify-content: space-between; align-items: flex-start; }
+.hud-bottom { position: absolute; bottom: 12px; left: 12px; right: 12px; flex-direction: row; align-items: flex-end; justify-content: space-between; }
+.portrait-frame { width: 136px; height: 136px; padding: 4px; background-color: rgb(20, 22, 27); border-width: 2px; border-color: rgb(90, 98, 109); }
+.portrait-img { flex-grow: 1; }
+.hud-time { font-size: 48px; color: rgb(238, 241, 244); -unity-text-align: upper-center; }
+.ability { width: 72px; height: 72px; margin: 3px; background-color: rgba(20, 22, 27, 0.85); border-width: 2px; border-color: rgb(90, 98, 109); }
+.ability-icon { position: absolute; left: 4px; top: 4px; width: 64px; height: 64px; }
+.ability-level { position: absolute; right: 2px; bottom: -4px; font-size: 24px; color: rgb(255, 226, 122); }
+.special { width: 104px; height: 104px; margin-left: 12px; background-color: rgba(20, 22, 27, 0.85); border-width: 3px; border-color: rgb(232, 185, 35); }
+.special-icon { position: absolute; left: 4px; top: 4px; right: 4px; bottom: 4px; }
+.special-key { position: absolute; bottom: -30px; left: 0; right: 0; font-size: 22px; -unity-text-align: middle-center; }
+.banner { position: absolute; top: 110px; left: 0; right: 0; font-size: 40px; color: rgb(255, 181, 46); -unity-text-align: middle-center; }
+.warning-line { position: absolute; top: 160px; left: 0; right: 0; font-size: 28px; color: rgb(255, 144, 144); -unity-text-align: middle-center; }
+.side { width: 330px; }
+.ally { width: 230px; margin-bottom: 6px; }
+
+/* Cartas de subida de nível */
+.card { width: 340px; min-height: 380px; flex-direction: column; align-items: stretch; justify-content: flex-start; padding: 14px; white-space: normal; -unity-text-align: upper-left; }
+.card Label { white-space: normal; -unity-text-align: upper-left; }
+.card-icon { width: 64px; height: 64px; align-self: center; margin: 6px; }
+.card-kind { font-size: 22px; color: rgb(63, 224, 255); }
+.card-name { font-size: 32px; color: rgb(232, 185, 35); }
+.card-rarity { font-size: 22px; }
+.card-desc { font-size: 22px; }
+.card-change { font-size: 22px; color: rgb(77, 255, 136); }
+.card-tags { font-size: 20px; color: rgb(167, 176, 187); }
+.card-hint { font-size: 22px; color: rgb(255, 61, 240); }
+.rarity-comum { color: rgb(201, 205, 210); }
+.rarity-incomum { color: rgb(63, 224, 255); }
+.rarity-raro { color: rgb(255, 61, 240); }
+
+.result-panel { width: 760px; }
+.message-panel { width: 640px; align-items: center; }
+.message-panel Label { white-space: normal; -unity-text-align: middle-center; }

@@ -1,0 +1,33 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+    <ui:VisualElement name="screen-lobby" class="screen center dim">
+        <ui:Label text="#lobby_titulo" class="heading" />
+        <ui:VisualElement class="row">
+            <ui:Label name="label-code" class="title" style="font-size: 56px;" />
+            <ui:Button name="btn-copy" text="#copiar" class="btn" />
+        </ui:VisualElement>
+        <ui:Label name="label-copied" class="small ok" />
+        <ui:VisualElement class="row" style="align-items: flex-start;">
+            <ui:VisualElement class="panel" style="width: 480px;">
+                <ui:Label name="label-count" class="heading" />
+                <ui:VisualElement name="list-players" />
+            </ui:VisualElement>
+            <ui:VisualElement class="panel" style="width: 560px;">
+                <ui:Label text="#lobby_sua_especializacao" class="small" />
+                <ui:VisualElement name="list-lobby-specs" class="row wrap" />
+                <ui:Label text="#escolha_dificuldade" class="small" />
+                <ui:VisualElement name="row-difficulty" class="row">
+                    <ui:Button name="btn-lobby-easy" text="#dificuldade_easy" class="btn" />
+                    <ui:Button name="btn-lobby-normal" text="#dificuldade_normal" class="btn" />
+                    <ui:Button name="btn-lobby-hard" text="#dificuldade_hard" class="btn" />
+                </ui:VisualElement>
+                <ui:Label name="label-lobby-diff" class="small" />
+                <ui:Label text="#lobby_aviso_equipe" class="small" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:Label name="label-lobby-wait" text="#lobby_aguardando_host" class="small" />
+        <ui:VisualElement class="row">
+            <ui:Button name="btn-leave" text="#sair_sala" class="btn big" />
+            <ui:Button name="btn-start" text="#iniciar" class="btn big" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

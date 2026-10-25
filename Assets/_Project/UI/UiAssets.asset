@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c79a17cdb9227b42bd5d7e1a48aa47c, type: 3}
+  m_Name: UiAssets
+  m_EditorClassIdentifier: ES.UI::ES.UI.UiAssets
+  screens:
+  - {fileID: 9197481963319205126, guid: ac36ec4bdbeacea41b163692e6f2f856, type: 3}
+  - {fileID: 9197481963319205126, guid: d1b16ea6753e38640b5e9b1736c00db1, type: 3}
+  - {fileID: 9197481963319205126, guid: 5178bb7c5846bee4289f6805559df979, type: 3}
+  - {fileID: 9197481963319205126, guid: 7c28c3fead1b10544b5288e263e30869, type: 3}
+  - {fileID: 9197481963319205126, guid: 4a42ee3f43cad98409eac6213ed12ba6, type: 3}
+  - {fileID: 9197481963319205126, guid: e4c44cecd5894fc42971a77638732cba, type: 3}
+  - {fileID: 9197481963319205126, guid: b5b05467f52414a4993d2d3957b7b57a, type: 3}
+  - {fileID: 9197481963319205126, guid: 445ddc04182dd8d42abf31a9f4f8d00a, type: 3}
+  - {fileID: 9197481963319205126, guid: 95fa2687eef7862489276de55fe73ad7, type: 3}
+  - {fileID: 9197481963319205126, guid: d125029f73256bd4495ddf725bbea8cd, type: 3}
+  - {fileID: 9197481963319205126, guid: b5889e72efa7b2c449ef04fccfc2453e, type: 3}
+  theme: {fileID: 7433441132597879392, guid: 6f7e2589c8a6987489ea3aa174f5840b, type: 3}
+  panel: {fileID: 11400000, guid: ac14813fbf67ce2479e6f14e48b6e077, type: 2}

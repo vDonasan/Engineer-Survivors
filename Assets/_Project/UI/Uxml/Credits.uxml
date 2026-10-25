@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+    <ui:VisualElement name="screen-credits" class="screen center dim">
+        <ui:Label text="#creditos_titulo" class="heading" />
+        <ui:VisualElement class="panel" style="width: 900px;">
+            <ui:Label name="label-credits" text="#creditos_texto" style="white-space: normal;" />
+        </ui:VisualElement>
+        <ui:Button name="btn-credits-back" text="#voltar" class="btn big" />
+    </ui:VisualElement>
+</ui:UXML>

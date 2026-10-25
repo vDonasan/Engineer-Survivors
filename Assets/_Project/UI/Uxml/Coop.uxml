@@ -1,0 +1,13 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+    <ui:VisualElement name="screen-coop" class="screen center dim">
+        <ui:Label text="#coop_titulo" class="heading" />
+        <ui:VisualElement class="panel" style="width: 720px;">
+            <ui:TextField name="field-name" label="#seu_nome" max-length="16" />
+            <ui:Button name="btn-create" text="#criar_sala" class="btn big" />
+            <ui:TextField name="field-code" label="#codigo_sala" max-length="8" />
+            <ui:Button name="btn-join" text="#entrar_codigo" class="btn big" />
+            <ui:Label name="label-coop-status" class="small" />
+        </ui:VisualElement>
+        <ui:Button name="btn-coop-back" text="#voltar" class="btn big" />
+    </ui:VisualElement>
+</ui:UXML>

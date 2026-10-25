@@ -1,0 +1,8 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+    <ui:VisualElement name="screen-message" class="screen center dim-light">
+        <ui:VisualElement class="panel message-panel">
+            <ui:Label name="label-message" />
+            <ui:Button name="btn-message-ok" text="#ok" class="btn big" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

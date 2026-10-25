@@ -1,0 +1,10 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+    <ui:VisualElement name="screen-pause" class="screen center dim-light">
+        <ui:VisualElement class="panel menu-panel">
+            <ui:Label name="label-pause-title" class="heading" />
+            <ui:Button name="btn-resume" text="#continuar" class="btn big" />
+            <ui:Button name="btn-pause-settings" text="#menu_config" class="btn big" />
+            <ui:Button name="btn-quit" text="#sair_partida" class="btn big" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

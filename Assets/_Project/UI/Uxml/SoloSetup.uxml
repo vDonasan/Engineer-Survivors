@@ -1,0 +1,18 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+    <ui:VisualElement name="screen-solo" class="screen center dim">
+        <ui:Label text="#solo_titulo" class="heading" />
+        <ui:Label text="#escolha_especializacao" class="small" />
+        <ui:VisualElement name="list-specs" class="row wrap" />
+        <ui:Label text="#escolha_dificuldade" class="small" />
+        <ui:VisualElement class="row">
+            <ui:Button name="btn-diff-easy" text="#dificuldade_easy" class="btn" />
+            <ui:Button name="btn-diff-normal" text="#dificuldade_normal" class="btn" />
+            <ui:Button name="btn-diff-hard" text="#dificuldade_hard" class="btn" />
+        </ui:VisualElement>
+        <ui:Label name="label-diff-desc" class="small" />
+        <ui:VisualElement class="row">
+            <ui:Button name="btn-solo-back" text="#voltar" class="btn big" />
+            <ui:Button name="btn-solo-start" text="#iniciar" class="btn big" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

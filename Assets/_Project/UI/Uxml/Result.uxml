@@ -1,0 +1,14 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+    <ui:VisualElement name="screen-result" class="screen center dim">
+        <ui:VisualElement class="panel result-panel">
+            <ui:Label name="label-result-title" class="heading" />
+            <ui:Label name="label-result-time" />
+            <ui:Label name="label-result-kills" />
+            <ui:Label name="label-result-mykills" />
+            <ui:Label name="label-result-level" />
+            <ui:Label text="#resultado_dano" class="small" style="margin-top: 12px;" />
+            <ui:VisualElement name="list-damage" />
+            <ui:Button name="btn-result-menu" text="#voltar_menu" class="btn big" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

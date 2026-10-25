@@ -1,0 +1,24 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+    <ui:VisualElement name="screen-settings" class="screen center dim">
+        <ui:Label text="#config_titulo" class="heading" />
+        <ui:VisualElement class="panel" style="width: 820px;">
+            <ui:Slider name="slider-master" label="#config_volume_geral" low-value="0" high-value="1" />
+            <ui:Slider name="slider-music" label="#config_volume_musica" low-value="0" high-value="1" />
+            <ui:Slider name="slider-sfx" label="#config_volume_efeitos" low-value="0" high-value="1" />
+            <ui:Label text="#config_efeitos" class="small" />
+            <ui:VisualElement class="row">
+                <ui:Button name="btn-fx-low" text="#config_efeitos_baixa" class="btn" />
+                <ui:Button name="btn-fx-medium" text="#config_efeitos_media" class="btn" />
+                <ui:Button name="btn-fx-high" text="#config_efeitos_alta" class="btn" />
+            </ui:VisualElement>
+            <ui:Slider name="slider-shake" label="#config_tremor" low-value="0" high-value="1" />
+            <ui:Slider name="slider-uiscale" label="#config_escala" low-value="0.8" high-value="1.3" />
+            <ui:Button name="btn-rebind" class="btn" />
+            <ui:Toggle name="toggle-fullscreen" label="#config_tela_cheia" />
+        </ui:VisualElement>
+        <ui:VisualElement class="row">
+            <ui:Button name="btn-settings-defaults" text="#config_padroes" class="btn big" />
+            <ui:Button name="btn-settings-back" text="#voltar" class="btn big" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

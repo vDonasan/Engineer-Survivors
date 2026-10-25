@@ -1,0 +1,41 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+    <ui:VisualElement name="screen-levelup" class="screen center dim-light">
+        <ui:Label text="#nivel_titulo" class="heading" />
+        <ui:VisualElement name="row-choice-timer" style="width: 700px; margin-bottom: 10px;">
+            <ui:VisualElement name="bar-choice" class="bar"><ui:VisualElement name="bar-choice-fill" class="bar-fill timer-fill" /></ui:VisualElement>
+            <ui:Label name="label-choice-timer" class="small" />
+        </ui:VisualElement>
+        <ui:VisualElement class="row">
+            <ui:Button name="card-0" class="btn card">
+                <ui:Label name="card-kind" class="card-kind" />
+                <ui:VisualElement name="card-icon" class="card-icon" />
+                <ui:Label name="card-name" class="card-name" />
+                <ui:Label name="card-rarity" class="card-rarity" />
+                <ui:Label name="card-desc" class="card-desc" />
+                <ui:Label name="card-change" class="card-change" />
+                <ui:Label name="card-tags" class="card-tags" />
+                <ui:Label name="card-hint" class="card-hint" />
+            </ui:Button>
+            <ui:Button name="card-1" class="btn card">
+                <ui:Label name="card-kind" class="card-kind" />
+                <ui:VisualElement name="card-icon" class="card-icon" />
+                <ui:Label name="card-name" class="card-name" />
+                <ui:Label name="card-rarity" class="card-rarity" />
+                <ui:Label name="card-desc" class="card-desc" />
+                <ui:Label name="card-change" class="card-change" />
+                <ui:Label name="card-tags" class="card-tags" />
+                <ui:Label name="card-hint" class="card-hint" />
+            </ui:Button>
+            <ui:Button name="card-2" class="btn card">
+                <ui:Label name="card-kind" class="card-kind" />
+                <ui:VisualElement name="card-icon" class="card-icon" />
+                <ui:Label name="card-name" class="card-name" />
+                <ui:Label name="card-rarity" class="card-rarity" />
+                <ui:Label name="card-desc" class="card-desc" />
+                <ui:Label name="card-change" class="card-change" />
+                <ui:Label name="card-tags" class="card-tags" />
+                <ui:Label name="card-hint" class="card-hint" />
+            </ui:Button>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

@@ -1,0 +1,27 @@
+{
+    "name": "ES.UI.Editor",
+    "rootNamespace": "ES.UIEditor",
+    "references": [
+        "ES.Sim",
+        "ES.Content",
+        "ES.Game",
+        "ES.Game.Editor",
+        "ES.UI",
+        "Unity.InputSystem",
+        "Unity.RenderPipelines.Core.Runtime",
+        "Unity.RenderPipelines.Universal.Runtime",
+        "Unity.RenderPipelines.Universal.2D.Runtime",
+        "UnityEngine.UI"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
