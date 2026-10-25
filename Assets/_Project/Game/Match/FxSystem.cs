@@ -23,6 +23,7 @@ namespace ES.Game
         readonly Sprite[] _explosion = new Sprite[4], _digits = new Sprite[10];
         readonly Sprite _bossNote, _bossWave, _bossOrb0, _bossOrb1, _bossSpark, _coxinha, _coxinhaSuprema;
         readonly Sprite[] _motoLeft = new Sprite[2], _motoRight = new Sprite[2];
+        readonly Sprite _bolt1, _hostileHalo;
         readonly int[] _orbitAbilities, _auraAbilities;
         int _numbers;
 
@@ -59,6 +60,8 @@ namespace ES.Game
             _bossOrb0 = assets.Sprite("fx_boss_orb_0");
             _bossOrb1 = assets.Sprite("fx_boss_orb_1");
             _bossSpark = assets.Sprite("fx_boss_spark");
+            _bolt1 = assets.Sprite("fx_hostile_bolt_1") ?? _bolt;
+            _hostileHalo = assets.Sprite("fx_hostile_halo");
             _coxinha = assets.Sprite("fx_coxinha");
             _coxinhaSuprema = assets.Sprite("fx_coxinha_suprema");
             for (int i = 0; i < 2; i++) { _motoLeft[i] = assets.Sprite("fx_moto_left_" + i); _motoRight[i] = assets.Sprite("fx_moto_right_" + i); }
@@ -175,7 +178,7 @@ namespace ES.Game
                 case HostileKind.Wave: return _bossWave ?? _bolt;
                 case HostileKind.Orb: return (((int)(now * 8) + h.Id) & 1) == 0 ? _bossOrb0 ?? _bolt : _bossOrb1 ?? _bolt;
                 case HostileKind.Spark: return _bossSpark ?? _bolt;
-                default: return _bolt;
+                default: return (((int)(now * 10) + h.Id) & 1) == 0 ? _bolt : _bolt1;
             }
         }
 
@@ -207,7 +210,14 @@ namespace ES.Game
                 _stamps.Add(sprite, Layers.Snap(new Vector2(g.Pos.X, g.Pos.Y + bob)), Color.white, Layers.Gem);
             }
 
-            foreach (var h in frame.Hostile) _stamps.Add(HostileSprite(h, now), Layers.Snap(Layers.V(h.Pos)), Color.white, Layers.Hostile);
+            // projéteis inimigos: anel de perigo pulsando por baixo, para destacar em qualquer piso e no meio dos efeitos
+            float haloAlpha = ((int)(now * 8) & 1) == 0 ? 1f : 0.6f;
+            foreach (var h in frame.Hostile)
+            {
+                var at = Layers.Snap(Layers.V(h.Pos));
+                _stamps.Add(_hostileHalo, at, new Color(1, 1, 1, haloAlpha), Layers.Hostile - 1);
+                _stamps.Add(HostileSprite(h, now), at, Color.white, Layers.Hostile);
+            }
 
             DrawAbilities(feed, players, renderSeconds, now);
             DrawMotos(feed, now);

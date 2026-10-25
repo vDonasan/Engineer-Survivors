@@ -1,5 +1,6 @@
 // Tiles (32×32), objetos do cenário, efeitos, armas e interface em pixel art.
-import { C } from './palette.mjs';
+import { C, PALETTE_HEX } from './palette.mjs';
+for (const hex of ['#ff2e3e', '#ffd0a0', '#ffffff']) if (!PALETTE_HEX.includes(hex)) PALETTE_HEX.push(hex);
 import { Px, rect, box, line, disc, ellipse, circleLine, stamp, rng, outlineAround } from './draw.mjs';
 
 function floor(variant) {
@@ -80,7 +81,21 @@ export function worldSprites() {
     fx.push(s(`fx_arc_${f}`, 'Effects', arc));
   }
   fx.push(s('fx_laser', 'Effects', stamp(new Px(16, 4), ['.OOOOOOOOOOOOOO.', 'OoAAAAAAAAAAAAoO', 'OoAAAAAAAAAAAAoO', '.OOOOOOOOOOOOOO.'], { O: C.orange1, o: C.orange2, A: C.yellow3 })));
-  fx.push(s('fx_hostile_bolt', 'Effects', stamp(new Px(8, 8), ['..OOOO..', '.ORRRRO.', 'ORYRRRRO', 'ORRRRRRO', 'ORRRRRRO', 'ORRRRRRO', '.ORRRRO.', '..OOOO..'], { O: C.outline, R: C.red2, Y: C.red3 })));
+  // disparo inimigo: núcleo branco-quente, anel vermelho vivo, halo claro e contorno escuro (lê em qualquer piso)
+  const bolt = (pulse) => stamp(new Px(10, 10), pulse
+    ? ['...OOOO...', '..OHHHHO..', '.OHRRRRHO.', 'OHRRWWRRHO', 'OHRWWWWRHO', 'OHRWWWWRHO', 'OHRRWWRRHO', '.OHRRRRHO.', '..OHHHHO..', '...OOOO...']
+    : ['...OOOO...', '..ORRRRO..', '.ORRRRRRO.', 'ORRRWWRRRO', 'ORRWWWWRRO', 'ORRWWWWRRO', 'ORRRWWRRRO', '.ORRRRRRO.', '..ORRRRO..', '...OOOO...'],
+    { O: C.outline, R: '#ff2e3e', W: '#ffffff', H: '#ffd0a0' });
+  fx.push(s('fx_hostile_bolt', 'Effects', bolt(false)));
+  fx.push(s('fx_hostile_bolt_1', 'Effects', bolt(true)));
+  // anel de perigo desenhado sob todo projétil inimigo (inclusive dos bosses)
+  const halo = new Px(16, 16);
+  for (let y = 0; y < 16; y++) for (let x = 0; x < 16; x++) {
+    const d = Math.hypot(x - 7.5, y - 7.5);
+    if (d > 6.2 && d <= 7.4) halo.set(x, y, (x + y) % 2 ? '#ff2e3e' : '#ffffff');
+    else if (d > 5.4 && d <= 6.2) halo.set(x, y, C.outline);
+  }
+  fx.push(s('fx_hostile_halo', 'Effects', halo));
   fx.push(s('fx_gem_xp', 'Effects', stamp(new Px(8, 8), ['...OO...', '..OcCO..', '.OcCCCO.', 'OcCCCCaO', '.OCCCaO.', '..OCaO..', '...OO...', '........'], { O: C.outline, c: C.cyan3, C: C.cyan2, a: C.cyan1 })));
   fx.push(s('fx_gem_xp_big', 'Effects', stamp(new Px(12, 12), ['.....OO.....', '....OyYO....', '...OyYYYO...', '..OyYYYYYO..', '.OyYYYYYYaO.', 'OyYYYYYYYYaO', '.OYYYYYYYaO.', '..OYYYYYaO..', '...OYYYaO...', '....OYaO....', '.....OO.....', '............'], { O: C.outline, y: C.yellow3, Y: C.amber, a: C.orange1 })));
   fx.push(s('fx_heal', 'Effects', stamp(new Px(10, 10), ['..OOOOOO..', '.OWWWWWWO.', 'OWWWGGWWWO', 'OWWGGGGWWO', 'OWWWGGWWWO', '.OWWWWWWO.', '..OOOOOO..', '..........', '..........', '..........'], { O: C.outline, W: C.white, G: C.green2 })));

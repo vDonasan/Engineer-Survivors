@@ -176,7 +176,7 @@ namespace ES.Net
         {
             if (Host == null) { _clientInput = input; return; }
             var offer = Host.Feed.CurrentOffer;
-            bool choosing = offer != null && offer.OfferId == _hostChoiceOffer && _hostChoiceIndex >= 0;
+            bool choosing = offer != null && offer.OfferId == _hostChoiceOffer && _hostChoiceIndex != -1; // negativos: atualizar, pular, banir
             input.SpecialCounter = _hostSpecial;
             input.ChoiceOfferId = choosing ? _hostChoiceOffer : (short)0;
             input.ChoiceIndex = choosing ? _hostChoiceIndex : (sbyte)-1;

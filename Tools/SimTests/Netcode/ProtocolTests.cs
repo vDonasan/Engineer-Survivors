@@ -276,6 +276,47 @@ namespace ES.SimTests.Netcode
         }
 
         [Test]
+        public void Client_RerollBanSkip_ReachHost_AndCountsUpdate()
+        {
+            var net = new LoopbackNet();
+            var (_, a, _) = net.Connect("Ana");
+            net.Host.Start(5);
+            net.Pump();
+            var w = net.Host.World;
+            w.SpawningEnabled = false;
+            var p = w.Players[1];
+            ProgressionSystem.AddSharedXp(w, 200); // vários níveis pendentes
+            net.Run(0.1);
+            Assert.That(a.Feed.CurrentOffer, Is.Not.Null);
+
+            // Atualizar: nova oferta, contagem cai
+            short first = a.Feed.CurrentOffer.OfferId;
+            a.Choose(first, ProgressionSystem.ActionReroll);
+            net.Run(0.2);
+            Assert.That(p.Progress.RerollsLeft, Is.EqualTo(w.Rules.offerRerolls - 1));
+            Assert.That(a.Feed.CurrentOffer.OfferId, Is.Not.EqualTo(first));
+            Assert.That(a.Feed.CurrentOffer.RerollsLeft, Is.EqualTo(w.Rules.offerRerolls - 1));
+
+            // Banir a primeira carta (se não for evolução/sobrevivência): não volta mais
+            var offer = a.Feed.CurrentOffer;
+            int k = System.Array.FindIndex(offer.Options, o => o.Kind != OptionKind.Evolution && o.Kind != OptionKind.Survival);
+            Assert.That(k, Is.GreaterThanOrEqualTo(0));
+            int banned = offer.Options[k].Ref;
+            a.Choose(offer.OfferId, ProgressionSystem.ActionBanFirst - k);
+            net.Run(0.2);
+            Assert.That(p.Progress.BansLeft, Is.EqualTo(w.Rules.offerBans - 1));
+            Assert.That(p.Progress.Banned.Contains(banned), Is.True);
+            Assert.That(a.Feed.CurrentOffer.BansLeft, Is.EqualTo(0));
+
+            // Pular: a oferta fecha sem ganhar nada
+            int abilities = p.Abilities.Count;
+            a.Choose(a.Feed.CurrentOffer.OfferId, ProgressionSystem.ActionSkip);
+            net.Run(0.2);
+            Assert.That(p.Progress.SkipsLeft, Is.EqualTo(w.Rules.offerSkips - 1));
+            Assert.That(p.Abilities.Count, Is.EqualTo(abilities));
+        }
+
+        [Test]
         public void Client_SpecialActivatesOnHost()
         {
             var net = new LoopbackNet();

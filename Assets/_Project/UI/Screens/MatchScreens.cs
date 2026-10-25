@@ -479,9 +479,13 @@ namespace ES.UI
             if (offer == null) return;
             if (offer.OfferId != _offerId) Fill(feed, offer);
 
-            if (Ctx.Input.Choice1.WasPressedThisFrame()) Choose(0);
-            if (Ctx.Input.Choice2.WasPressedThisFrame()) Choose(1);
-            if (Ctx.Input.Choice3.WasPressedThisFrame()) Choose(2);
+            // no modo banir, 1/2/3 banem a carta (como o clique)
+            for (int k = 0; k < 3; k++)
+            {
+                var key = k == 0 ? Ctx.Input.Choice1 : k == 1 ? Ctx.Input.Choice2 : Ctx.Input.Choice3;
+                if (!key.WasPressedThisFrame()) continue;
+                if (_banMode) Ban(k); else Choose(k);
+            }
 
             bool coop = Ctx.Net.Mode != NetMode.Solo;
             // No coop a partida continua: sem escurecer a tela.

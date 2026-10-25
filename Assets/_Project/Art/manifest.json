@@ -11651,11 +11651,35 @@
    "id": "fx_hostile_bolt",
    "category": "Effects",
    "file": "Effects/fx_hostile_bolt.png",
-   "w": 8,
-   "h": 8,
+   "w": 10,
+   "h": 10,
    "pivot": [
-    4,
-    4
+    5,
+    5
+   ],
+   "border": null
+  },
+  {
+   "id": "fx_hostile_bolt_1",
+   "category": "Effects",
+   "file": "Effects/fx_hostile_bolt_1.png",
+   "w": 10,
+   "h": 10,
+   "pivot": [
+    5,
+    5
+   ],
+   "border": null
+  },
+  {
+   "id": "fx_hostile_halo",
+   "category": "Effects",
+   "file": "Effects/fx_hostile_halo.png",
+   "w": 16,
+   "h": 16,
+   "pivot": [
+    8,
+    8
    ],
    "border": null
   },

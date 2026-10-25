@@ -157,7 +157,7 @@ namespace ES.Sim
             var me = LocalSlot >= 0 ? Feed.Players[LocalSlot] : default;
             bool active = me.Present && me.Status == PlayerStatus.Active;
             var offer = Feed.CurrentOffer;
-            bool choosing = offer != null && offer.OfferId == _choiceOffer && _choiceIndex >= 0;
+            bool choosing = offer != null && offer.OfferId == _choiceOffer && _choiceIndex != -1; // negativos: atualizar, pular, banir
 
             for (int t = 0; t < ticks; t++)
             {

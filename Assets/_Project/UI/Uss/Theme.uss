@@ -199,9 +199,12 @@ Toggle { margin: 8px 0; }
 .summary-panel > .summary-stage { min-height: 130px; flex-shrink: 0; }
 
 /* ações da subida de nível */
-.offer-actions { margin-top: 10px; justify-content: center; }
-.offer-actions .btn { font-size: 22px; min-width: 170px; }
-.card.ban-target { background-image: url("/Assets/_Project/Art/UI/ui_btn_primary.png"); }
+/* posição fixa: os botões não mudam de lugar quando as cartas têm alturas diferentes */
+.offer-actions { position: absolute; bottom: 26px; left: 0; right: 0; justify-content: center; }
+.offer-actions .btn { font-size: 22px; min-width: 190px; }
+.offer-actions .btn.selected { -unity-background-image-tint-color: rgb(255, 120, 120); color: rgb(255, 255, 255); }
+.ban-hint { position: absolute; bottom: 78px; left: 0; right: 0; font-size: 24px; -unity-text-align: middle-center; color: rgb(255, 120, 120); }
+.card.ban-target { -unity-background-image-tint-color: rgb(255, 150, 150); border-color: rgb(255, 70, 70); border-width: 3px; }
 .rarity-reliquia { color: rgb(255, 210, 63); }
 
 /* bosses */
