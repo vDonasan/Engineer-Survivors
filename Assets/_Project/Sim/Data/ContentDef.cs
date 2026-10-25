@@ -121,6 +121,8 @@ namespace ES.Sim
     public class RectDef
     {
         public float x, y, w, h;
+        /// <summary>Móvel desenhado (bancada, armario, servidor, planta, caixas, maquina, sofa, impressora, bebedouro).</summary>
+        public string kind;
     }
 
     [Serializable]
@@ -131,6 +133,8 @@ namespace ES.Sim
         public string engineering;
         /// <summary>Fora da tela de escolha (especializações do SP1, usadas em testes e bots).</summary>
         public bool hidden;
+        /// <summary>Apresentação curta na ficha do personagem.</summary>
+        public string bio;
         public string[] affinityTags = new string[0];
         public ModifierDef[] advancedAffinity = new ModifierDef[0];
         public string advancedAffinityText;

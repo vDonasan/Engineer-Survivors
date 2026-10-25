@@ -12,6 +12,8 @@ import { iconSprites } from './lib/icons.mjs';
 import { portraitSprites, EMOTIONS } from './lib/portraits.mjs';
 import { heroSprites, heroPortraitSprites, HEROES } from './lib/heroes.mjs';
 import { allySprites } from './lib/kitart.mjs';
+import { uiSprites } from './lib/uiart.mjs';
+import { sceneSprites } from './lib/sceneart.mjs';
 
 export { SPECS, CHAR_ANIMS, HEROES };
 
@@ -21,7 +23,7 @@ export const CATEGORIES = ['Characters', 'Enemies', 'Bosses', 'Weapons', 'Abilit
 
 export function allSprites() {
   const content = JSON.parse(readFileSync(join(root, 'Assets', '_Project', 'Content', 'Data', 'sp1-content.json'), 'utf8'));
-  return [...characterSprites(), ...heroSprites(), ...enemySprites(), ...worldSprites(), ...allySprites(), ...iconSprites(content), ...portraitSprites(), ...heroPortraitSprites()];
+  return [...characterSprites(), ...heroSprites(), ...enemySprites(), ...worldSprites(), ...allySprites(), ...uiSprites(), ...sceneSprites(), ...iconSprites(content), ...portraitSprites(), ...heroPortraitSprites()];
 }
 
 function listPngs(dir) {

@@ -18,61 +18,17 @@ namespace ES.UI
             Bind("btn-coop", () => Ctx.Router.ShowMain(Ctx.Router.Coop));
             Bind("btn-settings", () => Ctx.Router.OpenSettings(this));
             Bind("btn-credits", () => Ctx.Router.ShowMain(Ctx.Router.Credits));
-        }
-    }
-
-    /// <summary>Cartões de personagem (retrato, nome, engenharia) e o quadro com arma, evolução e especial.</summary>
-    public static class SpecCards
-    {
-        public static Dictionary<string, Button> Build(UiContext ctx, VisualElement list, Action<string> pick, bool compact)
-        {
-            list.Clear();
-            var map = new Dictionary<string, Button>();
-            for (int i = 0; i < ctx.Db.SpecializationCount; i++)
+            // desfile dos personagens no pé do menu
+            var lineup = Q<VisualElement>("hero-lineup");
+            int k = 0;
+            for (int i = 0; i < Ctx.Db.SpecializationCount; i++)
             {
-                var spec = ctx.Db.Specialization(i);
+                var spec = Ctx.Db.Specialization(i);
                 if (spec.Def.hidden) continue;
-                string id = spec.Def.id;
-                var b = new Button(() => { ctx.Click(); pick(id); }) { name = "spec-" + id };
-                b.AddToClassList("btn");
-                b.AddToClassList(compact ? "hero-card-small" : "hero-card");
-                var portrait = new VisualElement();
-                portrait.AddToClassList("portrait");
-                UiText.Image(portrait, ctx.Assets.Sprite($"portrait_{id}_determinacao"));
-                b.Add(portrait);
-                UiText.Line(b, spec.Def.name, "spec-name");
-                if (!compact) UiText.Line(b, spec.Def.engineering ?? "", "small");
-                list.Add(b);
-                map[id] = b;
+                var hero = new HeroSprite(96);
+                hero.Play(Ctx.Assets, spec.Def.id, "walk", "down", 6, k++);
+                lineup.Add(hero);
             }
-            return map;
-        }
-
-        /// <summary>Arma inicial, evolução (com o componente pedido) e especial do personagem.</summary>
-        public static void Describe(UiContext ctx, VisualElement detail, string id)
-        {
-            if (detail == null) return;
-            detail.Clear();
-            int i = ctx.Db.SpecializationIndex(id);
-            if (i < 0) return;
-            var spec = ctx.Db.Specialization(i);
-            var weapon = ctx.Db.Ability(spec.StartingAbility).Def;
-            var special = ctx.Db.Special(spec.Special).Def;
-            UiText.Line(detail, spec.Def.name + " — " + spec.Def.engineering, "spec-name");
-            UiText.Line(detail, Strings.Format("arma_inicial", weapon.name) + " — " + weapon.description);
-            for (int e = 0; e < ctx.Db.EvolutionCount; e++)
-            {
-                var evo = ctx.Db.Evolution(e);
-                if (evo.From != spec.StartingAbility) continue;
-                var result = ctx.Db.Ability(evo.Result).Def;
-                UiText.Line(detail, Strings.Format("evolucao_personagem", result.name, evo.Def.description) + " " + result.description, "small");
-            }
-            UiText.Line(detail, Strings.Format("especial", ctx.Input.SpecialDisplayName(), special.name) + " — " + special.description, "small");
-        }
-
-        public static void Select(Dictionary<string, Button> map, string id)
-        {
-            foreach (var kv in map) kv.Value.EnableInClassList("selected", kv.Key == id);
         }
     }
 
@@ -84,6 +40,9 @@ namespace ES.UI
         Dictionary<string, Button> _specs;
         string _spec;
         Difficulty _difficulty = Difficulty.Normal;
+        HeroSheet _sheet;
+        HeroSprite _summarySprite;
+        VisualElement _summaryInfo;
 
         public string SelectedSpec => _spec;
         public Difficulty SelectedDifficulty => _difficulty;
@@ -95,20 +54,70 @@ namespace ES.UI
             Bind("btn-diff-hard", () => SetDifficulty(Difficulty.Hard));
             Bind("btn-solo-back", () => Ctx.Router.ShowMain(Ctx.Router.Menu));
             Bind("btn-solo-start", Start);
+            _sheet = new HeroSheet(Ctx, Root);
+            var summary = Q<VisualElement>("hero-summary");
+            var stage = new VisualElement();
+            stage.AddToClassList("summary-stage");
+            _summarySprite = new HeroSprite(128);
+            stage.Add(_summarySprite);
+            summary.Add(stage);
+            _summaryInfo = new VisualElement();
+            summary.Add(_summaryInfo);
+            var more = new Button(() => { Ctx.Click(); _sheet.Show(_spec, null); }) { name = "btn-ver-ficha", text = Strings.Get("ficha_ver") };
+            more.AddToClassList("btn");
+            summary.Add(more);
         }
 
         protected override void OnShow()
         {
-            _specs = SpecCards.Build(Ctx, Q<VisualElement>("list-specs"), Pick, false);
-            Pick(_spec ?? Ctx.Db.Specialization(0).Def.id);
+            _specs = SpecCards.Build(Ctx, Q<VisualElement>("list-specs"), OpenSheet, false);
+            Pick(_spec ?? FirstVisible(Ctx.Db));
             SetDifficulty(_difficulty);
+            _sheet.Hide();
+        }
+
+        public static string FirstVisible(GameDatabase db)
+        {
+            for (int i = 0; i < db.SpecializationCount; i++) if (!db.Specialization(i).Def.hidden) return db.Specialization(i).Def.id;
+            return db.Specialization(0).Def.id;
+        }
+
+        /// <summary>Clique num cartão: seleciona e abre a ficha completa.</summary>
+        void OpenSheet(string id)
+        {
+            Pick(id);
+            _sheet.Show(id, () => Pick(id));
         }
 
         public void Pick(string id)
         {
             _spec = id;
             SpecCards.Select(_specs, id);
-            SpecCards.Describe(Ctx, Q<VisualElement>("spec-detail"), id);
+            int i = Ctx.Db.SpecializationIndex(id);
+            if (i < 0) return;
+            var spec = Ctx.Db.Specialization(i);
+            _summarySprite.Play(Ctx.Assets, id, "walk", "down", 7);
+            _summaryInfo.Clear();
+            UiText.Line(_summaryInfo, spec.Def.name, "summary-name");
+            UiText.Line(_summaryInfo, spec.Def.bio ?? "", "summary-bio");
+            var weapon = Ctx.Db.Ability(spec.StartingAbility).Def;
+            var special = Ctx.Db.Special(spec.Special).Def;
+            SummaryRow($"icon_{weapon.id}", Strings.Get("ficha_arma"), weapon.name);
+            SummaryRow($"icon_{special.id}", Strings.Format("ficha_especial", Ctx.Input.SpecialDisplayName()), special.name);
+        }
+
+        void SummaryRow(string icon, string kind, string name)
+        {
+            var row = new VisualElement();
+            row.AddToClassList("row");
+            row.AddToClassList("summary-row");
+            var ic = new VisualElement();
+            ic.AddToClassList("summary-icon");
+            UiText.Image(ic, Ctx.Assets.Sprite(icon));
+            row.Add(ic);
+            UiText.Line(row, kind + ": ", "sheet-kind");
+            UiText.Line(row, name, "summary-item");
+            _summaryInfo.Add(row);
         }
 
         public void SetDifficulty(Difficulty d)
@@ -160,7 +169,7 @@ namespace ES.UI
             return true;
         }
 
-        string DefaultSpec => Ctx.Db.Specialization(0).Def.id;
+        string DefaultSpec => SoloSetupController.FirstVisible(Ctx.Db);
 
         async void Create()
         {
@@ -192,6 +201,7 @@ namespace ES.UI
         Dictionary<string, Button> _specs;
         string _signature;
         float _copiedFor;
+        HeroSheet _sheet;
 
         protected override void OnCreate()
         {
@@ -205,7 +215,8 @@ namespace ES.UI
 
         protected override void OnShow()
         {
-            _specs = SpecCards.Build(Ctx, Q<VisualElement>("list-lobby-specs"), id => Ctx.Net.PickSpecialization(id), true);
+            _sheet ??= new HeroSheet(Ctx, Root);
+            _specs = SpecCards.Build(Ctx, Q<VisualElement>("list-lobby-specs"), id => { Ctx.Net.PickSpecialization(id); _sheet.Show(id, null); }, true);
             _signature = null;
         }
 

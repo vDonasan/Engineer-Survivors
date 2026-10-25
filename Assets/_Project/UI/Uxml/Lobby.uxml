@@ -1,5 +1,5 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements">
-    <ui:VisualElement name="screen-lobby" class="screen center dim">
+    <ui:VisualElement name="screen-lobby" class="screen center dim menu-bg">
         <ui:Label text="#lobby_titulo" class="heading" />
         <ui:VisualElement class="row">
             <ui:Label name="label-code" class="title" style="font-size: 56px;" />

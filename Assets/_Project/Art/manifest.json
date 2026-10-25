@@ -10046,6 +10046,545 @@
    "border": null
   },
   {
+   "id": "ui_frame",
+   "category": "UI",
+   "file": "UI/ui_frame.png",
+   "w": 24,
+   "h": 24,
+   "pivot": [
+    12,
+    12
+   ],
+   "border": [
+    8,
+    8,
+    8,
+    8
+   ]
+  },
+  {
+   "id": "ui_frame_cyan",
+   "category": "UI",
+   "file": "UI/ui_frame_cyan.png",
+   "w": 24,
+   "h": 24,
+   "pivot": [
+    12,
+    12
+   ],
+   "border": [
+    8,
+    8,
+    8,
+    8
+   ]
+  },
+  {
+   "id": "ui_frame_dark",
+   "category": "UI",
+   "file": "UI/ui_frame_dark.png",
+   "w": 24,
+   "h": 24,
+   "pivot": [
+    12,
+    12
+   ],
+   "border": [
+    8,
+    8,
+    8,
+    8
+   ]
+  },
+  {
+   "id": "ui_btn",
+   "category": "UI",
+   "file": "UI/ui_btn.png",
+   "w": 16,
+   "h": 16,
+   "pivot": [
+    8,
+    8
+   ],
+   "border": [
+    5,
+    5,
+    5,
+    5
+   ]
+  },
+  {
+   "id": "ui_btn_hover",
+   "category": "UI",
+   "file": "UI/ui_btn_hover.png",
+   "w": 16,
+   "h": 16,
+   "pivot": [
+    8,
+    8
+   ],
+   "border": [
+    5,
+    5,
+    5,
+    5
+   ]
+  },
+  {
+   "id": "ui_btn_selected",
+   "category": "UI",
+   "file": "UI/ui_btn_selected.png",
+   "w": 16,
+   "h": 16,
+   "pivot": [
+    8,
+    8
+   ],
+   "border": [
+    5,
+    5,
+    5,
+    5
+   ]
+  },
+  {
+   "id": "ui_btn_primary",
+   "category": "UI",
+   "file": "UI/ui_btn_primary.png",
+   "w": 16,
+   "h": 16,
+   "pivot": [
+    8,
+    8
+   ],
+   "border": [
+    5,
+    5,
+    5,
+    5
+   ]
+  },
+  {
+   "id": "ui_menu_bg",
+   "category": "UI",
+   "file": "UI/ui_menu_bg.png",
+   "w": 640,
+   "h": 360,
+   "pivot": [
+    320,
+    180
+   ],
+   "border": null
+  },
+  {
+   "id": "tile_server_0",
+   "category": "Tilesets",
+   "file": "Tilesets/tile_server_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "tile_server_1",
+   "category": "Tilesets",
+   "file": "Tilesets/tile_server_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "tile_wood_0",
+   "category": "Tilesets",
+   "file": "Tilesets/tile_wood_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "tile_wood_1",
+   "category": "Tilesets",
+   "file": "Tilesets/tile_wood_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "tile_wood_2",
+   "category": "Tilesets",
+   "file": "Tilesets/tile_wood_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "tile_concrete_0",
+   "category": "Tilesets",
+   "file": "Tilesets/tile_concrete_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "tile_concrete_1",
+   "category": "Tilesets",
+   "file": "Tilesets/tile_concrete_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "tile_concrete_2",
+   "category": "Tilesets",
+   "file": "Tilesets/tile_concrete_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "tile_epoxy_0",
+   "category": "Tilesets",
+   "file": "Tilesets/tile_epoxy_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "tile_epoxy_1",
+   "category": "Tilesets",
+   "file": "Tilesets/tile_epoxy_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "tile_wall_window",
+   "category": "Tilesets",
+   "file": "Tilesets/tile_wall_window.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "tile_wall_poster_0",
+   "category": "Tilesets",
+   "file": "Tilesets/tile_wall_poster_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "tile_wall_poster_1",
+   "category": "Tilesets",
+   "file": "Tilesets/tile_wall_poster_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "tile_wall_door",
+   "category": "Tilesets",
+   "file": "Tilesets/tile_wall_door.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "tile_wall_server_0",
+   "category": "Tilesets",
+   "file": "Tilesets/tile_wall_server_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "tile_wall_server_1",
+   "category": "Tilesets",
+   "file": "Tilesets/tile_wall_server_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "decal_arrow",
+   "category": "Environment",
+   "file": "Environment/decal_arrow.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "decal_puddle",
+   "category": "Environment",
+   "file": "Environment/decal_puddle.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "decal_papers",
+   "category": "Environment",
+   "file": "Environment/decal_papers.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "decal_vent",
+   "category": "Environment",
+   "file": "Environment/decal_vent.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "decal_drain",
+   "category": "Environment",
+   "file": "Environment/decal_drain.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "decal_oil",
+   "category": "Environment",
+   "file": "Environment/decal_oil.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "decal_tape",
+   "category": "Environment",
+   "file": "Environment/decal_tape.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "decal_coffee",
+   "category": "Environment",
+   "file": "Environment/decal_coffee.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "decal_rug",
+   "category": "Environment",
+   "file": "Environment/decal_rug.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "decal_logo",
+   "category": "Environment",
+   "file": "Environment/decal_logo.png",
+   "w": 96,
+   "h": 96,
+   "pivot": [
+    48,
+    48
+   ],
+   "border": null
+  },
+  {
+   "id": "prop_servidor_0",
+   "category": "Environment",
+   "file": "Environment/prop_servidor_0.png",
+   "w": 64,
+   "h": 96,
+   "pivot": [
+    32,
+    48
+   ],
+   "border": null
+  },
+  {
+   "id": "prop_servidor_1",
+   "category": "Environment",
+   "file": "Environment/prop_servidor_1.png",
+   "w": 64,
+   "h": 96,
+   "pivot": [
+    32,
+    48
+   ],
+   "border": null
+  },
+  {
+   "id": "prop_planta",
+   "category": "Environment",
+   "file": "Environment/prop_planta.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "prop_caixas",
+   "category": "Environment",
+   "file": "Environment/prop_caixas.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "prop_maquina",
+   "category": "Environment",
+   "file": "Environment/prop_maquina.png",
+   "w": 64,
+   "h": 40,
+   "pivot": [
+    32,
+    20
+   ],
+   "border": null
+  },
+  {
+   "id": "prop_sofa",
+   "category": "Environment",
+   "file": "Environment/prop_sofa.png",
+   "w": 96,
+   "h": 40,
+   "pivot": [
+    48,
+    20
+   ],
+   "border": null
+  },
+  {
+   "id": "prop_impressora",
+   "category": "Environment",
+   "file": "Environment/prop_impressora.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "prop_bebedouro",
+   "category": "Environment",
+   "file": "Environment/prop_bebedouro.png",
+   "w": 32,
+   "h": 40,
+   "pivot": [
+    16,
+    20
+   ],
+   "border": null
+  },
+  {
    "id": "icon_descarga_direcionada",
    "category": "Abilities",
    "file": "Abilities/icon_descarga_direcionada.png",

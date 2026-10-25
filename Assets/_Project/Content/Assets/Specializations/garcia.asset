@@ -20,6 +20,7 @@ MonoBehaviour:
     portrait: garcia
     engineering: "Engenharia da Computa\xE7\xE3o"
     hidden: 0
+    bio: "Tem um eletr\xF4nico para cada problema, do celular \xE0 TV de 50 polegadas."
     affinityTags:
     - Software
     - Eletronica

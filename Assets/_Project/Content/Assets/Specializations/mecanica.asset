@@ -20,6 +20,7 @@ MonoBehaviour:
     portrait: mecanica
     engineering: "Engenharia Mec\xE2nica"
     hidden: 1
+    bio: 
     affinityTags:
     - Mecanica
     - Termico

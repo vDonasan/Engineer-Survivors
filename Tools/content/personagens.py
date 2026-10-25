@@ -181,6 +181,19 @@ COMPONENTS = [
               [("Area", "mult", "all", 0.06)]),
 ]
 
+BIOS = {
+    "staut": "Parece inofensivo soprando bolhas de sabão. Até o dinheiro começar a voar.",
+    "miyuki": "Resolve integrais de cabeça mais rápido que o compilador e nunca dispensa um sushi.",
+    "giulia": "Transforma qualquer bancada num circuito e qualquer inimigo num ponto de aterramento.",
+    "breno": "Lanche numa mão, pneu de crossfit na outra. O treino e a fome não esperam.",
+    "artur": "Resolve os bugs no braço. Quando não dá, receita pílulas e seringas.",
+    "badotti": "Nunca anda sozinho: três Cabazords o seguem e, juntos, viram um robô só.",
+    "garcia": "Tem um eletrônico para cada problema, do celular à TV de 50 polegadas.",
+    "jean": "Chega ao laboratório montado num porco, cercado de jabutis e cheiro de pneu queimado.",
+    "fufu": "Braços que dobram aço e uma mochila cheia de seringas de insulina.",
+    "donasa": "Não precisa de microfone: a voz dele já é uma arma de área.",
+}
+
 OVERCLOCK = {
     "id": "overclock", "name": "Overclock", "kind": "overclock",
     "description": "Por 6 s: armas recarregam 40% mais rápido e você corre 15% mais.",
@@ -209,9 +222,33 @@ def dump(v, ind=0):
     return '{\n' + ',\n'.join(f'{inner}{json.dumps(k, ensure_ascii=False)}: {dump(x, ind + 2)}' for k, x in v.items()) + '\n' + pad + '}'
 
 
+# Arena em quatro alas: laboratório (noroeste), servidores (nordeste), copa (sudoeste), oficina (sudeste).
+OBSTACLES = [
+    dict(x=12, y=12, w=7, h=2, kind="bancada"), dict(x=45, y=12, w=7, h=2, kind="bancada"),
+    dict(x=12, y=50, w=7, h=2, kind="bancada"), dict(x=45, y=50, w=7, h=2, kind="bancada"),
+    dict(x=6, y=28, w=1.5, h=8, kind="armario"), dict(x=56.5, y=28, w=1.5, h=8, kind="armario"),
+    dict(x=28, y=20, w=8, h=1.5, kind="armario"), dict(x=28, y=42.5, w=8, h=1.5, kind="armario"),
+    # servidores
+    dict(x=40, y=38, w=2, h=3, kind="servidor"), dict(x=44, y=38, w=2, h=3, kind="servidor"), dict(x=48, y=38, w=2, h=3, kind="servidor"),
+    dict(x=42, y=56, w=2, h=3, kind="servidor"), dict(x=54, y=56, w=2, h=3, kind="servidor"),
+    # laboratório
+    dict(x=18, y=40, w=2, h=2, kind="impressora"), dict(x=9, y=57, w=1, h=1, kind="planta"), dict(x=25, y=57, w=1, h=1, kind="planta"),
+    dict(x=22, y=36, w=1, h=1, kind="planta"),
+    # copa
+    dict(x=11, y=19, w=3, h=1.25, kind="sofa"), dict(x=19, y=4, w=2, h=1.25, kind="maquina"), dict(x=23, y=4, w=1, h=1.25, kind="bebedouro"),
+    dict(x=5, y=5, w=1, h=1, kind="planta"), dict(x=25, y=24, w=1, h=1, kind="planta"),
+    # oficina
+    dict(x=40, y=5, w=2, h=2, kind="caixas"), dict(x=53, y=21, w=2, h=2, kind="caixas"), dict(x=57, y=5, w=2, h=2, kind="caixas"),
+    dict(x=46, y=22, w=2, h=2, kind="impressora"),
+]
+
+
 def main():
     with open(PATH, encoding='utf-8') as f:
         data = json.load(f)
+    for a in data["arenas"]:
+        if a["id"] == "laboratorio":
+            a["obstacles"] = OBSTACLES
     for d in data["balance"]["difficulties"]:
         d.setdefault("abilityDamage", 1.0)
     for t in data["balance"]["teams"]:
@@ -225,7 +262,7 @@ def main():
         upsert(data["abilities"], c["weapon"])
         upsert(data["abilities"], c["evo"])
         heroes.append({
-            "id": c["id"], "name": c["name"], "engineering": c["eng"], "hidden": False,
+            "id": c["id"], "name": c["name"], "engineering": c["eng"], "hidden": False, "bio": BIOS[c["id"]],
             "startingAbility": c["weapon"]["id"], "special": c["special"], "portrait": c["id"],
             "affinityTags": c["tags"],
             "advancedAffinity": [{"stat": "Damage", "op": "mult", "scope": "self", "value": 0.05}],

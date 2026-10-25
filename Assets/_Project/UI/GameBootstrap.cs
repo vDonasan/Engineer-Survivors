@@ -12,7 +12,7 @@ namespace ES.UI
     /// <summary>
     /// Ponto de entrada da cena Main: carrega conteúdo, configurações e textos, cria rede,
     /// áudio, câmera pixel perfect, apresentação da partida e interface.
-    /// Automação pela URL (testes): ?mode=solo | ?mode=host&amp;autostart=2 | ?mode=join&amp;code=ABC123,
+    /// Automação pela URL (testes): ?mode=setup (tela de escolha) | ?mode=solo | ?mode=host&amp;autostart=2 | ?mode=join&amp;code=ABC123,
     /// com &amp;spec=, &amp;name=, &amp;log=1 (estado no console a cada 2 s), &amp;bench=N (só solo: medição com N inimigos)
     /// e &amp;evolve=N com log=1 (solo/anfitrião: todos começam com a arma evoluída no nível N, para testes).
     /// </summary>
@@ -77,6 +77,7 @@ namespace ES.UI
             _log = q.TryGetValue("log", out var l) && l == "1";
             if (q.TryGetValue("bench", out var b)) int.TryParse(b, out _bench);
             if (_log && q.TryGetValue("evolve", out var ev)) int.TryParse(ev, out _evolve);
+            if (mode == "setup") { Router.ShowMain(Router.Solo); return; }
             if (mode == "solo") Net.StartSolo(name, spec, Difficulty.Normal, (ulong)DateTime.UtcNow.Ticks);
             else if (mode == "host")
             {

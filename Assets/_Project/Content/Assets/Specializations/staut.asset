@@ -20,6 +20,8 @@ MonoBehaviour:
     portrait: staut
     engineering: "Engenharia da Computa\xE7\xE3o"
     hidden: 0
+    bio: "Parece inofensivo soprando bolhas de sab\xE3o. At\xE9 o dinheiro come\xE7ar
+      a voar."
     affinityTags:
     - Software
     - Quimica

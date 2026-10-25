@@ -20,6 +20,8 @@ MonoBehaviour:
     portrait: breno
     engineering: "Engenharia da Computa\xE7\xE3o"
     hidden: 0
+    bio: "Lanche numa m\xE3o, pneu de crossfit na outra. O treino e a fome n\xE3o
+      esperam."
     affinityTags:
     - Software
     - Biomecanica

@@ -20,6 +20,8 @@ MonoBehaviour:
     portrait: giulia
     engineering: "Engenharia El\xE9trica"
     hidden: 0
+    bio: Transforma qualquer bancada num circuito e qualquer inimigo num ponto de
+      aterramento.
     affinityTags:
     - Energia
     - Eletronica

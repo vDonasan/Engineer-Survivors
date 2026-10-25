@@ -24,6 +24,7 @@ export const C = {
   pink1: '#c94f86', pink2: '#ff7eb6', pink3: '#ffc2d8',
   bottle1: '#1f5e2e', bottle2: '#2f8f45', bottle3: '#7fd98f',
   money: '#5fa04a', gold: '#ffd23f',
+  blond1: '#6b4f24', blond2: '#9c7838', blond3: '#c4a058',
 };
 
 export const PALETTE_HEX = [...new Set(Object.values(C))];

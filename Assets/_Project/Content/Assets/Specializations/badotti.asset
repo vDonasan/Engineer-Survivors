@@ -20,6 +20,8 @@ MonoBehaviour:
     portrait: badotti
     engineering: "Engenharia Mecatr\xF4nica"
     hidden: 0
+    bio: "Nunca anda sozinho: tr\xEAs Cabazords o seguem e, juntos, viram um rob\xF4
+      s\xF3."
     affinityTags:
     - Robotica
     - Automacao

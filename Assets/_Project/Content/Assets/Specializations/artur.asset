@@ -20,6 +20,8 @@ MonoBehaviour:
     portrait: artur
     engineering: "Engenharia da Computa\xE7\xE3o"
     hidden: 0
+    bio: "Resolve os bugs no bra\xE7o. Quando n\xE3o d\xE1, receita p\xEDlulas e
+      seringas."
     affinityTags:
     - Biomecanica
     - Suporte

@@ -1,19 +1,31 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements">
-    <ui:VisualElement name="screen-solo" class="screen center dim">
-        <ui:Label text="#solo_titulo" class="heading" />
-        <ui:Label text="#escolha_especializacao" class="small" />
-        <ui:VisualElement name="list-specs" class="row wrap hero-grid" />
-        <ui:VisualElement name="spec-detail" class="panel hero-detail" />
-        <ui:Label text="#escolha_dificuldade" class="small" />
-        <ui:VisualElement class="row">
-            <ui:Button name="btn-diff-easy" text="#dificuldade_easy" class="btn" />
-            <ui:Button name="btn-diff-normal" text="#dificuldade_normal" class="btn" />
-            <ui:Button name="btn-diff-hard" text="#dificuldade_hard" class="btn" />
-        </ui:VisualElement>
-        <ui:Label name="label-diff-desc" class="small" />
-        <ui:VisualElement class="row">
-            <ui:Button name="btn-solo-back" text="#voltar" class="btn big" />
-            <ui:Button name="btn-solo-start" text="#iniciar" class="btn big" />
+    <ui:VisualElement name="screen-solo" class="screen menu-bg">
+        <ui:VisualElement class="shade" />
+        <ui:VisualElement class="setup-layout">
+            <ui:Label text="#solo_titulo" class="heading center-text" />
+            <ui:VisualElement class="row setup-row">
+                <ui:VisualElement class="panel pick-panel">
+                    <ui:Label text="#escolha_especializacao" class="section-label" />
+                    <ui:VisualElement name="list-specs" class="row wrap hero-grid" />
+                    <ui:Label text="#ficha_dica" class="small center-text" />
+                </ui:VisualElement>
+                <ui:VisualElement name="hero-summary" class="panel summary-panel" />
+            </ui:VisualElement>
+            <ui:VisualElement class="row bottom-row">
+                <ui:VisualElement class="panel diff-panel">
+                    <ui:Label text="#escolha_dificuldade" class="section-label" />
+                    <ui:VisualElement class="row">
+                        <ui:Button name="btn-diff-easy" text="#dificuldade_easy" class="btn" />
+                        <ui:Button name="btn-diff-normal" text="#dificuldade_normal" class="btn" />
+                        <ui:Button name="btn-diff-hard" text="#dificuldade_hard" class="btn" />
+                    </ui:VisualElement>
+                    <ui:Label name="label-diff-desc" class="small" />
+                </ui:VisualElement>
+                <ui:VisualElement class="row action-row">
+                    <ui:Button name="btn-solo-back" text="#voltar" class="btn big" />
+                    <ui:Button name="btn-solo-start" text="#iniciar" class="btn big primary" />
+                </ui:VisualElement>
+            </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

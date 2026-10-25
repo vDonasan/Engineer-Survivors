@@ -20,6 +20,7 @@ MonoBehaviour:
     portrait: eletrica
     engineering: "Engenharia El\xE9trica"
     hidden: 1
+    bio: 
     affinityTags:
     - Energia
     - Eletronica

@@ -1683,6 +1683,90 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: 31b4490cb7b55644483e2b47e562e886, type: 3}
   - id: fx_plus
     sprite: {fileID: 21300000, guid: 9212fa9b69a37ce43876838207282fc0, type: 3}
+  - id: ui_frame
+    sprite: {fileID: 21300000, guid: b483a7a9b3563a04fad99f96de3b1e7e, type: 3}
+  - id: ui_frame_cyan
+    sprite: {fileID: 21300000, guid: c5712855b79353946ae3135789de63c4, type: 3}
+  - id: ui_frame_dark
+    sprite: {fileID: 21300000, guid: e9c7230907084084a9d7b7a48609d5b2, type: 3}
+  - id: ui_btn
+    sprite: {fileID: 21300000, guid: d93f1d29ba9afdc4f8dbbb921e76b5f8, type: 3}
+  - id: ui_btn_hover
+    sprite: {fileID: 21300000, guid: 4d8d2a7291af4684e97f1e9a9575550b, type: 3}
+  - id: ui_btn_selected
+    sprite: {fileID: 21300000, guid: 793da0f71c0e2af4099216fef242df29, type: 3}
+  - id: ui_btn_primary
+    sprite: {fileID: 21300000, guid: 660c70f587ccdee4db2850a27fbefa47, type: 3}
+  - id: ui_menu_bg
+    sprite: {fileID: 21300000, guid: 8b8b2c6cce6a2ed499d9973a0eefd409, type: 3}
+  - id: tile_server_0
+    sprite: {fileID: 21300000, guid: dcfd21fd40d26f84e9ee387b9c66d737, type: 3}
+  - id: tile_server_1
+    sprite: {fileID: 21300000, guid: c7195e75e81558344bf9a03346aba8a2, type: 3}
+  - id: tile_wood_0
+    sprite: {fileID: 21300000, guid: 99d00eb43a3082e46bf5b868a3f47663, type: 3}
+  - id: tile_wood_1
+    sprite: {fileID: 21300000, guid: 847277248cc37a84499aace8a5846ec0, type: 3}
+  - id: tile_wood_2
+    sprite: {fileID: 21300000, guid: d134ed8010659e946ba249cd83e98ced, type: 3}
+  - id: tile_concrete_0
+    sprite: {fileID: 21300000, guid: 29e93c2bb8df55b43b34b2045f0c4a07, type: 3}
+  - id: tile_concrete_1
+    sprite: {fileID: 21300000, guid: 3c404fc56efde1e4da12d625d9b8a6c9, type: 3}
+  - id: tile_concrete_2
+    sprite: {fileID: 21300000, guid: e1c7b448b64181e4b906fb7fc9c051fc, type: 3}
+  - id: tile_epoxy_0
+    sprite: {fileID: 21300000, guid: c7d2a70bbb561c644a74d7e8740f509c, type: 3}
+  - id: tile_epoxy_1
+    sprite: {fileID: 21300000, guid: 42969aa7f2439744ca6576f98e3981b5, type: 3}
+  - id: tile_wall_window
+    sprite: {fileID: 21300000, guid: d0adfba4bbd4f6f4d8c4f1097f0f48b8, type: 3}
+  - id: tile_wall_poster_0
+    sprite: {fileID: 21300000, guid: 51be307ba372d14408d48eacb3c99708, type: 3}
+  - id: tile_wall_poster_1
+    sprite: {fileID: 21300000, guid: 09461c7e36cfa6447b6430a5f690e3db, type: 3}
+  - id: tile_wall_door
+    sprite: {fileID: 21300000, guid: 267c339189c760940b1e97cec867299e, type: 3}
+  - id: tile_wall_server_0
+    sprite: {fileID: 21300000, guid: 4dbc0bf5bfe60b04d857122972e8c90d, type: 3}
+  - id: tile_wall_server_1
+    sprite: {fileID: 21300000, guid: e5ec855503bc5554c95f5b314c2d34bd, type: 3}
+  - id: decal_arrow
+    sprite: {fileID: 21300000, guid: cdb48340fd716f54da30d84c43169327, type: 3}
+  - id: decal_puddle
+    sprite: {fileID: 21300000, guid: 1f6ed20c64f3e5f48b1473a72e33d456, type: 3}
+  - id: decal_papers
+    sprite: {fileID: 21300000, guid: 1e351df408c28eb4eb941f99b51fd235, type: 3}
+  - id: decal_vent
+    sprite: {fileID: 21300000, guid: f1db69c13a733a948b2c16677123ef77, type: 3}
+  - id: decal_drain
+    sprite: {fileID: 21300000, guid: 70ad2a3b12c8d5042a21fbcbff279027, type: 3}
+  - id: decal_oil
+    sprite: {fileID: 21300000, guid: 3aa4497a352868e488f75767d30f28e5, type: 3}
+  - id: decal_tape
+    sprite: {fileID: 21300000, guid: 1cff69cfcd1d625469c1d95cbd4ad904, type: 3}
+  - id: decal_coffee
+    sprite: {fileID: 21300000, guid: d2954a64a13e6c94893ed1110ffdfa29, type: 3}
+  - id: decal_rug
+    sprite: {fileID: 21300000, guid: 63c471cc62809004da17a64d6357fa17, type: 3}
+  - id: decal_logo
+    sprite: {fileID: 21300000, guid: d734e75a18bbde64bb04f274d7d48baf, type: 3}
+  - id: prop_servidor_0
+    sprite: {fileID: 21300000, guid: 72cc63ac27bb4c6469a57e07cee930ab, type: 3}
+  - id: prop_servidor_1
+    sprite: {fileID: 21300000, guid: 4e47f4a9176c0ea42a60c237292d3367, type: 3}
+  - id: prop_planta
+    sprite: {fileID: 21300000, guid: 7f6d41cf76220764e968e93003586127, type: 3}
+  - id: prop_caixas
+    sprite: {fileID: 21300000, guid: d66ed5cfb8d6de242b375a891fff55da, type: 3}
+  - id: prop_maquina
+    sprite: {fileID: 21300000, guid: 1de451933c6c3894d85d7c7c8f3f6b73, type: 3}
+  - id: prop_sofa
+    sprite: {fileID: 21300000, guid: 26c6c6dcd56014b4d8f95e1f11153d24, type: 3}
+  - id: prop_impressora
+    sprite: {fileID: 21300000, guid: e886ff5584020d142a9e844dc7d986b7, type: 3}
+  - id: prop_bebedouro
+    sprite: {fileID: 21300000, guid: e90a965dbed97ce4dbda6d24d37a9335, type: 3}
   - id: icon_descarga_direcionada
     sprite: {fileID: 21300000, guid: 72bd24770c8d4034b8be7b05703527b0, type: 3}
   - id: icon_braco_giratorio

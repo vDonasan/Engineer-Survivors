@@ -20,6 +20,8 @@ MonoBehaviour:
     portrait: jean
     engineering: "Engenharia da Computa\xE7\xE3o"
     hidden: 0
+    bio: "Chega ao laborat\xF3rio montado num porco, cercado de jabutis e cheiro
+      de pneu queimado."
     affinityTags:
     - Software
     - Mecanica

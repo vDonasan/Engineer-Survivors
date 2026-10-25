@@ -20,6 +20,7 @@ MonoBehaviour:
     portrait: donasa
     engineering: "Engenharia da Computa\xE7\xE3o"
     hidden: 0
+    bio: "N\xE3o precisa de microfone: a voz dele j\xE1 \xE9 uma arma de \xE1rea."
     affinityTags:
     - Software
     - Sensores

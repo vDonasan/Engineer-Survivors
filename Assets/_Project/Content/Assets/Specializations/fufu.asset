@@ -20,6 +20,7 @@ MonoBehaviour:
     portrait: fufu
     engineering: "Engenharia da Computa\xE7\xE3o"
     hidden: 0
+    bio: "Bra\xE7os que dobram a\xE7o e uma mochila cheia de seringas de insulina."
     affinityTags:
     - Biomecanica
     - Quimica
