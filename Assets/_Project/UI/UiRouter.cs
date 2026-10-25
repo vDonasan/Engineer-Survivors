@@ -122,7 +122,9 @@ namespace ES.UI
 
         void OnDisconnected(string key)
         {
-            ShowResult(true);
+            // Caiu na sala (antes de começar): volta ao menu; na partida: resultado com o que o cliente sabe.
+            if (_lastFeed == null) ShowMain(Menu);
+            else ShowResult(true);
             ShowMessage(Strings.Get(key));
         }
 

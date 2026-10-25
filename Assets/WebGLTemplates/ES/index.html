@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no">
+    <title>{{{ PRODUCT_NAME }}}</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <canvas id="unity-canvas" tabindex="-1"></canvas>
+    <div id="es-loading">
+      <div class="es-title">ENGINEERING SURVIVORS</div>
+      <div class="es-sub">Ligando os equipamentos do laboratório...</div>
+      <div class="es-bar"><div id="es-bar-fill"></div></div>
+      <div id="es-status">Baixando 0%</div>
+      <div class="es-hint">WASD ou setas para mover · Espaço para o especial · Esc para o menu · F3 desempenho</div>
+    </div>
+    <div id="es-error" hidden>
+      <div class="es-title">Não foi possível iniciar o jogo</div>
+      <div id="es-error-text"></div>
+      <button id="es-reload" type="button">Recarregar a página</button>
+    </div>
+    <div id="es-banner"></div>
+    <script src="loader-ui.js"></script>
+    <script>
+      ESLoader.start("Build/{{{ LOADER_FILENAME }}}", {
+        arguments: [],
+        dataUrl: "Build/{{{ DATA_FILENAME }}}",
+        frameworkUrl: "Build/{{{ FRAMEWORK_FILENAME }}}",
+#if USE_THREADS
+        workerUrl: "Build/{{{ WORKER_FILENAME }}}",
+#endif
+#if USE_WASM
+        codeUrl: "Build/{{{ CODE_FILENAME }}}",
+#endif
+#if SYMBOLS_FILENAME
+        symbolsUrl: "Build/{{{ SYMBOLS_FILENAME }}}",
+#endif
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: {{{ JSON.stringify(COMPANY_NAME) }}},
+        productName: {{{ JSON.stringify(PRODUCT_NAME) }}},
+        productVersion: {{{ JSON.stringify(PRODUCT_VERSION) }}},
+      });
+    </script>
+  </body>
+</html>

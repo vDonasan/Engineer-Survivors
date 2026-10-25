@@ -2,6 +2,7 @@ using System;
 using ES.Net;
 using ES.Sim;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using PlayerInput = ES.Sim.PlayerInput;
 
 namespace ES.Game
@@ -26,6 +27,9 @@ namespace ES.Game
         float _now;
         int _surges;
         int _prensa = -1;
+        Light2D _light;
+        float _lightBase = 1f, _blackoutAt = -9f;
+        const float BlackoutSeconds = 0.6f;
 
         /// <summary>Eventos de regra deste quadro (subida de nível, evolução, fim...).</summary>
         public event Action<DecodedRuleEvent> RuleEvent;
@@ -66,6 +70,8 @@ namespace ES.Game
             _players = new PlayerViews(_root, _assets, cfg);
             _fx = new FxSystem(_root, _assets, db);
             _prensa = db.EnemyIndex("prensa_ambulante");
+            _light = FindFirstObjectByType<Light2D>();
+            if (_light != null) _lightBase = _light.intensity;
             _now = 0;
             _surges = 0;
             SfxPlayer.Instance?.PlayMusic("loop_tensao");
@@ -75,6 +81,7 @@ namespace ES.Game
         {
             if (_root != null) Destroy(_root.gameObject);
             _root = null;
+            if (_light != null) _light.intensity = _lightBase;
             _enemies = null;
             _players = null;
             _fx = null;
@@ -121,6 +128,16 @@ namespace ES.Game
 
             var target = CameraTarget(feed, local);
             if (target.HasValue) _rig.Follow(target.Value, Time.unscaledDeltaTime);
+            UpdateLight();
+        }
+
+        /// <summary>Luz 2D global: o Apagão escurece o laboratório por um instante (efeitos média/alta).</summary>
+        void UpdateLight()
+        {
+            if (_light == null) return;
+            float k = (_now - _blackoutAt) / BlackoutSeconds;
+            bool dim = _settings.Effects != EffectsLevel.Low && k >= 0f && k < 1f;
+            _light.intensity = dim ? _lightBase * Mathf.Lerp(0.35f, 1f, k * k) : _lightBase;
         }
 
         Vector2? CameraTarget(MatchFeed feed, int local)
@@ -215,6 +232,7 @@ namespace ES.Game
                         _players.OnSpecial(e.A, _now);
                         var sp = e.B >= 0 && e.B < _net.Db.SpecialCount ? _net.Db.Special(e.B) : null;
                         if (sp != null) sfx?.Play(sp.Kind == SpecialKind.Blackout ? "apagao" : "turbina", AudioBus.Sfx, 0.9f, 0f);
+                        if (sp != null && sp.Kind == SpecialKind.Blackout) _blackoutAt = _now;
                         if (e.A == local) _rig.AddShake(0.3f);
                         break;
                     case RuleEventKind.PlayerDowned:

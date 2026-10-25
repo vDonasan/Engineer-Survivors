@@ -251,6 +251,8 @@ namespace ES.UI
             if (Ctx.Input.Choice3.WasPressedThisFrame()) Choose(2);
 
             bool coop = Ctx.Net.Mode != NetMode.Solo;
+            // No coop a partida continua: sem escurecer a tela.
+            Q<VisualElement>("screen-levelup").EnableInClassList("dim-light", !coop);
             Q<VisualElement>("row-choice-timer").style.display = coop ? DisplayStyle.Flex : DisplayStyle.None;
             if (coop)
             {

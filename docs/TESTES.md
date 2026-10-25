@@ -84,3 +84,71 @@ Observações:
   resolvido pelo autor desconectando o ZeroTier.
 - O painel de navegador do app suspende abas ocultas e não alcança serviços externos; por isso a prova usa Chromium sem interface.
 - Pendente: o teste em 2 computadores pelo autor (spec §12.4), com a build publicada.
+
+## 2026-10-24 — Jogo na Unity (Tasks 22–24)
+
+| Conjunto | Comando | Resultado |
+|---|---|---|
+| Simulação (dotnet) | `bash Tools/test-sim.sh` | 183/183 |
+| Pixel art (node) | `npm --prefix ArtSource test` | 13/13 |
+| Áudio (node) | `npm --prefix AudioSource test` | 4/4 |
+| Unity EditMode | `Tools/unity-tests.ps1 -Platform EditMode` | 28/28 |
+| Unity PlayMode | `Tools/unity-tests.ps1 -Platform PlayMode` | 10/10 |
+
+PlayMode monta o jogo inteiro (GameBootstrap + interface) e clica nos botões reais: menu → solo → HUD; o solo não abre
+transporte de rede; subida de nível pausa o solo; cartas mostram nome, raridade e tipo; a escolha atualiza o HUD; a pausa
+congela o solo e "Sair da partida" volta ao menu; o fim da partida mostra o resultado; a tecla do especial reatribuída
+persiste; 396 inimigos no editor em batchmode (sem renderização: ~955 FPS, só a lógica — a medição oficial é no navegador).
+
+Verificação por mutação (os testes de Unity foram escritos junto com o código): três defeitos introduzidos de propósito
+— 5ª voz do mesmo som permitida, botão do menu sem função, evolução descobrível mostrando o nome — fizeram falhar
+exatamente `VoiceLimiter_FourPerSound_ThenFreesWhenOneEnds`, `AllUxmlButtons_HaveHandlers` e
+`LevelUpCard_UndiscoveredEvolution_ShowsQuestionMarks`; o código foi restaurado e a suíte voltou a 28/28.
+
+## Roteiro do teste em 2 computadores (autor) — **pendente: autor**
+
+Pré-requisito: a build publicada (URL em `README.md` depois da publicação). Dois computadores em redes quaisquer
+(podem ser casas diferentes), Chrome, Edge ou Firefox atualizados.
+
+1. **Computador A:** abrir a URL → *Cooperativo Online* → digitar um nome → *Criar sala*. Anotar o código de 6 caracteres
+   (o botão *Copiar* copia).
+2. **Computador B:** abrir a URL → *Cooperativo Online* → nome → digitar o código (maiúsculas/minúsculas e espaços tanto faz) → *Entrar com código*.
+3. Nos dois: a sala mostra "Jogadores 2/4" e os dois nomes. Cada um escolhe uma especialização diferente; A escolhe a dificuldade (B só vê).
+4. A clica *Iniciar*. Conferir nos dois: os dois personagens andam (WASD/setas) e o outro aparece andando; inimigos iguais nas duas telas.
+5. Subir de nível: as cartas aparecem com contagem de 12 s, a partida **não** pausa; escolher com 1/2/3 ou mouse.
+6. Especial (Espaço) nos dois: Apagão (onda que atordoa) e Turbina (velocidade e atropelamento).
+7. F3 nos dois: anotar FPS, KB/s enviados/recebidos e latência.
+8. A minimiza a aba por ~10 s: B deve ver "O anfitrião minimizou o jogo: a partida pode travar."
+9. Jogar até o fim (vitória aos 10 min ou derrota) e conferir a tela de resultado nos dois (tempo, abates, nível, dano por habilidade).
+10. Nova sala: B entra e **A fecha a aba** no meio da partida → B deve ver "Conexão perdida com o anfitrião." e o resultado parcial.
+
+Relatar: o que funcionou, o que falhou (com captura de tela e o texto do console F12, se houver erro), FPS e latência anotados.
+
+## 2026-10-24 — Build do jogo no navegador (Task 25)
+
+Build `Tools/build-webgl.ps1 -Scene Main -Out Build/WebGL`: **sucesso, 0 erros, 709 s**. Download comprimido (Brotli): **14,05 MB**
+(dados 5,19 MB, wasm 9,43 MB, framework 0,08 MB, loader 0,03 MB) — meta ≤ 25 MB atingida.
+
+**Desempenho** (`node Tools/netproof/perf.mjs Build/WebGL 8082 --edge`): Microsoft Edge com GPU real deste computador
+(ANGLE, Intel UHD Graphics, Direct3D 11), janela 1280×720, solo com `?bench=N` (N inimigos mantidos, ~12 s de amostra):
+
+| Inimigos | FPS médio | FPS mínimo (amostras de 2 s) | Meta |
+|---|---|---|---|
+| 300 | 127 | 122 | 60 |
+| 400 | 145 | 144 | ≥ 45 |
+
+Memória: heap do wasm 122 MB, heap JS 37 MB (meta ≤ 512 MB). O FPS acima de 60 indica monitor/navegador sem limite de 60 Hz;
+é desktop com GPU integrada, ou seja, abaixo de um "desktop intermediário". Sem GPU (Chromium com SwiftShader) o mesmo teste dá 12–13 FPS
+— só serve de piso, não de medida.
+
+**Prova de rede na build do jogo** (`ES_BROWSER=msedge node Tools/netproof/proof.mjs Build/WebGL 8081 jogo`): **8/8 aprovada**
+(sala CRGNB6; tick 552/553: 31 inimigos nos dois lados; jogadores em (33,5; 32,0) e (48,7; 32,0), vida 55/50, nível 2 nos dois).
+
+**Revisão visual** (capturas em `Build/perf/`): menu, HUD (retrato, vida, XP, tempo, habilidades, evoluções 0/2), onda do Apagão,
+cartas de subida de nível com ícone, raridade e tags. Defeito encontrado e corrigido: o escurecimento radial da recarga do especial
+não aparecia na build (Painter2D.Arc); trocado por um setor desenhado ponto a ponto.
+
+Observações:
+- O Chromium do Playwright não tem o codec AAC (formato que a Unity usa para áudio na Web) e acusa `decodeAudioData`; no Edge
+  não há erro. Chrome, Edge e Firefox de desktop decodificam AAC. Por isso as provas usam o Edge instalado.
+- `ERROR: Shader` (texto cortado pela própria Unity) aparece no console também com GPU; o jogo desenha normalmente. Registrado em `LIMITACOES.md`.

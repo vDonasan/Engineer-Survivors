@@ -11,15 +11,17 @@ const here = dirname(fileURLToPath(import.meta.url));
 const root = resolve(here, '..', '..');
 const buildDir = resolve(root, process.argv[2] || 'Build/WebGL-proof');
 const port = Number(process.argv[3] || 8081);
-const outDir = join(root, 'Build', 'netproof');
+const outDir = join(root, 'Build', 'netproof', process.argv[4] || '');
 mkdirSync(outDir, { recursive: true });
 
 const server = spawn(process.execPath, [join(root, 'Tools', 'serve-local.mjs'), buildDir, String(port)], { stdio: 'ignore' });
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
 
+// ES_BROWSER=msedge usa o Edge instalado (tem o codec AAC do áudio da Unity; o Chromium do Playwright não tem).
 const browser = await chromium.launch({
   headless: true,
+  channel: process.env.ES_BROWSER || undefined,
   args: ['--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist', '--autoplay-policy=no-user-gesture-required',
     '--disable-background-timer-throttling', '--disable-renderer-backgrounding', '--disable-backgrounding-occluded-windows'],
 });
@@ -58,13 +60,13 @@ try {
   watch(host, 'HOST  ', hl);
   watch(client, 'CLIENT', cl);
 
-  await host.goto(`http://localhost:${port}/?mode=host&autostart=2&name=Host&spec=eletrica`);
+  await host.goto(`http://localhost:${port}/?mode=host&autostart=2&name=Host&spec=eletrica&log=1`);
   const code = await waitFor(hl, /CODE=([A-Z0-9]+)/, 120000);
   report.checks.roomCreated = !!code;
   if (!code) throw new Error('host não criou a sala');
   log('código da sala:', code[1]);
 
-  await client.goto(`http://localhost:${port}/?mode=join&code=${code[1]}&name=Cliente&spec=mecanica`);
+  await client.goto(`http://localhost:${port}/?mode=join&code=${code[1]}&name=Cliente&spec=mecanica&log=1`);
   const started = await waitFor(hl, /START players=(\d)/, 120000);
   report.checks.matchStarted = !!started;
   if (!started) throw new Error('partida não iniciou com 2 jogadores');

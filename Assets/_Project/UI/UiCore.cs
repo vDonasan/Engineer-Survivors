@@ -184,9 +184,15 @@ namespace ES.UI
             float radius = Mathf.Max(r.width, r.height) * 0.75f;
             var p = mgc.painter2D;
             p.fillColor = new Color(0.08f, 0.09f, 0.1f, 0.72f);
+            // Setor desenhado ponto a ponto (o Arc do Painter2D não apareceu na build WebGL).
             p.BeginPath();
             p.MoveTo(c);
-            p.Arc(c, radius, Angle.Degrees(-90f), Angle.Degrees(-90f + 360f * _fraction));
+            int steps = Mathf.Max(2, Mathf.CeilToInt(48 * _fraction));
+            for (int i = 0; i <= steps; i++)
+            {
+                float a = (-90f + 360f * _fraction * i / steps) * Mathf.Deg2Rad;
+                p.LineTo(c + new Vector2(Mathf.Cos(a), Mathf.Sin(a)) * radius);
+            }
             p.ClosePath();
             p.Fill();
         }

@@ -24,6 +24,8 @@ namespace ES.EditorTools
             PlayerSettings.WebGL.decompressionFallback = false;
             PlayerSettings.WebGL.dataCaching = true;
             PlayerSettings.WebGL.exceptionSupport = WebGLExceptionSupport.ExplicitlyThrownExceptionsOnly;
+            // Template próprio: carregamento, aviso sem WebGL 2 e erros amigáveis (Assets/WebGLTemplates/ES).
+            PlayerSettings.WebGL.template = "PROJECT:ES";
             PlayerSettings.SetManagedStrippingLevel(NamedBuildTarget.WebGL, ManagedStrippingLevel.High);
 
             // Pixel perfect: nada de suavização em lugar nenhum.
