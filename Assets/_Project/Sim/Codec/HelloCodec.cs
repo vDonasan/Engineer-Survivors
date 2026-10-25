@@ -34,12 +34,12 @@ namespace ES.Sim
             return r.Remaining == 0;
         }
 
-        /// <summary>Remove caracteres de controle, apara e corta em 16; vazio vira o nome padrão.</summary>
+        /// <summary>Remove caracteres de controle e &lt; &gt; (rich text da interface), apara e corta em 16; vazio vira o nome padrão.</summary>
         public static string SanitizeName(string name)
         {
             if (string.IsNullOrEmpty(name)) return DefaultName;
             var sb = new StringBuilder(name.Length);
-            foreach (char c in name) if (!char.IsControl(c) && !char.IsSurrogate(c)) sb.Append(c);
+            foreach (char c in name) if (!char.IsControl(c) && !char.IsSurrogate(c) && c != '<' && c != '>') sb.Append(c);
             string s = sb.ToString().Trim();
             if (s.Length > MaxNameChars) s = s.Substring(0, MaxNameChars).TrimEnd();
             return s.Length == 0 ? DefaultName : s;

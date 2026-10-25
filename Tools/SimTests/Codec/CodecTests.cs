@@ -178,6 +178,9 @@ namespace ES.SimTests.Codec
             Assert.That(HelloCodec.SanitizeName("\u0007Ana\nBeatriz Souza da Silva"), Is.EqualTo("AnaBeatriz Souza"));
             Assert.That(HelloCodec.SanitizeName("   "), Is.EqualTo("Engenheiro(a)"));
             Assert.That(HelloCodec.SanitizeName(null), Is.EqualTo("Engenheiro(a)"));
+            // a interface (UI Toolkit) interpreta rich text: nomes não podem trazer tags
+            Assert.That(HelloCodec.SanitizeName("<size=300>Ana</size>"), Is.EqualTo("size=300Ana/size"));
+            Assert.That(HelloCodec.SanitizeName("<>"), Is.EqualTo("Engenheiro(a)"));
         }
 
         [Test]
