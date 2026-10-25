@@ -1028,9 +1028,9 @@
       "exclusive": true,
       "sfx": ["soco", "soco_forte", "pilulas", "seringa"],
       "baseStats": [
-        {"stat": "Damage", "value": 16},
+        {"stat": "Damage", "value": 18},
         {"stat": "Cooldown", "value": 0.6},
-        {"stat": "Range", "value": 1.9},
+        {"stat": "Range", "value": 2.1},
         {"stat": "Knockback", "value": 2},
         {"stat": "Area", "value": 1},
         {"stat": "Duration", "value": 1}

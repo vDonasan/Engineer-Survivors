@@ -13,7 +13,8 @@ namespace ES.UI
     /// Ponto de entrada da cena Main: carrega conteúdo, configurações e textos, cria rede,
     /// áudio, câmera pixel perfect, apresentação da partida e interface.
     /// Automação pela URL (testes): ?mode=solo | ?mode=host&amp;autostart=2 | ?mode=join&amp;code=ABC123,
-    /// com &amp;spec=, &amp;name=, &amp;log=1 (estado no console a cada 2 s) e &amp;bench=N (só solo: medição com N inimigos).
+    /// com &amp;spec=, &amp;name=, &amp;log=1 (estado no console a cada 2 s), &amp;bench=N (só solo: medição com N inimigos)
+    /// e &amp;evolve=N com log=1 (solo/anfitrião: todos começam com a arma evoluída no nível N, para testes).
     /// </summary>
     public sealed class GameBootstrap : MonoBehaviour
     {
@@ -27,7 +28,7 @@ namespace ES.UI
         public NetGame Net { get; private set; }
         public string FatalError { get; private set; }
 
-        int _autostart, _bench;
+        int _autostart, _bench, _evolve;
         bool _log;
         float _logAt, _benchAt;
 
@@ -75,6 +76,7 @@ namespace ES.UI
             string name = q.TryGetValue("name", out var n) ? n : Context.PlayerName;
             _log = q.TryGetValue("log", out var l) && l == "1";
             if (q.TryGetValue("bench", out var b)) int.TryParse(b, out _bench);
+            if (_log && q.TryGetValue("evolve", out var ev)) int.TryParse(ev, out _evolve);
             if (mode == "solo") Net.StartSolo(name, spec, Difficulty.Normal, (ulong)DateTime.UtcNow.Ticks);
             else if (mode == "host")
             {
@@ -104,6 +106,12 @@ namespace ES.UI
                 Debug.Log("[ES] START players=" + Net.Lobby.Players.Count);
             }
             if (_bench > 0 && Net.Mode == NetMode.Solo && Net.Started) Bench();
+            if (_evolve > 0 && Net.Started && Net.Host?.World != null)
+            {
+                DebugEvolve.All(Net.Host.World, _evolve);
+                Debug.Log("[ES] EVOLVED level=" + _evolve);
+                _evolve = 0;
+            }
             if (_log && Net.Started && Time.unscaledTime >= _logAt)
             {
                 _logAt = Time.unscaledTime + 2f;
@@ -130,7 +138,7 @@ namespace ES.UI
             var f = Net.Feed;
             if (f == null) return;
             var sb = new StringBuilder();
-            sb.Append(FormattableString.Invariant($"STATE mode={Net.Mode} slot={Net.LocalSlot} tick={f.Tick} t={f.Elapsed:0.0} enemies={f.Tracks.EnemyCount} phase={f.Phase} fps={Context.Perf.Fps:0}"));
+            sb.Append(FormattableString.Invariant($"STATE mode={Net.Mode} slot={Net.LocalSlot} tick={f.Tick} t={f.Elapsed:0.0} enemies={f.Tracks.EnemyCount} allies={f.Tracks.AllyCount} phase={f.Phase} fps={Context.Perf.Fps:0}"));
             for (int s = 0; s < PlayerStore.MaxSlots; s++)
                 if (f.Players[s].Present) sb.Append(FormattableString.Invariant($" p{s}=({f.Players[s].Pos.X:0.0};{f.Players[s].Pos.Y:0.0}) hp={f.Players[s].Hp:0} lv={f.Players[s].Level}"));
             Debug.Log("[ES] " + sb);

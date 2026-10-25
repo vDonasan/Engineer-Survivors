@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 743fe4cf80f19db468824bd5de5da40a, type: 3}
+  m_Name: lanches
+  m_EditorClassIdentifier: ES.Content::ES.Content.AbilityAsset
+  def:
+    id: lanches
+    name: "Hamb\xFArgueres e Doritos"
+    description: "Rajadas de Doritos perfurantes e hamb\xFArgueres que empurram e
+      fazem onda ao cair."
+    kind: weapon
+    rarity: comum
+    behavior: breno
+    tags:
+    - Software
+    - Biomecanica
+    maxLevel: 5
+    evolutionOnly: 0
+    exclusive: 1
+    sfx:
+    - doritos
+    - hamburguer
+    - pneu
+    baseStats:
+    - stat: Damage
+      value: 7
+    - stat: Cooldown
+      value: 0.9
+    - stat: Range
+      value: 8
+    - stat: ProjectileSpeed
+      value: 14
+    - stat: Count
+      value: 3
+    - stat: Pierce
+      value: 2
+    - stat: Area
+      value: 1
+    - stat: Duration
+      value: 1
+    levels:
+    - add:
+      - stat: Count
+        value: 1
+      mult: []
+      text: +1 Dorito por rajada
+    - add:
+      - stat: Damage
+        value: 2
+      mult: []
+      text: Um Dorito por rajada ricocheteia
+    - add:
+      - stat: Damage
+        value: 2
+      mult:
+      - stat: Cooldown
+        value: -0.1
+      text: "+2 de dano, recarga \u221210%"
+    - add:
+      - stat: Pierce
+        value: 1
+      mult: []
+      text: "Todos os Doritos ricocheteiam, +1 perfura\xE7\xE3o, onda do hamb\xFArguer
+        maior"
+    grants: []
+    parameters: []
+  icon: {fileID: 21300000, guid: 9b8090adf3a2cb147ad2952e9a4dc6bc, type: 3}

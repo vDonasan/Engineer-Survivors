@@ -84,7 +84,7 @@ CHARS = [
                     ["doritos", "hamburguer", "pneu"], evolved=True)),
     dict(id="artur", name="Artur", eng=COMP, special="overclock", tags=["Biomecanica", "Suporte"], comp="marmita",
          weapon=weapon("bonesmashing", "Bonesmashing", "Socos em cone; a sequência termina num golpe carregado com onda de choque.", "artur", ["Biomecanica", "Suporte"],
-                       dict(Damage=16, Cooldown=0.6, Range=1.9, Knockback=2, Area=1, Duration=1),
+                       dict(Damage=18, Cooldown=0.6, Range=2.1, Knockback=2, Area=1, Duration=1),
                        [lv("+4 de dano", add=dict(Damage=4)),
                         lv("Os socos interrompem o inimigo por um instante", add=dict(Knockback=1)),
                         lv("+2 de dano, recarga −12%", add=dict(Damage=2), mult=dict(Cooldown=-0.12)),

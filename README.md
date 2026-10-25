@@ -5,7 +5,7 @@ tomado por máquinas. Roda no navegador (Unity WebGL), solo ou cooperativo onlin
 
 **Jogar:** https://engineering-survivors.pages.dev (Chrome, Edge ou Firefox de computador)
 
-**Estado:** SP1 (fundação jogável + prova online). Veja `docs/superpowers/specs/2026-10-24-sp1-fundacao-design.md`.
+**Estado:** SP1 (fundação jogável + prova online) e os dez personagens. Veja `docs/superpowers/specs/`.
 
 ## Como jogar
 
@@ -18,11 +18,27 @@ tomado por máquinas. Roda no navegador (Unity WebGL), solo ou cooperativo onlin
 Cooperativo: um jogador cria a sala e passa o código de 6 caracteres; os outros entram com o código. O anfitrião escolhe
 a dificuldade (Fácil, Normal, Difícil). O tamanho da equipe também ajusta o balanceamento.
 
-## Conteúdo do SP1
+## Personagens
 
-- 2 especializações jogáveis: **Elétrica** (Descarga Direcionada, especial Apagão) e **Mecânica** (Braço Giratório, especial Turbina de Emergência). Arte das 7 engenharias pronta.
-- Habilidades comuns, componentes, atributos, Kit de Primeiros Socorros, uma sinergia (Carga Acumulada) e duas evoluções (uma descobrível).
-- 3 inimigos (enxame, pesado, atirador) com elites, surtos a cada minuto, arena Laboratório de Pesquisa.
+Dez personagens jogáveis, desenhados em pixel art 32×32 a partir de fotos de referência. Cada um tem uma arma
+exclusiva que muda de comportamento nos níveis 3 e 5, uma evolução (arma no nível 5 + um componente no nível 2)
+que acrescenta um ataque novo sem tirar o inicial e uma melhoria avançada no nível 3 da evolução.
+
+| Personagem | Arma inicial | Evolução | Avançada |
+|---|---|---|---|
+| Staut | Bolhas (prendem no nível 3) | Maletas de dinheiro que abrem em moedas (Cartão Corporativo) | moedas ricocheteiam |
+| Miyuki | Cálculos ultrarrápidos, equação explosiva | Sushi e sashimi; dígitos marcam (Café Expresso) | esteira de pratos |
+| Giulia | Resistores e transistores, campo elétrico | Fontes, osciloscópio e circuito (Bateria Portátil) | tempestade eletromagnética |
+| Breno | Hambúrgueres e Doritos | Pneus de crossfit que quicam (Halter) | pneus orbitais |
+| Artur | Bonesmashing (socos em cone, combo) | Pílulas e seringas (Marmita) | anel de seringas no soco carregado |
+| Badotti | Três Cabazords autônomos | Cabazord Master (Kit Arduino) | salto combinado |
+| Garcia | Celulares e papéis de cola | Computadores e TVs que caem (Cabo HDMI) | chuva de eletrônicos |
+| Jean | Jabutis, montado no porco | Carro fazendo drift (Turbina) | volta acelerada |
+| Fufu | Socos de braços fortes, fúria | Insulina: seringas e frascos (Pote de Whey) | fúria dispara seringas |
+| Donasa | Fala extremamente alta | Fala amplificada e garrafas verdes (Megafone) | grito gigante |
+
+Especial (Espaço): Giulia usa o Apagão, Badotti a Turbina de Emergência, os demais o Overclock.
+Design completo: `docs/superpowers/specs/2026-10-24-personagens-design.md`.
 
 ## Estrutura
 

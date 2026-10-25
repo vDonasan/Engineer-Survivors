@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea33c51705b4e8d4e8c2873bb790386f, type: 3}
+  m_Name: evo_pilulas_seringas
+  m_EditorClassIdentifier: ES.Content::ES.Content.EvolutionAsset
+  def:
+    id: evo_pilulas_seringas
+    name: "Bonesmashing, P\xEDlulas e Seringas"
+    description: "Bonesmashing no n\xEDvel m\xE1ximo + Marmita n\xEDvel 2."
+    fromAbility: bonesmashing
+    resultAbility: pilulas_seringas
+    requires:
+    - kind: ability_level
+      target: bonesmashing
+      value: 5
+    - kind: ability_level
+      target: marmita
+      value: 2
+    discoverable: 0

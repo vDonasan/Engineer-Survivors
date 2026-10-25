@@ -29,5 +29,7 @@ MonoBehaviour:
     damageTakenMult: 1
     ramDamage: 0
     ramKnockback: 0
+    cooldownBonus: 0
+    boostTag: 
     stunTag: Maquina
   icon: {fileID: 21300000, guid: ff67ceb137e8e6f4c843f806cb86bc41, type: 3}

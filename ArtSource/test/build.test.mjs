@@ -143,3 +143,28 @@ test('build determinística', () => {
   const again = buildAll({ outDir: artDir, dryRun: true });
   assert.deepEqual(again.hashes, manifest.hashes);
 });
+
+test('10 personagens com todas as animações, retratos e silhuetas distintas', async () => {
+  const { HEROES } = await import('../build.mjs');
+  assert.equal(HEROES.length, 10);
+  for (const id of HEROES) {
+    for (const [anim, { dirs, frames }] of Object.entries(CHAR_ANIMS))
+      for (const d of dirs) for (let f = 0; f < frames; f++) assert.ok(byId.has(`char_${id}_${anim}_${d}_${f}`), `${id} ${anim} ${d} ${f}`);
+    for (const e of ['raiva', 'determinacao', 'vitoria']) assert.ok(byId.has(`portrait_${id}_${e}`), `retrato ${id} ${e}`);
+  }
+  const front = (id) => img(`char_${id}_idle_down_0`);
+  for (let a = 0; a < HEROES.length; a++) for (let b = a + 1; b < HEROES.length; b++) {
+    const A = front(HEROES[a]).data, B = front(HEROES[b]).data;
+    let diff = 0;
+    for (let i = 0; i < A.length; i += 4) if (A[i] !== B[i] || A[i + 1] !== B[i + 1] || A[i + 2] !== B[i + 2] || A[i + 3] !== B[i + 3]) diff++;
+    assert.ok(diff >= 20, `${HEROES[a]} × ${HEROES[b]}: só ${diff} px de diferença`);
+  }
+});
+
+test('sprites de todas as armas dos personagens (enum AllySprite)', () => {
+  const cs = readFileSync(join(root, 'Assets', '_Project', 'Sim', 'Abilities', 'Kit', 'KitTypes.cs'), 'utf8');
+  const body = cs.slice(cs.indexOf('enum AllySprite'), cs.indexOf('}', cs.indexOf('enum AllySprite')));
+  const names = [...body.matchAll(/\b([A-Z][A-Za-z]+),/g)].map((m) => m[1].toLowerCase()).filter((n) => n !== 'byte');
+  assert.ok(names.length >= 40);
+  for (const n of names) assert.ok(byId.has(`ally_${n}_0`), `ally_${n}_0`);
+});

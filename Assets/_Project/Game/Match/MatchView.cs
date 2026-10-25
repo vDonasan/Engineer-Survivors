@@ -23,6 +23,7 @@ namespace ES.Game
         EnemyViews _enemies;
         PlayerViews _players;
         FxSystem _fx;
+        AllyViews _allies;
         readonly RenderFrame _frame = new RenderFrame();
         float _now;
         int _surges;
@@ -44,7 +45,8 @@ namespace ES.Game
         public int EnemyCount => _enemies?.Count ?? 0;
         public int HostileCount => _frame.Hostile.Count;
         public int GemCount => _net?.Feed?.Gems.Count ?? 0;
-        public int StampCount => _fx?.StampCount ?? 0;
+        public int StampCount => (_fx?.StampCount ?? 0) + (_allies?.Count ?? 0);
+        public int AllyCount => _frame.Allies.Count;
         public GameInput Input => _input;
 
         public void Init(GameAssets assets, NetGame net, SettingsStore settings, GameInput input, Camera cam)
@@ -69,6 +71,7 @@ namespace ES.Game
             _enemies = new EnemyViews(_root, _assets, db);
             _players = new PlayerViews(_root, _assets, cfg);
             _fx = new FxSystem(_root, _assets, db);
+            _allies = new AllyViews(_root, _assets);
             _prensa = db.EnemyIndex("prensa_ambulante");
             _light = FindFirstObjectByType<Light2D>();
             if (_light != null) _lightBase = _light.intensity;
@@ -85,6 +88,7 @@ namespace ES.Game
             _enemies = null;
             _players = null;
             _fx = null;
+            _allies = null;
             SfxPlayer.Instance?.StopMusic();
         }
 
@@ -125,6 +129,7 @@ namespace ES.Game
             _players.Sync(feed, _frame, local, localPos, _now);
             float tickSeconds = 1f / Mathf.Max(1, _net.Db.Def.rules.tickRate);
             _fx.Tick(_now, feed, _frame, _players, feed.RenderTick * tickSeconds);
+            _allies.Tick(_frame, _now, _settings.Effects);
 
             var target = CameraTarget(feed, local);
             if (target.HasValue) _rig.Follow(target.Value, Time.unscaledDeltaTime);
@@ -203,7 +208,10 @@ namespace ES.Game
                         break;
                     case CosmeticKind.ProjectileFired:
                         _players.OnAttack(c.A, _now);
-                        sfx?.Play("laser", AudioBus.Sfx, 0.35f);
+                        sfx?.Play(FireSound(c.B, (int)c.Value), AudioBus.Sfx, c.A == local ? 0.4f : 0.22f);
+                        break;
+                    case CosmeticKind.Swing:
+                        _players.OnAttack(c.A, _now);
                         break;
                 }
             }
@@ -227,11 +235,17 @@ namespace ES.Game
                         break;
                     case RuleEventKind.EvolutionApplied:
                         sfx?.Play("evolucao", AudioBus.Sfx, 0.9f, 0f);
+                        if (e.C >= 0 && e.C < _net.Db.AbilityCount && _net.Db.Ability(e.C).Id == "cabazord_master")
+                        {
+                            var at = _players.PositionOf(e.A);
+                            if (at.HasValue) _fx.Assemble(at.Value, _now);
+                            sfx?.Play("montagem", AudioBus.Sfx, 0.9f, 0f);
+                        }
                         break;
                     case RuleEventKind.SpecialActivated:
                         _players.OnSpecial(e.A, _now);
                         var sp = e.B >= 0 && e.B < _net.Db.SpecialCount ? _net.Db.Special(e.B) : null;
-                        if (sp != null) sfx?.Play(sp.Kind == SpecialKind.Blackout ? "apagao" : "turbina", AudioBus.Sfx, 0.9f, 0f);
+                        if (sp != null) sfx?.Play(sp.Kind == SpecialKind.Blackout ? "apagao" : sp.Kind == SpecialKind.Overclock ? "overclock" : "turbina", AudioBus.Sfx, 0.9f, 0f);
                         if (sp != null && sp.Kind == SpecialKind.Blackout) _blackoutAt = _now;
                         if (e.A == local) _rig.AddShake(0.3f);
                         break;
@@ -246,6 +260,16 @@ namespace ES.Game
                 RuleEvent?.Invoke(d);
             }
             feed.RuleEvents.Clear();
+        }
+
+        /// <summary>Som de disparo: "sfx"[variante] da habilidade; o laser antigo não tem lista.</summary>
+        string FireSound(int ability, int variant)
+        {
+            var db = _net.Db;
+            if (ability < 0 || ability >= db.AbilityCount) return "laser";
+            var list = db.Ability(ability).Def.sfx;
+            if (list == null || list.Length == 0) return "laser";
+            return list[Mathf.Clamp(variant, 0, list.Length - 1)];
         }
 
         void OnDestroy() => End();

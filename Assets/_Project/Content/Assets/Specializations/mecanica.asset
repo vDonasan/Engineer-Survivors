@@ -18,6 +18,8 @@ MonoBehaviour:
     startingAbility: braco_giratorio
     special: turbina_emergencia
     portrait: mecanica
+    engineering: "Engenharia Mec\xE2nica"
+    hidden: 1
     affinityTags:
     - Mecanica
     - Termico

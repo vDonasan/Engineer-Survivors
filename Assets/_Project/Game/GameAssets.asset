@@ -587,6 +587,826 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: 345d12d1ad87a2f41adad1985f25c7e7, type: 3}
   - id: char_quimica_victory_down_1
     sprite: {fileID: 21300000, guid: 6b865660e8aea1741bb1e89332d0f0e9, type: 3}
+  - id: char_staut_idle_down_0
+    sprite: {fileID: 21300000, guid: b9942ce228d334b4285d0fe161e17e0c, type: 3}
+  - id: char_staut_idle_down_1
+    sprite: {fileID: 21300000, guid: 44f5db06571402c44aa8697b08f7e06f, type: 3}
+  - id: char_staut_idle_up_0
+    sprite: {fileID: 21300000, guid: b370d15295d655c43a64b631d105a534, type: 3}
+  - id: char_staut_idle_up_1
+    sprite: {fileID: 21300000, guid: e55801b23a599e54a860b7772409e826, type: 3}
+  - id: char_staut_idle_left_0
+    sprite: {fileID: 21300000, guid: d7528370b4f0cdf479c8cbf822c0c541, type: 3}
+  - id: char_staut_idle_left_1
+    sprite: {fileID: 21300000, guid: d2e7e1ab071b7cd47bff76bde1b90cb7, type: 3}
+  - id: char_staut_idle_right_0
+    sprite: {fileID: 21300000, guid: a645b97679419b54ca771fa4db547240, type: 3}
+  - id: char_staut_idle_right_1
+    sprite: {fileID: 21300000, guid: c2e0cc99e4bb750438db6926db43d975, type: 3}
+  - id: char_staut_walk_down_0
+    sprite: {fileID: 21300000, guid: 8c89e5690f8fb604f845ed458fef8970, type: 3}
+  - id: char_staut_walk_down_1
+    sprite: {fileID: 21300000, guid: 98ca61eacddb2754fac098aca2877f1c, type: 3}
+  - id: char_staut_walk_down_2
+    sprite: {fileID: 21300000, guid: 3ba8fa490ca0c264fbb5b0fdcd72b4cc, type: 3}
+  - id: char_staut_walk_down_3
+    sprite: {fileID: 21300000, guid: fbbe4b88b86b84b43b77c3614fadac83, type: 3}
+  - id: char_staut_walk_up_0
+    sprite: {fileID: 21300000, guid: 92ebca95c4baeed488254aa44e54a509, type: 3}
+  - id: char_staut_walk_up_1
+    sprite: {fileID: 21300000, guid: 1e36393056022cc40a1e8f5f54ccbeef, type: 3}
+  - id: char_staut_walk_up_2
+    sprite: {fileID: 21300000, guid: 3b7ef9d4fd24ed54db710c4732691ec5, type: 3}
+  - id: char_staut_walk_up_3
+    sprite: {fileID: 21300000, guid: a51d267ae3a91644b934116d7ece5b61, type: 3}
+  - id: char_staut_walk_left_0
+    sprite: {fileID: 21300000, guid: 0346db5c9a9dd3841a76baafcbda41e0, type: 3}
+  - id: char_staut_walk_left_1
+    sprite: {fileID: 21300000, guid: 62de91ef944ece34d9e05a02b5f60d8b, type: 3}
+  - id: char_staut_walk_left_2
+    sprite: {fileID: 21300000, guid: e71928990d46e2e43995d274a60a501b, type: 3}
+  - id: char_staut_walk_left_3
+    sprite: {fileID: 21300000, guid: ece83fbecd6a16e4daa59db730849223, type: 3}
+  - id: char_staut_walk_right_0
+    sprite: {fileID: 21300000, guid: e8b86af9ed0760b44adbba95dfee6698, type: 3}
+  - id: char_staut_walk_right_1
+    sprite: {fileID: 21300000, guid: b7013f2dc4306904585df5d3a320e773, type: 3}
+  - id: char_staut_walk_right_2
+    sprite: {fileID: 21300000, guid: 4c2d0849d0718d9418eb04efce013f0c, type: 3}
+  - id: char_staut_walk_right_3
+    sprite: {fileID: 21300000, guid: 8eec22fb30b29ed4bb1ac0bdcb6a1989, type: 3}
+  - id: char_staut_attack_down_0
+    sprite: {fileID: 21300000, guid: f5958e529a9673841afe0d04569f3a34, type: 3}
+  - id: char_staut_attack_down_1
+    sprite: {fileID: 21300000, guid: 0686417580051a040bc28a9ff7a4fe9d, type: 3}
+  - id: char_staut_attack_down_2
+    sprite: {fileID: 21300000, guid: 3765f117757d0da46b12c6ece74483e7, type: 3}
+  - id: char_staut_special_down_0
+    sprite: {fileID: 21300000, guid: c701c7cb6fb6a3447ab88671808d8dba, type: 3}
+  - id: char_staut_special_down_1
+    sprite: {fileID: 21300000, guid: dacf96f9c8cb4d34d8cdd56b0cab2d83, type: 3}
+  - id: char_staut_special_down_2
+    sprite: {fileID: 21300000, guid: 10fd8ed66aca403438f7cc9ad2e38bc2, type: 3}
+  - id: char_staut_hurt_down_0
+    sprite: {fileID: 21300000, guid: 1b7dd2af59a240543a34c4573fdf5512, type: 3}
+  - id: char_staut_hurt_down_1
+    sprite: {fileID: 21300000, guid: 7a3bb3ec4f5a5a84eb8b9a2d9974e310, type: 3}
+  - id: char_staut_stun_down_0
+    sprite: {fileID: 21300000, guid: 60a216088adb84c4db99baafdb42890e, type: 3}
+  - id: char_staut_stun_down_1
+    sprite: {fileID: 21300000, guid: a3aeb7ce0a0ab144da2d642b5916c1f7, type: 3}
+  - id: char_staut_downed_down_0
+    sprite: {fileID: 21300000, guid: d60e6ea34606c8a4e976616028751485, type: 3}
+  - id: char_staut_downed_down_1
+    sprite: {fileID: 21300000, guid: 8cf3377734d710b4db31ceb9d2076e3a, type: 3}
+  - id: char_staut_downed_down_2
+    sprite: {fileID: 21300000, guid: c97bb8506c2ac1c479a7f23dede0d6a5, type: 3}
+  - id: char_staut_revive_down_0
+    sprite: {fileID: 21300000, guid: ea492f02718a0494395ee8a0eb2dcddd, type: 3}
+  - id: char_staut_revive_down_1
+    sprite: {fileID: 21300000, guid: a2b6572a13c7f7e4a9e9f815cb3a8280, type: 3}
+  - id: char_staut_victory_down_0
+    sprite: {fileID: 21300000, guid: b1848603a6283b744ba869980220f217, type: 3}
+  - id: char_staut_victory_down_1
+    sprite: {fileID: 21300000, guid: aaa29faaf924df64099c9b53b21cebd1, type: 3}
+  - id: char_miyuki_idle_down_0
+    sprite: {fileID: 21300000, guid: c484d24746a83ab489158d57e470b5cd, type: 3}
+  - id: char_miyuki_idle_down_1
+    sprite: {fileID: 21300000, guid: b4f4cf1f3f1095d4e93c5b4eeac8037a, type: 3}
+  - id: char_miyuki_idle_up_0
+    sprite: {fileID: 21300000, guid: 711fe110df52fea4f9974dbffa2ce467, type: 3}
+  - id: char_miyuki_idle_up_1
+    sprite: {fileID: 21300000, guid: a845c2b38a534ca4ba41129e0a575589, type: 3}
+  - id: char_miyuki_idle_left_0
+    sprite: {fileID: 21300000, guid: 2015898a9a62ed143ba92afa7bd42700, type: 3}
+  - id: char_miyuki_idle_left_1
+    sprite: {fileID: 21300000, guid: 7cbc43cdb8618294da92182d113cbaa2, type: 3}
+  - id: char_miyuki_idle_right_0
+    sprite: {fileID: 21300000, guid: ad76ae7cf052f7749b562289f4f95278, type: 3}
+  - id: char_miyuki_idle_right_1
+    sprite: {fileID: 21300000, guid: 182d47137cd884a4a862aba25e16ec8a, type: 3}
+  - id: char_miyuki_walk_down_0
+    sprite: {fileID: 21300000, guid: d063e870f7139ac45abd777d570e05aa, type: 3}
+  - id: char_miyuki_walk_down_1
+    sprite: {fileID: 21300000, guid: c7a2865993257b94996fe1259f6f3158, type: 3}
+  - id: char_miyuki_walk_down_2
+    sprite: {fileID: 21300000, guid: 6785a348139b4674aa55174251e0f6dd, type: 3}
+  - id: char_miyuki_walk_down_3
+    sprite: {fileID: 21300000, guid: 305dd25e9c54dcb41a96265df2a9d6eb, type: 3}
+  - id: char_miyuki_walk_up_0
+    sprite: {fileID: 21300000, guid: 7929193c0882694479688a6152c0b348, type: 3}
+  - id: char_miyuki_walk_up_1
+    sprite: {fileID: 21300000, guid: fbcb3f5d2a903144bb17aff64cc9c82d, type: 3}
+  - id: char_miyuki_walk_up_2
+    sprite: {fileID: 21300000, guid: 9e5dc6a7d675f3f4f9ea73cfcc265589, type: 3}
+  - id: char_miyuki_walk_up_3
+    sprite: {fileID: 21300000, guid: c251e4fb6267bfd40af24546645b3e25, type: 3}
+  - id: char_miyuki_walk_left_0
+    sprite: {fileID: 21300000, guid: 4ca48db53eea3f84ca228c581f7b4686, type: 3}
+  - id: char_miyuki_walk_left_1
+    sprite: {fileID: 21300000, guid: a79d4ef0ebe16e548928c6412df64578, type: 3}
+  - id: char_miyuki_walk_left_2
+    sprite: {fileID: 21300000, guid: 05161b90356cbb6409c64e3d8ac76fcc, type: 3}
+  - id: char_miyuki_walk_left_3
+    sprite: {fileID: 21300000, guid: 8bd4ecf003036244f946820267a4bf90, type: 3}
+  - id: char_miyuki_walk_right_0
+    sprite: {fileID: 21300000, guid: 256655bac1b8fe2469d0a1b1f63c854b, type: 3}
+  - id: char_miyuki_walk_right_1
+    sprite: {fileID: 21300000, guid: 6300b33769be75148be9315c0ee29774, type: 3}
+  - id: char_miyuki_walk_right_2
+    sprite: {fileID: 21300000, guid: f1302285112c6064990d6f73264e91be, type: 3}
+  - id: char_miyuki_walk_right_3
+    sprite: {fileID: 21300000, guid: d15651a5fb735dc4f83c0bfe5f31cfad, type: 3}
+  - id: char_miyuki_attack_down_0
+    sprite: {fileID: 21300000, guid: 2f97d70addfddcb4bae5df0ce3e7ad24, type: 3}
+  - id: char_miyuki_attack_down_1
+    sprite: {fileID: 21300000, guid: 7d73d0fdc6f2e7842a46b91b27c9c82c, type: 3}
+  - id: char_miyuki_attack_down_2
+    sprite: {fileID: 21300000, guid: 68f1e348284112d4997fe6d629b38b7f, type: 3}
+  - id: char_miyuki_special_down_0
+    sprite: {fileID: 21300000, guid: dd3c3c601781e394fb050110a00a4ed9, type: 3}
+  - id: char_miyuki_special_down_1
+    sprite: {fileID: 21300000, guid: a2d848de31a4f264db26335774e35797, type: 3}
+  - id: char_miyuki_special_down_2
+    sprite: {fileID: 21300000, guid: a960518df38a42240a563f3eef291d99, type: 3}
+  - id: char_miyuki_hurt_down_0
+    sprite: {fileID: 21300000, guid: fbb7906fb3a97b84a8d3c5ce92125471, type: 3}
+  - id: char_miyuki_hurt_down_1
+    sprite: {fileID: 21300000, guid: b0748bea3c8c7334bb07aa3c9ef63780, type: 3}
+  - id: char_miyuki_stun_down_0
+    sprite: {fileID: 21300000, guid: 5ca7ff68d8a97834d9b72ee97cd740e0, type: 3}
+  - id: char_miyuki_stun_down_1
+    sprite: {fileID: 21300000, guid: e60671755820d794398696d7b5c34a2b, type: 3}
+  - id: char_miyuki_downed_down_0
+    sprite: {fileID: 21300000, guid: 1e0371b1ce1b6b24aaecfef75e76b57f, type: 3}
+  - id: char_miyuki_downed_down_1
+    sprite: {fileID: 21300000, guid: 3563665a6f0ba6f43a4f1f804f403f31, type: 3}
+  - id: char_miyuki_downed_down_2
+    sprite: {fileID: 21300000, guid: bf7bc199e6e786e40a7852bb21d40d64, type: 3}
+  - id: char_miyuki_revive_down_0
+    sprite: {fileID: 21300000, guid: 94f95a40f2a18504092b02254a4dd630, type: 3}
+  - id: char_miyuki_revive_down_1
+    sprite: {fileID: 21300000, guid: 70bc578ef945402479597bc6cae66d77, type: 3}
+  - id: char_miyuki_victory_down_0
+    sprite: {fileID: 21300000, guid: ffde471e764a058419ec558146622663, type: 3}
+  - id: char_miyuki_victory_down_1
+    sprite: {fileID: 21300000, guid: 4f296e6b6d2fe7c4fae7c61dd0c88442, type: 3}
+  - id: char_giulia_idle_down_0
+    sprite: {fileID: 21300000, guid: a85feef5af26b86499528cb185f2d808, type: 3}
+  - id: char_giulia_idle_down_1
+    sprite: {fileID: 21300000, guid: 41d07f691f239b44ab3e7d8ed5187242, type: 3}
+  - id: char_giulia_idle_up_0
+    sprite: {fileID: 21300000, guid: 86a53ea1b8f0faa4f98cd248df26e7ac, type: 3}
+  - id: char_giulia_idle_up_1
+    sprite: {fileID: 21300000, guid: 19acb24282c007c4b87147935d119951, type: 3}
+  - id: char_giulia_idle_left_0
+    sprite: {fileID: 21300000, guid: 15f65c0e8de84e744a74c44ed307d41b, type: 3}
+  - id: char_giulia_idle_left_1
+    sprite: {fileID: 21300000, guid: a441620961526844f983cebb03fd123b, type: 3}
+  - id: char_giulia_idle_right_0
+    sprite: {fileID: 21300000, guid: 1d2ff549cdcf0814a8b13c13ed61dffb, type: 3}
+  - id: char_giulia_idle_right_1
+    sprite: {fileID: 21300000, guid: 4a18821702bed6b4baa1ca0b08032f61, type: 3}
+  - id: char_giulia_walk_down_0
+    sprite: {fileID: 21300000, guid: d8f37c174d2649248a87b78427f999fd, type: 3}
+  - id: char_giulia_walk_down_1
+    sprite: {fileID: 21300000, guid: 44aa8791c2aaa0b4bb8ed14e72377651, type: 3}
+  - id: char_giulia_walk_down_2
+    sprite: {fileID: 21300000, guid: b56224c038d1cf2469e46f961c1377fe, type: 3}
+  - id: char_giulia_walk_down_3
+    sprite: {fileID: 21300000, guid: 7af9f7fbdc722b843a8323f8420a2275, type: 3}
+  - id: char_giulia_walk_up_0
+    sprite: {fileID: 21300000, guid: eed0420143c7be64e999fae9a94e8904, type: 3}
+  - id: char_giulia_walk_up_1
+    sprite: {fileID: 21300000, guid: fbdd2a51e519377498f770e7b8ddffe6, type: 3}
+  - id: char_giulia_walk_up_2
+    sprite: {fileID: 21300000, guid: bc9a45077a6e4cb49bf813ce56d6382c, type: 3}
+  - id: char_giulia_walk_up_3
+    sprite: {fileID: 21300000, guid: deabd412cd25ea84eb77eca4a42882f7, type: 3}
+  - id: char_giulia_walk_left_0
+    sprite: {fileID: 21300000, guid: fee17df38ad34f44698cfa0457243fd9, type: 3}
+  - id: char_giulia_walk_left_1
+    sprite: {fileID: 21300000, guid: 7ab1ff0356cb60f4d87a6f3f884f2bcf, type: 3}
+  - id: char_giulia_walk_left_2
+    sprite: {fileID: 21300000, guid: b2a25f59af44d7a44aaca5a2221d29e9, type: 3}
+  - id: char_giulia_walk_left_3
+    sprite: {fileID: 21300000, guid: b2dd2b0a273dc114780dfb0bad11c606, type: 3}
+  - id: char_giulia_walk_right_0
+    sprite: {fileID: 21300000, guid: 63e83aa7aed54534186c943bcab0c2de, type: 3}
+  - id: char_giulia_walk_right_1
+    sprite: {fileID: 21300000, guid: 698c99e6879876f4cb56a1c88cc7e3b5, type: 3}
+  - id: char_giulia_walk_right_2
+    sprite: {fileID: 21300000, guid: 7f4d42387742edf4a9baeb2e935d6131, type: 3}
+  - id: char_giulia_walk_right_3
+    sprite: {fileID: 21300000, guid: 8a73fe6088d282a41ab4f97b7b4a0862, type: 3}
+  - id: char_giulia_attack_down_0
+    sprite: {fileID: 21300000, guid: e913eed60da04ae47a1b03999319c3b8, type: 3}
+  - id: char_giulia_attack_down_1
+    sprite: {fileID: 21300000, guid: 2970f45aacbccc441a507e2f53e5725b, type: 3}
+  - id: char_giulia_attack_down_2
+    sprite: {fileID: 21300000, guid: 496bc7066617f1b458b59c90273d25f6, type: 3}
+  - id: char_giulia_special_down_0
+    sprite: {fileID: 21300000, guid: 2849e3a7d35f4cf43b2cac5d717bcdda, type: 3}
+  - id: char_giulia_special_down_1
+    sprite: {fileID: 21300000, guid: 5719402dd4985e54ab72e2e32179a782, type: 3}
+  - id: char_giulia_special_down_2
+    sprite: {fileID: 21300000, guid: a3b3e3ac6ca0890489145e52586f9db8, type: 3}
+  - id: char_giulia_hurt_down_0
+    sprite: {fileID: 21300000, guid: e1ec2c0506a6fd5439579f525e2cea72, type: 3}
+  - id: char_giulia_hurt_down_1
+    sprite: {fileID: 21300000, guid: 1fdd6220535dc034d8e6aa2d77483b54, type: 3}
+  - id: char_giulia_stun_down_0
+    sprite: {fileID: 21300000, guid: 05316d24cc30ed54595a1edf40ba2ef3, type: 3}
+  - id: char_giulia_stun_down_1
+    sprite: {fileID: 21300000, guid: dffbd22783514ed4f87dd705b4bcea0f, type: 3}
+  - id: char_giulia_downed_down_0
+    sprite: {fileID: 21300000, guid: ba995a9cf64b55c4c9c77ab998e4456e, type: 3}
+  - id: char_giulia_downed_down_1
+    sprite: {fileID: 21300000, guid: 6e842f9b26b5ee640bdc06f00abf7148, type: 3}
+  - id: char_giulia_downed_down_2
+    sprite: {fileID: 21300000, guid: 28e8eb5ed81876444aafac057abcf659, type: 3}
+  - id: char_giulia_revive_down_0
+    sprite: {fileID: 21300000, guid: 8febd777a4e0b2b4d8cecf78446c0d48, type: 3}
+  - id: char_giulia_revive_down_1
+    sprite: {fileID: 21300000, guid: 34cd53ac945ef2744835d46e5dc07e2b, type: 3}
+  - id: char_giulia_victory_down_0
+    sprite: {fileID: 21300000, guid: cab4e94fc3f72fd448ea58f1cbc1a5ec, type: 3}
+  - id: char_giulia_victory_down_1
+    sprite: {fileID: 21300000, guid: 1f8822bae180b4c4293404ffccc2ed6f, type: 3}
+  - id: char_breno_idle_down_0
+    sprite: {fileID: 21300000, guid: c032b6d01e603944ab96ebcb9de55e77, type: 3}
+  - id: char_breno_idle_down_1
+    sprite: {fileID: 21300000, guid: fb3439582d9b0db4484ff91d16284b32, type: 3}
+  - id: char_breno_idle_up_0
+    sprite: {fileID: 21300000, guid: c89a9a1793d175f42a30424ae21f6c08, type: 3}
+  - id: char_breno_idle_up_1
+    sprite: {fileID: 21300000, guid: 709db781c42620849b4d6399d12d1e6e, type: 3}
+  - id: char_breno_idle_left_0
+    sprite: {fileID: 21300000, guid: 6a8957c9d43e840429a49e6b7ba32165, type: 3}
+  - id: char_breno_idle_left_1
+    sprite: {fileID: 21300000, guid: 10d1f12f694b15b4d9ec40875a7a3a7a, type: 3}
+  - id: char_breno_idle_right_0
+    sprite: {fileID: 21300000, guid: 57a7fb8287e8f51429a4b855e32f38a8, type: 3}
+  - id: char_breno_idle_right_1
+    sprite: {fileID: 21300000, guid: ee2186324a601b644b9ecd9755c90340, type: 3}
+  - id: char_breno_walk_down_0
+    sprite: {fileID: 21300000, guid: 78f941b36238f844d83352c32ee4189b, type: 3}
+  - id: char_breno_walk_down_1
+    sprite: {fileID: 21300000, guid: 9e2dddc5adce6784aafc1f3c18cbb1c4, type: 3}
+  - id: char_breno_walk_down_2
+    sprite: {fileID: 21300000, guid: 0e7c9f79fc9bfee47af0427d3452b0bd, type: 3}
+  - id: char_breno_walk_down_3
+    sprite: {fileID: 21300000, guid: d7667a2192bb5d645acd952f1f22329c, type: 3}
+  - id: char_breno_walk_up_0
+    sprite: {fileID: 21300000, guid: f7aff74ac1fd31145b8b4673a1fb8e40, type: 3}
+  - id: char_breno_walk_up_1
+    sprite: {fileID: 21300000, guid: 2953446d0b69ad0419e7ed66ce36f2da, type: 3}
+  - id: char_breno_walk_up_2
+    sprite: {fileID: 21300000, guid: f023d0e9270ccc749b345edfaefea013, type: 3}
+  - id: char_breno_walk_up_3
+    sprite: {fileID: 21300000, guid: b5d179c3351410049b87c67041ad7627, type: 3}
+  - id: char_breno_walk_left_0
+    sprite: {fileID: 21300000, guid: f3cbb27fb8ba2304485799633f944926, type: 3}
+  - id: char_breno_walk_left_1
+    sprite: {fileID: 21300000, guid: d765b689ed2e01a4a80942df5b695db7, type: 3}
+  - id: char_breno_walk_left_2
+    sprite: {fileID: 21300000, guid: 650b99fd7623e274ab611d417873eeb6, type: 3}
+  - id: char_breno_walk_left_3
+    sprite: {fileID: 21300000, guid: c13f341dcc3f0d544a91ae3da747c880, type: 3}
+  - id: char_breno_walk_right_0
+    sprite: {fileID: 21300000, guid: 5d8590f4eab212a468fb31a8c0a00588, type: 3}
+  - id: char_breno_walk_right_1
+    sprite: {fileID: 21300000, guid: 2994f1313aa9e134fab6e02e317403f8, type: 3}
+  - id: char_breno_walk_right_2
+    sprite: {fileID: 21300000, guid: 4597964b4a47b3a40972321bb228c1a1, type: 3}
+  - id: char_breno_walk_right_3
+    sprite: {fileID: 21300000, guid: daf836dfef7dc8e4bb7243ba1362882c, type: 3}
+  - id: char_breno_attack_down_0
+    sprite: {fileID: 21300000, guid: 99cabda30e61e10458fbfcaf9b586e43, type: 3}
+  - id: char_breno_attack_down_1
+    sprite: {fileID: 21300000, guid: 2f061148e6c56a1449351862d1aa1f4d, type: 3}
+  - id: char_breno_attack_down_2
+    sprite: {fileID: 21300000, guid: b835e9ba8617f2549add04069ec121f7, type: 3}
+  - id: char_breno_special_down_0
+    sprite: {fileID: 21300000, guid: 86370c438e5dab74b805ea7981f1b322, type: 3}
+  - id: char_breno_special_down_1
+    sprite: {fileID: 21300000, guid: 4d291780a87075b4dacd76022a49ce47, type: 3}
+  - id: char_breno_special_down_2
+    sprite: {fileID: 21300000, guid: 2687eb11274485b4dac20d9fbab229ff, type: 3}
+  - id: char_breno_hurt_down_0
+    sprite: {fileID: 21300000, guid: 7a57dbd0d4dfca647b7edf624e8488c3, type: 3}
+  - id: char_breno_hurt_down_1
+    sprite: {fileID: 21300000, guid: c85254514764407468c67e3a65a75b66, type: 3}
+  - id: char_breno_stun_down_0
+    sprite: {fileID: 21300000, guid: 243a3c260c3e3d14a8bafb6f767ebc4e, type: 3}
+  - id: char_breno_stun_down_1
+    sprite: {fileID: 21300000, guid: ccf018f3e9e68ad4596f8e7d8ac53dff, type: 3}
+  - id: char_breno_downed_down_0
+    sprite: {fileID: 21300000, guid: 04865e083e3c24a40885e03ab0059f6a, type: 3}
+  - id: char_breno_downed_down_1
+    sprite: {fileID: 21300000, guid: 490de4a5e23381e49931430461f936ff, type: 3}
+  - id: char_breno_downed_down_2
+    sprite: {fileID: 21300000, guid: 876640e7e55f5cf4cb98c400f9b84410, type: 3}
+  - id: char_breno_revive_down_0
+    sprite: {fileID: 21300000, guid: a7211cbd3594fc94c9a79d95ea8bca95, type: 3}
+  - id: char_breno_revive_down_1
+    sprite: {fileID: 21300000, guid: 80da3a2aa3030c04b90f6ca9fbb1853f, type: 3}
+  - id: char_breno_victory_down_0
+    sprite: {fileID: 21300000, guid: db30985a7a6cadf4cb0119881c1e9c50, type: 3}
+  - id: char_breno_victory_down_1
+    sprite: {fileID: 21300000, guid: 00a7ae175c97eb2468a63f6773f955a9, type: 3}
+  - id: char_artur_idle_down_0
+    sprite: {fileID: 21300000, guid: 12d4c220c8c51894f8fe79d949ad58fe, type: 3}
+  - id: char_artur_idle_down_1
+    sprite: {fileID: 21300000, guid: 7a3e097dc36248a46a199c26053ce5e0, type: 3}
+  - id: char_artur_idle_up_0
+    sprite: {fileID: 21300000, guid: f4c06ea85498647439b089ccba036edd, type: 3}
+  - id: char_artur_idle_up_1
+    sprite: {fileID: 21300000, guid: 57e825bd6bde5a94b8e6a2edfc8a81ec, type: 3}
+  - id: char_artur_idle_left_0
+    sprite: {fileID: 21300000, guid: 6a5a04e71b7801349b1f1344097b5294, type: 3}
+  - id: char_artur_idle_left_1
+    sprite: {fileID: 21300000, guid: 74ae9ea55983f17419e57aa90c504084, type: 3}
+  - id: char_artur_idle_right_0
+    sprite: {fileID: 21300000, guid: 8c9765cb06533a14bbb10f2d6f07ec14, type: 3}
+  - id: char_artur_idle_right_1
+    sprite: {fileID: 21300000, guid: b9bd9fb06627a984e9f992645caacbcf, type: 3}
+  - id: char_artur_walk_down_0
+    sprite: {fileID: 21300000, guid: e52a7854f6b526446828cd5b36e344ad, type: 3}
+  - id: char_artur_walk_down_1
+    sprite: {fileID: 21300000, guid: 35a39f5ee7147a84d91d456c305ef132, type: 3}
+  - id: char_artur_walk_down_2
+    sprite: {fileID: 21300000, guid: 8938e9a5e10b0144f8b69a2444bc36ca, type: 3}
+  - id: char_artur_walk_down_3
+    sprite: {fileID: 21300000, guid: 5117910e2059e2842bdc0f21597a1c61, type: 3}
+  - id: char_artur_walk_up_0
+    sprite: {fileID: 21300000, guid: 08b6ca55a49a9e64bab44a3e042d32c9, type: 3}
+  - id: char_artur_walk_up_1
+    sprite: {fileID: 21300000, guid: 8b19358e3eb12e746a86367f0bd74857, type: 3}
+  - id: char_artur_walk_up_2
+    sprite: {fileID: 21300000, guid: 9ea0eb1116dc37e4f811328a56149f4f, type: 3}
+  - id: char_artur_walk_up_3
+    sprite: {fileID: 21300000, guid: 50bd180cb64ad4842ae6478dd2f2e2bd, type: 3}
+  - id: char_artur_walk_left_0
+    sprite: {fileID: 21300000, guid: 52cbaf20a666c4c46afdfb20bc17090b, type: 3}
+  - id: char_artur_walk_left_1
+    sprite: {fileID: 21300000, guid: c5f570e03e7251b4b8d394b9604b1f92, type: 3}
+  - id: char_artur_walk_left_2
+    sprite: {fileID: 21300000, guid: 6770b738e4166084d929271cacacca6b, type: 3}
+  - id: char_artur_walk_left_3
+    sprite: {fileID: 21300000, guid: 09810f28beb93e3489c5adccfe692e00, type: 3}
+  - id: char_artur_walk_right_0
+    sprite: {fileID: 21300000, guid: 39022db7da2a0af49adfac522d4d364d, type: 3}
+  - id: char_artur_walk_right_1
+    sprite: {fileID: 21300000, guid: 38cab82d0f1c5f9488e2b01e2c604763, type: 3}
+  - id: char_artur_walk_right_2
+    sprite: {fileID: 21300000, guid: a244bae847598a1468815296d5277d0a, type: 3}
+  - id: char_artur_walk_right_3
+    sprite: {fileID: 21300000, guid: 56559bef88f0d1b4cadcf3c972476ca0, type: 3}
+  - id: char_artur_attack_down_0
+    sprite: {fileID: 21300000, guid: 62f16e0f2882c96499d14000d45739f1, type: 3}
+  - id: char_artur_attack_down_1
+    sprite: {fileID: 21300000, guid: 49fa42acb0a35304f8f30ff9f68e9b27, type: 3}
+  - id: char_artur_attack_down_2
+    sprite: {fileID: 21300000, guid: 7a59431b59c5d5e4d84194aa822ee810, type: 3}
+  - id: char_artur_special_down_0
+    sprite: {fileID: 21300000, guid: a81e24cc2ce8ece4a900784652352192, type: 3}
+  - id: char_artur_special_down_1
+    sprite: {fileID: 21300000, guid: 619269602ddf7774687f75d68cdf4c73, type: 3}
+  - id: char_artur_special_down_2
+    sprite: {fileID: 21300000, guid: 93c655091caa0104692a05789ebe234d, type: 3}
+  - id: char_artur_hurt_down_0
+    sprite: {fileID: 21300000, guid: 30c3f67648efdca4fbd1138b36d82287, type: 3}
+  - id: char_artur_hurt_down_1
+    sprite: {fileID: 21300000, guid: d83c7a1eef870df428f8899b3ee1b306, type: 3}
+  - id: char_artur_stun_down_0
+    sprite: {fileID: 21300000, guid: f64c85f75778da94da7af690d56a8a97, type: 3}
+  - id: char_artur_stun_down_1
+    sprite: {fileID: 21300000, guid: ddfed63e2f1efee41bcbe711a67050a3, type: 3}
+  - id: char_artur_downed_down_0
+    sprite: {fileID: 21300000, guid: d191db2a8972d2744965e36cc09f2140, type: 3}
+  - id: char_artur_downed_down_1
+    sprite: {fileID: 21300000, guid: a409a9c02fbd781429bd06c10d08389f, type: 3}
+  - id: char_artur_downed_down_2
+    sprite: {fileID: 21300000, guid: eaf2e4bc198703941afe8c383a999a8e, type: 3}
+  - id: char_artur_revive_down_0
+    sprite: {fileID: 21300000, guid: 3b726857daad9224fb895b9df239dff0, type: 3}
+  - id: char_artur_revive_down_1
+    sprite: {fileID: 21300000, guid: 222835ee00dee944f91e72fb72b73b84, type: 3}
+  - id: char_artur_victory_down_0
+    sprite: {fileID: 21300000, guid: 68ca1a7b6ee887d4793bee976eb04f07, type: 3}
+  - id: char_artur_victory_down_1
+    sprite: {fileID: 21300000, guid: e3ae04a06b4aff64cb3f9e1501503959, type: 3}
+  - id: char_badotti_idle_down_0
+    sprite: {fileID: 21300000, guid: 0443b805cd90c9a44a60a3b91b0e4214, type: 3}
+  - id: char_badotti_idle_down_1
+    sprite: {fileID: 21300000, guid: a4a461c6b2bf2b14e9fc9ddd66828857, type: 3}
+  - id: char_badotti_idle_up_0
+    sprite: {fileID: 21300000, guid: e03edcc18e96f3d4d8da2280e67ca531, type: 3}
+  - id: char_badotti_idle_up_1
+    sprite: {fileID: 21300000, guid: d92b31dc7c4be5a4f87ab4829b0d55ac, type: 3}
+  - id: char_badotti_idle_left_0
+    sprite: {fileID: 21300000, guid: 4152cfde776e6c04299ff97b0b79f62b, type: 3}
+  - id: char_badotti_idle_left_1
+    sprite: {fileID: 21300000, guid: 0deba16eb2c459d44a74d60df49d0906, type: 3}
+  - id: char_badotti_idle_right_0
+    sprite: {fileID: 21300000, guid: 1aeaf6f600184a84c87ae7f1523f4357, type: 3}
+  - id: char_badotti_idle_right_1
+    sprite: {fileID: 21300000, guid: fc267597152c80f439896bc73afc9ec9, type: 3}
+  - id: char_badotti_walk_down_0
+    sprite: {fileID: 21300000, guid: e58baa83ed078ef4a8fc5c0b417e2631, type: 3}
+  - id: char_badotti_walk_down_1
+    sprite: {fileID: 21300000, guid: 4786b205b7add92418aebaaf86613ef8, type: 3}
+  - id: char_badotti_walk_down_2
+    sprite: {fileID: 21300000, guid: 64e2e7b99f618b64bbf954f207c03cce, type: 3}
+  - id: char_badotti_walk_down_3
+    sprite: {fileID: 21300000, guid: c6203042f79ce024b9da462730499e8e, type: 3}
+  - id: char_badotti_walk_up_0
+    sprite: {fileID: 21300000, guid: 86b05e7e60caf484bab230f4be7539b4, type: 3}
+  - id: char_badotti_walk_up_1
+    sprite: {fileID: 21300000, guid: 4a713d63bced3984b871731d36b7995a, type: 3}
+  - id: char_badotti_walk_up_2
+    sprite: {fileID: 21300000, guid: c119f0cf542c705438e507ec31740d53, type: 3}
+  - id: char_badotti_walk_up_3
+    sprite: {fileID: 21300000, guid: 76e98238e3bb4664dac84d8709e3282d, type: 3}
+  - id: char_badotti_walk_left_0
+    sprite: {fileID: 21300000, guid: 184acf0f4fb560e418597f80d42bbc81, type: 3}
+  - id: char_badotti_walk_left_1
+    sprite: {fileID: 21300000, guid: 9892bcf33ae3651488d5e513e9d1eb5c, type: 3}
+  - id: char_badotti_walk_left_2
+    sprite: {fileID: 21300000, guid: 67329afdfd793b844880778a0defb616, type: 3}
+  - id: char_badotti_walk_left_3
+    sprite: {fileID: 21300000, guid: 7769cd22daeb77142acd93a40799a2f8, type: 3}
+  - id: char_badotti_walk_right_0
+    sprite: {fileID: 21300000, guid: 258f460b3b016234db0a927f44910e59, type: 3}
+  - id: char_badotti_walk_right_1
+    sprite: {fileID: 21300000, guid: f707aa60b5447a2438d16062c74663f7, type: 3}
+  - id: char_badotti_walk_right_2
+    sprite: {fileID: 21300000, guid: 846122275d1674b47bf1f1a758d81d66, type: 3}
+  - id: char_badotti_walk_right_3
+    sprite: {fileID: 21300000, guid: 27cdcaad44c69104e96279c5cdcd761e, type: 3}
+  - id: char_badotti_attack_down_0
+    sprite: {fileID: 21300000, guid: 832a1c6665488ac42b0f402f2e91b7c3, type: 3}
+  - id: char_badotti_attack_down_1
+    sprite: {fileID: 21300000, guid: 5d2e0c07fa3c85a4eb570e1d09e824f0, type: 3}
+  - id: char_badotti_attack_down_2
+    sprite: {fileID: 21300000, guid: 676063681e7983840bf85ccefe73f6e5, type: 3}
+  - id: char_badotti_special_down_0
+    sprite: {fileID: 21300000, guid: abcbf34f2e487474896adfc2e77788a8, type: 3}
+  - id: char_badotti_special_down_1
+    sprite: {fileID: 21300000, guid: 7769800b81a7f2446a9bc918d0374804, type: 3}
+  - id: char_badotti_special_down_2
+    sprite: {fileID: 21300000, guid: 1381e8763d7346c43b6e53d802d0df78, type: 3}
+  - id: char_badotti_hurt_down_0
+    sprite: {fileID: 21300000, guid: b7d4913f0f7ea6a47887c6753788cb20, type: 3}
+  - id: char_badotti_hurt_down_1
+    sprite: {fileID: 21300000, guid: 6c8d1e5d6ea85604d8b6310d6c119816, type: 3}
+  - id: char_badotti_stun_down_0
+    sprite: {fileID: 21300000, guid: 051b019971ad14c4e9b6a73902ee8a82, type: 3}
+  - id: char_badotti_stun_down_1
+    sprite: {fileID: 21300000, guid: dfd2d6da0b1414d47807df817cb77146, type: 3}
+  - id: char_badotti_downed_down_0
+    sprite: {fileID: 21300000, guid: 2c0f194213d48db4b9e5e8bcabbb2039, type: 3}
+  - id: char_badotti_downed_down_1
+    sprite: {fileID: 21300000, guid: 49670e5eb20781f478789be3e3b445ac, type: 3}
+  - id: char_badotti_downed_down_2
+    sprite: {fileID: 21300000, guid: 6de04703bf9bb9947a56d746d0924717, type: 3}
+  - id: char_badotti_revive_down_0
+    sprite: {fileID: 21300000, guid: 103d308d2ff9cca4586622ec4355cfee, type: 3}
+  - id: char_badotti_revive_down_1
+    sprite: {fileID: 21300000, guid: e44c29bd8cf9133468ece636e441f57c, type: 3}
+  - id: char_badotti_victory_down_0
+    sprite: {fileID: 21300000, guid: e0fe4fec1cb70dc499a479edd3cb4a28, type: 3}
+  - id: char_badotti_victory_down_1
+    sprite: {fileID: 21300000, guid: 8c06f51fc1eb0b947a6250e93abb784e, type: 3}
+  - id: char_garcia_idle_down_0
+    sprite: {fileID: 21300000, guid: 82cf4dccc2576e843a881ad9b1ce0477, type: 3}
+  - id: char_garcia_idle_down_1
+    sprite: {fileID: 21300000, guid: 7c4ca3821022a3f4d8ead399a30f2863, type: 3}
+  - id: char_garcia_idle_up_0
+    sprite: {fileID: 21300000, guid: bfdd5def738496d4aa6f674df03dabe5, type: 3}
+  - id: char_garcia_idle_up_1
+    sprite: {fileID: 21300000, guid: 6f64d975047808a43968881c7ab37617, type: 3}
+  - id: char_garcia_idle_left_0
+    sprite: {fileID: 21300000, guid: e53f505fc6d92b341a0fd4c33d76a492, type: 3}
+  - id: char_garcia_idle_left_1
+    sprite: {fileID: 21300000, guid: e4a44046a11426f46ace71472f221c72, type: 3}
+  - id: char_garcia_idle_right_0
+    sprite: {fileID: 21300000, guid: 79a83453504824d41bb8bf4a831b9892, type: 3}
+  - id: char_garcia_idle_right_1
+    sprite: {fileID: 21300000, guid: 57ddaa0fff8c29c47aed21a64210d80b, type: 3}
+  - id: char_garcia_walk_down_0
+    sprite: {fileID: 21300000, guid: 703bcbf24ef806348b592107d7dab101, type: 3}
+  - id: char_garcia_walk_down_1
+    sprite: {fileID: 21300000, guid: b3d08b96574652e49817f1357be89a61, type: 3}
+  - id: char_garcia_walk_down_2
+    sprite: {fileID: 21300000, guid: a43f9b2140f3fcd4a9b5fc4aa7ccd498, type: 3}
+  - id: char_garcia_walk_down_3
+    sprite: {fileID: 21300000, guid: b8f84aa39a5f4b148b46098d3e756f87, type: 3}
+  - id: char_garcia_walk_up_0
+    sprite: {fileID: 21300000, guid: 758182579d0f1894196d29289c26636f, type: 3}
+  - id: char_garcia_walk_up_1
+    sprite: {fileID: 21300000, guid: b6d842c0f00e77340a6aba6bf0caa0fa, type: 3}
+  - id: char_garcia_walk_up_2
+    sprite: {fileID: 21300000, guid: c03ce8387aad6bf4f895806c1af206bc, type: 3}
+  - id: char_garcia_walk_up_3
+    sprite: {fileID: 21300000, guid: 7a5e473451675ad48b20bb9a54498212, type: 3}
+  - id: char_garcia_walk_left_0
+    sprite: {fileID: 21300000, guid: c0f69d8b73de9344ea69bee4724821a0, type: 3}
+  - id: char_garcia_walk_left_1
+    sprite: {fileID: 21300000, guid: bec3c0dace14a9f409b75baaf34f0757, type: 3}
+  - id: char_garcia_walk_left_2
+    sprite: {fileID: 21300000, guid: 0a791ba1594effb40a489116dcfce70f, type: 3}
+  - id: char_garcia_walk_left_3
+    sprite: {fileID: 21300000, guid: 4721a4be0003ae44d8c75fa8e7307b8a, type: 3}
+  - id: char_garcia_walk_right_0
+    sprite: {fileID: 21300000, guid: 979f7fc67a95bb645b52a90a83abf7c6, type: 3}
+  - id: char_garcia_walk_right_1
+    sprite: {fileID: 21300000, guid: eedd8dbf84639454b857502e4e57f25f, type: 3}
+  - id: char_garcia_walk_right_2
+    sprite: {fileID: 21300000, guid: d31281cf3a7f8d04884fa37dcd06615d, type: 3}
+  - id: char_garcia_walk_right_3
+    sprite: {fileID: 21300000, guid: 30785d7da217f76459532102759bbb03, type: 3}
+  - id: char_garcia_attack_down_0
+    sprite: {fileID: 21300000, guid: 6ca938822b1b0814d9b58f6a633fbc49, type: 3}
+  - id: char_garcia_attack_down_1
+    sprite: {fileID: 21300000, guid: 90aedd099dce4d6408ab3dcbeb7ce300, type: 3}
+  - id: char_garcia_attack_down_2
+    sprite: {fileID: 21300000, guid: f4e20df6db790bd499e14c7b44bb1ce3, type: 3}
+  - id: char_garcia_special_down_0
+    sprite: {fileID: 21300000, guid: edac3f5123162404a99d19f3ec0e032c, type: 3}
+  - id: char_garcia_special_down_1
+    sprite: {fileID: 21300000, guid: 0438957d1bad37d4eb109cb238a13780, type: 3}
+  - id: char_garcia_special_down_2
+    sprite: {fileID: 21300000, guid: b93544563865f4448ac850d9ca0f569e, type: 3}
+  - id: char_garcia_hurt_down_0
+    sprite: {fileID: 21300000, guid: 9e57dd280eaa46246adcf9233efe0888, type: 3}
+  - id: char_garcia_hurt_down_1
+    sprite: {fileID: 21300000, guid: 98b545be445c5e944b42e97ac5b0c6ef, type: 3}
+  - id: char_garcia_stun_down_0
+    sprite: {fileID: 21300000, guid: 2ae01f5e811b7e54e8e28cf908bdb697, type: 3}
+  - id: char_garcia_stun_down_1
+    sprite: {fileID: 21300000, guid: d493babb0b022db4ebf289496b62f0e2, type: 3}
+  - id: char_garcia_downed_down_0
+    sprite: {fileID: 21300000, guid: 6a64c3fcd88c26445a51973c3fc6f726, type: 3}
+  - id: char_garcia_downed_down_1
+    sprite: {fileID: 21300000, guid: 99a6bae61988a9a4e88991c73697da55, type: 3}
+  - id: char_garcia_downed_down_2
+    sprite: {fileID: 21300000, guid: ccc939cd56ca91344821b4fbc0359641, type: 3}
+  - id: char_garcia_revive_down_0
+    sprite: {fileID: 21300000, guid: fa18379e9236a1a4fa207d67826acd9d, type: 3}
+  - id: char_garcia_revive_down_1
+    sprite: {fileID: 21300000, guid: 6818d4359c91b604c87c30533b980a22, type: 3}
+  - id: char_garcia_victory_down_0
+    sprite: {fileID: 21300000, guid: 408ff580da043924987352db8c5b99f7, type: 3}
+  - id: char_garcia_victory_down_1
+    sprite: {fileID: 21300000, guid: 6cd95778b170db84c803c2d23291298b, type: 3}
+  - id: char_jean_idle_down_0
+    sprite: {fileID: 21300000, guid: e662ba7c01e22c6428131ba78816aa04, type: 3}
+  - id: char_jean_idle_down_1
+    sprite: {fileID: 21300000, guid: c2582938bcf6a244fa8ed9c898fa4b62, type: 3}
+  - id: char_jean_idle_up_0
+    sprite: {fileID: 21300000, guid: 9510f87f2575742479c58d51760edb35, type: 3}
+  - id: char_jean_idle_up_1
+    sprite: {fileID: 21300000, guid: 2033baf0d01b0a443b560140b8621045, type: 3}
+  - id: char_jean_idle_left_0
+    sprite: {fileID: 21300000, guid: 089717302fe16b041aa501e129d9c74e, type: 3}
+  - id: char_jean_idle_left_1
+    sprite: {fileID: 21300000, guid: 0f869e9fafc550743a03d0e1145e840d, type: 3}
+  - id: char_jean_idle_right_0
+    sprite: {fileID: 21300000, guid: e9846c7b32ded994bab3126dd520e284, type: 3}
+  - id: char_jean_idle_right_1
+    sprite: {fileID: 21300000, guid: 4782c7f5ba4273f4bb18f55aa83f3215, type: 3}
+  - id: char_jean_walk_down_0
+    sprite: {fileID: 21300000, guid: 7f8f9c55d27735343bfb6cd3eab5a2ce, type: 3}
+  - id: char_jean_walk_down_1
+    sprite: {fileID: 21300000, guid: 35fbf701400d91548970d5eb05e3b9ac, type: 3}
+  - id: char_jean_walk_down_2
+    sprite: {fileID: 21300000, guid: 92f4f00de8fc87747b919021f3b926fa, type: 3}
+  - id: char_jean_walk_down_3
+    sprite: {fileID: 21300000, guid: 921b7a540d05fac4ab27211b729449d0, type: 3}
+  - id: char_jean_walk_up_0
+    sprite: {fileID: 21300000, guid: 31a331a7ef6e6774592295e4c55a6f12, type: 3}
+  - id: char_jean_walk_up_1
+    sprite: {fileID: 21300000, guid: 5fcedfca3609a3d49bd52a4bfd5cbca7, type: 3}
+  - id: char_jean_walk_up_2
+    sprite: {fileID: 21300000, guid: 5ccfbf2e5bd420241a6b6fff0c443ec8, type: 3}
+  - id: char_jean_walk_up_3
+    sprite: {fileID: 21300000, guid: e064f7dd178b1254996828dc96c90327, type: 3}
+  - id: char_jean_walk_left_0
+    sprite: {fileID: 21300000, guid: 03b08ce39de96494e90333b395bab864, type: 3}
+  - id: char_jean_walk_left_1
+    sprite: {fileID: 21300000, guid: 5e0fd17b7b452e24dabeb6eb51813370, type: 3}
+  - id: char_jean_walk_left_2
+    sprite: {fileID: 21300000, guid: 5f5f5200d5f7ab34f80310e0fd063568, type: 3}
+  - id: char_jean_walk_left_3
+    sprite: {fileID: 21300000, guid: 9b9397b69680ca14a9eecc16181c5709, type: 3}
+  - id: char_jean_walk_right_0
+    sprite: {fileID: 21300000, guid: e50b312a68a308341bb3bde281eb402a, type: 3}
+  - id: char_jean_walk_right_1
+    sprite: {fileID: 21300000, guid: 991447a413ff5314cbb7af02301c51f5, type: 3}
+  - id: char_jean_walk_right_2
+    sprite: {fileID: 21300000, guid: d6844675681dd5a40b297d625a77482c, type: 3}
+  - id: char_jean_walk_right_3
+    sprite: {fileID: 21300000, guid: fb49ab5c38c27764c8d6d6dc3be7786c, type: 3}
+  - id: char_jean_attack_down_0
+    sprite: {fileID: 21300000, guid: bebb22a02677eff4d940f42020a66293, type: 3}
+  - id: char_jean_attack_down_1
+    sprite: {fileID: 21300000, guid: 87b0a835a36babb49b251cf77ed5cf97, type: 3}
+  - id: char_jean_attack_down_2
+    sprite: {fileID: 21300000, guid: 5cd55e67123630d43be4d35dbc1c6ee8, type: 3}
+  - id: char_jean_special_down_0
+    sprite: {fileID: 21300000, guid: 9b45fdd8981746a4f9f1852c9410ad61, type: 3}
+  - id: char_jean_special_down_1
+    sprite: {fileID: 21300000, guid: 345303e0357fb4046a8f69bb584ef2a6, type: 3}
+  - id: char_jean_special_down_2
+    sprite: {fileID: 21300000, guid: 28056d4ecc530ad4488ce64ef11fb089, type: 3}
+  - id: char_jean_hurt_down_0
+    sprite: {fileID: 21300000, guid: f021e9f9d58cfce418d539efd2571c49, type: 3}
+  - id: char_jean_hurt_down_1
+    sprite: {fileID: 21300000, guid: deba70f41789e4c4fa54bf30aba4b217, type: 3}
+  - id: char_jean_stun_down_0
+    sprite: {fileID: 21300000, guid: ce5d2128c8b20c346935a0172d93195c, type: 3}
+  - id: char_jean_stun_down_1
+    sprite: {fileID: 21300000, guid: cef48e89f5a41424e86bfeb67a531c1c, type: 3}
+  - id: char_jean_downed_down_0
+    sprite: {fileID: 21300000, guid: eb26f5c67b3783446839bac760410684, type: 3}
+  - id: char_jean_downed_down_1
+    sprite: {fileID: 21300000, guid: 6e01ce099237bae4c8031bb28d8aa6c5, type: 3}
+  - id: char_jean_downed_down_2
+    sprite: {fileID: 21300000, guid: 486af5920d0daca4c8847b04575e80ce, type: 3}
+  - id: char_jean_revive_down_0
+    sprite: {fileID: 21300000, guid: 848a24b37af8abd4b831207a21c0d43f, type: 3}
+  - id: char_jean_revive_down_1
+    sprite: {fileID: 21300000, guid: 31089b3bfeaca1543b7d41134007a52c, type: 3}
+  - id: char_jean_victory_down_0
+    sprite: {fileID: 21300000, guid: 642a0f93f0e137245952ca9237277836, type: 3}
+  - id: char_jean_victory_down_1
+    sprite: {fileID: 21300000, guid: 76934595dc27a0b4ab38b0abdae9db94, type: 3}
+  - id: char_fufu_idle_down_0
+    sprite: {fileID: 21300000, guid: 0e31ddf87117f3b458b21519be58f404, type: 3}
+  - id: char_fufu_idle_down_1
+    sprite: {fileID: 21300000, guid: d0302fb8f5f1ded40a3d93f1e2810965, type: 3}
+  - id: char_fufu_idle_up_0
+    sprite: {fileID: 21300000, guid: fc3ab8f3d06c49f47aa4f30852e62599, type: 3}
+  - id: char_fufu_idle_up_1
+    sprite: {fileID: 21300000, guid: 854532a7b6353b5458d3007da2a9cf3b, type: 3}
+  - id: char_fufu_idle_left_0
+    sprite: {fileID: 21300000, guid: 800f2330cda32ff4fb23cbed9c4f3b32, type: 3}
+  - id: char_fufu_idle_left_1
+    sprite: {fileID: 21300000, guid: aa3af2718a024714aba0891b0f06f862, type: 3}
+  - id: char_fufu_idle_right_0
+    sprite: {fileID: 21300000, guid: 440391b8c912e7341881ba121ae43ba0, type: 3}
+  - id: char_fufu_idle_right_1
+    sprite: {fileID: 21300000, guid: 71401dd7642c4cf4691b129b97f5581a, type: 3}
+  - id: char_fufu_walk_down_0
+    sprite: {fileID: 21300000, guid: d320b9e4c27d07b42876a69bda0d9a82, type: 3}
+  - id: char_fufu_walk_down_1
+    sprite: {fileID: 21300000, guid: 9d65dbe5394a1754e88476f1225b2a65, type: 3}
+  - id: char_fufu_walk_down_2
+    sprite: {fileID: 21300000, guid: 50608b19ab6a8ee438fe7a84d8b34f7f, type: 3}
+  - id: char_fufu_walk_down_3
+    sprite: {fileID: 21300000, guid: e4e131db94df5cc40aa2605283dd72d5, type: 3}
+  - id: char_fufu_walk_up_0
+    sprite: {fileID: 21300000, guid: 263f30909faf8dc4eab9073a74d5be10, type: 3}
+  - id: char_fufu_walk_up_1
+    sprite: {fileID: 21300000, guid: 37bf83ad79b78e44a9e7dd38e96effca, type: 3}
+  - id: char_fufu_walk_up_2
+    sprite: {fileID: 21300000, guid: e2a6fca8b7463054dabf2a2ac358f460, type: 3}
+  - id: char_fufu_walk_up_3
+    sprite: {fileID: 21300000, guid: c52b2f32ca29f0d45a3bb598476f63fc, type: 3}
+  - id: char_fufu_walk_left_0
+    sprite: {fileID: 21300000, guid: cd9dba68ca4a3554fa3f7ef5affe4942, type: 3}
+  - id: char_fufu_walk_left_1
+    sprite: {fileID: 21300000, guid: 212d23e7355ab5540a0d73e74434c58e, type: 3}
+  - id: char_fufu_walk_left_2
+    sprite: {fileID: 21300000, guid: 5421cf130c7dbbc4bb41d781f8e743cf, type: 3}
+  - id: char_fufu_walk_left_3
+    sprite: {fileID: 21300000, guid: 2d7543a26a91b7c4f9341c4d5a69e59c, type: 3}
+  - id: char_fufu_walk_right_0
+    sprite: {fileID: 21300000, guid: ef22dd2142eb4624983e7dd5d7ca9c06, type: 3}
+  - id: char_fufu_walk_right_1
+    sprite: {fileID: 21300000, guid: 2c987408980fd6a4ca441b1f22fcc1a3, type: 3}
+  - id: char_fufu_walk_right_2
+    sprite: {fileID: 21300000, guid: f987f733bd9afdf4da3eb2190639e37b, type: 3}
+  - id: char_fufu_walk_right_3
+    sprite: {fileID: 21300000, guid: 211387479d0b36d42999bc62a9014ec6, type: 3}
+  - id: char_fufu_attack_down_0
+    sprite: {fileID: 21300000, guid: 8fb0d8cfcf3890641be8219c2afeea8e, type: 3}
+  - id: char_fufu_attack_down_1
+    sprite: {fileID: 21300000, guid: 9d105ec53ec8b1e408ec090be3cfebbb, type: 3}
+  - id: char_fufu_attack_down_2
+    sprite: {fileID: 21300000, guid: 0be95cbb79f763844aaa95aeec155d24, type: 3}
+  - id: char_fufu_special_down_0
+    sprite: {fileID: 21300000, guid: e313f5fa6fda6e740b225f2bd61ca45f, type: 3}
+  - id: char_fufu_special_down_1
+    sprite: {fileID: 21300000, guid: 7c4e54d559062934abab8c2ceffbc1fb, type: 3}
+  - id: char_fufu_special_down_2
+    sprite: {fileID: 21300000, guid: 30267faef023e444a8dea607c4cb4333, type: 3}
+  - id: char_fufu_hurt_down_0
+    sprite: {fileID: 21300000, guid: 39413722d04f99440905b2dbd7cb929e, type: 3}
+  - id: char_fufu_hurt_down_1
+    sprite: {fileID: 21300000, guid: 6b0d829b0a0d1d347820900830d2b165, type: 3}
+  - id: char_fufu_stun_down_0
+    sprite: {fileID: 21300000, guid: 529661f5cceb34d409cfac2df9f01d55, type: 3}
+  - id: char_fufu_stun_down_1
+    sprite: {fileID: 21300000, guid: 38fa83cd53886754095db2cf7131830a, type: 3}
+  - id: char_fufu_downed_down_0
+    sprite: {fileID: 21300000, guid: 2f1e699f234edb64eba1b409f91ae4fc, type: 3}
+  - id: char_fufu_downed_down_1
+    sprite: {fileID: 21300000, guid: e424f8777d25f3d4386b7fea6e217702, type: 3}
+  - id: char_fufu_downed_down_2
+    sprite: {fileID: 21300000, guid: 3327c1a67ae28b141a325e7437410610, type: 3}
+  - id: char_fufu_revive_down_0
+    sprite: {fileID: 21300000, guid: 537b149325eee864191ae3a37942966c, type: 3}
+  - id: char_fufu_revive_down_1
+    sprite: {fileID: 21300000, guid: 8d7d64e35ba01774f852291f7fde888a, type: 3}
+  - id: char_fufu_victory_down_0
+    sprite: {fileID: 21300000, guid: d86124ae96bb7634c8656c3768c2ed41, type: 3}
+  - id: char_fufu_victory_down_1
+    sprite: {fileID: 21300000, guid: 18c154095fd385845b7c9a1b108f0c6c, type: 3}
+  - id: char_donasa_idle_down_0
+    sprite: {fileID: 21300000, guid: e2460e3bc4404364f985dfaae5200c3f, type: 3}
+  - id: char_donasa_idle_down_1
+    sprite: {fileID: 21300000, guid: cb74d2e51c55d1c49aa5de21e4bac1a8, type: 3}
+  - id: char_donasa_idle_up_0
+    sprite: {fileID: 21300000, guid: 6a7ce29e198a42c4aa56af5bc07e5ef4, type: 3}
+  - id: char_donasa_idle_up_1
+    sprite: {fileID: 21300000, guid: 5c711a29299c9b24e90569ae2994855b, type: 3}
+  - id: char_donasa_idle_left_0
+    sprite: {fileID: 21300000, guid: 8b65a7f43c169b146add8549f0ea0c24, type: 3}
+  - id: char_donasa_idle_left_1
+    sprite: {fileID: 21300000, guid: c6920b13afc3f7841844f0f95354b37d, type: 3}
+  - id: char_donasa_idle_right_0
+    sprite: {fileID: 21300000, guid: a830f0da62c8e814da4a58715d4e9e82, type: 3}
+  - id: char_donasa_idle_right_1
+    sprite: {fileID: 21300000, guid: 9fc46364f943a964fbecc2c357b9d0c4, type: 3}
+  - id: char_donasa_walk_down_0
+    sprite: {fileID: 21300000, guid: 9f42819a28da794498a285d0dd71a063, type: 3}
+  - id: char_donasa_walk_down_1
+    sprite: {fileID: 21300000, guid: 0cfec12823e01ef49a3aafddd297593f, type: 3}
+  - id: char_donasa_walk_down_2
+    sprite: {fileID: 21300000, guid: c982d3465df148341a4e8fa9fd4e575d, type: 3}
+  - id: char_donasa_walk_down_3
+    sprite: {fileID: 21300000, guid: 3adae937c92ca3346bdc3f7f119b09fd, type: 3}
+  - id: char_donasa_walk_up_0
+    sprite: {fileID: 21300000, guid: 831b12f6e08648e459b16df3c6472906, type: 3}
+  - id: char_donasa_walk_up_1
+    sprite: {fileID: 21300000, guid: 60bd20fcb33b7204dadf74fb0a898e01, type: 3}
+  - id: char_donasa_walk_up_2
+    sprite: {fileID: 21300000, guid: 4379b510f3d72fb46a115360999652a5, type: 3}
+  - id: char_donasa_walk_up_3
+    sprite: {fileID: 21300000, guid: e1aff7d23bcf3e348b7894f60844ad64, type: 3}
+  - id: char_donasa_walk_left_0
+    sprite: {fileID: 21300000, guid: 23546ce7d54dc1b4ea1527427dd74358, type: 3}
+  - id: char_donasa_walk_left_1
+    sprite: {fileID: 21300000, guid: 362dae0597b14cc4d83c568bdea7ed46, type: 3}
+  - id: char_donasa_walk_left_2
+    sprite: {fileID: 21300000, guid: ae742f1e6154ce84eab304f3d269caaf, type: 3}
+  - id: char_donasa_walk_left_3
+    sprite: {fileID: 21300000, guid: 609e230524c61384e94e2c54fb3e9ebd, type: 3}
+  - id: char_donasa_walk_right_0
+    sprite: {fileID: 21300000, guid: f32eea1538ff61a4c8812d99467a514f, type: 3}
+  - id: char_donasa_walk_right_1
+    sprite: {fileID: 21300000, guid: 2ee75d0d30a9bff46a93615194a252d3, type: 3}
+  - id: char_donasa_walk_right_2
+    sprite: {fileID: 21300000, guid: ef6b2d766bf247e40a3a1f900b66596a, type: 3}
+  - id: char_donasa_walk_right_3
+    sprite: {fileID: 21300000, guid: 296202203fbae464dab67e35a8761933, type: 3}
+  - id: char_donasa_attack_down_0
+    sprite: {fileID: 21300000, guid: 5329bb02bc89d6544a4f46c8e54a6c3a, type: 3}
+  - id: char_donasa_attack_down_1
+    sprite: {fileID: 21300000, guid: 274c852e4a6427a44ad7a943197fa104, type: 3}
+  - id: char_donasa_attack_down_2
+    sprite: {fileID: 21300000, guid: 46ad2024978d51148a76de818bca107f, type: 3}
+  - id: char_donasa_special_down_0
+    sprite: {fileID: 21300000, guid: a3ea1a0f53f278043a57a4b37c288b00, type: 3}
+  - id: char_donasa_special_down_1
+    sprite: {fileID: 21300000, guid: 90bd1bed0aa8b63469070a1d8f278e12, type: 3}
+  - id: char_donasa_special_down_2
+    sprite: {fileID: 21300000, guid: 4920cd671f79f5841bc24406a5f7107e, type: 3}
+  - id: char_donasa_hurt_down_0
+    sprite: {fileID: 21300000, guid: fd518e8cfdfd9eb45b33ac3344067449, type: 3}
+  - id: char_donasa_hurt_down_1
+    sprite: {fileID: 21300000, guid: 844cb9a45dc00f647b65e6d469f5505b, type: 3}
+  - id: char_donasa_stun_down_0
+    sprite: {fileID: 21300000, guid: 8b45f3430f228404f9f47f29eea1c975, type: 3}
+  - id: char_donasa_stun_down_1
+    sprite: {fileID: 21300000, guid: 599f9e4b3cd79f241a38dd6a13f0185a, type: 3}
+  - id: char_donasa_downed_down_0
+    sprite: {fileID: 21300000, guid: de64c584e6c79d54bbab6217d87bc5b7, type: 3}
+  - id: char_donasa_downed_down_1
+    sprite: {fileID: 21300000, guid: d2c2dfc0cb1a5744b9e716385a43638f, type: 3}
+  - id: char_donasa_downed_down_2
+    sprite: {fileID: 21300000, guid: 234bd73bbb69e334995e1ea06c51f0e6, type: 3}
+  - id: char_donasa_revive_down_0
+    sprite: {fileID: 21300000, guid: efa788afd2b5d064a8ce89fb4435b54e, type: 3}
+  - id: char_donasa_revive_down_1
+    sprite: {fileID: 21300000, guid: 26a936ebb821f6a4b826f5419562afdf, type: 3}
+  - id: char_donasa_victory_down_0
+    sprite: {fileID: 21300000, guid: f57374ddcccd4e1409a461540dc7278f, type: 3}
+  - id: char_donasa_victory_down_1
+    sprite: {fileID: 21300000, guid: 5afa7b89741290249bd270d0a6109ac6, type: 3}
   - id: enemy_microbo_enxame_0
     sprite: {fileID: 21300000, guid: e92db968f6153824588729f9f1771bad, type: 3}
   - id: enemy_microbo_enxame_elite_0
@@ -719,6 +1539,150 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: 610596da3c5c44a49a349872ebe08d2b, type: 3}
   - id: ui_button
     sprite: {fileID: 21300000, guid: c6d4c94bda75c63489e9dd82ba69188e, type: 3}
+  - id: ally_laser_0
+    sprite: {fileID: 21300000, guid: 1f8f0c917b662bc4da1cff6c8a8fc25a, type: 3}
+  - id: ally_bubble_0
+    sprite: {fileID: 21300000, guid: c1aed6c9dded41645885738c58410d36, type: 3}
+  - id: ally_bubble_1
+    sprite: {fileID: 21300000, guid: 0363f79a6883b0b4a848bdb23d41c271, type: 3}
+  - id: ally_bubblebig_0
+    sprite: {fileID: 21300000, guid: 1b98f3cba86a9cf439a3fe6eeec93259, type: 3}
+  - id: ally_bubblebig_1
+    sprite: {fileID: 21300000, guid: d766a087705e93b49b6c1bb3c205cedf, type: 3}
+  - id: ally_briefcase_0
+    sprite: {fileID: 21300000, guid: 53471015a72ae9a488e7a4dc88b5bc42, type: 3}
+  - id: ally_coin_0
+    sprite: {fileID: 21300000, guid: c5e6a6c0e2c9a264889c3cac0f5664ce, type: 3}
+  - id: ally_coin_1
+    sprite: {fileID: 21300000, guid: f4d05d5f32414504a8d582368d26931c, type: 3}
+  - id: ally_digit_0
+    sprite: {fileID: 21300000, guid: 0677c10b81787744299c896c6b0df150, type: 3}
+  - id: ally_digit_1
+    sprite: {fileID: 21300000, guid: 9e3c5d98ee1856c468e248aa3f9296fa, type: 3}
+  - id: ally_digit_2
+    sprite: {fileID: 21300000, guid: 2bc03ca0cdd2cb043adc07cc9851ed19, type: 3}
+  - id: ally_digit_3
+    sprite: {fileID: 21300000, guid: 9259bd38ee8157944b0a333a25480f2f, type: 3}
+  - id: ally_expression_0
+    sprite: {fileID: 21300000, guid: c9570e0f772e4984a9e01803d12c8329, type: 3}
+  - id: ally_sushi_0
+    sprite: {fileID: 21300000, guid: d11c8d5db28d755459020801c2823b2e, type: 3}
+  - id: ally_sashimi_0
+    sprite: {fileID: 21300000, guid: dd6ee6cf93e89e24f9c39de57f2a36cd, type: 3}
+  - id: ally_plate_0
+    sprite: {fileID: 21300000, guid: 509e38e2f38d2324eaee50746b873641, type: 3}
+  - id: ally_resistor_0
+    sprite: {fileID: 21300000, guid: 433ce578eeb1ac94b8abde852c80e8ea, type: 3}
+  - id: ally_transistor_0
+    sprite: {fileID: 21300000, guid: 6ca867a45ce75834998cedc6c48b85b2, type: 3}
+  - id: ally_powersupply_0
+    sprite: {fileID: 21300000, guid: 46fa01e021b3d8e4ea00134efa8513ea, type: 3}
+  - id: ally_scopewave_0
+    sprite: {fileID: 21300000, guid: 6a4f85cf2cdf2b3458d846bb95326ba9, type: 3}
+  - id: ally_scopewave_1
+    sprite: {fileID: 21300000, guid: 49de13d4ee4c1a141b18dfbfd94f7be1, type: 3}
+  - id: ally_zoneelectric_0
+    sprite: {fileID: 21300000, guid: b8b15d033e5c7a1478257b31dd9b75eb, type: 3}
+  - id: ally_zonestorm_0
+    sprite: {fileID: 21300000, guid: 899a606910bd17741a1776d569c76711, type: 3}
+  - id: ally_burger_0
+    sprite: {fileID: 21300000, guid: da9420fa2d44e49408513db719572721, type: 3}
+  - id: ally_dorito_0
+    sprite: {fileID: 21300000, guid: 339b00a21b0527a478f431447adcf8f7, type: 3}
+  - id: ally_dorito_1
+    sprite: {fileID: 21300000, guid: 9cc6c9a15b50c8940b0a1ccab3287fd1, type: 3}
+  - id: ally_tire_0
+    sprite: {fileID: 21300000, guid: 4f7a6fa17836b704087f73f9fa9c41e1, type: 3}
+  - id: ally_tire_1
+    sprite: {fileID: 21300000, guid: 3c69395c9db34974282b2d00261192e3, type: 3}
+  - id: ally_tireorbit_0
+    sprite: {fileID: 21300000, guid: bca57354fbcbd704bab8b6873f486b9d, type: 3}
+  - id: ally_tireorbit_1
+    sprite: {fileID: 21300000, guid: 21442083c65f2e249a835a550e36d551, type: 3}
+  - id: ally_pill_0
+    sprite: {fileID: 21300000, guid: ab5a3aef49a17b94393e20daef28a0a9, type: 3}
+  - id: ally_syringe_0
+    sprite: {fileID: 21300000, guid: a2a43d830821981449715fb644b3e4ae, type: 3}
+  - id: ally_syringespecial_0
+    sprite: {fileID: 21300000, guid: 4784234de90b03142a16c9bc9fb3fda5, type: 3}
+  - id: ally_botshooter_0
+    sprite: {fileID: 21300000, guid: aef8db1f231f8e84cb72afdcb899a43b, type: 3}
+  - id: ally_botshooter_1
+    sprite: {fileID: 21300000, guid: f257141fdfbfd954a8f67b64e31f416f, type: 3}
+  - id: ally_botbrawler_0
+    sprite: {fileID: 21300000, guid: 7ddb67834037cd14fb9b3d9015be4b6f, type: 3}
+  - id: ally_botbrawler_1
+    sprite: {fileID: 21300000, guid: 38429fbfa2545e248a89239fa578a4be, type: 3}
+  - id: ally_botdasher_0
+    sprite: {fileID: 21300000, guid: 2bd6bb89ae130354592e52245044b42f, type: 3}
+  - id: ally_botdasher_1
+    sprite: {fileID: 21300000, guid: 2d2c3a6b36ea3cb4d834c514dc2095bf, type: 3}
+  - id: ally_botmaster_0
+    sprite: {fileID: 21300000, guid: eab0ffaaa118f6d4a95a3c0d247a3ca5, type: 3}
+  - id: ally_botmaster_1
+    sprite: {fileID: 21300000, guid: 1c4afbb8e7f2fe548994416d1b0ff64f, type: 3}
+  - id: ally_botbolt_0
+    sprite: {fileID: 21300000, guid: 18e3c893787723e448893af41a368555, type: 3}
+  - id: ally_masterbolt_0
+    sprite: {fileID: 21300000, guid: 2dddd244deb93fb4997a7deee5fa4ed0, type: 3}
+  - id: ally_phone_0
+    sprite: {fileID: 21300000, guid: bfdceed984181864fbdd1233dc04df26, type: 3}
+  - id: ally_paper_0
+    sprite: {fileID: 21300000, guid: 829f8484125af854b8b7ed207de5b1b8, type: 3}
+  - id: ally_computer_0
+    sprite: {fileID: 21300000, guid: fb38bd46dc4a6704e8ac78e8a003e71f, type: 3}
+  - id: ally_fragment_0
+    sprite: {fileID: 21300000, guid: c24cfcf9fbe24434980402cb5c41d346, type: 3}
+  - id: ally_jabuti_0
+    sprite: {fileID: 21300000, guid: 05e81d74f7d4d4d4bbd82de4991cb8cd, type: 3}
+  - id: ally_jabuti_1
+    sprite: {fileID: 21300000, guid: f60b0426099e17f43b7b689439ef3a16, type: 3}
+  - id: ally_jabutiwalk_0
+    sprite: {fileID: 21300000, guid: 03cb4bca7b553c449972beb3fce0cda8, type: 3}
+  - id: ally_jabutiwalk_1
+    sprite: {fileID: 21300000, guid: b1593ef5df6c40e48876e1e79685fe9e, type: 3}
+  - id: ally_car_0
+    sprite: {fileID: 21300000, guid: 2fdc08606f04a9545b1d111b5cd4042c, type: 3}
+  - id: ally_car_1
+    sprite: {fileID: 21300000, guid: c51c61406d5ad5a42b8c537ac28fda15, type: 3}
+  - id: ally_car_2
+    sprite: {fileID: 21300000, guid: da125465328daf8418bdc5deaa7dc344, type: 3}
+  - id: ally_car_3
+    sprite: {fileID: 21300000, guid: 4a881bed183174a468f3b9920d332f82, type: 3}
+  - id: ally_car_4
+    sprite: {fileID: 21300000, guid: be21b068a118f874eb1dbdb99019b2cd, type: 3}
+  - id: ally_car_5
+    sprite: {fileID: 21300000, guid: cc0055b9e614d484799adc3dc01d0745, type: 3}
+  - id: ally_car_6
+    sprite: {fileID: 21300000, guid: e17293b0588a2f64eac949d2504ae97d, type: 3}
+  - id: ally_car_7
+    sprite: {fileID: 21300000, guid: bee43e1e43243cc489448c4861248c6d, type: 3}
+  - id: ally_insulin_0
+    sprite: {fileID: 21300000, guid: 9a03768a75fb68a4c985fae493df92c2, type: 3}
+  - id: ally_vial_0
+    sprite: {fileID: 21300000, guid: ac093572cdf592540928e7549fee691b, type: 3}
+  - id: ally_soundwave_0
+    sprite: {fileID: 21300000, guid: 386a6573bb1496145a78e8eb4019bd1d, type: 3}
+  - id: ally_soundwave_1
+    sprite: {fileID: 21300000, guid: 9878dbaf3b05fe046a71e0501dff055d, type: 3}
+  - id: ally_bottle_0
+    sprite: {fileID: 21300000, guid: 390cc37415e144a4b9951d58ba2f157e, type: 3}
+  - id: fx_tv
+    sprite: {fileID: 21300000, guid: 5212633f06ee0c24794c10c8e020fa3b, type: 3}
+  - id: fx_note
+    sprite: {fileID: 21300000, guid: 8c935aa205202c240bcc4866866e6e91, type: 3}
+  - id: fx_shard
+    sprite: {fileID: 21300000, guid: bd7db4cad04380945b60168418d44da2, type: 3}
+  - id: fx_mark
+    sprite: {fileID: 21300000, guid: 4dbf1ce85aa00c848aefbd160a1052cb, type: 3}
+  - id: fx_sticky
+    sprite: {fileID: 21300000, guid: 86779663abedae44ca772b64e835c59b, type: 3}
+  - id: fx_trap
+    sprite: {fileID: 21300000, guid: 8335ef39466ee3e47ac6fe419f715e56, type: 3}
+  - id: fx_skid
+    sprite: {fileID: 21300000, guid: 31b4490cb7b55644483e2b47e562e886, type: 3}
+  - id: fx_plus
+    sprite: {fileID: 21300000, guid: 9212fa9b69a37ce43876838207282fc0, type: 3}
   - id: icon_descarga_direcionada
     sprite: {fileID: 21300000, guid: 72bd24770c8d4034b8be7b05703527b0, type: 3}
   - id: icon_braco_giratorio
@@ -747,10 +1711,68 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: fa5b4b75d0984a5478406303add2f784, type: 3}
   - id: icon_kit_primeiros_socorros
     sprite: {fileID: 21300000, guid: 5a228e1f38a3c454d9a04525a5bcd429, type: 3}
+  - id: icon_cartao_corporativo
+    sprite: {fileID: 21300000, guid: 97347fb52314d9d46805d5e24cb047d0, type: 3}
+  - id: icon_cafe_expresso
+    sprite: {fileID: 21300000, guid: ed12ed6ddcd8fea4482b52632b0d6556, type: 3}
+  - id: icon_halter
+    sprite: {fileID: 21300000, guid: b12127489fe21be489557a5f23e2ed63, type: 3}
+  - id: icon_marmita
+    sprite: {fileID: 21300000, guid: f2980e436fac9224aaba07de435b06b1, type: 3}
+  - id: icon_pote_whey
+    sprite: {fileID: 21300000, guid: 9fa4c0f69f604164a8338dd257fa3082, type: 3}
+  - id: icon_kit_arduino
+    sprite: {fileID: 21300000, guid: 58fa47e147661cb47b5d0b42778af0d2, type: 3}
+  - id: icon_cabo_hdmi
+    sprite: {fileID: 21300000, guid: 6280b6acadbceeb499e0539ba46c2fe1, type: 3}
+  - id: icon_megafone
+    sprite: {fileID: 21300000, guid: f5d692c6d25cbdd4a95857f3c87cb8c2, type: 3}
+  - id: icon_bolhas
+    sprite: {fileID: 21300000, guid: c6ff0c6760cc48a468904542037ea575, type: 3}
+  - id: icon_bolhas_e_maletas
+    sprite: {fileID: 21300000, guid: 772f4712202f7364584b9cf4221e120d, type: 3}
+  - id: icon_calculos
+    sprite: {fileID: 21300000, guid: 4afd0caa71b3cfa418a057ad5851e22e, type: 3}
+  - id: icon_matematica_sushi
+    sprite: {fileID: 21300000, guid: d97025d9d997c844480af92e3dcac1e7, type: 3}
+  - id: icon_componentes_eletricos
+    sprite: {fileID: 21300000, guid: 6c4a2d38b8da9b44c9094caff7c9e8e4, type: 3}
+  - id: icon_fontes_osciloscopios
+    sprite: {fileID: 21300000, guid: 72e832a77399b9d4d844359fd45cc421, type: 3}
+  - id: icon_lanches
+    sprite: {fileID: 21300000, guid: 9b8090adf3a2cb147ad2952e9a4dc6bc, type: 3}
+  - id: icon_pneus_crossfit
+    sprite: {fileID: 21300000, guid: 4f319e5df9adc9d41a296b79178782ed, type: 3}
+  - id: icon_bonesmashing
+    sprite: {fileID: 21300000, guid: dfe3b2cdc1edc3b4f8c75d14f05e25b0, type: 3}
+  - id: icon_pilulas_seringas
+    sprite: {fileID: 21300000, guid: 08aeb01bc96e09444b26bc8897c9169b, type: 3}
+  - id: icon_cabazords
+    sprite: {fileID: 21300000, guid: 34ada14818df6314d98beb9c14a95e23, type: 3}
+  - id: icon_cabazord_master
+    sprite: {fileID: 21300000, guid: 112382220fb1e0c44a48d1fd01c7e8f9, type: 3}
+  - id: icon_celulares_cola
+    sprite: {fileID: 21300000, guid: 8ee4fa58c7ddbdf4386d61f271db578e, type: 3}
+  - id: icon_computadores_tvs
+    sprite: {fileID: 21300000, guid: 708d6a6ab5451e54292d761a3ac789a9, type: 3}
+  - id: icon_jabutis
+    sprite: {fileID: 21300000, guid: a0d0964aa81edb54e90198d32ec765b5, type: 3}
+  - id: icon_carro_drift
+    sprite: {fileID: 21300000, guid: 2b8eaff44643379408546c60244e3e17, type: 3}
+  - id: icon_socos_fortes
+    sprite: {fileID: 21300000, guid: e7ab5f2e624f54241a403b37d8be5ba0, type: 3}
+  - id: icon_socos_insulina
+    sprite: {fileID: 21300000, guid: c2f3237d998d5da41be95b54d74ff208, type: 3}
+  - id: icon_fala_alta
+    sprite: {fileID: 21300000, guid: 776857a4966f33547a8d48e37750cfd0, type: 3}
+  - id: icon_fala_amplificada
+    sprite: {fileID: 21300000, guid: 7993b8c7c5ffff041bc1b4ab981ef5c4, type: 3}
   - id: icon_apagao
     sprite: {fileID: 21300000, guid: ff67ceb137e8e6f4c843f806cb86bc41, type: 3}
   - id: icon_turbina_emergencia
     sprite: {fileID: 21300000, guid: 4aa1704154422cd4db932d7ccd560bf8, type: 3}
+  - id: icon_overclock
+    sprite: {fileID: 21300000, guid: 57d83ed92d1f98444b90b0e95fb99b39, type: 3}
   - id: portrait_mecatronica_raiva
     sprite: {fileID: 21300000, guid: 24a848bc67817744393a2c36d65a9653, type: 3}
   - id: portrait_mecatronica_medo
@@ -877,6 +1899,186 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: 99283bb7665ce2d449fe66d35b800813, type: 3}
   - id: portrait_quimica_derrota
     sprite: {fileID: 21300000, guid: fed13afe813231e479fbb4d8ad176afb, type: 3}
+  - id: portrait_staut_raiva
+    sprite: {fileID: 21300000, guid: f122e817773551d42aa9e717cf2733bf, type: 3}
+  - id: portrait_staut_medo
+    sprite: {fileID: 21300000, guid: 2c11d08ea067b2c429befc3ad25f7266, type: 3}
+  - id: portrait_staut_desespero
+    sprite: {fileID: 21300000, guid: 05034673586060342a9ea4894c88ae3b, type: 3}
+  - id: portrait_staut_choro
+    sprite: {fileID: 21300000, guid: 69d82d7d45e124c42aafa6fbcd1bf216, type: 3}
+  - id: portrait_staut_exaustao
+    sprite: {fileID: 21300000, guid: ec160886c7085f34fa3599e36fb18033, type: 3}
+  - id: portrait_staut_alivio
+    sprite: {fileID: 21300000, guid: fe5d5502f031d6943ab5ba57d18ad8d8, type: 3}
+  - id: portrait_staut_determinacao
+    sprite: {fileID: 21300000, guid: 1c1beaefa4113ec42b125e06d3cba7e7, type: 3}
+  - id: portrait_staut_vitoria
+    sprite: {fileID: 21300000, guid: aa0fdadd5a8b70346b604a509d4e7078, type: 3}
+  - id: portrait_staut_derrota
+    sprite: {fileID: 21300000, guid: b6a01f4994af69847ac787cd609d0b81, type: 3}
+  - id: portrait_miyuki_raiva
+    sprite: {fileID: 21300000, guid: 69fb9ee7b68164c4aaebdd278a78aedf, type: 3}
+  - id: portrait_miyuki_medo
+    sprite: {fileID: 21300000, guid: 018f7bd5e7058dc469e077752a8e51ae, type: 3}
+  - id: portrait_miyuki_desespero
+    sprite: {fileID: 21300000, guid: 6212eecead7737748a90bf357d3ed528, type: 3}
+  - id: portrait_miyuki_choro
+    sprite: {fileID: 21300000, guid: b48c4b8210b056b41a15ae16c42654e0, type: 3}
+  - id: portrait_miyuki_exaustao
+    sprite: {fileID: 21300000, guid: 859d5ec3624c77343804fa18a38f3c07, type: 3}
+  - id: portrait_miyuki_alivio
+    sprite: {fileID: 21300000, guid: 3a233b1228d6c0842a067d635aaa3d70, type: 3}
+  - id: portrait_miyuki_determinacao
+    sprite: {fileID: 21300000, guid: 2f28db43f2edd5341a7b9e929fefba25, type: 3}
+  - id: portrait_miyuki_vitoria
+    sprite: {fileID: 21300000, guid: a1d07ca554cb1ad4ca49858331dbaa01, type: 3}
+  - id: portrait_miyuki_derrota
+    sprite: {fileID: 21300000, guid: 91a4e85d06a46054da3e16c596ef1f9e, type: 3}
+  - id: portrait_giulia_raiva
+    sprite: {fileID: 21300000, guid: 871da997073fddc488d632efd9d37a01, type: 3}
+  - id: portrait_giulia_medo
+    sprite: {fileID: 21300000, guid: d5a79c4df2754064d82634608d6d1a73, type: 3}
+  - id: portrait_giulia_desespero
+    sprite: {fileID: 21300000, guid: 6425125f495ce3d4ab4e562fa35624d8, type: 3}
+  - id: portrait_giulia_choro
+    sprite: {fileID: 21300000, guid: 519657d3c33643044a1475cd5b03c2ea, type: 3}
+  - id: portrait_giulia_exaustao
+    sprite: {fileID: 21300000, guid: cede1e848148f164b98636c7b41393d3, type: 3}
+  - id: portrait_giulia_alivio
+    sprite: {fileID: 21300000, guid: e0c69a269ae516645b6dcf245f7aefd0, type: 3}
+  - id: portrait_giulia_determinacao
+    sprite: {fileID: 21300000, guid: f90f5e378a9ae734b9249cc270e3a0d9, type: 3}
+  - id: portrait_giulia_vitoria
+    sprite: {fileID: 21300000, guid: 9c84ca58ee1c4734b90e8af5e2887a35, type: 3}
+  - id: portrait_giulia_derrota
+    sprite: {fileID: 21300000, guid: 8f0014d32b7734f49b30e10da81f3890, type: 3}
+  - id: portrait_breno_raiva
+    sprite: {fileID: 21300000, guid: a51852d66ca1cdb439eeebd626e32195, type: 3}
+  - id: portrait_breno_medo
+    sprite: {fileID: 21300000, guid: 43ec9c1edb4c10c4c8df1fce61a3ce75, type: 3}
+  - id: portrait_breno_desespero
+    sprite: {fileID: 21300000, guid: dd4f97c08465bfc458f54badb8b47257, type: 3}
+  - id: portrait_breno_choro
+    sprite: {fileID: 21300000, guid: 2ef923beda4b569419664b2d5b7edb01, type: 3}
+  - id: portrait_breno_exaustao
+    sprite: {fileID: 21300000, guid: f04a993edc1eb39438b5f50d877064ea, type: 3}
+  - id: portrait_breno_alivio
+    sprite: {fileID: 21300000, guid: 2716a80ef775c7c49957898a1be32e18, type: 3}
+  - id: portrait_breno_determinacao
+    sprite: {fileID: 21300000, guid: 72d93b4b250e5b84cbf8291b7d9c3ad2, type: 3}
+  - id: portrait_breno_vitoria
+    sprite: {fileID: 21300000, guid: 9be679e229d4ee14fb286a288fff05f2, type: 3}
+  - id: portrait_breno_derrota
+    sprite: {fileID: 21300000, guid: 4168c33ef8893174e8bf07d656345c39, type: 3}
+  - id: portrait_artur_raiva
+    sprite: {fileID: 21300000, guid: c64f8f85065e39f45b85764e34daebe6, type: 3}
+  - id: portrait_artur_medo
+    sprite: {fileID: 21300000, guid: 15441cf988651fb49b834cf36c17f49a, type: 3}
+  - id: portrait_artur_desespero
+    sprite: {fileID: 21300000, guid: 9837f0d664defef4294b71fb299e198a, type: 3}
+  - id: portrait_artur_choro
+    sprite: {fileID: 21300000, guid: b65ec33300f1bfd4083070704857e0dc, type: 3}
+  - id: portrait_artur_exaustao
+    sprite: {fileID: 21300000, guid: 10e70a66507a64f4ea9a3b8ea0009f2f, type: 3}
+  - id: portrait_artur_alivio
+    sprite: {fileID: 21300000, guid: d9d804aecd34e354287be159ad108eea, type: 3}
+  - id: portrait_artur_determinacao
+    sprite: {fileID: 21300000, guid: 52b3d94b583141f41a845e05a3074991, type: 3}
+  - id: portrait_artur_vitoria
+    sprite: {fileID: 21300000, guid: 7252a8e88dec0cd49a39f8e5cdaf1d83, type: 3}
+  - id: portrait_artur_derrota
+    sprite: {fileID: 21300000, guid: b6c8734a53ddeed47a3f25f947da2463, type: 3}
+  - id: portrait_badotti_raiva
+    sprite: {fileID: 21300000, guid: 8f0563910c7d38844828796b5dda5e96, type: 3}
+  - id: portrait_badotti_medo
+    sprite: {fileID: 21300000, guid: f2711f57d0441ff47b7c9d2df0b0cf88, type: 3}
+  - id: portrait_badotti_desespero
+    sprite: {fileID: 21300000, guid: 53572ad8266549e479734049a56a9d38, type: 3}
+  - id: portrait_badotti_choro
+    sprite: {fileID: 21300000, guid: 0e3a2e16eefbcd042b08721602e346ef, type: 3}
+  - id: portrait_badotti_exaustao
+    sprite: {fileID: 21300000, guid: 2796c7d7a69cdac4aaea339c29c78786, type: 3}
+  - id: portrait_badotti_alivio
+    sprite: {fileID: 21300000, guid: b381cfe1c14d15648ac11e8c92a830a5, type: 3}
+  - id: portrait_badotti_determinacao
+    sprite: {fileID: 21300000, guid: 3f3f6022ad0fa65449002dd6eeed3a34, type: 3}
+  - id: portrait_badotti_vitoria
+    sprite: {fileID: 21300000, guid: 60f6be168cee65340ae0d6a6d178ab75, type: 3}
+  - id: portrait_badotti_derrota
+    sprite: {fileID: 21300000, guid: b1efaeaf3490fe54397f99b2025d8520, type: 3}
+  - id: portrait_garcia_raiva
+    sprite: {fileID: 21300000, guid: c5dcb84b2e3d9e840881b95dadf6b542, type: 3}
+  - id: portrait_garcia_medo
+    sprite: {fileID: 21300000, guid: 4684a4f0f7db9ab4c8e880844e1a22b3, type: 3}
+  - id: portrait_garcia_desespero
+    sprite: {fileID: 21300000, guid: 89062bf9e5f95e543aa0461705f7e7f4, type: 3}
+  - id: portrait_garcia_choro
+    sprite: {fileID: 21300000, guid: ed68609bdc03a2c4c8efa3fabf8ac8c2, type: 3}
+  - id: portrait_garcia_exaustao
+    sprite: {fileID: 21300000, guid: 0d5f6266140ac954d96edb0b4335c2df, type: 3}
+  - id: portrait_garcia_alivio
+    sprite: {fileID: 21300000, guid: 063bf6fd97dbaa84183386036dc90c63, type: 3}
+  - id: portrait_garcia_determinacao
+    sprite: {fileID: 21300000, guid: 944a69b2878137a40b78cfc4ce77d936, type: 3}
+  - id: portrait_garcia_vitoria
+    sprite: {fileID: 21300000, guid: 453e5f1f9c59d9a42913c05a53d71d97, type: 3}
+  - id: portrait_garcia_derrota
+    sprite: {fileID: 21300000, guid: f148fff286739674593d1bbc1353969b, type: 3}
+  - id: portrait_jean_raiva
+    sprite: {fileID: 21300000, guid: 0d1d1ebe66fdf2c4eb7fdf1127b17cd3, type: 3}
+  - id: portrait_jean_medo
+    sprite: {fileID: 21300000, guid: 3338b57b8e02da0468da283cac54758e, type: 3}
+  - id: portrait_jean_desespero
+    sprite: {fileID: 21300000, guid: b6cadb68ae7b8cc4c90b13e04ba9f003, type: 3}
+  - id: portrait_jean_choro
+    sprite: {fileID: 21300000, guid: 7c356c3e9b3df214e80e0642af39d1ca, type: 3}
+  - id: portrait_jean_exaustao
+    sprite: {fileID: 21300000, guid: 688834071a467414ebc6bfae2562721d, type: 3}
+  - id: portrait_jean_alivio
+    sprite: {fileID: 21300000, guid: a892cfdb9e6f5c84a96022e88b8fe34a, type: 3}
+  - id: portrait_jean_determinacao
+    sprite: {fileID: 21300000, guid: 63c612540ef2f1d4884729a3475788b5, type: 3}
+  - id: portrait_jean_vitoria
+    sprite: {fileID: 21300000, guid: d0d45d15bfca455418bf394ffb003572, type: 3}
+  - id: portrait_jean_derrota
+    sprite: {fileID: 21300000, guid: 4a63a7e4ce98d5344b8a8e5375075fc2, type: 3}
+  - id: portrait_fufu_raiva
+    sprite: {fileID: 21300000, guid: 58ce544f3c29e4c41a0d5e0622402d6a, type: 3}
+  - id: portrait_fufu_medo
+    sprite: {fileID: 21300000, guid: ee2d70ef6f0eafd4488802ea90eaa722, type: 3}
+  - id: portrait_fufu_desespero
+    sprite: {fileID: 21300000, guid: 3f64f0859f553434cb9587f4f20cf200, type: 3}
+  - id: portrait_fufu_choro
+    sprite: {fileID: 21300000, guid: c1f071a9e2bd9714586398c97053e1d8, type: 3}
+  - id: portrait_fufu_exaustao
+    sprite: {fileID: 21300000, guid: bf577dfdc808128438254c6a173a4e7e, type: 3}
+  - id: portrait_fufu_alivio
+    sprite: {fileID: 21300000, guid: d0c7b990783a2274e8856a3891948bfb, type: 3}
+  - id: portrait_fufu_determinacao
+    sprite: {fileID: 21300000, guid: 03105ccd7521d3c4cb7f636ab8742d96, type: 3}
+  - id: portrait_fufu_vitoria
+    sprite: {fileID: 21300000, guid: d6e4152186a7c0e4c8a7c64e033f383e, type: 3}
+  - id: portrait_fufu_derrota
+    sprite: {fileID: 21300000, guid: 0cf36fe784ccca9428ecbb99a69add50, type: 3}
+  - id: portrait_donasa_raiva
+    sprite: {fileID: 21300000, guid: 7179b0676e882d54f906ee2c5625d79d, type: 3}
+  - id: portrait_donasa_medo
+    sprite: {fileID: 21300000, guid: 3e59e1aa1c3417b40a3046da606b51cd, type: 3}
+  - id: portrait_donasa_desespero
+    sprite: {fileID: 21300000, guid: ea9ec934e4ac4624687486ac8b08757c, type: 3}
+  - id: portrait_donasa_choro
+    sprite: {fileID: 21300000, guid: a016aeced50d27d4da2a932748ceaa6c, type: 3}
+  - id: portrait_donasa_exaustao
+    sprite: {fileID: 21300000, guid: aab30ff68d497fe4096e4e4420973911, type: 3}
+  - id: portrait_donasa_alivio
+    sprite: {fileID: 21300000, guid: 97f653e90b477104391ce1af3d109d5a, type: 3}
+  - id: portrait_donasa_determinacao
+    sprite: {fileID: 21300000, guid: 2b7e817f34fdbdb4b8ac839eb1e7046f, type: 3}
+  - id: portrait_donasa_vitoria
+    sprite: {fileID: 21300000, guid: ff1572edcad4df5488445a771cf34adf, type: 3}
+  - id: portrait_donasa_derrota
+    sprite: {fileID: 21300000, guid: e55d32c7db538d94ba1e9069306eb94d, type: 3}
   clips:
   - id: loop_tensao
     clip: {fileID: 8300000, guid: 123e5ebce16a46445895d4813dbfcecd, type: 3}
@@ -886,33 +2088,129 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: a214496bfb272374fb2961a751d8fcb0, type: 3}
   - id: arco
     clip: {fileID: 8300000, guid: e3467929c1b51cf488b4b19292aff877, type: 3}
+  - id: bolha
+    clip: {fileID: 8300000, guid: 72c9f61d4491f4a47b1aecafab29ba35, type: 3}
+  - id: bolha_grande
+    clip: {fileID: 8300000, guid: ff040beb1e03e234585061814fa873d2, type: 3}
   - id: braco
     clip: {fileID: 8300000, guid: 8e3e48fff699127428e04dd407ee64aa, type: 3}
   - id: campo
     clip: {fileID: 8300000, guid: 7180230259ee72548bd89056e0e71350, type: 3}
+  - id: celular
+    clip: {fileID: 8300000, guid: 0d55989bf080b584d8a31c3d0a115078, type: 3}
+  - id: chuva
+    clip: {fileID: 8300000, guid: 96b5133e2c75ec44c883ff4604f0b73a, type: 3}
+  - id: circuito
+    clip: {fileID: 8300000, guid: a2b067e01238886469ec95c420a9e380, type: 3}
   - id: clique_ui
     clip: {fileID: 8300000, guid: 6e2c10882d7a28848938c16d6f24819d, type: 3}
+  - id: computador
+    clip: {fileID: 8300000, guid: 32a58588c19761c4395e3325f4956339, type: 3}
   - id: dano_jogador
     clip: {fileID: 8300000, guid: 19a16ee3a2140924d903ce3d778cfe52, type: 3}
   - id: derrota
     clip: {fileID: 8300000, guid: c2fcf980fa320ba4bb4f6e30f6fdda40, type: 3}
   - id: descarga
     clip: {fileID: 8300000, guid: 7f07d48cf6845c940a922ed0b7c6c3c9, type: 3}
+  - id: doritos
+    clip: {fileID: 8300000, guid: 8cd667c88c2375640b2bba1c396b7207, type: 3}
+  - id: drift
+    clip: {fileID: 8300000, guid: b4412ca602cad204fa4bec9ae1d2534d, type: 3}
+  - id: equacao
+    clip: {fileID: 8300000, guid: 06050d09a0d17604196c69dd7fd17516, type: 3}
+  - id: esteira
+    clip: {fileID: 8300000, guid: a6f81da50f3a86049a3e6c53a9f00931, type: 3}
   - id: evolucao
     clip: {fileID: 8300000, guid: 026c6a1763309284aa4e35181e7c2c17, type: 3}
   - id: explosao
     clip: {fileID: 8300000, guid: 904dd9dc9009d804c90c2518c4a9ca7e, type: 3}
+  - id: expressao
+    clip: {fileID: 8300000, guid: c685fe22ddb90c844b60e962ea281ffa, type: 3}
+  - id: fala
+    clip: {fileID: 8300000, guid: a1041f89105402e40925fcac0b7ed1fa, type: 3}
+  - id: fonte
+    clip: {fileID: 8300000, guid: 1740ee7787745f94384d0d1dfd2b9f98, type: 3}
+  - id: frasco
+    clip: {fileID: 8300000, guid: 7e42b398ca7cb3940b1a5a8bc736acaf, type: 3}
+  - id: garrafa
+    clip: {fileID: 8300000, guid: b7cdd1a02a4e78f45b5e2b060b6fa658, type: 3}
   - id: gema
     clip: {fileID: 8300000, guid: c5744b07e275276488cfd77f66d2d67b, type: 3}
+  - id: grito
+    clip: {fileID: 8300000, guid: 757995146a798734998da35d640416d5, type: 3}
+  - id: grito_gigante
+    clip: {fileID: 8300000, guid: e7ee95275ae60cf46aaa068a00f37891, type: 3}
+  - id: hamburguer
+    clip: {fileID: 8300000, guid: a623e2e9f5341cd418a8060621fa4e1e, type: 3}
+  - id: impacto_fufu
+    clip: {fileID: 8300000, guid: 6ac50e8bf2f8c0a4d95636faa8509964, type: 3}
   - id: impacto_metal
     clip: {fileID: 8300000, guid: cc795deeb2268b84dbeaa77442d187b8, type: 3}
+  - id: insulina
+    clip: {fileID: 8300000, guid: dfe9ae6ba890299418db8cbe2231c277, type: 3}
+  - id: jabuti
+    clip: {fileID: 8300000, guid: 7bd3b833b71dcd44b98bae681bc08183, type: 3}
   - id: laser
     clip: {fileID: 8300000, guid: 2e8dba50c5704fd40905a684952b29bb, type: 3}
+  - id: maleta
+    clip: {fileID: 8300000, guid: ccbf0bd228ef4464a898736781ef789e, type: 3}
+  - id: master_chao
+    clip: {fileID: 8300000, guid: 9984d18fbd86e8c4b98dbea54e41c8f2, type: 3}
+  - id: master_salto
+    clip: {fileID: 8300000, guid: dfda07468899f694e86f7bd8b9267cf8, type: 3}
+  - id: master_soco
+    clip: {fileID: 8300000, guid: 9f01210a415aa7442aacba574020994f, type: 3}
+  - id: moedas
+    clip: {fileID: 8300000, guid: 7eb7297e6f7dcfc4d949143188fb4326, type: 3}
+  - id: montagem
+    clip: {fileID: 8300000, guid: 8d9416cf63c928740bb90874aac857dd, type: 3}
   - id: nivel
     clip: {fileID: 8300000, guid: 38a69f2bc89f838448b754f96fa8ef71, type: 3}
+  - id: numero
+    clip: {fileID: 8300000, guid: 4d9605af1d932274fa1a76f0ba93da98, type: 3}
+  - id: onda_sonora
+    clip: {fileID: 8300000, guid: 10a6164458db8474d8bb4a6d445f6fde, type: 3}
+  - id: osciloscopio
+    clip: {fileID: 8300000, guid: 4f2c17e142267cc4f89304717f5e8dde, type: 3}
+  - id: overclock
+    clip: {fileID: 8300000, guid: 1b2936a93d93f36418368c526e485986, type: 3}
+  - id: papel
+    clip: {fileID: 8300000, guid: 3674ba20a8c7d8e44bcb700cff473574, type: 3}
+  - id: pilulas
+    clip: {fileID: 8300000, guid: 897d3e9f3dc2448409fb9fdaa5b40b22, type: 3}
+  - id: pneu
+    clip: {fileID: 8300000, guid: 144649d50ad9d7a4a889a0ed88c825bd, type: 3}
+  - id: resistor
+    clip: {fileID: 8300000, guid: 54339491dc6bcea41af050f0576a857f, type: 3}
+  - id: robo_combo
+    clip: {fileID: 8300000, guid: 8cb4dd1d400790a4bbd722810ecaab7c, type: 3}
+  - id: robo_dash
+    clip: {fileID: 8300000, guid: b8f125f757581f34fa94eda634a09e9f, type: 3}
+  - id: robo_soco
+    clip: {fileID: 8300000, guid: c5b32678b3aea8340b4abe1ef97c24eb, type: 3}
+  - id: robo_tiro
+    clip: {fileID: 8300000, guid: 53b768c1075104949a13ae450565c5f7, type: 3}
+  - id: seringa
+    clip: {fileID: 8300000, guid: a41c84a7aa3b1c5488978d834a660bae, type: 3}
+  - id: soco
+    clip: {fileID: 8300000, guid: 8ff7a50bb3682b745bf2c4f6da99ffb1, type: 3}
+  - id: soco_forte
+    clip: {fileID: 8300000, guid: d5a5361179af3584996cb10e16d84f17, type: 3}
+  - id: soco_fufu
+    clip: {fileID: 8300000, guid: 988ed9ba77991b544be172f2fc5c0a13, type: 3}
+  - id: sushi
+    clip: {fileID: 8300000, guid: bb39231687179e34e83effbfc1124b5c, type: 3}
+  - id: tempestade
+    clip: {fileID: 8300000, guid: 684ab6ceff7724e4aa8de2798c8fb3a9, type: 3}
+  - id: transistor
+    clip: {fileID: 8300000, guid: ffc192aaf2631ad4caa951df0293dac7, type: 3}
   - id: turbina
     clip: {fileID: 8300000, guid: 89f38d9c9379c154f8497b0aad5b31cd, type: 3}
+  - id: tv
+    clip: {fileID: 8300000, guid: c945cd22b8e18b244b301f71deb91a79, type: 3}
   - id: vitoria
     clip: {fileID: 8300000, guid: 1356f91882503784482d116bd174873f, type: 3}
+  - id: volta
+    clip: {fileID: 8300000, guid: 2f3d9599560b9a44293dd256828e20cb, type: 3}
   font: {fileID: 12800000, guid: d47109686bc7e754dbebe7fbc0f69398, type: 3}
   strings: {fileID: 4900000, guid: f98bd284c452bed49a02c9ca9e7bd7fa, type: 3}

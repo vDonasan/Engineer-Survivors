@@ -18,6 +18,8 @@ MonoBehaviour:
     startingAbility: descarga_direcionada
     special: apagao
     portrait: eletrica
+    engineering: "Engenharia El\xE9trica"
+    hidden: 1
     affinityTags:
     - Energia
     - Eletronica

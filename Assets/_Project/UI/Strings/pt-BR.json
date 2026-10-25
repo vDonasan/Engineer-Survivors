@@ -10,7 +10,8 @@
   "ok": "OK",
 
   "solo_titulo": "Preparação",
-  "escolha_especializacao": "Especialização",
+  "escolha_especializacao": "Escolha o personagem",
+  "evolucao_personagem": "Evolução: {0} ({1})",
   "escolha_dificuldade": "Dificuldade",
   "iniciar": "Iniciar",
   "arma_inicial": "Arma inicial: {0}",
@@ -43,7 +44,7 @@
   "lobby_voce": "(você)",
   "lobby_anfitriao": "(anfitrião)",
   "sair_sala": "Sair da sala",
-  "lobby_sua_especializacao": "Sua especialização",
+  "lobby_sua_especializacao": "Seu personagem",
 
   "hud_nivel": "Nv {0}",
   "hud_tempo": "{0:00}:{1:00}",

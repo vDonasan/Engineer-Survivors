@@ -3445,6 +3445,4926 @@
    "border": null
   },
   {
+   "id": "char_staut_idle_down_0",
+   "category": "Characters",
+   "file": "Characters/staut/char_staut_idle_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_staut_idle_down_1",
+   "category": "Characters",
+   "file": "Characters/staut/char_staut_idle_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_staut_idle_up_0",
+   "category": "Characters",
+   "file": "Characters/staut/char_staut_idle_up_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_staut_idle_up_1",
+   "category": "Characters",
+   "file": "Characters/staut/char_staut_idle_up_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_staut_idle_left_0",
+   "category": "Characters",
+   "file": "Characters/staut/char_staut_idle_left_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_staut_idle_left_1",
+   "category": "Characters",
+   "file": "Characters/staut/char_staut_idle_left_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_staut_idle_right_0",
+   "category": "Characters",
+   "file": "Characters/staut/char_staut_idle_right_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_staut_idle_right_1",
+   "category": "Characters",
+   "file": "Characters/staut/char_staut_idle_right_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_staut_walk_down_0",
+   "category": "Characters",
+   "file": "Characters/staut/char_staut_walk_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_staut_walk_down_1",
+   "category": "Characters",
+   "file": "Characters/staut/char_staut_walk_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_staut_walk_down_2",
+   "category": "Characters",
+   "file": "Characters/staut/char_staut_walk_down_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_staut_walk_down_3",
+   "category": "Characters",
+   "file": "Characters/staut/char_staut_walk_down_3.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_staut_walk_up_0",
+   "category": "Characters",
+   "file": "Characters/staut/char_staut_walk_up_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_staut_walk_up_1",
+   "category": "Characters",
+   "file": "Characters/staut/char_staut_walk_up_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_staut_walk_up_2",
+   "category": "Characters",
+   "file": "Characters/staut/char_staut_walk_up_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_staut_walk_up_3",
+   "category": "Characters",
+   "file": "Characters/staut/char_staut_walk_up_3.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_staut_walk_left_0",
+   "category": "Characters",
+   "file": "Characters/staut/char_staut_walk_left_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_staut_walk_left_1",
+   "category": "Characters",
+   "file": "Characters/staut/char_staut_walk_left_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_staut_walk_left_2",
+   "category": "Characters",
+   "file": "Characters/staut/char_staut_walk_left_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_staut_walk_left_3",
+   "category": "Characters",
+   "file": "Characters/staut/char_staut_walk_left_3.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_staut_walk_right_0",
+   "category": "Characters",
+   "file": "Characters/staut/char_staut_walk_right_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_staut_walk_right_1",
+   "category": "Characters",
+   "file": "Characters/staut/char_staut_walk_right_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_staut_walk_right_2",
+   "category": "Characters",
+   "file": "Characters/staut/char_staut_walk_right_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_staut_walk_right_3",
+   "category": "Characters",
+   "file": "Characters/staut/char_staut_walk_right_3.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_staut_attack_down_0",
+   "category": "Characters",
+   "file": "Characters/staut/char_staut_attack_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_staut_attack_down_1",
+   "category": "Characters",
+   "file": "Characters/staut/char_staut_attack_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_staut_attack_down_2",
+   "category": "Characters",
+   "file": "Characters/staut/char_staut_attack_down_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_staut_special_down_0",
+   "category": "Characters",
+   "file": "Characters/staut/char_staut_special_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_staut_special_down_1",
+   "category": "Characters",
+   "file": "Characters/staut/char_staut_special_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_staut_special_down_2",
+   "category": "Characters",
+   "file": "Characters/staut/char_staut_special_down_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_staut_hurt_down_0",
+   "category": "Characters",
+   "file": "Characters/staut/char_staut_hurt_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_staut_hurt_down_1",
+   "category": "Characters",
+   "file": "Characters/staut/char_staut_hurt_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_staut_stun_down_0",
+   "category": "Characters",
+   "file": "Characters/staut/char_staut_stun_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_staut_stun_down_1",
+   "category": "Characters",
+   "file": "Characters/staut/char_staut_stun_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_staut_downed_down_0",
+   "category": "Characters",
+   "file": "Characters/staut/char_staut_downed_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_staut_downed_down_1",
+   "category": "Characters",
+   "file": "Characters/staut/char_staut_downed_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_staut_downed_down_2",
+   "category": "Characters",
+   "file": "Characters/staut/char_staut_downed_down_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_staut_revive_down_0",
+   "category": "Characters",
+   "file": "Characters/staut/char_staut_revive_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_staut_revive_down_1",
+   "category": "Characters",
+   "file": "Characters/staut/char_staut_revive_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_staut_victory_down_0",
+   "category": "Characters",
+   "file": "Characters/staut/char_staut_victory_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_staut_victory_down_1",
+   "category": "Characters",
+   "file": "Characters/staut/char_staut_victory_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_miyuki_idle_down_0",
+   "category": "Characters",
+   "file": "Characters/miyuki/char_miyuki_idle_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_miyuki_idle_down_1",
+   "category": "Characters",
+   "file": "Characters/miyuki/char_miyuki_idle_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_miyuki_idle_up_0",
+   "category": "Characters",
+   "file": "Characters/miyuki/char_miyuki_idle_up_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_miyuki_idle_up_1",
+   "category": "Characters",
+   "file": "Characters/miyuki/char_miyuki_idle_up_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_miyuki_idle_left_0",
+   "category": "Characters",
+   "file": "Characters/miyuki/char_miyuki_idle_left_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_miyuki_idle_left_1",
+   "category": "Characters",
+   "file": "Characters/miyuki/char_miyuki_idle_left_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_miyuki_idle_right_0",
+   "category": "Characters",
+   "file": "Characters/miyuki/char_miyuki_idle_right_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_miyuki_idle_right_1",
+   "category": "Characters",
+   "file": "Characters/miyuki/char_miyuki_idle_right_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_miyuki_walk_down_0",
+   "category": "Characters",
+   "file": "Characters/miyuki/char_miyuki_walk_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_miyuki_walk_down_1",
+   "category": "Characters",
+   "file": "Characters/miyuki/char_miyuki_walk_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_miyuki_walk_down_2",
+   "category": "Characters",
+   "file": "Characters/miyuki/char_miyuki_walk_down_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_miyuki_walk_down_3",
+   "category": "Characters",
+   "file": "Characters/miyuki/char_miyuki_walk_down_3.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_miyuki_walk_up_0",
+   "category": "Characters",
+   "file": "Characters/miyuki/char_miyuki_walk_up_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_miyuki_walk_up_1",
+   "category": "Characters",
+   "file": "Characters/miyuki/char_miyuki_walk_up_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_miyuki_walk_up_2",
+   "category": "Characters",
+   "file": "Characters/miyuki/char_miyuki_walk_up_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_miyuki_walk_up_3",
+   "category": "Characters",
+   "file": "Characters/miyuki/char_miyuki_walk_up_3.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_miyuki_walk_left_0",
+   "category": "Characters",
+   "file": "Characters/miyuki/char_miyuki_walk_left_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_miyuki_walk_left_1",
+   "category": "Characters",
+   "file": "Characters/miyuki/char_miyuki_walk_left_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_miyuki_walk_left_2",
+   "category": "Characters",
+   "file": "Characters/miyuki/char_miyuki_walk_left_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_miyuki_walk_left_3",
+   "category": "Characters",
+   "file": "Characters/miyuki/char_miyuki_walk_left_3.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_miyuki_walk_right_0",
+   "category": "Characters",
+   "file": "Characters/miyuki/char_miyuki_walk_right_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_miyuki_walk_right_1",
+   "category": "Characters",
+   "file": "Characters/miyuki/char_miyuki_walk_right_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_miyuki_walk_right_2",
+   "category": "Characters",
+   "file": "Characters/miyuki/char_miyuki_walk_right_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_miyuki_walk_right_3",
+   "category": "Characters",
+   "file": "Characters/miyuki/char_miyuki_walk_right_3.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_miyuki_attack_down_0",
+   "category": "Characters",
+   "file": "Characters/miyuki/char_miyuki_attack_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_miyuki_attack_down_1",
+   "category": "Characters",
+   "file": "Characters/miyuki/char_miyuki_attack_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_miyuki_attack_down_2",
+   "category": "Characters",
+   "file": "Characters/miyuki/char_miyuki_attack_down_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_miyuki_special_down_0",
+   "category": "Characters",
+   "file": "Characters/miyuki/char_miyuki_special_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_miyuki_special_down_1",
+   "category": "Characters",
+   "file": "Characters/miyuki/char_miyuki_special_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_miyuki_special_down_2",
+   "category": "Characters",
+   "file": "Characters/miyuki/char_miyuki_special_down_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_miyuki_hurt_down_0",
+   "category": "Characters",
+   "file": "Characters/miyuki/char_miyuki_hurt_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_miyuki_hurt_down_1",
+   "category": "Characters",
+   "file": "Characters/miyuki/char_miyuki_hurt_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_miyuki_stun_down_0",
+   "category": "Characters",
+   "file": "Characters/miyuki/char_miyuki_stun_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_miyuki_stun_down_1",
+   "category": "Characters",
+   "file": "Characters/miyuki/char_miyuki_stun_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_miyuki_downed_down_0",
+   "category": "Characters",
+   "file": "Characters/miyuki/char_miyuki_downed_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_miyuki_downed_down_1",
+   "category": "Characters",
+   "file": "Characters/miyuki/char_miyuki_downed_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_miyuki_downed_down_2",
+   "category": "Characters",
+   "file": "Characters/miyuki/char_miyuki_downed_down_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_miyuki_revive_down_0",
+   "category": "Characters",
+   "file": "Characters/miyuki/char_miyuki_revive_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_miyuki_revive_down_1",
+   "category": "Characters",
+   "file": "Characters/miyuki/char_miyuki_revive_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_miyuki_victory_down_0",
+   "category": "Characters",
+   "file": "Characters/miyuki/char_miyuki_victory_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_miyuki_victory_down_1",
+   "category": "Characters",
+   "file": "Characters/miyuki/char_miyuki_victory_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_giulia_idle_down_0",
+   "category": "Characters",
+   "file": "Characters/giulia/char_giulia_idle_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_giulia_idle_down_1",
+   "category": "Characters",
+   "file": "Characters/giulia/char_giulia_idle_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_giulia_idle_up_0",
+   "category": "Characters",
+   "file": "Characters/giulia/char_giulia_idle_up_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_giulia_idle_up_1",
+   "category": "Characters",
+   "file": "Characters/giulia/char_giulia_idle_up_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_giulia_idle_left_0",
+   "category": "Characters",
+   "file": "Characters/giulia/char_giulia_idle_left_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_giulia_idle_left_1",
+   "category": "Characters",
+   "file": "Characters/giulia/char_giulia_idle_left_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_giulia_idle_right_0",
+   "category": "Characters",
+   "file": "Characters/giulia/char_giulia_idle_right_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_giulia_idle_right_1",
+   "category": "Characters",
+   "file": "Characters/giulia/char_giulia_idle_right_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_giulia_walk_down_0",
+   "category": "Characters",
+   "file": "Characters/giulia/char_giulia_walk_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_giulia_walk_down_1",
+   "category": "Characters",
+   "file": "Characters/giulia/char_giulia_walk_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_giulia_walk_down_2",
+   "category": "Characters",
+   "file": "Characters/giulia/char_giulia_walk_down_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_giulia_walk_down_3",
+   "category": "Characters",
+   "file": "Characters/giulia/char_giulia_walk_down_3.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_giulia_walk_up_0",
+   "category": "Characters",
+   "file": "Characters/giulia/char_giulia_walk_up_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_giulia_walk_up_1",
+   "category": "Characters",
+   "file": "Characters/giulia/char_giulia_walk_up_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_giulia_walk_up_2",
+   "category": "Characters",
+   "file": "Characters/giulia/char_giulia_walk_up_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_giulia_walk_up_3",
+   "category": "Characters",
+   "file": "Characters/giulia/char_giulia_walk_up_3.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_giulia_walk_left_0",
+   "category": "Characters",
+   "file": "Characters/giulia/char_giulia_walk_left_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_giulia_walk_left_1",
+   "category": "Characters",
+   "file": "Characters/giulia/char_giulia_walk_left_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_giulia_walk_left_2",
+   "category": "Characters",
+   "file": "Characters/giulia/char_giulia_walk_left_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_giulia_walk_left_3",
+   "category": "Characters",
+   "file": "Characters/giulia/char_giulia_walk_left_3.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_giulia_walk_right_0",
+   "category": "Characters",
+   "file": "Characters/giulia/char_giulia_walk_right_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_giulia_walk_right_1",
+   "category": "Characters",
+   "file": "Characters/giulia/char_giulia_walk_right_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_giulia_walk_right_2",
+   "category": "Characters",
+   "file": "Characters/giulia/char_giulia_walk_right_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_giulia_walk_right_3",
+   "category": "Characters",
+   "file": "Characters/giulia/char_giulia_walk_right_3.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_giulia_attack_down_0",
+   "category": "Characters",
+   "file": "Characters/giulia/char_giulia_attack_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_giulia_attack_down_1",
+   "category": "Characters",
+   "file": "Characters/giulia/char_giulia_attack_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_giulia_attack_down_2",
+   "category": "Characters",
+   "file": "Characters/giulia/char_giulia_attack_down_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_giulia_special_down_0",
+   "category": "Characters",
+   "file": "Characters/giulia/char_giulia_special_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_giulia_special_down_1",
+   "category": "Characters",
+   "file": "Characters/giulia/char_giulia_special_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_giulia_special_down_2",
+   "category": "Characters",
+   "file": "Characters/giulia/char_giulia_special_down_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_giulia_hurt_down_0",
+   "category": "Characters",
+   "file": "Characters/giulia/char_giulia_hurt_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_giulia_hurt_down_1",
+   "category": "Characters",
+   "file": "Characters/giulia/char_giulia_hurt_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_giulia_stun_down_0",
+   "category": "Characters",
+   "file": "Characters/giulia/char_giulia_stun_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_giulia_stun_down_1",
+   "category": "Characters",
+   "file": "Characters/giulia/char_giulia_stun_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_giulia_downed_down_0",
+   "category": "Characters",
+   "file": "Characters/giulia/char_giulia_downed_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_giulia_downed_down_1",
+   "category": "Characters",
+   "file": "Characters/giulia/char_giulia_downed_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_giulia_downed_down_2",
+   "category": "Characters",
+   "file": "Characters/giulia/char_giulia_downed_down_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_giulia_revive_down_0",
+   "category": "Characters",
+   "file": "Characters/giulia/char_giulia_revive_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_giulia_revive_down_1",
+   "category": "Characters",
+   "file": "Characters/giulia/char_giulia_revive_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_giulia_victory_down_0",
+   "category": "Characters",
+   "file": "Characters/giulia/char_giulia_victory_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_giulia_victory_down_1",
+   "category": "Characters",
+   "file": "Characters/giulia/char_giulia_victory_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_breno_idle_down_0",
+   "category": "Characters",
+   "file": "Characters/breno/char_breno_idle_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_breno_idle_down_1",
+   "category": "Characters",
+   "file": "Characters/breno/char_breno_idle_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_breno_idle_up_0",
+   "category": "Characters",
+   "file": "Characters/breno/char_breno_idle_up_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_breno_idle_up_1",
+   "category": "Characters",
+   "file": "Characters/breno/char_breno_idle_up_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_breno_idle_left_0",
+   "category": "Characters",
+   "file": "Characters/breno/char_breno_idle_left_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_breno_idle_left_1",
+   "category": "Characters",
+   "file": "Characters/breno/char_breno_idle_left_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_breno_idle_right_0",
+   "category": "Characters",
+   "file": "Characters/breno/char_breno_idle_right_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_breno_idle_right_1",
+   "category": "Characters",
+   "file": "Characters/breno/char_breno_idle_right_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_breno_walk_down_0",
+   "category": "Characters",
+   "file": "Characters/breno/char_breno_walk_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_breno_walk_down_1",
+   "category": "Characters",
+   "file": "Characters/breno/char_breno_walk_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_breno_walk_down_2",
+   "category": "Characters",
+   "file": "Characters/breno/char_breno_walk_down_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_breno_walk_down_3",
+   "category": "Characters",
+   "file": "Characters/breno/char_breno_walk_down_3.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_breno_walk_up_0",
+   "category": "Characters",
+   "file": "Characters/breno/char_breno_walk_up_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_breno_walk_up_1",
+   "category": "Characters",
+   "file": "Characters/breno/char_breno_walk_up_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_breno_walk_up_2",
+   "category": "Characters",
+   "file": "Characters/breno/char_breno_walk_up_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_breno_walk_up_3",
+   "category": "Characters",
+   "file": "Characters/breno/char_breno_walk_up_3.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_breno_walk_left_0",
+   "category": "Characters",
+   "file": "Characters/breno/char_breno_walk_left_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_breno_walk_left_1",
+   "category": "Characters",
+   "file": "Characters/breno/char_breno_walk_left_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_breno_walk_left_2",
+   "category": "Characters",
+   "file": "Characters/breno/char_breno_walk_left_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_breno_walk_left_3",
+   "category": "Characters",
+   "file": "Characters/breno/char_breno_walk_left_3.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_breno_walk_right_0",
+   "category": "Characters",
+   "file": "Characters/breno/char_breno_walk_right_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_breno_walk_right_1",
+   "category": "Characters",
+   "file": "Characters/breno/char_breno_walk_right_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_breno_walk_right_2",
+   "category": "Characters",
+   "file": "Characters/breno/char_breno_walk_right_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_breno_walk_right_3",
+   "category": "Characters",
+   "file": "Characters/breno/char_breno_walk_right_3.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_breno_attack_down_0",
+   "category": "Characters",
+   "file": "Characters/breno/char_breno_attack_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_breno_attack_down_1",
+   "category": "Characters",
+   "file": "Characters/breno/char_breno_attack_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_breno_attack_down_2",
+   "category": "Characters",
+   "file": "Characters/breno/char_breno_attack_down_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_breno_special_down_0",
+   "category": "Characters",
+   "file": "Characters/breno/char_breno_special_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_breno_special_down_1",
+   "category": "Characters",
+   "file": "Characters/breno/char_breno_special_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_breno_special_down_2",
+   "category": "Characters",
+   "file": "Characters/breno/char_breno_special_down_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_breno_hurt_down_0",
+   "category": "Characters",
+   "file": "Characters/breno/char_breno_hurt_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_breno_hurt_down_1",
+   "category": "Characters",
+   "file": "Characters/breno/char_breno_hurt_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_breno_stun_down_0",
+   "category": "Characters",
+   "file": "Characters/breno/char_breno_stun_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_breno_stun_down_1",
+   "category": "Characters",
+   "file": "Characters/breno/char_breno_stun_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_breno_downed_down_0",
+   "category": "Characters",
+   "file": "Characters/breno/char_breno_downed_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_breno_downed_down_1",
+   "category": "Characters",
+   "file": "Characters/breno/char_breno_downed_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_breno_downed_down_2",
+   "category": "Characters",
+   "file": "Characters/breno/char_breno_downed_down_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_breno_revive_down_0",
+   "category": "Characters",
+   "file": "Characters/breno/char_breno_revive_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_breno_revive_down_1",
+   "category": "Characters",
+   "file": "Characters/breno/char_breno_revive_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_breno_victory_down_0",
+   "category": "Characters",
+   "file": "Characters/breno/char_breno_victory_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_breno_victory_down_1",
+   "category": "Characters",
+   "file": "Characters/breno/char_breno_victory_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_artur_idle_down_0",
+   "category": "Characters",
+   "file": "Characters/artur/char_artur_idle_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_artur_idle_down_1",
+   "category": "Characters",
+   "file": "Characters/artur/char_artur_idle_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_artur_idle_up_0",
+   "category": "Characters",
+   "file": "Characters/artur/char_artur_idle_up_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_artur_idle_up_1",
+   "category": "Characters",
+   "file": "Characters/artur/char_artur_idle_up_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_artur_idle_left_0",
+   "category": "Characters",
+   "file": "Characters/artur/char_artur_idle_left_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_artur_idle_left_1",
+   "category": "Characters",
+   "file": "Characters/artur/char_artur_idle_left_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_artur_idle_right_0",
+   "category": "Characters",
+   "file": "Characters/artur/char_artur_idle_right_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_artur_idle_right_1",
+   "category": "Characters",
+   "file": "Characters/artur/char_artur_idle_right_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_artur_walk_down_0",
+   "category": "Characters",
+   "file": "Characters/artur/char_artur_walk_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_artur_walk_down_1",
+   "category": "Characters",
+   "file": "Characters/artur/char_artur_walk_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_artur_walk_down_2",
+   "category": "Characters",
+   "file": "Characters/artur/char_artur_walk_down_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_artur_walk_down_3",
+   "category": "Characters",
+   "file": "Characters/artur/char_artur_walk_down_3.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_artur_walk_up_0",
+   "category": "Characters",
+   "file": "Characters/artur/char_artur_walk_up_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_artur_walk_up_1",
+   "category": "Characters",
+   "file": "Characters/artur/char_artur_walk_up_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_artur_walk_up_2",
+   "category": "Characters",
+   "file": "Characters/artur/char_artur_walk_up_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_artur_walk_up_3",
+   "category": "Characters",
+   "file": "Characters/artur/char_artur_walk_up_3.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_artur_walk_left_0",
+   "category": "Characters",
+   "file": "Characters/artur/char_artur_walk_left_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_artur_walk_left_1",
+   "category": "Characters",
+   "file": "Characters/artur/char_artur_walk_left_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_artur_walk_left_2",
+   "category": "Characters",
+   "file": "Characters/artur/char_artur_walk_left_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_artur_walk_left_3",
+   "category": "Characters",
+   "file": "Characters/artur/char_artur_walk_left_3.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_artur_walk_right_0",
+   "category": "Characters",
+   "file": "Characters/artur/char_artur_walk_right_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_artur_walk_right_1",
+   "category": "Characters",
+   "file": "Characters/artur/char_artur_walk_right_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_artur_walk_right_2",
+   "category": "Characters",
+   "file": "Characters/artur/char_artur_walk_right_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_artur_walk_right_3",
+   "category": "Characters",
+   "file": "Characters/artur/char_artur_walk_right_3.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_artur_attack_down_0",
+   "category": "Characters",
+   "file": "Characters/artur/char_artur_attack_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_artur_attack_down_1",
+   "category": "Characters",
+   "file": "Characters/artur/char_artur_attack_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_artur_attack_down_2",
+   "category": "Characters",
+   "file": "Characters/artur/char_artur_attack_down_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_artur_special_down_0",
+   "category": "Characters",
+   "file": "Characters/artur/char_artur_special_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_artur_special_down_1",
+   "category": "Characters",
+   "file": "Characters/artur/char_artur_special_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_artur_special_down_2",
+   "category": "Characters",
+   "file": "Characters/artur/char_artur_special_down_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_artur_hurt_down_0",
+   "category": "Characters",
+   "file": "Characters/artur/char_artur_hurt_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_artur_hurt_down_1",
+   "category": "Characters",
+   "file": "Characters/artur/char_artur_hurt_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_artur_stun_down_0",
+   "category": "Characters",
+   "file": "Characters/artur/char_artur_stun_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_artur_stun_down_1",
+   "category": "Characters",
+   "file": "Characters/artur/char_artur_stun_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_artur_downed_down_0",
+   "category": "Characters",
+   "file": "Characters/artur/char_artur_downed_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_artur_downed_down_1",
+   "category": "Characters",
+   "file": "Characters/artur/char_artur_downed_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_artur_downed_down_2",
+   "category": "Characters",
+   "file": "Characters/artur/char_artur_downed_down_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_artur_revive_down_0",
+   "category": "Characters",
+   "file": "Characters/artur/char_artur_revive_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_artur_revive_down_1",
+   "category": "Characters",
+   "file": "Characters/artur/char_artur_revive_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_artur_victory_down_0",
+   "category": "Characters",
+   "file": "Characters/artur/char_artur_victory_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_artur_victory_down_1",
+   "category": "Characters",
+   "file": "Characters/artur/char_artur_victory_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_badotti_idle_down_0",
+   "category": "Characters",
+   "file": "Characters/badotti/char_badotti_idle_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_badotti_idle_down_1",
+   "category": "Characters",
+   "file": "Characters/badotti/char_badotti_idle_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_badotti_idle_up_0",
+   "category": "Characters",
+   "file": "Characters/badotti/char_badotti_idle_up_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_badotti_idle_up_1",
+   "category": "Characters",
+   "file": "Characters/badotti/char_badotti_idle_up_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_badotti_idle_left_0",
+   "category": "Characters",
+   "file": "Characters/badotti/char_badotti_idle_left_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_badotti_idle_left_1",
+   "category": "Characters",
+   "file": "Characters/badotti/char_badotti_idle_left_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_badotti_idle_right_0",
+   "category": "Characters",
+   "file": "Characters/badotti/char_badotti_idle_right_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_badotti_idle_right_1",
+   "category": "Characters",
+   "file": "Characters/badotti/char_badotti_idle_right_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_badotti_walk_down_0",
+   "category": "Characters",
+   "file": "Characters/badotti/char_badotti_walk_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_badotti_walk_down_1",
+   "category": "Characters",
+   "file": "Characters/badotti/char_badotti_walk_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_badotti_walk_down_2",
+   "category": "Characters",
+   "file": "Characters/badotti/char_badotti_walk_down_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_badotti_walk_down_3",
+   "category": "Characters",
+   "file": "Characters/badotti/char_badotti_walk_down_3.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_badotti_walk_up_0",
+   "category": "Characters",
+   "file": "Characters/badotti/char_badotti_walk_up_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_badotti_walk_up_1",
+   "category": "Characters",
+   "file": "Characters/badotti/char_badotti_walk_up_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_badotti_walk_up_2",
+   "category": "Characters",
+   "file": "Characters/badotti/char_badotti_walk_up_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_badotti_walk_up_3",
+   "category": "Characters",
+   "file": "Characters/badotti/char_badotti_walk_up_3.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_badotti_walk_left_0",
+   "category": "Characters",
+   "file": "Characters/badotti/char_badotti_walk_left_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_badotti_walk_left_1",
+   "category": "Characters",
+   "file": "Characters/badotti/char_badotti_walk_left_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_badotti_walk_left_2",
+   "category": "Characters",
+   "file": "Characters/badotti/char_badotti_walk_left_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_badotti_walk_left_3",
+   "category": "Characters",
+   "file": "Characters/badotti/char_badotti_walk_left_3.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_badotti_walk_right_0",
+   "category": "Characters",
+   "file": "Characters/badotti/char_badotti_walk_right_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_badotti_walk_right_1",
+   "category": "Characters",
+   "file": "Characters/badotti/char_badotti_walk_right_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_badotti_walk_right_2",
+   "category": "Characters",
+   "file": "Characters/badotti/char_badotti_walk_right_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_badotti_walk_right_3",
+   "category": "Characters",
+   "file": "Characters/badotti/char_badotti_walk_right_3.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_badotti_attack_down_0",
+   "category": "Characters",
+   "file": "Characters/badotti/char_badotti_attack_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_badotti_attack_down_1",
+   "category": "Characters",
+   "file": "Characters/badotti/char_badotti_attack_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_badotti_attack_down_2",
+   "category": "Characters",
+   "file": "Characters/badotti/char_badotti_attack_down_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_badotti_special_down_0",
+   "category": "Characters",
+   "file": "Characters/badotti/char_badotti_special_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_badotti_special_down_1",
+   "category": "Characters",
+   "file": "Characters/badotti/char_badotti_special_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_badotti_special_down_2",
+   "category": "Characters",
+   "file": "Characters/badotti/char_badotti_special_down_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_badotti_hurt_down_0",
+   "category": "Characters",
+   "file": "Characters/badotti/char_badotti_hurt_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_badotti_hurt_down_1",
+   "category": "Characters",
+   "file": "Characters/badotti/char_badotti_hurt_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_badotti_stun_down_0",
+   "category": "Characters",
+   "file": "Characters/badotti/char_badotti_stun_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_badotti_stun_down_1",
+   "category": "Characters",
+   "file": "Characters/badotti/char_badotti_stun_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_badotti_downed_down_0",
+   "category": "Characters",
+   "file": "Characters/badotti/char_badotti_downed_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_badotti_downed_down_1",
+   "category": "Characters",
+   "file": "Characters/badotti/char_badotti_downed_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_badotti_downed_down_2",
+   "category": "Characters",
+   "file": "Characters/badotti/char_badotti_downed_down_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_badotti_revive_down_0",
+   "category": "Characters",
+   "file": "Characters/badotti/char_badotti_revive_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_badotti_revive_down_1",
+   "category": "Characters",
+   "file": "Characters/badotti/char_badotti_revive_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_badotti_victory_down_0",
+   "category": "Characters",
+   "file": "Characters/badotti/char_badotti_victory_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_badotti_victory_down_1",
+   "category": "Characters",
+   "file": "Characters/badotti/char_badotti_victory_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_garcia_idle_down_0",
+   "category": "Characters",
+   "file": "Characters/garcia/char_garcia_idle_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_garcia_idle_down_1",
+   "category": "Characters",
+   "file": "Characters/garcia/char_garcia_idle_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_garcia_idle_up_0",
+   "category": "Characters",
+   "file": "Characters/garcia/char_garcia_idle_up_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_garcia_idle_up_1",
+   "category": "Characters",
+   "file": "Characters/garcia/char_garcia_idle_up_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_garcia_idle_left_0",
+   "category": "Characters",
+   "file": "Characters/garcia/char_garcia_idle_left_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_garcia_idle_left_1",
+   "category": "Characters",
+   "file": "Characters/garcia/char_garcia_idle_left_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_garcia_idle_right_0",
+   "category": "Characters",
+   "file": "Characters/garcia/char_garcia_idle_right_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_garcia_idle_right_1",
+   "category": "Characters",
+   "file": "Characters/garcia/char_garcia_idle_right_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_garcia_walk_down_0",
+   "category": "Characters",
+   "file": "Characters/garcia/char_garcia_walk_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_garcia_walk_down_1",
+   "category": "Characters",
+   "file": "Characters/garcia/char_garcia_walk_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_garcia_walk_down_2",
+   "category": "Characters",
+   "file": "Characters/garcia/char_garcia_walk_down_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_garcia_walk_down_3",
+   "category": "Characters",
+   "file": "Characters/garcia/char_garcia_walk_down_3.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_garcia_walk_up_0",
+   "category": "Characters",
+   "file": "Characters/garcia/char_garcia_walk_up_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_garcia_walk_up_1",
+   "category": "Characters",
+   "file": "Characters/garcia/char_garcia_walk_up_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_garcia_walk_up_2",
+   "category": "Characters",
+   "file": "Characters/garcia/char_garcia_walk_up_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_garcia_walk_up_3",
+   "category": "Characters",
+   "file": "Characters/garcia/char_garcia_walk_up_3.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_garcia_walk_left_0",
+   "category": "Characters",
+   "file": "Characters/garcia/char_garcia_walk_left_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_garcia_walk_left_1",
+   "category": "Characters",
+   "file": "Characters/garcia/char_garcia_walk_left_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_garcia_walk_left_2",
+   "category": "Characters",
+   "file": "Characters/garcia/char_garcia_walk_left_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_garcia_walk_left_3",
+   "category": "Characters",
+   "file": "Characters/garcia/char_garcia_walk_left_3.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_garcia_walk_right_0",
+   "category": "Characters",
+   "file": "Characters/garcia/char_garcia_walk_right_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_garcia_walk_right_1",
+   "category": "Characters",
+   "file": "Characters/garcia/char_garcia_walk_right_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_garcia_walk_right_2",
+   "category": "Characters",
+   "file": "Characters/garcia/char_garcia_walk_right_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_garcia_walk_right_3",
+   "category": "Characters",
+   "file": "Characters/garcia/char_garcia_walk_right_3.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_garcia_attack_down_0",
+   "category": "Characters",
+   "file": "Characters/garcia/char_garcia_attack_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_garcia_attack_down_1",
+   "category": "Characters",
+   "file": "Characters/garcia/char_garcia_attack_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_garcia_attack_down_2",
+   "category": "Characters",
+   "file": "Characters/garcia/char_garcia_attack_down_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_garcia_special_down_0",
+   "category": "Characters",
+   "file": "Characters/garcia/char_garcia_special_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_garcia_special_down_1",
+   "category": "Characters",
+   "file": "Characters/garcia/char_garcia_special_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_garcia_special_down_2",
+   "category": "Characters",
+   "file": "Characters/garcia/char_garcia_special_down_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_garcia_hurt_down_0",
+   "category": "Characters",
+   "file": "Characters/garcia/char_garcia_hurt_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_garcia_hurt_down_1",
+   "category": "Characters",
+   "file": "Characters/garcia/char_garcia_hurt_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_garcia_stun_down_0",
+   "category": "Characters",
+   "file": "Characters/garcia/char_garcia_stun_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_garcia_stun_down_1",
+   "category": "Characters",
+   "file": "Characters/garcia/char_garcia_stun_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_garcia_downed_down_0",
+   "category": "Characters",
+   "file": "Characters/garcia/char_garcia_downed_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_garcia_downed_down_1",
+   "category": "Characters",
+   "file": "Characters/garcia/char_garcia_downed_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_garcia_downed_down_2",
+   "category": "Characters",
+   "file": "Characters/garcia/char_garcia_downed_down_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_garcia_revive_down_0",
+   "category": "Characters",
+   "file": "Characters/garcia/char_garcia_revive_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_garcia_revive_down_1",
+   "category": "Characters",
+   "file": "Characters/garcia/char_garcia_revive_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_garcia_victory_down_0",
+   "category": "Characters",
+   "file": "Characters/garcia/char_garcia_victory_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_garcia_victory_down_1",
+   "category": "Characters",
+   "file": "Characters/garcia/char_garcia_victory_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_jean_idle_down_0",
+   "category": "Characters",
+   "file": "Characters/jean/char_jean_idle_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_jean_idle_down_1",
+   "category": "Characters",
+   "file": "Characters/jean/char_jean_idle_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_jean_idle_up_0",
+   "category": "Characters",
+   "file": "Characters/jean/char_jean_idle_up_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_jean_idle_up_1",
+   "category": "Characters",
+   "file": "Characters/jean/char_jean_idle_up_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_jean_idle_left_0",
+   "category": "Characters",
+   "file": "Characters/jean/char_jean_idle_left_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_jean_idle_left_1",
+   "category": "Characters",
+   "file": "Characters/jean/char_jean_idle_left_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_jean_idle_right_0",
+   "category": "Characters",
+   "file": "Characters/jean/char_jean_idle_right_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_jean_idle_right_1",
+   "category": "Characters",
+   "file": "Characters/jean/char_jean_idle_right_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_jean_walk_down_0",
+   "category": "Characters",
+   "file": "Characters/jean/char_jean_walk_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_jean_walk_down_1",
+   "category": "Characters",
+   "file": "Characters/jean/char_jean_walk_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_jean_walk_down_2",
+   "category": "Characters",
+   "file": "Characters/jean/char_jean_walk_down_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_jean_walk_down_3",
+   "category": "Characters",
+   "file": "Characters/jean/char_jean_walk_down_3.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_jean_walk_up_0",
+   "category": "Characters",
+   "file": "Characters/jean/char_jean_walk_up_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_jean_walk_up_1",
+   "category": "Characters",
+   "file": "Characters/jean/char_jean_walk_up_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_jean_walk_up_2",
+   "category": "Characters",
+   "file": "Characters/jean/char_jean_walk_up_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_jean_walk_up_3",
+   "category": "Characters",
+   "file": "Characters/jean/char_jean_walk_up_3.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_jean_walk_left_0",
+   "category": "Characters",
+   "file": "Characters/jean/char_jean_walk_left_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_jean_walk_left_1",
+   "category": "Characters",
+   "file": "Characters/jean/char_jean_walk_left_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_jean_walk_left_2",
+   "category": "Characters",
+   "file": "Characters/jean/char_jean_walk_left_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_jean_walk_left_3",
+   "category": "Characters",
+   "file": "Characters/jean/char_jean_walk_left_3.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_jean_walk_right_0",
+   "category": "Characters",
+   "file": "Characters/jean/char_jean_walk_right_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_jean_walk_right_1",
+   "category": "Characters",
+   "file": "Characters/jean/char_jean_walk_right_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_jean_walk_right_2",
+   "category": "Characters",
+   "file": "Characters/jean/char_jean_walk_right_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_jean_walk_right_3",
+   "category": "Characters",
+   "file": "Characters/jean/char_jean_walk_right_3.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_jean_attack_down_0",
+   "category": "Characters",
+   "file": "Characters/jean/char_jean_attack_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_jean_attack_down_1",
+   "category": "Characters",
+   "file": "Characters/jean/char_jean_attack_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_jean_attack_down_2",
+   "category": "Characters",
+   "file": "Characters/jean/char_jean_attack_down_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_jean_special_down_0",
+   "category": "Characters",
+   "file": "Characters/jean/char_jean_special_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_jean_special_down_1",
+   "category": "Characters",
+   "file": "Characters/jean/char_jean_special_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_jean_special_down_2",
+   "category": "Characters",
+   "file": "Characters/jean/char_jean_special_down_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_jean_hurt_down_0",
+   "category": "Characters",
+   "file": "Characters/jean/char_jean_hurt_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_jean_hurt_down_1",
+   "category": "Characters",
+   "file": "Characters/jean/char_jean_hurt_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_jean_stun_down_0",
+   "category": "Characters",
+   "file": "Characters/jean/char_jean_stun_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_jean_stun_down_1",
+   "category": "Characters",
+   "file": "Characters/jean/char_jean_stun_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_jean_downed_down_0",
+   "category": "Characters",
+   "file": "Characters/jean/char_jean_downed_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_jean_downed_down_1",
+   "category": "Characters",
+   "file": "Characters/jean/char_jean_downed_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_jean_downed_down_2",
+   "category": "Characters",
+   "file": "Characters/jean/char_jean_downed_down_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_jean_revive_down_0",
+   "category": "Characters",
+   "file": "Characters/jean/char_jean_revive_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_jean_revive_down_1",
+   "category": "Characters",
+   "file": "Characters/jean/char_jean_revive_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_jean_victory_down_0",
+   "category": "Characters",
+   "file": "Characters/jean/char_jean_victory_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_jean_victory_down_1",
+   "category": "Characters",
+   "file": "Characters/jean/char_jean_victory_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_fufu_idle_down_0",
+   "category": "Characters",
+   "file": "Characters/fufu/char_fufu_idle_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_fufu_idle_down_1",
+   "category": "Characters",
+   "file": "Characters/fufu/char_fufu_idle_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_fufu_idle_up_0",
+   "category": "Characters",
+   "file": "Characters/fufu/char_fufu_idle_up_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_fufu_idle_up_1",
+   "category": "Characters",
+   "file": "Characters/fufu/char_fufu_idle_up_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_fufu_idle_left_0",
+   "category": "Characters",
+   "file": "Characters/fufu/char_fufu_idle_left_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_fufu_idle_left_1",
+   "category": "Characters",
+   "file": "Characters/fufu/char_fufu_idle_left_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_fufu_idle_right_0",
+   "category": "Characters",
+   "file": "Characters/fufu/char_fufu_idle_right_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_fufu_idle_right_1",
+   "category": "Characters",
+   "file": "Characters/fufu/char_fufu_idle_right_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_fufu_walk_down_0",
+   "category": "Characters",
+   "file": "Characters/fufu/char_fufu_walk_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_fufu_walk_down_1",
+   "category": "Characters",
+   "file": "Characters/fufu/char_fufu_walk_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_fufu_walk_down_2",
+   "category": "Characters",
+   "file": "Characters/fufu/char_fufu_walk_down_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_fufu_walk_down_3",
+   "category": "Characters",
+   "file": "Characters/fufu/char_fufu_walk_down_3.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_fufu_walk_up_0",
+   "category": "Characters",
+   "file": "Characters/fufu/char_fufu_walk_up_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_fufu_walk_up_1",
+   "category": "Characters",
+   "file": "Characters/fufu/char_fufu_walk_up_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_fufu_walk_up_2",
+   "category": "Characters",
+   "file": "Characters/fufu/char_fufu_walk_up_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_fufu_walk_up_3",
+   "category": "Characters",
+   "file": "Characters/fufu/char_fufu_walk_up_3.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_fufu_walk_left_0",
+   "category": "Characters",
+   "file": "Characters/fufu/char_fufu_walk_left_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_fufu_walk_left_1",
+   "category": "Characters",
+   "file": "Characters/fufu/char_fufu_walk_left_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_fufu_walk_left_2",
+   "category": "Characters",
+   "file": "Characters/fufu/char_fufu_walk_left_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_fufu_walk_left_3",
+   "category": "Characters",
+   "file": "Characters/fufu/char_fufu_walk_left_3.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_fufu_walk_right_0",
+   "category": "Characters",
+   "file": "Characters/fufu/char_fufu_walk_right_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_fufu_walk_right_1",
+   "category": "Characters",
+   "file": "Characters/fufu/char_fufu_walk_right_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_fufu_walk_right_2",
+   "category": "Characters",
+   "file": "Characters/fufu/char_fufu_walk_right_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_fufu_walk_right_3",
+   "category": "Characters",
+   "file": "Characters/fufu/char_fufu_walk_right_3.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_fufu_attack_down_0",
+   "category": "Characters",
+   "file": "Characters/fufu/char_fufu_attack_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_fufu_attack_down_1",
+   "category": "Characters",
+   "file": "Characters/fufu/char_fufu_attack_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_fufu_attack_down_2",
+   "category": "Characters",
+   "file": "Characters/fufu/char_fufu_attack_down_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_fufu_special_down_0",
+   "category": "Characters",
+   "file": "Characters/fufu/char_fufu_special_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_fufu_special_down_1",
+   "category": "Characters",
+   "file": "Characters/fufu/char_fufu_special_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_fufu_special_down_2",
+   "category": "Characters",
+   "file": "Characters/fufu/char_fufu_special_down_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_fufu_hurt_down_0",
+   "category": "Characters",
+   "file": "Characters/fufu/char_fufu_hurt_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_fufu_hurt_down_1",
+   "category": "Characters",
+   "file": "Characters/fufu/char_fufu_hurt_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_fufu_stun_down_0",
+   "category": "Characters",
+   "file": "Characters/fufu/char_fufu_stun_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_fufu_stun_down_1",
+   "category": "Characters",
+   "file": "Characters/fufu/char_fufu_stun_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_fufu_downed_down_0",
+   "category": "Characters",
+   "file": "Characters/fufu/char_fufu_downed_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_fufu_downed_down_1",
+   "category": "Characters",
+   "file": "Characters/fufu/char_fufu_downed_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_fufu_downed_down_2",
+   "category": "Characters",
+   "file": "Characters/fufu/char_fufu_downed_down_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_fufu_revive_down_0",
+   "category": "Characters",
+   "file": "Characters/fufu/char_fufu_revive_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_fufu_revive_down_1",
+   "category": "Characters",
+   "file": "Characters/fufu/char_fufu_revive_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_fufu_victory_down_0",
+   "category": "Characters",
+   "file": "Characters/fufu/char_fufu_victory_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_fufu_victory_down_1",
+   "category": "Characters",
+   "file": "Characters/fufu/char_fufu_victory_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_donasa_idle_down_0",
+   "category": "Characters",
+   "file": "Characters/donasa/char_donasa_idle_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_donasa_idle_down_1",
+   "category": "Characters",
+   "file": "Characters/donasa/char_donasa_idle_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_donasa_idle_up_0",
+   "category": "Characters",
+   "file": "Characters/donasa/char_donasa_idle_up_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_donasa_idle_up_1",
+   "category": "Characters",
+   "file": "Characters/donasa/char_donasa_idle_up_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_donasa_idle_left_0",
+   "category": "Characters",
+   "file": "Characters/donasa/char_donasa_idle_left_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_donasa_idle_left_1",
+   "category": "Characters",
+   "file": "Characters/donasa/char_donasa_idle_left_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_donasa_idle_right_0",
+   "category": "Characters",
+   "file": "Characters/donasa/char_donasa_idle_right_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_donasa_idle_right_1",
+   "category": "Characters",
+   "file": "Characters/donasa/char_donasa_idle_right_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_donasa_walk_down_0",
+   "category": "Characters",
+   "file": "Characters/donasa/char_donasa_walk_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_donasa_walk_down_1",
+   "category": "Characters",
+   "file": "Characters/donasa/char_donasa_walk_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_donasa_walk_down_2",
+   "category": "Characters",
+   "file": "Characters/donasa/char_donasa_walk_down_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_donasa_walk_down_3",
+   "category": "Characters",
+   "file": "Characters/donasa/char_donasa_walk_down_3.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_donasa_walk_up_0",
+   "category": "Characters",
+   "file": "Characters/donasa/char_donasa_walk_up_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_donasa_walk_up_1",
+   "category": "Characters",
+   "file": "Characters/donasa/char_donasa_walk_up_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_donasa_walk_up_2",
+   "category": "Characters",
+   "file": "Characters/donasa/char_donasa_walk_up_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_donasa_walk_up_3",
+   "category": "Characters",
+   "file": "Characters/donasa/char_donasa_walk_up_3.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_donasa_walk_left_0",
+   "category": "Characters",
+   "file": "Characters/donasa/char_donasa_walk_left_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_donasa_walk_left_1",
+   "category": "Characters",
+   "file": "Characters/donasa/char_donasa_walk_left_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_donasa_walk_left_2",
+   "category": "Characters",
+   "file": "Characters/donasa/char_donasa_walk_left_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_donasa_walk_left_3",
+   "category": "Characters",
+   "file": "Characters/donasa/char_donasa_walk_left_3.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_donasa_walk_right_0",
+   "category": "Characters",
+   "file": "Characters/donasa/char_donasa_walk_right_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_donasa_walk_right_1",
+   "category": "Characters",
+   "file": "Characters/donasa/char_donasa_walk_right_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_donasa_walk_right_2",
+   "category": "Characters",
+   "file": "Characters/donasa/char_donasa_walk_right_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_donasa_walk_right_3",
+   "category": "Characters",
+   "file": "Characters/donasa/char_donasa_walk_right_3.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_donasa_attack_down_0",
+   "category": "Characters",
+   "file": "Characters/donasa/char_donasa_attack_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_donasa_attack_down_1",
+   "category": "Characters",
+   "file": "Characters/donasa/char_donasa_attack_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_donasa_attack_down_2",
+   "category": "Characters",
+   "file": "Characters/donasa/char_donasa_attack_down_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_donasa_special_down_0",
+   "category": "Characters",
+   "file": "Characters/donasa/char_donasa_special_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_donasa_special_down_1",
+   "category": "Characters",
+   "file": "Characters/donasa/char_donasa_special_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_donasa_special_down_2",
+   "category": "Characters",
+   "file": "Characters/donasa/char_donasa_special_down_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_donasa_hurt_down_0",
+   "category": "Characters",
+   "file": "Characters/donasa/char_donasa_hurt_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_donasa_hurt_down_1",
+   "category": "Characters",
+   "file": "Characters/donasa/char_donasa_hurt_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_donasa_stun_down_0",
+   "category": "Characters",
+   "file": "Characters/donasa/char_donasa_stun_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_donasa_stun_down_1",
+   "category": "Characters",
+   "file": "Characters/donasa/char_donasa_stun_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_donasa_downed_down_0",
+   "category": "Characters",
+   "file": "Characters/donasa/char_donasa_downed_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_donasa_downed_down_1",
+   "category": "Characters",
+   "file": "Characters/donasa/char_donasa_downed_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_donasa_downed_down_2",
+   "category": "Characters",
+   "file": "Characters/donasa/char_donasa_downed_down_2.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_donasa_revive_down_0",
+   "category": "Characters",
+   "file": "Characters/donasa/char_donasa_revive_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_donasa_revive_down_1",
+   "category": "Characters",
+   "file": "Characters/donasa/char_donasa_revive_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_donasa_victory_down_0",
+   "category": "Characters",
+   "file": "Characters/donasa/char_donasa_victory_down_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "char_donasa_victory_down_1",
+   "category": "Characters",
+   "file": "Characters/donasa/char_donasa_victory_down_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
    "id": "enemy_microbo_enxame_0",
    "category": "Enemies",
    "file": "Enemies/enemy_microbo_enxame_0.png",
@@ -4262,6 +9182,870 @@
    ]
   },
   {
+   "id": "ally_laser_0",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_laser_0.png",
+   "w": 16,
+   "h": 4,
+   "pivot": [
+    8,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "ally_bubble_0",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_bubble_0.png",
+   "w": 12,
+   "h": 12,
+   "pivot": [
+    6,
+    6
+   ],
+   "border": null
+  },
+  {
+   "id": "ally_bubble_1",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_bubble_1.png",
+   "w": 12,
+   "h": 12,
+   "pivot": [
+    6,
+    6
+   ],
+   "border": null
+  },
+  {
+   "id": "ally_bubblebig_0",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_bubblebig_0.png",
+   "w": 20,
+   "h": 20,
+   "pivot": [
+    10,
+    10
+   ],
+   "border": null
+  },
+  {
+   "id": "ally_bubblebig_1",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_bubblebig_1.png",
+   "w": 20,
+   "h": 20,
+   "pivot": [
+    10,
+    10
+   ],
+   "border": null
+  },
+  {
+   "id": "ally_briefcase_0",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_briefcase_0.png",
+   "w": 12,
+   "h": 9,
+   "pivot": [
+    6,
+    4.5
+   ],
+   "border": null
+  },
+  {
+   "id": "ally_coin_0",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_coin_0.png",
+   "w": 6,
+   "h": 6,
+   "pivot": [
+    3,
+    3
+   ],
+   "border": null
+  },
+  {
+   "id": "ally_coin_1",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_coin_1.png",
+   "w": 6,
+   "h": 6,
+   "pivot": [
+    3,
+    3
+   ],
+   "border": null
+  },
+  {
+   "id": "ally_digit_0",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_digit_0.png",
+   "w": 7,
+   "h": 9,
+   "pivot": [
+    3.5,
+    4.5
+   ],
+   "border": null
+  },
+  {
+   "id": "ally_digit_1",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_digit_1.png",
+   "w": 7,
+   "h": 9,
+   "pivot": [
+    3.5,
+    4.5
+   ],
+   "border": null
+  },
+  {
+   "id": "ally_digit_2",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_digit_2.png",
+   "w": 7,
+   "h": 9,
+   "pivot": [
+    3.5,
+    4.5
+   ],
+   "border": null
+  },
+  {
+   "id": "ally_digit_3",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_digit_3.png",
+   "w": 7,
+   "h": 9,
+   "pivot": [
+    3.5,
+    4.5
+   ],
+   "border": null
+  },
+  {
+   "id": "ally_expression_0",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_expression_0.png",
+   "w": 20,
+   "h": 8,
+   "pivot": [
+    10,
+    4
+   ],
+   "border": null
+  },
+  {
+   "id": "ally_sushi_0",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_sushi_0.png",
+   "w": 10,
+   "h": 7,
+   "pivot": [
+    5,
+    3.5
+   ],
+   "border": null
+  },
+  {
+   "id": "ally_sashimi_0",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_sashimi_0.png",
+   "w": 10,
+   "h": 4,
+   "pivot": [
+    5,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "ally_plate_0",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_plate_0.png",
+   "w": 10,
+   "h": 5,
+   "pivot": [
+    5,
+    2.5
+   ],
+   "border": null
+  },
+  {
+   "id": "ally_resistor_0",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_resistor_0.png",
+   "w": 14,
+   "h": 3,
+   "pivot": [
+    7,
+    1.5
+   ],
+   "border": null
+  },
+  {
+   "id": "ally_transistor_0",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_transistor_0.png",
+   "w": 8,
+   "h": 7,
+   "pivot": [
+    4,
+    3.5
+   ],
+   "border": null
+  },
+  {
+   "id": "ally_powersupply_0",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_powersupply_0.png",
+   "w": 12,
+   "h": 8,
+   "pivot": [
+    6,
+    4
+   ],
+   "border": null
+  },
+  {
+   "id": "ally_scopewave_0",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_scopewave_0.png",
+   "w": 16,
+   "h": 10,
+   "pivot": [
+    8,
+    5
+   ],
+   "border": null
+  },
+  {
+   "id": "ally_scopewave_1",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_scopewave_1.png",
+   "w": 16,
+   "h": 10,
+   "pivot": [
+    8,
+    5
+   ],
+   "border": null
+  },
+  {
+   "id": "ally_zoneelectric_0",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_zoneelectric_0.png",
+   "w": 5,
+   "h": 5,
+   "pivot": [
+    2.5,
+    2.5
+   ],
+   "border": null
+  },
+  {
+   "id": "ally_zonestorm_0",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_zonestorm_0.png",
+   "w": 5,
+   "h": 5,
+   "pivot": [
+    2.5,
+    2.5
+   ],
+   "border": null
+  },
+  {
+   "id": "ally_burger_0",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_burger_0.png",
+   "w": 12,
+   "h": 8,
+   "pivot": [
+    6,
+    4
+   ],
+   "border": null
+  },
+  {
+   "id": "ally_dorito_0",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_dorito_0.png",
+   "w": 7,
+   "h": 7,
+   "pivot": [
+    3.5,
+    3.5
+   ],
+   "border": null
+  },
+  {
+   "id": "ally_dorito_1",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_dorito_1.png",
+   "w": 7,
+   "h": 7,
+   "pivot": [
+    3.5,
+    3.5
+   ],
+   "border": null
+  },
+  {
+   "id": "ally_tire_0",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_tire_0.png",
+   "w": 16,
+   "h": 16,
+   "pivot": [
+    8,
+    8
+   ],
+   "border": null
+  },
+  {
+   "id": "ally_tire_1",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_tire_1.png",
+   "w": 16,
+   "h": 16,
+   "pivot": [
+    8,
+    8
+   ],
+   "border": null
+  },
+  {
+   "id": "ally_tireorbit_0",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_tireorbit_0.png",
+   "w": 14,
+   "h": 14,
+   "pivot": [
+    7,
+    7
+   ],
+   "border": null
+  },
+  {
+   "id": "ally_tireorbit_1",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_tireorbit_1.png",
+   "w": 14,
+   "h": 14,
+   "pivot": [
+    7,
+    7
+   ],
+   "border": null
+  },
+  {
+   "id": "ally_pill_0",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_pill_0.png",
+   "w": 7,
+   "h": 4,
+   "pivot": [
+    3.5,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "ally_syringe_0",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_syringe_0.png",
+   "w": 14,
+   "h": 3,
+   "pivot": [
+    7,
+    1.5
+   ],
+   "border": null
+  },
+  {
+   "id": "ally_syringespecial_0",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_syringespecial_0.png",
+   "w": 14,
+   "h": 3,
+   "pivot": [
+    7,
+    1.5
+   ],
+   "border": null
+  },
+  {
+   "id": "ally_botshooter_0",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_botshooter_0.png",
+   "w": 16,
+   "h": 16,
+   "pivot": [
+    8,
+    8
+   ],
+   "border": null
+  },
+  {
+   "id": "ally_botshooter_1",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_botshooter_1.png",
+   "w": 16,
+   "h": 16,
+   "pivot": [
+    8,
+    8
+   ],
+   "border": null
+  },
+  {
+   "id": "ally_botbrawler_0",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_botbrawler_0.png",
+   "w": 16,
+   "h": 16,
+   "pivot": [
+    8,
+    8
+   ],
+   "border": null
+  },
+  {
+   "id": "ally_botbrawler_1",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_botbrawler_1.png",
+   "w": 16,
+   "h": 16,
+   "pivot": [
+    8,
+    8
+   ],
+   "border": null
+  },
+  {
+   "id": "ally_botdasher_0",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_botdasher_0.png",
+   "w": 16,
+   "h": 16,
+   "pivot": [
+    8,
+    8
+   ],
+   "border": null
+  },
+  {
+   "id": "ally_botdasher_1",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_botdasher_1.png",
+   "w": 16,
+   "h": 16,
+   "pivot": [
+    8,
+    8
+   ],
+   "border": null
+  },
+  {
+   "id": "ally_botmaster_0",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_botmaster_0.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    24
+   ],
+   "border": null
+  },
+  {
+   "id": "ally_botmaster_1",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_botmaster_1.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    24
+   ],
+   "border": null
+  },
+  {
+   "id": "ally_botbolt_0",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_botbolt_0.png",
+   "w": 4,
+   "h": 4,
+   "pivot": [
+    2,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "ally_masterbolt_0",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_masterbolt_0.png",
+   "w": 8,
+   "h": 6,
+   "pivot": [
+    4,
+    3
+   ],
+   "border": null
+  },
+  {
+   "id": "ally_phone_0",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_phone_0.png",
+   "w": 7,
+   "h": 8,
+   "pivot": [
+    3.5,
+    4
+   ],
+   "border": null
+  },
+  {
+   "id": "ally_paper_0",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_paper_0.png",
+   "w": 7,
+   "h": 7,
+   "pivot": [
+    3.5,
+    3.5
+   ],
+   "border": null
+  },
+  {
+   "id": "ally_computer_0",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_computer_0.png",
+   "w": 14,
+   "h": 13,
+   "pivot": [
+    7,
+    6.5
+   ],
+   "border": null
+  },
+  {
+   "id": "ally_fragment_0",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_fragment_0.png",
+   "w": 3,
+   "h": 3,
+   "pivot": [
+    1.5,
+    1.5
+   ],
+   "border": null
+  },
+  {
+   "id": "ally_jabuti_0",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_jabuti_0.png",
+   "w": 12,
+   "h": 8,
+   "pivot": [
+    6,
+    4
+   ],
+   "border": null
+  },
+  {
+   "id": "ally_jabuti_1",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_jabuti_1.png",
+   "w": 12,
+   "h": 8,
+   "pivot": [
+    6,
+    4
+   ],
+   "border": null
+  },
+  {
+   "id": "ally_jabutiwalk_0",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_jabutiwalk_0.png",
+   "w": 12,
+   "h": 8,
+   "pivot": [
+    6,
+    4
+   ],
+   "border": null
+  },
+  {
+   "id": "ally_jabutiwalk_1",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_jabutiwalk_1.png",
+   "w": 12,
+   "h": 8,
+   "pivot": [
+    6,
+    4
+   ],
+   "border": null
+  },
+  {
+   "id": "ally_car_0",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_car_0.png",
+   "w": 24,
+   "h": 24,
+   "pivot": [
+    12,
+    12
+   ],
+   "border": null
+  },
+  {
+   "id": "ally_car_1",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_car_1.png",
+   "w": 24,
+   "h": 24,
+   "pivot": [
+    12,
+    12
+   ],
+   "border": null
+  },
+  {
+   "id": "ally_car_2",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_car_2.png",
+   "w": 24,
+   "h": 24,
+   "pivot": [
+    12,
+    12
+   ],
+   "border": null
+  },
+  {
+   "id": "ally_car_3",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_car_3.png",
+   "w": 24,
+   "h": 24,
+   "pivot": [
+    12,
+    12
+   ],
+   "border": null
+  },
+  {
+   "id": "ally_car_4",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_car_4.png",
+   "w": 24,
+   "h": 24,
+   "pivot": [
+    12,
+    12
+   ],
+   "border": null
+  },
+  {
+   "id": "ally_car_5",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_car_5.png",
+   "w": 24,
+   "h": 24,
+   "pivot": [
+    12,
+    12
+   ],
+   "border": null
+  },
+  {
+   "id": "ally_car_6",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_car_6.png",
+   "w": 24,
+   "h": 24,
+   "pivot": [
+    12,
+    12
+   ],
+   "border": null
+  },
+  {
+   "id": "ally_car_7",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_car_7.png",
+   "w": 24,
+   "h": 24,
+   "pivot": [
+    12,
+    12
+   ],
+   "border": null
+  },
+  {
+   "id": "ally_insulin_0",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_insulin_0.png",
+   "w": 14,
+   "h": 3,
+   "pivot": [
+    7,
+    1.5
+   ],
+   "border": null
+  },
+  {
+   "id": "ally_vial_0",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_vial_0.png",
+   "w": 5,
+   "h": 8,
+   "pivot": [
+    2.5,
+    4
+   ],
+   "border": null
+  },
+  {
+   "id": "ally_soundwave_0",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_soundwave_0.png",
+   "w": 10,
+   "h": 16,
+   "pivot": [
+    5,
+    8
+   ],
+   "border": null
+  },
+  {
+   "id": "ally_soundwave_1",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_soundwave_1.png",
+   "w": 10,
+   "h": 16,
+   "pivot": [
+    5,
+    8
+   ],
+   "border": null
+  },
+  {
+   "id": "ally_bottle_0",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_bottle_0.png",
+   "w": 6,
+   "h": 10,
+   "pivot": [
+    3,
+    5
+   ],
+   "border": null
+  },
+  {
+   "id": "fx_tv",
+   "category": "Effects",
+   "file": "Effects/fx_tv.png",
+   "w": 18,
+   "h": 16,
+   "pivot": [
+    9,
+    8
+   ],
+   "border": null
+  },
+  {
+   "id": "fx_note",
+   "category": "Effects",
+   "file": "Effects/fx_note.png",
+   "w": 4,
+   "h": 7,
+   "pivot": [
+    2,
+    3.5
+   ],
+   "border": null
+  },
+  {
+   "id": "fx_shard",
+   "category": "Effects",
+   "file": "Effects/fx_shard.png",
+   "w": 3,
+   "h": 3,
+   "pivot": [
+    1.5,
+    1.5
+   ],
+   "border": null
+  },
+  {
+   "id": "fx_mark",
+   "category": "Effects",
+   "file": "Effects/fx_mark.png",
+   "w": 5,
+   "h": 5,
+   "pivot": [
+    2.5,
+    2.5
+   ],
+   "border": null
+  },
+  {
+   "id": "fx_sticky",
+   "category": "Effects",
+   "file": "Effects/fx_sticky.png",
+   "w": 5,
+   "h": 5,
+   "pivot": [
+    2.5,
+    2.5
+   ],
+   "border": null
+  },
+  {
+   "id": "fx_trap",
+   "category": "Effects",
+   "file": "Effects/fx_trap.png",
+   "w": 24,
+   "h": 24,
+   "pivot": [
+    12,
+    12
+   ],
+   "border": null
+  },
+  {
+   "id": "fx_skid",
+   "category": "Effects",
+   "file": "Effects/fx_skid.png",
+   "w": 2,
+   "h": 2,
+   "pivot": [
+    1,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "fx_plus",
+   "category": "Effects",
+   "file": "Effects/fx_plus.png",
+   "w": 3,
+   "h": 3,
+   "pivot": [
+    1.5,
+    1.5
+   ],
+   "border": null
+  },
+  {
    "id": "icon_descarga_direcionada",
    "category": "Abilities",
    "file": "Abilities/icon_descarga_direcionada.png",
@@ -4430,6 +10214,342 @@
    "border": null
   },
   {
+   "id": "icon_cartao_corporativo",
+   "category": "Abilities",
+   "file": "Abilities/icon_cartao_corporativo.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "icon_cafe_expresso",
+   "category": "Abilities",
+   "file": "Abilities/icon_cafe_expresso.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "icon_halter",
+   "category": "Abilities",
+   "file": "Abilities/icon_halter.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "icon_marmita",
+   "category": "Abilities",
+   "file": "Abilities/icon_marmita.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "icon_pote_whey",
+   "category": "Abilities",
+   "file": "Abilities/icon_pote_whey.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "icon_kit_arduino",
+   "category": "Abilities",
+   "file": "Abilities/icon_kit_arduino.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "icon_cabo_hdmi",
+   "category": "Abilities",
+   "file": "Abilities/icon_cabo_hdmi.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "icon_megafone",
+   "category": "Abilities",
+   "file": "Abilities/icon_megafone.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "icon_bolhas",
+   "category": "Abilities",
+   "file": "Abilities/icon_bolhas.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "icon_bolhas_e_maletas",
+   "category": "Abilities",
+   "file": "Abilities/icon_bolhas_e_maletas.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "icon_calculos",
+   "category": "Abilities",
+   "file": "Abilities/icon_calculos.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "icon_matematica_sushi",
+   "category": "Abilities",
+   "file": "Abilities/icon_matematica_sushi.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "icon_componentes_eletricos",
+   "category": "Abilities",
+   "file": "Abilities/icon_componentes_eletricos.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "icon_fontes_osciloscopios",
+   "category": "Abilities",
+   "file": "Abilities/icon_fontes_osciloscopios.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "icon_lanches",
+   "category": "Abilities",
+   "file": "Abilities/icon_lanches.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "icon_pneus_crossfit",
+   "category": "Abilities",
+   "file": "Abilities/icon_pneus_crossfit.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "icon_bonesmashing",
+   "category": "Abilities",
+   "file": "Abilities/icon_bonesmashing.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "icon_pilulas_seringas",
+   "category": "Abilities",
+   "file": "Abilities/icon_pilulas_seringas.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "icon_cabazords",
+   "category": "Abilities",
+   "file": "Abilities/icon_cabazords.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "icon_cabazord_master",
+   "category": "Abilities",
+   "file": "Abilities/icon_cabazord_master.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "icon_celulares_cola",
+   "category": "Abilities",
+   "file": "Abilities/icon_celulares_cola.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "icon_computadores_tvs",
+   "category": "Abilities",
+   "file": "Abilities/icon_computadores_tvs.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "icon_jabutis",
+   "category": "Abilities",
+   "file": "Abilities/icon_jabutis.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "icon_carro_drift",
+   "category": "Abilities",
+   "file": "Abilities/icon_carro_drift.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "icon_socos_fortes",
+   "category": "Abilities",
+   "file": "Abilities/icon_socos_fortes.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "icon_socos_insulina",
+   "category": "Abilities",
+   "file": "Abilities/icon_socos_insulina.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "icon_fala_alta",
+   "category": "Abilities",
+   "file": "Abilities/icon_fala_alta.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "icon_fala_amplificada",
+   "category": "Abilities",
+   "file": "Abilities/icon_fala_amplificada.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
    "id": "icon_apagao",
    "category": "Abilities",
    "file": "Abilities/icon_apagao.png",
@@ -4445,6 +10565,18 @@
    "id": "icon_turbina_emergencia",
    "category": "Abilities",
    "file": "Abilities/icon_turbina_emergencia.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "icon_overclock",
+   "category": "Abilities",
+   "file": "Abilities/icon_overclock.png",
    "w": 32,
    "h": 32,
    "pivot": [
@@ -5201,6 +11333,1086 @@
    "id": "portrait_quimica_derrota",
    "category": "Portraits",
    "file": "Portraits/portrait_quimica_derrota.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_staut_raiva",
+   "category": "Portraits",
+   "file": "Portraits/portrait_staut_raiva.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_staut_medo",
+   "category": "Portraits",
+   "file": "Portraits/portrait_staut_medo.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_staut_desespero",
+   "category": "Portraits",
+   "file": "Portraits/portrait_staut_desespero.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_staut_choro",
+   "category": "Portraits",
+   "file": "Portraits/portrait_staut_choro.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_staut_exaustao",
+   "category": "Portraits",
+   "file": "Portraits/portrait_staut_exaustao.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_staut_alivio",
+   "category": "Portraits",
+   "file": "Portraits/portrait_staut_alivio.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_staut_determinacao",
+   "category": "Portraits",
+   "file": "Portraits/portrait_staut_determinacao.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_staut_vitoria",
+   "category": "Portraits",
+   "file": "Portraits/portrait_staut_vitoria.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_staut_derrota",
+   "category": "Portraits",
+   "file": "Portraits/portrait_staut_derrota.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_miyuki_raiva",
+   "category": "Portraits",
+   "file": "Portraits/portrait_miyuki_raiva.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_miyuki_medo",
+   "category": "Portraits",
+   "file": "Portraits/portrait_miyuki_medo.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_miyuki_desespero",
+   "category": "Portraits",
+   "file": "Portraits/portrait_miyuki_desespero.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_miyuki_choro",
+   "category": "Portraits",
+   "file": "Portraits/portrait_miyuki_choro.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_miyuki_exaustao",
+   "category": "Portraits",
+   "file": "Portraits/portrait_miyuki_exaustao.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_miyuki_alivio",
+   "category": "Portraits",
+   "file": "Portraits/portrait_miyuki_alivio.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_miyuki_determinacao",
+   "category": "Portraits",
+   "file": "Portraits/portrait_miyuki_determinacao.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_miyuki_vitoria",
+   "category": "Portraits",
+   "file": "Portraits/portrait_miyuki_vitoria.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_miyuki_derrota",
+   "category": "Portraits",
+   "file": "Portraits/portrait_miyuki_derrota.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_giulia_raiva",
+   "category": "Portraits",
+   "file": "Portraits/portrait_giulia_raiva.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_giulia_medo",
+   "category": "Portraits",
+   "file": "Portraits/portrait_giulia_medo.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_giulia_desespero",
+   "category": "Portraits",
+   "file": "Portraits/portrait_giulia_desespero.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_giulia_choro",
+   "category": "Portraits",
+   "file": "Portraits/portrait_giulia_choro.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_giulia_exaustao",
+   "category": "Portraits",
+   "file": "Portraits/portrait_giulia_exaustao.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_giulia_alivio",
+   "category": "Portraits",
+   "file": "Portraits/portrait_giulia_alivio.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_giulia_determinacao",
+   "category": "Portraits",
+   "file": "Portraits/portrait_giulia_determinacao.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_giulia_vitoria",
+   "category": "Portraits",
+   "file": "Portraits/portrait_giulia_vitoria.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_giulia_derrota",
+   "category": "Portraits",
+   "file": "Portraits/portrait_giulia_derrota.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_breno_raiva",
+   "category": "Portraits",
+   "file": "Portraits/portrait_breno_raiva.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_breno_medo",
+   "category": "Portraits",
+   "file": "Portraits/portrait_breno_medo.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_breno_desespero",
+   "category": "Portraits",
+   "file": "Portraits/portrait_breno_desespero.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_breno_choro",
+   "category": "Portraits",
+   "file": "Portraits/portrait_breno_choro.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_breno_exaustao",
+   "category": "Portraits",
+   "file": "Portraits/portrait_breno_exaustao.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_breno_alivio",
+   "category": "Portraits",
+   "file": "Portraits/portrait_breno_alivio.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_breno_determinacao",
+   "category": "Portraits",
+   "file": "Portraits/portrait_breno_determinacao.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_breno_vitoria",
+   "category": "Portraits",
+   "file": "Portraits/portrait_breno_vitoria.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_breno_derrota",
+   "category": "Portraits",
+   "file": "Portraits/portrait_breno_derrota.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_artur_raiva",
+   "category": "Portraits",
+   "file": "Portraits/portrait_artur_raiva.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_artur_medo",
+   "category": "Portraits",
+   "file": "Portraits/portrait_artur_medo.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_artur_desespero",
+   "category": "Portraits",
+   "file": "Portraits/portrait_artur_desespero.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_artur_choro",
+   "category": "Portraits",
+   "file": "Portraits/portrait_artur_choro.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_artur_exaustao",
+   "category": "Portraits",
+   "file": "Portraits/portrait_artur_exaustao.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_artur_alivio",
+   "category": "Portraits",
+   "file": "Portraits/portrait_artur_alivio.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_artur_determinacao",
+   "category": "Portraits",
+   "file": "Portraits/portrait_artur_determinacao.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_artur_vitoria",
+   "category": "Portraits",
+   "file": "Portraits/portrait_artur_vitoria.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_artur_derrota",
+   "category": "Portraits",
+   "file": "Portraits/portrait_artur_derrota.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_badotti_raiva",
+   "category": "Portraits",
+   "file": "Portraits/portrait_badotti_raiva.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_badotti_medo",
+   "category": "Portraits",
+   "file": "Portraits/portrait_badotti_medo.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_badotti_desespero",
+   "category": "Portraits",
+   "file": "Portraits/portrait_badotti_desespero.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_badotti_choro",
+   "category": "Portraits",
+   "file": "Portraits/portrait_badotti_choro.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_badotti_exaustao",
+   "category": "Portraits",
+   "file": "Portraits/portrait_badotti_exaustao.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_badotti_alivio",
+   "category": "Portraits",
+   "file": "Portraits/portrait_badotti_alivio.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_badotti_determinacao",
+   "category": "Portraits",
+   "file": "Portraits/portrait_badotti_determinacao.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_badotti_vitoria",
+   "category": "Portraits",
+   "file": "Portraits/portrait_badotti_vitoria.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_badotti_derrota",
+   "category": "Portraits",
+   "file": "Portraits/portrait_badotti_derrota.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_garcia_raiva",
+   "category": "Portraits",
+   "file": "Portraits/portrait_garcia_raiva.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_garcia_medo",
+   "category": "Portraits",
+   "file": "Portraits/portrait_garcia_medo.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_garcia_desespero",
+   "category": "Portraits",
+   "file": "Portraits/portrait_garcia_desespero.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_garcia_choro",
+   "category": "Portraits",
+   "file": "Portraits/portrait_garcia_choro.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_garcia_exaustao",
+   "category": "Portraits",
+   "file": "Portraits/portrait_garcia_exaustao.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_garcia_alivio",
+   "category": "Portraits",
+   "file": "Portraits/portrait_garcia_alivio.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_garcia_determinacao",
+   "category": "Portraits",
+   "file": "Portraits/portrait_garcia_determinacao.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_garcia_vitoria",
+   "category": "Portraits",
+   "file": "Portraits/portrait_garcia_vitoria.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_garcia_derrota",
+   "category": "Portraits",
+   "file": "Portraits/portrait_garcia_derrota.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_jean_raiva",
+   "category": "Portraits",
+   "file": "Portraits/portrait_jean_raiva.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_jean_medo",
+   "category": "Portraits",
+   "file": "Portraits/portrait_jean_medo.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_jean_desespero",
+   "category": "Portraits",
+   "file": "Portraits/portrait_jean_desespero.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_jean_choro",
+   "category": "Portraits",
+   "file": "Portraits/portrait_jean_choro.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_jean_exaustao",
+   "category": "Portraits",
+   "file": "Portraits/portrait_jean_exaustao.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_jean_alivio",
+   "category": "Portraits",
+   "file": "Portraits/portrait_jean_alivio.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_jean_determinacao",
+   "category": "Portraits",
+   "file": "Portraits/portrait_jean_determinacao.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_jean_vitoria",
+   "category": "Portraits",
+   "file": "Portraits/portrait_jean_vitoria.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_jean_derrota",
+   "category": "Portraits",
+   "file": "Portraits/portrait_jean_derrota.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_fufu_raiva",
+   "category": "Portraits",
+   "file": "Portraits/portrait_fufu_raiva.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_fufu_medo",
+   "category": "Portraits",
+   "file": "Portraits/portrait_fufu_medo.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_fufu_desespero",
+   "category": "Portraits",
+   "file": "Portraits/portrait_fufu_desespero.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_fufu_choro",
+   "category": "Portraits",
+   "file": "Portraits/portrait_fufu_choro.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_fufu_exaustao",
+   "category": "Portraits",
+   "file": "Portraits/portrait_fufu_exaustao.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_fufu_alivio",
+   "category": "Portraits",
+   "file": "Portraits/portrait_fufu_alivio.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_fufu_determinacao",
+   "category": "Portraits",
+   "file": "Portraits/portrait_fufu_determinacao.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_fufu_vitoria",
+   "category": "Portraits",
+   "file": "Portraits/portrait_fufu_vitoria.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_fufu_derrota",
+   "category": "Portraits",
+   "file": "Portraits/portrait_fufu_derrota.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_donasa_raiva",
+   "category": "Portraits",
+   "file": "Portraits/portrait_donasa_raiva.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_donasa_medo",
+   "category": "Portraits",
+   "file": "Portraits/portrait_donasa_medo.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_donasa_desespero",
+   "category": "Portraits",
+   "file": "Portraits/portrait_donasa_desespero.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_donasa_choro",
+   "category": "Portraits",
+   "file": "Portraits/portrait_donasa_choro.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_donasa_exaustao",
+   "category": "Portraits",
+   "file": "Portraits/portrait_donasa_exaustao.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_donasa_alivio",
+   "category": "Portraits",
+   "file": "Portraits/portrait_donasa_alivio.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_donasa_determinacao",
+   "category": "Portraits",
+   "file": "Portraits/portrait_donasa_determinacao.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_donasa_vitoria",
+   "category": "Portraits",
+   "file": "Portraits/portrait_donasa_vitoria.png",
+   "w": 64,
+   "h": 64,
+   "pivot": [
+    32,
+    32
+   ],
+   "border": null
+  },
+  {
+   "id": "portrait_donasa_derrota",
+   "category": "Portraits",
+   "file": "Portraits/portrait_donasa_derrota.png",
    "w": 64,
    "h": 64,
    "pivot": [

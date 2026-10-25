@@ -24,6 +24,8 @@ MonoBehaviour:
     - Defesa
     maxLevel: 5
     evolutionOnly: 0
+    exclusive: 0
+    sfx: []
     baseStats:
     - stat: Damage
       value: 6

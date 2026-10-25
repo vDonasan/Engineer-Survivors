@@ -12,13 +12,14 @@ namespace ES.Game
     {
         struct Timed { public Vector2 A, B; public float Start, Life, Value; public int Slot, Kind; }
 
-        const int KindArc = 0, KindExplosion = 1, KindSpark = 2, KindNumber = 3, KindBlackout = 4, KindTelegraph = 5, KindTurbine = 6, KindLaser = 7;
+        const int KindArc = 0, KindExplosion = 1, KindSpark = 2, KindNumber = 3, KindBlackout = 4, KindTelegraph = 5, KindTurbine = 6;
+        const int KindBurst = 8, KindAreaMark = 9, KindSwing = 10, KindParticle = 11, KindAssemble = 12;
 
         readonly StampLayer _stamps;
         readonly GameAssets _assets;
         readonly GameDatabase _db;
         readonly List<Timed> _timed = new List<Timed>(512);
-        readonly Sprite _px, _dot, _spark, _bolt, _gem, _gemBig, _heal, _arm, _laser, _smoke;
+        readonly Sprite _px, _dot, _spark, _bolt, _gem, _gemBig, _heal, _arm, _smoke, _tv, _note, _shard, _coin, _plus, _bot0, _bot1, _bot2;
         readonly Sprite[] _explosion = new Sprite[4], _digits = new Sprite[10];
         readonly int[] _orbitAbilities, _auraAbilities;
         int _numbers;
@@ -42,7 +43,14 @@ namespace ES.Game
             _gemBig = assets.Sprite("fx_gem_xp_big");
             _heal = assets.Sprite("fx_heal");
             _arm = assets.Sprite("weapon_orbit_arm");
-            _laser = assets.Sprite("fx_laser");
+            _tv = assets.Sprite("fx_tv");
+            _note = assets.Sprite("fx_note");
+            _shard = assets.Sprite("fx_shard");
+            _coin = assets.Sprite("ally_coin_0");
+            _plus = assets.Sprite("fx_plus");
+            _bot0 = assets.Sprite("ally_botshooter_0");
+            _bot1 = assets.Sprite("ally_botbrawler_0");
+            _bot2 = assets.Sprite("ally_botdasher_0");
             _smoke = assets.Sprite("fx_smoke");
             for (int i = 0; i < 4; i++) _explosion[i] = assets.Sprite("fx_explosion_" + i);
             for (int i = 0; i < 10; i++) _digits[i] = assets.Sprite("fx_digit_" + i);
@@ -70,8 +78,15 @@ namespace ES.Game
                 case CosmeticKind.ChainArc:
                     Add(new Timed { Kind = KindArc, A = a, B = b, Start = now, Life = 0.14f, Value = c.Value, Slot = c.A });
                     break;
-                case CosmeticKind.ProjectileFired:
-                    Add(new Timed { Kind = KindLaser, A = a, B = b, Start = now, Life = Mathf.Clamp(c.Value, 0.05f, 3f), Slot = c.A });
+                case CosmeticKind.Burst:
+                    Add(new Timed { Kind = KindBurst, A = a, Start = now, Life = 0.32f, Value = c.Value, Slot = c.B });
+                    if (Effects != EffectsLevel.Low) Particles(a, c.Value, (FxStyle)c.B, now);
+                    break;
+                case CosmeticKind.AreaMark:
+                    Add(new Timed { Kind = KindAreaMark, A = a, B = new Vector2(c.X2, 0), Start = now, Life = Mathf.Clamp(c.Value, 0.05f, 3f), Slot = c.B });
+                    break;
+                case CosmeticKind.Swing:
+                    Add(new Timed { Kind = KindSwing, A = a, B = b, Start = now, Life = 0.16f, Value = c.Value, Slot = c.B });
                     break;
                 case CosmeticKind.Damage:
                     if (Effects != EffectsLevel.Low) Add(new Timed { Kind = KindSpark, A = a, Start = now, Life = 0.1f });
@@ -127,13 +142,17 @@ namespace ES.Game
                 switch (t.Kind)
                 {
                     case KindArc: DrawArc(t, now); break;
-                    case KindLaser:
+                    case KindBurst: DrawBurst(t, k); break;
+                    case KindAreaMark: DrawAreaMark(t, k, now); break;
+                    case KindSwing: DrawSwing(t, k); break;
+                    case KindParticle:
                     {
-                        var p = t.A + t.B * age;
-                        bool horizontal = Mathf.Abs(t.B.x) >= Mathf.Abs(t.B.y);
-                        _stamps.Add(_laser, Layers.Snap(p), Color.white, order + 2, horizontal ? 0f : 90f);
+                        var p = t.A + t.B * age + new Vector2(0, -1.5f * age * age);
+                        var sprite = t.Value == 1 ? _coin : t.Value == 2 ? _note : t.Value == 3 ? _shard : t.Value == 4 ? _plus : _px;
+                        _stamps.Add(sprite, Layers.Snap(p), new Color(1, 1, 1, 1f - k * 0.6f), order + 3);
                         break;
                     }
+                    case KindAssemble: DrawAssemble(t, k); break;
                     case KindSpark: _stamps.Add(_spark, Layers.Snap(t.A), Color.white, order + 3); break;
                     case KindExplosion:
                         _stamps.Add(_explosion[Mathf.Clamp((int)(k * 4), 0, 3)], Layers.Snap(t.A), Color.white, order + 1);
@@ -198,9 +217,107 @@ namespace ES.Game
             }
         }
 
+        /// <summary>Cor de cada estilo de efeito das armas (FxStyle).</summary>
+        public static Color StyleColor(int style)
+        {
+            switch ((FxStyle)style)
+            {
+                case FxStyle.Charged: return ArcCharged;
+                case FxStyle.Pop: return new Color32(0xb0, 0xf3, 0xff, 0xff);
+                case FxStyle.Coins: return new Color32(0xff, 0xd2, 0x3f, 0xff);
+                case FxStyle.Math: return new Color32(0xff, 0x7e, 0xb6, 0xff);
+                case FxStyle.Food: return new Color32(0xff, 0xb0, 0x66, 0xff);
+                case FxStyle.Impact: return new Color32(0xee, 0xf1, 0xf4, 0xff);
+                case FxStyle.Energy: return new Color32(0xff, 0x3d, 0xf0, 0xff);
+                case FxStyle.Paper: return new Color32(0xff, 0xe2, 0x7a, 0xff);
+                case FxStyle.Tech: return new Color32(0x93, 0xc6, 0xe6, 0xff);
+                case FxStyle.Sound: return new Color32(0xff, 0xe2, 0x7a, 0xff);
+                case FxStyle.Glass: return new Color32(0x7f, 0xd9, 0x8f, 0xff);
+                case FxStyle.Insulin: return new Color32(0xff, 0x7a, 0x1a, 0xff);
+                case FxStyle.Robot: return new Color32(0x3f, 0xe0, 0xff, 0xff);
+                case FxStyle.Drift: return new Color32(0xc9, 0xcd, 0xd2, 0xff);
+                case FxStyle.Circuit: return new Color32(0xb8, 0xe0, 0x2c, 0xff);
+                case FxStyle.Storm: return new Color32(0xa0, 0x8c, 0xff, 0xff);
+                default: return ArcColor;
+            }
+        }
+
+        void Particles(Vector2 at, float radius, FxStyle style, float now)
+        {
+            int kind = style == FxStyle.Coins ? 1 : style == FxStyle.Sound ? 2 : style == FxStyle.Glass ? 3 : style == FxStyle.Math ? 4 : 0;
+            int n = kind == 0 ? 0 : Effects == EffectsLevel.High ? 6 : 3;
+            for (int i = 0; i < n; i++)
+            {
+                float ang = Random.value * Mathf.PI * 2f, sp = Random.Range(0.8f, 1.6f) * Mathf.Max(1f, radius);
+                Add(new Timed { Kind = KindParticle, A = at, B = new Vector2(Mathf.Cos(ang), Mathf.Sin(ang) + 0.6f) * sp, Start = now, Life = 0.5f, Value = kind });
+            }
+        }
+
+        /// <summary>Anel que se expande até o raio real do dano (alcance sempre visível).</summary>
+        void DrawBurst(in Timed t, float k)
+        {
+            var col = StyleColor(t.Slot);
+            float r = t.Value * Mathf.Lerp(0.35f, 1f, Mathf.Sqrt(k));
+            col.a = 1f - k * 0.7f;
+            DrawRing(t.A, r, col, 3, 0f, Layers.Fx + 5);
+            if (t.Value > 1f && Effects != EffectsLevel.Low) DrawRing(t.A, r * 0.7f, new Color(col.r, col.g, col.b, col.a * 0.5f), 6, 0.2f, Layers.Fx + 5);
+            if ((FxStyle)t.Slot == FxStyle.Sound && r > 0.8f) DrawRing(t.A, r - 0.35f, new Color(1, 1, 1, col.a * 0.6f), 5, 0.4f, Layers.Fx + 5);
+        }
+
+        /// <summary>Aviso no chão: círculo piscando do tamanho da área e anel interno que fecha até o impacto.</summary>
+        void DrawAreaMark(in Timed t, float k, float now)
+        {
+            float r = t.B.x;
+            var warn = new Color(1f, 0.35f, 0.35f, ((int)(now * 12) & 1) == 0 ? 0.9f : 0.5f);
+            DrawRing(t.A, r, warn, 4, 0f, Layers.Shadow + 4);
+            var col = StyleColor(t.Slot);
+            DrawRing(t.A, r * (1f - k), new Color(col.r, col.g, col.b, 0.8f), 5, 0f, Layers.Shadow + 4);
+            if ((FxStyle)t.Slot == FxStyle.Tech && _tv != null)
+            {
+                // a TV cai do alto e chega no centro no momento do impacto
+                var p = t.A + new Vector2(0, 6f * (1f - k) * (1f - k));
+                _stamps.Add(_tv, Layers.Snap(p), Color.white, Layers.Fx + 6);
+            }
+        }
+
+        /// <summary>Golpe em cone: arcos de pixels na abertura e no alcance reais.</summary>
+        void DrawSwing(in Timed t, float k)
+        {
+            float reach = t.B.magnitude;
+            if (reach < 1e-3f) return;
+            float baseAng = Mathf.Atan2(t.B.y, t.B.x), half = t.Value * Mathf.Deg2Rad * 0.5f;
+            var col = StyleColor(t.Slot);
+            col.a = 1f - k;
+            int n = Mathf.Clamp(Mathf.RoundToInt(half * 2f * reach * 32f / 3f), 4, 80);
+            for (int ring = 0; ring < 3; ring++)
+            {
+                float rr = reach * (0.55f + 0.2f * ring) * Mathf.Lerp(0.8f, 1f, k);
+                for (int i = 0; i <= n; i++)
+                {
+                    float a = baseAng - half + 2f * half * i / n;
+                    _stamps.Add(_px, Layers.Snap(t.A + new Vector2(Mathf.Cos(a), Mathf.Sin(a)) * rr), ring == 2 ? col : new Color(1, 1, 1, col.a), Layers.Fx + 4);
+                }
+            }
+        }
+
+        /// <summary>Montagem do Cabazord Master: os três robôs giram e se juntam no Badotti.</summary>
+        public void Assemble(Vector2 at, float now) => Add(new Timed { Kind = KindAssemble, A = at, Start = now, Life = 1.1f });
+
+        void DrawAssemble(in Timed t, float k)
+        {
+            var bots = new[] { _bot0, _bot1, _bot2 };
+            float r = 2.2f * (1f - k);
+            for (int i = 0; i < 3; i++)
+            {
+                float a = k * 10f + i * Mathf.PI * 2f / 3f;
+                _stamps.Add(bots[i], Layers.Snap(t.A + new Vector2(Mathf.Cos(a), Mathf.Sin(a)) * r + new Vector2(0, 0.6f)), Color.white, Layers.Fx + 6);
+            }
+            if (k > 0.75f) DrawRing(t.A, (k - 0.75f) * 12f, new Color(0.25f, 0.88f, 1f, 1f - k), 3, 0f, Layers.Fx + 6);
+        }
+
         void DrawArc(in Timed t, float now)
         {
-            var color = t.Value > 0 ? ArcCharged : ArcColor;
+            var color = StyleColor((int)t.Value);
             var d = t.B - t.A;
             float len = d.magnitude;
             if (len < 1e-3f) return;

@@ -172,7 +172,7 @@ function stamp(p, rowsObj, roles, dx = 0, dy = 0) {
   return p.clone().blit(layer(rowsObj, roles).shift(dx, dy));
 }
 
-function framesFor(spec) {
+export function framesFor(spec) {
   const roles = rolesOf(spec);
   const accent = roles.A;
   const f = {};
@@ -222,3 +222,8 @@ export function characterSprites() {
 }
 
 export function specRoles(spec) { return rolesOf(spec); }
+
+/** Registra um visual de personagem (papéis de cor + camadas por vista) no mesmo corpo-base. */
+export function defineSpec(id, def) { SPEC[id] = def; }
+
+export { layer, compose, upper, legs };

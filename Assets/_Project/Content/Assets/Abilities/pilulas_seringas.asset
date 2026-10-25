@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 743fe4cf80f19db468824bd5de5da40a, type: 3}
+  m_Name: pilulas_seringas
+  m_EditorClassIdentifier: ES.Content::ES.Content.AbilityAsset
+  def:
+    id: pilulas_seringas
+    name: "Bonesmashing, P\xEDlulas e Seringas"
+    description: "Os socos continuam; rajadas de p\xEDlulas e seringas perfurantes,
+      e a cada 3\xAA uma seringa que explode."
+    kind: weapon
+    rarity: raro
+    behavior: artur
+    tags:
+    - Biomecanica
+    - Suporte
+    maxLevel: 3
+    evolutionOnly: 1
+    exclusive: 1
+    sfx:
+    - soco
+    - soco_forte
+    - pilulas
+    - seringa
+    baseStats:
+    - stat: Damage
+      value: 26
+    - stat: Cooldown
+      value: 0.5
+    - stat: Range
+      value: 2.2
+    - stat: Knockback
+      value: 3
+    - stat: Area
+      value: 1.15
+    - stat: Duration
+      value: 1
+    levels:
+    - add:
+      - stat: Damage
+        value: 4
+      mult: []
+      text: +1 seringa por disparo
+    - add:
+      - stat: Damage
+        value: 4
+      mult: []
+      text: "Avan\xE7ada: o golpe carregado dispara um anel de seringas"
+    grants: []
+    parameters:
+    - key: evolved
+      value: 1
+  icon: {fileID: 21300000, guid: 08aeb01bc96e09444b26bc8897c9169b, type: 3}

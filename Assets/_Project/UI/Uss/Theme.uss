@@ -54,6 +54,17 @@
 .btn:disabled { color: rgb(125, 135, 148); }
 .big { height: 58px; font-size: 32px; }
 
+.hero-grid { justify-content: center; max-width: 900px; }
+.hero-card { width: 160px; height: 150px; flex-direction: column; align-items: center; justify-content: flex-start; padding: 6px; margin: 4px; }
+.hero-card .portrait { width: 64px; height: 64px; margin-bottom: 4px; }
+.hero-card .spec-name { font-size: 26px; color: rgb(232, 185, 35); }
+.hero-card Label { white-space: normal; -unity-text-align: middle-center; font-size: 17px; }
+.hero-card-small { width: 96px; height: 92px; flex-direction: column; align-items: center; padding: 3px; margin: 3px; }
+.hero-card-small .portrait { width: 48px; height: 48px; }
+.hero-card-small .spec-name { font-size: 20px; color: rgb(232, 185, 35); }
+.hero-detail { width: 880px; min-height: 120px; }
+.hero-detail Label { white-space: normal; font-size: 20px; }
+.hero-detail .spec-name { font-size: 26px; color: rgb(232, 185, 35); }
 .spec-card { width: 420px; min-height: 220px; flex-direction: row; align-items: flex-start; -unity-text-align: upper-left; white-space: normal; }
 .spec-card .portrait { width: 128px; height: 128px; margin-right: 12px; flex-shrink: 0; }
 .spec-card Label { white-space: normal; font-size: 22px; }

@@ -24,6 +24,8 @@ MonoBehaviour:
     - Mecanica
     maxLevel: 1
     evolutionOnly: 1
+    exclusive: 0
+    sfx: []
     baseStats:
     - stat: Damage
       value: 20

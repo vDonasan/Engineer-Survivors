@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 337506c78dbcd1e45b4c2d13c4c76708, type: 3}
+  m_Name: giulia
+  m_EditorClassIdentifier: ES.Content::ES.Content.SpecializationAsset
+  def:
+    id: giulia
+    name: Giulia
+    startingAbility: componentes_eletricos
+    special: apagao
+    portrait: giulia
+    engineering: "Engenharia El\xE9trica"
+    hidden: 0
+    affinityTags:
+    - Energia
+    - Eletronica
+    advancedAffinity:
+    - stat: Damage
+      op: mult
+      scope: self
+      value: 0.05
+    advancedAffinityText: "+5% de dano numa arma afim ao lev\xE1-la ao n\xEDvel m\xE1ximo."
+  portrait: {fileID: 21300000, guid: f90f5e378a9ae734b9249cc270e3a0d9, type: 3}

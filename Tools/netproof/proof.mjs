@@ -49,10 +49,11 @@ async function waitFor(lines, re, timeoutMs) {
 
 const parseState = (l) => {
   const m = l.match(/tick=(\d+).*?enemies=(\d+)/);
+  const al = l.match(/allies=(\d+)/);
   const players = {};
   // aceita "x.y;z.w" (invariante) e "x,y,z,w" (cultura pt-BR, uma casa decimal)
   for (const p of l.matchAll(/p(\d)=\((-?\d+)[.,](\d);?,?(-?\d+)[.,](\d)\)/g)) players[p[1]] = [Number(p[2] + '.' + p[3]), Number(p[4] + '.' + p[5])];
-  return m ? { tick: Number(m[1]), enemies: Number(m[2]), players } : null;
+  return m ? { tick: Number(m[1]), enemies: Number(m[2]), allies: al ? Number(al[1]) : 0, players } : null;
 };
 
 const report = { started: new Date().toISOString(), ok: false, checks: {} };
@@ -64,13 +65,13 @@ try {
   watch(host, 'HOST  ', hl);
   watch(client, 'CLIENT', cl);
 
-  await host.goto(`${base}/?mode=host&autostart=2&name=Host&spec=eletrica&log=1`);
+  await host.goto(`${base}/?mode=host&autostart=2&name=Host&spec=giulia&log=1&evolve=3`);
   const code = await waitFor(hl, /CODE=([A-Z0-9]+)/, 120000);
   report.checks.roomCreated = !!code;
   if (!code) throw new Error('host não criou a sala');
   log('código da sala:', code[1]);
 
-  await client.goto(`${base}/?mode=join&code=${code[1]}&name=Cliente&spec=mecanica&log=1`);
+  await client.goto(`${base}/?mode=join&code=${code[1]}&name=Cliente&spec=badotti&log=1`);
   const started = await waitFor(hl, /START players=(\d)/, 120000);
   report.checks.matchStarted = !!started;
   if (!started) throw new Error('partida não iniciou com 2 jogadores');
@@ -96,6 +97,8 @@ try {
   const firstC = cs.find((s) => s.players['1']), lastC = cLast?.players['1'], lastH = hLast?.players['1'];
   report.checks.clientMovedOnHost = !!(firstC && lastH && Math.abs(lastH[0] - firstC.players['1'][0]) > 3);
   report.checks.positionsAgree = !!(lastC && lastH && Math.hypot(lastC[0] - lastH[0], lastC[1] - lastH[1]) < 2.5);
+  // tiros, zonas e companheiros chegam ao cliente pelo snapshot (Master do Badotti, armas da Giulia)
+  report.checks.clientSeesAllies = cs.some((s) => s.allies >= 2);
   report.checks.noPageErrors = ![...hl, ...cl].some((l) => l.startsWith('PAGEERROR'));
   report.ok = Object.values(report.checks).every(Boolean);
   writeFileSync(join(outDir, 'host-log.txt'), hl.join('\n'));

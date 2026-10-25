@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 743fe4cf80f19db468824bd5de5da40a, type: 3}
+  m_Name: bonesmashing
+  m_EditorClassIdentifier: ES.Content::ES.Content.AbilityAsset
+  def:
+    id: bonesmashing
+    name: Bonesmashing
+    description: "Socos em cone; a sequ\xEAncia termina num golpe carregado com onda
+      de choque."
+    kind: weapon
+    rarity: comum
+    behavior: artur
+    tags:
+    - Biomecanica
+    - Suporte
+    maxLevel: 5
+    evolutionOnly: 0
+    exclusive: 1
+    sfx:
+    - soco
+    - soco_forte
+    - pilulas
+    - seringa
+    baseStats:
+    - stat: Damage
+      value: 18
+    - stat: Cooldown
+      value: 0.6
+    - stat: Range
+      value: 2.1
+    - stat: Knockback
+      value: 2
+    - stat: Area
+      value: 1
+    - stat: Duration
+      value: 1
+    levels:
+    - add:
+      - stat: Damage
+        value: 4
+      mult: []
+      text: +4 de dano
+    - add:
+      - stat: Knockback
+        value: 1
+      mult: []
+      text: Os socos interrompem o inimigo por um instante
+    - add:
+      - stat: Damage
+        value: 2
+      mult:
+      - stat: Cooldown
+        value: -0.12
+      text: "+2 de dano, recarga \u221212%"
+    - add:
+      - stat: Range
+        value: 0.3
+      mult: []
+      text: Golpe carregado a cada 3 socos; onda de choque maior
+    grants: []
+    parameters: []
+  icon: {fileID: 21300000, guid: dfe3b2cdc1edc3b4f8c75d14f05e25b0, type: 3}

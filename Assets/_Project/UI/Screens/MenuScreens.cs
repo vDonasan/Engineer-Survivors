@@ -21,7 +21,7 @@ namespace ES.UI
         }
     }
 
-    /// <summary>Cartões de especialização (retrato, arma inicial, especial, afinidades).</summary>
+    /// <summary>Cartões de personagem (retrato, nome, engenharia) e o quadro com arma, evolução e especial.</summary>
     public static class SpecCards
     {
         public static Dictionary<string, Button> Build(UiContext ctx, VisualElement list, Action<string> pick, bool compact)
@@ -31,33 +31,43 @@ namespace ES.UI
             for (int i = 0; i < ctx.Db.SpecializationCount; i++)
             {
                 var spec = ctx.Db.Specialization(i);
+                if (spec.Def.hidden) continue;
                 string id = spec.Def.id;
                 var b = new Button(() => { ctx.Click(); pick(id); }) { name = "spec-" + id };
                 b.AddToClassList("btn");
-                if (!compact) b.AddToClassList("spec-card");
+                b.AddToClassList(compact ? "hero-card-small" : "hero-card");
                 var portrait = new VisualElement();
                 portrait.AddToClassList("portrait");
-                if (compact) { portrait.style.width = 64; portrait.style.height = 64; portrait.style.marginRight = 8; }
                 UiText.Image(portrait, ctx.Assets.Sprite($"portrait_{id}_determinacao"));
                 b.Add(portrait);
-                var col = new VisualElement();
-                col.style.flexShrink = 1;
-                col.style.flexGrow = 1;
-                UiText.Line(col, spec.Def.name, "spec-name");
-                if (!compact)
-                {
-                    var weapon = ctx.Db.Ability(spec.StartingAbility).Def;
-                    var special = ctx.Db.Special(spec.Special).Def;
-                    UiText.Line(col, Strings.Format("arma_inicial", weapon.name) + " — " + weapon.description);
-                    UiText.Line(col, Strings.Format("especial", ctx.Input.SpecialDisplayName(), special.name) + " — " + special.description);
-                    UiText.Line(col, Strings.Format("afinidades", LevelUpCards.TagList(spec.Def.affinityTags)), "small");
-                }
-                b.Add(col);
-                if (compact) { b.style.flexDirection = FlexDirection.Row; b.style.alignItems = Align.Center; }
+                UiText.Line(b, spec.Def.name, "spec-name");
+                if (!compact) UiText.Line(b, spec.Def.engineering ?? "", "small");
                 list.Add(b);
                 map[id] = b;
             }
             return map;
+        }
+
+        /// <summary>Arma inicial, evolução (com o componente pedido) e especial do personagem.</summary>
+        public static void Describe(UiContext ctx, VisualElement detail, string id)
+        {
+            if (detail == null) return;
+            detail.Clear();
+            int i = ctx.Db.SpecializationIndex(id);
+            if (i < 0) return;
+            var spec = ctx.Db.Specialization(i);
+            var weapon = ctx.Db.Ability(spec.StartingAbility).Def;
+            var special = ctx.Db.Special(spec.Special).Def;
+            UiText.Line(detail, spec.Def.name + " — " + spec.Def.engineering, "spec-name");
+            UiText.Line(detail, Strings.Format("arma_inicial", weapon.name) + " — " + weapon.description);
+            for (int e = 0; e < ctx.Db.EvolutionCount; e++)
+            {
+                var evo = ctx.Db.Evolution(e);
+                if (evo.From != spec.StartingAbility) continue;
+                var result = ctx.Db.Ability(evo.Result).Def;
+                UiText.Line(detail, Strings.Format("evolucao_personagem", result.name, evo.Def.description) + " " + result.description, "small");
+            }
+            UiText.Line(detail, Strings.Format("especial", ctx.Input.SpecialDisplayName(), special.name) + " — " + special.description, "small");
         }
 
         public static void Select(Dictionary<string, Button> map, string id)
@@ -98,6 +108,7 @@ namespace ES.UI
         {
             _spec = id;
             SpecCards.Select(_specs, id);
+            SpecCards.Describe(Ctx, Q<VisualElement>("spec-detail"), id);
         }
 
         public void SetDifficulty(Difficulty d)

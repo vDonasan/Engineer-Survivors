@@ -16,9 +16,12 @@
 - **Braços giratórios:** a fase desenhada é calculada pelo tempo (igual no host e no cliente); depois de uma mudança de período o braço pode aparecer alguns graus fora do ponto exato de acerto.
 - **Elite:** mesmo tamanho em pixels do inimigo comum (contorno magenta e brilho), embora o raio de colisão seja 1,3×. Escala fracionária quebraria o pixel perfect.
 - **Projéteis hostis no cliente** somem ~130 ms depois do fim (não há evento de remoção); inimigos somem pelo evento confiável de morte.
-- **Laser** desenhado na horizontal ou vertical (rotação só em múltiplos de 90° para manter os pixels).
+- **Tiros girados:** projéteis alongados (laser, seringas, resistores, celulares, garrafas) giram pelo ângulo do movimento; a rotação livre deixa a borda serrilhada em diagonais. O carro do Jean usa 8 direções desenhadas.
+- **Tiros e companheiros no cooperativo** chegam no snapshot (até 200 por snapshot, os mais perto dos jogadores primeiro): com mais que isso na tela, tiros longe de todos podem piscar no cliente; o dano é sempre calculado no anfitrião.
+- **Sprites dos personagens** são caricaturas em pixel art 32×32 a partir das fotos (cabelo, óculos, boné, roupa); não retratos fiéis.
+- **Montagem do Cabazord Master** é só visual (1,1 s); o Master já ataca durante a animação.
 - **Fonte VT323** renderizada pelo UI Toolkit (SDF): nítida, mas não alinhada à grade de pixels como a arte do jogo.
-- **Comandos de depuração na build publicada:** F4 (solo) gera 50 inimigos; `?mode=solo&bench=N` mantém N inimigos com o jogador invulnerável. Servem para medir desempenho; não funcionam no cooperativo.
+- **Comandos de depuração na build publicada:** F4 (solo) gera 50 inimigos; `?mode=solo&bench=N` mantém N inimigos com o jogador invulnerável. Servem para medir desempenho; não funcionam no cooperativo. `&log=1&evolve=N` (solo ou anfitrião) começa com todas as armas evoluídas no nível N, para testes.
 - **Primeiro áudio só após um clique** (política de reprodução automática do navegador).
 
 ## Observado nos testes

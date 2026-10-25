@@ -26,7 +26,7 @@ namespace ES.Game
 
         public void Begin() => _used = 0;
 
-        public bool Add(Sprite sprite, Vector2 pos, Color color, int order, float rotation = 0f)
+        public bool Add(Sprite sprite, Vector2 pos, Color color, int order, float rotation = 0f, bool flipX = false)
         {
             if (sprite == null || _used >= _max) return false;
             SpriteRenderer r;
@@ -42,6 +42,7 @@ namespace ES.Game
             r.sprite = sprite;
             r.color = color;
             r.sortingOrder = order;
+            r.flipX = flipX;
             var t = r.transform;
             t.localPosition = new Vector3(pos.x, pos.y, 0f);
             t.localRotation = rotation == 0f ? Quaternion.identity : Quaternion.Euler(0, 0, rotation);

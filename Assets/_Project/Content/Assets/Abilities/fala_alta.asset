@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 743fe4cf80f19db468824bd5de5da40a, type: 3}
+  m_Name: fala_alta
+  m_EditorClassIdentifier: ES.Content::ES.Content.AbilityAsset
+  def:
+    id: fala_alta
+    name: Fala Extremamente Alta
+    description: "Ondas sonoras ao redor empurram e interrompem; ondas direcionais
+      atravessam a fila; um grito peri\xF3dico."
+    kind: weapon
+    rarity: comum
+    behavior: donasa
+    tags:
+    - Software
+    - Sensores
+    maxLevel: 5
+    evolutionOnly: 0
+    exclusive: 1
+    sfx:
+    - fala
+    - grito
+    - onda_sonora
+    - garrafa
+    - grito_gigante
+    baseStats:
+    - stat: Damage
+      value: 9
+    - stat: Cooldown
+      value: 1.2
+    - stat: Range
+      value: 7
+    - stat: ProjectileSpeed
+      value: 10
+    - stat: Knockback
+      value: 1.5
+    - stat: Area
+      value: 1
+    - stat: Duration
+      value: 1
+    levels:
+    - add:
+      - stat: Damage
+        value: 3
+      mult: []
+      text: +3 de dano
+    - add:
+      - stat: Damage
+        value: 1
+      mult: []
+      text: Duas ondas direcionais por vez
+    - add: []
+      mult:
+      - stat: Cooldown
+        value: -0.12
+      text: "Recarga \u221212%"
+    - add:
+      - stat: Area
+        value: 0.15
+      mult: []
+      text: Grito a cada 4,5 s e maior
+    grants: []
+    parameters: []
+  icon: {fileID: 21300000, guid: 776857a4966f33547a8d48e37750cfd0, type: 3}

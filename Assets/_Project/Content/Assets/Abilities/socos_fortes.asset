@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 743fe4cf80f19db468824bd5de5da40a, type: 3}
+  m_Name: socos_fortes
+  m_EditorClassIdentifier: ES.Content::ES.Content.AbilityAsset
+  def:
+    id: socos_fortes
+    name: "Bra\xE7os Fortes"
+    description: "Socos em arco largo que empurram; acertos seguidos d\xE3o f\xFAria
+      e o 5\xBA soco solta uma onda."
+    kind: weapon
+    rarity: comum
+    behavior: fufu
+    tags:
+    - Biomecanica
+    - Quimica
+    maxLevel: 5
+    evolutionOnly: 0
+    exclusive: 1
+    sfx:
+    - soco_fufu
+    - impacto_fufu
+    - insulina
+    - frasco
+    baseStats:
+    - stat: Damage
+      value: 14
+    - stat: Cooldown
+      value: 0.7
+    - stat: Range
+      value: 2
+    - stat: Knockback
+      value: 3
+    - stat: Area
+      value: 1
+    - stat: Duration
+      value: 1
+    levels:
+    - add:
+      - stat: Damage
+        value: 4
+      mult: []
+      text: +4 de dano
+    - add:
+      - stat: Knockback
+        value: 0.5
+      mult: []
+      text: "Arco maior e mais empurr\xE3o"
+    - add:
+      - stat: Damage
+        value: 2
+      mult: []
+      text: "A f\xFAria acumula at\xE9 8"
+    - add:
+      - stat: Damage
+        value: 3
+      mult: []
+      text: Golpe carregado maior e atordoa
+    grants: []
+    parameters: []
+  icon: {fileID: 21300000, guid: e7ab5f2e624f54241a403b37d8be5ba0, type: 3}

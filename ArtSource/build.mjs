@@ -10,8 +10,10 @@ import { enemySprites } from './lib/enemies.mjs';
 import { worldSprites } from './lib/world.mjs';
 import { iconSprites } from './lib/icons.mjs';
 import { portraitSprites, EMOTIONS } from './lib/portraits.mjs';
+import { heroSprites, heroPortraitSprites, HEROES } from './lib/heroes.mjs';
+import { allySprites } from './lib/kitart.mjs';
 
-export { SPECS, CHAR_ANIMS };
+export { SPECS, CHAR_ANIMS, HEROES };
 
 const here = dirname(fileURLToPath(import.meta.url));
 const root = join(here, '..');
@@ -19,7 +21,7 @@ export const CATEGORIES = ['Characters', 'Enemies', 'Bosses', 'Weapons', 'Abilit
 
 export function allSprites() {
   const content = JSON.parse(readFileSync(join(root, 'Assets', '_Project', 'Content', 'Data', 'sp1-content.json'), 'utf8'));
-  return [...characterSprites(), ...enemySprites(), ...worldSprites(), ...iconSprites(content), ...portraitSprites()];
+  return [...characterSprites(), ...heroSprites(), ...enemySprites(), ...worldSprites(), ...allySprites(), ...iconSprites(content), ...portraitSprites(), ...heroPortraitSprites()];
 }
 
 function listPngs(dir) {
@@ -47,15 +49,17 @@ function animationsDoc(sprites) {
     'Direções: `down`, `up`, `left`, `right` (direita = espelho exato da esquerda). Animações sem direção usam `down`.', '',
     '| Animação | Direções | Quadros |', '|---|---|---|',
     ...Object.entries(CHAR_ANIMS).map(([a, { dirs, frames }]) => `| ${a} | ${dirs.join(', ')} | ${frames} |`), '',
-    '## Registro por engenharia', ''];
-  for (const spec of SPECS) {
+    '## Registro por personagem e engenharia', ''];
+  for (const spec of [...HEROES, ...SPECS]) {
     const done = Object.entries(CHAR_ANIMS).map(([a, { dirs, frames }]) => {
       const ok = dirs.every((d) => [...Array(frames).keys()].every((f) => sprites.some((s) => s.id === `char_${spec}_${a}_${d}_${f}`)));
       return `${a} ${ok ? '✔' : '✘'}`;
     });
     lines.push(`- **${spec}**: ${done.join(' · ')}`);
   }
-  lines.push('', `## Retratos (64×64)`, '', `Emoções: ${EMOTIONS.join(', ')} — \`Portraits/portrait_<engenharia>_<emoção>.png\`.`);
+  lines.push('', `## Retratos (64×64)`, '', `Emoções: ${EMOTIONS.join(', ')} — \`Portraits/portrait_<personagem ou engenharia>_<emoção>.png\`.`);
+  lines.push('', '## Armas dos personagens', '', 'Projéteis, companheiros e zonas em `Weapons/Personagens/ally_<sprite>_<quadro>.png` (nome do enum AllySprite). Cabazord Master 48×48; carro 24×24 com 8 direções.');
+  lines.push('', '## Jean', '', 'Montado no porco em todas as animações, menos caído/reviver (ele cai do porco).');
   lines.push('', '## Inimigos', '', 'Microbô 16×16, torreta 32×32, prensa 48×48; 2 quadros cada + variante elite (contorno magenta).');
   return lines.join('\n') + '\n';
 }

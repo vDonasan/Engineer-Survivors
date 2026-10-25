@@ -33,7 +33,7 @@ MonoBehaviour:
     capEnemies: 400
     capGems: 150
     capHostileProjectiles: 200
-    capCosmeticEvents: 48
+    capCosmeticEvents: 96
     survivalHpThreshold: 0.5
     eliteHp: 3
     eliteSize: 1.3
@@ -57,6 +57,7 @@ MonoBehaviour:
       regen: 1.3
       eliteChance: 0.01
       telegraph: 1.3
+      abilityDamage: 1
     - id: normal
       enemyDamage: 1
       enemyHp: 1
@@ -68,6 +69,7 @@ MonoBehaviour:
       regen: 1
       eliteChance: 0.025
       telegraph: 1
+      abilityDamage: 1
     - id: hard
       enemyDamage: 1.35
       enemyHp: 1.1
@@ -79,27 +81,32 @@ MonoBehaviour:
       regen: 0.7
       eliteChance: 0.05
       telegraph: 0.8
+      abilityDamage: 1
     teams:
     - size: 1
       enemyCount: 1
       enemyHp: 1
       eliteChance: 0
       xpPerGem: 1
+      abilityDamage: 1
     - size: 2
       enemyCount: 1.5
       enemyHp: 1.3
       eliteChance: 0.01
       xpPerGem: 0.72
+      abilityDamage: 1
     - size: 3
       enemyCount: 1.9
       enemyHp: 1.55
       eliteChance: 0.02
       xpPerGem: 0.6
+      abilityDamage: 1
     - size: 4
       enemyCount: 2.2
       enemyHp: 1.75
       eliteChance: 0.03
       xpPerGem: 0.55
+      abilityDamage: 1
     overrides: []
   spawn:
     baseBudget: 2
@@ -137,11 +144,22 @@ MonoBehaviour:
   arenas:
   - {fileID: 11400000, guid: 9c6f9020acc7e844386eb0645069efa4, type: 2}
   specializations:
+  - {fileID: 11400000, guid: b6e8b2c2fbf926c4892e52f36eb66c40, type: 2}
+  - {fileID: 11400000, guid: db502933709ba8248b1eef256227871d, type: 2}
+  - {fileID: 11400000, guid: a7af0a21faa8e1440afea61d2a0cfaad, type: 2}
+  - {fileID: 11400000, guid: 4c846c9d5cee32b43a0b52aa4b6011f5, type: 2}
+  - {fileID: 11400000, guid: faf2297d32f2db14d8c3e5895bdbeccd, type: 2}
+  - {fileID: 11400000, guid: ac7f72270132f0d4b99840156483a959, type: 2}
+  - {fileID: 11400000, guid: e1cc0034568bc5a42909e81c7dbaeac6, type: 2}
+  - {fileID: 11400000, guid: ed2de4024984c1249a90c4d09a7e07fe, type: 2}
+  - {fileID: 11400000, guid: fb555b9dd1b4af74ba7e70f1cb73d3db, type: 2}
+  - {fileID: 11400000, guid: ea30e1a7c3d2ed24684a3fa4f4cf7bf9, type: 2}
   - {fileID: 11400000, guid: 01a478c9ee2559248a2b07bd343c8cdd, type: 2}
   - {fileID: 11400000, guid: 95ee5db03bf15684d9b1261fdb5c8eaf, type: 2}
   specials:
   - {fileID: 11400000, guid: 52df002d94814f045b7cdefcf7541fdb, type: 2}
   - {fileID: 11400000, guid: b9ffdf2710a4f35448f0abb7988da050, type: 2}
+  - {fileID: 11400000, guid: c97a57ca656d26e409a150b57a003cbd, type: 2}
   abilities:
   - {fileID: 11400000, guid: 916d139a108783343bfdb589326e19a8, type: 2}
   - {fileID: 11400000, guid: 207cb8adcb1aadf4ba6c19dc123dc2a2, type: 2}
@@ -157,6 +175,34 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 66d90924d6f0f754bb9b4db657ab64aa, type: 2}
   - {fileID: 11400000, guid: 0816caa2adb6c094491087aafa83b261, type: 2}
   - {fileID: 11400000, guid: eb445a7ee69b21e4886624236ee61bc1, type: 2}
+  - {fileID: 11400000, guid: a9b162762d18b7846beeca34abca29e8, type: 2}
+  - {fileID: 11400000, guid: e3ccccdc64ec41447b4cd456a5ae75e7, type: 2}
+  - {fileID: 11400000, guid: 852993f8f31622545a2d7da5b7f0ca8a, type: 2}
+  - {fileID: 11400000, guid: cb122db1176913946a672a42b343bf41, type: 2}
+  - {fileID: 11400000, guid: 05dd37924246ea94da050aba1ebae1d7, type: 2}
+  - {fileID: 11400000, guid: 920771533c2ba914d80352ec6fcc7b49, type: 2}
+  - {fileID: 11400000, guid: fa550b85c87f1244ba1fa26c929595f7, type: 2}
+  - {fileID: 11400000, guid: b5fd2c77856a1d24ca856e8327a5dfde, type: 2}
+  - {fileID: 11400000, guid: 355701751e544504f991506e26674240, type: 2}
+  - {fileID: 11400000, guid: 5c5414c413d629d4895b6205ed46771d, type: 2}
+  - {fileID: 11400000, guid: 005bfb47b69df974f8a61383e47a1337, type: 2}
+  - {fileID: 11400000, guid: ad594896794ced14aa1f33d69ff8832b, type: 2}
+  - {fileID: 11400000, guid: 9aadbb777954b05488ed19d0e2ac3b84, type: 2}
+  - {fileID: 11400000, guid: 4951a4cc1975caa47b2b53fd6e2fa6f9, type: 2}
+  - {fileID: 11400000, guid: 9ade9a2502b7f5e42ad6e3b0adbc84d5, type: 2}
+  - {fileID: 11400000, guid: 440c0e2f290c3ea499cc4a88d351e59a, type: 2}
+  - {fileID: 11400000, guid: fa9006878b3b6cd44896ac5d4b85bf52, type: 2}
+  - {fileID: 11400000, guid: 3e452e7b4b3ab704d9e0654431ff7ba9, type: 2}
+  - {fileID: 11400000, guid: 444530a5cd4d91c47978b5e935959273, type: 2}
+  - {fileID: 11400000, guid: 3da8b3f671517534eb2c50e662baa2e0, type: 2}
+  - {fileID: 11400000, guid: 996c72f37103b9343a39d8f57a87725a, type: 2}
+  - {fileID: 11400000, guid: af265764aeeb0a749aa8df9874d9fef3, type: 2}
+  - {fileID: 11400000, guid: e565e46f2930b004f8058e80bbb13bcf, type: 2}
+  - {fileID: 11400000, guid: d63050809c25aca40919febb05c91517, type: 2}
+  - {fileID: 11400000, guid: 17b6b2ebc32ef8a42904cf25dfa4664c, type: 2}
+  - {fileID: 11400000, guid: cfb32a208970d0b4d9afeb92be6e2dfc, type: 2}
+  - {fileID: 11400000, guid: d8d9acee3b6296d4aaf7444cb102039f, type: 2}
+  - {fileID: 11400000, guid: 3e2dcd8d066a3d04a995e04cedc61754, type: 2}
   enemies:
   - {fileID: 11400000, guid: be3a23cfb4b940e468891f3dda86ceb3, type: 2}
   - {fileID: 11400000, guid: caca7a0c0b4509040896d6c712b6473f, type: 2}
@@ -166,3 +212,13 @@ MonoBehaviour:
   evolutions:
   - {fileID: 11400000, guid: 2fadaf54ce53b7f46b3d019555374284, type: 2}
   - {fileID: 11400000, guid: a02cd8ed4f8820445be85f1a5f433b22, type: 2}
+  - {fileID: 11400000, guid: 6fe9a29f57bfcbc47b93c3614f6cb3c3, type: 2}
+  - {fileID: 11400000, guid: 28f6e3010a33c7242b6997f113c966a7, type: 2}
+  - {fileID: 11400000, guid: b87af40dad9dd824a878ab2664c6efd7, type: 2}
+  - {fileID: 11400000, guid: f3407114978bc4143b1d45dce2c9ddb5, type: 2}
+  - {fileID: 11400000, guid: 976eadfd07ba8404393e8322db1a5023, type: 2}
+  - {fileID: 11400000, guid: af2fdc3f543cfce489369ffc1f507ac5, type: 2}
+  - {fileID: 11400000, guid: d9481ad7de0c95f4bb2ab4e8e85349b1, type: 2}
+  - {fileID: 11400000, guid: 9425d5ec9cb5e1d44b876a1ef7bd7c0a, type: 2}
+  - {fileID: 11400000, guid: f88b5e5a57edeb943b47860b8ad50330, type: 2}
+  - {fileID: 11400000, guid: bc112f5d0539b964fa71fe0930667e60, type: 2}

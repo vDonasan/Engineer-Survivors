@@ -23,6 +23,8 @@ MonoBehaviour:
     - Mecanica
     maxLevel: 5
     evolutionOnly: 0
+    exclusive: 0
+    sfx: []
     baseStats: []
     levels: []
     grants:

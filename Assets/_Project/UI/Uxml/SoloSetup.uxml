@@ -2,7 +2,8 @@
     <ui:VisualElement name="screen-solo" class="screen center dim">
         <ui:Label text="#solo_titulo" class="heading" />
         <ui:Label text="#escolha_especializacao" class="small" />
-        <ui:VisualElement name="list-specs" class="row wrap" />
+        <ui:VisualElement name="list-specs" class="row wrap hero-grid" />
+        <ui:VisualElement name="spec-detail" class="panel hero-detail" />
         <ui:Label text="#escolha_dificuldade" class="small" />
         <ui:VisualElement class="row">
             <ui:Button name="btn-diff-easy" text="#dificuldade_easy" class="btn" />

@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 743fe4cf80f19db468824bd5de5da40a, type: 3}
+  m_Name: computadores_tvs
+  m_EditorClassIdentifier: ES.Content::ES.Content.AbilityAsset
+  def:
+    id: computadores_tvs
+    name: "Computadores e Televis\xF5es"
+    description: "Celulares e cola continuam; computadores explodem em fragmentos
+      e TVs caem em \xE1reas marcadas."
+    kind: weapon
+    rarity: raro
+    behavior: garcia
+    tags:
+    - Software
+    - Eletronica
+    maxLevel: 3
+    evolutionOnly: 1
+    exclusive: 1
+    sfx:
+    - celular
+    - papel
+    - computador
+    - tv
+    - chuva
+    baseStats:
+    - stat: Damage
+      value: 17
+    - stat: Cooldown
+      value: 1
+    - stat: Range
+      value: 9.5
+    - stat: ProjectileSpeed
+      value: 12
+    - stat: Count
+      value: 2
+    - stat: Area
+      value: 1.2
+    - stat: Duration
+      value: 1
+    levels:
+    - add:
+      - stat: Damage
+        value: 3
+      mult: []
+      text: +1 TV por queda
+    - add:
+      - stat: Damage
+        value: 3
+      mult: []
+      text: "Avan\xE7ada: chuva de eletr\xF4nicos ao seu redor"
+    grants: []
+    parameters:
+    - key: evolved
+      value: 1
+  icon: {fileID: 21300000, guid: 708d6a6ab5451e54292d761a3ac789a9, type: 3}

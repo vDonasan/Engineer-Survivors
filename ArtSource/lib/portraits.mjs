@@ -5,11 +5,11 @@ import { SPECS, specRoles } from './characters.mjs';
 
 export const EMOTIONS = ['raiva', 'medo', 'desespero', 'choro', 'exaustao', 'alivio', 'determinacao', 'vitoria', 'derrota'];
 
-const BG = { raiva: C.red1, medo: C.denim1, desespero: C.purple1, choro: C.denim2, exaustao: C.gray2, alivio: C.teal1, determinacao: C.rust1, vitoria: C.yellow1, derrota: C.black };
+export const BG = { raiva: C.red1, medo: C.denim1, desespero: C.purple1, choro: C.denim2, exaustao: C.gray2, alivio: C.teal1, determinacao: C.rust1, vitoria: C.yellow1, derrota: C.black };
 const O = C.outline, E = C.black, W = C.white;
 
 // olhos: carimbos 7×5 (olho esquerdo; o direito é espelhado)
-const EYES = {
+export const EYES = {
   raiva: ['OO.....', '.OOO...', '..OOO..', '.OEEO..', '.OEEO..'],
   medo: ['...OO..', '..O....', '.OWWWO.', '.OWEWO.', '.OWWWO.'],
   desespero: ['....OO.', '..OO...', '.OWWWO.', '.OWEEO.', '..OOO..'],
@@ -20,7 +20,7 @@ const EYES = {
   vitoria: ['.......', '.......', '.OOOOO.', 'O.....O', '.......'],
   derrota: ['.......', '.O...O.', '..O.O..', '...O...', '..O.O..'],
 };
-const MOUTH = {
+export const MOUTH = {
   raiva: ['OOOOOOOO', 'OWOWOWOO', 'OOOOOOOO'],
   medo: ['..OOO...', '.OEEEO..', '..OOO...'],
   desespero: ['.OOOOOO.', 'OEEEEEEO', 'OEERREEO', '.OOOOOO.'],
@@ -32,7 +32,7 @@ const MOUTH = {
   derrota: ['.O.O.O..', 'O.O.O.O.', '........'],
 };
 
-function extras(p, e) {
+export function extras(p, e) {
   const drop = (x, y, col) => stamp(p, ['.O.', 'OCO', 'OCO', '.O.'], { O, C: col }, x, y);
   if (e === 'choro') for (const x of [21, 41]) { rect(p, x, 33, 2, 9, C.cyan2); }
   if (e === 'medo' || e === 'desespero' || e === 'exaustao') drop(46, 18, C.cyan3);

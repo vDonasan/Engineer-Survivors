@@ -23,6 +23,8 @@ MonoBehaviour:
     - Suporte
     maxLevel: 0
     evolutionOnly: 0
+    exclusive: 0
+    sfx: []
     baseStats: []
     levels: []
     grants: []
