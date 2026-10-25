@@ -20,6 +20,8 @@ $total = (Get-ChildItem $dir -Recurse -File | Measure-Object Length -Sum).Sum / 
 Write-Host ("Publicando {0:N1} MB de {1} em {2}..." -f $total, $Build, $Project)
 
 # Cria o projeto na primeira vez (ignora o erro se ja existir).
-npx --yes $Wrangler pages project create $Project --production-branch main 2>$null
+$ErrorActionPreference = "Continue"
+cmd /c "npx --yes $Wrangler pages project create $Project --production-branch main >nul 2>&1"
+$ErrorActionPreference = "Stop"
 npx --yes $Wrangler pages deploy $dir --project-name $Project --branch main --commit-dirty=true
 exit $LASTEXITCODE

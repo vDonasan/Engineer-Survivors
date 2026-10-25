@@ -181,3 +181,5 @@ Observações:
   (sala N867HJ), anfitrião Giulia evoluída nível 3, cliente Badotti; nova verificação: o cliente recebe tiros, zonas e companheiros
   (Cabazord Master e tempestade visíveis na captura do cliente).
 - **Ainda não testado:** os personagens novos em 2 computadores reais (roteiro acima) e partidas com 3–4 pessoas.
+- **Publicação (2026-10-25):** versão dos dez personagens em https://engineering-survivors.pages.dev; prova de rede na URL pública
+  com Edge (Giulia evoluída × Badotti): **9/9 aprovada**.
