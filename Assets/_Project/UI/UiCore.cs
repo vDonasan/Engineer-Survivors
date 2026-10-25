@@ -151,18 +151,42 @@ namespace ES.UI
         }
     }
 
-    /// <summary>Escurece um quadrante circular (recarga do especial).</summary>
+    /// <summary>
+    /// Recarga do especial: cortina escura proporcional ao tempo restante e segundos.
+    /// (O setor do Painter2D não aparecia na build WebGL; a cortina usa só estilos.)
+    /// </summary>
     public sealed class RadialCooldown : VisualElement
     {
         float _fraction;
+        readonly VisualElement _curtain;
+        readonly Label _seconds;
 
         public RadialCooldown()
         {
             pickingMode = PickingMode.Ignore;
             style.position = Position.Absolute;
             style.left = style.top = style.right = style.bottom = 0;
-            generateVisualContent += Draw;
+            _curtain = new VisualElement { pickingMode = PickingMode.Ignore };
+            _curtain.style.position = Position.Absolute;
+            _curtain.style.left = 0;
+            _curtain.style.right = 0;
+            _curtain.style.top = 0;
+            _curtain.style.height = Length.Percent(0);
+            _curtain.style.backgroundColor = new Color(0.08f, 0.09f, 0.1f, 0.78f);
+            Add(_curtain);
+            _seconds = new Label { pickingMode = PickingMode.Ignore };
+            _seconds.style.position = Position.Absolute;
+            _seconds.style.left = 0;
+            _seconds.style.right = 0;
+            _seconds.style.top = 0;
+            _seconds.style.bottom = 0;
+            _seconds.style.unityTextAlign = TextAnchor.MiddleCenter;
+            _seconds.style.fontSize = 40;
+            _seconds.style.color = new Color(1f, 0.89f, 0.48f);
+            Add(_seconds);
         }
+
+        public void SetSeconds(float seconds) => _seconds.text = seconds > 0.05f ? Mathf.CeilToInt(seconds).ToString() : "";
 
         public float Fraction
         {
@@ -172,29 +196,8 @@ namespace ES.UI
                 value = Mathf.Clamp01(value);
                 if (Mathf.Abs(value - _fraction) < 0.004f && !(value == 0 && _fraction != 0)) return;
                 _fraction = value;
-                MarkDirtyRepaint();
+                _curtain.style.height = Length.Percent(value * 100f);
             }
-        }
-
-        void Draw(MeshGenerationContext mgc)
-        {
-            if (_fraction <= 0f) return;
-            var r = contentRect;
-            var c = r.center;
-            float radius = Mathf.Max(r.width, r.height) * 0.75f;
-            var p = mgc.painter2D;
-            p.fillColor = new Color(0.08f, 0.09f, 0.1f, 0.72f);
-            // Setor desenhado ponto a ponto (o Arc do Painter2D não apareceu na build WebGL).
-            p.BeginPath();
-            p.MoveTo(c);
-            int steps = Mathf.Max(2, Mathf.CeilToInt(48 * _fraction));
-            for (int i = 0; i <= steps; i++)
-            {
-                float a = (-90f + 360f * _fraction * i / steps) * Mathf.Deg2Rad;
-                p.LineTo(c + new Vector2(Mathf.Cos(a), Mathf.Sin(a)) * radius);
-            }
-            p.ClosePath();
-            p.Fill();
         }
     }
 }

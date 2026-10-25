@@ -146,7 +146,7 @@ Memória: heap do wasm 122 MB, heap JS 37 MB (meta ≤ 512 MB). O FPS acima de 6
 
 **Revisão visual** (capturas em `Build/perf/`): menu, HUD (retrato, vida, XP, tempo, habilidades, evoluções 0/2), onda do Apagão,
 cartas de subida de nível com ícone, raridade e tags. Defeito encontrado e corrigido: o escurecimento radial da recarga do especial
-não aparecia na build (Painter2D.Arc); trocado por um setor desenhado ponto a ponto.
+não aparecia na build (desenho vetorial do Painter2D, nem com Arc nem ponto a ponto); trocado por uma cortina escura proporcional + segundos restantes, confirmada na captura da build final (teste `Special_ShowsCooldownOnHud`). Build final: 14,02 MB, Edge 146 FPS com 300 e com 400 inimigos, EditMode 28/28, PlayMode 11/11.
 
 Observações:
 - O Chromium do Playwright não tem o codec AAC (formato que a Unity usa para áudio na Web) e acusa `decodeAudioData`; no Edge

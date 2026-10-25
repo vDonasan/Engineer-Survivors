@@ -206,6 +206,17 @@ namespace ES.Tests
         }
 
         [UnityTest]
+        public IEnumerator Special_ShowsCooldownOnHud()
+        {
+            yield return StartSoloFromMenu();
+            Assert.That(Router.Hud.SpecialFraction, Is.EqualTo(0f));
+            Net.RequestSpecial();
+            yield return new WaitForSecondsRealtime(0.5f);
+            Assert.That(Net.Feed.Players[0].SpecialCooldown, Is.GreaterThan(15f));
+            Assert.That(Router.Hud.SpecialFraction, Is.GreaterThan(0.7f));
+        }
+
+        [UnityTest]
         public IEnumerator Perf_400Enemies_RecordsFrameTime()
         {
             yield return StartSoloFromMenu();

@@ -74,6 +74,8 @@ namespace ES.UI
         }
 
         public string PortraitId => _portraitId;
+        /// <summary>Fração da recarga do especial mostrada (0 = pronto).</summary>
+        public float SpecialFraction => _radial.Fraction;
 
         public override void Tick(float dt)
         {
@@ -108,6 +110,7 @@ namespace ES.UI
                 var special = Ctx.Db.Special(Ctx.Db.Specialization(specIndex).Special);
                 UiText.Image(Q<VisualElement>("img-special"), Ctx.Assets.Sprite("icon_" + special.Def.id));
                 _radial.Fraction = special.Def.cooldown > 0 ? me.SpecialCooldown / special.Def.cooldown : 0f;
+                _radial.SetSeconds(me.SpecialCooldown);
                 _specialKey.text = Ctx.Input.SpecialDisplayName();
             }
 
