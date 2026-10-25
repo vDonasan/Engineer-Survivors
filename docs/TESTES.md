@@ -183,3 +183,6 @@ Observações:
 - **Ainda não testado:** os personagens novos em 2 computadores reais (roteiro acima) e partidas com 3–4 pessoas.
 - **Publicação (2026-10-25):** versão dos dez personagens em https://engineering-survivors.pages.dev; prova de rede na URL pública
   com Edge (Giulia evoluída × Badotti): **9/9 aprovada**.
+- **Publicação (2026-10-25, 2ª):** nova interface (ficha do personagem), cenário em alas e personagens redesenhados (motor
+  de materiais, retratos com 9 emoções) em https://engineering-survivors.pages.dev; prova de rede na URL pública (sala 8DC9K9):
+  **9/9 aprovada**. Testes antes da publicação: simulação 234/234, arte 15/15, Unity EditMode 28/28 e PlayMode 11/11.
