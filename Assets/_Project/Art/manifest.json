@@ -3469,6 +3469,30 @@
    "border": null
   },
   {
+   "id": "enemy_microbo_enxame_flash_0",
+   "category": "Enemies",
+   "file": "Enemies/enemy_microbo_enxame_flash_0.png",
+   "w": 16,
+   "h": 16,
+   "pivot": [
+    8,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "enemy_microbo_enxame_elite_flash_0",
+   "category": "Enemies",
+   "file": "Enemies/enemy_microbo_enxame_elite_flash_0.png",
+   "w": 16,
+   "h": 16,
+   "pivot": [
+    8,
+    2
+   ],
+   "border": null
+  },
+  {
    "id": "enemy_microbo_enxame_1",
    "category": "Enemies",
    "file": "Enemies/enemy_microbo_enxame_1.png",
@@ -3484,6 +3508,30 @@
    "id": "enemy_microbo_enxame_elite_1",
    "category": "Enemies",
    "file": "Enemies/enemy_microbo_enxame_elite_1.png",
+   "w": 16,
+   "h": 16,
+   "pivot": [
+    8,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "enemy_microbo_enxame_flash_1",
+   "category": "Enemies",
+   "file": "Enemies/enemy_microbo_enxame_flash_1.png",
+   "w": 16,
+   "h": 16,
+   "pivot": [
+    8,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "enemy_microbo_enxame_elite_flash_1",
+   "category": "Enemies",
+   "file": "Enemies/enemy_microbo_enxame_elite_flash_1.png",
    "w": 16,
    "h": 16,
    "pivot": [
@@ -3517,6 +3565,30 @@
    "border": null
   },
   {
+   "id": "enemy_prensa_ambulante_flash_0",
+   "category": "Enemies",
+   "file": "Enemies/enemy_prensa_ambulante_flash_0.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    3
+   ],
+   "border": null
+  },
+  {
+   "id": "enemy_prensa_ambulante_elite_flash_0",
+   "category": "Enemies",
+   "file": "Enemies/enemy_prensa_ambulante_elite_flash_0.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    3
+   ],
+   "border": null
+  },
+  {
    "id": "enemy_prensa_ambulante_1",
    "category": "Enemies",
    "file": "Enemies/enemy_prensa_ambulante_1.png",
@@ -3532,6 +3604,30 @@
    "id": "enemy_prensa_ambulante_elite_1",
    "category": "Enemies",
    "file": "Enemies/enemy_prensa_ambulante_elite_1.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    3
+   ],
+   "border": null
+  },
+  {
+   "id": "enemy_prensa_ambulante_flash_1",
+   "category": "Enemies",
+   "file": "Enemies/enemy_prensa_ambulante_flash_1.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    3
+   ],
+   "border": null
+  },
+  {
+   "id": "enemy_prensa_ambulante_elite_flash_1",
+   "category": "Enemies",
+   "file": "Enemies/enemy_prensa_ambulante_elite_flash_1.png",
    "w": 48,
    "h": 48,
    "pivot": [
@@ -3565,6 +3661,30 @@
    "border": null
   },
   {
+   "id": "enemy_torreta_inspecao_flash_0",
+   "category": "Enemies",
+   "file": "Enemies/enemy_torreta_inspecao_flash_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "enemy_torreta_inspecao_elite_flash_0",
+   "category": "Enemies",
+   "file": "Enemies/enemy_torreta_inspecao_elite_flash_0.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
    "id": "enemy_torreta_inspecao_1",
    "category": "Enemies",
    "file": "Enemies/enemy_torreta_inspecao_1.png",
@@ -3580,6 +3700,30 @@
    "id": "enemy_torreta_inspecao_elite_1",
    "category": "Enemies",
    "file": "Enemies/enemy_torreta_inspecao_elite_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "enemy_torreta_inspecao_flash_1",
+   "category": "Enemies",
+   "file": "Enemies/enemy_torreta_inspecao_flash_1.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    1
+   ],
+   "border": null
+  },
+  {
+   "id": "enemy_torreta_inspecao_elite_flash_1",
+   "category": "Enemies",
+   "file": "Enemies/enemy_torreta_inspecao_elite_flash_1.png",
    "w": 32,
    "h": 32,
    "pivot": [
@@ -3924,6 +4068,138 @@
    "pivot": [
     32,
     32
+   ],
+   "border": null
+  },
+  {
+   "id": "fx_digit_0",
+   "category": "Effects",
+   "file": "Effects/fx_digit_0.png",
+   "w": 5,
+   "h": 7,
+   "pivot": [
+    2.5,
+    3.5
+   ],
+   "border": null
+  },
+  {
+   "id": "fx_digit_1",
+   "category": "Effects",
+   "file": "Effects/fx_digit_1.png",
+   "w": 5,
+   "h": 7,
+   "pivot": [
+    2.5,
+    3.5
+   ],
+   "border": null
+  },
+  {
+   "id": "fx_digit_2",
+   "category": "Effects",
+   "file": "Effects/fx_digit_2.png",
+   "w": 5,
+   "h": 7,
+   "pivot": [
+    2.5,
+    3.5
+   ],
+   "border": null
+  },
+  {
+   "id": "fx_digit_3",
+   "category": "Effects",
+   "file": "Effects/fx_digit_3.png",
+   "w": 5,
+   "h": 7,
+   "pivot": [
+    2.5,
+    3.5
+   ],
+   "border": null
+  },
+  {
+   "id": "fx_digit_4",
+   "category": "Effects",
+   "file": "Effects/fx_digit_4.png",
+   "w": 5,
+   "h": 7,
+   "pivot": [
+    2.5,
+    3.5
+   ],
+   "border": null
+  },
+  {
+   "id": "fx_digit_5",
+   "category": "Effects",
+   "file": "Effects/fx_digit_5.png",
+   "w": 5,
+   "h": 7,
+   "pivot": [
+    2.5,
+    3.5
+   ],
+   "border": null
+  },
+  {
+   "id": "fx_digit_6",
+   "category": "Effects",
+   "file": "Effects/fx_digit_6.png",
+   "w": 5,
+   "h": 7,
+   "pivot": [
+    2.5,
+    3.5
+   ],
+   "border": null
+  },
+  {
+   "id": "fx_digit_7",
+   "category": "Effects",
+   "file": "Effects/fx_digit_7.png",
+   "w": 5,
+   "h": 7,
+   "pivot": [
+    2.5,
+    3.5
+   ],
+   "border": null
+  },
+  {
+   "id": "fx_digit_8",
+   "category": "Effects",
+   "file": "Effects/fx_digit_8.png",
+   "w": 5,
+   "h": 7,
+   "pivot": [
+    2.5,
+    3.5
+   ],
+   "border": null
+  },
+  {
+   "id": "fx_digit_9",
+   "category": "Effects",
+   "file": "Effects/fx_digit_9.png",
+   "w": 5,
+   "h": 7,
+   "pivot": [
+    2.5,
+    3.5
+   ],
+   "border": null
+  },
+  {
+   "id": "fx_px",
+   "category": "Effects",
+   "file": "Effects/fx_px.png",
+   "w": 2,
+   "h": 2,
+   "pivot": [
+    1,
+    1
    ],
    "border": null
   },

@@ -109,6 +109,30 @@ test('ícones para todas as habilidades e especiais do conteúdo; inimigos com e
   }
 });
 
+test('dígitos 0–9 e pixel 2×2 para números de dano, arcos e anéis', () => {
+  for (let d = 0; d <= 9; d++) {
+    const s = byId.get(`fx_digit_${d}`);
+    assert.ok(s, `dígito ${d}`);
+    assert.equal(s.w, 5); assert.equal(s.h, 7);
+  }
+  const px = byId.get('fx_px');
+  assert.ok(px); assert.equal(px.w, 2); assert.equal(px.h, 2);
+  const a = img('fx_digit_8'), b = img('fx_digit_0');
+  assert.notDeepEqual([...a.data], [...b.data], '8 e 0 diferentes');
+});
+
+test('inimigos têm silhueta branca (piscar ao levar dano) com a mesma máscara', () => {
+  const content = JSON.parse(readFileSync(join(root, 'Assets', '_Project', 'Content', 'Data', 'sp1-content.json'), 'utf8'));
+  for (const e of content.enemies) for (const v of ['', 'elite_']) for (const f of [0, 1]) {
+    const src = img(`enemy_${e.id}_${v}${f}`), fl = img(`enemy_${e.id}_${v}flash_${f}`);
+    assert.equal(fl.w, src.w); assert.equal(fl.h, src.h);
+    for (let i = 3; i < src.data.length; i += 4) {
+      assert.equal(fl.data[i], src.data[i], `máscara ${e.id}`);
+      if (fl.data[i]) assert.ok(fl.data[i - 3] > 220 && fl.data[i - 2] > 220 && fl.data[i - 1] > 220, `branco ${e.id}`);
+    }
+  }
+});
+
 test('ANIMACOES.md documenta personagens e animações', () => {
   const doc = readFileSync(join(artDir, 'ANIMACOES.md'), 'utf8');
   for (const spec of SPECS) assert.ok(doc.includes(spec), spec);

@@ -1,6 +1,6 @@
 // Tiles (32×32), objetos do cenário, efeitos, armas e interface em pixel art.
 import { C } from './palette.mjs';
-import { Px, rect, box, line, disc, ellipse, circleLine, stamp, rng } from './draw.mjs';
+import { Px, rect, box, line, disc, ellipse, circleLine, stamp, rng, outlineAround } from './draw.mjs';
 
 function floor(variant) {
   const p = new Px(32, 32), r = rng(100 + variant);
@@ -98,6 +98,20 @@ export function worldSprites() {
   fx.push(s('fx_shadow', 'Effects', shadow));
   const ring = new Px(64, 64); circleLine(ring, 31.5, 31.5, 30, W); circleLine(ring, 31.5, 31.5, 29, C.cyan3);
   fx.push(s('fx_ring', 'Effects', ring));
+
+  // dígitos 3×5 com contorno de 1 px (números de dano) e pixel 2×2 (arcos, anéis, ondas)
+  const DIGITS = {
+    0: ['WWW', 'W.W', 'W.W', 'W.W', 'WWW'], 1: ['.W.', 'WW.', '.W.', '.W.', 'WWW'],
+    2: ['WWW', '..W', 'WWW', 'W..', 'WWW'], 3: ['WWW', '..W', '.WW', '..W', 'WWW'],
+    4: ['W.W', 'W.W', 'WWW', '..W', '..W'], 5: ['WWW', 'W..', 'WWW', '..W', 'WWW'],
+    6: ['WWW', 'W..', 'WWW', 'W.W', 'WWW'], 7: ['WWW', '..W', '.W.', '.W.', '.W.'],
+    8: ['WWW', 'W.W', 'WWW', 'W.W', 'WWW'], 9: ['WWW', 'W.W', 'WWW', '..W', 'WWW'],
+  };
+  for (let d = 0; d <= 9; d++) {
+    const p = outlineAround(stamp(new Px(5, 7), DIGITS[d], { W }, 1, 1), C.outline);
+    fx.push(s(`fx_digit_${d}`, 'Effects', p));
+  }
+  fx.push(s('fx_px', 'Effects', stamp(new Px(2, 2), ['WW', 'WW'], { W })));
 
   // armas visíveis
   const arm = new Px(16, 16); disc(arm, 7.5, 7.5, 5, C.gray4); for (const [x, y] of [[7, 0], [7, 14], [0, 7], [14, 7]]) box(arm, x - 1, y - 1, 3, 3, C.gray5); disc(arm, 7.5, 7.5, 1.6, C.orange2, null);

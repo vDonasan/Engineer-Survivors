@@ -59,7 +59,11 @@ export function enemySprites() {
       const p = fn(f);
       const pivot = [p.w / 2, Math.max(1, p.h - 1 - p.bottomRow() + 1)];
       out.push({ id: `enemy_${id}_${f}`, category: 'Enemies', w: p.w, h: p.h, pivot, px: p });
-      out.push({ id: `enemy_${id}_elite_${f}`, category: 'Enemies', w: p.w, h: p.h, pivot, px: elite(p) });
+      const e = elite(p);
+      out.push({ id: `enemy_${id}_elite_${f}`, category: 'Enemies', w: p.w, h: p.h, pivot, px: e });
+      // silhuetas brancas para o piscar ao levar dano
+      out.push({ id: `enemy_${id}_flash_${f}`, category: 'Enemies', w: p.w, h: p.h, pivot, px: p.map(() => C.white) });
+      out.push({ id: `enemy_${id}_elite_flash_${f}`, category: 'Enemies', w: p.w, h: p.h, pivot, px: e.map(() => C.white) });
     }
   return out;
 }
