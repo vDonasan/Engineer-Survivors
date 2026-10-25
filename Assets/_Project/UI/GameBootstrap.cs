@@ -204,7 +204,7 @@ namespace ES.UI
             var f = Net.Feed;
             if (f == null) return;
             var sb = new StringBuilder();
-            sb.Append(FormattableString.Invariant($"STATE mode={Net.Mode} slot={Net.LocalSlot} tick={f.Tick} t={f.Elapsed:0.0} enemies={f.Tracks.EnemyCount} allies={f.Tracks.AllyCount} phase={f.Phase} fps={Context.Perf.Fps:0} bosses={f.Bosses.Count} hazards={f.Hazards.Count} defeated={f.BossesDefeated} infinite={f.Infinite}"));
+            sb.Append(FormattableString.Invariant($"STATE mode={Net.Mode} slot={Net.LocalSlot} tick={f.Tick} t={f.Elapsed:0.0} enemies={f.Tracks.EnemyCount} allies={f.Tracks.AllyCount} phase={f.Phase} fps={Context.Perf.Fps:0} bosses={f.Bosses.Count} hazards={f.Hazards.Count} defeated={f.BossesDefeated} infinite={f.Infinite} events={f.Events.Count} look0={f.Players[0].Look} acc0={(f.Loadouts?.Slots[0]?.Abilities.Count ?? 0)}"));
             for (int s = 0; s < PlayerStore.MaxSlots; s++)
                 if (f.Players[s].Present) sb.Append(FormattableString.Invariant($" p{s}=({f.Players[s].Pos.X:0.0};{f.Players[s].Pos.Y:0.0}) hp={f.Players[s].Hp:0} lv={f.Players[s].Level}"));
             foreach (var kv in f.Bosses)

@@ -68,7 +68,10 @@ try {
   // PROOF_BOSS=1: o host adianta o relógio para 08:55 com bosses fracos e jogadores invulneráveis
   const bossMode = process.env.PROOF_BOSS === '1';
   const bossQ = bossMode ? '&t=535&god=1&autopick=1&bosshp=0.06' : '';
-  await host.goto(`${base}/?mode=host&autostart=2&name=Host&spec=giulia&log=1&evolve=3${bossQ}`);
+  // PROOF_EVENTS=1: o host dispara Jalapeño e Bolha Social e equipa itens visuais (o cliente precisa ver tudo)
+  const eventsMode = process.env.PROOF_EVENTS === '1';
+  const evtQ = eventsMode ? '&god=1&autopick=1&evt=jalapeno,bolha_social&itens=chapeu_japones,camiseta_contrario,tequila' : '';
+  await host.goto(`${base}/?mode=host&autostart=2&name=Host&spec=giulia&log=1&evolve=3${bossQ}${evtQ}`);
   const code = await waitFor(hl, /CODE=([A-Z0-9]+)/, 120000);
   report.checks.roomCreated = !!code;
   if (!code) throw new Error('host não criou a sala');
@@ -121,6 +124,12 @@ try {
     await sleep(3000);
     await client.screenshot({ path: join(outDir, 'boss-client-infinito.png') });
     report.checks.bothInfinite = /phase=Running.*infinite=True/.test(lastLine(hl)) && /phase=Running.*infinite=True/.test(lastLine(cl));
+  }
+  if (eventsMode) {
+    // o cliente recebe o mesmo evento, a aparência do host (Jalapeño = 4) e os itens do host
+    report.checks.clientSeesEvent = cl.some((l) => /events=[1-9]/.test(l));
+    report.checks.clientSeesHostLook = cl.some((l) => /look0=([4-9]|[1-9]\d+)/.test(l) && (Number(/look0=(\d+)/.exec(l)[1]) & 4) !== 0);
+    report.checks.clientSeesHostItems = cl.some((l) => /acc0=([4-9]|\d\d)/.test(l));
   }
   report.ok = Object.values(report.checks).every(Boolean);
   writeFileSync(join(outDir, 'host-log.txt'), hl.join('\n'));
