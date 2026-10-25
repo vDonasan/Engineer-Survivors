@@ -122,6 +122,7 @@ namespace ES.UI
                 if (_skipTo > 0)
                 {
                     dw.Elapsed = _skipTo;
+                    dw.Tick = (int)Math.Round(_skipTo * dw.Rules.tickRate); // o cliente deriva o relógio do tick
                     dw.NextSurgeAt = (float)Math.Ceiling(_skipTo / 60f) * 60f;
                     _skipTo = 0;
                 }

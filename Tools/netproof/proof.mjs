@@ -65,13 +65,16 @@ try {
   watch(host, 'HOST  ', hl);
   watch(client, 'CLIENT', cl);
 
-  await host.goto(`${base}/?mode=host&autostart=2&name=Host&spec=giulia&log=1&evolve=3`);
+  // PROOF_BOSS=1: o host adianta o relógio para 08:55 com bosses fracos e jogadores invulneráveis
+  const bossMode = process.env.PROOF_BOSS === '1';
+  const bossQ = bossMode ? '&t=535&god=1&autopick=1&bosshp=0.06' : '';
+  await host.goto(`${base}/?mode=host&autostart=2&name=Host&spec=giulia&log=1&evolve=3${bossQ}`);
   const code = await waitFor(hl, /CODE=([A-Z0-9]+)/, 120000);
   report.checks.roomCreated = !!code;
   if (!code) throw new Error('host não criou a sala');
   log('código da sala:', code[1]);
 
-  await client.goto(`${base}/?mode=join&code=${code[1]}&name=Cliente&spec=badotti&log=1`);
+  await client.goto(`${base}/?mode=join&code=${code[1]}&name=Cliente&spec=badotti&log=1${bossMode ? '&autopick=1' : ''}`);
   const started = await waitFor(hl, /START players=(\d)/, 120000);
   report.checks.matchStarted = !!started;
   if (!started) throw new Error('partida não iniciou com 2 jogadores');
@@ -100,6 +103,25 @@ try {
   // tiros, zonas e companheiros chegam ao cliente pelo snapshot (Master do Badotti, armas da Giulia)
   report.checks.clientSeesAllies = cs.some((s) => s.allies >= 2);
   report.checks.noPageErrors = ![...hl, ...cl].some((l) => l.startsWith('PAGEERROR'));
+  if (bossMode) {
+    // bosses: o cliente vê a chegada e a fúria; a vitória e o Modo Infinito valem para os dois
+    const lastLine = (lines) => [...lines].reverse().find((l) => l.includes('STATE')) || '';
+    const until = async (fn, ms) => { const end = Date.now() + ms; while (Date.now() < end) { if (fn()) return true; await sleep(1000); } return false; };
+    await until(() => /phase=Victory/.test(lastLine(hl)), 150000);
+    await sleep(3500);
+    await host.screenshot({ path: join(outDir, 'boss-host-vitoria.png') });
+    await client.screenshot({ path: join(outDir, 'boss-client-vitoria.png') });
+    report.checks.clientSeesBoss = cl.some((l) => /bosses=[1-9]/.test(l));
+    report.checks.clientSeesBravo = cl.some((l) => l.includes('/BRAVO'));
+    report.checks.bothVictory = /phase=Victory/.test(lastLine(hl)) && /phase=Victory/.test(lastLine(cl));
+    const [ix, iy] = (process.env.PROOF_INFINITE_CLICK || '480,422').split(',').map(Number); // botão na janela 960×600
+    await host.mouse.move(ix, iy); await sleep(300);
+    await host.mouse.down(); await sleep(80); await host.mouse.up();
+    await until(() => /infinite=True.*|phase=Running.*infinite=True/.test(lastLine(cl)) && /phase=Running/.test(lastLine(cl)), 20000);
+    await sleep(3000);
+    await client.screenshot({ path: join(outDir, 'boss-client-infinito.png') });
+    report.checks.bothInfinite = /phase=Running.*infinite=True/.test(lastLine(hl)) && /phase=Running.*infinite=True/.test(lastLine(cl));
+  }
   report.ok = Object.values(report.checks).every(Boolean);
   writeFileSync(join(outDir, 'host-log.txt'), hl.join('\n'));
   writeFileSync(join(outDir, 'client-log.txt'), cl.join('\n'));
