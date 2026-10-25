@@ -12,6 +12,7 @@ namespace ES.GameEditor
         public const string AssetPath = "Assets/_Project/Game/GameAssets.asset";
         public const string ArtDir = "Assets/_Project/Art";
         public const string AudioDir = "Assets/_Project/Audio";
+        public const string SelectionDir = "Assets/_Project/UI/Selection";
         public const string FontPath = "Assets/_Project/UI/Fonts/VT323-Regular.ttf";
         public const string StringsPath = "Assets/_Project/UI/Strings/pt-BR.json";
 
@@ -36,6 +37,20 @@ namespace ES.GameEditor
                 var sprite = AssetDatabase.LoadAssetAtPath<Sprite>($"{ArtDir}/{s.file}");
                 if (sprite == null) { missing++; Debug.LogError($"[ES] Sprite não importado: {s.file}"); continue; }
                 ga.sprites.Add(new GameAssets.SpriteEntry { id = s.id, sprite = sprite });
+            }
+            // retratos da tela de escolha (imagens fornecidas pelo autor)
+            foreach (var path in Directory.GetFiles(SelectionDir, "*.png"))
+            {
+                var p = path.Replace('\\', '/');
+                if (AssetImporter.GetAtPath(p) is TextureImporter ti && ti.textureType != TextureImporterType.Sprite)
+                {
+                    ti.textureType = TextureImporterType.Sprite;
+                    ti.spriteImportMode = SpriteImportMode.Single;
+                    ti.mipmapEnabled = false;
+                    ti.SaveAndReimport();
+                }
+                var sprite = AssetDatabase.LoadAssetAtPath<Sprite>(p);
+                if (sprite != null) ga.sprites.Add(new GameAssets.SpriteEntry { id = Path.GetFileNameWithoutExtension(p), sprite = sprite });
             }
             ga.clips.Clear();
             foreach (var path in Directory.GetFiles(AudioDir, "*.wav", SearchOption.AllDirectories))

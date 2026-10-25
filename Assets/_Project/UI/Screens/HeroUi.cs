@@ -60,7 +60,7 @@ namespace ES.UI
                 var portrait = new VisualElement();
                 portrait.AddToClassList("portrait");
                 portrait.pickingMode = PickingMode.Ignore;
-                UiText.Image(portrait, ctx.Assets.Sprite($"portrait_{id}_determinacao"));
+                UiText.Image(portrait, SelectPortrait(ctx.Assets, id));
                 b.Add(portrait);
                 UiText.Line(b, spec.Def.name, "spec-name").pickingMode = PickingMode.Ignore;
                 if (!compact) UiText.Line(b, ShortEngineering(spec.Def.engineering), "spec-eng").pickingMode = PickingMode.Ignore;
@@ -69,6 +69,9 @@ namespace ES.UI
             }
             return map;
         }
+
+        /// <summary>Retrato da tela de escolha; sem imagem própria, usa o retrato do jogo.</summary>
+        public static Sprite SelectPortrait(GameAssets assets, string id) => assets.Sprite($"select_{id}") ?? assets.Sprite($"portrait_{id}_determinacao");
 
         public static string ShortEngineering(string e) => string.IsNullOrEmpty(e) ? "" : e.Replace("Engenharia da ", "").Replace("Engenharia ", "");
 
@@ -159,7 +162,7 @@ namespace ES.UI
             _onChoose = onChoose;
             _choose.style.display = onChoose != null ? DisplayStyle.Flex : DisplayStyle.None;
             _choose.text = Strings.Format("ficha_escolher", spec.Def.name);
-            UiText.Image(_portrait, _ctx.Assets.Sprite($"portrait_{id}_determinacao"));
+            UiText.Image(_portrait, SpecCards.SelectPortrait(_ctx.Assets, id));
             _walk.Play(_ctx.Assets, id, "walk", "down", 8);
             _name.text = spec.Def.name;
             _eng.text = spec.Def.engineering ?? "";
