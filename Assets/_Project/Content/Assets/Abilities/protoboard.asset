@@ -1,0 +1,92 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 743fe4cf80f19db468824bd5de5da40a, type: 3}
+  m_Name: protoboard
+  m_EditorClassIdentifier: ES.Content::ES.Content.AbilityAsset
+  def:
+    id: protoboard
+    name: Protoboard
+    description: "Proj\xE9teis tecnol\xF3gicos mais r\xE1pidos e armas eletr\xF4nicas/de
+      computa\xE7\xE3o atacando mais r\xE1pido."
+    kind: component
+    rarity: incomum
+    behavior: item_protoboard
+    tags:
+    - Eletronica
+    maxLevel: 4
+    evolutionOnly: 0
+    exclusive: 0
+    sfx:
+    - arco
+    baseStats:
+    - stat: Damage
+      value: 8
+    - stat: Area
+      value: 1
+    - stat: Duration
+      value: 1
+    levels:
+    - add: []
+      mult: []
+      text: "+5% de velocidade de ataque tecnol\xF3gico"
+    - add: []
+      mult: []
+      text: "Acertos de armas el\xE9tricas: 10% de chance de soltar uma descarga"
+    - add: []
+      mult: []
+      text: "A descarga salta para at\xE9 2 inimigos pr\xF3ximos (\u221230% de dano
+        por salto)"
+    grants:
+    - stat: ProjectileSpeed
+      op: mult
+      scope: tag:Eletronica
+      value: 0.1
+      perLevel:
+      - 0.1
+      - 0.1
+      - 0.1
+      - 0.1
+    - stat: ProjectileSpeed
+      op: mult
+      scope: tag:Software
+      value: 0.1
+      perLevel:
+      - 0.1
+      - 0.1
+      - 0.1
+      - 0.1
+    - stat: Cooldown
+      op: mult
+      scope: tag:Eletronica
+      value: -0.08
+      perLevel:
+      - -0.08
+      - -0.13
+      - -0.13
+      - -0.13
+    - stat: Cooldown
+      op: mult
+      scope: tag:Software
+      value: -0.08
+      perLevel:
+      - -0.08
+      - -0.13
+      - -0.13
+      - -0.13
+    parameters:
+    - key: chance
+      value: 0.1
+    - key: range
+      value: 3
+    - key: internalCooldown
+      value: 0.12
+  icon: {fileID: 21300000, guid: 629a17199eb5bbd459ef3490a56044cb, type: 3}

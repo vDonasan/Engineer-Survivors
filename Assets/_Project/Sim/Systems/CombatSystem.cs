@@ -18,6 +18,7 @@ namespace ES.Sim
             if (w.Balance.AbilityDamage > 0) amount *= w.Balance.AbilityDamage;
 
             w.Stats.AddDamage(sourcePlayer, abilityIndex, Math.Min(amount, e.Hp[i]));
+            if (sourcePlayer >= 0 && sourcePlayer < PlayerStore.MaxSlots && abilityIndex >= 0) ItemHooks.OnEnemyHit(w, sourcePlayer, abilityIndex, i);
             e.Hp[i] -= amount;
             e.FlashUntil[i] = w.Elapsed + FlashSeconds;
             if (knockback > 0)
@@ -106,7 +107,22 @@ namespace ES.Sim
             var p = w.Players.Slots[slot];
             if (p == null || !p.IsActive || w.Elapsed < p.InvulnUntil || amount <= 0) return;
 
+            float dodge = Math.Min(0.6f, p.Stats.Get(StatId.Dodge));
+            if (dodge > 0 && w.Rng.NextFloat() < dodge)
+            {
+                p.InvulnUntil = w.Elapsed + w.Rules.hitInvuln * 0.5f;
+                w.Events.AddCosmetic(new CosmeticEvent { Kind = CosmeticKind.Burst, A = slot, B = (int)FxStyle.Dodge, X = p.Pos.X, Y = p.Pos.Y, Value = 0.7f });
+                ItemHooks.OnDodge(w, slot);
+                return;
+            }
             float final = Math.Max(1f, amount - p.Stats.Get(StatId.Armor)) * p.Stats.Get(StatId.DamageTaken);
+            if (p.Shield > 0)
+            {
+                float absorbed = Math.Min(p.Shield, final);
+                p.Shield -= absorbed;
+                final -= absorbed;
+                if (final <= 0) { p.InvulnUntil = w.Elapsed + w.Rules.hitInvuln; return; }
+            }
             w.Stats.DamageTaken[slot] += Math.Min(final, p.Hp);
             p.Hp -= final;
             p.InvulnUntil = w.Elapsed + w.Rules.hitInvuln;

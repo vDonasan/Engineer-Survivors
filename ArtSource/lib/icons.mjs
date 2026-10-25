@@ -3,7 +3,7 @@ import { C } from './palette.mjs';
 import { Px, rect, box, line, disc, ellipse, circleLine, stamp } from './draw.mjs';
 import { iconArt } from './kitart.mjs';
 
-const RARITY = { comum: C.gray5, incomum: C.cyan2, raro: C.amber };
+const RARITY = { comum: C.gray5, incomum: C.cyan2, raro: C.amber, reliquia: C.magenta };
 
 function frame(rarity) {
   const p = new Px(32, 32);
@@ -62,6 +62,25 @@ const SYMBOL = {
   kit_arduino: (p) => { box(p, 5, 8, 22, 16, C.cyan1); for (let i = 0; i < 8; i++) { p.set(8 + i * 2, 9, C.gray5); p.set(8 + i * 2, 22, C.gray5); } box(p, 12, 12, 8, 6, C.black); disc(p, 9, 19, 1, C.red2, null); },
   cabo_hdmi: (p) => { box(p, 5, 12, 10, 8, C.gray3); rect(p, 7, 14, 6, 4, C.black); line(p, 15, 16, 27, 16, C.black); line(p, 15, 17, 27, 17, C.gray2); },
   megafone: (p) => { stamp(p, ['......OO', '....OOYO', 'OOOOYYYO', 'OGGOYYYO', 'OGGOYYYO', 'OOOOYYYO', '....OOYO', '......OO'], { O: C.outline, Y: C.orange2, G: C.gray4 }, 9, 12); line(p, 21, 11, 24, 8, C.white); line(p, 22, 16, 26, 16, C.white); line(p, 21, 21, 24, 24, C.white); },
+  // itens
+  protoboard: (p) => { box(p, 4, 8, 24, 16, C.offwhite, C.gray4); for (let y = 11; y < 22; y += 3) for (let x = 7; x < 26; x += 3) p.set(x, y, C.gray3); line(p, 7, 11, 16, 11, C.red2); line(p, 16, 11, 16, 17, C.red2); line(p, 10, 20, 25, 20, C.sky1); box(p, 18, 13, 6, 4, C.black); p.set(25, 14, C.yellow3); },
+  protoboard_experimental: (p) => { box(p, 4, 8, 24, 16, C.offwhite, C.gray4); line(p, 6, 11, 26, 21, C.cyan2); line(p, 6, 21, 26, 11, C.cyan2); for (const [x, y] of [[6, 11], [26, 21], [6, 21], [26, 11], [16, 16]]) disc(p, x, y, 1.5, C.yellow3, null); },
+  cenoura_podre: (p) => { stamp(p, ['..........GG..', '.........GGG..', '..OOOOOOOOGG..', '.ORrRRrRRrO...', 'ORrRrRRrROO...', '.OrRRrRROO....', '..OOOOOO......'], { O: C.outline, R: '#c46a2a', r: '#7a5a2a', G: '#5a7a2a' }, 8, 11); for (const [x, y] of [[6, 8], [9, 6], [24, 22]]) disc(p, x, y, 2, '#9ad03a', null); },
+  hortalica_desgraca: (p) => { ellipse(p, 16, 16, 12, 9, '#9ad03a', '#4a6a1a'); stamp(p, ['.....GG', '.OOOOOG', 'ORrRRrO', '.OOOOO.'], { O: C.outline, R: '#c46a2a', r: '#7a5a2a', G: '#5a7a2a' }, 12, 13); },
+  iogurte_80: (p) => { box(p, 9, 10, 14, 16, C.white, C.gray4); rect(p, 8, 8, 16, 3, C.pink2); rect(p, 10, 15, 12, 6, C.sky2); stamp(p, ['WWW.WWW', 'W.W.W.W', 'WWW.W.W', 'W.W.W.W', 'WWW.WWW'], { W: C.outline }, 12, 15); },
+  dieta_milagrosa: (p) => { box(p, 9, 10, 14, 16, C.white, C.gray4); rect(p, 8, 8, 16, 3, C.pink2); rect(p, 10, 15, 12, 6, C.sky2); for (const [x, y] of [[5, 7], [26, 9], [27, 22], [4, 20]]) stamp(p, ['.Y.', 'YYY', '.Y.'], { Y: C.yellow3 }, x - 1, y - 1); },
+  motor_astra: (p) => { box(p, 6, 10, 20, 14, C.gray3); for (let x = 8; x < 24; x += 4) box(p, x, 7, 3, 4, C.gray4); box(p, 11, 14, 10, 6, C.gray1); rect(p, 13, 16, 6, 2, C.red2); box(p, 25, 18, 4, 3, C.gray4); p.set(29, 16, C.gray5); p.set(30, 14, C.gray4); },
+  astra_alta_rotacao: (p) => { box(p, 6, 10, 20, 14, C.gray3); box(p, 11, 14, 10, 6, C.gray1); rect(p, 13, 16, 6, 2, C.cyan2); stamp(p, ['.Y.', 'YRY', 'RRR'], { Y: C.yellow3, R: C.red2 }, 26, 19); circleLine(p, 16, 17, 14, C.yellow2); },
+  cachorro_quente: (p) => iconArt(p, ['hotdog']),
+  cao_turbo: (p) => iconArt(p, ['hotdogturbo']),
+  camiseta_contrario: (p) => { stamp(p, ['..OOO..OOO..', '.OSSSOOSSSO.', 'OSSSSSSSSSSO', 'OSSOSSSSOSSO', '.OOSSSSSSOO.', '..OSSSSSSO..', '..OSSWWSSO..', '..OSSWWSSO..', '..OSSSSSSO..', '..OOOOOOOO..'], { O: C.outline, S: C.sky1, W: C.white }, 10, 9); line(p, 11, 12, 13, 14, C.white); line(p, 21, 12, 19, 14, C.white); },
+  moda_incompreensivel: (p) => { stamp(p, ['..OOO..OOO..', '.OSSSOOSSSO.', 'OSSSSSSSSSSO', 'OSSOSSSSOSSO', '.OOSSSSSSOO.', '..OSSSSSSO..', '..OSSWWSSO..', '..OSSWWSSO..', '..OSSSSSSO..', '..OOOOOOOO..'], { O: C.outline, S: C.sky1, W: C.white }, 10, 9); circleLine(p, 16, 15, 13, C.cyan3); },
+  mamao: (p) => iconArt(p, ['papaya']),
+  mamao_supremo: (p) => { iconArt(p, ['papaya']); circleLine(p, 16, 16, 13, C.green2); },
+  tequila: (p) => { box(p, 13, 4, 6, 6, C.gray4); box(p, 10, 9, 12, 19, '#e8c46a', C.outline); rect(p, 12, 15, 8, 6, C.red2); rect(p, 13, 17, 6, 2, C.yellow3); p.set(12, 11, C.white); },
+  fiesta_caotica: (p) => { box(p, 13, 4, 6, 6, C.gray4); box(p, 10, 9, 12, 19, '#e8c46a', C.outline); rect(p, 12, 15, 8, 6, C.red2); for (const [x, y, c] of [[5, 8, C.magenta], [26, 6, C.cyan2], [27, 20, C.yellow3], [4, 22, C.green2], [6, 14, C.yellow3]]) { p.set(x, y, c); p.set(x + 1, y + 1, c); } },
+  chapeu_japones: (p) => { for (let y = 0; y < 9; y++) { const w = 4 + y * 3; rect(p, 16 - w / 2, 9 + y, w, 1, y % 2 ? '#c9a45c' : '#b08a42'); } rect(p, 3, 18, 26, 1, C.outline); line(p, 16, 9, 16, 17, '#7a5a2a'); line(p, 10, 19, 14, 24, C.rust1); line(p, 22, 19, 18, 24, C.rust1); },
+  mestre_projeteis: (p) => { for (let y = 0; y < 9; y++) { const w = 4 + y * 3; rect(p, 16 - w / 2, 7 + y, w, 1, y % 2 ? '#c9a45c' : '#b08a42'); } rect(p, 3, 16, 26, 1, C.outline); for (const y of [21, 25]) { line(p, 5, y, 24, y, C.cyan2); p.set(25, y, C.white); p.set(24, y - 1, C.white); p.set(24, y + 1, C.white); } },
   overclock: (p) => { box(p, 7, 7, 18, 18, C.gray2); rect(p, 9, 9, 14, 14, C.green1); for (let i = 0; i < 5; i++) { p.set(4, 9 + i * 3, C.gray5); p.set(27, 9 + i * 3, C.gray5); p.set(9 + i * 3, 4, C.gray5); p.set(9 + i * 3, 27, C.gray5); } stamp(p, ['..YY', '.YY.', 'YYYY', '.YY.', 'YY..'], { Y: C.yellow3 }, 14, 13); },
 };
 

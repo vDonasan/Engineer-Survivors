@@ -29,5 +29,6 @@ MonoBehaviour:
       op: mult
       scope: self
       value: 0.05
+      perLevel: []
     advancedAffinityText: "+5% de dano numa arma afim ao lev\xE1-la ao n\xEDvel m\xE1ximo."
   portrait: {fileID: 21300000, guid: 944a69b2878137a40b78cfc4ce77d936, type: 3}

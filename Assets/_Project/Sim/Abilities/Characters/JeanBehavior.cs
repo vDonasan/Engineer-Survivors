@@ -10,7 +10,7 @@ namespace ES.Sim
     /// </summary>
     public sealed class JeanBehavior : CharacterWeapon
     {
-        const int TThrow = 0, TCarHit = 1, TWide = 2, TWideLeft = 3, TLap = 4, TLapLeft = 5;
+        const int TThrow = 0, TCarHit = 1, TWide = 2, TWideLeft = 3, TLap = 4, TLapLeft = 5, TTrail = 6;
         const int CSide = 0;
         const byte VThrown = 0, VWalk = 3;
         const float CarPeriod = 1.6f, CarHitRadius = 0.75f;
@@ -93,7 +93,16 @@ namespace ES.Sim
                 c.Sound(2);
             }
 
-            float speedMult = c.Evo >= 2 ? 1.2f : 1f;
+            // sinergia com o Motor do Astra evoluído: drift acelerado deixando rastro de dano
+            int astra = c.W.Db.AbilityIndex("astra_alta_rotacao");
+            bool turbo = false;
+            if (astra >= 0) foreach (var ab in c.P.Abilities) if (ab.AbilityIndex == astra) { turbo = true; break; }
+            float speedMult = (c.Evo >= 2 ? 1.2f : 1f) * (turbo ? 1.5f : 1f);
+            if (turbo && c.Due(TTrail))
+            {
+                c.W.Zones.Spawn(new Zone { Owner = (byte)c.Slot, Ability = (short)c.Ability, Sprite = AllySprite.ZoneHeat, Pos = car.Pos, Radius = 0.7f, Life = 1.2f, Interval = 0.4f, Damage = c.Dmg(0.4f), Follow = -1 });
+                c.Reset(TTrail, 0.2f);
+            }
             float omega = (float)(Math.PI * 2 / CarPeriod) * speedMult * (st.LapActive ? 4.5f : 1f);
             float scale = st.LapActive ? 1.35f : st.WideActive ? 1.6f : 1f;
             st.Angle = (st.Angle + omega * dt) % (float)(Math.PI * 2);

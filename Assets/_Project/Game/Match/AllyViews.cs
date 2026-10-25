@@ -16,12 +16,13 @@ namespace ES.Game
             AllySprite.Laser, AllySprite.Briefcase, AllySprite.Expression, AllySprite.Sashimi, AllySprite.Resistor, AllySprite.Transistor,
             AllySprite.ScopeWave, AllySprite.Dorito, AllySprite.Pill, AllySprite.Syringe, AllySprite.SyringeSpecial, AllySprite.Phone,
             AllySprite.Insulin, AllySprite.SoundWave, AllySprite.Bottle, AllySprite.Jabuti, AllySprite.JabutiWalk, AllySprite.MasterBolt,
-            AllySprite.Computer,
+            AllySprite.Computer, AllySprite.Carrot, AllySprite.ScrapPart,
         };
 
         static readonly HashSet<AllySprite> Companions = new HashSet<AllySprite>
         {
             AllySprite.BotShooter, AllySprite.BotBrawler, AllySprite.BotDasher, AllySprite.BotMaster, AllySprite.Car, AllySprite.TireOrbit,
+            AllySprite.HotDog, AllySprite.HotDogTurbo, AllySprite.Papaya,
         };
 
         struct Mark { public Vector2 Pos; public float Born; public bool Smoke; }
@@ -79,6 +80,12 @@ namespace ES.Game
                     case AllySprite.ZoneStorm:
                         Zone(pos, a.Param / 16f, a.Sprite == AllySprite.ZoneStorm, now, effects);
                         continue;
+                    case AllySprite.ZoneStink:
+                    case AllySprite.ZoneHeat:
+                    case AllySprite.ZoneHeal:
+                    case AllySprite.Afterimage:
+                        Cloud(a.Sprite, pos, a.Param / 16f, now, effects, frames);
+                        continue;
                 }
                 if (frames.Length == 0) continue;
                 int f = frames.Length == 1 ? 0 : (int)(now * 8 + a.Id) % frames.Length;
@@ -91,7 +98,7 @@ namespace ES.Game
                     Skids(a.Id, pos, now, effects);
                 }
                 else if (Rotating.Contains(a.Sprite)) rot = AngleDeg(a.Param);
-                else if (a.Sprite >= AllySprite.BotShooter && a.Sprite <= AllySprite.BotMaster)
+                else if ((a.Sprite >= AllySprite.BotShooter && a.Sprite <= AllySprite.BotMaster) || a.Sprite == AllySprite.HotDog || a.Sprite == AllySprite.HotDogTurbo)
                 {
                     float deg = AngleDeg(a.Param);
                     flip = deg > 90f && deg < 270f;
@@ -132,6 +139,35 @@ namespace ES.Game
                 float a = (float)rng.NextDouble() * Mathf.PI * 2f, d = (float)rng.NextDouble() * radius;
                 _stamps.Add(_px, Layers.Snap(center + new Vector2(Mathf.Cos(a), Mathf.Sin(a)) * d), storm ? new Color(1f, 0.9f, 0.5f) : Color.white, Layers.Fx);
             }
+        }
+
+        /// <summary>Nuvem de mau cheiro, rastro de calor, campo de cura e imagem residual: anel do tamanho real + sprite.</summary>
+        void Cloud(AllySprite kind, Vector2 center, float radius, float now, EffectsLevel effects, Sprite[] frames)
+        {
+            var col = kind == AllySprite.ZoneStink ? new Color(0.6f, 0.82f, 0.25f, 0.65f)
+                : kind == AllySprite.ZoneHeat ? new Color(1f, 0.48f, 0.1f, 0.6f)
+                : kind == AllySprite.ZoneHeal ? new Color(0.3f, 1f, 0.53f, 0.45f)
+                : new Color(0.78f, 0.94f, 1f, 0.55f);
+            if (kind != AllySprite.ZoneHeat)
+            {
+                int n = Mathf.Clamp(Mathf.RoundToInt(Mathf.PI * 2f * radius * 32f / 5f), 8, 240);
+                float phase = effects == EffectsLevel.Low ? 0 : now * 0.8f;
+                for (int i = 0; i < n; i++)
+                {
+                    float ang = phase + Mathf.PI * 2f * i / n;
+                    _stamps.Add(_px, Layers.Snap(center + new Vector2(Mathf.Cos(ang), Mathf.Sin(ang)) * radius), col, Layers.Shadow + 3);
+                }
+            }
+            if (frames.Length == 0) return;
+            int f = (int)(now * 6) % frames.Length;
+            float bob = kind == AllySprite.ZoneStink ? Mathf.Sin(now * 3f) * 0.08f : 0f;
+            _stamps.Add(frames[f], Layers.Snap(center + new Vector2(0, bob)), kind == AllySprite.Afterimage ? new Color(1, 1, 1, 0.6f) : Color.white, kind == AllySprite.ZoneHeat ? Layers.Shadow + 4 : Layers.Fx);
+            if (kind == AllySprite.ZoneStink && effects == EffectsLevel.High)
+                for (int k = 0; k < 2; k++)
+                {
+                    float a = now * 1.3f + k * 3.1f;
+                    _stamps.Add(frames[(f + 1) % frames.Length], Layers.Snap(center + new Vector2(Mathf.Cos(a), Mathf.Sin(a) * 0.6f) * radius * 0.55f), new Color(1, 1, 1, 0.7f), Layers.Fx);
+                }
         }
 
         void Skids(ushort id, Vector2 pos, float now, EffectsLevel effects)

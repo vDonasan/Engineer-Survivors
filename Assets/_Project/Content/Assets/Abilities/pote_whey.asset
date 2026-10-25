@@ -33,9 +33,11 @@ MonoBehaviour:
       op: mult
       scope: tag:Biomecanica
       value: 0.05
+      perLevel: []
     - stat: MaxHp
       op: add
       scope: player
       value: 4
+      perLevel: []
     parameters: []
   icon: {fileID: 21300000, guid: 9fa4c0f69f604164a8338dd257fa3082, type: 3}

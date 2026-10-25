@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 743fe4cf80f19db468824bd5de5da40a, type: 3}
+  m_Name: cachorro_quente
+  m_EditorClassIdentifier: ES.Content::ES.Content.AbilityAsset
+  def:
+    id: cachorro_quente
+    name: Cachorro Quentamento de Motor
+    description: "Um cachorro mec\xE2nico superaquecido persegue inimigos, morde
+      e d\xE1 investidas que deixam rastro de calor."
+    kind: component
+    rarity: incomum
+    behavior: item_cachorro
+    tags:
+    - Mecanica
+    - Termico
+    maxLevel: 5
+    evolutionOnly: 0
+    exclusive: 0
+    sfx:
+    - robo_soco
+    - robo_dash
+    baseStats:
+    - stat: Damage
+      value: 9
+    - stat: Cooldown
+      value: 3
+    - stat: Range
+      value: 6
+    - stat: Area
+      value: 1
+    - stat: Duration
+      value: 1
+    levels:
+    - add: []
+      mult: []
+      text: "O cachorro corre mais r\xE1pido"
+    - add:
+      - stat: Damage
+        value: 4
+      mult: []
+      text: Investidas mais fortes
+    - add:
+      - stat: Duration
+        value: 0.6
+      mult: []
+      text: Rastro de calor dura mais
+    - add:
+      - stat: Damage
+        value: 2
+      mult: []
+      text: "A cada 4\xAA investida, corrida turbo que atravessa grupos"
+    grants: []
+    parameters: []
+  icon: {fileID: 21300000, guid: 6aad6fa9e01329a4baaf79ea147c7d8f, type: 3}

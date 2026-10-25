@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 743fe4cf80f19db468824bd5de5da40a, type: 3}
+  m_Name: dieta_milagrosa
+  m_EditorClassIdentifier: ES.Content::ES.Content.AbilityAsset
+  def:
+    id: dieta_milagrosa
+    name: Dieta Milagrosa
+    description: "Ao coletar experi\xEAncia: +25% de velocidade por 1,5 s (recarga
+      de 4 s)."
+    kind: component
+    rarity: reliquia
+    behavior: item_iogurte
+    tags:
+    - Mobilidade
+    - Organico
+    maxLevel: 1
+    evolutionOnly: 1
+    exclusive: 0
+    sfx: []
+    baseStats: []
+    levels: []
+    grants:
+    - stat: MoveSpeed
+      op: mult
+      scope: player
+      value: 0.12
+      perLevel:
+      - 0.12
+    - stat: XpGain
+      op: add
+      scope: player
+      value: 0.12
+      perLevel:
+      - 0.12
+    - stat: Cooldown
+      op: mult
+      scope: all
+      value: -0.06
+      perLevel:
+      - -0.06
+    parameters:
+    - key: evolved
+      value: 1
+    - key: levelHeal
+      value: 0.05
+    - key: levelHealCooldown
+      value: 3
+    - key: boost
+      value: 0.25
+    - key: boostSeconds
+      value: 1.5
+    - key: boostCooldown
+      value: 4
+  icon: {fileID: 21300000, guid: 82db102b053185a43b1fd53db6421ec8, type: 3}

@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 743fe4cf80f19db468824bd5de5da40a, type: 3}
+  m_Name: motor_astra
+  m_EditorClassIdentifier: ES.Content::ES.Content.AbilityAsset
+  def:
+    id: motor_astra
+    name: Motor do Astra
+    description: 'Ronca e treme: solta periodicamente uma onda de impacto que fere
+      e empurra os inimigos ao redor.'
+    kind: component
+    rarity: raro
+    behavior: item_motor
+    tags:
+    - Mecanica
+    - Area
+    maxLevel: 5
+    evolutionOnly: 0
+    exclusive: 0
+    sfx:
+    - master_chao
+    baseStats:
+    - stat: Damage
+      value: 14
+    - stat: Cooldown
+      value: 4
+    - stat: Area
+      value: 1
+    - stat: Knockback
+      value: 2.5
+    - stat: Duration
+      value: 1
+    levels:
+    - add:
+      - stat: Area
+        value: 0.25
+      mult: []
+      text: Onda maior
+    - add: []
+      mult:
+      - stat: Cooldown
+        value: -0.25
+      text: Ondas mais frequentes
+    - add:
+      - stat: Damage
+        value: 3
+      mult: []
+      text: "A onda lan\xE7a 5 pe\xE7as met\xE1licas"
+    - add:
+      - stat: Damage
+        value: 3
+      mult: []
+      text: "A cada 3\xAA onda, sobrecarga: segunda onda logo depois"
+    grants: []
+    parameters: []
+  icon: {fileID: 21300000, guid: a1d8e6bf5d8097d46a68974705ab6c9a, type: 3}

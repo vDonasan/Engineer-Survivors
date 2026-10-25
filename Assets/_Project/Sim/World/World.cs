@@ -77,6 +77,7 @@ namespace ES.Sim
             Events = new EventBuffer(Rules.capCosmeticEvents);
             EnemyGrid = new SpatialGrid(Arena.width, Arena.height, 2f, Rules.capEnemies);
             Shots = new ShotStore(384, AllyIds);
+            Shots.Attach(this);
             Zones = new ZoneStore(32, AllyIds);
             Strikes = new StrikeStore(64);
             Companions = new CompanionStore(24, AllyIds);
@@ -110,6 +111,9 @@ namespace ES.Sim
                 p.Stats.SetBase(StatId.PickupRadius, Rules.playerPickup);
                 p.Stats.SetBase(StatId.DamageTaken, 1f);
                 p.Hp = p.Stats.Get(StatId.MaxHp);
+                p.Progress.RerollsLeft = Rules.offerRerolls;
+                p.Progress.BansLeft = Rules.offerBans;
+                p.Progress.SkipsLeft = Rules.offerSkips;
                 Players.Slots[i] = p;
             }
 

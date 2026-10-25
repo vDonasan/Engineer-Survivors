@@ -23,6 +23,7 @@ MonoBehaviour:
     tags:
     - Software
     - Quimica
+    - Projetil
     maxLevel: 3
     evolutionOnly: 1
     exclusive: 1

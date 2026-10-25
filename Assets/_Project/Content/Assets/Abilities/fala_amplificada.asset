@@ -22,6 +22,8 @@ MonoBehaviour:
     tags:
     - Software
     - Sensores
+    - Projetil
+    - Area
     maxLevel: 3
     evolutionOnly: 1
     exclusive: 1

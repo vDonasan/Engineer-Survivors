@@ -181,7 +181,7 @@ namespace ES.UI
             var levels = new VisualElement();
             levels.AddToClassList("sheet-list");
             for (int l = 0; l < weapon.Levels.Length; l++)
-                Bullet(levels, Strings.Format("ficha_nivel", l + 2), weapon.Levels[l].Text, l + 2 == 3 || l + 2 == 5);
+                Bullet(levels, Strings.Format("ficha_nivel", l + 2), WithStats(weapon.Levels[l].Text, weapon, l + 1, l + 2), l + 2 == 3 || l + 2 == 5);
             _body.Add(levels);
 
             for (int e = 0; e < db.EvolutionCount; e++)
@@ -211,7 +211,7 @@ namespace ES.UI
                 var evoLevels = new VisualElement();
                 evoLevels.AddToClassList("sheet-list");
                 for (int l = 0; l < result.Levels.Length; l++)
-                    Bullet(evoLevels, Strings.Format("ficha_nivel", l + 2), result.Levels[l].Text, l + 2 == result.MaxLevel);
+                    Bullet(evoLevels, Strings.Format("ficha_nivel", l + 2), WithStats(result.Levels[l].Text, result, l + 1, l + 2), l + 2 == result.MaxLevel);
                 _body.Add(evoLevels);
             }
 
@@ -236,6 +236,12 @@ namespace ES.UI
             UiText.Line(col, desc, "sheet-desc");
             row.Add(col);
             _body.Add(row);
+        }
+
+        static string WithStats(string text, ResolvedAbility a, int from, int to)
+        {
+            string stats = StatText.Lines(a, from, to).Replace("\n", " · ");
+            return string.IsNullOrEmpty(stats) ? text : text + "  (" + stats + ")";
         }
 
         static void Bullet(VisualElement parent, string label, string text, bool highlight)

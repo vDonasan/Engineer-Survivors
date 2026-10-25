@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 743fe4cf80f19db468824bd5de5da40a, type: 3}
+  m_Name: mamao
+  m_EditorClassIdentifier: ES.Content::ES.Content.AbilityAsset
+  def:
+    id: mamao
+    name: "Mam\xE3o \"S\xF3 Quer Mam\xE3o\""
+    description: "Um mam\xE3o simp\xE1tico orbita voc\xEA e solta pulsos de cura
+      (aliados pr\xF3ximos recebem metade)."
+    kind: component
+    rarity: incomum
+    behavior: item_mamao
+    tags:
+    - Suporte
+    - Cura
+    maxLevel: 5
+    evolutionOnly: 0
+    exclusive: 0
+    sfx:
+    - gema
+    baseStats:
+    - stat: Damage
+      value: 10
+    - stat: Cooldown
+      value: 6
+    - stat: Area
+      value: 1
+    levels:
+    - add: []
+      mult:
+      - stat: Cooldown
+        value: -0.25
+      text: Pulsos mais frequentes
+    - add:
+      - stat: Area
+        value: 0.3
+      mult: []
+      text: Pulso maior
+    - add: []
+      mult: []
+      text: "Cura com a vida cheia vira escudo (at\xE9 15% da vida m\xE1xima)"
+    - add: []
+      mult: []
+      text: "A cada 3\xBA pulso, explos\xE3o de polpa que empurra e fere"
+    grants: []
+    parameters:
+    - key: heal
+      value: 0.04
+    - key: shieldCap
+      value: 0.15
+  icon: {fileID: 21300000, guid: 76941d4cb764b8a49880baa7ae0dff37, type: 3}

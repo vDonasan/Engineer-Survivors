@@ -141,7 +141,11 @@ namespace ES.UI
             _loadoutSig = sig.ToString();
 
             _abilities.Clear();
-            foreach (var a in l.Abilities)
+            // só as 3 de nível mais alto (empate: a mais antiga primeiro)
+            var top = new List<OwnedAbility>(l.Abilities);
+            top.Sort((x, y) => y.Level != x.Level ? y.Level.CompareTo(x.Level) : l.Abilities.IndexOf(x).CompareTo(l.Abilities.IndexOf(y)));
+            if (top.Count > 3) top.RemoveRange(3, top.Count - 3);
+            foreach (var a in top)
             {
                 var def = Ctx.Db.Ability(a.Ability).Def;
                 var box = new VisualElement();
@@ -213,11 +217,11 @@ namespace ES.UI
     public sealed class LevelUpController : UiScreen
     {
         public override string Uxml => "LevelUp";
-        public override string[] Buttons => new[] { "card-0", "card-1", "card-2" };
+        public override string[] Buttons => new[] { "card-0", "card-1", "card-2", "btn-reroll", "btn-ban", "btn-skip" };
 
         short _offerId = -1;
         float _shownAt, _now;
-        bool _chosen;
+        bool _chosen, _banMode;
         readonly Button[] _cards = new Button[3];
 
         public CardInfo[] Cards { get; } = new CardInfo[3];
@@ -228,8 +232,41 @@ namespace ES.UI
             {
                 int k = i;
                 _cards[i] = Q<Button>("card-" + i);
-                Bind("card-" + i, () => Choose(k));
+                Bind("card-" + i, () => { if (_banMode) Ban(k); else Choose(k); });
             }
+            Bind("btn-reroll", Reroll);
+            Bind("btn-skip", Skip);
+            Bind("btn-ban", () => { if (Ctx.Net.Feed?.CurrentOffer?.BansLeft > 0 && !_chosen) SetBanMode(!_banMode); });
+        }
+
+        void Send(int code)
+        {
+            var offer = Ctx.Net.Feed?.CurrentOffer;
+            if (offer == null || _chosen) return;
+            _chosen = true;
+            SetBanMode(false);
+            Ctx.Net.Choose(offer.OfferId, code);
+            foreach (var c in _cards) c.SetEnabled(false);
+        }
+
+        public void Reroll() { if (Ctx.Net.Feed?.CurrentOffer?.RerollsLeft > 0) Send(ProgressionSystem.ActionReroll); }
+        public void Skip() { if (Ctx.Net.Feed?.CurrentOffer?.SkipsLeft > 0) Send(ProgressionSystem.ActionSkip); }
+
+        public void Ban(int index)
+        {
+            var offer = Ctx.Net.Feed?.CurrentOffer;
+            if (offer == null || index < 0 || index >= offer.Options.Length) return;
+            var kind = offer.Options[index].Kind;
+            if (kind == OptionKind.Evolution || kind == OptionKind.Survival || offer.BansLeft == 0) return;
+            Send(ProgressionSystem.ActionBanFirst - index);
+        }
+
+        void SetBanMode(bool on)
+        {
+            _banMode = on;
+            foreach (var c in _cards) c.EnableInClassList("ban-target", on);
+            Q<Button>("btn-ban").EnableInClassList("selected", on);
+            Q<Label>("label-ban-hint").style.display = on ? DisplayStyle.Flex : DisplayStyle.None;
         }
 
         public void Choose(int index)
@@ -268,9 +305,21 @@ namespace ES.UI
 
         void Fill(MatchFeed feed, LevelUpOffer offer)
         {
+            if (offer.OfferId == _offerId) return;
+            bool sameLevel = _offerId >= 0;
             _offerId = offer.OfferId;
-            _shownAt = _now;
+            if (!sameLevel) _shownAt = _now;
             _chosen = false;
+            SetBanMode(false);
+            var reroll = Q<Button>("btn-reroll");
+            reroll.text = Strings.Format("nivel_atualizar", offer.RerollsLeft);
+            reroll.SetEnabled(offer.RerollsLeft > 0);
+            var ban = Q<Button>("btn-ban");
+            ban.text = Strings.Format("nivel_banir", offer.BansLeft);
+            ban.SetEnabled(offer.BansLeft > 0);
+            var skip = Q<Button>("btn-skip");
+            skip.text = Strings.Format("nivel_pular", offer.SkipsLeft);
+            skip.SetEnabled(offer.SkipsLeft > 0);
             int local = Ctx.Net.LocalSlot;
             for (int i = 0; i < 3; i++)
             {
@@ -288,6 +337,7 @@ namespace ES.UI
                 rarity.RemoveFromClassList("rarity-comum");
                 rarity.RemoveFromClassList("rarity-incomum");
                 rarity.RemoveFromClassList("rarity-raro");
+                rarity.RemoveFromClassList("rarity-reliquia");
                 rarity.AddToClassList(info.RarityClass);
                 card.Q<Label>("card-desc").text = info.Description;
                 card.Q<Label>("card-change").text = info.Change;

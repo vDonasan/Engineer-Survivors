@@ -62,6 +62,7 @@ namespace ES.UI
             stage.Add(_summarySprite);
             summary.Add(stage);
             _summaryInfo = new VisualElement();
+            _summaryInfo.AddToClassList("summary-info");
             summary.Add(_summaryInfo);
             var more = new Button(() => { Ctx.Click(); _sheet.Show(_spec, null); }) { name = "btn-ver-ficha", text = Strings.Get("ficha_ver") };
             more.AddToClassList("btn");

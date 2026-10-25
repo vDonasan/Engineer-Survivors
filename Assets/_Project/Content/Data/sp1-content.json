@@ -11,7 +11,7 @@
     "xpB": 5,
     "xpC": 0.6,
     "maxWeapons": 6,
-    "maxComponents": 6,
+    "maxComponents": 8,
     "coopChoiceSeconds": 12,
     "choiceInvuln": 2,
     "affinityInitial": 0.04,
@@ -30,7 +30,10 @@
     "healAmountFraction": 0.3,
     "farEnemyDistance": 30,
     "farEnemyUpdateEvery": 3,
-    "cameraHalfDiagonal": 12
+    "cameraHalfDiagonal": 12,
+    "offerRerolls": 3,
+    "offerBans": 1,
+    "offerSkips": 2
   },
   "balance": {
     "difficulties": [
@@ -155,7 +158,7 @@
       "special": "overclock",
       "portrait": "staut",
       "affinityTags": ["Software", "Quimica"],
-      "advancedAffinity": [{"stat": "Damage", "op": "mult", "scope": "self", "value": 0.05}],
+      "advancedAffinity": [{"stat": "Damage", "op": "mult", "scope": "self", "value": 0.05, "perLevel": []}],
       "advancedAffinityText": "+5% de dano numa arma afim ao levá-la ao nível máximo."
     },
     {
@@ -168,7 +171,7 @@
       "special": "overclock",
       "portrait": "miyuki",
       "affinityTags": ["Software", "Sensores"],
-      "advancedAffinity": [{"stat": "Damage", "op": "mult", "scope": "self", "value": 0.05}],
+      "advancedAffinity": [{"stat": "Damage", "op": "mult", "scope": "self", "value": 0.05, "perLevel": []}],
       "advancedAffinityText": "+5% de dano numa arma afim ao levá-la ao nível máximo."
     },
     {
@@ -181,7 +184,7 @@
       "special": "apagao",
       "portrait": "giulia",
       "affinityTags": ["Energia", "Eletronica"],
-      "advancedAffinity": [{"stat": "Damage", "op": "mult", "scope": "self", "value": 0.05}],
+      "advancedAffinity": [{"stat": "Damage", "op": "mult", "scope": "self", "value": 0.05, "perLevel": []}],
       "advancedAffinityText": "+5% de dano numa arma afim ao levá-la ao nível máximo."
     },
     {
@@ -194,7 +197,7 @@
       "special": "overclock",
       "portrait": "breno",
       "affinityTags": ["Software", "Biomecanica"],
-      "advancedAffinity": [{"stat": "Damage", "op": "mult", "scope": "self", "value": 0.05}],
+      "advancedAffinity": [{"stat": "Damage", "op": "mult", "scope": "self", "value": 0.05, "perLevel": []}],
       "advancedAffinityText": "+5% de dano numa arma afim ao levá-la ao nível máximo."
     },
     {
@@ -207,7 +210,7 @@
       "special": "overclock",
       "portrait": "artur",
       "affinityTags": ["Biomecanica", "Suporte"],
-      "advancedAffinity": [{"stat": "Damage", "op": "mult", "scope": "self", "value": 0.05}],
+      "advancedAffinity": [{"stat": "Damage", "op": "mult", "scope": "self", "value": 0.05, "perLevel": []}],
       "advancedAffinityText": "+5% de dano numa arma afim ao levá-la ao nível máximo."
     },
     {
@@ -220,7 +223,7 @@
       "special": "turbina_emergencia",
       "portrait": "badotti",
       "affinityTags": ["Robotica", "Automacao"],
-      "advancedAffinity": [{"stat": "Damage", "op": "mult", "scope": "self", "value": 0.05}],
+      "advancedAffinity": [{"stat": "Damage", "op": "mult", "scope": "self", "value": 0.05, "perLevel": []}],
       "advancedAffinityText": "+5% de dano numa arma afim ao levá-la ao nível máximo."
     },
     {
@@ -233,7 +236,7 @@
       "special": "overclock",
       "portrait": "garcia",
       "affinityTags": ["Software", "Eletronica"],
-      "advancedAffinity": [{"stat": "Damage", "op": "mult", "scope": "self", "value": 0.05}],
+      "advancedAffinity": [{"stat": "Damage", "op": "mult", "scope": "self", "value": 0.05, "perLevel": []}],
       "advancedAffinityText": "+5% de dano numa arma afim ao levá-la ao nível máximo."
     },
     {
@@ -246,7 +249,7 @@
       "special": "overclock",
       "portrait": "jean",
       "affinityTags": ["Software", "Mecanica"],
-      "advancedAffinity": [{"stat": "Damage", "op": "mult", "scope": "self", "value": 0.05}],
+      "advancedAffinity": [{"stat": "Damage", "op": "mult", "scope": "self", "value": 0.05, "perLevel": []}],
       "advancedAffinityText": "+5% de dano numa arma afim ao levá-la ao nível máximo."
     },
     {
@@ -259,7 +262,7 @@
       "special": "overclock",
       "portrait": "fufu",
       "affinityTags": ["Biomecanica", "Quimica"],
-      "advancedAffinity": [{"stat": "Damage", "op": "mult", "scope": "self", "value": 0.05}],
+      "advancedAffinity": [{"stat": "Damage", "op": "mult", "scope": "self", "value": 0.05, "perLevel": []}],
       "advancedAffinityText": "+5% de dano numa arma afim ao levá-la ao nível máximo."
     },
     {
@@ -272,7 +275,7 @@
       "special": "overclock",
       "portrait": "donasa",
       "affinityTags": ["Software", "Sensores"],
-      "advancedAffinity": [{"stat": "Damage", "op": "mult", "scope": "self", "value": 0.05}],
+      "advancedAffinity": [{"stat": "Damage", "op": "mult", "scope": "self", "value": 0.05, "perLevel": []}],
       "advancedAffinityText": "+5% de dano numa arma afim ao levá-la ao nível máximo."
     },
     {
@@ -282,7 +285,7 @@
       "special": "apagao",
       "portrait": "eletrica",
       "affinityTags": ["Energia", "Eletronica"],
-      "advancedAffinity": [{"stat": "Chains", "op": "add", "scope": "self", "value": 1}],
+      "advancedAffinity": [{"stat": "Chains", "op": "add", "scope": "self", "value": 1, "perLevel": []}],
       "advancedAffinityText": "+1 salto nas armas de cadeia afins ao chegar no nível máximo.",
       "hidden": true,
       "engineering": "Engenharia Elétrica"
@@ -294,7 +297,10 @@
       "special": "turbina_emergencia",
       "portrait": "mecanica",
       "affinityTags": ["Mecanica", "Termico"],
-      "advancedAffinity": [{"stat": "Knockback", "op": "mult", "scope": "self", "value": 0.15}, {"stat": "MoveSpeed", "op": "mult", "scope": "player", "value": 0.05}],
+      "advancedAffinity": [
+        {"stat": "Knockback", "op": "mult", "scope": "self", "value": 0.15, "perLevel": []},
+        {"stat": "MoveSpeed", "op": "mult", "scope": "player", "value": 0.05, "perLevel": []}
+      ],
       "advancedAffinityText": "+15% de empurrão e +5% de velocidade ao levar uma arma afim ao nível máximo.",
       "hidden": true,
       "engineering": "Engenharia Mecânica"
@@ -429,7 +435,7 @@
       "kind": "weapon",
       "rarity": "incomum",
       "behavior": "projectile",
-      "tags": ["Energia", "Termico"],
+      "tags": ["Energia", "Termico", "Projetil"],
       "maxLevel": 5,
       "evolutionOnly": false,
       "baseStats": [
@@ -458,7 +464,7 @@
       "kind": "weapon",
       "rarity": "incomum",
       "behavior": "aura",
-      "tags": ["Energia", "Defesa"],
+      "tags": ["Energia", "Defesa", "Area"],
       "maxLevel": 5,
       "evolutionOnly": false,
       "baseStats": [{"stat": "Damage", "value": 6}, {"stat": "HitInterval", "value": 0.5}, {"stat": "Area", "value": 2.2}, {"stat": "Slow", "value": 0.15}],
@@ -485,7 +491,7 @@
       "evolutionOnly": false,
       "baseStats": [],
       "levels": [],
-      "grants": [{"stat": "Cooldown", "op": "mult", "scope": "tag:Energia", "value": -0.06}],
+      "grants": [{"stat": "Cooldown", "op": "mult", "scope": "tag:Energia", "value": -0.06, "perLevel": []}],
       "parameters": [],
       "exclusive": false,
       "sfx": []
@@ -497,12 +503,12 @@
       "kind": "component",
       "rarity": "comum",
       "behavior": "passive",
-      "tags": ["Mecanica"],
+      "tags": ["Mecanica", "Mobilidade"],
       "maxLevel": 5,
       "evolutionOnly": false,
       "baseStats": [],
       "levels": [],
-      "grants": [{"stat": "MoveSpeed", "op": "mult", "scope": "player", "value": 0.06}],
+      "grants": [{"stat": "MoveSpeed", "op": "mult", "scope": "player", "value": 0.06, "perLevel": []}],
       "parameters": [],
       "exclusive": false,
       "sfx": []
@@ -539,7 +545,7 @@
       "kind": "weapon",
       "rarity": "raro",
       "behavior": "orbit",
-      "tags": ["Mecanica"],
+      "tags": ["Mecanica", "Area"],
       "maxLevel": 1,
       "evolutionOnly": true,
       "baseStats": [
@@ -568,7 +574,7 @@
       "evolutionOnly": false,
       "baseStats": [],
       "levels": [],
-      "grants": [{"stat": "Damage", "op": "mult", "scope": "all", "value": 0.08}],
+      "grants": [{"stat": "Damage", "op": "mult", "scope": "all", "value": 0.08, "perLevel": []}],
       "parameters": [],
       "exclusive": false,
       "sfx": []
@@ -580,12 +586,12 @@
       "kind": "attribute",
       "rarity": "comum",
       "behavior": "attribute",
-      "tags": [],
+      "tags": ["Cura"],
       "maxLevel": 5,
       "evolutionOnly": false,
       "baseStats": [],
       "levels": [],
-      "grants": [{"stat": "MaxHp", "op": "add", "scope": "player", "value": 15}],
+      "grants": [{"stat": "MaxHp", "op": "add", "scope": "player", "value": 15, "perLevel": []}],
       "parameters": [],
       "exclusive": false,
       "sfx": []
@@ -597,12 +603,12 @@
       "kind": "attribute",
       "rarity": "comum",
       "behavior": "attribute",
-      "tags": [],
+      "tags": ["Cura"],
       "maxLevel": 5,
       "evolutionOnly": false,
       "baseStats": [],
       "levels": [],
-      "grants": [{"stat": "Regen", "op": "add", "scope": "player", "value": 0.3}],
+      "grants": [{"stat": "Regen", "op": "add", "scope": "player", "value": 0.3, "perLevel": []}],
       "parameters": [],
       "exclusive": false,
       "sfx": []
@@ -619,7 +625,7 @@
       "evolutionOnly": false,
       "baseStats": [],
       "levels": [],
-      "grants": [{"stat": "PickupRadius", "op": "mult", "scope": "player", "value": 0.2}],
+      "grants": [{"stat": "PickupRadius", "op": "mult", "scope": "player", "value": 0.2, "perLevel": []}],
       "parameters": [],
       "exclusive": false,
       "sfx": []
@@ -636,7 +642,7 @@
       "evolutionOnly": false,
       "baseStats": [],
       "levels": [],
-      "grants": [{"stat": "Cooldown", "op": "mult", "scope": "all", "value": -0.05}],
+      "grants": [{"stat": "Cooldown", "op": "mult", "scope": "all", "value": -0.05, "perLevel": []}],
       "parameters": [],
       "exclusive": false,
       "sfx": []
@@ -672,7 +678,10 @@
       "sfx": [],
       "baseStats": [],
       "levels": [],
-      "grants": [{"stat": "PickupRadius", "op": "mult", "scope": "player", "value": 0.1}, {"stat": "Damage", "op": "mult", "scope": "all", "value": 0.03}],
+      "grants": [
+        {"stat": "PickupRadius", "op": "mult", "scope": "player", "value": 0.1, "perLevel": []},
+        {"stat": "Damage", "op": "mult", "scope": "all", "value": 0.03, "perLevel": []}
+      ],
       "parameters": []
     },
     {
@@ -689,7 +698,10 @@
       "sfx": [],
       "baseStats": [],
       "levels": [],
-      "grants": [{"stat": "ProjectileSpeed", "op": "mult", "scope": "all", "value": 0.06}, {"stat": "Cooldown", "op": "mult", "scope": "all", "value": -0.03}],
+      "grants": [
+        {"stat": "ProjectileSpeed", "op": "mult", "scope": "all", "value": 0.06, "perLevel": []},
+        {"stat": "Cooldown", "op": "mult", "scope": "all", "value": -0.03, "perLevel": []}
+      ],
       "parameters": []
     },
     {
@@ -706,7 +718,10 @@
       "sfx": [],
       "baseStats": [],
       "levels": [],
-      "grants": [{"stat": "Knockback", "op": "mult", "scope": "all", "value": 0.1}, {"stat": "MaxHp", "op": "add", "scope": "player", "value": 6}],
+      "grants": [
+        {"stat": "Knockback", "op": "mult", "scope": "all", "value": 0.1, "perLevel": []},
+        {"stat": "MaxHp", "op": "add", "scope": "player", "value": 6, "perLevel": []}
+      ],
       "parameters": []
     },
     {
@@ -716,14 +731,17 @@
       "kind": "component",
       "rarity": "comum",
       "behavior": "passive",
-      "tags": ["Suporte", "Biomecanica"],
+      "tags": ["Suporte", "Biomecanica", "Cura"],
       "maxLevel": 5,
       "evolutionOnly": false,
       "exclusive": false,
       "sfx": [],
       "baseStats": [],
       "levels": [],
-      "grants": [{"stat": "Regen", "op": "add", "scope": "player", "value": 0.2}, {"stat": "MaxHp", "op": "add", "scope": "player", "value": 5}],
+      "grants": [
+        {"stat": "Regen", "op": "add", "scope": "player", "value": 0.2, "perLevel": []},
+        {"stat": "MaxHp", "op": "add", "scope": "player", "value": 5, "perLevel": []}
+      ],
       "parameters": []
     },
     {
@@ -740,7 +758,10 @@
       "sfx": [],
       "baseStats": [],
       "levels": [],
-      "grants": [{"stat": "Damage", "op": "mult", "scope": "tag:Biomecanica", "value": 0.05}, {"stat": "MaxHp", "op": "add", "scope": "player", "value": 4}],
+      "grants": [
+        {"stat": "Damage", "op": "mult", "scope": "tag:Biomecanica", "value": 0.05, "perLevel": []},
+        {"stat": "MaxHp", "op": "add", "scope": "player", "value": 4, "perLevel": []}
+      ],
       "parameters": []
     },
     {
@@ -758,8 +779,8 @@
       "baseStats": [],
       "levels": [],
       "grants": [
-        {"stat": "Cooldown", "op": "mult", "scope": "tag:Robotica", "value": -0.05},
-        {"stat": "Damage", "op": "mult", "scope": "tag:Robotica", "value": 0.03}
+        {"stat": "Cooldown", "op": "mult", "scope": "tag:Robotica", "value": -0.05, "perLevel": []},
+        {"stat": "Damage", "op": "mult", "scope": "tag:Robotica", "value": 0.03, "perLevel": []}
       ],
       "parameters": []
     },
@@ -777,7 +798,10 @@
       "sfx": [],
       "baseStats": [],
       "levels": [],
-      "grants": [{"stat": "Range", "op": "mult", "scope": "all", "value": 0.06}, {"stat": "Area", "op": "mult", "scope": "all", "value": 0.03}],
+      "grants": [
+        {"stat": "Range", "op": "mult", "scope": "all", "value": 0.06, "perLevel": []},
+        {"stat": "Area", "op": "mult", "scope": "all", "value": 0.03, "perLevel": []}
+      ],
       "parameters": []
     },
     {
@@ -794,7 +818,7 @@
       "sfx": [],
       "baseStats": [],
       "levels": [],
-      "grants": [{"stat": "Area", "op": "mult", "scope": "all", "value": 0.06}],
+      "grants": [{"stat": "Area", "op": "mult", "scope": "all", "value": 0.06, "perLevel": []}],
       "parameters": []
     },
     {
@@ -804,7 +828,7 @@
       "kind": "weapon",
       "rarity": "comum",
       "behavior": "staut",
-      "tags": ["Software", "Quimica"],
+      "tags": ["Software", "Quimica", "Projetil"],
       "maxLevel": 5,
       "evolutionOnly": false,
       "exclusive": true,
@@ -838,7 +862,7 @@
       "kind": "weapon",
       "rarity": "raro",
       "behavior": "staut",
-      "tags": ["Software", "Quimica"],
+      "tags": ["Software", "Quimica", "Projetil"],
       "maxLevel": 3,
       "evolutionOnly": true,
       "exclusive": true,
@@ -866,7 +890,7 @@
       "kind": "weapon",
       "rarity": "comum",
       "behavior": "miyuki",
-      "tags": ["Software", "Sensores"],
+      "tags": ["Software", "Sensores", "Projetil"],
       "maxLevel": 5,
       "evolutionOnly": false,
       "exclusive": true,
@@ -896,7 +920,7 @@
       "kind": "weapon",
       "rarity": "raro",
       "behavior": "miyuki",
-      "tags": ["Software", "Sensores"],
+      "tags": ["Software", "Sensores", "Projetil"],
       "maxLevel": 3,
       "evolutionOnly": true,
       "exclusive": true,
@@ -924,7 +948,7 @@
       "kind": "weapon",
       "rarity": "comum",
       "behavior": "giulia",
-      "tags": ["Energia", "Eletronica"],
+      "tags": ["Energia", "Eletronica", "Projetil"],
       "maxLevel": 5,
       "evolutionOnly": false,
       "exclusive": true,
@@ -958,7 +982,7 @@
       "kind": "weapon",
       "rarity": "raro",
       "behavior": "giulia",
-      "tags": ["Energia", "Eletronica"],
+      "tags": ["Energia", "Eletronica", "Projetil"],
       "maxLevel": 3,
       "evolutionOnly": true,
       "exclusive": true,
@@ -990,7 +1014,7 @@
       "kind": "weapon",
       "rarity": "comum",
       "behavior": "breno",
-      "tags": ["Software", "Biomecanica"],
+      "tags": ["Software", "Biomecanica", "Projetil"],
       "maxLevel": 5,
       "evolutionOnly": false,
       "exclusive": true,
@@ -1021,7 +1045,7 @@
       "kind": "weapon",
       "rarity": "raro",
       "behavior": "breno",
-      "tags": ["Software", "Biomecanica"],
+      "tags": ["Software", "Biomecanica", "Projetil", "Area"],
       "maxLevel": 3,
       "evolutionOnly": true,
       "exclusive": true,
@@ -1050,7 +1074,7 @@
       "kind": "weapon",
       "rarity": "comum",
       "behavior": "artur",
-      "tags": ["Biomecanica", "Suporte"],
+      "tags": ["Biomecanica", "Suporte", "Area"],
       "maxLevel": 5,
       "evolutionOnly": false,
       "exclusive": true,
@@ -1079,7 +1103,7 @@
       "kind": "weapon",
       "rarity": "raro",
       "behavior": "artur",
-      "tags": ["Biomecanica", "Suporte"],
+      "tags": ["Biomecanica", "Suporte", "Projetil", "Area"],
       "maxLevel": 3,
       "evolutionOnly": true,
       "exclusive": true,
@@ -1106,7 +1130,7 @@
       "kind": "weapon",
       "rarity": "comum",
       "behavior": "badotti",
-      "tags": ["Robotica", "Automacao"],
+      "tags": ["Robotica", "Automacao", "Projetil"],
       "maxLevel": 5,
       "evolutionOnly": false,
       "exclusive": true,
@@ -1135,7 +1159,7 @@
       "kind": "weapon",
       "rarity": "raro",
       "behavior": "badotti",
-      "tags": ["Robotica", "Automacao"],
+      "tags": ["Robotica", "Automacao", "Projetil", "Area"],
       "maxLevel": 3,
       "evolutionOnly": true,
       "exclusive": true,
@@ -1162,7 +1186,7 @@
       "kind": "weapon",
       "rarity": "comum",
       "behavior": "garcia",
-      "tags": ["Software", "Eletronica"],
+      "tags": ["Software", "Eletronica", "Projetil"],
       "maxLevel": 5,
       "evolutionOnly": false,
       "exclusive": true,
@@ -1192,7 +1216,7 @@
       "kind": "weapon",
       "rarity": "raro",
       "behavior": "garcia",
-      "tags": ["Software", "Eletronica"],
+      "tags": ["Software", "Eletronica", "Projetil", "Area"],
       "maxLevel": 3,
       "evolutionOnly": true,
       "exclusive": true,
@@ -1220,7 +1244,7 @@
       "kind": "weapon",
       "rarity": "comum",
       "behavior": "jean",
-      "tags": ["Software", "Mecanica"],
+      "tags": ["Software", "Mecanica", "Projetil"],
       "maxLevel": 5,
       "evolutionOnly": false,
       "exclusive": true,
@@ -1251,7 +1275,7 @@
       "kind": "weapon",
       "rarity": "raro",
       "behavior": "jean",
-      "tags": ["Software", "Mecanica"],
+      "tags": ["Software", "Mecanica", "Projetil"],
       "maxLevel": 3,
       "evolutionOnly": true,
       "exclusive": true,
@@ -1280,7 +1304,7 @@
       "kind": "weapon",
       "rarity": "comum",
       "behavior": "fufu",
-      "tags": ["Biomecanica", "Quimica"],
+      "tags": ["Biomecanica", "Quimica", "Area"],
       "maxLevel": 5,
       "evolutionOnly": false,
       "exclusive": true,
@@ -1309,7 +1333,7 @@
       "kind": "weapon",
       "rarity": "raro",
       "behavior": "fufu",
-      "tags": ["Biomecanica", "Quimica"],
+      "tags": ["Biomecanica", "Quimica", "Projetil", "Area"],
       "maxLevel": 3,
       "evolutionOnly": true,
       "exclusive": true,
@@ -1336,7 +1360,7 @@
       "kind": "weapon",
       "rarity": "comum",
       "behavior": "donasa",
-      "tags": ["Software", "Sensores"],
+      "tags": ["Software", "Sensores", "Area"],
       "maxLevel": 5,
       "evolutionOnly": false,
       "exclusive": true,
@@ -1366,7 +1390,7 @@
       "kind": "weapon",
       "rarity": "raro",
       "behavior": "donasa",
-      "tags": ["Software", "Sensores"],
+      "tags": ["Software", "Sensores", "Projetil", "Area"],
       "maxLevel": 3,
       "evolutionOnly": true,
       "exclusive": true,
@@ -1386,6 +1410,442 @@
       ],
       "grants": [],
       "parameters": [{"key": "evolved", "value": 1}]
+    },
+    {
+      "id": "protoboard",
+      "name": "Protoboard",
+      "description": "Projéteis tecnológicos mais rápidos e armas eletrônicas/de computação atacando mais rápido.",
+      "kind": "component",
+      "rarity": "incomum",
+      "behavior": "item_protoboard",
+      "tags": ["Eletronica"],
+      "maxLevel": 4,
+      "evolutionOnly": false,
+      "exclusive": false,
+      "sfx": ["arco"],
+      "baseStats": [{"stat": "Damage", "value": 8}, {"stat": "Area", "value": 1}, {"stat": "Duration", "value": 1}],
+      "levels": [
+        {"add": [], "mult": [], "text": "+5% de velocidade de ataque tecnológico"},
+        {"add": [], "mult": [], "text": "Acertos de armas elétricas: 10% de chance de soltar uma descarga"},
+        {"add": [], "mult": [], "text": "A descarga salta para até 2 inimigos próximos (−30% de dano por salto)"}
+      ],
+      "grants": [
+        {"stat": "ProjectileSpeed", "op": "mult", "scope": "tag:Eletronica", "value": 0.1, "perLevel": [0.1, 0.1, 0.1, 0.1]},
+        {"stat": "ProjectileSpeed", "op": "mult", "scope": "tag:Software", "value": 0.1, "perLevel": [0.1, 0.1, 0.1, 0.1]},
+        {"stat": "Cooldown", "op": "mult", "scope": "tag:Eletronica", "value": -0.08, "perLevel": [-0.08, -0.13, -0.13, -0.13]},
+        {"stat": "Cooldown", "op": "mult", "scope": "tag:Software", "value": -0.08, "perLevel": [-0.08, -0.13, -0.13, -0.13]}
+      ],
+      "parameters": [{"key": "chance", "value": 0.1}, {"key": "range", "value": 3}, {"key": "internalCooldown", "value": 0.12}]
+    },
+    {
+      "id": "protoboard_experimental",
+      "name": "Protoboard Experimental",
+      "description": "Circuitos temporários: 30% dos acertos elétricos soltam uma corrente que salta em até 4 inimigos.",
+      "kind": "component",
+      "rarity": "reliquia",
+      "behavior": "item_protoboard",
+      "tags": ["Eletronica"],
+      "maxLevel": 1,
+      "evolutionOnly": true,
+      "exclusive": false,
+      "sfx": ["arco"],
+      "baseStats": [{"stat": "Damage", "value": 12}, {"stat": "Area", "value": 1}, {"stat": "Duration", "value": 1}],
+      "levels": [],
+      "grants": [
+        {"stat": "ProjectileSpeed", "op": "mult", "scope": "tag:Eletronica", "value": 0.12, "perLevel": [0.12]},
+        {"stat": "ProjectileSpeed", "op": "mult", "scope": "tag:Software", "value": 0.12, "perLevel": [0.12]},
+        {"stat": "Cooldown", "op": "mult", "scope": "tag:Eletronica", "value": -0.15, "perLevel": [-0.15]},
+        {"stat": "Cooldown", "op": "mult", "scope": "tag:Software", "value": -0.15, "perLevel": [-0.15]}
+      ],
+      "parameters": [
+        {"key": "evolved", "value": 1},
+        {"key": "evoChance", "value": 0.3},
+        {"key": "evoJumps", "value": 4},
+        {"key": "evoRange", "value": 3.5},
+        {"key": "internalCooldown", "value": 0.1}
+      ]
+    },
+    {
+      "id": "cenoura_podre",
+      "name": "Cenoura Podre",
+      "description": "Arremessa uma cenoura podre que deixa uma nuvem de mau cheiro: dano contínuo e leve lentidão.",
+      "kind": "component",
+      "rarity": "comum",
+      "behavior": "item_cenoura",
+      "tags": ["Quimica", "Organico"],
+      "maxLevel": 5,
+      "evolutionOnly": false,
+      "exclusive": false,
+      "sfx": ["frasco"],
+      "baseStats": [
+        {"stat": "Damage", "value": 10},
+        {"stat": "Cooldown", "value": 2.8},
+        {"stat": "Range", "value": 7},
+        {"stat": "ProjectileSpeed", "value": 9},
+        {"stat": "Area", "value": 1},
+        {"stat": "Duration", "value": 1}
+      ],
+      "levels": [
+        {"add": [], "mult": [{"stat": "Cooldown", "value": -0.2}], "text": "Arremessos mais frequentes"},
+        {"add": [{"stat": "Duration", "value": 0.5}], "mult": [], "text": "A nuvem dura mais"},
+        {"add": [{"stat": "Damage", "value": 2}], "mult": [], "text": "15% de chance de atordoar o alvo por 0,6 s"},
+        {"add": [{"stat": "Area", "value": 0.2}], "mult": [], "text": "O fedor se espalha uma vez para inimigos vizinhos (−30% de dano)"}
+      ],
+      "grants": [],
+      "parameters": [{"key": "stunChance", "value": 0.15}, {"key": "stunSeconds", "value": 0.6}]
+    },
+    {
+      "id": "hortalica_desgraca",
+      "name": "Hortaliça da Desgraça",
+      "description": "Nuvens maiores e mais longas; o fedor se espalha entre inimigos por até 3 gerações (máx. 60 infectados).",
+      "kind": "component",
+      "rarity": "reliquia",
+      "behavior": "item_cenoura",
+      "tags": ["Quimica", "Organico"],
+      "maxLevel": 1,
+      "evolutionOnly": true,
+      "exclusive": false,
+      "sfx": ["frasco"],
+      "baseStats": [
+        {"stat": "Damage", "value": 16},
+        {"stat": "Cooldown", "value": 2.2},
+        {"stat": "Range", "value": 8},
+        {"stat": "ProjectileSpeed", "value": 9},
+        {"stat": "Area", "value": 1.2},
+        {"stat": "Duration", "value": 1.5}
+      ],
+      "levels": [],
+      "grants": [],
+      "parameters": [{"key": "evolved", "value": 1}, {"key": "stunChance", "value": 0.2}, {"key": "stunSeconds", "value": 0.6}]
+    },
+    {
+      "id": "iogurte_80",
+      "name": "Iogurte de 80 Calorias",
+      "description": "Leve e prático: mais velocidade de movimento e mais experiência.",
+      "kind": "component",
+      "rarity": "comum",
+      "behavior": "item_iogurte",
+      "tags": ["Mobilidade", "Organico"],
+      "maxLevel": 5,
+      "evolutionOnly": false,
+      "exclusive": false,
+      "sfx": [],
+      "baseStats": [],
+      "levels": [
+        {"add": [], "mult": [], "text": "Mais velocidade de movimento"},
+        {"add": [], "mult": [], "text": "Mais experiência obtida"},
+        {"add": [], "mult": [], "text": "Recarga de todas as armas −5%"},
+        {"add": [], "mult": [], "text": "Ao subir de nível, recupera 5% da vida (no máximo a cada 3 s)"}
+      ],
+      "grants": [
+        {"stat": "MoveSpeed", "op": "mult", "scope": "player", "value": 0.08, "perLevel": [0.08, 0.11, 0.11, 0.11, 0.11]},
+        {"stat": "XpGain", "op": "add", "scope": "player", "value": 0.05, "perLevel": [0.05, 0.05, 0.1, 0.1, 0.1]},
+        {"stat": "Cooldown", "op": "mult", "scope": "all", "value": 0, "perLevel": [0, 0, 0, -0.05, -0.05]}
+      ],
+      "parameters": [{"key": "levelHeal", "value": 0.05}, {"key": "levelHealCooldown", "value": 3}]
+    },
+    {
+      "id": "dieta_milagrosa",
+      "name": "Dieta Milagrosa",
+      "description": "Ao coletar experiência: +25% de velocidade por 1,5 s (recarga de 4 s).",
+      "kind": "component",
+      "rarity": "reliquia",
+      "behavior": "item_iogurte",
+      "tags": ["Mobilidade", "Organico"],
+      "maxLevel": 1,
+      "evolutionOnly": true,
+      "exclusive": false,
+      "sfx": [],
+      "baseStats": [],
+      "levels": [],
+      "grants": [
+        {"stat": "MoveSpeed", "op": "mult", "scope": "player", "value": 0.12, "perLevel": [0.12]},
+        {"stat": "XpGain", "op": "add", "scope": "player", "value": 0.12, "perLevel": [0.12]},
+        {"stat": "Cooldown", "op": "mult", "scope": "all", "value": -0.06, "perLevel": [-0.06]}
+      ],
+      "parameters": [
+        {"key": "evolved", "value": 1},
+        {"key": "levelHeal", "value": 0.05},
+        {"key": "levelHealCooldown", "value": 3},
+        {"key": "boost", "value": 0.25},
+        {"key": "boostSeconds", "value": 1.5},
+        {"key": "boostCooldown", "value": 4}
+      ]
+    },
+    {
+      "id": "motor_astra",
+      "name": "Motor do Astra",
+      "description": "Ronca e treme: solta periodicamente uma onda de impacto que fere e empurra os inimigos ao redor.",
+      "kind": "component",
+      "rarity": "raro",
+      "behavior": "item_motor",
+      "tags": ["Mecanica", "Area"],
+      "maxLevel": 5,
+      "evolutionOnly": false,
+      "exclusive": false,
+      "sfx": ["master_chao"],
+      "baseStats": [
+        {"stat": "Damage", "value": 14},
+        {"stat": "Cooldown", "value": 4},
+        {"stat": "Area", "value": 1},
+        {"stat": "Knockback", "value": 2.5},
+        {"stat": "Duration", "value": 1}
+      ],
+      "levels": [
+        {"add": [{"stat": "Area", "value": 0.25}], "mult": [], "text": "Onda maior"},
+        {"add": [], "mult": [{"stat": "Cooldown", "value": -0.25}], "text": "Ondas mais frequentes"},
+        {"add": [{"stat": "Damage", "value": 3}], "mult": [], "text": "A onda lança 5 peças metálicas"},
+        {"add": [{"stat": "Damage", "value": 3}], "mult": [], "text": "A cada 3ª onda, sobrecarga: segunda onda logo depois"}
+      ],
+      "grants": [],
+      "parameters": []
+    },
+    {
+      "id": "astra_alta_rotacao",
+      "name": "Astra em Alta Rotação",
+      "description": "Ondas maiores a cada 2,5 s. Com o carro do Jean: drift 50% mais rápido deixando rastro de dano.",
+      "kind": "component",
+      "rarity": "reliquia",
+      "behavior": "item_motor",
+      "tags": ["Mecanica", "Area"],
+      "maxLevel": 1,
+      "evolutionOnly": true,
+      "exclusive": false,
+      "sfx": ["master_chao"],
+      "baseStats": [
+        {"stat": "Damage", "value": 20},
+        {"stat": "Cooldown", "value": 2.5},
+        {"stat": "Area", "value": 1.2},
+        {"stat": "Knockback", "value": 3},
+        {"stat": "Duration", "value": 1}
+      ],
+      "levels": [],
+      "grants": [],
+      "parameters": [{"key": "evolved", "value": 1}, {"key": "evoInterval", "value": 2.5}]
+    },
+    {
+      "id": "cachorro_quente",
+      "name": "Cachorro Quentamento de Motor",
+      "description": "Um cachorro mecânico superaquecido persegue inimigos, morde e dá investidas que deixam rastro de calor.",
+      "kind": "component",
+      "rarity": "incomum",
+      "behavior": "item_cachorro",
+      "tags": ["Mecanica", "Termico"],
+      "maxLevel": 5,
+      "evolutionOnly": false,
+      "exclusive": false,
+      "sfx": ["robo_soco", "robo_dash"],
+      "baseStats": [
+        {"stat": "Damage", "value": 9},
+        {"stat": "Cooldown", "value": 3},
+        {"stat": "Range", "value": 6},
+        {"stat": "Area", "value": 1},
+        {"stat": "Duration", "value": 1}
+      ],
+      "levels": [
+        {"add": [], "mult": [], "text": "O cachorro corre mais rápido"},
+        {"add": [{"stat": "Damage", "value": 4}], "mult": [], "text": "Investidas mais fortes"},
+        {"add": [{"stat": "Duration", "value": 0.6}], "mult": [], "text": "Rastro de calor dura mais"},
+        {"add": [{"stat": "Damage", "value": 2}], "mult": [], "text": "A cada 4ª investida, corrida turbo que atravessa grupos"}
+      ],
+      "grants": [],
+      "parameters": []
+    },
+    {
+      "id": "cao_turbo",
+      "name": "Cão Turbo",
+      "description": "Peças de carro e escapamento: investida turbo a cada 4 s que termina numa explosão de calor.",
+      "kind": "component",
+      "rarity": "reliquia",
+      "behavior": "item_cachorro",
+      "tags": ["Mecanica", "Termico"],
+      "maxLevel": 1,
+      "evolutionOnly": true,
+      "exclusive": false,
+      "sfx": ["robo_soco", "robo_dash"],
+      "baseStats": [
+        {"stat": "Damage", "value": 16},
+        {"stat": "Cooldown", "value": 4},
+        {"stat": "Range", "value": 7},
+        {"stat": "Area", "value": 1.1},
+        {"stat": "Duration", "value": 1.4}
+      ],
+      "levels": [],
+      "grants": [],
+      "parameters": [{"key": "evolved", "value": 1}, {"key": "turboEvery", "value": 4}]
+    },
+    {
+      "id": "camiseta_contrario",
+      "name": "Camiseta ao Contrário",
+      "description": "Ninguém entende de que lado você está: chance de esquivar de ataques.",
+      "kind": "component",
+      "rarity": "incomum",
+      "behavior": "item_camiseta",
+      "tags": ["Defesa", "Mobilidade"],
+      "maxLevel": 5,
+      "evolutionOnly": false,
+      "exclusive": false,
+      "sfx": [],
+      "baseStats": [{"stat": "Damage", "value": 12}, {"stat": "Area", "value": 1}],
+      "levels": [
+        {"add": [], "mult": [], "text": "Mais esquiva"},
+        {"add": [], "mult": [], "text": "Ao esquivar, +20% de velocidade por 1,5 s"},
+        {"add": [], "mult": [], "text": "A esquiva deixa uma imagem residual que confunde (−60% de velocidade) quem está perto"},
+        {"add": [], "mult": [], "text": "Primeira esquiva após 6 s: onda que interrompe inimigos comuns por 0,6 s"}
+      ],
+      "grants": [{"stat": "Dodge", "op": "add", "scope": "player", "value": 0.08, "perLevel": [0.08, 0.11, 0.11, 0.11, 0.11]}],
+      "parameters": [{"key": "dodgeSpeed", "value": 0.2}, {"key": "waveCooldown", "value": 6}]
+    },
+    {
+      "id": "moda_incompreensivel",
+      "name": "Moda Incompreensível",
+      "description": "Toda esquiva solta uma onda que fere e empurra os inimigos próximos.",
+      "kind": "component",
+      "rarity": "reliquia",
+      "behavior": "item_camiseta",
+      "tags": ["Defesa", "Mobilidade"],
+      "maxLevel": 1,
+      "evolutionOnly": true,
+      "exclusive": false,
+      "sfx": [],
+      "baseStats": [{"stat": "Damage", "value": 16}, {"stat": "Area", "value": 1.1}],
+      "levels": [],
+      "grants": [{"stat": "Dodge", "op": "add", "scope": "player", "value": 0.14, "perLevel": [0.14]}],
+      "parameters": [{"key": "evolved", "value": 1}, {"key": "dodgeSpeed", "value": 0.25}, {"key": "waveCooldown", "value": 5}]
+    },
+    {
+      "id": "mamao",
+      "name": "Mamão \"Só Quer Mamão\"",
+      "description": "Um mamão simpático orbita você e solta pulsos de cura (aliados próximos recebem metade).",
+      "kind": "component",
+      "rarity": "incomum",
+      "behavior": "item_mamao",
+      "tags": ["Suporte", "Cura"],
+      "maxLevel": 5,
+      "evolutionOnly": false,
+      "exclusive": false,
+      "sfx": ["gema"],
+      "baseStats": [{"stat": "Damage", "value": 10}, {"stat": "Cooldown", "value": 6}, {"stat": "Area", "value": 1}],
+      "levels": [
+        {"add": [], "mult": [{"stat": "Cooldown", "value": -0.25}], "text": "Pulsos mais frequentes"},
+        {"add": [{"stat": "Area", "value": 0.3}], "mult": [], "text": "Pulso maior"},
+        {"add": [], "mult": [], "text": "Cura com a vida cheia vira escudo (até 15% da vida máxima)"},
+        {"add": [], "mult": [], "text": "A cada 3º pulso, explosão de polpa que empurra e fere"}
+      ],
+      "grants": [],
+      "parameters": [{"key": "heal", "value": 0.04}, {"key": "shieldCap", "value": 0.15}]
+    },
+    {
+      "id": "mamao_supremo",
+      "name": "Só Quer Mamão Supremo",
+      "description": "Campo de suporte amplo: cura a cada 3 s e excedente vira escudo (até 25% da vida máxima).",
+      "kind": "component",
+      "rarity": "reliquia",
+      "behavior": "item_mamao",
+      "tags": ["Suporte", "Cura"],
+      "maxLevel": 1,
+      "evolutionOnly": true,
+      "exclusive": false,
+      "sfx": ["gema"],
+      "baseStats": [{"stat": "Damage", "value": 14}, {"stat": "Cooldown", "value": 3}, {"stat": "Area", "value": 1.15}],
+      "levels": [],
+      "grants": [],
+      "parameters": [{"key": "evolved", "value": 1}, {"key": "evoHeal", "value": 0.05}, {"key": "evoShieldCap", "value": 0.25}, {"key": "evoInterval", "value": 3}]
+    },
+    {
+      "id": "tequila",
+      "name": "Tequila",
+      "description": "Euforia periódica: armas atacam mais rápido por alguns segundos; depois, projéteis um pouco mais lentos por 2 s.",
+      "kind": "component",
+      "rarity": "raro",
+      "behavior": "item_tequila",
+      "tags": ["Quimica"],
+      "maxLevel": 5,
+      "evolutionOnly": false,
+      "exclusive": false,
+      "sfx": ["garrafa", "grito"],
+      "baseStats": [{"stat": "Damage", "value": 18}, {"stat": "Cooldown", "value": 12}, {"stat": "Duration", "value": 4}, {"stat": "Area", "value": 1}],
+      "levels": [
+        {"add": [{"stat": "Duration", "value": 1.5}], "mult": [], "text": "A euforia dura mais"},
+        {"add": [], "mult": [], "text": "Penalidade depois da euforia cai pela metade"},
+        {"add": [], "mult": [], "text": "Na euforia, +10% de velocidade de movimento"},
+        {"add": [{"stat": "Damage", "value": 6}], "mult": [], "text": "Ao fim da euforia, pulso de dano ao redor"}
+      ],
+      "grants": [],
+      "parameters": [
+        {"key": "attackSpeed", "value": 0.1},
+        {"key": "penalty", "value": 0.15},
+        {"key": "penaltyReduced", "value": 0.07},
+        {"key": "penaltySeconds", "value": 2},
+        {"key": "moveBonus", "value": 0.1}
+      ]
+    },
+    {
+      "id": "fiesta_caotica",
+      "name": "Fiesta Caótica",
+      "description": "Na euforia: +1 projétil/golpe e recarga −20%; no fim, onda de impacto grande e 1,5 s de recuperação.",
+      "kind": "component",
+      "rarity": "reliquia",
+      "behavior": "item_tequila",
+      "tags": ["Quimica"],
+      "maxLevel": 1,
+      "evolutionOnly": true,
+      "exclusive": false,
+      "sfx": ["garrafa", "grito"],
+      "baseStats": [{"stat": "Damage", "value": 26}, {"stat": "Cooldown", "value": 11}, {"stat": "Duration", "value": 5.5}, {"stat": "Area", "value": 1}],
+      "levels": [],
+      "grants": [],
+      "parameters": [
+        {"key": "evolved", "value": 1},
+        {"key": "evoAttackSpeed", "value": 0.2},
+        {"key": "evoRecovery", "value": 1.5},
+        {"key": "moveBonus", "value": 0.1}
+      ]
+    },
+    {
+      "id": "chapeu_japones",
+      "name": "Chapéu de Japonês",
+      "description": "Chapéu de palha que ajuda na mira: projéteis mais rápidos e mais alcance para armas de projétil.",
+      "kind": "component",
+      "rarity": "incomum",
+      "behavior": "item_chapeu",
+      "tags": ["Projetil", "Sensores"],
+      "maxLevel": 5,
+      "evolutionOnly": false,
+      "exclusive": false,
+      "sfx": [],
+      "baseStats": [],
+      "levels": [
+        {"add": [], "mult": [], "text": "Mais alcance"},
+        {"add": [], "mult": [], "text": "Projéteis ainda mais rápidos"},
+        {"add": [], "mult": [], "text": "20% dos tiros ganham +1 perfuração"},
+        {"add": [], "mult": [], "text": "A cada 3 s, o próximo tiro ganha +2 perfuração e +25% de velocidade"}
+      ],
+      "grants": [
+        {"stat": "ProjectileSpeed", "op": "mult", "scope": "all", "value": 0.1, "perLevel": [0.1, 0.1, 0.15, 0.15, 0.15]},
+        {"stat": "Range", "op": "mult", "scope": "tag:Projetil", "value": 0.05, "perLevel": [0.05, 0.1, 0.1, 0.1, 0.1]}
+      ],
+      "parameters": [{"key": "pierceChance", "value": 0.2}, {"key": "focusEvery", "value": 3}]
+    },
+    {
+      "id": "mestre_projeteis",
+      "name": "Mestre dos Projéteis",
+      "description": "25% dos tiros ganham +1 perfuração ou +1 ricochete (no máximo 3 ricochetes por tiro).",
+      "kind": "component",
+      "rarity": "reliquia",
+      "behavior": "item_chapeu",
+      "tags": ["Projetil", "Sensores"],
+      "maxLevel": 1,
+      "evolutionOnly": true,
+      "exclusive": false,
+      "sfx": [],
+      "baseStats": [],
+      "levels": [],
+      "grants": [
+        {"stat": "ProjectileSpeed", "op": "mult", "scope": "all", "value": 0.18, "perLevel": [0.18]},
+        {"stat": "Range", "op": "mult", "scope": "tag:Projetil", "value": 0.12, "perLevel": [0.12]}
+      ],
+      "parameters": [{"key": "evolved", "value": 1}, {"key": "pierceChance", "value": 0.2}, {"key": "focusEvery", "value": 3}, {"key": "evoChance", "value": 0.25}]
     }
   ],
   "enemies": [
@@ -1573,6 +2033,90 @@
       "fromAbility": "fala_alta",
       "resultAbility": "fala_amplificada",
       "requires": [{"kind": "ability_level", "target": "fala_alta", "value": 5}, {"kind": "ability_level", "target": "megafone", "value": 2}],
+      "discoverable": false
+    },
+    {
+      "id": "evo_protoboard_experimental",
+      "name": "Protoboard Experimental",
+      "description": "Protoboard nível 4 + outra arma ou item eletrônico.",
+      "fromAbility": "protoboard",
+      "resultAbility": "protoboard_experimental",
+      "requires": [{"kind": "ability_level", "target": "protoboard", "value": 4}, {"kind": "tag_count", "target": "Eletronica", "value": 2}],
+      "discoverable": false
+    },
+    {
+      "id": "evo_hortalica_desgraca",
+      "name": "Hortaliça da Desgraça",
+      "description": "Cenoura Podre nível 5 + uma habilidade de área.",
+      "fromAbility": "cenoura_podre",
+      "resultAbility": "hortalica_desgraca",
+      "requires": [{"kind": "ability_level", "target": "cenoura_podre", "value": 5}, {"kind": "tag_count", "target": "Area", "value": 1}],
+      "discoverable": false
+    },
+    {
+      "id": "evo_dieta_milagrosa",
+      "name": "Dieta Milagrosa",
+      "description": "Iogurte nível 5 + outro item de mobilidade (Turbina ou Camiseta ao Contrário).",
+      "fromAbility": "iogurte_80",
+      "resultAbility": "dieta_milagrosa",
+      "requires": [{"kind": "ability_level", "target": "iogurte_80", "value": 5}, {"kind": "tag_count", "target": "Mobilidade", "value": 2}],
+      "discoverable": false
+    },
+    {
+      "id": "evo_astra_alta_rotacao",
+      "name": "Astra em Alta Rotação",
+      "description": "Motor do Astra nível 5 + outra peça mecânica. Com o carro do Jean, o drift acelera.",
+      "fromAbility": "motor_astra",
+      "resultAbility": "astra_alta_rotacao",
+      "requires": [{"kind": "ability_level", "target": "motor_astra", "value": 5}, {"kind": "tag_count", "target": "Mecanica", "value": 2}],
+      "discoverable": false
+    },
+    {
+      "id": "evo_cao_turbo",
+      "name": "Cão Turbo",
+      "description": "Cachorro Quentamento de Motor nível 5 + Motor do Astra.",
+      "fromAbility": "cachorro_quente",
+      "resultAbility": "cao_turbo",
+      "requires": [
+        {"kind": "ability_level", "target": "cachorro_quente", "value": 5},
+        {"kind": "any_ability_level", "target": "motor_astra|astra_alta_rotacao", "value": 1}
+      ],
+      "discoverable": false
+    },
+    {
+      "id": "evo_moda_incompreensivel",
+      "name": "Moda Incompreensível",
+      "description": "Camiseta ao Contrário nível 5 + outro item de mobilidade (Turbina ou Iogurte).",
+      "fromAbility": "camiseta_contrario",
+      "resultAbility": "moda_incompreensivel",
+      "requires": [{"kind": "ability_level", "target": "camiseta_contrario", "value": 5}, {"kind": "tag_count", "target": "Mobilidade", "value": 2}],
+      "discoverable": false
+    },
+    {
+      "id": "evo_mamao_supremo",
+      "name": "Só Quer Mamão Supremo",
+      "description": "Mamão nível 5 + um item de cura ou proteção (Marmita, Vida Máxima ou Recuperação).",
+      "fromAbility": "mamao",
+      "resultAbility": "mamao_supremo",
+      "requires": [{"kind": "ability_level", "target": "mamao", "value": 5}, {"kind": "tag_count", "target": "Cura", "value": 2}],
+      "discoverable": false
+    },
+    {
+      "id": "evo_fiesta_caotica",
+      "name": "Fiesta Caótica",
+      "description": "Tequila nível 5 + Velocidade de Ataque ou Dano nível 2.",
+      "fromAbility": "tequila",
+      "resultAbility": "fiesta_caotica",
+      "requires": [{"kind": "ability_level", "target": "tequila", "value": 5}, {"kind": "any_ability_level", "target": "attr_vel_ataque|attr_dano", "value": 2}],
+      "discoverable": false
+    },
+    {
+      "id": "evo_mestre_projeteis",
+      "name": "Mestre dos Projéteis",
+      "description": "Chapéu de Japonês nível 5 + uma arma de projéteis.",
+      "fromAbility": "chapeu_japones",
+      "resultAbility": "mestre_projeteis",
+      "requires": [{"kind": "ability_level", "target": "chapeu_japones", "value": 5}, {"kind": "tag_count", "target": "Projetil", "value": 2}],
       "discoverable": false
     }
   ]

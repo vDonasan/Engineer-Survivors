@@ -24,9 +24,12 @@ MonoBehaviour:
     xpB: 5
     xpC: 0.6
     maxWeapons: 6
-    maxComponents: 6
+    maxComponents: 8
     coopChoiceSeconds: 12
     choiceInvuln: 2
+    offerRerolls: 3
+    offerBans: 1
+    offerSkips: 2
     affinityInitial: 0.04
     affinityIntermediate: 0.04
     affinityIntermediateLevel: 4
@@ -203,6 +206,24 @@ MonoBehaviour:
   - {fileID: 11400000, guid: cfb32a208970d0b4d9afeb92be6e2dfc, type: 2}
   - {fileID: 11400000, guid: d8d9acee3b6296d4aaf7444cb102039f, type: 2}
   - {fileID: 11400000, guid: 3e2dcd8d066a3d04a995e04cedc61754, type: 2}
+  - {fileID: 11400000, guid: 67ca003b92903404d85e7c1e63c2ab47, type: 2}
+  - {fileID: 11400000, guid: b66eeb02d8f2ecc40878f603e6250cb7, type: 2}
+  - {fileID: 11400000, guid: fe81f7cbe89e8bf43b4bdc172dbd44a9, type: 2}
+  - {fileID: 11400000, guid: d705c214f99240b42bd50f542ae97a54, type: 2}
+  - {fileID: 11400000, guid: a5f1a7d28878cd04cbc4666f56d5f926, type: 2}
+  - {fileID: 11400000, guid: 34932a68a196d2841956a5d9e60f401a, type: 2}
+  - {fileID: 11400000, guid: ef9d6e2a519c9354f93e4935b46c237e, type: 2}
+  - {fileID: 11400000, guid: 3b78ef785c2c0b4448ae44bfa4de7c1a, type: 2}
+  - {fileID: 11400000, guid: e44174c853177c14f923fba1d167ca4a, type: 2}
+  - {fileID: 11400000, guid: e78969f413eb77f44857d4211d12d975, type: 2}
+  - {fileID: 11400000, guid: 43ffb357396d87546a7e492ae8e779e6, type: 2}
+  - {fileID: 11400000, guid: 63f2ab569a981b84bbf34f9239db92b5, type: 2}
+  - {fileID: 11400000, guid: dbc37efe672e1bd4490e6a2f9684fe91, type: 2}
+  - {fileID: 11400000, guid: 7fc94afdfa5e40148826759bf80dbdee, type: 2}
+  - {fileID: 11400000, guid: e57fcf1ab4796cc4bb67e8f30a11f048, type: 2}
+  - {fileID: 11400000, guid: 341a24a656ff71e469661c006b9ab43b, type: 2}
+  - {fileID: 11400000, guid: bdf126e998bff6f4587d5d9fce02cbe2, type: 2}
+  - {fileID: 11400000, guid: 3b79372c720d0cc4ca225da9a88ddaa4, type: 2}
   enemies:
   - {fileID: 11400000, guid: be3a23cfb4b940e468891f3dda86ceb3, type: 2}
   - {fileID: 11400000, guid: caca7a0c0b4509040896d6c712b6473f, type: 2}
@@ -222,3 +243,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9425d5ec9cb5e1d44b876a1ef7bd7c0a, type: 2}
   - {fileID: 11400000, guid: f88b5e5a57edeb943b47860b8ad50330, type: 2}
   - {fileID: 11400000, guid: bc112f5d0539b964fa71fe0930667e60, type: 2}
+  - {fileID: 11400000, guid: 153ac5590981a0e4fb39131e76bc8ba2, type: 2}
+  - {fileID: 11400000, guid: e48d8c79417c4cf4990d5cee7fd4156c, type: 2}
+  - {fileID: 11400000, guid: b49c6a5c8e3e78f46adb8525fe61f438, type: 2}
+  - {fileID: 11400000, guid: ef1eb0a63d82db94ca25520c3c7b6135, type: 2}
+  - {fileID: 11400000, guid: 948454b20ddf5f0449dc7159efdab673, type: 2}
+  - {fileID: 11400000, guid: 71944017c637d9d42a28a580d2abccf7, type: 2}
+  - {fileID: 11400000, guid: c8c74cc7e0b650b4ab22dd0a6444b2b9, type: 2}
+  - {fileID: 11400000, guid: 030e00285a1b6944a8c67aaddd7ccca8, type: 2}
+  - {fileID: 11400000, guid: da12c55ae753fc4488164e1ef168630f, type: 2}

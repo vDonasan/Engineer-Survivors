@@ -33,5 +33,6 @@ MonoBehaviour:
       op: mult
       scope: all
       value: 0.06
+      perLevel: []
     parameters: []
   icon: {fileID: 21300000, guid: f5d692c6d25cbdd4a95857f3c87cb8c2, type: 3}

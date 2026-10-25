@@ -29,6 +29,8 @@ namespace ES.Sim
         public float xpA = 5, xpB = 5, xpC = 0.6f;
         public int maxWeapons = 6, maxComponents = 6;
         public float coopChoiceSeconds = 12, choiceInvuln = 2;
+        /// <summary>Por partida: atualizar as cartas, banir uma carta, pular a escolha.</summary>
+        public int offerRerolls = 3, offerBans = 1, offerSkips = 2;
         public float affinityInitial = 0.04f, affinityIntermediate = 0.04f;
         public int affinityIntermediateLevel = 4;
         public int capEnemies = 400, capGems = 150, capHostileProjectiles = 200, capCosmeticEvents = 48;
@@ -196,6 +198,8 @@ namespace ES.Sim
         /// <summary>player | all | self | tag:&lt;Tag&gt; | ability:&lt;id&gt;</summary>
         public string scope;
         public float value;
+        /// <summary>Valor acumulado em cada nível (opcional; senão value × nível).</summary>
+        public float[] perLevel = new float[0];
     }
 
     [Serializable]

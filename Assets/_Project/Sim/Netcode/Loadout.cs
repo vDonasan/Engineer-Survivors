@@ -119,6 +119,9 @@ namespace ES.Sim
                     case RequirementKind.AbilityLevel:
                         if (l.LevelOf(r.TargetIndex) >= r.Value) p.Met++;
                         break;
+                    case RequirementKind.AnyAbilityLevel:
+                        foreach (int t in r.Targets) if (l.LevelOf(t) >= r.Value) { p.Met++; break; }
+                        break;
                     case RequirementKind.TagCount:
                         int count = 0;
                         foreach (var a in l.Abilities) if (_db.Ability(a.Ability).Tags.Has(r.Tag)) count++;

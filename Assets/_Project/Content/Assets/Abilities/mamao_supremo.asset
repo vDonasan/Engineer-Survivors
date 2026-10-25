@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 743fe4cf80f19db468824bd5de5da40a, type: 3}
+  m_Name: mamao_supremo
+  m_EditorClassIdentifier: ES.Content::ES.Content.AbilityAsset
+  def:
+    id: mamao_supremo
+    name: "S\xF3 Quer Mam\xE3o Supremo"
+    description: "Campo de suporte amplo: cura a cada 3 s e excedente vira escudo
+      (at\xE9 25% da vida m\xE1xima)."
+    kind: component
+    rarity: reliquia
+    behavior: item_mamao
+    tags:
+    - Suporte
+    - Cura
+    maxLevel: 1
+    evolutionOnly: 1
+    exclusive: 0
+    sfx:
+    - gema
+    baseStats:
+    - stat: Damage
+      value: 14
+    - stat: Cooldown
+      value: 3
+    - stat: Area
+      value: 1.15
+    levels: []
+    grants: []
+    parameters:
+    - key: evolved
+      value: 1
+    - key: evoHeal
+      value: 0.05
+    - key: evoShieldCap
+      value: 0.25
+    - key: evoInterval
+      value: 3
+  icon: {fileID: 21300000, guid: bd3f9feb47cabe244b3fdd9e87000bde, type: 3}

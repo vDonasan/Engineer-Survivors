@@ -16,7 +16,8 @@ const server = spawn(process.execPath, [join(root, 'Tools', 'serve-local.mjs'), 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const browser = await chromium.launch({ headless: false, channel: 'msedge', args: ['--ignore-gpu-blocklist'] });
 try {
-  const page = await (await browser.newContext({ viewport: { width: 1280, height: 720 } })).newPage();
+  const [vw, vh] = (process.env.VIEW || '1280x720').split('x').map(Number);
+  const page = await (await browser.newContext({ viewport: { width: vw, height: vh } })).newPage();
   await page.goto(`http://localhost:${port}/${process.env.START || ''}`);
   await sleep(14000);
   await page.screenshot({ path: join(outDir, `${prefix}-menu.png`) });
@@ -29,8 +30,8 @@ try {
     await page.screenshot({ path: join(outDir, `${prefix}-${++k}.png`) });
   }
   if (process.env.MATCH) {
-    await page.goto(`http://localhost:${port}/?mode=solo&spec=${process.env.MATCH}&log=1&bench=60`);
-    await sleep(22000);
+    await page.goto(`http://localhost:${port}/?${process.env.MATCHQ || `mode=solo&spec=${process.env.MATCH}&log=1&bench=60`}`);
+    await sleep(Number(process.env.MATCHWAIT || 22000));
     await page.screenshot({ path: join(outDir, `${prefix}-match.png`) });
   }
 } finally { await browser.close(); server.kill(); }

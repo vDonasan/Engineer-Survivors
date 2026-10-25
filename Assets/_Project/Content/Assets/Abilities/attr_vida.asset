@@ -19,7 +19,8 @@ MonoBehaviour:
     kind: attribute
     rarity: comum
     behavior: attribute
-    tags: []
+    tags:
+    - Cura
     maxLevel: 5
     evolutionOnly: 0
     exclusive: 0
@@ -31,5 +32,6 @@ MonoBehaviour:
       op: add
       scope: player
       value: 15
+      perLevel: []
     parameters: []
   icon: {fileID: 21300000, guid: 45301c21048c1fb4384543bdb9de4825, type: 3}

@@ -38,6 +38,33 @@ function bot(body, eye, f, size = 16) {
   return p;
 }
 
+/** Cachorro mecânico superaquecido: escapamento soltando fumaça; o turbo tem chamas. */
+function dog(f, turbo) {
+  const p = new Px(18, 13);
+  const leg = f ? [[3, 10], [6, 11], [11, 10], [14, 11]] : [[3, 11], [6, 10], [11, 11], [14, 10]];
+  for (const [x, y] of leg) rect(p, x, y, 2, 13 - y, O);
+  box(p, 2, 5, 13, 6, turbo ? C.red2 : C.rust3);
+  rect(p, 3, 6, 11, 1, turbo ? C.red3 : C.orange3);
+  box(p, 6, 6, 5, 3, C.gray4); p.set(8, 7, C.gray2);
+  box(p, 12, 2, 6, 6, turbo ? C.red2 : C.rust3); p.set(16, 4, C.black); p.set(17, 6, O);
+  rect(p, 13, 1, 2, 2, O); p.set(13, 1, turbo ? C.red1 : C.rust1);
+  box(p, 0, 4, 3, 2, C.gray3);
+  if (turbo) { p.set(0, 3, C.yellow3); p.set(1, 2 + f, C.orange2); p.set(0, 1 + f, C.red2); }
+  else { p.set(0, 3 - f, C.gray4); p.set(1, 2 - f, C.gray5); }
+  return p;
+}
+
+/** Mamão simpático com folhinha e carinha. */
+function papaya(f) {
+  const p = new Px(12, 15);
+  ellipse(p, 5.5, 8.5 + f * 0.5, 5, 5.5, C.orange2, C.orange1);
+  ellipse(p, 4, 7, 1.5, 2, C.orange3, null);
+  rect(p, 5, 1, 2, 3, C.green1); p.set(7, 1, C.green2); p.set(8, 0, C.green2);
+  p.set(4, 8, C.outline); p.set(7, 8, C.outline); p.set(5, 10, C.outline); p.set(6, 10, C.outline);
+  p.set(3, 9, C.pink2); p.set(8, 9, C.pink2);
+  return p;
+}
+
 function master(f) {
   const p = new Px(48, 48), b = f % 2;
   // pernas
@@ -142,11 +169,20 @@ const SPRITES = {
   insulin: [S(['......OOOOOOO.', 'MMMMMOWYYYYOOO', '......OOOOOOO.'], { M: C.gray5, Y: C.orange2 })],
   vial: [S(['.OOO.', '.OWO.', 'OOOOO', 'OCCCO', 'OCcCO', 'OCCCO', 'OCCCO', 'OOOOO'], { C: C.sky2, c: W })],
   soundwave: [0, 1].map((f) => { const p = new Px(10, 16); for (let k = 0; k < 3; k++) { const r = 4 + k * 3; for (let y = 0; y < 16; y++) { const dy = y - 7.5; const x = Math.round(Math.sqrt(Math.max(0, r * r - dy * dy))) - 4 + f; if (Math.abs(dy) < r && x >= 0 && x < 10) p.set(x, y, k === 1 ? C.yellow3 : W); } } return p; }),
+  carrot: [S(['......GG..', '.OOOOOOGG.', 'ORrRRrROG.', 'OrRrRRrOG.', '.OOOOOO...'], { R: '#c46a2a', r: '#7a5a2a', G: '#5a7a2a' })],
+  zonestink: [0, 1].map((f) => { const p = new Px(10, 9); ellipse(p, 4.5 + f * 0.5, 4.5, 4, 3.5, '#9ad03a', '#4a6a1a'); ellipse(p, 3, 3.5, 1, 1, '#c8f06a', null); p.set(6, 6 - f, '#4a6a1a'); return p; }),
+  scrappart: [S(['.OOO.', 'OMmMO', 'OmOmO', 'OMmMO', '.OOO.'], { M: C.gray5, m: C.gray3 })],
+  hotdog: [0, 1].map((f) => dog(f, false)),
+  hotdogturbo: [0, 1].map((f) => dog(f, true)),
+  zoneheat: [0, 1].map((f) => S(f ? ['...Y..', '..YO..', '.YOOY.', '.OORO.', 'ORRRRO', '.OOOO.'] : ['..Y...', '..OY..', '.YOOY.', '.OROO.', 'ORRRRO', '.OOOO.'], { O: C.orange2, Y: C.yellow3, R: C.red2 })),
+  papaya: [0, 1].map((f) => papaya(f)),
+  afterimage: [(() => { const p = new Px(16, 24); ellipse(p, 7.5, 6, 5, 5, '#c8f0ff', '#7ab8d8'); rect(p, 3, 11, 10, 9, '#c8f0ff'); rect(p, 4, 20, 3, 3, '#c8f0ff'); rect(p, 9, 20, 3, 3, '#c8f0ff'); p.set(5, 6, '#7ab8d8'); p.set(10, 6, '#7ab8d8'); return p; })()],
+  zoneheal: [S(['..OOO..', '..OGO..', 'OOOGOOO', 'OGGGGGO', 'OOOGOOO', '..OGO..', '..OOO..'], { G: C.green2, O: C.green1 })],
   bottle: [S(['..OO..', '..OGO.', '.OGGO.', 'OGGgGO', 'OGGgGO', 'OGGgGO', 'OGLLGO', 'OGGGGO', 'OGGGGO', '.OOOO.'], { G: C.bottle2, g: C.bottle3, L: C.yellow3 })],
 };
 
 /** Sprites que giram pelo ângulo do snapshot (os demais não giram ou têm quadros por direção). */
-export const ROTATING = ['laser', 'briefcase', 'expression', 'sashimi', 'resistor', 'transistor', 'scopewave', 'dorito', 'pill', 'syringe', 'syringespecial', 'phone', 'insulin', 'soundwave', 'bottle', 'jabuti', 'jabutiwalk', 'masterbolt', 'computer'];
+export const ROTATING = ['carrot', 'scrappart', 'laser', 'briefcase', 'expression', 'sashimi', 'resistor', 'transistor', 'scopewave', 'dorito', 'pill', 'syringe', 'syringespecial', 'phone', 'insulin', 'soundwave', 'bottle', 'jabuti', 'jabutiwalk', 'masterbolt', 'computer'];
 
 export function allySprites() {
   const out = [];

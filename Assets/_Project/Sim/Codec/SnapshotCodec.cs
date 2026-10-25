@@ -36,7 +36,7 @@ namespace ES.Sim
         public float MoveSpeed;
         public int Tick;
 
-        public const byte FlagInvulnerable = 1, FlagSpecialActive = 2, FlagHasOffer = 4;
+        public const byte FlagInvulnerable = 1, FlagSpecialActive = 2, FlagHasOffer = 4, FlagShield = 8;
     }
 
     public struct EnemySnap
@@ -124,6 +124,7 @@ namespace ES.Sim
                 if (p.InvulnUntil > w.Elapsed) flags |= PlayerSnap.FlagInvulnerable;
                 if (p.SpecialActiveLeft > 0) flags |= PlayerSnap.FlagSpecialActive;
                 if (p.Progress.Current != null) flags |= PlayerSnap.FlagHasOffer;
+                if (p.Shield > 0.5f) flags |= PlayerSnap.FlagShield;
                 PutU8((byte)p.Slot);
                 PutU8((byte)p.Status);
                 PutU16(Quant.Pos(p.Pos.X, 0, aw));

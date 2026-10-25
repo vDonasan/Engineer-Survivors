@@ -29,6 +29,7 @@ MonoBehaviour:
       op: add
       scope: self
       value: 1
+      perLevel: []
     advancedAffinityText: "+1 salto nas armas de cadeia afins ao chegar no n\xEDvel
       m\xE1ximo."
   portrait: {fileID: 21300000, guid: 41f305f94ed1f5c4aa55bfe3a6f4f4fe, type: 3}

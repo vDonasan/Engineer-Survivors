@@ -12,13 +12,15 @@ namespace ES.Sim
             {
                 if (p == null || !p.IsActive) continue;
                 var pr = p.Progress;
-                pr.Xp += amount * w.Balance.Xp;
+                pr.Xp += amount * w.Balance.Xp * (1f + Math.Max(0f, p.Stats.Get(StatId.XpGain)));
+                if (amount > 0) ItemHooks.OnXpGained(w, p.Slot);
                 int next = XpCurve.ToNext(w.Rules, pr.Level);
                 while (pr.Xp >= next)
                 {
                     pr.Xp -= next;
                     pr.Level++;
                     pr.PendingLevels++;
+                    ItemHooks.OnLevelUp(w, p.Slot);
                     next = XpCurve.ToNext(w.Rules, pr.Level);
                 }
                 EnsureOffer(w, p.Slot);
@@ -32,15 +34,59 @@ namespace ES.Sim
             var pr = p.Progress;
             if (pr.Current != null || pr.PendingLevels <= 0 || !p.IsActive) return;
             pr.PendingLevels--;
-            var offer = OfferGenerator.Generate(w, slot, pr.NextOfferId);
+            OpenOffer(w, p, float.NaN);
+        }
+
+        /// <summary>Gera e publica uma oferta nova (também ao atualizar ou banir; o prazo do coop é mantido).</summary>
+        static void OpenOffer(World w, PlayerState p, float keepDeadline)
+        {
+            var pr = p.Progress;
+            var offer = OfferGenerator.Generate(w, p.Slot, pr.NextOfferId);
             pr.NextOfferId = (short)(pr.NextOfferId == short.MaxValue ? 1 : pr.NextOfferId + 1);
             if (w.Config.Coop)
             {
-                offer.Deadline = w.Elapsed + w.Rules.coopChoiceSeconds;
+                offer.Deadline = float.IsNaN(keepDeadline) ? w.Elapsed + w.Rules.coopChoiceSeconds : keepDeadline;
                 p.InvulnUntil = Math.Max(p.InvulnUntil, w.Elapsed + w.Rules.choiceInvuln);
             }
+            offer.RerollsLeft = (byte)Math.Max(0, pr.RerollsLeft);
+            offer.BansLeft = (byte)Math.Max(0, pr.BansLeft);
+            offer.SkipsLeft = (byte)Math.Max(0, pr.SkipsLeft);
             pr.Current = offer;
-            w.Events.AddRule(new RuleEvent { Kind = RuleEventKind.LevelUpOffer, A = slot, B = offer.OfferId, C = pr.Level });
+            w.Events.AddRule(new RuleEvent { Kind = RuleEventKind.LevelUpOffer, A = p.Slot, B = offer.OfferId, C = pr.Level });
+        }
+
+        /// <summary>Códigos de ChoiceIndex além das cartas 0..n.</summary>
+        public const sbyte ActionReroll = -2, ActionSkip = -3, ActionBanFirst = -10;
+        /// <summary>ChoiceApplied.B quando a escolha foi pulada.</summary>
+        public const int SkippedKind = 250;
+
+        static bool Action(World w, PlayerState p, LevelUpOffer offer, int index)
+        {
+            var pr = p.Progress;
+            if (index == ActionReroll)
+            {
+                if (pr.RerollsLeft <= 0) return false;
+                pr.RerollsLeft--;
+                OpenOffer(w, p, offer.Deadline);
+                return true;
+            }
+            if (index == ActionSkip)
+            {
+                if (pr.SkipsLeft <= 0) return false;
+                pr.SkipsLeft--;
+                pr.Current = null;
+                w.Events.AddRule(new RuleEvent { Kind = RuleEventKind.ChoiceApplied, A = p.Slot, B = SkippedKind, C = 0 });
+                EnsureOffer(w, p.Slot);
+                return true;
+            }
+            int k = ActionBanFirst - index;
+            if (k < 0 || k >= offer.Options.Length || pr.BansLeft <= 0) return false;
+            var opt = offer.Options[k];
+            if (opt.Kind == OptionKind.Evolution || opt.Kind == OptionKind.Survival) return false;
+            pr.BansLeft--;
+            pr.Banned.Add(opt.Ref);
+            OpenOffer(w, p, offer.Deadline);
+            return true;
         }
 
         /// <summary>Valida e aplica a escolha da oferta aberta.</summary>
@@ -48,7 +94,9 @@ namespace ES.Sim
         {
             var p = w.Players[slot];
             var offer = p?.Progress.Current;
-            if (offer == null || offer.OfferId != offerId || index < 0 || index >= offer.Options.Length) return false;
+            if (offer == null || offer.OfferId != offerId) return false;
+            if (index <= ActionReroll) return Action(w, p, offer, index);
+            if (index < 0 || index >= offer.Options.Length) return false;
 
             var opt = offer.Options[index];
             switch (opt.Kind)
@@ -105,7 +153,7 @@ namespace ES.Sim
             for (int slot = 0; slot < PlayerStore.MaxSlots && slot < inputs.Length; slot++)
             {
                 var input = inputs[slot];
-                if (input.ChoiceIndex >= 0 && w.Players.Slots[slot] != null)
+                if (input.ChoiceIndex != -1 && w.Players.Slots[slot] != null)
                     Choose(w, slot, input.ChoiceOfferId, input.ChoiceIndex);
             }
         }

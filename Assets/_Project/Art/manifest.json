@@ -9938,6 +9938,174 @@
    "border": null
   },
   {
+   "id": "ally_carrot_0",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_carrot_0.png",
+   "w": 10,
+   "h": 5,
+   "pivot": [
+    5,
+    2.5
+   ],
+   "border": null
+  },
+  {
+   "id": "ally_zonestink_0",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_zonestink_0.png",
+   "w": 10,
+   "h": 9,
+   "pivot": [
+    5,
+    4.5
+   ],
+   "border": null
+  },
+  {
+   "id": "ally_zonestink_1",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_zonestink_1.png",
+   "w": 10,
+   "h": 9,
+   "pivot": [
+    5,
+    4.5
+   ],
+   "border": null
+  },
+  {
+   "id": "ally_scrappart_0",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_scrappart_0.png",
+   "w": 5,
+   "h": 5,
+   "pivot": [
+    2.5,
+    2.5
+   ],
+   "border": null
+  },
+  {
+   "id": "ally_hotdog_0",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_hotdog_0.png",
+   "w": 18,
+   "h": 13,
+   "pivot": [
+    9,
+    6.5
+   ],
+   "border": null
+  },
+  {
+   "id": "ally_hotdog_1",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_hotdog_1.png",
+   "w": 18,
+   "h": 13,
+   "pivot": [
+    9,
+    6.5
+   ],
+   "border": null
+  },
+  {
+   "id": "ally_hotdogturbo_0",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_hotdogturbo_0.png",
+   "w": 18,
+   "h": 13,
+   "pivot": [
+    9,
+    6.5
+   ],
+   "border": null
+  },
+  {
+   "id": "ally_hotdogturbo_1",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_hotdogturbo_1.png",
+   "w": 18,
+   "h": 13,
+   "pivot": [
+    9,
+    6.5
+   ],
+   "border": null
+  },
+  {
+   "id": "ally_zoneheat_0",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_zoneheat_0.png",
+   "w": 6,
+   "h": 6,
+   "pivot": [
+    3,
+    3
+   ],
+   "border": null
+  },
+  {
+   "id": "ally_zoneheat_1",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_zoneheat_1.png",
+   "w": 6,
+   "h": 6,
+   "pivot": [
+    3,
+    3
+   ],
+   "border": null
+  },
+  {
+   "id": "ally_papaya_0",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_papaya_0.png",
+   "w": 12,
+   "h": 15,
+   "pivot": [
+    6,
+    7.5
+   ],
+   "border": null
+  },
+  {
+   "id": "ally_papaya_1",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_papaya_1.png",
+   "w": 12,
+   "h": 15,
+   "pivot": [
+    6,
+    7.5
+   ],
+   "border": null
+  },
+  {
+   "id": "ally_afterimage_0",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_afterimage_0.png",
+   "w": 16,
+   "h": 24,
+   "pivot": [
+    8,
+    12
+   ],
+   "border": null
+  },
+  {
+   "id": "ally_zoneheal_0",
+   "category": "Weapons",
+   "file": "Weapons/Personagens/ally_zoneheal_0.png",
+   "w": 7,
+   "h": 7,
+   "pivot": [
+    3.5,
+    3.5
+   ],
+   "border": null
+  },
+  {
    "id": "ally_bottle_0",
    "category": "Weapons",
    "file": "Weapons/Personagens/ally_bottle_0.png",
@@ -11080,6 +11248,222 @@
    "id": "icon_fala_amplificada",
    "category": "Abilities",
    "file": "Abilities/icon_fala_amplificada.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "icon_protoboard",
+   "category": "Abilities",
+   "file": "Abilities/icon_protoboard.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "icon_protoboard_experimental",
+   "category": "Abilities",
+   "file": "Abilities/icon_protoboard_experimental.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "icon_cenoura_podre",
+   "category": "Abilities",
+   "file": "Abilities/icon_cenoura_podre.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "icon_hortalica_desgraca",
+   "category": "Abilities",
+   "file": "Abilities/icon_hortalica_desgraca.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "icon_iogurte_80",
+   "category": "Abilities",
+   "file": "Abilities/icon_iogurte_80.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "icon_dieta_milagrosa",
+   "category": "Abilities",
+   "file": "Abilities/icon_dieta_milagrosa.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "icon_motor_astra",
+   "category": "Abilities",
+   "file": "Abilities/icon_motor_astra.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "icon_astra_alta_rotacao",
+   "category": "Abilities",
+   "file": "Abilities/icon_astra_alta_rotacao.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "icon_cachorro_quente",
+   "category": "Abilities",
+   "file": "Abilities/icon_cachorro_quente.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "icon_cao_turbo",
+   "category": "Abilities",
+   "file": "Abilities/icon_cao_turbo.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "icon_camiseta_contrario",
+   "category": "Abilities",
+   "file": "Abilities/icon_camiseta_contrario.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "icon_moda_incompreensivel",
+   "category": "Abilities",
+   "file": "Abilities/icon_moda_incompreensivel.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "icon_mamao",
+   "category": "Abilities",
+   "file": "Abilities/icon_mamao.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "icon_mamao_supremo",
+   "category": "Abilities",
+   "file": "Abilities/icon_mamao_supremo.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "icon_tequila",
+   "category": "Abilities",
+   "file": "Abilities/icon_tequila.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "icon_fiesta_caotica",
+   "category": "Abilities",
+   "file": "Abilities/icon_fiesta_caotica.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "icon_chapeu_japones",
+   "category": "Abilities",
+   "file": "Abilities/icon_chapeu_japones.png",
+   "w": 32,
+   "h": 32,
+   "pivot": [
+    16,
+    16
+   ],
+   "border": null
+  },
+  {
+   "id": "icon_mestre_projeteis",
+   "category": "Abilities",
+   "file": "Abilities/icon_mestre_projeteis.png",
    "w": 32,
    "h": 32,
    "pivot": [

@@ -23,6 +23,7 @@ MonoBehaviour:
     tags:
     - Energia
     - Eletronica
+    - Projetil
     maxLevel: 5
     evolutionOnly: 0
     exclusive: 1

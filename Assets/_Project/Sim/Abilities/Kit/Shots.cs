@@ -48,6 +48,9 @@ namespace ES.Sim
         readonly ushort[] _hits;
         readonly IdAllocator _ids;
 
+        World _world;
+        public void Attach(World w) => _world = w;
+
         public ShotStore(int capacity, IdAllocator ids)
         {
             Capacity = capacity;
@@ -67,6 +70,7 @@ namespace ES.Sim
             Items[i].HitCount = Items[i].HitNext = 0;
             Items[i].WaveOffset = 0;
             if (Items[i].Pierce < 1) Items[i].Pierce = 1;
+            ItemHooks.OnShotSpawned(_world, ref Items[i]);
             return i;
         }
 

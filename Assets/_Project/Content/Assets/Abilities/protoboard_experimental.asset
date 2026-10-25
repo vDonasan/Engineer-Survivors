@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 743fe4cf80f19db468824bd5de5da40a, type: 3}
+  m_Name: protoboard_experimental
+  m_EditorClassIdentifier: ES.Content::ES.Content.AbilityAsset
+  def:
+    id: protoboard_experimental
+    name: Protoboard Experimental
+    description: "Circuitos tempor\xE1rios: 30% dos acertos el\xE9tricos soltam uma
+      corrente que salta em at\xE9 4 inimigos."
+    kind: component
+    rarity: reliquia
+    behavior: item_protoboard
+    tags:
+    - Eletronica
+    maxLevel: 1
+    evolutionOnly: 1
+    exclusive: 0
+    sfx:
+    - arco
+    baseStats:
+    - stat: Damage
+      value: 12
+    - stat: Area
+      value: 1
+    - stat: Duration
+      value: 1
+    levels: []
+    grants:
+    - stat: ProjectileSpeed
+      op: mult
+      scope: tag:Eletronica
+      value: 0.12
+      perLevel:
+      - 0.12
+    - stat: ProjectileSpeed
+      op: mult
+      scope: tag:Software
+      value: 0.12
+      perLevel:
+      - 0.12
+    - stat: Cooldown
+      op: mult
+      scope: tag:Eletronica
+      value: -0.15
+      perLevel:
+      - -0.15
+    - stat: Cooldown
+      op: mult
+      scope: tag:Software
+      value: -0.15
+      perLevel:
+      - -0.15
+    parameters:
+    - key: evolved
+      value: 1
+    - key: evoChance
+      value: 0.3
+    - key: evoJumps
+      value: 4
+    - key: evoRange
+      value: 3.5
+    - key: internalCooldown
+      value: 0.1
+  icon: {fileID: 21300000, guid: 91f779a08268d554981aac15bc82316a, type: 3}

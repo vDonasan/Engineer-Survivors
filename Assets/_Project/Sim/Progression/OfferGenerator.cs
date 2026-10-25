@@ -45,14 +45,14 @@ namespace ES.Sim
             {
                 if (a.Def.Kind == AbilityKind.Weapon) weapons++;
                 else if (a.Def.Kind == AbilityKind.Component) components++;
-                if (a.Level < a.Def.MaxLevel) Pool.Add(new Candidate { Option = new OfferOption { Kind = OptionKind.Upgrade, Ref = a.AbilityIndex }, Weight = WeightUpgrade });
+                if (a.Level < a.Def.MaxLevel && !p.Progress.Banned.Contains(a.AbilityIndex)) Pool.Add(new Candidate { Option = new OfferOption { Kind = OptionKind.Upgrade, Ref = a.AbilityIndex }, Weight = WeightUpgrade });
             }
 
             for (int i = 0; i < db.AbilityCount; i++)
             {
                 var ab = db.Ability(i);
-                if (ab.Def.evolutionOnly || ab.Def.exclusive || ab.Kind == AbilityKind.Survival || RequirementEvaluator.LevelOf(p, i) > 0 || EvolvedAway(w, p, i)) continue;
-                float boost = ab.Tags.Overlaps(spec.AffinityTags) ? AffinityBoost : 1f;
+                if (ab.Def.evolutionOnly || ab.Def.exclusive || ab.Kind == AbilityKind.Survival || p.Progress.Banned.Contains(i) || RequirementEvaluator.LevelOf(p, i) > 0 || EvolvedAway(w, p, i)) continue;
+                float boost = (ab.Tags.Overlaps(spec.AffinityTags) ? AffinityBoost : 1f) * RarityWeight(ab.Rarity);
                 if (ab.Kind == AbilityKind.Weapon && weapons < w.Rules.maxWeapons)
                     Pool.Add(new Candidate { Option = new OfferOption { Kind = OptionKind.NewAbility, Ref = i }, Weight = WeightNew * boost });
                 else if (ab.Kind == AbilityKind.Component && components < w.Rules.maxComponents)
@@ -82,6 +82,9 @@ namespace ES.Sim
 
             return new LevelUpOffer { OfferId = offerId, Options = Picked.ToArray() };
         }
+
+        /// <summary>A raridade controla a chance de aparecer (não o poder).</summary>
+        static float RarityWeight(Rarity r) => r == Rarity.Comum ? 1f : r == Rarity.Incomum ? 0.8f : r == Rarity.Raro ? 0.55f : 0.4f;
 
         static bool EvolvedAway(World w, PlayerState p, int abilityIndex)
         {

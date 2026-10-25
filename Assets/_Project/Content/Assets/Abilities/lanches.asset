@@ -23,6 +23,7 @@ MonoBehaviour:
     tags:
     - Software
     - Biomecanica
+    - Projetil
     maxLevel: 5
     evolutionOnly: 0
     exclusive: 1

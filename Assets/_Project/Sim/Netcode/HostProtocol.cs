@@ -266,7 +266,7 @@ namespace ES.Sim
             if (e.Kind == RuleEventKind.LevelUpOffer)
             {
                 var cur = World.Players[e.A]?.Progress.Current;
-                if (cur != null && cur.OfferId == e.B) d.Options = cur.Options;
+                if (cur != null && cur.OfferId == e.B) { d.Options = cur.Options; d.Rerolls = cur.RerollsLeft; d.Bans = cur.BansLeft; d.Skips = cur.SkipsLeft; }
             }
             return d;
         }
@@ -316,6 +316,7 @@ namespace ES.Sim
                 if (p.InvulnUntil > w.Elapsed) flags |= PlayerSnap.FlagInvulnerable;
                 if (p.SpecialActiveLeft > 0) flags |= PlayerSnap.FlagSpecialActive;
                 if (p.Progress.Current != null) flags |= PlayerSnap.FlagHasOffer;
+                if (p.Shield > 0.5f) flags |= PlayerSnap.FlagShield;
                 Feed.Players[p.Slot] = new PlayerSnap
                 {
                     Present = true, Status = p.Status, Pos = p.Pos, Vel = p.Vel, Facing = p.Facing,

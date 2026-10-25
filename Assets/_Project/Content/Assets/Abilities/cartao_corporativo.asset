@@ -33,9 +33,11 @@ MonoBehaviour:
       op: mult
       scope: player
       value: 0.1
+      perLevel: []
     - stat: Damage
       op: mult
       scope: all
       value: 0.03
+      perLevel: []
     parameters: []
   icon: {fileID: 21300000, guid: 97347fb52314d9d46805d5e24cb047d0, type: 3}

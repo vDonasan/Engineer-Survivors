@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 743fe4cf80f19db468824bd5de5da40a, type: 3}
+  m_Name: cenoura_podre
+  m_EditorClassIdentifier: ES.Content::ES.Content.AbilityAsset
+  def:
+    id: cenoura_podre
+    name: Cenoura Podre
+    description: "Arremessa uma cenoura podre que deixa uma nuvem de mau cheiro:
+      dano cont\xEDnuo e leve lentid\xE3o."
+    kind: component
+    rarity: comum
+    behavior: item_cenoura
+    tags:
+    - Quimica
+    - Organico
+    maxLevel: 5
+    evolutionOnly: 0
+    exclusive: 0
+    sfx:
+    - frasco
+    baseStats:
+    - stat: Damage
+      value: 10
+    - stat: Cooldown
+      value: 2.8
+    - stat: Range
+      value: 7
+    - stat: ProjectileSpeed
+      value: 9
+    - stat: Area
+      value: 1
+    - stat: Duration
+      value: 1
+    levels:
+    - add: []
+      mult:
+      - stat: Cooldown
+        value: -0.2
+      text: Arremessos mais frequentes
+    - add:
+      - stat: Duration
+        value: 0.5
+      mult: []
+      text: A nuvem dura mais
+    - add:
+      - stat: Damage
+        value: 2
+      mult: []
+      text: 15% de chance de atordoar o alvo por 0,6 s
+    - add:
+      - stat: Area
+        value: 0.2
+      mult: []
+      text: "O fedor se espalha uma vez para inimigos vizinhos (\u221230% de dano)"
+    grants: []
+    parameters:
+    - key: stunChance
+      value: 0.15
+    - key: stunSeconds
+      value: 0.6
+  icon: {fileID: 21300000, guid: 070f3caa906ac314c85345d92018ee27, type: 3}

@@ -190,3 +190,16 @@ Toggle { margin: 8px 0; }
 .sheet-right .unity-scroller__slider .unity-base-slider__tracker { background-color: rgb(20, 22, 27); border-width: 0; }
 .sheet-right .unity-scroller__slider .unity-base-slider__dragger { background-color: rgb(232, 185, 35); border-width: 0; }
 .sheet-right .unity-scroller__low-button, .sheet-right .unity-scroller__high-button { display: none; }
+
+/* nada encolhe a ponto de sobrepor: cartões, rótulos e botões mantêm a altura do conteúdo */
+.pick-panel > *, .summary-panel > *, .hero-card > *, .hero-card-small > *, .diff-panel > *, .sheet-left > * { flex-shrink: 0; }
+.summary-info { flex-grow: 1; flex-shrink: 0; }
+.pick-panel .small { margin-top: 4px; }
+.setup-layout > *, .setup-row > * { flex-shrink: 0; }
+.summary-panel > .summary-stage { min-height: 130px; flex-shrink: 0; }
+
+/* ações da subida de nível */
+.offer-actions { margin-top: 10px; justify-content: center; }
+.offer-actions .btn { font-size: 22px; min-width: 170px; }
+.card.ban-target { background-image: url("/Assets/_Project/Art/UI/ui_btn_primary.png"); }
+.rarity-reliquia { color: rgb(255, 210, 63); }

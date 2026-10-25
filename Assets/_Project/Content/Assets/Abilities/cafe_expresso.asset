@@ -33,9 +33,11 @@ MonoBehaviour:
       op: mult
       scope: all
       value: 0.06
+      perLevel: []
     - stat: Cooldown
       op: mult
       scope: all
       value: -0.03
+      perLevel: []
     parameters: []
   icon: {fileID: 21300000, guid: ed12ed6ddcd8fea4482b52632b0d6556, type: 3}

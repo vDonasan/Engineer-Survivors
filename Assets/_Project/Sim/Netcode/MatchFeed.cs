@@ -180,7 +180,7 @@ namespace ES.Sim
                 case RuleEventKind.GemCollected: Gems.Remove((ushort)e.A); break;
                 case RuleEventKind.LevelUpOffer:
                     if (e.A == LocalSlot && d.Options != null && d.Options.Length > 0)
-                        CurrentOffer = new LevelUpOffer { OfferId = (short)e.B, Options = d.Options };
+                        CurrentOffer = new LevelUpOffer { OfferId = (short)e.B, Options = d.Options, RerollsLeft = d.Rerolls, BansLeft = d.Bans, SkipsLeft = d.Skips };
                     break;
                 case RuleEventKind.ChoiceApplied:
                     if (e.A == LocalSlot) CurrentOffer = null;

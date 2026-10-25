@@ -187,6 +187,7 @@ namespace ES.Game
                 if (l == null || !snap.Present || snap.Status != PlayerStatus.Active) continue;
                 var pos = players.PositionOf(s);
                 if (!pos.HasValue) continue;
+                if ((snap.Flags & PlayerSnap.FlagShield) != 0) DrawRing(pos.Value + new Vector2(0, 0.1f), 0.7f, new Color(0.25f, 0.88f, 1f, 0.85f), 3, now * 2f, Layers.Fx + 2);
                 foreach (int ab in _orbitAbilities)
                 {
                     int level = l.LevelOf(ab);
@@ -238,13 +239,19 @@ namespace ES.Game
                 case FxStyle.Drift: return new Color32(0xc9, 0xcd, 0xd2, 0xff);
                 case FxStyle.Circuit: return new Color32(0xb8, 0xe0, 0x2c, 0xff);
                 case FxStyle.Storm: return new Color32(0xa0, 0x8c, 0xff, 0xff);
+                case FxStyle.Stink: return new Color32(0x9a, 0xd0, 0x3a, 0xff);
+                case FxStyle.Heal: return new Color32(0x4d, 0xff, 0x88, 0xff);
+                case FxStyle.Shield: return new Color32(0x3f, 0xe0, 0xff, 0xff);
+                case FxStyle.Dodge: return new Color32(0xc8, 0xf0, 0xff, 0xff);
+                case FxStyle.Fiesta: return new Color32(0xff, 0xd2, 0x3f, 0xff);
+                case FxStyle.Heat: return new Color32(0xff, 0x7a, 0x1a, 0xff);
                 default: return ArcColor;
             }
         }
 
         void Particles(Vector2 at, float radius, FxStyle style, float now)
         {
-            int kind = style == FxStyle.Coins ? 1 : style == FxStyle.Sound ? 2 : style == FxStyle.Glass ? 3 : style == FxStyle.Math ? 4 : 0;
+            int kind = style == FxStyle.Coins ? 1 : style == FxStyle.Sound ? 2 : style == FxStyle.Glass ? 3 : style == FxStyle.Math || style == FxStyle.Fiesta || style == FxStyle.Heal ? 4 : 0;
             int n = kind == 0 ? 0 : Effects == EffectsLevel.High ? 6 : 3;
             for (int i = 0; i < n; i++)
             {

@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 
 namespace ES.SimTests.Progression
@@ -71,7 +72,8 @@ namespace ES.SimTests.Progression
 
             var o = OfferGenerator.Generate(w, 0, 1);
             Assert.That(o.Options.Length, Is.GreaterThanOrEqualTo(1));
-            Assert.That(o.Options.All(x => x.Kind == OptionKind.Survival), Is.True);
+            // com tudo no máximo, só sobram o kit e evoluções de itens que ficaram disponíveis
+            Assert.That(o.Options.All(x => x.Kind == OptionKind.Survival || x.Kind == OptionKind.Evolution), Is.True);
         }
 
         [Test]
@@ -181,6 +183,69 @@ namespace ES.SimTests.Progression
             w.Step(TestWorlds.NoInput());
             Assert.That(p.Progress.Level, Is.EqualTo(2));
             Assert.That(w.Events.Rule.Any(r => r.Kind == RuleEventKind.LevelUpOffer && r.A == 0), Is.True);
+        }
+        // ---------- atualizar, banir e pular ----------
+
+        static LevelUpOffer Offer(World w) { ProgressionSystem.AddSharedXp(w, 5); return w.Players[0].Progress.Current; }
+
+        [Test]
+        public void Reroll_NewCards_ThreeTimesPerMatch()
+        {
+            var w = Open();
+            var pr = w.Players[0].Progress;
+            ProgressionSystem.AddSharedXp(w, 5 + 11 + 17 + 23 + 29);
+            for (int k = 0; k < 3; k++)
+            {
+                var before = pr.Current;
+                Assert.That(ProgressionSystem.Choose(w, 0, before.OfferId, ProgressionSystem.ActionReroll), Is.True);
+                Assert.That(pr.Current.OfferId, Is.Not.EqualTo(before.OfferId));
+                Assert.That(pr.Current.RerollsLeft, Is.EqualTo(2 - k));
+            }
+            Assert.That(ProgressionSystem.Choose(w, 0, pr.Current.OfferId, ProgressionSystem.ActionReroll), Is.False, "acabaram as atualizações");
+        }
+
+        [Test]
+        public void Skip_ClosesOffer_TwicePerMatch()
+        {
+            var w = Open();
+            var pr = w.Players[0].Progress;
+            int abilities = w.Players[0].Abilities.Count;
+            ProgressionSystem.AddSharedXp(w, 5 + 11 + 17);
+            Assert.That(ProgressionSystem.Choose(w, 0, pr.Current.OfferId, ProgressionSystem.ActionSkip), Is.True);
+            Assert.That(w.Events.Rule.Any(r => r.Kind == RuleEventKind.ChoiceApplied && r.B == ProgressionSystem.SkippedKind), Is.True);
+            Assert.That(ProgressionSystem.Choose(w, 0, pr.Current.OfferId, ProgressionSystem.ActionSkip), Is.True);
+            Assert.That(ProgressionSystem.Choose(w, 0, pr.Current.OfferId, ProgressionSystem.ActionSkip), Is.False, "só 2 pulos");
+            Assert.That(w.Players[0].Abilities.Count, Is.EqualTo(abilities), "pular não concede nada");
+        }
+
+        [Test]
+        public void Ban_RemovesCardForTheRestOfTheMatch_Once()
+        {
+            var w = Open();
+            var pr = w.Players[0].Progress;
+            ProgressionSystem.AddSharedXp(w, 5);
+            int k = Array.FindIndex(pr.Current.Options, o => o.Kind == OptionKind.NewAbility || o.Kind == OptionKind.Upgrade || o.Kind == OptionKind.Attribute);
+            int banned = pr.Current.Options[k].Ref;
+            Assert.That(ProgressionSystem.Choose(w, 0, pr.Current.OfferId, ProgressionSystem.ActionBanFirst - k), Is.True);
+            Assert.That(pr.Current.Options.Any(o => o.Ref == banned && o.Kind != OptionKind.Evolution), Is.False);
+            for (short o = 100; o < 400; o++)
+                Assert.That(OfferGenerator.Generate(w, 0, o).Options.Any(x => x.Ref == banned && x.Kind != OptionKind.Evolution && x.Kind != OptionKind.Survival), Is.False);
+            Assert.That(ProgressionSystem.Choose(w, 0, pr.Current.OfferId, ProgressionSystem.ActionBanFirst), Is.False, "só 1 banimento");
+        }
+
+        [Test]
+        public void OfferActionCounts_TravelInRuleEvents()
+        {
+            var w = Open();
+            var pr = w.Players[0].Progress;
+            ProgressionSystem.AddSharedXp(w, 5);
+            ProgressionSystem.Choose(w, 0, pr.Current.OfferId, ProgressionSystem.ActionReroll);
+            var bw = new ByteWriter(4096);
+            RuleEventCodec.Write(bw, w.Events.Rule, w);
+            var list = new System.Collections.Generic.List<DecodedRuleEvent>();
+            Assert.That(RuleEventCodec.TryRead(bw.Buffer, bw.Length, w.Arena.width, w.Arena.height, list), Is.True);
+            var last = list.Last(d => d.Event.Kind == RuleEventKind.LevelUpOffer);
+            Assert.That(last.Rerolls, Is.EqualTo(2)); Assert.That(last.Bans, Is.EqualTo(1)); Assert.That(last.Skips, Is.EqualTo(2));
         }
     }
 }

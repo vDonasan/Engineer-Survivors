@@ -8,11 +8,13 @@ namespace ES.Sim
         // Habilidades
         Damage, Cooldown, Range, Area, Duration, ProjectileSpeed, Knockback, Slow, HitInterval,
         Count, Pierce, Chains, ChainRange, ChainFalloff,
+        // Jogador (itens)
+        XpGain, Dodge,
     }
 
     public static class StatIds
     {
-        public const int Count = (int)StatId.ChainFalloff + 1;
+        public const int Count = (int)StatId.Dodge + 1;
 
         public static bool TryParse(string text, out StatId id)
         {

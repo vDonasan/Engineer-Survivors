@@ -9,11 +9,13 @@ namespace ES.Sim
         Energia, Eletronica, Automacao, Software, Estruturas, Mecanica, Biomecanica, Quimica,
         Sensores, Robotica, Defesa, Suporte, Termico, Reacao, Drones,
         Maquina, Blindado, Organico,
+        // categorias de jogo (requisitos de evolução dos itens)
+        Area, Projetil, Mobilidade, Cura,
     }
 
     public static class Tags
     {
-        public const int Count = (int)Tag.Organico + 1;
+        public const int Count = (int)Tag.Cura + 1;
 
         static readonly string[] Keys = BuildKeys();
 

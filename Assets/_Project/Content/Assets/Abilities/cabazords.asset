@@ -23,6 +23,7 @@ MonoBehaviour:
     tags:
     - Robotica
     - Automacao
+    - Projetil
     maxLevel: 5
     evolutionOnly: 0
     exclusive: 1

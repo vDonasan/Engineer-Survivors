@@ -8,6 +8,8 @@ namespace ES.Sim
         public RuleEvent Event;
         /// <summary>Só para LevelUpOffer; vazio se a oferta já foi resolvida no mesmo tick.</summary>
         public OfferOption[] Options;
+        /// <summary>Só para LevelUpOffer: atualizações, banimentos e pulos restantes.</summary>
+        public byte Rerolls, Bans, Skips;
     }
 
     /// <summary>Eventos de regra em formato compacto por tipo (entrega confiável).</summary>
@@ -41,6 +43,7 @@ namespace ES.Sim
                         var opts = cur != null && cur.OfferId == e.B ? cur.Options : NoOptions;
                         w.U8((byte)opts.Length);
                         foreach (var o in opts) { w.U8((byte)o.Kind); w.U16((ushort)o.Ref); }
+                        w.U8(cur?.RerollsLeft ?? 0); w.U8(cur?.BansLeft ?? 0); w.U8(cur?.SkipsLeft ?? 0);
                         break;
                     }
                     case RuleEventKind.ChoiceApplied:
@@ -85,6 +88,7 @@ namespace ES.Sim
                 if (!r.TryU8(out byte kind) || kind > (byte)RuleEventKind.MatchEnded) return false;
                 var e = new RuleEvent { Kind = (RuleEventKind)kind };
                 var options = NoOptions;
+                var actions = new byte[3];
                 bool ok;
                 switch (e.Kind)
                 {
@@ -111,6 +115,7 @@ namespace ES.Sim
                             if (!r.TryU8(out byte ok2) || ok2 > (byte)OptionKind.Survival || !r.TryU16(out ushort rf)) return false;
                             options[k] = new OfferOption { Kind = (OptionKind)ok2, Ref = rf };
                         }
+                        if (!r.TryU8(out actions[0]) || !r.TryU8(out actions[1]) || !r.TryU8(out actions[2])) return false;
                         break;
                     }
                     case RuleEventKind.ChoiceApplied:
@@ -147,7 +152,7 @@ namespace ES.Sim
                 }
                 if (!ok) return false;
                 if (IsSlotEvent(e.Kind) && e.A >= PlayerStore.MaxSlots) return false;
-                parsed.Add(new DecodedRuleEvent { Event = e, Options = options });
+                parsed.Add(new DecodedRuleEvent { Event = e, Options = options, Rerolls = actions[0], Bans = actions[1], Skips = actions[2] });
             }
             if (r.Remaining != 0) return false;
             into.AddRange(parsed);

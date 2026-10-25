@@ -29,10 +29,12 @@ MonoBehaviour:
       op: mult
       scope: self
       value: 0.15
+      perLevel: []
     - stat: MoveSpeed
       op: mult
       scope: player
       value: 0.05
+      perLevel: []
     advancedAffinityText: "+15% de empurr\xE3o e +5% de velocidade ao levar uma arma
       afim ao n\xEDvel m\xE1ximo."
   portrait: {fileID: 21300000, guid: d182ede8eebe2434f9576f8b9a9c85b6, type: 3}

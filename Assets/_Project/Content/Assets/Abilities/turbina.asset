@@ -21,6 +21,7 @@ MonoBehaviour:
     behavior: passive
     tags:
     - Mecanica
+    - Mobilidade
     maxLevel: 5
     evolutionOnly: 0
     exclusive: 0
@@ -32,5 +33,6 @@ MonoBehaviour:
       op: mult
       scope: player
       value: 0.06
+      perLevel: []
     parameters: []
   icon: {fileID: 21300000, guid: ac59446d6d258744a898a1134d749e5d, type: 3}

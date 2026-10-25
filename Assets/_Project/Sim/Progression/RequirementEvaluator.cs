@@ -14,6 +14,11 @@ namespace ES.Sim
                     case RequirementKind.AbilityLevel:
                         if (LevelOf(p, r.TargetIndex) < r.Value) return false;
                         break;
+                    case RequirementKind.AnyAbilityLevel:
+                        bool any = false;
+                        foreach (int t in r.Targets) if (LevelOf(p, t) >= r.Value) { any = true; break; }
+                        if (!any) return false;
+                        break;
                     case RequirementKind.TagCount:
                         int count = 0;
                         foreach (var a in p.Abilities) if (a.Def.Tags.Has(r.Tag)) count++;

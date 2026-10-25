@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea33c51705b4e8d4e8c2873bb790386f, type: 3}
+  m_Name: evo_dieta_milagrosa
+  m_EditorClassIdentifier: ES.Content::ES.Content.EvolutionAsset
+  def:
+    id: evo_dieta_milagrosa
+    name: Dieta Milagrosa
+    description: "Iogurte n\xEDvel 5 + outro item de mobilidade (Turbina ou Camiseta
+      ao Contr\xE1rio)."
+    fromAbility: iogurte_80
+    resultAbility: dieta_milagrosa
+    requires:
+    - kind: ability_level
+      target: iogurte_80
+      value: 5
+    - kind: tag_count
+      target: Mobilidade
+      value: 2
+    discoverable: 0

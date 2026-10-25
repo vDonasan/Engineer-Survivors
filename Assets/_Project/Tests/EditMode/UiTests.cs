@@ -123,7 +123,8 @@ namespace ES.Tests
             int ab = Db.AbilityIndex("descarga_direcionada");
             var info = LevelUpCards.Describe(Db, Eletrica(), 0, new OfferOption { Kind = OptionKind.Upgrade, Ref = (ushort)ab });
             Assert.That(info.Kind, Is.EqualTo("Nível 1 → 2"));
-            Assert.That(info.Change, Is.EqualTo(Db.Ability(ab).Levels[0].Text));
+            Assert.That(info.Change, Does.StartWith(Db.Ability(ab).Levels[0].Text));
+            Assert.That(info.Change, Does.Contain("Dano 14 → 18 (+28,6%)"), "mudança em números e porcentagem");
         }
 
         [Test]

@@ -146,6 +146,7 @@ namespace ES.Sim
                         case "comum": r.Rarity = Rarity.Comum; break;
                         case "incomum": r.Rarity = Rarity.Incomum; break;
                         case "raro": r.Rarity = Rarity.Raro; break;
+                        case "reliquia": r.Rarity = Rarity.Reliquia; break;
                         default: Err($"raridade desconhecida: {d.rarity} em {where}"); break;
                     }
                     if (!KnownBehaviors.Contains(d.behavior ?? "")) Err($"behavior desconhecido: {d.behavior} em {where}");
@@ -342,6 +343,7 @@ namespace ES.Sim
             {
                 "chain", "orbit", "projectile", "aura", "passive", "attribute", "heal",
                 "staut", "miyuki", "giulia", "breno", "artur", "badotti", "garcia", "jean", "fufu", "donasa",
+                "item_protoboard", "item_cenoura", "item_iogurte", "item_motor", "item_cachorro", "item_camiseta", "item_mamao", "item_tequila", "item_chapeu",
             };
 
             int Ref(Dictionary<string, int> map, string id, string where)
@@ -386,7 +388,7 @@ namespace ES.Sim
                 foreach (var d in defs)
                 {
                     if (!ParseStat(d.stat, where, out var st)) continue;
-                    var m = new ModifierTemplate { Stat = st, Value = d.value, AbilityIndex = -1 };
+                    var m = new ModifierTemplate { Stat = st, Value = d.value, AbilityIndex = -1, PerLevel = d.perLevel ?? new float[0] };
                     if (d.op == "add") m.Op = ModOp.Add;
                     else if (d.op == "mult") m.Op = ModOp.Mult;
                     else { Err($"op desconhecida: {d.op} em {where}"); continue; }
@@ -423,6 +425,13 @@ namespace ES.Sim
                         case "ability_level":
                             r.Kind = RequirementKind.AbilityLevel;
                             r.TargetIndex = Ref(_db._abilityIds, d.target, where + ".requires");
+                            break;
+                        case "any_ability_level":
+                            r.Kind = RequirementKind.AnyAbilityLevel;
+                            var names = (d.target ?? "").Split('|');
+                            r.Targets = new int[names.Length];
+                            for (int k = 0; k < names.Length; k++) r.Targets[k] = Ref(_db._abilityIds, names[k], where + ".requires");
+                            r.TargetIndex = r.Targets.Length > 0 ? r.Targets[0] : -1;
                             break;
                         case "tag_count":
                             r.Kind = RequirementKind.TagCount;

@@ -37,5 +37,11 @@
                 <ui:Label name="card-hint" class="card-hint" />
             </ui:Button>
         </ui:VisualElement>
+        <ui:Label name="label-ban-hint" text="#nivel_banir_dica" class="warn" style="display: none;" />
+        <ui:VisualElement class="row offer-actions">
+            <ui:Button name="btn-reroll" text="Atualizar" class="btn" />
+            <ui:Button name="btn-ban" text="Banir" class="btn" />
+            <ui:Button name="btn-skip" text="Pular" class="btn" />
+        </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

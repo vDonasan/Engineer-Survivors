@@ -17,12 +17,14 @@ namespace ES.Sim
         Jabuti, JabutiWalk, Car,
         Insulin, Vial,
         SoundWave, Bottle,
+        Carrot, ZoneStink, ScrapPart, HotDog, HotDogTurbo, ZoneHeat, Papaya, Afterimage, ZoneHeal,
     }
 
     /// <summary>Estilo visual de explosões, avisos, golpes e arcos (cor e partículas).</summary>
     public enum FxStyle : byte
     {
         Electric, Charged, Pop, Coins, Math, Food, Impact, Energy, Paper, Tech, Sound, Glass, Insulin, Robot, Drift, Circuit, Storm,
+        Stink, Heal, Shield, Dodge, Fiesta, Heat,
     }
 
     public enum ShotMotion : byte

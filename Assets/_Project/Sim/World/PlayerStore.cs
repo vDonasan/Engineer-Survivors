@@ -14,6 +14,8 @@ namespace ES.Sim
         public float Radius;
         public float Hp;
         public float InvulnUntil;
+        /// <summary>Escudo temporário (absorve dano antes da vida).</summary>
+        public float Shield;
         public readonly StatBlock Stats = new StatBlock();
         public readonly System.Collections.Generic.List<AbilityInstance> Abilities = new System.Collections.Generic.List<AbilityInstance>(12);
 

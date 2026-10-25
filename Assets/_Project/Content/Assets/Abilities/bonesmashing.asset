@@ -23,6 +23,7 @@ MonoBehaviour:
     tags:
     - Biomecanica
     - Suporte
+    - Area
     maxLevel: 5
     evolutionOnly: 0
     exclusive: 1

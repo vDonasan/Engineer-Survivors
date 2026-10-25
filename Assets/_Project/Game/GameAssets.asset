@@ -1665,6 +1665,34 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: 386a6573bb1496145a78e8eb4019bd1d, type: 3}
   - id: ally_soundwave_1
     sprite: {fileID: 21300000, guid: 9878dbaf3b05fe046a71e0501dff055d, type: 3}
+  - id: ally_carrot_0
+    sprite: {fileID: 21300000, guid: b88a94c3757821145bb4c0653c7b3dc8, type: 3}
+  - id: ally_zonestink_0
+    sprite: {fileID: 21300000, guid: b2dd56fb4e8653b4c925bc15f4c51e27, type: 3}
+  - id: ally_zonestink_1
+    sprite: {fileID: 21300000, guid: 43f482f9530e20242b1dc353baf91a99, type: 3}
+  - id: ally_scrappart_0
+    sprite: {fileID: 21300000, guid: 0a5c99fcf2cb5b3449149b44aae4627a, type: 3}
+  - id: ally_hotdog_0
+    sprite: {fileID: 21300000, guid: c5cc66fc88962be48b01e7075aa6c126, type: 3}
+  - id: ally_hotdog_1
+    sprite: {fileID: 21300000, guid: 715fc8b7b1b9af2428d9246af65aa016, type: 3}
+  - id: ally_hotdogturbo_0
+    sprite: {fileID: 21300000, guid: d21ae78bcedfd404d9b4fd431e84c8d8, type: 3}
+  - id: ally_hotdogturbo_1
+    sprite: {fileID: 21300000, guid: 9117b3b2d35ce1c46b510f4834f5f937, type: 3}
+  - id: ally_zoneheat_0
+    sprite: {fileID: 21300000, guid: a4cfc7e7d368bcf449a473fb27a21725, type: 3}
+  - id: ally_zoneheat_1
+    sprite: {fileID: 21300000, guid: 630a3460618a6f544b4067a215566bbd, type: 3}
+  - id: ally_papaya_0
+    sprite: {fileID: 21300000, guid: 487968bc9f02a2b438ae85cd0096ac0b, type: 3}
+  - id: ally_papaya_1
+    sprite: {fileID: 21300000, guid: 6697609f97ea8f049877f837b0e76414, type: 3}
+  - id: ally_afterimage_0
+    sprite: {fileID: 21300000, guid: 87853b415dacdad43ae110a92c255e2d, type: 3}
+  - id: ally_zoneheal_0
+    sprite: {fileID: 21300000, guid: 37eaa85f95d089244b6c97732bb9e390, type: 3}
   - id: ally_bottle_0
     sprite: {fileID: 21300000, guid: 390cc37415e144a4b9951d58ba2f157e, type: 3}
   - id: fx_tv
@@ -1851,6 +1879,42 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: 776857a4966f33547a8d48e37750cfd0, type: 3}
   - id: icon_fala_amplificada
     sprite: {fileID: 21300000, guid: 7993b8c7c5ffff041bc1b4ab981ef5c4, type: 3}
+  - id: icon_protoboard
+    sprite: {fileID: 21300000, guid: 629a17199eb5bbd459ef3490a56044cb, type: 3}
+  - id: icon_protoboard_experimental
+    sprite: {fileID: 21300000, guid: 91f779a08268d554981aac15bc82316a, type: 3}
+  - id: icon_cenoura_podre
+    sprite: {fileID: 21300000, guid: 070f3caa906ac314c85345d92018ee27, type: 3}
+  - id: icon_hortalica_desgraca
+    sprite: {fileID: 21300000, guid: 5744d46dde150ff418f8d71a18d12530, type: 3}
+  - id: icon_iogurte_80
+    sprite: {fileID: 21300000, guid: 9633fbba5a5b2c643a03fb0dc22f54a0, type: 3}
+  - id: icon_dieta_milagrosa
+    sprite: {fileID: 21300000, guid: 82db102b053185a43b1fd53db6421ec8, type: 3}
+  - id: icon_motor_astra
+    sprite: {fileID: 21300000, guid: a1d8e6bf5d8097d46a68974705ab6c9a, type: 3}
+  - id: icon_astra_alta_rotacao
+    sprite: {fileID: 21300000, guid: 1e28f66cf1ae3814197faaeb377dbe36, type: 3}
+  - id: icon_cachorro_quente
+    sprite: {fileID: 21300000, guid: 6aad6fa9e01329a4baaf79ea147c7d8f, type: 3}
+  - id: icon_cao_turbo
+    sprite: {fileID: 21300000, guid: 8cb6d890a7d06d246bd42692a6d4a905, type: 3}
+  - id: icon_camiseta_contrario
+    sprite: {fileID: 21300000, guid: 07cbbb6c625b58b4a8c6266ca6a67bbb, type: 3}
+  - id: icon_moda_incompreensivel
+    sprite: {fileID: 21300000, guid: 59d76ccb5fd3af34c8dfe43d996fa350, type: 3}
+  - id: icon_mamao
+    sprite: {fileID: 21300000, guid: 76941d4cb764b8a49880baa7ae0dff37, type: 3}
+  - id: icon_mamao_supremo
+    sprite: {fileID: 21300000, guid: bd3f9feb47cabe244b3fdd9e87000bde, type: 3}
+  - id: icon_tequila
+    sprite: {fileID: 21300000, guid: f7a348320538fbb46af9598224b20518, type: 3}
+  - id: icon_fiesta_caotica
+    sprite: {fileID: 21300000, guid: 37342241406963e42ab96cb67ab0e0b6, type: 3}
+  - id: icon_chapeu_japones
+    sprite: {fileID: 21300000, guid: 8df29d4604d39fc4fb52ed40ce41a0b0, type: 3}
+  - id: icon_mestre_projeteis
+    sprite: {fileID: 21300000, guid: 29492b6cc837ab649a6f4a5503674297, type: 3}
   - id: icon_apagao
     sprite: {fileID: 21300000, guid: ff67ceb137e8e6f4c843f806cb86bc41, type: 3}
   - id: icon_turbina_emergencia

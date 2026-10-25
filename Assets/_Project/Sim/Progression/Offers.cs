@@ -17,6 +17,8 @@ namespace ES.Sim
         public OfferOption[] Options;
         /// <summary>Coop: instante em que vale a primeira opção. Solo: infinito.</summary>
         public float Deadline = float.MaxValue;
+        /// <summary>Ações restantes do jogador quando a oferta foi aberta (para a interface).</summary>
+        public byte RerollsLeft, BansLeft, SkipsLeft;
     }
 
     public sealed class PlayerProgress
@@ -28,5 +30,9 @@ namespace ES.Sim
         /// <summary>Oferta aberta (no máximo uma por vez).</summary>
         public LevelUpOffer Current;
         public short NextOfferId = 1;
+        /// <summary>Atualizar as cartas, banir uma carta e pular: limitados por partida.</summary>
+        public int RerollsLeft, BansLeft, SkipsLeft;
+        /// <summary>Habilidades banidas: não voltam a aparecer nesta partida.</summary>
+        public readonly System.Collections.Generic.HashSet<int> Banned = new System.Collections.Generic.HashSet<int>();
     }
 }

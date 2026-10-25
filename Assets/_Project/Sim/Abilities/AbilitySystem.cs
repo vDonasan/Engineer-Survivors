@@ -26,6 +26,15 @@ namespace ES.Sim
             { "jean", new JeanBehavior() },
             { "fufu", new FufuBehavior() },
             { "donasa", new DonasaBehavior() },
+            { "item_protoboard", new ProtoboardItem() },
+            { "item_cenoura", new CenouraItem() },
+            { "item_iogurte", new IogurteItem() },
+            { "item_motor", new MotorItem() },
+            { "item_cachorro", new CachorroItem() },
+            { "item_camiseta", new CamisetaItem() },
+            { "item_mamao", new MamaoItem() },
+            { "item_tequila", new TequilaItem() },
+            { "item_chapeu", new ChapeuItem() },
         };
 
         public static bool IsKnown(string behavior) => Behaviors.ContainsKey(behavior ?? "");
@@ -88,7 +97,7 @@ namespace ES.Sim
             if (a.Def.Grants.Length == 0) return;
             float maxBefore = p.Stats.Get(StatId.MaxHp);
             p.Stats.RemoveSource(a.SourceId);
-            foreach (var g in a.Def.Grants) p.Stats.Add(g.ToModifier(a.Level, a.SourceId, a.AbilityIndex));
+            foreach (var g in a.Def.Grants) p.Stats.Add(g.AtLevel(a.Level, a.SourceId, a.AbilityIndex));
             float maxAfter = p.Stats.Get(StatId.MaxHp);
             if (maxAfter > maxBefore) p.Hp += maxAfter - maxBefore;
             if (p.Hp > maxAfter) p.Hp = maxAfter;

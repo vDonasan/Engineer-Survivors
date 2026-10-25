@@ -1,10 +1,12 @@
+using System;
+
 namespace ES.Sim
 {
     public enum AbilityKind { Weapon, Component, Attribute, Survival }
-    public enum Rarity { Comum, Incomum, Raro }
+    public enum Rarity { Comum, Incomum, Raro, Reliquia }
     public enum SpecialKind { Blackout, Turbine, Overclock }
     public enum EnemyBehavior { Chase, KiteShoot }
-    public enum RequirementKind { AbilityLevel, TagCount, Specialization, StatAtLeast, Branch }
+    public enum RequirementKind { AbilityLevel, TagCount, Specialization, StatAtLeast, Branch, AnyAbilityLevel }
     public enum SynergyEffect { ChargeEveryN }
     public enum TemplateScope { Player, All, Self, Tag, Ability }
 
@@ -30,6 +32,16 @@ namespace ES.Sim
         public TemplateScope Scope;
         public TagSet Tags;
         public int AbilityIndex;
+        /// <summary>Valor acumulado por nível (nível 1 = [0]); vazio = Value × nível.</summary>
+        public float[] PerLevel;
+
+        public Modifier AtLevel(int level, int sourceId, int selfAbilityIndex)
+        {
+            if (PerLevel == null || PerLevel.Length == 0) return ToModifier(level, sourceId, selfAbilityIndex);
+            var m = ToModifier(1f, sourceId, selfAbilityIndex);
+            m.Value = PerLevel[Math.Max(0, Math.Min(level, PerLevel.Length) - 1)];
+            return m;
+        }
 
         public Modifier ToModifier(float valueScale, int sourceId, int selfAbilityIndex)
         {
@@ -101,6 +113,8 @@ namespace ES.Sim
     {
         public RequirementKind Kind;
         public int TargetIndex;
+        /// <summary>AnyAbilityLevel: basta uma destas habilidades no nível pedido.</summary>
+        public int[] Targets;
         public Tag Tag;
         public StatId Stat;
         public string Branch;

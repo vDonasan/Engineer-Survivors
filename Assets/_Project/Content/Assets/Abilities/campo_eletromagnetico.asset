@@ -22,6 +22,7 @@ MonoBehaviour:
     tags:
     - Energia
     - Defesa
+    - Area
     maxLevel: 5
     evolutionOnly: 0
     exclusive: 0

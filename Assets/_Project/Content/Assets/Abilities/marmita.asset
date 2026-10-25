@@ -22,6 +22,7 @@ MonoBehaviour:
     tags:
     - Suporte
     - Biomecanica
+    - Cura
     maxLevel: 5
     evolutionOnly: 0
     exclusive: 0
@@ -33,9 +34,11 @@ MonoBehaviour:
       op: add
       scope: player
       value: 0.2
+      perLevel: []
     - stat: MaxHp
       op: add
       scope: player
       value: 5
+      perLevel: []
     parameters: []
   icon: {fileID: 21300000, guid: f2980e436fac9224aaba07de435b06b1, type: 3}
