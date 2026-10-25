@@ -46,6 +46,19 @@ namespace ES.Sim
         /// <summary>EnemyFlags.Elite / Stunned / HitFlash.</summary>
         public byte Flags;
         public float HpFraction;
+        /// <summary><see cref="EnemyStatus"/> (preso, marcado, colado, lento).</summary>
+        public byte Status;
+        public int Tick;
+    }
+
+    /// <summary>Tiro, zona ou companheiro de jogador.</summary>
+    public struct AllySnap
+    {
+        public ushort Id;
+        public Vec2 Pos;
+        public AllySprite Sprite;
+        /// <summary>Tiro: ângulo (256 = volta); zona: raio × 16; companheiro: estado.</summary>
+        public byte Param;
         public int Tick;
     }
 
@@ -63,24 +76,29 @@ namespace ES.Sim
         public readonly PlayerSnap[] Players = new PlayerSnap[PlayerStore.MaxSlots];
         public readonly Dictionary<ushort, EnemySnap> Enemies = new Dictionary<ushort, EnemySnap>(512);
         public readonly Dictionary<ushort, HostileSnap> Hostile = new Dictionary<ushort, HostileSnap>(256);
+        public readonly Dictionary<ushort, AllySnap> Allies = new Dictionary<ushort, AllySnap>(256);
         public readonly List<CosmeticEvent> Cosmetic = new List<CosmeticEvent>(64);
     }
 
     /// <summary>
     /// Snapshot em blocos autocontidos: cabeçalho (8 B) + sequências
-    /// [tipo, quantidade, registros]. Inimigo = 7 B (+1 se elite).
+    /// [tipo, quantidade, registros]. Inimigo = 7 B (+1 se elite, +1 se tem estado); aliado = 8 B.
     /// </summary>
     public static class SnapshotCodec
     {
         const byte Magic = 0xE5;
-        const byte Version = 1;
+        const byte Version = 2;
         const int HeaderSize = 8;
         const int RunHeaderSize = 2;
 
-        const byte RunPlayers = 1, RunEnemies = 2, RunHostile = 3, RunCosmetic = 4;
+        const byte RunPlayers = 1, RunEnemies = 2, RunHostile = 3, RunCosmetic = 4, RunAllies = 5;
         // Jogador: slot, status, x, y, vx, vy, fx, fy, hp, maxHp, flags, seq, recarga, ativo, nível, xp, velocidade.
-        const int PlayerSize = 22, EnemySize = 7, HostileSize = 7, CosmeticSize = 20;
-        const byte BitElite = 1 << 5, BitStunned = 1 << 6, BitFlash = 1 << 7;
+        const int PlayerSize = 22, EnemySize = 7, HostileSize = 7, CosmeticSize = 20, AllySize = 8;
+        const byte TypeMask = 0x0F, BitStatus = 1 << 4, BitElite = 1 << 5, BitStunned = 1 << 6, BitFlash = 1 << 7;
+        /// <summary>Aliados por snapshot (os mais próximos dos jogadores primeiro).</summary>
+        public const int MaxAllies = 200;
+
+        static readonly List<AllySnap> AllyScratch = new List<AllySnap>(MaxAllies);
 
         // Estado do escritor (só o host escreve, numa thread).
         static ChunkSet _set;
@@ -135,13 +153,26 @@ namespace ES.Sim
                 PutU8(h.Type[i]);
             }
 
+            AllyList.Collect(w, AllyScratch, MaxAllies);
+            foreach (var a in AllyScratch)
+            {
+                Record(RunAllies, AllySize);
+                PutU16(a.Id);
+                PutU16(Quant.Pos(a.Pos.X, 0, aw));
+                PutU16(Quant.Pos(a.Pos.Y, 0, ah));
+                PutU8((byte)a.Sprite);
+                PutU8(a.Param);
+            }
+
             var e = w.Enemies;
             for (int i = 0; i < e.Count; i++)
             {
                 if ((e.Flags[i] & EnemyFlags.Dead) != 0) continue;
                 bool elite = (e.Flags[i] & EnemyFlags.Elite) != 0;
-                Record(RunEnemies, EnemySize + (elite ? 1 : 0));
-                byte tf = (byte)(e.Type[i] & 0x1F);
+                byte status = EnemyStatus.Bits(e, i, w.Elapsed);
+                Record(RunEnemies, EnemySize + (elite ? 1 : 0) + (status != 0 ? 1 : 0));
+                byte tf = (byte)(e.Type[i] & TypeMask);
+                if (status != 0) tf |= BitStatus;
                 if (elite) tf |= BitElite;
                 if ((e.Flags[i] & EnemyFlags.Stunned) != 0) tf |= BitStunned;
                 if ((e.Flags[i] & EnemyFlags.HitFlash) != 0) tf |= BitFlash;
@@ -150,6 +181,7 @@ namespace ES.Sim
                 PutU16(Quant.Pos(e.Pos[i].Y, 0, ah));
                 PutU8(tf);
                 if (elite) PutU8((byte)Math.Round(255f * Math.Max(0, e.Hp[i]) / Math.Max(1e-3f, e.MaxHp[i])));
+                if (status != 0) PutU8(status);
             }
 
             if (cosmetics != null)
@@ -247,6 +279,7 @@ namespace ES.Sim
                         case RunEnemies: ReadEnemy(ref r, arenaW, arenaH, tick, into); break;
                         case RunHostile: ReadHostile(ref r, arenaW, arenaH, tick, into); break;
                         case RunCosmetic: ReadCosmetic(ref r, arenaW, arenaH, into); break;
+                        case RunAllies: ReadAlly(ref r, arenaW, arenaH, tick, into); break;
                     }
                 }
             }
@@ -281,13 +314,17 @@ namespace ES.Sim
                             break;
                         case RunEnemies:
                             if (r.Remaining < EnemySize) return false;
-                            size = EnemySize + ((chunk[r.Position + 6] & BitElite) != 0 ? 1 : 0);
+                            size = EnemySize + ((chunk[r.Position + 6] & BitElite) != 0 ? 1 : 0) + ((chunk[r.Position + 6] & BitStatus) != 0 ? 1 : 0);
+                            break;
+                        case RunAllies:
+                            if (r.Remaining < AllySize) return false;
+                            size = AllySize;
                             break;
                         case RunHostile:
                             size = HostileSize;
                             break;
                         case RunCosmetic:
-                            if (r.Remaining < CosmeticSize || chunk[r.Position] > (byte)CosmeticKind.WaveStarted) return false;
+                            if (r.Remaining < CosmeticSize || chunk[r.Position] > (byte)CosmeticKind.Swing) return false;
                             for (int f = 0; f < 3; f++)
                             {
                                 float v = BitConverter.Int32BitsToSingle(BitConverter.ToInt32(chunk, r.Position + 8 + f * 4));
@@ -343,7 +380,9 @@ namespace ES.Sim
             r.TryU16(out ushort x); r.TryU16(out ushort y);
             r.TryU8(out byte tf);
             float hp = 1f;
+            byte status = 0;
             if ((tf & BitElite) != 0) { r.TryU8(out byte h); hp = h / 255f; }
+            if ((tf & BitStatus) != 0) r.TryU8(out status);
             byte flags = 0;
             if ((tf & BitElite) != 0) flags |= EnemyFlags.Elite;
             if ((tf & BitStunned) != 0) flags |= EnemyFlags.Stunned;
@@ -351,7 +390,19 @@ namespace ES.Sim
             into.Enemies[id] = new EnemySnap
             {
                 Pos = new Vec2(Quant.UnPos(x, 0, aw), Quant.UnPos(y, 0, ah)),
-                Type = (byte)(tf & 0x1F), Flags = flags, HpFraction = hp, Tick = tick,
+                Type = (byte)(tf & TypeMask), Flags = flags, HpFraction = hp, Status = status, Tick = tick,
+            };
+        }
+
+        static void ReadAlly(ref ByteReader r, float aw, float ah, int tick, SnapshotView into)
+        {
+            r.TryU16(out ushort id);
+            r.TryU16(out ushort x); r.TryU16(out ushort y);
+            r.TryU8(out byte sprite);
+            r.TryU8(out byte param);
+            into.Allies[id] = new AllySnap
+            {
+                Id = id, Pos = new Vec2(Quant.UnPos(x, 0, aw), Quant.UnPos(y, 0, ah)), Sprite = (AllySprite)sprite, Param = param, Tick = tick,
             };
         }
 

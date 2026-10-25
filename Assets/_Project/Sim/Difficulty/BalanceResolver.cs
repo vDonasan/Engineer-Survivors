@@ -11,7 +11,7 @@ namespace ES.Sim
         public static readonly string[] KnownParams =
         {
             "enemyDamage", "enemyHp", "spawnBudget", "spawnRamp", "compositionShiftMinutes",
-            "xp", "healDropChance", "regen", "eliteChance", "telegraph", "enemyCount",
+            "xp", "healDropChance", "regen", "eliteChance", "telegraph", "enemyCount", "abilityDamage",
         };
 
         public static bool IsKnownParam(string name) => Array.IndexOf(KnownParams, name) >= 0;
@@ -38,6 +38,7 @@ namespace ES.Sim
                 EliteChance = d.eliteChance + t.eliteChance,
                 Telegraph = d.telegraph,
                 EnemyCount = t.enemyCount,
+                AbilityDamage = d.abilityDamage * t.abilityDamage,
             };
 
             string id = Difficulties.Id(difficulty);
@@ -63,6 +64,7 @@ namespace ES.Sim
                 case "eliteChance": b.EliteChance += v; break;
                 case "telegraph": b.Telegraph *= v; break;
                 case "enemyCount": b.EnemyCount *= v; break;
+                case "abilityDamage": b.AbilityDamage *= v; break;
                 default: throw new ArgumentException("parâmetro de ajuste desconhecido: " + param);
             }
         }

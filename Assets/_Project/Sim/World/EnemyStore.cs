@@ -24,6 +24,10 @@ namespace ES.Sim
         public readonly Vec2[] Knock;
         public readonly float[] Hp, MaxHp, Radius, Speed, ContactDamage, XpValue;
         public readonly float[] StunUntil, NextContact, NextFire, TelegraphUntil, SlowUntil, SlowAmount, FlashUntil;
+        /// <summary>Estados das armas dos personagens (ver <see cref="EnemyStatus"/>).</summary>
+        public readonly float[] MarkUntil, TrapUntil, DotUntil, DotNext, DotDps, DelayAt, DelayDamage;
+        public readonly byte[] DotOwner, DelayOwner;
+        public readonly short[] DotAbility, DelayAbility;
 
         readonly IdAllocator _ids = new IdAllocator();
 
@@ -41,6 +45,10 @@ namespace ES.Sim
             StunUntil = new float[capacity]; NextContact = new float[capacity]; NextFire = new float[capacity];
             TelegraphUntil = new float[capacity]; SlowUntil = new float[capacity]; SlowAmount = new float[capacity];
             FlashUntil = new float[capacity];
+            MarkUntil = new float[capacity]; TrapUntil = new float[capacity]; DotUntil = new float[capacity];
+            DotNext = new float[capacity]; DotDps = new float[capacity]; DelayAt = new float[capacity]; DelayDamage = new float[capacity];
+            DotOwner = new byte[capacity]; DelayOwner = new byte[capacity];
+            DotAbility = new short[capacity]; DelayAbility = new short[capacity];
         }
 
         /// <summary>Cria com campos zerados; retorna o índice ou -1 se cheio.</summary>
@@ -56,6 +64,9 @@ namespace ES.Sim
             Knock[i] = Vec2.Zero;
             Hp[i] = MaxHp[i] = Radius[i] = Speed[i] = ContactDamage[i] = XpValue[i] = 0;
             StunUntil[i] = NextContact[i] = NextFire[i] = TelegraphUntil[i] = SlowUntil[i] = SlowAmount[i] = FlashUntil[i] = 0;
+            MarkUntil[i] = TrapUntil[i] = DotUntil[i] = DotNext[i] = DotDps[i] = DelayAt[i] = DelayDamage[i] = 0;
+            DotOwner[i] = DelayOwner[i] = 0;
+            DotAbility[i] = DelayAbility[i] = 0;
             return i;
         }
 
@@ -71,6 +82,10 @@ namespace ES.Sim
             StunUntil[i] = StunUntil[last]; NextContact[i] = NextContact[last]; NextFire[i] = NextFire[last];
             TelegraphUntil[i] = TelegraphUntil[last]; SlowUntil[i] = SlowUntil[last]; SlowAmount[i] = SlowAmount[last];
             FlashUntil[i] = FlashUntil[last];
+            MarkUntil[i] = MarkUntil[last]; TrapUntil[i] = TrapUntil[last]; DotUntil[i] = DotUntil[last]; DotNext[i] = DotNext[last];
+            DotDps[i] = DotDps[last]; DelayAt[i] = DelayAt[last]; DelayDamage[i] = DelayDamage[last];
+            DotOwner[i] = DotOwner[last]; DelayOwner[i] = DelayOwner[last];
+            DotAbility[i] = DotAbility[last]; DelayAbility[i] = DelayAbility[last];
         }
     }
 

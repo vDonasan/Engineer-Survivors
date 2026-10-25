@@ -66,8 +66,12 @@ namespace ES.Sim
                 s.RamLast.Clear();
                 p.Stats.RemoveSource(s.SourceId);
                 p.Stats.Add(new Modifier { Stat = StatId.MoveSpeed, Op = ModOp.Mult, Value = d.moveBonus, SourceId = s.SourceId });
-                p.Stats.Add(new Modifier { Stat = StatId.Damage, Op = ModOp.Mult, Value = d.damageBonus, SourceId = s.SourceId, Scope = ModScope.ForTag(Tag.Mecanica) });
-                p.Stats.Add(new Modifier { Stat = StatId.DamageTaken, Op = ModOp.Mult, Value = d.damageTakenMult - 1f, SourceId = s.SourceId });
+                if (d.damageBonus != 0)
+                    p.Stats.Add(new Modifier { Stat = StatId.Damage, Op = ModOp.Mult, Value = d.damageBonus, SourceId = s.SourceId, Scope = ModScope.ForTag(sp.BoostTag) });
+                if (d.cooldownBonus != 0)
+                    p.Stats.Add(new Modifier { Stat = StatId.Cooldown, Op = ModOp.Mult, Value = d.cooldownBonus, SourceId = s.SourceId, Scope = ModScope.AllAbilities });
+                if (d.damageTakenMult != 1f)
+                    p.Stats.Add(new Modifier { Stat = StatId.DamageTaken, Op = ModOp.Mult, Value = d.damageTakenMult - 1f, SourceId = s.SourceId });
                 Ram(w, p, s);
             }
         }

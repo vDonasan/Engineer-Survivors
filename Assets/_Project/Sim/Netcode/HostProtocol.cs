@@ -28,6 +28,8 @@ namespace ES.Sim
         readonly ByteWriter _w = new ByteWriter(2048);
         readonly ChunkSet _chunks = new ChunkSet();
         readonly List<CosmeticEvent> _cosmetics = new List<CosmeticEvent>(128);
+        int _damageQueued;
+        readonly List<AllySnap> _allies = new List<AllySnap>(SnapshotCodec.MaxAllies);
         readonly List<RuleEvent> _rules = new List<RuleEvent>(128);
         PlayerInput _local = PlayerInput.None;
         double _time;
@@ -245,7 +247,15 @@ namespace ES.Sim
             {
                 Feed.Cosmetics.AddRange(ev.Cosmetic);
                 if (_byPeer.Count > 0)
-                    for (int i = 0; i < ev.Cosmetic.Count && _cosmetics.Count < World.Rules.capCosmeticEvents; i++) _cosmetics.Add(ev.Cosmetic[i]);
+                {
+                    int cap = World.Rules.capCosmeticEvents;
+                    for (int i = 0; i < ev.Cosmetic.Count && _cosmetics.Count < cap; i++)
+                    {
+                        // números de dano: no máximo metade da cota do snapshot
+                        if (ev.Cosmetic[i].Kind == CosmeticKind.Damage && ++_damageQueued > cap / 2) continue;
+                        _cosmetics.Add(ev.Cosmetic[i]);
+                    }
+                }
             }
             ev.Clear();
         }
@@ -275,6 +285,7 @@ namespace ES.Sim
             if (_byPeer.Count == 0) return;
             SnapshotCodec.Write(World, _cosmetics, _chunks);
             _cosmetics.Clear();
+            _damageQueued = 0;
             for (int c = 0; c < _chunks.Count; c++)
                 foreach (var peer in _byPeer.Keys) _link.Send(peer, MessageType.Snapshot, _chunks.Buffers[c], _chunks.Lengths[c], Channel.Unreliable);
         }
@@ -289,8 +300,11 @@ namespace ES.Sim
             for (int i = 0; i < e.Count; i++)
             {
                 if ((e.Flags[i] & EnemyFlags.Dead) != 0) continue;
-                Feed.Tracks.SetEnemy(e.Id[i], e.Pos[i], e.Type[i], e.Flags[i], e.MaxHp[i] > 0 ? e.Hp[i] / e.MaxHp[i] : 1f, w.Tick);
+                Feed.Tracks.SetEnemy(e.Id[i], e.Pos[i], e.Type[i], e.Flags[i], e.MaxHp[i] > 0 ? e.Hp[i] / e.MaxHp[i] : 1f, w.Tick, EnemyStatus.Bits(e, i, w.Elapsed));
             }
+            AllyList.Collect(w, _allies, SnapshotCodec.MaxAllies * 2);
+            foreach (var a in _allies) Feed.Tracks.SetAlly(a.Id, a.Pos, a.Sprite, a.Param, w.Tick);
+            Feed.Tracks.PruneAllies(w.Tick);
             var h = w.Hostile;
             for (int i = 0; i < h.Count; i++) Feed.Tracks.SetHostile(h.Id[i], h.Pos[i], h.Type[i], w.Tick);
             Feed.Tracks.PruneHostile(w.Tick);

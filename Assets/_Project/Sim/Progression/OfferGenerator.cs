@@ -51,7 +51,7 @@ namespace ES.Sim
             for (int i = 0; i < db.AbilityCount; i++)
             {
                 var ab = db.Ability(i);
-                if (ab.Def.evolutionOnly || ab.Kind == AbilityKind.Survival || RequirementEvaluator.LevelOf(p, i) > 0 || EvolvedAway(w, p, i)) continue;
+                if (ab.Def.evolutionOnly || ab.Def.exclusive || ab.Kind == AbilityKind.Survival || RequirementEvaluator.LevelOf(p, i) > 0 || EvolvedAway(w, p, i)) continue;
                 float boost = ab.Tags.Overlaps(spec.AffinityTags) ? AffinityBoost : 1f;
                 if (ab.Kind == AbilityKind.Weapon && weapons < w.Rules.maxWeapons)
                     Pool.Add(new Candidate { Option = new OfferOption { Kind = OptionKind.NewAbility, Ref = i }, Weight = WeightNew * boost });

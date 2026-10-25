@@ -2,7 +2,7 @@ namespace ES.Sim
 {
     public enum AbilityKind { Weapon, Component, Attribute, Survival }
     public enum Rarity { Comum, Incomum, Raro }
-    public enum SpecialKind { Blackout, Turbine }
+    public enum SpecialKind { Blackout, Turbine, Overclock }
     public enum EnemyBehavior { Chase, KiteShoot }
     public enum RequirementKind { AbilityLevel, TagCount, Specialization, StatAtLeast, Branch }
     public enum SynergyEffect { ChargeEveryN }
@@ -85,6 +85,8 @@ namespace ES.Sim
         public SpecialDef Def;
         public SpecialKind Kind;
         public TagSet StunTags;
+        /// <summary>Tag que recebe o bônus de dano (Turbina/Overclock).</summary>
+        public Tag BoostTag;
     }
 
     public sealed class ResolvedEnemy

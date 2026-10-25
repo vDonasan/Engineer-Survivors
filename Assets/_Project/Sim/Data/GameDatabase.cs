@@ -189,8 +189,11 @@ namespace ES.Sim
                     var r = new ResolvedSpecial { Index = i, Def = d };
                     if (d.kind == "blackout") r.Kind = SpecialKind.Blackout;
                     else if (d.kind == "turbine") r.Kind = SpecialKind.Turbine;
+                    else if (d.kind == "overclock") r.Kind = SpecialKind.Overclock;
                     else Err($"kind desconhecido: {d.kind} em special {d.id}");
                     if (!string.IsNullOrEmpty(d.stunTag)) r.StunTags = ParseTags(new[] { d.stunTag }, "special " + d.id);
+                    r.BoostTag = Tag.Mecanica;
+                    if (!string.IsNullOrEmpty(d.boostTag) && !Tags.TryParse(d.boostTag, out r.BoostTag)) Err($"special {d.id}: boostTag desconhecida: {d.boostTag}");
                     list[i] = r;
                 }
                 _db._specials = list;
@@ -338,6 +341,7 @@ namespace ES.Sim
             static readonly HashSet<string> KnownBehaviors = new HashSet<string>
             {
                 "chain", "orbit", "projectile", "aura", "passive", "attribute", "heal",
+                "staut", "miyuki", "giulia", "breno", "artur", "badotti", "garcia", "jean", "fufu", "donasa",
             };
 
             int Ref(Dictionary<string, int> map, string id, string where)

@@ -58,9 +58,13 @@ namespace ES.SimTests.Progression
         {
             var w = Open();
             var p = w.Players[0];
-            foreach (var id in new[] { "braco_giratorio", "laser_industrial", "campo_eletromagnetico", "bateria_portatil", "turbina",
-                                       "attr_dano", "attr_vida", "attr_recuperacao", "attr_coleta", "attr_vel_ataque" })
-                AbilitySystem.Grant(w, 0, w.Db.AbilityIndex(id));
+            // tudo o que pode ser oferecido (fora armas de personagem, evoluções e o kit)
+            for (int i = 0; i < w.Db.AbilityCount; i++)
+            {
+                var ab = w.Db.Ability(i);
+                if (ab.Def.exclusive || ab.Def.evolutionOnly || ab.Kind == AbilityKind.Survival || p.Abilities.Any(x => x.AbilityIndex == i)) continue;
+                AbilitySystem.Grant(w, 0, i);
+            }
             foreach (var a in p.Abilities.ToArray()) while (AbilitySystem.LevelUp(w, 0, a)) { }
             ProgressionSystem.ApplyEvolution(w, 0, w.Db.EvolutionIndex("evo_pulso_amplificado"));
             ProgressionSystem.ApplyEvolution(w, 0, w.Db.EvolutionIndex("evo_rotor_de_impacto"));

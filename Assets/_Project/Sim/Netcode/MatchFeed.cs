@@ -6,7 +6,7 @@ namespace ES.Sim
     {
         public Vec2 Prev, Cur;
         public int PrevTick, CurTick;
-        public byte Type, Flags;
+        public byte Type, Flags, Status;
         public float Hp;
 
         public Vec2 At(float renderTick)
@@ -18,7 +18,8 @@ namespace ES.Sim
         }
     }
 
-    public struct EnemyRender { public ushort Id; public Vec2 Pos; public byte Type, Flags; public float Hp; }
+    public struct EnemyRender { public ushort Id; public Vec2 Pos; public byte Type, Flags, Status; public float Hp; }
+    public struct AllyRender { public ushort Id; public Vec2 Pos; public AllySprite Sprite; public byte Param; }
     public struct HostileRender { public ushort Id; public Vec2 Pos; public byte Type; }
 
     /// <summary>O que a apresentação desenha neste quadro.</summary>
@@ -26,6 +27,7 @@ namespace ES.Sim
     {
         public readonly List<EnemyRender> Enemies = new List<EnemyRender>(512);
         public readonly List<HostileRender> Hostile = new List<HostileRender>(256);
+        public readonly List<AllyRender> Allies = new List<AllyRender>(256);
         public readonly Vec2[] PlayerPositions = new Vec2[PlayerStore.MaxSlots];
     }
 
@@ -34,6 +36,7 @@ namespace ES.Sim
     {
         readonly Dictionary<ushort, Track> _enemies = new Dictionary<ushort, Track>(512);
         readonly Dictionary<ushort, Track> _hostile = new Dictionary<ushort, Track>(256);
+        readonly Dictionary<ushort, Track> _allies = new Dictionary<ushort, Track>(256);
         readonly Track[] _players = new Track[PlayerStore.MaxSlots];
         readonly List<ushort> _stale = new List<ushort>(64);
         // inimigos mortos -> tick da morte: snapshots atrasados não os ressuscitam
@@ -41,6 +44,7 @@ namespace ES.Sim
         const int DeadMemoryTicks = 300;
 
         public int EnemyCount => _enemies.Count;
+        public int AllyCount => _allies.Count;
         public bool TryGetEnemy(ushort id, out Track t) => _enemies.TryGetValue(id, out t);
 
         static void Push(ref Track t, Vec2 pos, int tick, bool isNew)
@@ -53,7 +57,7 @@ namespace ES.Sim
             t.CurTick = tick;
         }
 
-        public void SetEnemy(ushort id, Vec2 pos, byte type, byte flags, float hp, int tick)
+        public void SetEnemy(ushort id, Vec2 pos, byte type, byte flags, float hp, int tick, byte status = 0)
         {
             if (_deadAt.TryGetValue(id, out int died))
             {
@@ -63,7 +67,7 @@ namespace ES.Sim
             }
             bool isNew = !_enemies.TryGetValue(id, out var t);
             Push(ref t, pos, tick, isNew);
-            t.Type = type; t.Flags = flags; t.Hp = hp;
+            t.Type = type; t.Flags = flags; t.Hp = hp; t.Status = status;
             _enemies[id] = t;
         }
 
@@ -82,11 +86,25 @@ namespace ES.Sim
         }
 
         /// <summary>Projéteis hostis não têm evento de remoção: somem quando param de chegar.</summary>
-        public void PruneHostile(int minTick)
+        public void PruneHostile(int minTick) => Prune(_hostile, minTick);
+
+        /// <summary>Tiros, zonas e companheiros: um id novo com outro sprite recomeça a trajetória.</summary>
+        public void SetAlly(ushort id, Vec2 pos, AllySprite sprite, byte param, int tick)
+        {
+            bool isNew = !_allies.TryGetValue(id, out var t) || t.Type != (byte)sprite;
+            Push(ref t, pos, tick, isNew);
+            t.Type = (byte)sprite;
+            t.Flags = param;
+            _allies[id] = t;
+        }
+
+        public void PruneAllies(int minTick) => Prune(_allies, minTick);
+
+        void Prune(Dictionary<ushort, Track> d, int minTick)
         {
             _stale.Clear();
-            foreach (var kv in _hostile) if (kv.Value.CurTick < minTick) _stale.Add(kv.Key);
-            foreach (var id in _stale) _hostile.Remove(id);
+            foreach (var kv in d) if (kv.Value.CurTick < minTick) _stale.Add(kv.Key);
+            foreach (var id in _stale) d.Remove(id);
         }
 
         public void SetPlayer(int slot, Vec2 pos, int tick, bool isNew = false) => Push(ref _players[slot], pos, tick, isNew || _players[slot].CurTick == 0);
@@ -96,6 +114,7 @@ namespace ES.Sim
             _enemies.Clear();
             _deadAt.Clear();
             _hostile.Clear();
+            _allies.Clear();
             for (int i = 0; i < _players.Length; i++) _players[i] = default;
         }
 
@@ -103,10 +122,13 @@ namespace ES.Sim
         {
             frame.Enemies.Clear();
             foreach (var kv in _enemies)
-                frame.Enemies.Add(new EnemyRender { Id = kv.Key, Pos = kv.Value.At(renderTick), Type = kv.Value.Type, Flags = kv.Value.Flags, Hp = kv.Value.Hp });
+                frame.Enemies.Add(new EnemyRender { Id = kv.Key, Pos = kv.Value.At(renderTick), Type = kv.Value.Type, Flags = kv.Value.Flags, Status = kv.Value.Status, Hp = kv.Value.Hp });
             frame.Hostile.Clear();
             foreach (var kv in _hostile)
                 frame.Hostile.Add(new HostileRender { Id = kv.Key, Pos = kv.Value.At(renderTick), Type = kv.Value.Type });
+            frame.Allies.Clear();
+            foreach (var kv in _allies)
+                frame.Allies.Add(new AllyRender { Id = kv.Key, Pos = kv.Value.At(renderTick), Sprite = (AllySprite)kv.Value.Type, Param = kv.Value.Flags });
             for (int i = 0; i < _players.Length; i++) frame.PlayerPositions[i] = _players[i].At(renderTick);
         }
     }

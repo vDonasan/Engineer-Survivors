@@ -62,6 +62,8 @@ namespace ES.Sim
         /// <summary>Somada.</summary>
         public float eliteChance;
         public float telegraph = 1;
+        /// <summary>Dano das armas dos jogadores.</summary>
+        public float abilityDamage = 1;
     }
 
     [Serializable]
@@ -72,6 +74,7 @@ namespace ES.Sim
         /// <summary>Somada à da dificuldade.</summary>
         public float eliteChance;
         public float xpPerGem = 1;
+        public float abilityDamage = 1;
     }
 
     [Serializable]
@@ -124,6 +127,10 @@ namespace ES.Sim
     public class SpecializationDef
     {
         public string id, name, startingAbility, special, portrait;
+        /// <summary>Engenharia exibida no cartão do personagem.</summary>
+        public string engineering;
+        /// <summary>Fora da tela de escolha (especializações do SP1, usadas em testes e bots).</summary>
+        public bool hidden;
         public string[] affinityTags = new string[0];
         public ModifierDef[] advancedAffinity = new ModifierDef[0];
         public string advancedAffinityText;
@@ -135,6 +142,10 @@ namespace ES.Sim
         public string id, name, kind, description;
         public float cooldown, radius, expandSeconds, damage, stunSeconds, duration;
         public float moveBonus, damageBonus, damageTakenMult = 1, ramDamage, ramKnockback;
+        /// <summary>Recarga das armas enquanto ativo (multiplicativo, ex.: −0,4).</summary>
+        public float cooldownBonus;
+        /// <summary>Tag que recebe o damageBonus (vazio = Mecânica).</summary>
+        public string boostTag;
         public string stunTag;
     }
 
@@ -145,6 +156,10 @@ namespace ES.Sim
         public string[] tags = new string[0];
         public int maxLevel;
         public bool evolutionOnly;
+        /// <summary>Arma de personagem: nunca é oferecida a quem não a tem.</summary>
+        public bool exclusive;
+        /// <summary>Sons de disparo por variante (evento ProjectileFired, Value = índice).</summary>
+        public string[] sfx = new string[0];
         public StatValueDef[] baseStats = new StatValueDef[0];
         /// <summary>levels[i] = mudanças ao chegar no nível i + 2.</summary>
         public LevelDef[] levels = new LevelDef[0];

@@ -86,6 +86,7 @@ namespace ES.Sim
             p.Stats.RemoveSource(old.SourceId);
             AffinitySystem.OnAbilityRemoved(w, slot, old);
             p.Abilities.RemoveAt(at);
+            w.Companions.RemoveOwned(slot, old.AbilityIndex);
 
             var created = AbilitySystem.Grant(w, slot, evo.Result);
             if (created != null)

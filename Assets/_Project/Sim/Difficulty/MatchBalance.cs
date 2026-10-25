@@ -19,5 +19,7 @@ namespace ES.Sim
         public float EliteChance;
         public float Telegraph;
         public float EnemyCount;
+        /// <summary>Multiplicador do dano das armas dos jogadores.</summary>
+        public float AbilityDamage;
     }
 }

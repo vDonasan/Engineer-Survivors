@@ -26,7 +26,12 @@ namespace ES.Sim
         public readonly GemStore Gems;
         public readonly EventBuffer Events;
         public readonly SpatialGrid EnemyGrid;
-        public readonly PlayerProjectileStore PlayerProjectiles = new PlayerProjectileStore(256);
+        /// <summary>IDs de tiros, zonas e companheiros dos jogadores (vão no snapshot).</summary>
+        public readonly IdAllocator AllyIds = new IdAllocator();
+        public readonly ShotStore Shots;
+        public readonly ZoneStore Zones;
+        public readonly StrikeStore Strikes;
+        public readonly CompanionStore Companions;
 
         /// <summary>Gerador de SourceId para modificadores concedidos.</summary>
         public int NextSourceId = 1;
@@ -71,6 +76,10 @@ namespace ES.Sim
             Gems = new GemStore(Rules.capGems + 64);
             Events = new EventBuffer(Rules.capCosmeticEvents);
             EnemyGrid = new SpatialGrid(Arena.width, Arena.height, 2f, Rules.capEnemies);
+            Shots = new ShotStore(384, AllyIds);
+            Zones = new ZoneStore(32, AllyIds);
+            Strikes = new StrikeStore(64);
+            Companions = new CompanionStore(24, AllyIds);
 
             SpawnPlayers();
         }

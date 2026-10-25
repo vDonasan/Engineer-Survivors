@@ -97,6 +97,7 @@ namespace ES.Sim
             _scratch.Tick = -1;
             _scratch.Enemies.Clear();
             _scratch.Hostile.Clear();
+            _scratch.Allies.Clear();
             _scratch.Cosmetic.Clear();
             for (int i = 0; i < _scratch.Players.Length; i++) _scratch.Players[i].Present = false;
             if (!SnapshotCodec.TryRead(data, length, _arena.width, _arena.height, _scratch)) return;
@@ -109,6 +110,7 @@ namespace ES.Sim
                 Feed.Tick = tick;
                 Feed.Elapsed = tick / _db.Def.rules.tickRate;
                 Feed.Tracks.PruneHostile(tick - 4);
+                Feed.Tracks.PruneAllies(tick - 4);
             }
 
             for (int s = 0; s < _scratch.Players.Length; s++)
@@ -121,8 +123,9 @@ namespace ES.Sim
                 if (_needsReset) { Prediction.Reset(p.Pos); _needsReset = false; }
                 else Prediction.Reconcile(p.Pos, p.LastSeq, p.MoveSpeed > 0 ? p.MoveSpeed : _db.Def.rules.playerSpeed);
             }
-            foreach (var kv in _scratch.Enemies) Feed.Tracks.SetEnemy(kv.Key, kv.Value.Pos, kv.Value.Type, kv.Value.Flags, kv.Value.HpFraction, tick);
+            foreach (var kv in _scratch.Enemies) Feed.Tracks.SetEnemy(kv.Key, kv.Value.Pos, kv.Value.Type, kv.Value.Flags, kv.Value.HpFraction, tick, kv.Value.Status);
             foreach (var kv in _scratch.Hostile) Feed.Tracks.SetHostile(kv.Key, kv.Value.Pos, kv.Value.Type, tick);
+            foreach (var kv in _scratch.Allies) Feed.Tracks.SetAlly(kv.Key, kv.Value.Pos, kv.Value.Sprite, kv.Value.Param, tick);
             Feed.Cosmetics.AddRange(_scratch.Cosmetic);
         }
 

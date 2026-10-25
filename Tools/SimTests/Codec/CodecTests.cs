@@ -213,5 +213,34 @@ namespace ES.SimTests.Codec
             Assert.That(back.Coop, Is.True);
             Assert.That(back.Roster.Select(r => r.Name + "/" + r.SpecializationId), Is.EqualTo(new[] { "Ana/eletrica", "Bruno/mecanica" }));
         }
+        [Test]
+        public void Snapshot_Allies_And_EnemyStatus_RoundTrip()
+        {
+            var w = WithEnemies(5, elite: true);
+            var p = w.Players[0].Pos;
+            w.Shots.Spawn(new Shot { Sprite = AllySprite.Bubble, Pos = p + new Vec2(1, 0), Vel = new Vec2(0, 3), Life = 3, Radius = 0.3f, Pierce = 1 });
+            int c = w.Companions.Spawn(0, 0, AllySprite.BotMaster, p + new Vec2(-2, 1));
+            w.Companions.Items[c].Param = 77;
+            w.Zones.Spawn(new Zone { Sprite = AllySprite.ZoneElectric, Pos = p, Radius = 1.6f, Life = 2, Follow = -1 });
+            w.Enemies.MarkUntil[2] = w.Elapsed + 5;
+            w.Enemies.TrapUntil[2] = w.Elapsed + 5;
+            var set = new ChunkSet();
+            SnapshotCodec.Write(w, new List<CosmeticEvent>(), set);
+            var view = Decode(w, set);
+
+            Assert.That(view.Allies.Count, Is.EqualTo(3));
+            var shot = view.Allies[w.Shots.Items[0].Id];
+            Assert.That(shot.Sprite, Is.EqualTo(AllySprite.Bubble));
+            Assert.That(shot.Pos.X, Is.EqualTo(p.X + 1).Within(0.01));
+            Assert.That(shot.Param, Is.EqualTo(64), "90° = 64/256");
+            Assert.That(view.Allies[w.Companions.Items[c].Id].Param, Is.EqualTo(77));
+            Assert.That(view.Allies.Values.Single(a => a.Sprite == AllySprite.ZoneElectric).Param, Is.EqualTo(26), "raio × 16");
+
+            var enemy = view.Enemies[w.Enemies.Id[2]];
+            Assert.That(enemy.Status, Is.EqualTo(EnemyStatus.Marked | EnemyStatus.Trapped));
+            Assert.That((enemy.Flags & EnemyFlags.Elite) != 0, Is.True);
+            Assert.That(enemy.HpFraction, Is.EqualTo(1f).Within(0.01));
+            Assert.That(view.Enemies[w.Enemies.Id[1]].Status, Is.EqualTo(0));
+        }
     }
 }

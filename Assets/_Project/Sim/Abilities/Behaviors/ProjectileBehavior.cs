@@ -35,13 +35,14 @@ namespace ES.Sim
                 float off = (k - (count - 1) * 0.5f) * SpreadRadians;
                 float c = (float)Math.Cos(off), s = (float)Math.Sin(off);
                 var dir = new Vec2(baseDir.X * c - baseDir.Y * s, baseDir.X * s + baseDir.Y * c);
-                if (w.PlayerProjectiles.Spawn(slot, a.AbilityIndex, p.Pos, dir * speed, damage, knock, ProjectileRadius, life, pierce) < 0) break;
-                w.Events.AddCosmetic(new CosmeticEvent
+                var shot = new Shot
                 {
-                    Kind = CosmeticKind.ProjectileFired, A = slot, B = a.AbilityIndex,
-                    X = p.Pos.X, Y = p.Pos.Y, X2 = dir.X * speed, Y2 = dir.Y * speed, Value = life,
-                });
+                    Owner = (byte)slot, Ability = (short)a.AbilityIndex, Sprite = AllySprite.Laser,
+                    Pos = p.Pos, Vel = dir * speed, Damage = damage, Knockback = knock, Radius = ProjectileRadius, Life = life, Pierce = pierce,
+                };
+                if (w.Shots.Spawn(shot) < 0) break;
             }
+            w.Events.AddCosmetic(new CosmeticEvent { Kind = CosmeticKind.ProjectileFired, A = slot, B = a.AbilityIndex, X = p.Pos.X, Y = p.Pos.Y });
 
             a.CooldownLeft = Math.Max(0.1f, a.Get(p, StatId.Cooldown));
         }

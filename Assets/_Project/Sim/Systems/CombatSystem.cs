@@ -15,6 +15,7 @@ namespace ES.Sim
         {
             var e = w.Enemies;
             if (i < 0 || i >= e.Count || (e.Flags[i] & EnemyFlags.Dead) != 0 || amount <= 0) return false;
+            if (w.Balance.AbilityDamage > 0) amount *= w.Balance.AbilityDamage;
 
             w.Stats.AddDamage(sourcePlayer, abilityIndex, Math.Min(amount, e.Hp[i]));
             e.Hp[i] -= amount;

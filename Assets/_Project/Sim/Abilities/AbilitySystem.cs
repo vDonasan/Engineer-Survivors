@@ -16,7 +16,19 @@ namespace ES.Sim
             { "aura", new AuraBehavior() },
             { "passive", new PassiveBehavior() },
             { "attribute", new PassiveBehavior() },
+            { "staut", new StautBehavior() },
+            { "miyuki", new MiyukiBehavior() },
+            { "giulia", new GiuliaBehavior() },
+            { "breno", new BrenoBehavior() },
+            { "artur", new ArturBehavior() },
+            { "badotti", new BadottiBehavior() },
+            { "garcia", new GarciaBehavior() },
+            { "jean", new JeanBehavior() },
+            { "fufu", new FufuBehavior() },
+            { "donasa", new DonasaBehavior() },
         };
+
+        public static bool IsKnown(string behavior) => Behaviors.ContainsKey(behavior ?? "");
 
         static readonly int[] QueryBuf = new int[512];
 
@@ -93,7 +105,9 @@ namespace ES.Sim
                     For(a.Def.Def.behavior).Tick(w, p.Slot, a, dt);
                 }
             }
-            PlayerProjectiles.Step(w, dt);
+            ShotSystem.Step(w, dt);
+            FieldSystem.Step(w, dt);
+            StatusSystem.Step(w);
         }
 
         /// <summary>
