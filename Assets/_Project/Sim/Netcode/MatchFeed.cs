@@ -177,6 +177,9 @@ namespace ES.Sim
         public float NextBossAt;
         public bool Infinite;
         public int BossesDefeated;
+        /// <summary>Eventos aleatórios em andamento (por id) e trajetórias de moto.</summary>
+        public readonly Dictionary<int, EventInfo> Events = new Dictionary<int, EventInfo>(8);
+        public readonly List<MotoInfo> Motos = new List<MotoInfo>(4);
 
         public void SetBoss(ushort enemyId, in BossSnap s)
         {
@@ -231,6 +234,21 @@ namespace ES.Sim
                         Extra = e.Z, Width = e.W, CreatedAt = Elapsed, FireAt = Elapsed + e.C / 1000f,
                     });
                     break;
+                case RuleEventKind.EventStarted:
+                    Events[e.C] = new EventInfo
+                    {
+                        Id = e.C, Event = e.A, Target = e.B == 255 ? -1 : e.B, StartedAt = Elapsed, StartsAt = Elapsed + e.Y, EndsAt = Elapsed + e.X,
+                    };
+                    break;
+                case RuleEventKind.EventProgress:
+                    if (Events.TryGetValue(e.A, out var ep)) { ep.Progress = e.B; ep.Goal = e.C; }
+                    break;
+                case RuleEventKind.EventEnded:
+                    Events.Remove(e.A);
+                    break;
+                case RuleEventKind.EventMoto:
+                    Motos.Add(new MotoInfo { Id = e.A, Start = new Vec2(e.X, e.Y), Angle = e.Z, Speed = e.W, Length = e.B / 10f, WarnAt = Elapsed, GoAt = Elapsed + e.C / 1000f });
+                    break;
                 case RuleEventKind.MatchContinued:
                     Phase = MatchPhase.Running;
                     Infinite = true;
@@ -259,5 +277,18 @@ namespace ES.Sim
         public FxStyle Style;
         public Vec2 Pos;
         public float Size, Extra, Width, CreatedAt, FireAt;
+    }
+
+    public sealed class EventInfo
+    {
+        public int Id, Event, Target, Progress, Goal;
+        public float StartedAt, StartsAt, EndsAt;
+    }
+
+    public struct MotoInfo
+    {
+        public int Id;
+        public Vec2 Start;
+        public float Angle, Speed, Length, WarnAt, GoAt;
     }
 }

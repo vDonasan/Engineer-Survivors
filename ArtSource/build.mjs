@@ -15,6 +15,7 @@ import { allySprites } from './lib/kitart.mjs';
 import { uiSprites } from './lib/uiart.mjs';
 import { sceneSprites } from './lib/sceneart.mjs';
 import { bossSprites, bossFxSprites, BOSS_ANIMS } from './lib/bosses.mjs';
+import { eventIcons, eventWorldSprites, accessorySprites, headAnchor } from './lib/eventart.mjs';
 
 export { SPECS, CHAR_ANIMS, HEROES };
 
@@ -24,7 +25,7 @@ export const CATEGORIES = ['Characters', 'Enemies', 'Bosses', 'Weapons', 'Abilit
 
 export function allSprites() {
   const content = JSON.parse(readFileSync(join(root, 'Assets', '_Project', 'Content', 'Data', 'sp1-content.json'), 'utf8'));
-  return [...characterSprites(), ...heroSprites(), ...enemySprites(), ...worldSprites(), ...allySprites(), ...uiSprites(), ...sceneSprites(), ...iconSprites(content), ...portraitSprites(), ...heroPortraitSprites(), ...bossSprites(), ...bossFxSprites()];
+  return [...characterSprites(), ...heroSprites(), ...enemySprites(), ...worldSprites(), ...allySprites(), ...uiSprites(), ...sceneSprites(), ...iconSprites(content), ...portraitSprites(), ...heroPortraitSprites(), ...bossSprites(), ...bossFxSprites(), ...eventIcons(), ...eventWorldSprites(), ...accessorySprites()];
 }
 
 function listPngs(dir) {
@@ -80,7 +81,7 @@ export function buildAll({ outDir = join(root, 'Assets', '_Project', 'Art'), dry
     const png = encodePng(s.w, s.h, s.px.toRGBA());
     const file = s.sub ? `${s.category}/${s.sub}/${s.id}.png` : `${s.category}/${s.id}.png`;
     manifest.hashes[s.id] = createHash('sha1').update(png).digest('hex');
-    manifest.sprites.push({ id: s.id, category: s.category, file, w: s.w, h: s.h, pivot: s.pivot, border: s.border || null });
+    manifest.sprites.push({ id: s.id, category: s.category, file, w: s.w, h: s.h, pivot: s.pivot, border: s.border || null, ...(s.anchor || s.id.startsWith('char_') ? { anchor: s.anchor || headAnchor(s.px) } : {}) });
     if (!dryRun) {
       const full = join(outDir, file);
       mkdirSync(dirname(full), { recursive: true });

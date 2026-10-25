@@ -188,3 +188,22 @@ test('bosses: 8 direções (normal e bravo), ataques, dano, fúria, morte e desa
   }
   for (const id of ['fx_boss_note', 'fx_boss_wave', 'fx_boss_orb_0', 'fx_boss_spark']) assert.ok(byId.has(id), id);
 });
+
+test('eventos e camadas: ícones, coxinhas, moto, emotes, acessórios em 4 direções e âncora da cabeça em todo quadro', () => {
+  const content = JSON.parse(readFileSync(join(root, 'Assets', '_Project', 'Content', 'Data', 'sp1-content.json'), 'utf8'));
+  for (const e of content.events) assert.ok(byId.has(`icon_evt_${e.id}`), `ícone do evento ${e.id}`);
+  for (const id of ['fx_coxinha', 'fx_coxinha_suprema', 'fx_moto_left_0', 'fx_moto_right_1', 'emote_dez', 'emote_zero', 'emote_burro', 'emote_relogio', 'emote_coxinha', 'emote_fogo', 'emote_tontura', 'emote_camiseta', 'emote_foco', 'fx_garrafa', 'fx_engrenagem'])
+    assert.ok(byId.has(id), id);
+  for (const a of ['chapeu', 'camiseta', 'protoboard', 'protoboard_evo', 'cenoura', 'rubor'])
+    for (const d of ['down', 'up', 'left', 'right']) {
+      const s = byId.get(`acc_${a}_${d}`);
+      assert.ok(s, `acc_${a}_${d}`);
+      assert.equal(s.w, 32); assert.equal(s.h, 48);
+    }
+  const chars = manifest.sprites.filter((s) => s.id.startsWith('char_'));
+  assert.ok(chars.length > 500);
+  for (const s of chars) {
+    assert.ok(Array.isArray(s.anchor) && s.anchor.length === 2, `âncora ${s.id}`);
+    assert.ok(s.anchor[0] >= 0 && s.anchor[0] < 32 && s.anchor[1] >= 0 && s.anchor[1] < 32, `âncora válida ${s.id}`);
+  }
+});

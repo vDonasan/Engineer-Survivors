@@ -15,7 +15,10 @@ namespace ES.UI
 
         VisualElement _hpFill, _xpFill, _portrait, _special, _abilities, _evolutions, _allies;
         Label _hp, _level, _time, _name, _synergy, _banner, _warning, _specialKey, _bossNext, _bossName, _bossPhase, _bossMore;
-        VisualElement _bossBar, _bossFill;
+        VisualElement _bossBar, _bossFill, _eventList, _eventToast;
+        float _toastUntil, _moodUntil;
+        string _moodOverride;
+        readonly List<int> _eventIds = new List<int>(8);
         RadialCooldown _radial;
         string _loadoutSig, _portraitId, _alliesSig;
         float _now, _hurtAt = -9, _healAt = -9, _evolutionAt = -9, _bannerUntil;
@@ -48,6 +51,8 @@ namespace ES.UI
             _bossMore = Q<Label>("label-boss-more");
             _bossBar = Q<VisualElement>("boss-bar");
             _bossFill = Q<VisualElement>("bar-boss-fill");
+            _eventList = Q<VisualElement>("list-events");
+            _eventToast = Q<VisualElement>("event-toast");
             Bind("btn-hud-menu", () => Ctx.Router.OpenPause());
             Ctx.Match.LocalHit += _ => _hurtAt = _now;
             Ctx.Match.Surge += () => Banner(Strings.Get("hud_surto"), 3f);
@@ -75,8 +80,141 @@ namespace ES.UI
             if (e.Kind == RuleEventKind.BossBravo) Banner(Strings.Format("boss_bravo", BossName(e.A)), 2.5f);
             if (e.Kind == RuleEventKind.BossDefeated) Banner(Strings.Format(e.C == 1 ? "boss_derrotado_final" : "boss_derrotado", BossName(e.A)), 4f);
             if (e.Kind == RuleEventKind.MatchContinued) Banner(Strings.Get("modo_infinito_inicio"), 4f);
+            if (e.Kind == RuleEventKind.EventStarted) OnEventStarted(e, local);
+            if (e.Kind == RuleEventKind.EventEnded) OnEventEnded(e, local);
+            if (e.Kind == RuleEventKind.EventBonus) OnEventBonus(e, local);
             if (e.Kind == RuleEventKind.SynergyChanged && e.A == local && e.C != 0 && e.B >= 0 && e.B < Ctx.Db.SynergyCount)
                 Banner(Strings.Format("hud_sinergia_ativa", Ctx.Db.Synergy(e.B).Def.name), 2.5f);
+        }
+
+        string Who(int target, int local)
+        {
+            if (target < 0) return Strings.Get("evento_todos");
+            if (target == local) return Strings.Get("evento_voce");
+            var cfg = Ctx.Net.Config;
+            return cfg != null && target < cfg.Roster.Length ? cfg.Roster[target].Name : "?";
+        }
+
+        void OnEventStarted(RuleEvent e, int local)
+        {
+            if (e.A < 0 || e.A >= Ctx.Db.EventCount) return;
+            var ev = Ctx.Db.Event(e.A);
+            int target = e.B == 255 ? -1 : e.B;
+            UiText.Image(Q<VisualElement>("img-event-toast"), Ctx.Assets.Sprite("icon_evt_" + ev.Def.id));
+            var title = Q<Label>("label-event-title");
+            title.text = ev.Def.name.ToUpperInvariant() + (Ctx.Net.Mode != NetMode.Solo || target < 0 ? "  ·  " + Who(target, local) : "");
+            foreach (var k in new[] { "event-positivo", "event-negativo", "event-especial", "event-neutro" }) title.RemoveFromClassList(k);
+            title.AddToClassList("event-" + ev.Def.kind);
+            Q<Label>("label-event-banner").text = "“" + ev.Def.banner + "”";
+            string warn = e.Y > 0.05f ? "  " + Strings.Format("evento_aviso", e.Y) : "";
+            Q<Label>("label-event-desc").text = ev.Def.description + warn;
+            _eventToast.style.display = DisplayStyle.Flex;
+            _toastUntil = _now + 6f;
+            if (target == local || target < 0) Mood(ev.Def.behavior, 3.5f);
+        }
+
+        void OnEventEnded(RuleEvent e, int local)
+        {
+            if (e.C < 0 || e.C >= Ctx.Db.EventCount) return;
+            var ev = Ctx.Db.Event(e.C);
+            int target = (int)e.X;
+            if (target >= 0 && target != local && Ctx.Net.Mode == NetMode.Solo) return;
+            string key = e.B == EventOutcome.Success ? "evento_concluido" : e.B == EventOutcome.Failed ? "evento_falhou" : "evento_terminou";
+            Banner(Strings.Format(key, ev.Def.name), 2.5f);
+        }
+
+        void OnEventBonus(RuleEvent e, int local)
+        {
+            int slot = e.A == 255 ? -1 : e.A;
+            if (slot >= 0 && slot != local) return;
+            string key;
+            switch (e.B)
+            {
+                case EventOutcome.BonusReflex: key = "bonus_reflexo"; break;
+                case EventOutcome.BonusSupreme: key = "bonus_suprema"; Mood("coxinha", 2f); break;
+                case EventOutcome.BonusCoxinha: key = "bonus_coxinha"; Mood("coxinha", 2f); break;
+                case EventOutcome.BonusBubblePop: key = "bonus_bolha"; break;
+                case EventOutcome.BonusBubbleGoal: key = "bonus_bolha_meta"; break;
+                case EventOutcome.BonusInsultBeaten: key = "bonus_burro"; Mood("grade", 2f); break;
+                case EventOutcome.BonusZeroRecovered: key = "bonus_zero"; Mood("grade", 2f); break;
+                case EventOutcome.BonusUpgrade: key = "bonus_melhoria"; break;
+                case EventOutcome.BonusJalapenoEnd: key = "bonus_jalapeno"; Mood("coxinha", 1.5f); break;
+                default: return;
+            }
+            Banner(Strings.Get(key), 2.5f);
+        }
+
+        /// <summary>Expressão do retrato que reage ao evento (emoções já existentes).</summary>
+        void Mood(string behavior, float seconds)
+        {
+            string m;
+            switch (behavior)
+            {
+                case "grade": m = "vitoria"; break;
+                case "zero": m = "desespero"; break;
+                case "insult": m = "raiva"; break;
+                case "lab": m = "medo"; break;
+                case "coxinha": m = "alivio"; break;
+                case "jalapeno": m = "raiva"; break;
+                case "bubble": m = "determinacao"; break;
+                case "moto": m = "medo"; break;
+                default: return;
+            }
+            _moodOverride = m;
+            _moodUntil = _now + seconds;
+        }
+
+        /// <summary>Eventos em andamento: ícone, nome, para quem, tempo restante e meta.</summary>
+        void UpdateEvents(MatchFeed feed, int local)
+        {
+            if (_now > _toastUntil) _eventToast.style.display = DisplayStyle.None;
+            _eventIds.Clear();
+            foreach (var kv in feed.Events) _eventIds.Add(kv.Key);
+            _eventIds.Sort();
+            while (_eventList.childCount > _eventIds.Count) _eventList.RemoveAt(_eventList.childCount - 1);
+            for (int i = 0; i < _eventIds.Count; i++)
+            {
+                var info = feed.Events[_eventIds[i]];
+                if (info.Event < 0 || info.Event >= Ctx.Db.EventCount) continue;
+                var ev = Ctx.Db.Event(info.Event);
+                VisualElement row;
+                if (i >= _eventList.childCount)
+                {
+                    row = new VisualElement();
+                    row.AddToClassList("event-row");
+                    row.pickingMode = PickingMode.Ignore;
+                    var icon = new VisualElement { name = "icon" };
+                    icon.AddToClassList("event-row-icon");
+                    row.Add(icon);
+                    var col = new VisualElement();
+                    col.AddToClassList("event-row-col");
+                    UiText.Line(col, "", "event-row-name").name = "name";
+                    var bar = new VisualElement();
+                    bar.AddToClassList("bar");
+                    bar.AddToClassList("event-row-bar");
+                    var fill = new VisualElement { name = "fill" };
+                    fill.AddToClassList("bar-fill");
+                    fill.AddToClassList("event-row-fill");
+                    bar.Add(fill);
+                    col.Add(bar);
+                    UiText.Line(col, "", "event-row-info").name = "info";
+                    row.Add(col);
+                    _eventList.Add(row);
+                }
+                row = _eventList[i];
+                UiText.Image(row.Q<VisualElement>("icon"), Ctx.Assets.Sprite("icon_evt_" + ev.Def.id));
+                row.Q<Label>("name").text = ev.Def.name + (info.Target != local || info.Target < 0 ? " · " + Who(info.Target, local) : "");
+                bool warning = feed.Elapsed < info.StartsAt;
+                float total = Mathf.Max(0.1f, (warning ? info.StartsAt : info.EndsAt) - (warning ? info.StartedAt : info.StartsAt));
+                float left = Mathf.Max(0, (warning ? info.StartsAt : info.EndsAt) - feed.Elapsed);
+                var fillEl = row.Q<VisualElement>("fill");
+                fillEl.style.width = Length.Percent(Mathf.Clamp01(left / total) * 100f);
+                fillEl.EnableInClassList("event-fill-warning", warning);
+                fillEl.EnableInClassList("event-fill-" + ev.Def.kind, !warning);
+                string info2 = warning ? Strings.Format("evento_em", left) : Strings.Format("evento_restam", left);
+                if (info.Goal > 0) info2 += "  " + Strings.Format("evento_meta", Mathf.Min(info.Progress, info.Goal), info.Goal);
+                row.Q<Label>("info").text = info2;
+            }
         }
 
         string BossName(int boss) => boss == 255 ? Strings.Get("boss_dueto") : boss >= 0 && boss < Ctx.Db.BossCount ? Ctx.Db.Boss(boss).Def.name : "?";
@@ -143,6 +281,7 @@ namespace ES.UI
             _level.text = Strings.Format("hud_nivel", me.Level);
             _time.text = UiText.Clock(feed.Elapsed);
             UpdateBoss(feed);
+            UpdateEvents(feed, local);
             if (_now > _bannerUntil) _banner.text = "";
 
             string warning = feed.HostBackgrounded ? Strings.Get("aviso_host_minimizou") : me.Status == PlayerStatus.Downed ? Strings.Get("hud_caido") : "";
@@ -163,6 +302,15 @@ namespace ES.UI
             for (int s = 0; s < PlayerStore.MaxSlots; s++)
                 if (s != local && feed.Players[s].Present && feed.Players[s].Status == PlayerStatus.Downed) allyDowned = true;
             string mood = PortraitMood.Pick(hpFrac, me.Status, feed.Phase, _now - _hurtAt, _now - _healAt, _now - _evolutionAt, allyDowned);
+            // eventos e estados (Tequila, Jalapeño) mudam a expressão enquanto não houver algo mais urgente
+            if (me.Status == PlayerStatus.Active && feed.Phase == MatchPhase.Running && hpFrac >= 0.3f && _now - _hurtAt > 0.8f)
+            {
+                if (_now < _moodUntil && _moodOverride != null) mood = _moodOverride;
+                else if ((me.Look & (PlayerLook.Euphoria | PlayerLook.Hangover)) != 0) mood = (me.Look & PlayerLook.Hangover) != 0 ? "exaustao" : "alivio";
+                else if ((me.Look & PlayerLook.Jalapeno) != 0) mood = "raiva";
+                else if ((me.Look & PlayerLook.Zero) != 0) mood = "desespero";
+                else if ((me.Look & PlayerLook.Insulted) != 0) mood = "raiva";
+            }
             string portrait = $"portrait_{spec}_{mood}";
             if (portrait != _portraitId)
             {

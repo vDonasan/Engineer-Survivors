@@ -20,6 +20,31 @@ namespace ES.Sim
         public SynergyDef[] synergies = new SynergyDef[0];
         public EvolutionDef[] evolutions = new EvolutionDef[0];
         public BossDef[] bosses = new BossDef[0];
+        public EventDef[] events = new EventDef[0];
+    }
+
+    /// <summary>
+    /// Evento aleatório da partida. <see cref="behavior"/> escolhe a lógica (bubble, grade, zero, insult, lab, moto,
+    /// coxinha, jalapeno); um evento novo pode reaproveitar um comportamento só mudando os parâmetros.
+    /// </summary>
+    [Serializable]
+    public class EventDef
+    {
+        public string id, name, description, banner;
+        /// <summary>positivo | negativo | neutro | especial</summary>
+        public string kind;
+        /// <summary>player (um jogador) | all (cada jogador, com recompensa própria) | global (a arena toda)</summary>
+        public string scope;
+        public string behavior;
+        public float weight = 1;
+        /// <summary>comum | incomum | raro | reliquia (multiplica o peso)</summary>
+        public string rarity = "comum";
+        public float duration, warning, minMinute;
+        /// <summary>No Modo Infinito o peso cresce isto por minuto desde a vitória.</summary>
+        public float infiniteWeightPerMinute;
+        /// <summary>Não começa enquanto houver boss na arena.</summary>
+        public bool noBoss;
+        public ParamDef[] parameters = new ParamDef[0];
     }
 
     /// <summary>Boss com horário de chegada, limiar de fúria (BRAVO) e parâmetros dos ataques.</summary>
@@ -64,6 +89,9 @@ namespace ES.Sim
         public float infiniteSpawnPerMinute = 0.07f, infiniteSpawnMax = 3, infiniteElitePerMinute = 0.008f, infiniteEliteMax = 0.35f;
         public float infiniteStormEvery = 40;
         public int infiniteStormMarks = 4, infiniteStormMarksMax = 12;
+        /// <summary>Eventos aleatórios: primeiro em segundos, intervalo sorteado, fator no Modo Infinito, simultâneos e sem repetir os últimos N.</summary>
+        public float eventFirst = 75, eventIntervalMin = 60, eventIntervalMax = 120, eventInfiniteInterval = 0.7f;
+        public int eventMaxActive = 3, eventNoRepeat = 2;
     }
 
     [Serializable]

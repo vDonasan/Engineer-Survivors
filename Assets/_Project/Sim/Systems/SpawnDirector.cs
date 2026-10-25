@@ -38,7 +38,7 @@ namespace ES.Sim
                 Surge(w, (int)Math.Round(s.surgeCount * w.Balance.EnemyCount * (w.Bosses.Infinite ? BossSystem.InfiniteSpawn(w) : 1f)));
             }
 
-            float mult = w.Bosses.Infinite ? BossSystem.InfiniteSpawn(w) : w.Bosses.Active.Count > 0 ? BossFightBudget : 1f;
+            float mult = (w.Bosses.Infinite ? BossSystem.InfiniteSpawn(w) : w.Bosses.Active.Count > 0 ? BossFightBudget : 1f) * w.EventDir.SpawnMult;
             w.SpawnAccumulator = Math.Min(w.SpawnAccumulator + Budget(s, w.Balance, w.Elapsed) * mult * dt, MaxBacklog * mult);
             var bracket = w.Db.Brackets[BracketIndexAt(w.Db.Brackets, w.Elapsed / 60f, w.Balance.CompositionShiftMinutes)];
 
@@ -66,7 +66,7 @@ namespace ES.Sim
             return b.Enemies[b.Enemies.Length - 1];
         }
 
-        static void Surge(World w, int count)
+        public static void Surge(World w, int count)
         {
             int swarm = -1;
             for (int i = 0; i < w.Db.EnemyCount; i++) if (w.Db.Enemy(i).Def.role == "swarm") { swarm = i; break; }

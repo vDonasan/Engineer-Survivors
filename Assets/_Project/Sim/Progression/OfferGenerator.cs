@@ -52,7 +52,7 @@ namespace ES.Sim
             {
                 var ab = db.Ability(i);
                 if (ab.Def.evolutionOnly || ab.Def.exclusive || ab.Kind == AbilityKind.Survival || p.Progress.Banned.Contains(i) || RequirementEvaluator.LevelOf(p, i) > 0 || EvolvedAway(w, p, i)) continue;
-                float boost = (ab.Tags.Overlaps(spec.AffinityTags) ? AffinityBoost : 1f) * RarityWeight(ab.Rarity);
+                float boost = (ab.Tags.Overlaps(spec.AffinityTags) ? AffinityBoost : 1f) * RarityWeight(ab.Rarity, w.Elapsed < p.Progress.LuckUntil);
                 if (ab.Kind == AbilityKind.Weapon && weapons < w.Rules.maxWeapons)
                     Pool.Add(new Candidate { Option = new OfferOption { Kind = OptionKind.NewAbility, Ref = i }, Weight = WeightNew * boost });
                 else if (ab.Kind == AbilityKind.Component && components < w.Rules.maxComponents)
@@ -84,7 +84,9 @@ namespace ES.Sim
         }
 
         /// <summary>A raridade controla a chance de aparecer (não o poder).</summary>
-        static float RarityWeight(Rarity r) => r == Rarity.Comum ? 1f : r == Rarity.Incomum ? 0.8f : r == Rarity.Raro ? 0.55f : 0.4f;
+        static float RarityWeight(Rarity r, bool lucky) => lucky
+            ? (r == Rarity.Comum ? 0.8f : r == Rarity.Incomum ? 1f : r == Rarity.Raro ? 0.95f : 0.85f)
+            : (r == Rarity.Comum ? 1f : r == Rarity.Incomum ? 0.8f : r == Rarity.Raro ? 0.55f : 0.4f);
 
         static bool EvolvedAway(World w, PlayerState p, int abilityIndex)
         {

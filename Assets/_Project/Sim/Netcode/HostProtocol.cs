@@ -334,7 +334,7 @@ namespace ES.Sim
                     Hp = p.Hp, MaxHp = p.Stats.Get(StatId.MaxHp), Flags = flags, LastSeq = p.LastInputSeq,
                     SpecialCooldown = p.Special?.CooldownLeft ?? 0, SpecialActiveLeft = p.SpecialActiveLeft,
                     Level = p.Progress.Level, XpProgress = p.Progress.Xp / Math.Max(1, XpCurve.ToNext(w.Rules, p.Progress.Level)),
-                    MoveSpeed = p.Stats.Get(StatId.MoveSpeed), Tick = w.Tick,
+                    MoveSpeed = p.Stats.Get(StatId.MoveSpeed), Tick = w.Tick, Look = EventSystem.Look(w, p),
                 };
             }
             var local = w.Players[0]?.Progress.Current;

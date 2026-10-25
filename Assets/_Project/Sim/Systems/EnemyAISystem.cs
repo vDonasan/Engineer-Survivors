@@ -36,6 +36,9 @@ namespace ES.Sim
                 e.Flags[i] = (byte)(e.Flags[i] & ~EnemyFlags.Stunned);
 
                 var target = Nearest(w, e.Pos[i], out float dist2);
+                // Bolha Social: quem está perto vai atrás do jogador da bolha
+                var lure = EventSystem.Lure(w, e.Pos[i]);
+                if (lure != null) { target = lure; dist2 = Vec2.DistanceSq(lure.Pos, e.Pos[i]); }
                 float stepDt = dt;
                 if (target != null && dist2 > far2)
                 {

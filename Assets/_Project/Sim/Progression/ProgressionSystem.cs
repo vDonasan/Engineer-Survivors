@@ -11,9 +11,21 @@ namespace ES.Sim
             foreach (var p in w.Players.Slots)
             {
                 if (p == null || !p.IsActive) continue;
+                AddXp(w, p, amount, true);
+            }
+        }
+
+        /// <summary>
+        /// XP de um jogador. <paramref name="scaled"/>: aplica balanceamento e bônus de experiência (como uma gema);
+        /// senão é XP direto (frações da barra dos eventos). Nunca reduz o nível.
+        /// </summary>
+        public static void AddXp(World w, PlayerState p, float amount, bool scaled)
+        {
+            if (p == null || amount <= 0) return;
+            {
                 var pr = p.Progress;
-                pr.Xp += amount * w.Balance.Xp * (1f + Math.Max(0f, p.Stats.Get(StatId.XpGain)));
-                if (amount > 0) ItemHooks.OnXpGained(w, p.Slot);
+                pr.Xp += scaled ? amount * w.Balance.Xp * (1f + Math.Max(0f, p.Stats.Get(StatId.XpGain))) : amount;
+                ItemHooks.OnXpGained(w, p.Slot);
                 int next = XpCurve.ToNext(w.Rules, pr.Level);
                 while (pr.Xp >= next)
                 {

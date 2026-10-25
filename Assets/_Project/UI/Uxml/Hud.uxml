@@ -33,6 +33,15 @@
             <ui:VisualElement class="bar boss-bar-track" picking-mode="Ignore"><ui:VisualElement name="bar-boss-fill" class="bar-fill boss-fill" picking-mode="Ignore" /></ui:VisualElement>
             <ui:Label name="label-boss-more" class="small" picking-mode="Ignore" />
         </ui:VisualElement>
+        <ui:VisualElement name="list-events" class="event-list" picking-mode="Ignore" />
+        <ui:VisualElement name="event-toast" class="event-toast" picking-mode="Ignore">
+            <ui:VisualElement name="img-event-toast" class="event-toast-icon" picking-mode="Ignore" />
+            <ui:VisualElement class="event-toast-text" picking-mode="Ignore">
+                <ui:Label name="label-event-title" class="event-title" picking-mode="Ignore" />
+                <ui:Label name="label-event-banner" class="event-banner" picking-mode="Ignore" />
+                <ui:Label name="label-event-desc" class="event-desc" picking-mode="Ignore" />
+            </ui:VisualElement>
+        </ui:VisualElement>
         <ui:Label name="label-banner" class="banner" picking-mode="Ignore" />
         <ui:Label name="label-warning" class="warning-line" picking-mode="Ignore" />
         <ui:VisualElement class="hud-bottom" picking-mode="Ignore">

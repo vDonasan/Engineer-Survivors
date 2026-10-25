@@ -26,6 +26,7 @@ namespace ES.Sim
         ResolvedSynergy[] _synergies;
         ResolvedEvolution[] _evolutions;
         ResolvedBoss[] _bosses = new ResolvedBoss[0];
+        ResolvedEvent[] _events = new ResolvedEvent[0];
 
         Dictionary<string, int> _abilityIds, _specializationIds, _specialIds, _enemyIds, _synergyIds, _evolutionIds, _arenaIds;
 
@@ -36,6 +37,14 @@ namespace ES.Sim
         public int SynergyCount => _synergies.Length;
         public int EvolutionCount => _evolutions.Length;
         public int BossCount => _bosses.Length;
+        public int EventCount => _events.Length;
+        public ResolvedEvent Event(int i) => _events[i];
+
+        public int EventIndex(string id)
+        {
+            for (int i = 0; i < _events.Length; i++) if (_events[i].Def.id == id) return i;
+            return -1;
+        }
         public ResolvedBoss Boss(int i) => _bosses[i];
 
         /// <summary>Índice do boss cujo inimigo é <paramref name="enemyType"/>, ou -1.</summary>
@@ -127,6 +136,7 @@ namespace ES.Sim
                 ResolveEvolutions();
                 ResolveSpawn();
                 ResolveBosses();
+                ResolveEvents();
                 ValidateBalance();
                 ValidateArenas();
             }
@@ -325,6 +335,47 @@ namespace ES.Sim
                 }
                 if (finals > 1) Err("mais de um boss final");
                 _db._bosses = list;
+            }
+
+            void ResolveEvents()
+            {
+                var defs = _def.events ?? new EventDef[0];
+                var list = new ResolvedEvent[defs.Length];
+                var seen = new HashSet<string>();
+                for (int i = 0; i < defs.Length; i++)
+                {
+                    var d = defs[i];
+                    if (d == null || string.IsNullOrEmpty(d.id)) { Err($"evento #{i}: id vazio"); continue; }
+                    if (!seen.Add(d.id)) Err($"duplicado: evento {d.id}");
+                    var r = new ResolvedEvent(d) { Index = i };
+                    switch (d.scope)
+                    {
+                        case "player": r.Scope = EventScope.Player; break;
+                        case "all": r.Scope = EventScope.All; break;
+                        case "global": r.Scope = EventScope.Global; break;
+                        default: Err($"evento {d.id}: scope desconhecido {d.scope}"); break;
+                    }
+                    switch (d.kind)
+                    {
+                        case "positivo": r.Kind = EventKind.Positivo; break;
+                        case "negativo": r.Kind = EventKind.Negativo; break;
+                        case "neutro": r.Kind = EventKind.Neutro; break;
+                        case "especial": r.Kind = EventKind.Especial; break;
+                        default: Err($"evento {d.id}: kind desconhecido {d.kind}"); break;
+                    }
+                    switch (d.rarity)
+                    {
+                        case "comum": r.RarityWeight = 1f; break;
+                        case "incomum": r.RarityWeight = 0.75f; break;
+                        case "raro": r.RarityWeight = 0.5f; break;
+                        case "reliquia": r.RarityWeight = 0.3f; break;
+                        default: Err($"evento {d.id}: raridade desconhecida {d.rarity}"); break;
+                    }
+                    if (!EventSystem.KnownBehaviors.Contains(d.behavior)) Err($"evento {d.id}: behavior desconhecido {d.behavior}");
+                    if (d.weight <= 0 || d.duration <= 0) Err($"evento {d.id}: weight e duration precisam ser > 0");
+                    list[i] = r;
+                }
+                _db._events = list;
             }
 
             void ResolveSpawn()

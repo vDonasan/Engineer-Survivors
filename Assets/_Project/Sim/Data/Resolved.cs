@@ -121,6 +121,27 @@ namespace ES.Sim
         public float Param(string key, bool bravo, float fallback = 0) => bravo && _params.TryGetValue(key + "Bravo", out float b) ? b : Param(key, fallback);
     }
 
+    public enum EventScope { Player, All, Global }
+    public enum EventKind { Positivo, Negativo, Neutro, Especial }
+
+    public sealed class ResolvedEvent
+    {
+        public int Index;
+        public EventDef Def;
+        public EventScope Scope;
+        public EventKind Kind;
+        public float RarityWeight;
+        readonly Dictionary<string, float> _params = new Dictionary<string, float>();
+
+        public ResolvedEvent(EventDef def)
+        {
+            Def = def;
+            foreach (var p in def.parameters ?? new ParamDef[0]) if (p?.key != null) _params[p.key] = p.value;
+        }
+
+        public float Param(string key, float fallback = 0) => _params.TryGetValue(key, out float v) ? v : fallback;
+    }
+
     public sealed class ResolvedEnemy
     {
         public int Index;

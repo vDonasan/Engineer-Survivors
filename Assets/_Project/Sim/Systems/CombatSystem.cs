@@ -65,17 +65,19 @@ namespace ES.Sim
                 SpawnPickup(w, PickupKind.Heal, pos + new Vec2(0.3f, 0.3f), w.Rules.healAmountFraction);
         }
 
-        static void SpawnPickup(World w, PickupKind kind, Vec2 pos, float value)
+        /// <summary>Cria um item no chão e anuncia; retorna o índice (−1 se não coube).</summary>
+        public static int SpawnPickup(World w, PickupKind kind, Vec2 pos, float value, byte owner = 255)
         {
             var g = w.Gems;
             while (g.Count >= w.Rules.capGems) MergeOldest(w);
-            int i = g.Spawn(kind, pos, value, w.Tick);
-            if (i < 0) return;
+            int i = g.Spawn(kind, pos, value, w.Tick, owner);
+            if (i < 0) return -1;
             w.Events.AddRule(new RuleEvent
             {
                 Kind = RuleEventKind.GemSpawned, A = g.Id[i], B = (int)kind, C = (int)Math.Round(value * (kind == PickupKind.Heal ? 100 : 1)),
                 X = pos.X, Y = pos.Y,
             });
+            return i;
         }
 
         /// <summary>Funde a gema de XP mais antiga na gema de XP mais próxima dela.</summary>
@@ -250,7 +252,9 @@ namespace ES.Sim
                 for (int i = g.Count - 1; i >= 0; i--)
                 {
                     if (Vec2.DistanceSq(p.Pos, g.Pos[i]) > r2) continue;
+                    if (!EventSystem.CanCollect(w, i, p)) continue;
                     if (g.Kind[i] == PickupKind.Xp) w.PendingXp += g.Value[i];
+                    else if (g.Kind[i] == PickupKind.Coxinha || g.Kind[i] == PickupKind.CoxinhaSuprema) EventSystem.OnCoxinha(w, p, g.Kind[i], g.Pos[i]);
                     else
                     {
                         float max = p.Stats.Get(StatId.MaxHp);

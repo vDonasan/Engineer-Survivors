@@ -41,6 +41,9 @@ namespace ES.Sim
         /// <summary>Bosses, áreas sinalizadas e Modo Infinito.</summary>
         public readonly BossDirector Bosses = new BossDirector();
 
+        /// <summary>Eventos aleatórios (acontecimentos universitários).</summary>
+        public readonly EventDirector EventDir = new EventDirector();
+
         /// <summary>Evoluções descobertas nesta partida (códice).</summary>
         public readonly System.Collections.Generic.HashSet<int> Discovered = new System.Collections.Generic.HashSet<int>();
 
@@ -145,6 +148,7 @@ namespace ES.Sim
             SpawnDirector.Step(this, Dt);
             EnemyAISystem.Step(this, Dt);
             BossSystem.Step(this, Dt);
+            EventSystem.Step(this, Dt);
             AbilitySystem.Step(this, Dt);
             SpecialSystem.Step(this, Dt);
             CombatSystem.Step(this, Dt);

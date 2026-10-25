@@ -72,7 +72,7 @@ namespace ES.Game
             _rig.ArenaSize = new Vector2(arena.width, arena.height);
             _rig.Reset();
             _enemies = new EnemyViews(_root, _assets, db);
-            _players = new PlayerViews(_root, _assets, cfg);
+            _players = new PlayerViews(_root, _assets, cfg, db);
             _fx = new FxSystem(_root, _assets, db);
             _allies = new AllyViews(_root, _assets);
             _bosses = new BossViews(_root, _assets, db);
@@ -132,9 +132,14 @@ namespace ES.Game
             Vec2? localPos = _net.Client?.Prediction != null ? _net.Client.Prediction.RenderPosition : (Vec2?)null;
             _enemies.Sync(_frame.Enemies, _now);
             _bosses.Sync(feed, _frame, _now);
-            _players.Sync(feed, _frame, local, localPos, _now);
+            bool lab = LabActive(feed);
+            _players.Sync(feed, _frame, local, localPos, _now, lab);
+            // Laboratório Incompleto: luzes piscando
+            if (_light != null && lab && Time.unscaledTime - _blackoutAt > BlackoutSeconds)
+                _light.intensity = _lightBase * (((int)(Time.unscaledTime * 4f) % 5) == 0 ? 0.55f : 1f);
             float tickSeconds = 1f / Mathf.Max(1, _net.Db.Def.rules.tickRate);
             _fx.Tick(_now, feed, _frame, _players, feed.RenderTick * tickSeconds);
+            if (_motoSoundAt > 0 && _now >= _motoSoundAt) { _motoSoundAt = -1; SfxPlayer.Instance?.Play("moto", AudioBus.Sfx, 0.9f, 0f); }
             _allies.Tick(_frame, _now, _settings.Effects);
 
             var target = CameraTarget(feed, local);
@@ -283,6 +288,20 @@ namespace ES.Game
                         sfx?.Play("boss_morte", AudioBus.Sfx, 1f, 0f);
                         _rig.AddShake(0.4f);
                         break;
+                    case RuleEventKind.EventStarted:
+                        OnEventStarted(e, local);
+                        break;
+                    case RuleEventKind.EventEnded:
+                        if (e.B == EventOutcome.Success) sfx?.Play("evento_sucesso", AudioBus.Sfx, 0.8f, 0f);
+                        if (IsLab(e.C) && _light != null) _light.intensity = _lightBase;
+                        break;
+                    case RuleEventKind.EventMoto:
+                        sfx?.Play("moto_aviso", AudioBus.Sfx, 0.9f, 0f);
+                        _motoSoundAt = _now + e.C / 1000f;
+                        break;
+                    case RuleEventKind.EventBonus:
+                        OnEventBonus(e);
+                        break;
                     case RuleEventKind.MatchContinued:
                         sfx?.Play("modo_infinito", AudioBus.Sfx, 1f, 0f);
                         SfxPlayer.Instance?.PlayMusic("loop_tensao");
@@ -295,6 +314,67 @@ namespace ES.Game
                 RuleEvent?.Invoke(d);
             }
             feed.RuleEvents.Clear();
+        }
+
+        float _motoSoundAt = -1;
+
+        bool IsLab(int ev) => ev >= 0 && ev < _net.Db.EventCount && _net.Db.Event(ev).Def.behavior == "lab";
+
+        bool LabActive(MatchFeed feed)
+        {
+            foreach (var kv in feed.Events) if (IsLab(kv.Value.Event) && feed.Elapsed >= kv.Value.StartsAt) return true;
+            return false;
+        }
+
+        void OnEventStarted(in RuleEvent e, int local)
+        {
+            var sfx = SfxPlayer.Instance;
+            if (e.A < 0 || e.A >= _net.Db.EventCount) return;
+            var ev = _net.Db.Event(e.A);
+            sfx?.Play(ev.Kind == EventKind.Positivo ? "evento_positivo" : ev.Kind == EventKind.Negativo ? "evento_negativo" : "evento_especial", AudioBus.Ui, 0.8f, 0f);
+            int target = e.B == 255 ? -1 : e.B;
+            switch (ev.Def.behavior)
+            {
+                case "grade":
+                    sfx?.Play("carimbo", AudioBus.Sfx, 0.9f, 0f);
+                    for (int s = 0; s < PlayerStore.MaxSlots; s++) _players.Emote(s, "dez", _now, 3f);
+                    break;
+                case "zero":
+                    sfx?.Play("papel_amassado", AudioBus.Sfx, 0.8f, 0f);
+                    break;
+                case "insult":
+                    sfx?.Play("buzina_burro", AudioBus.Sfx, 0.8f, 0f);
+                    break;
+                case "lab":
+                    sfx?.Play("alarme_surto", AudioBus.Sfx, 0.7f);
+                    break;
+                case "jalapeno":
+                    sfx?.Play("jalapeno", AudioBus.Sfx, 0.8f, 0f);
+                    _players.Emote(target, "fogo", _now, 1.5f);
+                    break;
+                case "bubble":
+                    sfx?.Play("notificacao", AudioBus.Sfx, 0.8f, 0f);
+                    break;
+            }
+        }
+
+        void OnEventBonus(in RuleEvent e)
+        {
+            var sfx = SfxPlayer.Instance;
+            int slot = e.A == 255 ? -1 : e.A;
+            var at = new Vector2(e.X, e.Y);
+            switch (e.B)
+            {
+                case EventOutcome.BonusCoxinha: sfx?.Play("coxinha", AudioBus.Sfx, 0.9f, 0f); _players.Emote(slot, "coxinha", _now, 2f); break;
+                case EventOutcome.BonusSupreme: sfx?.Play("coxinha_suprema", AudioBus.Sfx, 1f, 0f); _players.Emote(slot, "coxinha", _now, 2.5f); _rig.AddShake(0.2f); break;
+                case EventOutcome.BonusReflex: sfx?.Play("reflexo", AudioBus.Sfx, 0.9f, 0f); break;
+                case EventOutcome.BonusBubblePop: sfx?.Play("notificacao", AudioBus.Sfx, 1f, 0f); _players.Emote(slot, "coracao", _now, 1.5f); break;
+                case EventOutcome.BonusBubbleGoal: sfx?.Play("evento_sucesso", AudioBus.Sfx, 0.7f, 0f); _players.Emote(slot, "notificacao", _now, 1.5f); break;
+                case EventOutcome.BonusInsultBeaten: sfx?.Play("evento_sucesso", AudioBus.Sfx, 0.8f, 0f); break;
+                case EventOutcome.BonusZeroRecovered: sfx?.Play("carimbo", AudioBus.Sfx, 0.8f, 0f); _players.Emote(slot, "dez", _now, 2f); break;
+                case EventOutcome.BonusJalapenoEnd: sfx?.Play("alivio", AudioBus.Sfx, 0.8f, 0f); _rig.AddShake(0.12f); break;
+                case EventOutcome.BonusUpgrade: sfx?.Play("evolucao", AudioBus.Sfx, 0.6f, 0f); break;
+            }
         }
 
         /// <summary>Som da preparação ou da execução de um ataque de boss.</summary>

@@ -32,6 +32,9 @@ namespace ES.UI
         float _skipTo, _bossHp;
         readonly HashSet<ushort> _scaledBosses = new HashSet<ushort>();
         bool _god, _autopick;
+        string[] _evts = new string[0], _items = new string[0];
+        int _evtNext;
+        float _evtAt = 4f;
         float _pickAt;
         bool _log;
         float _logAt, _benchAt, _benchChoiceAt;
@@ -85,6 +88,9 @@ namespace ES.UI
             if (_log && q.TryGetValue("t", out var tt)) float.TryParse(tt, System.Globalization.NumberStyles.Float, System.Globalization.CultureInfo.InvariantCulture, out _skipTo);
             _god = _log && q.TryGetValue("god", out var g) && g == "1";
             _autopick = _log && q.TryGetValue("autopick", out var ap) && ap == "1";
+            // depuração dos eventos: ?log=1&evt=jalapeno,motoqueiro (um a cada 12 s) e &itens=chapeu_japones,tequila
+            if (_log && q.TryGetValue("evt", out var evs)) _evts = evs.Split(',');
+            if (_log && q.TryGetValue("itens", out var its)) _items = its.Split(',');
             if (_log && q.TryGetValue("bosshp", out var bh)) float.TryParse(bh, System.Globalization.NumberStyles.Float, System.Globalization.CultureInfo.InvariantCulture, out _bossHp);
             if (mode == "setup") { Router.ShowMain(Router.Solo); return; }
             if (mode == "solo") Net.StartSolo(name, spec, Difficulty.Normal, (ulong)DateTime.UtcNow.Ticks);
@@ -127,6 +133,28 @@ namespace ES.UI
                     _skipTo = 0;
                 }
                 if (_god) foreach (var p in dw.Players.Slots) if (p != null) p.InvulnUntil = float.MaxValue;
+                if (_items.Length > 0)
+                {
+                    foreach (var id in _items)
+                    {
+                        int ai = dw.Db.AbilityIndex(id);
+                        if (ai < 0) continue;
+                        foreach (var p in dw.Players.Slots)
+                        {
+                            if (p == null) continue;
+                            AbilitySystem.Grant(dw, p.Slot, ai);
+                            // como uma carta escolhida: a interface e as camadas visuais ficam sabendo
+                            dw.Events.AddRule(new RuleEvent { Kind = RuleEventKind.ChoiceApplied, A = p.Slot, B = (int)OptionKind.NewAbility, C = ai });
+                        }
+                    }
+                    _items = new string[0];
+                }
+                if (_evtNext < _evts.Length && dw.Elapsed >= _evtAt)
+                {
+                    int ei = dw.Db.EventIndex(_evts[_evtNext++]);
+                    if (ei >= 0) EventSystem.Begin(dw, ei, 0);
+                    _evtAt = dw.Elapsed + 12f;
+                }
                 var pick = Net.Feed?.CurrentOffer;
                 if (_autopick && pick != null && Time.unscaledTime >= _pickAt) { _pickAt = Time.unscaledTime + 0.3f; Net.Choose(pick.OfferId, 0); }
                 if (_bossHp > 0)

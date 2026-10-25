@@ -92,6 +92,21 @@ namespace ES.Sim
                     case RuleEventKind.MatchContinued:
                         w.F32(e.X);
                         break;
+                    case RuleEventKind.EventStarted:
+                        w.U8((byte)e.A); w.U8((byte)e.B); w.U16((ushort)e.C); w.F32(e.X); w.F32(e.Y);
+                        break;
+                    case RuleEventKind.EventProgress:
+                        w.U16((ushort)e.A); w.U16((ushort)e.B); w.U16((ushort)e.C);
+                        break;
+                    case RuleEventKind.EventEnded:
+                        w.U16((ushort)e.A); w.U8((byte)e.B); w.U8((byte)e.C); w.I8((sbyte)Math.Max(-1, Math.Min(127, (int)e.X)));
+                        break;
+                    case RuleEventKind.EventBonus:
+                        w.U8((byte)e.A); w.U8((byte)e.B); Pos(w, e, aw, ah); w.F32(e.Z);
+                        break;
+                    case RuleEventKind.EventMoto:
+                        w.U16((ushort)e.A); w.U16((ushort)e.B); w.U16((ushort)Math.Max(0, Math.Min(65535, e.C))); w.F32(e.X); w.F32(e.Y); w.F32(e.Z); w.F32(e.W);
+                        break;
                 }
             }
         }
@@ -110,7 +125,7 @@ namespace ES.Sim
             var parsed = new List<DecodedRuleEvent>(count);
             for (int i = 0; i < count; i++)
             {
-                if (!r.TryU8(out byte kind) || kind > (byte)RuleEventKind.MatchContinued) return false;
+                if (!r.TryU8(out byte kind) || kind > (byte)RuleEventKind.EventMoto) return false;
                 var e = new RuleEvent { Kind = (RuleEventKind)kind };
                 var options = NoOptions;
                 var actions = new byte[3];
@@ -205,6 +220,29 @@ namespace ES.Sim
                     case RuleEventKind.MatchContinued:
                         ok = r.TryF32(out float x18);
                         e.X = x18;
+                        break;
+                    case RuleEventKind.EventStarted:
+                        ok = r.TryU8(out byte a19) & r.TryU8(out byte b19) & r.TryU16(out ushort c19) & r.TryF32(out float x19) & r.TryF32(out float y19);
+                        e.A = a19; e.B = b19; e.C = c19; e.X = x19; e.Y = y19;
+                        ok &= b19 == 255 || b19 < PlayerStore.MaxSlots;
+                        break;
+                    case RuleEventKind.EventProgress:
+                        ok = r.TryU16(out ushort a20) & r.TryU16(out ushort b20) & r.TryU16(out ushort c20);
+                        e.A = a20; e.B = b20; e.C = c20;
+                        break;
+                    case RuleEventKind.EventEnded:
+                        ok = r.TryU16(out ushort a21) & r.TryU8(out byte b21) & r.TryU8(out byte c21) & r.TryI8(out sbyte x21);
+                        e.A = a21; e.B = b21; e.C = c21; e.X = x21;
+                        break;
+                    case RuleEventKind.EventBonus:
+                        ok = r.TryU8(out byte a22) & r.TryU8(out byte b22) & ReadPos(ref r, arenaW, arenaH, ref e) & r.TryF32(out float z22);
+                        e.A = a22; e.B = b22; e.Z = z22;
+                        ok &= a22 == 255 || a22 < PlayerStore.MaxSlots;
+                        break;
+                    case RuleEventKind.EventMoto:
+                        ok = r.TryU16(out ushort a23) & r.TryU16(out ushort b23) & r.TryU16(out ushort c23) & r.TryF32(out float x23) & r.TryF32(out float y23) & r.TryF32(out float z23) & r.TryF32(out float w23);
+                        e.A = a23; e.B = b23; e.C = c23; e.X = x23; e.Y = y23; e.Z = z23; e.W = w23;
+                        ok &= !float.IsNaN(x23) && !float.IsNaN(y23) && !float.IsNaN(z23) && !float.IsNaN(w23);
                         break;
                     default:
                         return false;

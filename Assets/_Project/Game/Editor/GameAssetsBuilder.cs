@@ -16,7 +16,7 @@ namespace ES.GameEditor
         public const string FontPath = "Assets/_Project/UI/Fonts/VT323-Regular.ttf";
         public const string StringsPath = "Assets/_Project/UI/Strings/pt-BR.json";
 
-        [Serializable] public class ManifestSprite { public string id, category, file; }
+        [Serializable] public class ManifestSprite { public string id, category, file; public int[] anchor; }
         [Serializable] public class Manifest { public ManifestSprite[] sprites = new ManifestSprite[0]; }
 
         public static Manifest ReadManifest() => JsonUtility.FromJson<Manifest>(File.ReadAllText(Path.Combine(ArtDir, "manifest.json")));
@@ -36,7 +36,8 @@ namespace ES.GameEditor
             {
                 var sprite = AssetDatabase.LoadAssetAtPath<Sprite>($"{ArtDir}/{s.file}");
                 if (sprite == null) { missing++; Debug.LogError($"[ES] Sprite não importado: {s.file}"); continue; }
-                ga.sprites.Add(new GameAssets.SpriteEntry { id = s.id, sprite = sprite });
+                var anchor = s.anchor != null && s.anchor.Length == 2 ? new Vector2Int(s.anchor[0], s.anchor[1]) : new Vector2Int(-1, -1);
+                ga.sprites.Add(new GameAssets.SpriteEntry { id = s.id, sprite = sprite, anchor = anchor });
             }
             // retratos da tela de escolha (imagens fornecidas pelo autor)
             foreach (var path in Directory.GetFiles(SelectionDir, "*.png"))
@@ -50,7 +51,7 @@ namespace ES.GameEditor
                     ti.SaveAndReimport();
                 }
                 var sprite = AssetDatabase.LoadAssetAtPath<Sprite>(p);
-                if (sprite != null) ga.sprites.Add(new GameAssets.SpriteEntry { id = Path.GetFileNameWithoutExtension(p), sprite = sprite });
+                if (sprite != null) ga.sprites.Add(new GameAssets.SpriteEntry { id = Path.GetFileNameWithoutExtension(p), sprite = sprite, anchor = new Vector2Int(-1, -1) });
             }
             ga.clips.Clear();
             foreach (var path in Directory.GetFiles(AudioDir, "*.wav", SearchOption.AllDirectories))

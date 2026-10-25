@@ -21,6 +21,8 @@ namespace ES.Content
         public List<SynergyAsset> synergies = new List<SynergyAsset>();
         public List<EvolutionAsset> evolutions = new List<EvolutionAsset>();
         public List<BossAsset> bosses = new List<BossAsset>();
+        /// <summary>Eventos aleatórios (editáveis no Inspector: pesos, raridade, duração, parâmetros).</summary>
+        public List<EventDef> events = new List<EventDef>();
 
         public ContentDef ToContentDef()
         {
@@ -37,6 +39,7 @@ namespace ES.Content
                 synergies = synergies.ConvertAll(a => a.def).ToArray(),
                 evolutions = evolutions.ConvertAll(a => a.def).ToArray(),
                 bosses = bosses.ConvertAll(a => a.def).ToArray(),
+                events = events.ToArray(),
             };
         }
 

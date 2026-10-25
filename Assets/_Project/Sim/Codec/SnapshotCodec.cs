@@ -37,6 +37,8 @@ namespace ES.Sim
         public int Tick;
 
         public const byte FlagInvulnerable = 1, FlagSpecialActive = 2, FlagHasOffer = 4, FlagShield = 8;
+        /// <summary>Aparência temporária (<see cref="PlayerLook"/>).</summary>
+        public byte Look;
     }
 
     public struct EnemySnap
@@ -102,13 +104,13 @@ namespace ES.Sim
     public static class SnapshotCodec
     {
         const byte Magic = 0xE5;
-        const byte Version = 3;
+        const byte Version = 4;
         const int HeaderSize = 8;
         const int RunHeaderSize = 2;
 
         const byte RunPlayers = 1, RunEnemies = 2, RunHostile = 3, RunCosmetic = 4, RunAllies = 5, RunBoss = 6;
         // Jogador: slot, status, x, y, vx, vy, fx, fy, hp, maxHp, flags, seq, recarga, ativo, nível, xp, velocidade.
-        const int PlayerSize = 22, EnemySize = 7, HostileSize = 7, CosmeticSize = 20, AllySize = 8, BossSize = 6;
+        const int PlayerSize = 23, EnemySize = 7, HostileSize = 7, CosmeticSize = 20, AllySize = 8, BossSize = 6;
         const byte TypeMask = 0x0F, BitStatus = 1 << 4, BitElite = 1 << 5, BitStunned = 1 << 6, BitFlash = 1 << 7;
         /// <summary>Aliados por snapshot (os mais próximos dos jogadores primeiro).</summary>
         public const int MaxAllies = 200;
@@ -157,6 +159,7 @@ namespace ES.Sim
                 PutU8((byte)Math.Min(255, p.Progress.Level));
                 PutU8((byte)Math.Min(255, Math.Round(255f * p.Progress.Xp / Math.Max(1, XpCurve.ToNext(w.Rules, p.Progress.Level)))));
                 PutU8((byte)Math.Min(255, Math.Round(p.Stats.Get(StatId.MoveSpeed) * 10f)));
+                PutU8(EventSystem.Look(w, p));
             }
 
             foreach (var b in w.Bosses.Active)
@@ -394,7 +397,7 @@ namespace ES.Sim
             r.TryU8(out byte flags);
             r.TryU16(out ushort seq);
             r.TryU8(out byte cd); r.TryU8(out byte active);
-            r.TryU8(out byte level); r.TryU8(out byte xp); r.TryU8(out byte speed);
+            r.TryU8(out byte level); r.TryU8(out byte xp); r.TryU8(out byte speed); r.TryU8(out byte look);
             into.Players[slot] = new PlayerSnap
             {
                 Present = true,
@@ -411,6 +414,7 @@ namespace ES.Sim
                 Level = level,
                 XpProgress = xp / 255f,
                 MoveSpeed = speed / 10f,
+                Look = look,
                 Tick = tick,
             };
         }

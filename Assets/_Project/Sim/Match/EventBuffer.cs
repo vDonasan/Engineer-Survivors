@@ -22,6 +22,16 @@ namespace ES.Sim
         BossDefeated,
         /// <summary>O anfitrião continuou no Modo Infinito: X = segundo.</summary>
         MatchContinued,
+        /// <summary>Evento aleatório: A = evento, B = jogador (255 todos/arena), C = id, X = duração restante, Y = aviso.</summary>
+        EventStarted,
+        /// <summary>A = id, B = abates, C = meta.</summary>
+        EventProgress,
+        /// <summary>A = id, B = <see cref="EventOutcome"/>, C = evento, X = jogador (−1 arena).</summary>
+        EventEnded,
+        /// <summary>Recompensa/efeito pontual: A = jogador (255 arena), B = tipo, X/Y = posição, Z = valor.</summary>
+        EventBonus,
+        /// <summary>Trajetória da moto: A = id, B = comprimento × 10, C = atraso em ms, X/Y = início, Z = ângulo, W = velocidade.</summary>
+        EventMoto,
     }
 
     /// <summary>Evento de regra: entregue de forma confiável a todos os clientes.</summary>

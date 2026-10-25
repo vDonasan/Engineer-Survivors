@@ -15,7 +15,10 @@ namespace ES.SimTests
                 .Select(i => new PlayerSlot { Name = "P" + (i + 1), SpecializationId = spec })
                 .ToArray();
             var cfg = new MatchConfig { Seed = seed, Difficulty = difficulty, TeamSize = team, ArenaId = "laboratorio", Roster = roster, Coop = coop };
-            return new World(db ?? Db, cfg);
+            // eventos aleatórios desligados: os testes antigos não esperam XP, coxinhas nem motos (EventTests liga)
+            var w = new World(db ?? Db, cfg);
+            w.EventDir.Enabled = false;
+            return w;
         }
 
         /// <summary>Remove as armas/habilidades de todos os jogadores (testes de contato e IA).</summary>

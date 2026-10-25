@@ -32,6 +32,8 @@ namespace ES.Sim
         public short NextOfferId = 1;
         /// <summary>Atualizar as cartas, banir uma carta e pular: limitados por partida.</summary>
         public int RerollsLeft, BansLeft, SkipsLeft;
+        /// <summary>Até este segundo, cartas incomuns, raras e relíquias aparecem mais (Dez na Prova).</summary>
+        public float LuckUntil;
         /// <summary>Habilidades banidas: não voltam a aparecer nesta partida.</summary>
         public readonly System.Collections.Generic.HashSet<int> Banned = new System.Collections.Generic.HashSet<int>();
     }

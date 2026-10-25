@@ -63,6 +63,7 @@ namespace ES.ContentEditor
                 a.idle = Sprite($"Assets/_Project/Art/Bosses/{d.id}/boss_{d.id}_idle_down_0.png") ?? a.idle;
             });
 
+            db.events = new List<EventDef>(def.events ?? new EventDef[0]);
             EditorUtility.SetDirty(db);
             AssetDatabase.SaveAssets();
             Debug.Log($"[ES] Conteúdo importado: {db.abilities.Count} habilidades, {db.enemies.Count} inimigos; hash {result.Db.ContentHash:x16}");

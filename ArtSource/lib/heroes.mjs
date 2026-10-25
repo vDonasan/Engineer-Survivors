@@ -1,3 +1,4 @@
+import { headAnchor } from './eventart.mjs';
 // Os dez personagens jogáveis, redesenhados a partir das fotos de referência com o motor de
 // materiais (rig.mjs): só o preenchimento de cada parte é desenhado; contorno, luz e sombra são
 // calculados. Sprites 32×32 (chibi, cabeça grande) e retratos 64×64 com 9 emoções.
@@ -396,7 +397,7 @@ export function heroSprites() {
       for (const dir of dirs) {
         const list = f[`${anim}_${dir}`];
         if (!list || list.length !== n) throw new Error(`animação incompleta: ${id} ${anim} ${dir}`);
-        list.forEach((px, i) => out.push({ id: `char_${id}_${anim}_${dir}_${i}`, category: 'Characters', sub: id, w: 32, h: 32, pivot: [16, 1], px }));
+        list.forEach((px, i) => out.push({ id: `char_${id}_${anim}_${dir}_${i}`, category: 'Characters', sub: id, w: 32, h: 32, pivot: [16, 1], px, anchor: headAnchor(px) }));
       }
   }
   return out;

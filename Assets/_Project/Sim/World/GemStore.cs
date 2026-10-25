@@ -1,6 +1,6 @@
 namespace ES.Sim
 {
-    public enum PickupKind : byte { Xp, Heal }
+    public enum PickupKind : byte { Xp, Heal, Coxinha, CoxinhaSuprema }
 
     /// <summary>Gemas de XP e curas no chão.</summary>
     public sealed class GemStore
@@ -13,6 +13,8 @@ namespace ES.Sim
         public readonly Vec2[] Pos;
         public readonly float[] Value;
         public readonly int[] SpawnTick;
+        /// <summary>Só este jogador coleta (255 = qualquer um).</summary>
+        public readonly byte[] Owner;
 
         readonly IdAllocator _ids = new IdAllocator();
 
@@ -24,9 +26,10 @@ namespace ES.Sim
             Pos = new Vec2[capacity];
             Value = new float[capacity];
             SpawnTick = new int[capacity];
+            Owner = new byte[capacity];
         }
 
-        public int Spawn(PickupKind kind, Vec2 pos, float value, int tick)
+        public int Spawn(PickupKind kind, Vec2 pos, float value, int tick, byte owner = 255)
         {
             if (Count >= Capacity) return -1;
             int i = Count++;
@@ -35,6 +38,7 @@ namespace ES.Sim
             Pos[i] = pos;
             Value[i] = value;
             SpawnTick[i] = tick;
+            Owner[i] = owner;
             return i;
         }
 
@@ -43,7 +47,7 @@ namespace ES.Sim
             _ids.Release(Id[i]);
             int last = --Count;
             if (i == last) return;
-            Id[i] = Id[last]; Kind[i] = Kind[last]; Pos[i] = Pos[last]; Value[i] = Value[last]; SpawnTick[i] = SpawnTick[last];
+            Id[i] = Id[last]; Kind[i] = Kind[last]; Pos[i] = Pos[last]; Value[i] = Value[last]; SpawnTick[i] = SpawnTick[last]; Owner[i] = Owner[last];
         }
     }
 }

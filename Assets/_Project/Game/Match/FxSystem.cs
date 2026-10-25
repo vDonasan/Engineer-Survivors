@@ -21,7 +21,8 @@ namespace ES.Game
         readonly List<Timed> _timed = new List<Timed>(512);
         readonly Sprite _px, _dot, _spark, _bolt, _gem, _gemBig, _heal, _arm, _smoke, _tv, _note, _shard, _coin, _plus, _bot0, _bot1, _bot2;
         readonly Sprite[] _explosion = new Sprite[4], _digits = new Sprite[10];
-        readonly Sprite _bossNote, _bossWave, _bossOrb0, _bossOrb1, _bossSpark;
+        readonly Sprite _bossNote, _bossWave, _bossOrb0, _bossOrb1, _bossSpark, _coxinha, _coxinhaSuprema;
+        readonly Sprite[] _motoLeft = new Sprite[2], _motoRight = new Sprite[2];
         readonly int[] _orbitAbilities, _auraAbilities;
         int _numbers;
 
@@ -58,6 +59,9 @@ namespace ES.Game
             _bossOrb0 = assets.Sprite("fx_boss_orb_0");
             _bossOrb1 = assets.Sprite("fx_boss_orb_1");
             _bossSpark = assets.Sprite("fx_boss_spark");
+            _coxinha = assets.Sprite("fx_coxinha");
+            _coxinhaSuprema = assets.Sprite("fx_coxinha_suprema");
+            for (int i = 0; i < 2; i++) { _motoLeft[i] = assets.Sprite("fx_moto_left_" + i); _motoRight[i] = assets.Sprite("fx_moto_right_" + i); }
             for (int i = 0; i < 4; i++) _explosion[i] = assets.Sprite("fx_explosion_" + i);
             for (int i = 0; i < 10; i++) _digits[i] = assets.Sprite("fx_digit_" + i);
             var orbit = new List<int>();
@@ -116,6 +120,53 @@ namespace ES.Game
             }
         }
 
+        /// <summary>Moto: aviso com a trajetória (piscando) e depois a travessia com poeira.</summary>
+        void DrawMotos(MatchFeed feed, float now)
+        {
+            var list = feed.Motos;
+            float t = feed.Elapsed;
+            for (int i = list.Count - 1; i >= 0; i--)
+            {
+                var m = list[i];
+                float travel = m.Speed > 0 ? m.Length / m.Speed : 0;
+                if (t > m.GoAt + travel + 0.3f) { list.RemoveAt(i); continue; }
+                var start = Layers.V(m.Start);
+                var dir = new Vector2(Mathf.Cos(m.Angle), Mathf.Sin(m.Angle));
+                if (t < m.GoAt)
+                {
+                    bool on = ((int)(now * 10) & 1) == 0;
+                    var col = new Color(1f, 0.3f, 0.3f, on ? 0.9f : 0.45f);
+                    var side = new Vector2(-dir.y, dir.x) * 0.9f;
+                    int n = Mathf.RoundToInt(m.Length * 32f / 6f);
+                    for (int k = 0; k <= n; k++)
+                    {
+                        var p = start + dir * (m.Length * k / n);
+                        _stamps.Add(_px, Layers.Snap(p + side), col, Layers.Shadow + 6);
+                        _stamps.Add(_px, Layers.Snap(p - side), col, Layers.Shadow + 6);
+                    }
+                    // setas indicando o sentido
+                    for (int k = 1; k < 6; k++)
+                    {
+                        var p = start + dir * (m.Length * k / 6f + Mathf.Repeat(now * 3f, 1f));
+                        _stamps.Add(_px, Layers.Snap(p + side * 0.5f - dir * 0.3f), col, Layers.Shadow + 6);
+                        _stamps.Add(_px, Layers.Snap(p), col, Layers.Shadow + 6);
+                        _stamps.Add(_px, Layers.Snap(p - side * 0.5f - dir * 0.3f), col, Layers.Shadow + 6);
+                    }
+                    continue;
+                }
+                float d = Mathf.Min(m.Length, (t - m.GoAt) * m.Speed);
+                var at = start + dir * d;
+                var frames = dir.x < 0 ? _motoLeft : _motoRight;
+                _stamps.Add(frames[(int)(now * 14) & 1], Layers.Snap(at + new Vector2(0, 0.2f)), Color.white, Layers.Actor(at.y) + 2);
+                // rastro de velocidade e poeira
+                for (int k = 1; k <= 6; k++)
+                {
+                    var p = at - dir * (k * 0.35f);
+                    _stamps.Add(k < 3 ? _px : _smoke, Layers.Snap(p + new Vector2(0, Random.Range(-0.15f, 0.15f))), new Color(0.85f, 0.8f, 0.7f, 0.8f - k * 0.12f), Layers.Fx);
+                }
+            }
+        }
+
         Sprite HostileSprite(in HostileRender h, float now)
         {
             switch (h.Type)
@@ -141,6 +192,16 @@ namespace ES.Game
             foreach (var kv in feed.Gems)
             {
                 var g = kv.Value;
+                if (g.Kind == PickupKind.Coxinha || g.Kind == PickupKind.CoxinhaSuprema)
+                {
+                    // coxinha flutuando com brilho
+                    float fl = Mathf.Round(Mathf.Sin(now * 4f + kv.Key) * 2f) * Layers.Pixel;
+                    bool supreme = g.Kind == PickupKind.CoxinhaSuprema;
+                    _stamps.Add(supreme ? _coxinhaSuprema : _coxinha, Layers.Snap(new Vector2(g.Pos.X, g.Pos.Y + 0.15f)) + new Vector2(0, fl), Color.white, Layers.Gem + 2);
+                    if (((int)(now * 5) + kv.Key) % 3 == 0)
+                        _stamps.Add(_spark, Layers.Snap(new Vector2(g.Pos.X + Mathf.Sin(now * 7f) * 0.35f, g.Pos.Y + 0.45f)), supreme ? new Color(1f, 0.85f, 0.2f) : Color.white, Layers.Gem + 3);
+                    continue;
+                }
                 var sprite = g.Kind == PickupKind.Heal ? _heal : g.Value >= 10 ? _gemBig : _gem;
                 float bob = ((int)(now * 3 + kv.Key) & 1) * Layers.Pixel;
                 _stamps.Add(sprite, Layers.Snap(new Vector2(g.Pos.X, g.Pos.Y + bob)), Color.white, Layers.Gem);
@@ -149,6 +210,7 @@ namespace ES.Game
             foreach (var h in frame.Hostile) _stamps.Add(HostileSprite(h, now), Layers.Snap(Layers.V(h.Pos)), Color.white, Layers.Hostile);
 
             DrawAbilities(feed, players, renderSeconds, now);
+            DrawMotos(feed, now);
 
             _numbers = 0;
             for (int i = _timed.Count - 1; i >= 0; i--)
