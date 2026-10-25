@@ -9,7 +9,9 @@ import { mkdirSync, writeFileSync } from 'node:fs';
 import { join, dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-const HEROES = ['staut', 'miyuki', 'giulia', 'breno', 'artur', 'badotti', 'garcia', 'jean', 'fufu', 'donasa'];
+const ONLY = process.argv.find((a) => a.startsWith('--only='))?.slice(7);
+const ALL = ['staut', 'miyuki', 'giulia', 'breno', 'artur', 'badotti', 'garcia', 'jean', 'fufu', 'donasa'];
+const HEROES = ONLY ? ALL.filter((h) => ONLY.split(',').includes(h)) : ALL;
 const here = dirname(fileURLToPath(import.meta.url));
 const root = resolve(here, '..', '..');
 const args = process.argv.slice(2).filter((a) => !a.startsWith('--'));
@@ -25,7 +27,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const browser = await chromium.launch({
   headless: !edge,
   channel: edge ? 'msedge' : undefined,
-  args: edge ? ['--ignore-gpu-blocklist', '--disable-background-timer-throttling', '--disable-renderer-backgrounding', '--autoplay-policy=no-user-gesture-required']
+  args: edge ? ['--ignore-gpu-blocklist']
     : ['--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist', '--disable-background-timer-throttling'],
 });
 
@@ -38,10 +40,12 @@ try {
     const lines = [];
     page.on('console', (m) => { const t = m.text(); if (t.includes('[ES]') || /exception|error/i.test(t)) lines.push(t); });
     page.on('pageerror', (e) => lines.push('PAGEERROR ' + e.message));
+    page.on('crash', () => lines.push('PAGEERROR página travou (crash)'));
     await page.goto(`http://localhost:${port}/?mode=solo&spec=${id}&log=1&bench=150${base ? '' : '&evolve=3'}`);
     const t0 = Date.now();
     while (Date.now() - t0 < 90000 && !lines.some((l) => /STATE.*t=(1[2-9]|[2-9]\d)\./.test(l))) await sleep(500);
-    await page.screenshot({ path: join(outDir, `${id}${base ? '-base' : ''}.png`) });
+    if (!page.isClosed()) await page.screenshot({ path: join(outDir, `${id}${base ? '-base' : ''}.png`) });
+    else lines.push('PAGEERROR a página fechou antes da captura');
     const states = lines.filter((l) => l.includes('STATE')).map((l) => {
       const m = l.match(/enemies=(\d+) allies=(\d+).*?fps=(\d+)/);
       return m ? { enemies: +m[1], allies: +m[2], fps: +m[3] } : null;

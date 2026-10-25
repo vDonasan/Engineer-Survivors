@@ -159,3 +159,25 @@ Observações:
 - Prova de rede **na URL pública** (`ES_BROWSER=msedge node Tools/netproof/proof.mjs https://engineering-survivors.pages.dev 0 publico`):
   **8/8 aprovada** — sala LLLRNG pelo Relay; 34 inimigos nos dois lados; jogadores em (33,5; 32,0) e (48,5; 32,0); nenhum erro de página.
 - Pendente: teste em 2 computadores pelo autor (roteiro acima).
+
+## 2026-10-25 — Dez personagens
+
+- **Simulação (dotnet):** 234/234 (`bash Tools/test-sim.sh`). Inclui 50 testes dos personagens (`Tools/SimTests/Abilities/CharacterTests.cs`):
+  ataque inicial com dano real nos alvos e atribuído à arma; evolução acrescenta o ataque novo e mantém o inicial (o Cabazord Master
+  substitui os três robôs); melhoria avançada só no nível 3 da evolução; prisão da bolha (nível 3), campo elétrico por acertos
+  agrupados, cola que gruda e estoura, marca da Miyuki, fúria do Fufu; ricochete, quique do pneu, cadeia limitada a 12 saltos sem
+  repetir alvo, filhos até profundidade 2, números de dano com no máximo metade da cota; snapshot v2 com aliados e estado de inimigo.
+- **Partidas completas com bots** (4 jogadores evoluídos, difícil, 4 min, todos os personagens): sem exceções, limites respeitados,
+  ~3 100 abates por partida, ~0,07 ms por tick (pior tick 16 ms, no aquecimento do JIT).
+- **Balanceamento com bots** (`Tools/BalanceRunner`, normal, 10 min, 2 sementes): solo e 4 jogadores vencem com todos os personagens
+  (Artur e Fufu, corpo a corpo, perderam 1 de 2 no solo; o Artur recebeu +2 de dano e +0,2 de alcance depois disso, sem nova rodada).
+- **Arte:** 15/15 (`npm --prefix ArtSource test`): 10 personagens com todas as animações e direções, retratos, silhuetas distintas
+  (≥ 20 px de diferença entre quaisquer dois), um sprite para cada valor do enum AllySprite. **Áudio:** 4/4, 65 efeitos.
+- **Unity:** EditMode 28/28, PlayMode 11/11.
+- **Combate real no navegador** (`node Tools/netproof/heroes.mjs Build/WebGL 8091 --edge`): cada personagem em partida solo com a arma
+  evoluída no nível avançado (`?evolve=3`) e 150 inimigos: **10/10 aprovados**, sem erros na página, 98–146 FPS (Intel UHD). Uma rodada
+  mostrou 2 FPS para a Miyuki com a janela do Edge em segundo plano; isolada, duas vezes, 144 FPS. Capturas em `Build/heroes/`.
+- **Prova de rede com dois navegadores** (`ES_BROWSER=msedge node Tools/netproof/proof.mjs Build/WebGL 8085 herois`): **9/9 aprovada**
+  (sala N867HJ), anfitrião Giulia evoluída nível 3, cliente Badotti; nova verificação: o cliente recebe tiros, zonas e companheiros
+  (Cabazord Master e tempestade visíveis na captura do cliente).
+- **Ainda não testado:** os personagens novos em 2 computadores reais (roteiro acima) e partidas com 3–4 pessoas.

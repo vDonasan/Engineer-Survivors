@@ -30,7 +30,7 @@ namespace ES.UI
 
         int _autostart, _bench, _evolve;
         bool _log;
-        float _logAt, _benchAt;
+        float _logAt, _benchAt, _benchChoiceAt;
 
         void Start()
         {
@@ -119,12 +119,19 @@ namespace ES.UI
             }
         }
 
-        /// <summary>Medição de desempenho (?mode=solo&amp;bench=N): mantém N inimigos e o jogador invulnerável.</summary>
+        /// <summary>Medição de desempenho (?mode=solo&amp;bench=N): mantém N inimigos, o jogador invulnerável e escolhe as cartas sozinho.</summary>
         void Bench()
         {
             var w = Net.Host.World;
             if (w == null || w.Players[0] == null) return;
             w.Players[0].InvulnUntil = float.MaxValue;
+            // a medição não para nas cartas de nível: escolhe a primeira
+            var offer = Net.Feed?.CurrentOffer;
+            if (offer != null && Time.unscaledTime >= _benchChoiceAt)
+            {
+                _benchChoiceAt = Time.unscaledTime + 0.2f;
+                Net.Choose(offer.OfferId, 0);
+            }
             int missing = _bench - w.Enemies.Count;
             if (missing > 0 && Time.unscaledTime >= _benchAt)
             {
