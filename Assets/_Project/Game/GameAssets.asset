@@ -1,0 +1,918 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d934a4c3eb8cd464db2ccb066b9bf42c, type: 3}
+  m_Name: GameAssets
+  m_EditorClassIdentifier: ES.Game::ES.Game.GameAssets
+  sprites:
+  - id: char_mecatronica_idle_down_0
+    sprite: {fileID: 21300000, guid: 14531e45feee5014ca912dbb9e5291cf, type: 3}
+  - id: char_mecatronica_idle_down_1
+    sprite: {fileID: 21300000, guid: ae91317470a8b5f4784491993e9f098b, type: 3}
+  - id: char_mecatronica_idle_up_0
+    sprite: {fileID: 21300000, guid: 0d26bcbc695f4d549bbdd4318d37abb5, type: 3}
+  - id: char_mecatronica_idle_up_1
+    sprite: {fileID: 21300000, guid: f9d1b2bdd1bf03c4796aeb046eea6165, type: 3}
+  - id: char_mecatronica_idle_left_0
+    sprite: {fileID: 21300000, guid: 3ba4dcbd88dc5da40abfde15320b794b, type: 3}
+  - id: char_mecatronica_idle_left_1
+    sprite: {fileID: 21300000, guid: 6d3bd7d221fe9a743b759f8111db0f4b, type: 3}
+  - id: char_mecatronica_idle_right_0
+    sprite: {fileID: 21300000, guid: 989cd922f21fced41a4b68265a4903e1, type: 3}
+  - id: char_mecatronica_idle_right_1
+    sprite: {fileID: 21300000, guid: 91a4beb4c95477e41ac96b157b754721, type: 3}
+  - id: char_mecatronica_walk_down_0
+    sprite: {fileID: 21300000, guid: 5be295711100c454396aa18e91e282b9, type: 3}
+  - id: char_mecatronica_walk_down_1
+    sprite: {fileID: 21300000, guid: 6776492c7a878c041ba3edbefae19322, type: 3}
+  - id: char_mecatronica_walk_down_2
+    sprite: {fileID: 21300000, guid: 0d7e4642cf69c2f43a29a49f1f0de30f, type: 3}
+  - id: char_mecatronica_walk_down_3
+    sprite: {fileID: 21300000, guid: a331146199cd44548be3c6371571c0eb, type: 3}
+  - id: char_mecatronica_walk_up_0
+    sprite: {fileID: 21300000, guid: 6fd9ecb3fb7c1644aaa4cc9e4e66593e, type: 3}
+  - id: char_mecatronica_walk_up_1
+    sprite: {fileID: 21300000, guid: 487b36b19c848f5429a591651ba713f3, type: 3}
+  - id: char_mecatronica_walk_up_2
+    sprite: {fileID: 21300000, guid: 923ba01f3cb40e04babd188f6cbc2222, type: 3}
+  - id: char_mecatronica_walk_up_3
+    sprite: {fileID: 21300000, guid: e7cb5498242be7840bd564708fe46046, type: 3}
+  - id: char_mecatronica_walk_left_0
+    sprite: {fileID: 21300000, guid: a9fcd4d984914014eb3b0097af8f3167, type: 3}
+  - id: char_mecatronica_walk_left_1
+    sprite: {fileID: 21300000, guid: e28954721259a2f43af3681a6dee42c0, type: 3}
+  - id: char_mecatronica_walk_left_2
+    sprite: {fileID: 21300000, guid: 33af185a9aa1579449c10869ac6f779b, type: 3}
+  - id: char_mecatronica_walk_left_3
+    sprite: {fileID: 21300000, guid: 6c61cf964abd7cc42b177c4c72610409, type: 3}
+  - id: char_mecatronica_walk_right_0
+    sprite: {fileID: 21300000, guid: fd94fc4a482fca74b83407446116a91a, type: 3}
+  - id: char_mecatronica_walk_right_1
+    sprite: {fileID: 21300000, guid: e17fa5d8d976cc3469aad9e5a1b692d7, type: 3}
+  - id: char_mecatronica_walk_right_2
+    sprite: {fileID: 21300000, guid: 7ceff0721aeb0a64ba6e0af2400aa391, type: 3}
+  - id: char_mecatronica_walk_right_3
+    sprite: {fileID: 21300000, guid: ac11902633b5a9840ad7f5a4428a11cb, type: 3}
+  - id: char_mecatronica_attack_down_0
+    sprite: {fileID: 21300000, guid: e8439a66595b4344fa9c31158f5b4e4e, type: 3}
+  - id: char_mecatronica_attack_down_1
+    sprite: {fileID: 21300000, guid: 1b48a20342479a14db176b5e29b3c10e, type: 3}
+  - id: char_mecatronica_attack_down_2
+    sprite: {fileID: 21300000, guid: a381376ab864d4445926b8ad143c0750, type: 3}
+  - id: char_mecatronica_special_down_0
+    sprite: {fileID: 21300000, guid: 08ec6acbba1e0234184068e93e02d13a, type: 3}
+  - id: char_mecatronica_special_down_1
+    sprite: {fileID: 21300000, guid: b952f111d46d07c448a6672dc4b2b715, type: 3}
+  - id: char_mecatronica_special_down_2
+    sprite: {fileID: 21300000, guid: d8a9bc26ed347094e933f4e8b1e9c051, type: 3}
+  - id: char_mecatronica_hurt_down_0
+    sprite: {fileID: 21300000, guid: 5fff770852681ba479541e2fec3f2b13, type: 3}
+  - id: char_mecatronica_hurt_down_1
+    sprite: {fileID: 21300000, guid: 1310c59f7394a1c43863ebe1efb9c0a8, type: 3}
+  - id: char_mecatronica_stun_down_0
+    sprite: {fileID: 21300000, guid: 582d121c064422049b1bba01c5f7999a, type: 3}
+  - id: char_mecatronica_stun_down_1
+    sprite: {fileID: 21300000, guid: 1686e0711974f9f4ca7b7cc5ffc53a15, type: 3}
+  - id: char_mecatronica_downed_down_0
+    sprite: {fileID: 21300000, guid: 4173e3886d60bb042ae6a6f633acde83, type: 3}
+  - id: char_mecatronica_downed_down_1
+    sprite: {fileID: 21300000, guid: e984cb2edec7fcf44b319c8617aa408c, type: 3}
+  - id: char_mecatronica_downed_down_2
+    sprite: {fileID: 21300000, guid: 861dbad55a678044c9311422e1db1078, type: 3}
+  - id: char_mecatronica_revive_down_0
+    sprite: {fileID: 21300000, guid: c94e211aee497c44899cebb7c6e1ca04, type: 3}
+  - id: char_mecatronica_revive_down_1
+    sprite: {fileID: 21300000, guid: bcdd5bce77dace942ba57683d46ef732, type: 3}
+  - id: char_mecatronica_victory_down_0
+    sprite: {fileID: 21300000, guid: a490a236c0a32bb449c94fbb5a961bb2, type: 3}
+  - id: char_mecatronica_victory_down_1
+    sprite: {fileID: 21300000, guid: 725f92006c1cff24c89d2f87ad599122, type: 3}
+  - id: char_computacao_idle_down_0
+    sprite: {fileID: 21300000, guid: 33be7bc9a4de3e447b4e193a98a65504, type: 3}
+  - id: char_computacao_idle_down_1
+    sprite: {fileID: 21300000, guid: cf994d5534725cd4982f30a5e41373a3, type: 3}
+  - id: char_computacao_idle_up_0
+    sprite: {fileID: 21300000, guid: c3c59ccabc5d28f4fbff00b9c5fa5ceb, type: 3}
+  - id: char_computacao_idle_up_1
+    sprite: {fileID: 21300000, guid: 92063487fd56dc441a8574d622ba969b, type: 3}
+  - id: char_computacao_idle_left_0
+    sprite: {fileID: 21300000, guid: 6ce9edce83619b346b5b089185bac517, type: 3}
+  - id: char_computacao_idle_left_1
+    sprite: {fileID: 21300000, guid: ae789a13906e04e478a2f27901b041ff, type: 3}
+  - id: char_computacao_idle_right_0
+    sprite: {fileID: 21300000, guid: c7ec5b141628954498142e5cbff39fb7, type: 3}
+  - id: char_computacao_idle_right_1
+    sprite: {fileID: 21300000, guid: 091f289822fc5f0409fd0de8d86df559, type: 3}
+  - id: char_computacao_walk_down_0
+    sprite: {fileID: 21300000, guid: 150d3bfdd67827a49ac120ea5d6e8f54, type: 3}
+  - id: char_computacao_walk_down_1
+    sprite: {fileID: 21300000, guid: c6fd496026ee10b478f41810aa2d7ad2, type: 3}
+  - id: char_computacao_walk_down_2
+    sprite: {fileID: 21300000, guid: 97ec14d245195044ab5137536c5ad7da, type: 3}
+  - id: char_computacao_walk_down_3
+    sprite: {fileID: 21300000, guid: e7aee971eee4aac44903131b3db86600, type: 3}
+  - id: char_computacao_walk_up_0
+    sprite: {fileID: 21300000, guid: 5ecd1f7f9b2a5bd4398a2d360e2ccb92, type: 3}
+  - id: char_computacao_walk_up_1
+    sprite: {fileID: 21300000, guid: 6effc5986a567c74dabfceec825cf6fa, type: 3}
+  - id: char_computacao_walk_up_2
+    sprite: {fileID: 21300000, guid: 0748e31e0d2d3394d80bbd764fa39089, type: 3}
+  - id: char_computacao_walk_up_3
+    sprite: {fileID: 21300000, guid: ced3fbcb6417c174da5e37235acb1722, type: 3}
+  - id: char_computacao_walk_left_0
+    sprite: {fileID: 21300000, guid: 8c5cf2e4e30ba2346bf25080f87f7844, type: 3}
+  - id: char_computacao_walk_left_1
+    sprite: {fileID: 21300000, guid: 5d5cea7f98d53c34ea868d6583ceb8e5, type: 3}
+  - id: char_computacao_walk_left_2
+    sprite: {fileID: 21300000, guid: 3a57642dfb804074cafc2ee4f6ce3152, type: 3}
+  - id: char_computacao_walk_left_3
+    sprite: {fileID: 21300000, guid: 3e62c7e821106cd49b1148eabb9e854c, type: 3}
+  - id: char_computacao_walk_right_0
+    sprite: {fileID: 21300000, guid: 34c4170cd0445384aace19a606c97760, type: 3}
+  - id: char_computacao_walk_right_1
+    sprite: {fileID: 21300000, guid: b814823f2d5ff50469378eca7132ef4a, type: 3}
+  - id: char_computacao_walk_right_2
+    sprite: {fileID: 21300000, guid: 74b93b8c880f06949818f8db7aebc9f6, type: 3}
+  - id: char_computacao_walk_right_3
+    sprite: {fileID: 21300000, guid: 4afbc1d401493ee4590c53c2561c05cf, type: 3}
+  - id: char_computacao_attack_down_0
+    sprite: {fileID: 21300000, guid: 3d9b7df7f7105394e8a5126f6977f826, type: 3}
+  - id: char_computacao_attack_down_1
+    sprite: {fileID: 21300000, guid: 2d685470f859487418a79d8349a38282, type: 3}
+  - id: char_computacao_attack_down_2
+    sprite: {fileID: 21300000, guid: 8b5b37ee36c948949bef1e17b10ae06a, type: 3}
+  - id: char_computacao_special_down_0
+    sprite: {fileID: 21300000, guid: 9fa479b28fad0fb44a16abc38789485f, type: 3}
+  - id: char_computacao_special_down_1
+    sprite: {fileID: 21300000, guid: 2646a9553d1dd7f489bd7f2a7b38243f, type: 3}
+  - id: char_computacao_special_down_2
+    sprite: {fileID: 21300000, guid: 3017489899d9a2b40b7517918ea26acf, type: 3}
+  - id: char_computacao_hurt_down_0
+    sprite: {fileID: 21300000, guid: 64591b045d16e564a807e05f16ca94bd, type: 3}
+  - id: char_computacao_hurt_down_1
+    sprite: {fileID: 21300000, guid: ee59c70af59090b4591d663db7296a9b, type: 3}
+  - id: char_computacao_stun_down_0
+    sprite: {fileID: 21300000, guid: ea01bca278b02d2459feb8c6e2429efc, type: 3}
+  - id: char_computacao_stun_down_1
+    sprite: {fileID: 21300000, guid: 29cbc8956fb9ad449b2a68df3b49c825, type: 3}
+  - id: char_computacao_downed_down_0
+    sprite: {fileID: 21300000, guid: 6029be96d7b926b43b4e9465e20e5201, type: 3}
+  - id: char_computacao_downed_down_1
+    sprite: {fileID: 21300000, guid: 19a3271abfb72ba4d9cc0f92f51bfa02, type: 3}
+  - id: char_computacao_downed_down_2
+    sprite: {fileID: 21300000, guid: 9785c7b6891296843a8ea74147f60a85, type: 3}
+  - id: char_computacao_revive_down_0
+    sprite: {fileID: 21300000, guid: acf13b2101d8dcf429074df3f7fcb03f, type: 3}
+  - id: char_computacao_revive_down_1
+    sprite: {fileID: 21300000, guid: f89cb5c1f6663244cbac2a52c791639b, type: 3}
+  - id: char_computacao_victory_down_0
+    sprite: {fileID: 21300000, guid: 0b4ad324a2a5e254b8b4083179ba699f, type: 3}
+  - id: char_computacao_victory_down_1
+    sprite: {fileID: 21300000, guid: 97d9f8673a82ecd46a7a36f3141c4c9f, type: 3}
+  - id: char_eletrica_idle_down_0
+    sprite: {fileID: 21300000, guid: 7eaaff3f6309399479199b944b59ea54, type: 3}
+  - id: char_eletrica_idle_down_1
+    sprite: {fileID: 21300000, guid: ce4ea54551207d54b907c41b92b8e59d, type: 3}
+  - id: char_eletrica_idle_up_0
+    sprite: {fileID: 21300000, guid: 37fddf1435ee3c0479fd0880b5a8ef2b, type: 3}
+  - id: char_eletrica_idle_up_1
+    sprite: {fileID: 21300000, guid: 803f1ae4c377e8f43bf96007aebbb593, type: 3}
+  - id: char_eletrica_idle_left_0
+    sprite: {fileID: 21300000, guid: 3416272444064164abcc158cc79def6b, type: 3}
+  - id: char_eletrica_idle_left_1
+    sprite: {fileID: 21300000, guid: 09ed85a2b2bfc534492ae1a32f23013c, type: 3}
+  - id: char_eletrica_idle_right_0
+    sprite: {fileID: 21300000, guid: 682b83ea9292aee44b982428e304a97f, type: 3}
+  - id: char_eletrica_idle_right_1
+    sprite: {fileID: 21300000, guid: 6e2977d2017fe0340be082fbf02314fb, type: 3}
+  - id: char_eletrica_walk_down_0
+    sprite: {fileID: 21300000, guid: b355d26c9fcc12044b4999c4f8798475, type: 3}
+  - id: char_eletrica_walk_down_1
+    sprite: {fileID: 21300000, guid: ef474f1ba8db18e47b53be4f82dd5c67, type: 3}
+  - id: char_eletrica_walk_down_2
+    sprite: {fileID: 21300000, guid: d3b498552655196479e67b69d1335b5c, type: 3}
+  - id: char_eletrica_walk_down_3
+    sprite: {fileID: 21300000, guid: 49f95197094bebf4db936139a1bf8e2c, type: 3}
+  - id: char_eletrica_walk_up_0
+    sprite: {fileID: 21300000, guid: 1e4029c864c0f19449b5d39ee03876c4, type: 3}
+  - id: char_eletrica_walk_up_1
+    sprite: {fileID: 21300000, guid: 41a81264e853d9d4b8f6435eeedd57de, type: 3}
+  - id: char_eletrica_walk_up_2
+    sprite: {fileID: 21300000, guid: bcb8461b391e91341a970a975e900b71, type: 3}
+  - id: char_eletrica_walk_up_3
+    sprite: {fileID: 21300000, guid: dcb395404d76b4e48badd50cc9933198, type: 3}
+  - id: char_eletrica_walk_left_0
+    sprite: {fileID: 21300000, guid: 2ab2e8e526d463247bffd59c32ac6a00, type: 3}
+  - id: char_eletrica_walk_left_1
+    sprite: {fileID: 21300000, guid: 307a4302e6f57c84f9fbb8bd7ab9647b, type: 3}
+  - id: char_eletrica_walk_left_2
+    sprite: {fileID: 21300000, guid: 3f34d6516438c0044a1233176ee453cd, type: 3}
+  - id: char_eletrica_walk_left_3
+    sprite: {fileID: 21300000, guid: 815d928798a817d41bd4ede38b5abd47, type: 3}
+  - id: char_eletrica_walk_right_0
+    sprite: {fileID: 21300000, guid: 64ffd703cf8edec4baa19fbc386f30b7, type: 3}
+  - id: char_eletrica_walk_right_1
+    sprite: {fileID: 21300000, guid: dd7289c0e15693f4397cd51b6186eecf, type: 3}
+  - id: char_eletrica_walk_right_2
+    sprite: {fileID: 21300000, guid: 21b15255f659bd24093c5ac0c74359dd, type: 3}
+  - id: char_eletrica_walk_right_3
+    sprite: {fileID: 21300000, guid: 9741056d6513a8c4983f7ac5ca72a83a, type: 3}
+  - id: char_eletrica_attack_down_0
+    sprite: {fileID: 21300000, guid: 0e50db11b8f8e7848bb0a9a32b2ab007, type: 3}
+  - id: char_eletrica_attack_down_1
+    sprite: {fileID: 21300000, guid: 6b7541f78939d744b86b0d73c5340550, type: 3}
+  - id: char_eletrica_attack_down_2
+    sprite: {fileID: 21300000, guid: 94533f3ee360cab4a90cc7550fb3086d, type: 3}
+  - id: char_eletrica_special_down_0
+    sprite: {fileID: 21300000, guid: c6dac28b1ed82be43a1a5e6d8f17a26d, type: 3}
+  - id: char_eletrica_special_down_1
+    sprite: {fileID: 21300000, guid: 9a1f0e6304d436d40aa7308b04406a9f, type: 3}
+  - id: char_eletrica_special_down_2
+    sprite: {fileID: 21300000, guid: 20a154fe516be964fa10d3edff57e01d, type: 3}
+  - id: char_eletrica_hurt_down_0
+    sprite: {fileID: 21300000, guid: 94606ab51236bc042b057f210022e8c1, type: 3}
+  - id: char_eletrica_hurt_down_1
+    sprite: {fileID: 21300000, guid: 10f22060e96604444a86e7edd34b921b, type: 3}
+  - id: char_eletrica_stun_down_0
+    sprite: {fileID: 21300000, guid: 6b3fc796c65890a4ca5096797f10b410, type: 3}
+  - id: char_eletrica_stun_down_1
+    sprite: {fileID: 21300000, guid: feacf1f1ea1deb24ba0eec9dfd1facb4, type: 3}
+  - id: char_eletrica_downed_down_0
+    sprite: {fileID: 21300000, guid: f94293787bb39f640a3fad3380dacfc1, type: 3}
+  - id: char_eletrica_downed_down_1
+    sprite: {fileID: 21300000, guid: e587ae984acec7240b2340488e6d7732, type: 3}
+  - id: char_eletrica_downed_down_2
+    sprite: {fileID: 21300000, guid: 37a4030bb091bfb42ab86be54c0ec3f2, type: 3}
+  - id: char_eletrica_revive_down_0
+    sprite: {fileID: 21300000, guid: b8be79dea2e153d4bb78a156d8e3133e, type: 3}
+  - id: char_eletrica_revive_down_1
+    sprite: {fileID: 21300000, guid: 60ff11d3df7bd774a8ba7f1aeacffc77, type: 3}
+  - id: char_eletrica_victory_down_0
+    sprite: {fileID: 21300000, guid: aa692bdfdd0d48945878223feae88d72, type: 3}
+  - id: char_eletrica_victory_down_1
+    sprite: {fileID: 21300000, guid: 47ecd52192832d14ea5c17beb7f03b00, type: 3}
+  - id: char_civil_idle_down_0
+    sprite: {fileID: 21300000, guid: b0c7bdbed58997f49a04052c503cd285, type: 3}
+  - id: char_civil_idle_down_1
+    sprite: {fileID: 21300000, guid: 126810d9e675e7042aa4d5945f54b7f7, type: 3}
+  - id: char_civil_idle_up_0
+    sprite: {fileID: 21300000, guid: affbfaca1a6f87d4a9687ad7d347c4fe, type: 3}
+  - id: char_civil_idle_up_1
+    sprite: {fileID: 21300000, guid: d6ea9e1413cad334cb3cb35b4abb254f, type: 3}
+  - id: char_civil_idle_left_0
+    sprite: {fileID: 21300000, guid: d38371caf1ab85e45968ffe1797cf961, type: 3}
+  - id: char_civil_idle_left_1
+    sprite: {fileID: 21300000, guid: ec7c4f042998e514d9c17130acc3b0b7, type: 3}
+  - id: char_civil_idle_right_0
+    sprite: {fileID: 21300000, guid: aabebfde5ce5a68498c6726b9c6e6ae6, type: 3}
+  - id: char_civil_idle_right_1
+    sprite: {fileID: 21300000, guid: c16778f43b10b7444a2468a816845377, type: 3}
+  - id: char_civil_walk_down_0
+    sprite: {fileID: 21300000, guid: 7a06ce79d81a42e42a5656abf8c390ff, type: 3}
+  - id: char_civil_walk_down_1
+    sprite: {fileID: 21300000, guid: 154da9ddcc0b56f44bc3b78f131a59a3, type: 3}
+  - id: char_civil_walk_down_2
+    sprite: {fileID: 21300000, guid: d957b1252c0f0af4cb9b5cbe6371f997, type: 3}
+  - id: char_civil_walk_down_3
+    sprite: {fileID: 21300000, guid: e6f3ec829ed5a7a458b4b87f4861bf27, type: 3}
+  - id: char_civil_walk_up_0
+    sprite: {fileID: 21300000, guid: 62875340f7ebc4d428321f60de643934, type: 3}
+  - id: char_civil_walk_up_1
+    sprite: {fileID: 21300000, guid: af5a50f1951f06544b2bf33c0896088f, type: 3}
+  - id: char_civil_walk_up_2
+    sprite: {fileID: 21300000, guid: 596d297533887084683fc3cc3ae662cd, type: 3}
+  - id: char_civil_walk_up_3
+    sprite: {fileID: 21300000, guid: 6486a0f90254b184b83dcf13f025d69c, type: 3}
+  - id: char_civil_walk_left_0
+    sprite: {fileID: 21300000, guid: 2c2583dcce2a562449672b6423d34747, type: 3}
+  - id: char_civil_walk_left_1
+    sprite: {fileID: 21300000, guid: c63c13abe8fac0344a101b950c31dd20, type: 3}
+  - id: char_civil_walk_left_2
+    sprite: {fileID: 21300000, guid: 8609981f2f7c5764599f0fbd2ffa9a9d, type: 3}
+  - id: char_civil_walk_left_3
+    sprite: {fileID: 21300000, guid: bbb713c827840f74e9912c199b4cd11b, type: 3}
+  - id: char_civil_walk_right_0
+    sprite: {fileID: 21300000, guid: e85bf73ad0c1dd043b5f0ed4cfe029ff, type: 3}
+  - id: char_civil_walk_right_1
+    sprite: {fileID: 21300000, guid: bfcebb5cd50c7784b8b8e6fb7073f841, type: 3}
+  - id: char_civil_walk_right_2
+    sprite: {fileID: 21300000, guid: 241c1a12ecd21684b9d18d54067834c0, type: 3}
+  - id: char_civil_walk_right_3
+    sprite: {fileID: 21300000, guid: 102eb40d62e56b44c91617543d90c0ce, type: 3}
+  - id: char_civil_attack_down_0
+    sprite: {fileID: 21300000, guid: dbe161f9fe778e64ebdf3f72b0555d42, type: 3}
+  - id: char_civil_attack_down_1
+    sprite: {fileID: 21300000, guid: 9f655461fbe771f458c5db9c8b7dbeb5, type: 3}
+  - id: char_civil_attack_down_2
+    sprite: {fileID: 21300000, guid: 4bdefaf559c4b9449bd1ea5d786ea46b, type: 3}
+  - id: char_civil_special_down_0
+    sprite: {fileID: 21300000, guid: 254189c695272044d88815e61b144218, type: 3}
+  - id: char_civil_special_down_1
+    sprite: {fileID: 21300000, guid: 919ae47f621d88b408d42d3024ee3b69, type: 3}
+  - id: char_civil_special_down_2
+    sprite: {fileID: 21300000, guid: 377dbc0f066e5854a900114b61b9062e, type: 3}
+  - id: char_civil_hurt_down_0
+    sprite: {fileID: 21300000, guid: 2dca8cadea54dad4fbc209ae50568af4, type: 3}
+  - id: char_civil_hurt_down_1
+    sprite: {fileID: 21300000, guid: aef318f4afe676e47bbb9da14b2f9fbf, type: 3}
+  - id: char_civil_stun_down_0
+    sprite: {fileID: 21300000, guid: 38e26544c26c79547b651777d8dc155b, type: 3}
+  - id: char_civil_stun_down_1
+    sprite: {fileID: 21300000, guid: 82d3c9388a05604428cb729f054d0e27, type: 3}
+  - id: char_civil_downed_down_0
+    sprite: {fileID: 21300000, guid: 12924ae0277b68f4a8f8011579cb4525, type: 3}
+  - id: char_civil_downed_down_1
+    sprite: {fileID: 21300000, guid: d01b3cfcf91fc014eb82d14c379a08de, type: 3}
+  - id: char_civil_downed_down_2
+    sprite: {fileID: 21300000, guid: 3b45a6b8cb6d7cb4bbd97dafa2ca359c, type: 3}
+  - id: char_civil_revive_down_0
+    sprite: {fileID: 21300000, guid: 790157b2bdaf8c34aa64f8af0bfeaca4, type: 3}
+  - id: char_civil_revive_down_1
+    sprite: {fileID: 21300000, guid: ace1e507fe1c58044bbb71d781d1e756, type: 3}
+  - id: char_civil_victory_down_0
+    sprite: {fileID: 21300000, guid: 6eee74a29f3fdaa45bf46d505eb85229, type: 3}
+  - id: char_civil_victory_down_1
+    sprite: {fileID: 21300000, guid: 8247cb0e33f03704f854cd9761ee7aef, type: 3}
+  - id: char_mecanica_idle_down_0
+    sprite: {fileID: 21300000, guid: 4daa99e38af8aab439b5e5a1ec362f41, type: 3}
+  - id: char_mecanica_idle_down_1
+    sprite: {fileID: 21300000, guid: 14aecadfa3c233242844bb67e78c5fe1, type: 3}
+  - id: char_mecanica_idle_up_0
+    sprite: {fileID: 21300000, guid: 910db888ce22aa443864cb5ae4e92a53, type: 3}
+  - id: char_mecanica_idle_up_1
+    sprite: {fileID: 21300000, guid: 1ed56bb3ffbe53d4a8e4a7c9bee905cc, type: 3}
+  - id: char_mecanica_idle_left_0
+    sprite: {fileID: 21300000, guid: fd5e26d4cc3aa324d8a87d4b901456e7, type: 3}
+  - id: char_mecanica_idle_left_1
+    sprite: {fileID: 21300000, guid: 77ddd24899d342045a32ac7929082099, type: 3}
+  - id: char_mecanica_idle_right_0
+    sprite: {fileID: 21300000, guid: 85b9c46205c80614687700767ef38bb1, type: 3}
+  - id: char_mecanica_idle_right_1
+    sprite: {fileID: 21300000, guid: eba8e5fbab5d335488173629497d9dd8, type: 3}
+  - id: char_mecanica_walk_down_0
+    sprite: {fileID: 21300000, guid: 0605c71bbe3150240a21722f04ee3c35, type: 3}
+  - id: char_mecanica_walk_down_1
+    sprite: {fileID: 21300000, guid: e56d56e795ba7824186911f1a89ed044, type: 3}
+  - id: char_mecanica_walk_down_2
+    sprite: {fileID: 21300000, guid: e90178f6d4bd74d4aa4ffcbabce20c43, type: 3}
+  - id: char_mecanica_walk_down_3
+    sprite: {fileID: 21300000, guid: e3ada78924cbde448838c23d282760ca, type: 3}
+  - id: char_mecanica_walk_up_0
+    sprite: {fileID: 21300000, guid: 7de65e7f1d510ed4c93104f6ef8939bb, type: 3}
+  - id: char_mecanica_walk_up_1
+    sprite: {fileID: 21300000, guid: 6e06f5225f8f1114bacff94f3cd2eafe, type: 3}
+  - id: char_mecanica_walk_up_2
+    sprite: {fileID: 21300000, guid: dd237173b9ec7d648a50dec379c2947a, type: 3}
+  - id: char_mecanica_walk_up_3
+    sprite: {fileID: 21300000, guid: ab484ab785449d0438f8adc0173287c4, type: 3}
+  - id: char_mecanica_walk_left_0
+    sprite: {fileID: 21300000, guid: 3e00567f5166daa48ba036c82f223f1d, type: 3}
+  - id: char_mecanica_walk_left_1
+    sprite: {fileID: 21300000, guid: fb1dfdcdc9ad7ab4aa52525102cedf6b, type: 3}
+  - id: char_mecanica_walk_left_2
+    sprite: {fileID: 21300000, guid: a1bc24ad7470fce49bf10999bd9680b8, type: 3}
+  - id: char_mecanica_walk_left_3
+    sprite: {fileID: 21300000, guid: d19b3c30875d31b449c67de11155f2e6, type: 3}
+  - id: char_mecanica_walk_right_0
+    sprite: {fileID: 21300000, guid: 84d2ad2ddbfc4f9469355d057e72db15, type: 3}
+  - id: char_mecanica_walk_right_1
+    sprite: {fileID: 21300000, guid: 77a200f541b54824c8ba8cfbcb074973, type: 3}
+  - id: char_mecanica_walk_right_2
+    sprite: {fileID: 21300000, guid: 94ca684335be60b4c842cb89214be026, type: 3}
+  - id: char_mecanica_walk_right_3
+    sprite: {fileID: 21300000, guid: e79473e18b00b404db5c6f53499a6b38, type: 3}
+  - id: char_mecanica_attack_down_0
+    sprite: {fileID: 21300000, guid: 82bd462558b0cb54e8600115ea38b18d, type: 3}
+  - id: char_mecanica_attack_down_1
+    sprite: {fileID: 21300000, guid: e487812115e24c84990c95c1e28a74f6, type: 3}
+  - id: char_mecanica_attack_down_2
+    sprite: {fileID: 21300000, guid: 24ce954df08752d448b41d6766b604d1, type: 3}
+  - id: char_mecanica_special_down_0
+    sprite: {fileID: 21300000, guid: e239b5d8b4dc92e4e98159c620ebeaa7, type: 3}
+  - id: char_mecanica_special_down_1
+    sprite: {fileID: 21300000, guid: 2b103a078801c3647b60b250ff544ec4, type: 3}
+  - id: char_mecanica_special_down_2
+    sprite: {fileID: 21300000, guid: 8c3ad12865f7ff74f92bfd42d6699ead, type: 3}
+  - id: char_mecanica_hurt_down_0
+    sprite: {fileID: 21300000, guid: 4c99a7569d5674840b605bf156073eba, type: 3}
+  - id: char_mecanica_hurt_down_1
+    sprite: {fileID: 21300000, guid: 314b1cc5ad0388742972e47a394d22f8, type: 3}
+  - id: char_mecanica_stun_down_0
+    sprite: {fileID: 21300000, guid: dcb9af2da4488894eb2cc06266377524, type: 3}
+  - id: char_mecanica_stun_down_1
+    sprite: {fileID: 21300000, guid: 66ae577209cc8864fad066409450c978, type: 3}
+  - id: char_mecanica_downed_down_0
+    sprite: {fileID: 21300000, guid: d08d206f41b505a48a019c041fbf8eb1, type: 3}
+  - id: char_mecanica_downed_down_1
+    sprite: {fileID: 21300000, guid: 4f2302d8bed45e449be86e6495919dfd, type: 3}
+  - id: char_mecanica_downed_down_2
+    sprite: {fileID: 21300000, guid: ee6912de9564891469d0c1966796fbc5, type: 3}
+  - id: char_mecanica_revive_down_0
+    sprite: {fileID: 21300000, guid: 44fe8edece942cd4abb7540f5a8289b6, type: 3}
+  - id: char_mecanica_revive_down_1
+    sprite: {fileID: 21300000, guid: e909799d9de5c3747bf73c064021a9e5, type: 3}
+  - id: char_mecanica_victory_down_0
+    sprite: {fileID: 21300000, guid: 80747dcdbee77ce4dadbd990dfc05e4e, type: 3}
+  - id: char_mecanica_victory_down_1
+    sprite: {fileID: 21300000, guid: 1a117f7f470cb7944a3d0961733f625f, type: 3}
+  - id: char_biomedica_idle_down_0
+    sprite: {fileID: 21300000, guid: 7bf0658528b1aeb48ab5a0f51a11e498, type: 3}
+  - id: char_biomedica_idle_down_1
+    sprite: {fileID: 21300000, guid: e52af753e220f93409043541da92727a, type: 3}
+  - id: char_biomedica_idle_up_0
+    sprite: {fileID: 21300000, guid: be85d6faee09eaa448d60803a8a12960, type: 3}
+  - id: char_biomedica_idle_up_1
+    sprite: {fileID: 21300000, guid: 4bd20f46fb14c5b48936c3554f758846, type: 3}
+  - id: char_biomedica_idle_left_0
+    sprite: {fileID: 21300000, guid: c68827a805f993d43b97d91d6854e84a, type: 3}
+  - id: char_biomedica_idle_left_1
+    sprite: {fileID: 21300000, guid: 64ce61806103d744dafb9d7a19f355bc, type: 3}
+  - id: char_biomedica_idle_right_0
+    sprite: {fileID: 21300000, guid: 28be393d4db0a474db351ed5de26cde8, type: 3}
+  - id: char_biomedica_idle_right_1
+    sprite: {fileID: 21300000, guid: 46e88308cbb5441469ff98bb993b484b, type: 3}
+  - id: char_biomedica_walk_down_0
+    sprite: {fileID: 21300000, guid: 957459bd2c27c024f99cd26bb824fed7, type: 3}
+  - id: char_biomedica_walk_down_1
+    sprite: {fileID: 21300000, guid: 438583d1977a4cc41b747729fd03f420, type: 3}
+  - id: char_biomedica_walk_down_2
+    sprite: {fileID: 21300000, guid: f17da391030ffa0488753ecc0f7e3225, type: 3}
+  - id: char_biomedica_walk_down_3
+    sprite: {fileID: 21300000, guid: 93cd5a72ff646404f82443f762a35be9, type: 3}
+  - id: char_biomedica_walk_up_0
+    sprite: {fileID: 21300000, guid: 42766c8c98b140746b541c393c08286f, type: 3}
+  - id: char_biomedica_walk_up_1
+    sprite: {fileID: 21300000, guid: 381552de792e8a444bd392d99221a6bf, type: 3}
+  - id: char_biomedica_walk_up_2
+    sprite: {fileID: 21300000, guid: 20a607437f4f6d34fb79d554705f401e, type: 3}
+  - id: char_biomedica_walk_up_3
+    sprite: {fileID: 21300000, guid: 1e7d4f8df8c874e4c9da12e3b6af9e8e, type: 3}
+  - id: char_biomedica_walk_left_0
+    sprite: {fileID: 21300000, guid: c225c992bb2fec94296b9ea64c029b93, type: 3}
+  - id: char_biomedica_walk_left_1
+    sprite: {fileID: 21300000, guid: 447646052d8110449aa54e80121692f0, type: 3}
+  - id: char_biomedica_walk_left_2
+    sprite: {fileID: 21300000, guid: 6cb04ca5412f9c3478594f290a2327a2, type: 3}
+  - id: char_biomedica_walk_left_3
+    sprite: {fileID: 21300000, guid: 8efb9c658bd0ab842a307b38e83a0d73, type: 3}
+  - id: char_biomedica_walk_right_0
+    sprite: {fileID: 21300000, guid: b1d4ab35edb274b409ffbfa4a5d29137, type: 3}
+  - id: char_biomedica_walk_right_1
+    sprite: {fileID: 21300000, guid: c5b4a902071ab0a468a7dac9f0722a50, type: 3}
+  - id: char_biomedica_walk_right_2
+    sprite: {fileID: 21300000, guid: 65fa5a60b97437342b780a00261f2998, type: 3}
+  - id: char_biomedica_walk_right_3
+    sprite: {fileID: 21300000, guid: 574f5f65432c3ca43adbb858c9877fec, type: 3}
+  - id: char_biomedica_attack_down_0
+    sprite: {fileID: 21300000, guid: 16ce0e0f3d8224743971ef2cc0f0cd43, type: 3}
+  - id: char_biomedica_attack_down_1
+    sprite: {fileID: 21300000, guid: c3dae2dbf149eb44f87b26734d009883, type: 3}
+  - id: char_biomedica_attack_down_2
+    sprite: {fileID: 21300000, guid: 7c060aaa62222ad4bb9f1ea48602854a, type: 3}
+  - id: char_biomedica_special_down_0
+    sprite: {fileID: 21300000, guid: f66a1fc8330dac64b95f30583242d57a, type: 3}
+  - id: char_biomedica_special_down_1
+    sprite: {fileID: 21300000, guid: 2b4b7a261c3bcf2458ebad1573fa8424, type: 3}
+  - id: char_biomedica_special_down_2
+    sprite: {fileID: 21300000, guid: 1c0c284f01aee6840a01c3fcd089a871, type: 3}
+  - id: char_biomedica_hurt_down_0
+    sprite: {fileID: 21300000, guid: 66ad0dffc517fb848b73426df67aa603, type: 3}
+  - id: char_biomedica_hurt_down_1
+    sprite: {fileID: 21300000, guid: 78e57ebfe378db04cb647262303dccc7, type: 3}
+  - id: char_biomedica_stun_down_0
+    sprite: {fileID: 21300000, guid: 739a5d681a912eb418b4352ed954fe8e, type: 3}
+  - id: char_biomedica_stun_down_1
+    sprite: {fileID: 21300000, guid: c0ee216d0b3fd9a418ed9a09539743fb, type: 3}
+  - id: char_biomedica_downed_down_0
+    sprite: {fileID: 21300000, guid: cbc438c9f976cc84fa67ad9077ffb281, type: 3}
+  - id: char_biomedica_downed_down_1
+    sprite: {fileID: 21300000, guid: cbc2da6b8fe39304890529f45e6cf953, type: 3}
+  - id: char_biomedica_downed_down_2
+    sprite: {fileID: 21300000, guid: 4a5657e699f162642907a71bb4648541, type: 3}
+  - id: char_biomedica_revive_down_0
+    sprite: {fileID: 21300000, guid: 7097e75a2259d444d80d35bc17fe0974, type: 3}
+  - id: char_biomedica_revive_down_1
+    sprite: {fileID: 21300000, guid: 19267b1f04d9fbf4892472edbc0f9e24, type: 3}
+  - id: char_biomedica_victory_down_0
+    sprite: {fileID: 21300000, guid: 14aeffc0e16c11f4aad5fc86c6dd64d5, type: 3}
+  - id: char_biomedica_victory_down_1
+    sprite: {fileID: 21300000, guid: e3924e9de16550f408b25da498b19e19, type: 3}
+  - id: char_quimica_idle_down_0
+    sprite: {fileID: 21300000, guid: b692a3071ab9c1c488a085aae2f2c858, type: 3}
+  - id: char_quimica_idle_down_1
+    sprite: {fileID: 21300000, guid: 3ecff619f26b4a34fbb9bf88d1face1f, type: 3}
+  - id: char_quimica_idle_up_0
+    sprite: {fileID: 21300000, guid: dd2274c6cfc769d4eba387963664dca0, type: 3}
+  - id: char_quimica_idle_up_1
+    sprite: {fileID: 21300000, guid: 8b4de3fb70929fc4b99f03ab706d412c, type: 3}
+  - id: char_quimica_idle_left_0
+    sprite: {fileID: 21300000, guid: bbc3a8da3bab1e14ba4361d97d9fa020, type: 3}
+  - id: char_quimica_idle_left_1
+    sprite: {fileID: 21300000, guid: dbfa2fafe40465149a259a379c4e2a67, type: 3}
+  - id: char_quimica_idle_right_0
+    sprite: {fileID: 21300000, guid: 5b5e095d1c1c67648a3ccf9f36807b7f, type: 3}
+  - id: char_quimica_idle_right_1
+    sprite: {fileID: 21300000, guid: 11e654d2c9cea0c4280e4d0e8d6217b6, type: 3}
+  - id: char_quimica_walk_down_0
+    sprite: {fileID: 21300000, guid: e2702f6d0c7efdb449d7e396de4ea275, type: 3}
+  - id: char_quimica_walk_down_1
+    sprite: {fileID: 21300000, guid: c4e721dc7ca4337408318cc7f220b29a, type: 3}
+  - id: char_quimica_walk_down_2
+    sprite: {fileID: 21300000, guid: 272465915cb29da48b66564209e3139b, type: 3}
+  - id: char_quimica_walk_down_3
+    sprite: {fileID: 21300000, guid: 0a99f0b1e2c21e94f86c81b74ed97952, type: 3}
+  - id: char_quimica_walk_up_0
+    sprite: {fileID: 21300000, guid: d9e78b859c5a5e1448d17e5d129568a1, type: 3}
+  - id: char_quimica_walk_up_1
+    sprite: {fileID: 21300000, guid: f8bdb050236914843aa31b288d5581e5, type: 3}
+  - id: char_quimica_walk_up_2
+    sprite: {fileID: 21300000, guid: c0dbaada1ac8bce489ec070538e1cb6d, type: 3}
+  - id: char_quimica_walk_up_3
+    sprite: {fileID: 21300000, guid: 2292529d4fec3e245be395b72e60b04e, type: 3}
+  - id: char_quimica_walk_left_0
+    sprite: {fileID: 21300000, guid: e2cf239de6151084e8252331e4b8207a, type: 3}
+  - id: char_quimica_walk_left_1
+    sprite: {fileID: 21300000, guid: 4406bafa486e3f0418837c061df5db9f, type: 3}
+  - id: char_quimica_walk_left_2
+    sprite: {fileID: 21300000, guid: e0b1518c4f6028f4e86eddef98dfaaa2, type: 3}
+  - id: char_quimica_walk_left_3
+    sprite: {fileID: 21300000, guid: 47389dfdbda07e845993f692fe4e7aaa, type: 3}
+  - id: char_quimica_walk_right_0
+    sprite: {fileID: 21300000, guid: f538f0610635eb8409cafeae683347c4, type: 3}
+  - id: char_quimica_walk_right_1
+    sprite: {fileID: 21300000, guid: f6ba04217131ab44db4ac6546af38555, type: 3}
+  - id: char_quimica_walk_right_2
+    sprite: {fileID: 21300000, guid: f9a83e5a3aee8864cb9220099828e42b, type: 3}
+  - id: char_quimica_walk_right_3
+    sprite: {fileID: 21300000, guid: 63bed3ef0318d3e439eaa3bb8c16bc60, type: 3}
+  - id: char_quimica_attack_down_0
+    sprite: {fileID: 21300000, guid: 3a7e1b86a631a0d4b9e38db7da2adb71, type: 3}
+  - id: char_quimica_attack_down_1
+    sprite: {fileID: 21300000, guid: 82fec4fce784c0c46b438c5109a2a6ea, type: 3}
+  - id: char_quimica_attack_down_2
+    sprite: {fileID: 21300000, guid: 72eadba63050d6043b4903b929ee749b, type: 3}
+  - id: char_quimica_special_down_0
+    sprite: {fileID: 21300000, guid: 81847951798aeb94da56838bdf6c259d, type: 3}
+  - id: char_quimica_special_down_1
+    sprite: {fileID: 21300000, guid: 5596442b5532fa345aea0f43d1ab5447, type: 3}
+  - id: char_quimica_special_down_2
+    sprite: {fileID: 21300000, guid: 699e1e2dea3c3094393f10f2e2819e88, type: 3}
+  - id: char_quimica_hurt_down_0
+    sprite: {fileID: 21300000, guid: 3e5c24b570961bf4bb2b075f6782d857, type: 3}
+  - id: char_quimica_hurt_down_1
+    sprite: {fileID: 21300000, guid: 71009b37b3807224c9ed7262019f2d8a, type: 3}
+  - id: char_quimica_stun_down_0
+    sprite: {fileID: 21300000, guid: fa4688f8215cff8459354a141b9a0043, type: 3}
+  - id: char_quimica_stun_down_1
+    sprite: {fileID: 21300000, guid: 3a89f7842bffb3b4e9e263f9afb7cb27, type: 3}
+  - id: char_quimica_downed_down_0
+    sprite: {fileID: 21300000, guid: 69ca0fe59eeaa6540a5f3aaac9e7da9f, type: 3}
+  - id: char_quimica_downed_down_1
+    sprite: {fileID: 21300000, guid: 82a81ff42b3454e498e62edd34f354d5, type: 3}
+  - id: char_quimica_downed_down_2
+    sprite: {fileID: 21300000, guid: f0c7ac785da0b414491932f16b31edec, type: 3}
+  - id: char_quimica_revive_down_0
+    sprite: {fileID: 21300000, guid: b07ddefd0bbdc444a8f57dbcb16d50f4, type: 3}
+  - id: char_quimica_revive_down_1
+    sprite: {fileID: 21300000, guid: d189e9b2c767cb142802dd3dd15e68af, type: 3}
+  - id: char_quimica_victory_down_0
+    sprite: {fileID: 21300000, guid: 345d12d1ad87a2f41adad1985f25c7e7, type: 3}
+  - id: char_quimica_victory_down_1
+    sprite: {fileID: 21300000, guid: 6b865660e8aea1741bb1e89332d0f0e9, type: 3}
+  - id: enemy_microbo_enxame_0
+    sprite: {fileID: 21300000, guid: e92db968f6153824588729f9f1771bad, type: 3}
+  - id: enemy_microbo_enxame_elite_0
+    sprite: {fileID: 21300000, guid: 9f68ceff2b1f0f24585c1f4f9aede11a, type: 3}
+  - id: enemy_microbo_enxame_flash_0
+    sprite: {fileID: 21300000, guid: 1abab842555fdc14a97a8c4eda7ef20f, type: 3}
+  - id: enemy_microbo_enxame_elite_flash_0
+    sprite: {fileID: 21300000, guid: df04bcb7545a5b9409b24a69bd657570, type: 3}
+  - id: enemy_microbo_enxame_1
+    sprite: {fileID: 21300000, guid: 6c9b070f1bc0b204abe2c4cfb21a9cd4, type: 3}
+  - id: enemy_microbo_enxame_elite_1
+    sprite: {fileID: 21300000, guid: 72b1088b3ffe677458274e792f736f18, type: 3}
+  - id: enemy_microbo_enxame_flash_1
+    sprite: {fileID: 21300000, guid: 30fb1da17aef7df40b522fd2a0b19a77, type: 3}
+  - id: enemy_microbo_enxame_elite_flash_1
+    sprite: {fileID: 21300000, guid: a7b4562e2c600154d8626e94559808b6, type: 3}
+  - id: enemy_prensa_ambulante_0
+    sprite: {fileID: 21300000, guid: bf41c9e5227d4244fab5b153219b295d, type: 3}
+  - id: enemy_prensa_ambulante_elite_0
+    sprite: {fileID: 21300000, guid: 8c282dc875d7c2048b1057f3ee0badfc, type: 3}
+  - id: enemy_prensa_ambulante_flash_0
+    sprite: {fileID: 21300000, guid: 0634583d6eca9454a8e6c765721d9ac3, type: 3}
+  - id: enemy_prensa_ambulante_elite_flash_0
+    sprite: {fileID: 21300000, guid: 4193fa554a0a45f45a115f55459cb2b3, type: 3}
+  - id: enemy_prensa_ambulante_1
+    sprite: {fileID: 21300000, guid: fd14f7237da51db479b6e4dcf8521d5f, type: 3}
+  - id: enemy_prensa_ambulante_elite_1
+    sprite: {fileID: 21300000, guid: e74eafa37a216e24d9006326031669d4, type: 3}
+  - id: enemy_prensa_ambulante_flash_1
+    sprite: {fileID: 21300000, guid: 26947506644c5044fb1076fe47c9a15e, type: 3}
+  - id: enemy_prensa_ambulante_elite_flash_1
+    sprite: {fileID: 21300000, guid: 4b85e5d305e06fa4a8ea65063600419c, type: 3}
+  - id: enemy_torreta_inspecao_0
+    sprite: {fileID: 21300000, guid: 469df3f2ff2876346bf0aa11945aa6b1, type: 3}
+  - id: enemy_torreta_inspecao_elite_0
+    sprite: {fileID: 21300000, guid: a2476528e5187a945a4bc38e8e99e5a4, type: 3}
+  - id: enemy_torreta_inspecao_flash_0
+    sprite: {fileID: 21300000, guid: 2fa7b6e7b54a3004189690cf83150ae2, type: 3}
+  - id: enemy_torreta_inspecao_elite_flash_0
+    sprite: {fileID: 21300000, guid: c89e97de108dd4a4481fd5be374b5c5d, type: 3}
+  - id: enemy_torreta_inspecao_1
+    sprite: {fileID: 21300000, guid: 436d70054acf07f4f812dd70b57d8eb1, type: 3}
+  - id: enemy_torreta_inspecao_elite_1
+    sprite: {fileID: 21300000, guid: b00c1c7365ca4184188c19f3aa1b1662, type: 3}
+  - id: enemy_torreta_inspecao_flash_1
+    sprite: {fileID: 21300000, guid: 94d8773ac4fe7264bb7465c35645d70a, type: 3}
+  - id: enemy_torreta_inspecao_elite_flash_1
+    sprite: {fileID: 21300000, guid: ad229d0b9253771429c4143289039e99, type: 3}
+  - id: tile_floor_0
+    sprite: {fileID: 21300000, guid: 7c611e2115eb02b44885f4f935e70886, type: 3}
+  - id: tile_floor_1
+    sprite: {fileID: 21300000, guid: e7f7e5fce390b164ab8c6d53d39bc9ad, type: 3}
+  - id: tile_floor_2
+    sprite: {fileID: 21300000, guid: b5865ed094e9a734487786d7b5d5f06e, type: 3}
+  - id: tile_floor_3
+    sprite: {fileID: 21300000, guid: 245819dcadcd01f47a3197cc05aa5814, type: 3}
+  - id: tile_hazard_edge
+    sprite: {fileID: 21300000, guid: 962bafc151b5f5d4e8a1791551599a8b, type: 3}
+  - id: tile_wall
+    sprite: {fileID: 21300000, guid: 2d925c039fdc39746ad2d5487f2b0d4f, type: 3}
+  - id: obstacle_bancada
+    sprite: {fileID: 21300000, guid: e5cf607c315717f43a7ccfec64db4d09, type: 3}
+  - id: obstacle_armario_v
+    sprite: {fileID: 21300000, guid: c24e0a47141412447823a6048ea11844, type: 3}
+  - id: obstacle_armario_h
+    sprite: {fileID: 21300000, guid: 646002ddc7d020c4b8eda33aa90716e3, type: 3}
+  - id: decal_cables
+    sprite: {fileID: 21300000, guid: cbaee5c76a10f694f9a1a1d89f0b64bb, type: 3}
+  - id: fx_spark
+    sprite: {fileID: 21300000, guid: fc688d55743612c4f9b7cd2e0c44c6c4, type: 3}
+  - id: fx_dot
+    sprite: {fileID: 21300000, guid: ed8f642fd4da91740b8a141d37dcae58, type: 3}
+  - id: fx_arc_0
+    sprite: {fileID: 21300000, guid: ad121c6908d44cc47950dca6a6541cb9, type: 3}
+  - id: fx_arc_1
+    sprite: {fileID: 21300000, guid: 34f8e80c83ecca4449363385f7008e79, type: 3}
+  - id: fx_arc_2
+    sprite: {fileID: 21300000, guid: bd22a39c1b216ad4f892d215859607fc, type: 3}
+  - id: fx_laser
+    sprite: {fileID: 21300000, guid: 3dfdebc077add574c8e42b49527cc754, type: 3}
+  - id: fx_hostile_bolt
+    sprite: {fileID: 21300000, guid: 053fe1dd932aad44c81c75d3d0d4e990, type: 3}
+  - id: fx_gem_xp
+    sprite: {fileID: 21300000, guid: 1cbf8e72fb443a0498b84d46108cf7e4, type: 3}
+  - id: fx_gem_xp_big
+    sprite: {fileID: 21300000, guid: 9d9845b4598dc924399cbf32d941b40d, type: 3}
+  - id: fx_heal
+    sprite: {fileID: 21300000, guid: 7dbb9ac57278efa4d8f5dc797f5251ce, type: 3}
+  - id: fx_explosion_0
+    sprite: {fileID: 21300000, guid: ccb4e50101f86a94896606c9bff1db1a, type: 3}
+  - id: fx_explosion_1
+    sprite: {fileID: 21300000, guid: e4da0adfb58bcbe44bf8532239fa5dc6, type: 3}
+  - id: fx_explosion_2
+    sprite: {fileID: 21300000, guid: a1e67a32e29aab14680a73a0ab986cdd, type: 3}
+  - id: fx_explosion_3
+    sprite: {fileID: 21300000, guid: 0c789bdd9b230764aa0f311ed3f9a6ec, type: 3}
+  - id: fx_smoke
+    sprite: {fileID: 21300000, guid: 15356a26526f18649bf1a743f42771cd, type: 3}
+  - id: fx_shadow
+    sprite: {fileID: 21300000, guid: 36352820209e7ff449db886f480c82df, type: 3}
+  - id: fx_ring
+    sprite: {fileID: 21300000, guid: 57df62957b86f6545b9cf3785f5b1d65, type: 3}
+  - id: fx_digit_0
+    sprite: {fileID: 21300000, guid: b9973e01a4cf25248ad68f20dc6f6ab4, type: 3}
+  - id: fx_digit_1
+    sprite: {fileID: 21300000, guid: 5496e4e5eadfe2f48b3416f677599ff2, type: 3}
+  - id: fx_digit_2
+    sprite: {fileID: 21300000, guid: 45923896e4c44f14b8524df467327ac2, type: 3}
+  - id: fx_digit_3
+    sprite: {fileID: 21300000, guid: c079751c2bdedcc449cfe0e4651c8321, type: 3}
+  - id: fx_digit_4
+    sprite: {fileID: 21300000, guid: 05171aaf48fbadf44af620e55a3538bc, type: 3}
+  - id: fx_digit_5
+    sprite: {fileID: 21300000, guid: c127729187140de4a953b3cec14c9949, type: 3}
+  - id: fx_digit_6
+    sprite: {fileID: 21300000, guid: 8dc6d01403398d14eb05dcb772cb7583, type: 3}
+  - id: fx_digit_7
+    sprite: {fileID: 21300000, guid: 43684dc95c6d22d4ebd323e95a328632, type: 3}
+  - id: fx_digit_8
+    sprite: {fileID: 21300000, guid: 7c1496d698dbc53499dff36a7ebbecbb, type: 3}
+  - id: fx_digit_9
+    sprite: {fileID: 21300000, guid: fcde68484ec70b6499d7da0225109de1, type: 3}
+  - id: fx_px
+    sprite: {fileID: 21300000, guid: 9c760c5a6101f944897da79dc210753d, type: 3}
+  - id: weapon_orbit_arm
+    sprite: {fileID: 21300000, guid: b20b48e5bdc92ae41a83fb9b93ad6514, type: 3}
+  - id: weapon_laser_emitter
+    sprite: {fileID: 21300000, guid: db07435156ff7aa40b1bed5320cc8472, type: 3}
+  - id: ui_panel
+    sprite: {fileID: 21300000, guid: 610596da3c5c44a49a349872ebe08d2b, type: 3}
+  - id: ui_button
+    sprite: {fileID: 21300000, guid: c6d4c94bda75c63489e9dd82ba69188e, type: 3}
+  - id: icon_descarga_direcionada
+    sprite: {fileID: 21300000, guid: 72bd24770c8d4034b8be7b05703527b0, type: 3}
+  - id: icon_braco_giratorio
+    sprite: {fileID: 21300000, guid: 67e1b024bd13a69479b16fa83577e170, type: 3}
+  - id: icon_laser_industrial
+    sprite: {fileID: 21300000, guid: 80b9e0148b38aca4fa5fa1628e761348, type: 3}
+  - id: icon_campo_eletromagnetico
+    sprite: {fileID: 21300000, guid: 64e43bffb92706643829ea071667d8ad, type: 3}
+  - id: icon_bateria_portatil
+    sprite: {fileID: 21300000, guid: 29f8c6abcbe21a047b1156c321155414, type: 3}
+  - id: icon_turbina
+    sprite: {fileID: 21300000, guid: ac59446d6d258744a898a1134d749e5d, type: 3}
+  - id: icon_pulso_amplificado
+    sprite: {fileID: 21300000, guid: 3f6dc16ef9f0c714796d77bf005a516a, type: 3}
+  - id: icon_rotor_de_impacto
+    sprite: {fileID: 21300000, guid: 41cb5f9046e2b8a40b9d0a370ff958dc, type: 3}
+  - id: icon_attr_dano
+    sprite: {fileID: 21300000, guid: 69048b355ec5a9b4db7a15779f37eba6, type: 3}
+  - id: icon_attr_vida
+    sprite: {fileID: 21300000, guid: 45301c21048c1fb4384543bdb9de4825, type: 3}
+  - id: icon_attr_recuperacao
+    sprite: {fileID: 21300000, guid: a9e79c293f37e974687a1142b0e05082, type: 3}
+  - id: icon_attr_coleta
+    sprite: {fileID: 21300000, guid: 12d39d9c9b009c344bea0ed01dddf323, type: 3}
+  - id: icon_attr_vel_ataque
+    sprite: {fileID: 21300000, guid: fa5b4b75d0984a5478406303add2f784, type: 3}
+  - id: icon_kit_primeiros_socorros
+    sprite: {fileID: 21300000, guid: 5a228e1f38a3c454d9a04525a5bcd429, type: 3}
+  - id: icon_apagao
+    sprite: {fileID: 21300000, guid: ff67ceb137e8e6f4c843f806cb86bc41, type: 3}
+  - id: icon_turbina_emergencia
+    sprite: {fileID: 21300000, guid: 4aa1704154422cd4db932d7ccd560bf8, type: 3}
+  - id: portrait_mecatronica_raiva
+    sprite: {fileID: 21300000, guid: 24a848bc67817744393a2c36d65a9653, type: 3}
+  - id: portrait_mecatronica_medo
+    sprite: {fileID: 21300000, guid: d5cf304863cd9f94da8a476129a57c46, type: 3}
+  - id: portrait_mecatronica_desespero
+    sprite: {fileID: 21300000, guid: eed148ecfc090b54ca0600409f10510f, type: 3}
+  - id: portrait_mecatronica_choro
+    sprite: {fileID: 21300000, guid: ec2b3b7e9b1edf748958a37f27f69ed0, type: 3}
+  - id: portrait_mecatronica_exaustao
+    sprite: {fileID: 21300000, guid: 9bde1bf35ff0cf44e91d978547f7ff50, type: 3}
+  - id: portrait_mecatronica_alivio
+    sprite: {fileID: 21300000, guid: 11de33d07dbc532489de0a1776d34d75, type: 3}
+  - id: portrait_mecatronica_determinacao
+    sprite: {fileID: 21300000, guid: cf60aa9781e08cc4db23a12b875d9ab9, type: 3}
+  - id: portrait_mecatronica_vitoria
+    sprite: {fileID: 21300000, guid: 39e5fe850d1938749b0ad79d2f03248c, type: 3}
+  - id: portrait_mecatronica_derrota
+    sprite: {fileID: 21300000, guid: 5ba66c720cc9c674b9a414395c896b58, type: 3}
+  - id: portrait_computacao_raiva
+    sprite: {fileID: 21300000, guid: f3786c66c708f244599129ea17043573, type: 3}
+  - id: portrait_computacao_medo
+    sprite: {fileID: 21300000, guid: 5b32a79f20acefe46bee4fd9857c7b0b, type: 3}
+  - id: portrait_computacao_desespero
+    sprite: {fileID: 21300000, guid: a6e12d72d59fbd044bdbf6ddb58d0e75, type: 3}
+  - id: portrait_computacao_choro
+    sprite: {fileID: 21300000, guid: d4487ece455a47542a4f5f39b6c9e96c, type: 3}
+  - id: portrait_computacao_exaustao
+    sprite: {fileID: 21300000, guid: e8e0358be6c0de345bc81f02c36a2b67, type: 3}
+  - id: portrait_computacao_alivio
+    sprite: {fileID: 21300000, guid: ec94cc0065433a64c9450037a3dcff7b, type: 3}
+  - id: portrait_computacao_determinacao
+    sprite: {fileID: 21300000, guid: c4ed30c29236b2549ab9cdc05df1fd15, type: 3}
+  - id: portrait_computacao_vitoria
+    sprite: {fileID: 21300000, guid: 73973162c5d51cb42a3f59d6fa47fb1e, type: 3}
+  - id: portrait_computacao_derrota
+    sprite: {fileID: 21300000, guid: 6ca522b7792df3948bb265c0a3ecf9b2, type: 3}
+  - id: portrait_eletrica_raiva
+    sprite: {fileID: 21300000, guid: 60d11c063cc802642add4e6bf692e037, type: 3}
+  - id: portrait_eletrica_medo
+    sprite: {fileID: 21300000, guid: 4d9a7176738d6344f93231b04dcad025, type: 3}
+  - id: portrait_eletrica_desespero
+    sprite: {fileID: 21300000, guid: 14a75f28d162786438d8a72ab557891c, type: 3}
+  - id: portrait_eletrica_choro
+    sprite: {fileID: 21300000, guid: f0b0aad4d8e4fa742affa1bb9e0d6f82, type: 3}
+  - id: portrait_eletrica_exaustao
+    sprite: {fileID: 21300000, guid: 86ac35959083a304eba306fd89171dd4, type: 3}
+  - id: portrait_eletrica_alivio
+    sprite: {fileID: 21300000, guid: d5e027bb562399a4198aec7c08ef2ea8, type: 3}
+  - id: portrait_eletrica_determinacao
+    sprite: {fileID: 21300000, guid: 41f305f94ed1f5c4aa55bfe3a6f4f4fe, type: 3}
+  - id: portrait_eletrica_vitoria
+    sprite: {fileID: 21300000, guid: 9a208a9357c20404cba984586d129f51, type: 3}
+  - id: portrait_eletrica_derrota
+    sprite: {fileID: 21300000, guid: 5841993ea7267724ea43571458790f49, type: 3}
+  - id: portrait_civil_raiva
+    sprite: {fileID: 21300000, guid: dddcb329f6a7f7145b49bba2191d57bd, type: 3}
+  - id: portrait_civil_medo
+    sprite: {fileID: 21300000, guid: de30f5bcbe23da0408aa74063fdf5378, type: 3}
+  - id: portrait_civil_desespero
+    sprite: {fileID: 21300000, guid: 48fc826c156bfa745adec91d305cb853, type: 3}
+  - id: portrait_civil_choro
+    sprite: {fileID: 21300000, guid: 4129f82cd0526924ba4f83e91e2f7921, type: 3}
+  - id: portrait_civil_exaustao
+    sprite: {fileID: 21300000, guid: c630c09ab2ab03e4e8d926b62fcbd38c, type: 3}
+  - id: portrait_civil_alivio
+    sprite: {fileID: 21300000, guid: f19b51a7a2e763e4da761fb8a427b3f3, type: 3}
+  - id: portrait_civil_determinacao
+    sprite: {fileID: 21300000, guid: 3c924858536ff6644ab98afb3f935499, type: 3}
+  - id: portrait_civil_vitoria
+    sprite: {fileID: 21300000, guid: 52231a7be6da56e49b5e5771950ff9cd, type: 3}
+  - id: portrait_civil_derrota
+    sprite: {fileID: 21300000, guid: 14052030d2273b34c8d896744b92d0a3, type: 3}
+  - id: portrait_mecanica_raiva
+    sprite: {fileID: 21300000, guid: 92d11f6f138eeb64f95bf08fbc68b270, type: 3}
+  - id: portrait_mecanica_medo
+    sprite: {fileID: 21300000, guid: 201928c8673af8843a5a3724e4891d89, type: 3}
+  - id: portrait_mecanica_desespero
+    sprite: {fileID: 21300000, guid: fd57322eb5901194ca00e6f1cd41e0cd, type: 3}
+  - id: portrait_mecanica_choro
+    sprite: {fileID: 21300000, guid: 76576aca1985afa419e739a45ec10a9c, type: 3}
+  - id: portrait_mecanica_exaustao
+    sprite: {fileID: 21300000, guid: f2384d0caccd96d4e83a3220b9b620dc, type: 3}
+  - id: portrait_mecanica_alivio
+    sprite: {fileID: 21300000, guid: 74c6c6fb5d13aa141aaa00ad40c6df5a, type: 3}
+  - id: portrait_mecanica_determinacao
+    sprite: {fileID: 21300000, guid: d182ede8eebe2434f9576f8b9a9c85b6, type: 3}
+  - id: portrait_mecanica_vitoria
+    sprite: {fileID: 21300000, guid: a89b2e3d4f8c58e4ba8efe27198589fb, type: 3}
+  - id: portrait_mecanica_derrota
+    sprite: {fileID: 21300000, guid: 8d97303a91bcfcd4f95f21f999173293, type: 3}
+  - id: portrait_biomedica_raiva
+    sprite: {fileID: 21300000, guid: b0d68a8cd5e4040459d0080a10acc120, type: 3}
+  - id: portrait_biomedica_medo
+    sprite: {fileID: 21300000, guid: 01667698f9895114d92661846f3dcede, type: 3}
+  - id: portrait_biomedica_desespero
+    sprite: {fileID: 21300000, guid: 5ccecfe47062c664eb76ed7c85df1969, type: 3}
+  - id: portrait_biomedica_choro
+    sprite: {fileID: 21300000, guid: 81db766954aac9f43835f4c3116fdaba, type: 3}
+  - id: portrait_biomedica_exaustao
+    sprite: {fileID: 21300000, guid: 3cfb4fa95c13a3641a3a1da8324b4572, type: 3}
+  - id: portrait_biomedica_alivio
+    sprite: {fileID: 21300000, guid: 7d800db7ecad6e5438c5a3d7650f57f0, type: 3}
+  - id: portrait_biomedica_determinacao
+    sprite: {fileID: 21300000, guid: 117a960d1049f024d83559d590616375, type: 3}
+  - id: portrait_biomedica_vitoria
+    sprite: {fileID: 21300000, guid: 8c14292c2f3127c46822025a675c6375, type: 3}
+  - id: portrait_biomedica_derrota
+    sprite: {fileID: 21300000, guid: 6d5f929075cc726459b20f4b392800da, type: 3}
+  - id: portrait_quimica_raiva
+    sprite: {fileID: 21300000, guid: e46599f76def5424b869bf7dfda29860, type: 3}
+  - id: portrait_quimica_medo
+    sprite: {fileID: 21300000, guid: 39751eaca436edc4e8060573c380f223, type: 3}
+  - id: portrait_quimica_desespero
+    sprite: {fileID: 21300000, guid: 91669b412521f174cbb3538c9340575b, type: 3}
+  - id: portrait_quimica_choro
+    sprite: {fileID: 21300000, guid: dbd2a529d64694e4ba43e15c6e8cd5a3, type: 3}
+  - id: portrait_quimica_exaustao
+    sprite: {fileID: 21300000, guid: 57214a8a9ebbcfb4ca10c9ab9a414572, type: 3}
+  - id: portrait_quimica_alivio
+    sprite: {fileID: 21300000, guid: eaadbc95930cd8e489397bcdc1f13d40, type: 3}
+  - id: portrait_quimica_determinacao
+    sprite: {fileID: 21300000, guid: afe3967617e971a4a90559e902b6b0cb, type: 3}
+  - id: portrait_quimica_vitoria
+    sprite: {fileID: 21300000, guid: 99283bb7665ce2d449fe66d35b800813, type: 3}
+  - id: portrait_quimica_derrota
+    sprite: {fileID: 21300000, guid: fed13afe813231e479fbb4d8ad176afb, type: 3}
+  clips:
+  - id: loop_tensao
+    clip: {fileID: 8300000, guid: 123e5ebce16a46445895d4813dbfcecd, type: 3}
+  - id: alarme_surto
+    clip: {fileID: 8300000, guid: dbf97d4d1050552419e0cb061c53333a, type: 3}
+  - id: apagao
+    clip: {fileID: 8300000, guid: a214496bfb272374fb2961a751d8fcb0, type: 3}
+  - id: arco
+    clip: {fileID: 8300000, guid: e3467929c1b51cf488b4b19292aff877, type: 3}
+  - id: braco
+    clip: {fileID: 8300000, guid: 8e3e48fff699127428e04dd407ee64aa, type: 3}
+  - id: campo
+    clip: {fileID: 8300000, guid: 7180230259ee72548bd89056e0e71350, type: 3}
+  - id: clique_ui
+    clip: {fileID: 8300000, guid: 6e2c10882d7a28848938c16d6f24819d, type: 3}
+  - id: dano_jogador
+    clip: {fileID: 8300000, guid: 19a16ee3a2140924d903ce3d778cfe52, type: 3}
+  - id: derrota
+    clip: {fileID: 8300000, guid: c2fcf980fa320ba4bb4f6e30f6fdda40, type: 3}
+  - id: descarga
+    clip: {fileID: 8300000, guid: 7f07d48cf6845c940a922ed0b7c6c3c9, type: 3}
+  - id: evolucao
+    clip: {fileID: 8300000, guid: 026c6a1763309284aa4e35181e7c2c17, type: 3}
+  - id: explosao
+    clip: {fileID: 8300000, guid: 904dd9dc9009d804c90c2518c4a9ca7e, type: 3}
+  - id: gema
+    clip: {fileID: 8300000, guid: c5744b07e275276488cfd77f66d2d67b, type: 3}
+  - id: impacto_metal
+    clip: {fileID: 8300000, guid: cc795deeb2268b84dbeaa77442d187b8, type: 3}
+  - id: laser
+    clip: {fileID: 8300000, guid: 2e8dba50c5704fd40905a684952b29bb, type: 3}
+  - id: nivel
+    clip: {fileID: 8300000, guid: 38a69f2bc89f838448b754f96fa8ef71, type: 3}
+  - id: turbina
+    clip: {fileID: 8300000, guid: 89f38d9c9379c154f8497b0aad5b31cd, type: 3}
+  - id: vitoria
+    clip: {fileID: 8300000, guid: 1356f91882503784482d116bd174873f, type: 3}
+  font: {fileID: 12800000, guid: d47109686bc7e754dbebe7fbc0f69398, type: 3}
+  strings: {fileID: 4900000, guid: f98bd284c452bed49a02c9ca9e7bd7fa, type: 3}

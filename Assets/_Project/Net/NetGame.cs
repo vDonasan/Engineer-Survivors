@@ -34,6 +34,13 @@ namespace ES.Net
         public bool Started => Host != null ? Host.World != null : Client != null && Client.Started;
         public int LocalSlot => Host != null ? 0 : Client?.LocalSlot ?? -1;
         public MatchConfig Config => Host?.World?.Config ?? Client?.Config;
+        public GameDatabase Db => _db;
+        /// <summary>Só no solo: congela a simulação (menu de pausa).</summary>
+        public bool Paused { get; set; }
+        /// <summary>Bytes/s enviados e recebidos e latência (ms), atualizados a cada segundo.</summary>
+        public float SentPerSecond { get; private set; }
+        public float ReceivedPerSecond { get; private set; }
+        public float RttMs { get; private set; }
 
         /// <summary>Erro para o jogador (chave da tabela de textos).</summary>
         public event Action<string> Error;
@@ -211,7 +218,11 @@ namespace ES.Net
             Host = null;
             Client = null;
             Mode = NetMode.None;
+            Paused = false;
             _clientInput = PlayerInput.None;
+            _hostSpecial = 0;
+            _hostChoiceOffer = 0;
+            _hostChoiceIndex = -1;
         }
 
         Hello Hello(string name, string spec) => new Hello { BuildVersion = _version, ContentHash = _db.ContentHash, Name = name, SpecializationId = spec };
@@ -266,8 +277,36 @@ namespace ES.Net
         void Update()
         {
             double dt = Time.unscaledDeltaTime;
-            if (Host != null) Host.Update(dt);
+            UpdateStats();
+            if (Host != null) { if (!(Paused && Mode == NetMode.Solo)) Host.Update(dt); }
             else if (Client != null) Client.Update(dt, Time.realtimeSinceStartupAsDouble, _clientInput);
+        }
+
+        float _statsAt;
+        long _lastSent, _lastReceived;
+
+        void UpdateStats()
+        {
+            float now = Time.unscaledTime;
+            if (now < _statsAt) return;
+            float span = Mathf.Max(0.25f, now - (_statsAt - 1f));
+            _statsAt = now + 1f;
+            long sent = _link?.BytesSent ?? 0, received = _link?.BytesReceived ?? 0;
+            SentPerSecond = Mathf.Max(0, sent - _lastSent) / span;
+            ReceivedPerSecond = Mathf.Max(0, received - _lastReceived) / span;
+            _lastSent = sent;
+            _lastReceived = received;
+            RttMs = 0;
+            if (_nm != null && _nm.IsListening && _nm.NetworkConfig.NetworkTransport is UnityTransport ut)
+            {
+                if (Client != null) RttMs = ut.GetCurrentRtt(NetworkManager.ServerClientId);
+                else if (Host != null && _nm.ConnectedClientsIds.Count > 1)
+                {
+                    float sum = 0; int n = 0;
+                    foreach (var id in _nm.ConnectedClientsIds) if (id != _nm.LocalClientId) { sum += ut.GetCurrentRtt(id); n++; }
+                    RttMs = n > 0 ? sum / n : 0;
+                }
+            }
         }
 
         /// <summary>Chamado pelo .jslib quando a aba muda de visibilidade.</summary>

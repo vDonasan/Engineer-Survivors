@@ -14,6 +14,9 @@ namespace ES.Net
         readonly NetworkManager _nm;
         byte[] _rx = new byte[4096];
 
+        /// <summary>Bytes de carga útil enviados e recebidos (painel de desempenho).</summary>
+        public long BytesSent, BytesReceived;
+
         public NgoLink(NetworkManager nm) { _nm = nm; }
 
         public static string Name(MessageType t) => "es." + t;
@@ -26,6 +29,7 @@ namespace ES.Net
             writer.WriteBytesSafe(data, length);
             var delivery = channel == Channel.Reliable ? NetworkDelivery.ReliableFragmentedSequenced : NetworkDelivery.UnreliableSequenced;
             _nm.CustomMessagingManager.SendNamedMessage(Name(type), peer, writer, delivery);
+            BytesSent += length + sizeof(int);
         }
 
         /// <summary>Registra um tratador por tipo; dados malformados chegam como comprimento -1.</summary>
@@ -41,6 +45,7 @@ namespace ES.Net
                     if (length < 0 || length > MaxPayload || !reader.TryBeginRead(length)) { onMessage(sender, type, _rx, -1); return; }
                     if (_rx.Length < length) _rx = new byte[Math.Max(length, _rx.Length * 2)];
                     reader.ReadBytes(ref _rx, length);
+                    BytesReceived += length + sizeof(int);
                     onMessage(sender, type, _rx, length);
                 });
             }

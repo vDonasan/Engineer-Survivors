@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using ES.Content;
@@ -17,6 +18,9 @@ namespace ES.GameEditor
     {
         const string ScenesDir = "Assets/_Project/Scenes";
         const string ContentPath = "Assets/_Project/Content/ContentDatabase.asset";
+
+        /// <summary>Cenas geradas por código (outras assemblies de editor registram as suas).</summary>
+        public static readonly Dictionary<string, Action> SceneCreators = new Dictionary<string, Action> { { "NetProof", CreateNetProofScene } };
 
         [MenuItem("Engineering Survivors/Cenas/Recriar cena de prova de rede")]
         public static void CreateNetProofScene()
@@ -39,7 +43,8 @@ namespace ES.GameEditor
             string sceneName = Arg("-esScene") ?? "NetProof";
             string output = Arg("-esOut") ?? "Build/WebGL";
             ES.EditorTools.ProjectSetup.Apply();
-            if (sceneName == "NetProof" && !File.Exists($"{ScenesDir}/NetProof.unity")) CreateNetProofScene();
+            GameAssetsBuilder.Rebuild();
+            if (SceneCreators.TryGetValue(sceneName, out var create)) create();
 
             string scenePath = $"{ScenesDir}/{sceneName}.unity";
             var options = new BuildPlayerOptions
