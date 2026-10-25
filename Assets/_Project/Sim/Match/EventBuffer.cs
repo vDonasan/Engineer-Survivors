@@ -6,6 +6,22 @@ namespace ES.Sim
     {
         EnemyDied, GemSpawned, GemCollected, LevelUpOffer, ChoiceApplied, SynergyChanged,
         EvolutionApplied, SpecialActivated, PlayerDowned, PlayerInactive, MatchEnded,
+        /// <summary>A = boss (255 dueto), X = segundo de chegada.</summary>
+        BossIncoming,
+        /// <summary>Próximo boss da contagem: A = boss (254 nenhum, 255 dueto), X = segundo.</summary>
+        BossSchedule,
+        /// <summary>A = boss, B = id do inimigo, C = ciclo do Modo Infinito, X/Y = posição.</summary>
+        BossSpawned,
+        /// <summary>Fúria (BRAVO): A = boss, B = id do inimigo.</summary>
+        BossBravo,
+        /// <summary>A = id do inimigo, B = <see cref="BossAttack"/>, C = <see cref="BossState"/>, X = duração da preparação.</summary>
+        BossAction,
+        /// <summary>Área sinalizada: A = forma | estilo &lt;&lt; 4 (255 = limpar todas), B = tamanho × 20, C = atraso em ms, Z/W = extra/largura.</summary>
+        BossHazard,
+        /// <summary>A = boss, B = id do inimigo, C = 1 se encerrou a partida padrão.</summary>
+        BossDefeated,
+        /// <summary>O anfitrião continuou no Modo Infinito: X = segundo.</summary>
+        MatchContinued,
     }
 
     /// <summary>Evento de regra: entregue de forma confiável a todos os clientes.</summary>
@@ -14,6 +30,8 @@ namespace ES.Sim
         public RuleEventKind Kind;
         public int A, B, C;
         public float X, Y;
+        /// <summary>Só BossHazard: ângulo/raio interno e largura.</summary>
+        public float Z, W;
     }
 
     /// <summary>

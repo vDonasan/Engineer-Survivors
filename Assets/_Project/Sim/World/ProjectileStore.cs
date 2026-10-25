@@ -11,6 +11,10 @@ namespace ES.Sim
         public readonly Vec2[] Pos;
         public readonly Vec2[] Vel;
         public readonly float[] Damage, Radius, LifeLeft;
+        /// <summary>Projéteis dos bosses: curva (rad/s), perseguição (rad/s por <see cref="HomingLeft"/> s), ricochetes e perfuração.</summary>
+        public readonly float[] Turn, Homing, HomingLeft;
+        public readonly byte[] Bounces, HitMask;
+        public readonly bool[] Pierce;
 
         readonly IdAllocator _ids = new IdAllocator();
 
@@ -24,6 +28,8 @@ namespace ES.Sim
             Damage = new float[capacity];
             Radius = new float[capacity];
             LifeLeft = new float[capacity];
+            Turn = new float[capacity]; Homing = new float[capacity]; HomingLeft = new float[capacity];
+            Bounces = new byte[capacity]; HitMask = new byte[capacity]; Pierce = new bool[capacity];
         }
 
         public int Spawn(int type, Vec2 pos, Vec2 vel, float damage, float radius, float life)
@@ -37,6 +43,9 @@ namespace ES.Sim
             Damage[i] = damage;
             Radius[i] = radius;
             LifeLeft[i] = life;
+            Turn[i] = Homing[i] = HomingLeft[i] = 0;
+            Bounces[i] = HitMask[i] = 0;
+            Pierce[i] = false;
             return i;
         }
 
@@ -47,6 +56,8 @@ namespace ES.Sim
             if (i == last) return;
             Id[i] = Id[last]; Type[i] = Type[last]; Pos[i] = Pos[last]; Vel[i] = Vel[last];
             Damage[i] = Damage[last]; Radius[i] = Radius[last]; LifeLeft[i] = LifeLeft[last];
+            Turn[i] = Turn[last]; Homing[i] = Homing[last]; HomingLeft[i] = HomingLeft[last];
+            Bounces[i] = Bounces[last]; HitMask[i] = HitMask[last]; Pierce[i] = Pierce[last];
         }
     }
 }

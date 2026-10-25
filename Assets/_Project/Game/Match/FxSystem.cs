@@ -21,6 +21,7 @@ namespace ES.Game
         readonly List<Timed> _timed = new List<Timed>(512);
         readonly Sprite _px, _dot, _spark, _bolt, _gem, _gemBig, _heal, _arm, _smoke, _tv, _note, _shard, _coin, _plus, _bot0, _bot1, _bot2;
         readonly Sprite[] _explosion = new Sprite[4], _digits = new Sprite[10];
+        readonly Sprite _bossNote, _bossWave, _bossOrb0, _bossOrb1, _bossSpark;
         readonly int[] _orbitAbilities, _auraAbilities;
         int _numbers;
 
@@ -52,6 +53,11 @@ namespace ES.Game
             _bot1 = assets.Sprite("ally_botbrawler_0");
             _bot2 = assets.Sprite("ally_botdasher_0");
             _smoke = assets.Sprite("fx_smoke");
+            _bossNote = assets.Sprite("fx_boss_note");
+            _bossWave = assets.Sprite("fx_boss_wave");
+            _bossOrb0 = assets.Sprite("fx_boss_orb_0");
+            _bossOrb1 = assets.Sprite("fx_boss_orb_1");
+            _bossSpark = assets.Sprite("fx_boss_spark");
             for (int i = 0; i < 4; i++) _explosion[i] = assets.Sprite("fx_explosion_" + i);
             for (int i = 0; i < 10; i++) _digits[i] = assets.Sprite("fx_digit_" + i);
             var orbit = new List<int>();
@@ -110,6 +116,18 @@ namespace ES.Game
             }
         }
 
+        Sprite HostileSprite(in HostileRender h, float now)
+        {
+            switch (h.Type)
+            {
+                case HostileKind.Note: return _bossNote ?? _bolt;
+                case HostileKind.Wave: return _bossWave ?? _bolt;
+                case HostileKind.Orb: return (((int)(now * 8) + h.Id) & 1) == 0 ? _bossOrb0 ?? _bolt : _bossOrb1 ?? _bolt;
+                case HostileKind.Spark: return _bossSpark ?? _bolt;
+                default: return _bolt;
+            }
+        }
+
         public void OnEnemyDied(Vector2 pos, int type, float now)
         {
             Add(new Timed { Kind = KindExplosion, A = pos, Start = now, Life = 0.25f, Value = type });
@@ -128,7 +146,7 @@ namespace ES.Game
                 _stamps.Add(sprite, Layers.Snap(new Vector2(g.Pos.X, g.Pos.Y + bob)), Color.white, Layers.Gem);
             }
 
-            foreach (var h in frame.Hostile) _stamps.Add(_bolt, Layers.Snap(Layers.V(h.Pos)), Color.white, Layers.Hostile);
+            foreach (var h in frame.Hostile) _stamps.Add(HostileSprite(h, now), Layers.Snap(Layers.V(h.Pos)), Color.white, Layers.Hostile);
 
             DrawAbilities(feed, players, renderSeconds, now);
 

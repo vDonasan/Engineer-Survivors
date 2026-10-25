@@ -24,6 +24,9 @@ namespace ES.Sim
         public MatchPhase Phase;
         public float Elapsed;
         public int TeamKills;
+        /// <summary>Bosses derrotados nesta partida; Modo Infinito em andamento.</summary>
+        public int BossesDefeated;
+        public bool Infinite;
         public readonly SlotSummary[] Players = new SlotSummary[PlayerStore.MaxSlots];
 
         public MatchSummary()
@@ -33,7 +36,7 @@ namespace ES.Sim
 
         public static MatchSummary FromWorld(World w)
         {
-            var s = new MatchSummary { Phase = w.Phase, Elapsed = w.Elapsed, TeamKills = w.Stats.Kills };
+            var s = new MatchSummary { Phase = w.Phase, Elapsed = w.Elapsed, TeamKills = w.Stats.Kills, BossesDefeated = w.Bosses.Defeated.Count, Infinite = w.Bosses.Infinite };
             for (int slot = 0; slot < PlayerStore.MaxSlots; slot++)
             {
                 var p = w.Players.Slots[slot];
@@ -61,6 +64,8 @@ namespace ES.Sim
             w.U8((byte)s.Phase);
             w.F32(s.Elapsed);
             w.U32((uint)Math.Max(0, s.TeamKills));
+            w.U16((ushort)Math.Min(ushort.MaxValue, Math.Max(0, s.BossesDefeated)));
+            w.Bool(s.Infinite);
             byte mask = 0;
             for (int i = 0; i < s.Players.Length; i++) if (s.Players[i].Present) mask |= (byte)(1 << i);
             w.U8(mask);
@@ -83,7 +88,9 @@ namespace ES.Sim
             var r = new ByteReader(data, length);
             var o = new MatchSummary();
             if (!r.TryU8(out byte phase) || phase > (byte)MatchPhase.Defeat) return false;
-            if (!r.TryF32(out o.Elapsed) || !r.TryU32(out uint kills) || !r.TryU8(out byte mask)) return false;
+            if (!r.TryF32(out o.Elapsed) || !r.TryU32(out uint kills) || !r.TryU16(out ushort bosses) || !r.TryU8(out byte inf) || inf > 1 || !r.TryU8(out byte mask)) return false;
+            o.BossesDefeated = bosses;
+            o.Infinite = inf == 1;
             if (float.IsNaN(o.Elapsed) || mask >= 1 << PlayerStore.MaxSlots) return false;
             o.Phase = (MatchPhase)phase;
             o.TeamKills = (int)Math.Min(kills, int.MaxValue);

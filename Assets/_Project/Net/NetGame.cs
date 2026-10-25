@@ -160,6 +160,11 @@ namespace ES.Net
 
         public void SetDifficulty(Difficulty d) => Host?.SetDifficulty(d);
 
+        /// <summary>Só o anfitrião (ou o solo) decide continuar no Modo Infinito; os clientes acompanham.</summary>
+        public bool CanDecideInfinite => Host != null && Host.World != null;
+
+        public bool ContinueInfinite() => CanDecideInfinite && Host.ContinueInfinite();
+
         public void PickSpecialization(string id)
         {
             if (Host != null) Host.SetLocalSpecialization(id);

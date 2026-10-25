@@ -14,6 +14,7 @@ import { heroSprites, heroPortraitSprites, HEROES } from './lib/heroes.mjs';
 import { allySprites } from './lib/kitart.mjs';
 import { uiSprites } from './lib/uiart.mjs';
 import { sceneSprites } from './lib/sceneart.mjs';
+import { bossSprites, bossFxSprites, BOSS_ANIMS } from './lib/bosses.mjs';
 
 export { SPECS, CHAR_ANIMS, HEROES };
 
@@ -23,7 +24,7 @@ export const CATEGORIES = ['Characters', 'Enemies', 'Bosses', 'Weapons', 'Abilit
 
 export function allSprites() {
   const content = JSON.parse(readFileSync(join(root, 'Assets', '_Project', 'Content', 'Data', 'sp1-content.json'), 'utf8'));
-  return [...characterSprites(), ...heroSprites(), ...enemySprites(), ...worldSprites(), ...allySprites(), ...uiSprites(), ...sceneSprites(), ...iconSprites(content), ...portraitSprites(), ...heroPortraitSprites()];
+  return [...characterSprites(), ...heroSprites(), ...enemySprites(), ...worldSprites(), ...allySprites(), ...uiSprites(), ...sceneSprites(), ...iconSprites(content), ...portraitSprites(), ...heroPortraitSprites(), ...bossSprites(), ...bossFxSprites()];
 }
 
 function listPngs(dir) {
@@ -62,6 +63,7 @@ function animationsDoc(sprites) {
   lines.push('', `## Retratos (64×64)`, '', `Emoções: ${EMOTIONS.join(', ')} — \`Portraits/portrait_<personagem ou engenharia>_<emoção>.png\`.`);
   lines.push('', '## Armas dos personagens', '', 'Projéteis, companheiros e zonas em `Weapons/Personagens/ally_<sprite>_<quadro>.png` (nome do enum AllySprite). Cabazord Master 48×48; carro 24×24 com 8 direções.');
   lines.push('', '## Jean', '', 'Montado no porco em todas as animações, menos caído/reviver (ele cai do porco).');
+  lines.push('', '## Bosses', '', `Guirotto 48×48 e Mago da Elétrica 48×56 em \`Bosses/<boss>/boss_<boss>_<animação>_<direção>_<quadro>.png\`. Andar (normal e bravo) nas 8 direções (as da direita espelham as da esquerda); demais animações de frente: ${Object.entries(BOSS_ANIMS).map(([a, n]) => `${a} (${n})`).join(', ')}. Projéteis em \`Effects/fx_boss_*\`.`);
   lines.push('', '## Inimigos', '', 'Microbô 16×16, torreta 32×32, prensa 48×48; 2 quadros cada + variante elite (contorno magenta).');
   return lines.join('\n') + '\n';
 }
@@ -93,7 +95,7 @@ export function buildAll({ outDir = join(root, 'Assets', '_Project', 'Art'), dry
     removeEmptyDirs(outDir);
     writeFileSync(join(outDir, 'manifest.json'), JSON.stringify({ sprites: manifest.sprites }, null, 1));
     writeFileSync(join(outDir, 'ANIMACOES.md'), animationsDoc(manifest.sprites));
-    writeFileSync(join(outDir, 'Bosses', 'LEIA-ME.txt'), 'Chefes chegam no SP5 (sprites maiores, mesma linguagem de pixel art).\n');
+    writeFileSync(join(outDir, 'Bosses', 'LEIA-ME.txt'), 'Guirotto (04:00) e Mago da Elétrica (09:00): gerados por ArtSource/lib/bosses.mjs a partir das imagens de referência.\n');
   }
   void relative;
   return manifest;

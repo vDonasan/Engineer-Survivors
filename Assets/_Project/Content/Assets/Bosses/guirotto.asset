@@ -1,0 +1,98 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aac1a33f7e4c7941a155b5cdd63a66f, type: 3}
+  m_Name: guirotto
+  m_EditorClassIdentifier: ES.Content::ES.Content.BossAsset
+  def:
+    id: guirotto
+    enemyId: boss_guirotto
+    name: GUIROTTO
+    title: O Sapo do Banjo
+    spawnSeconds: 240
+    final: 0
+    bravoThreshold: 0.3
+    entrySeconds: 2
+    rageSeconds: 1.6
+    teamHp: 0.55
+    teamCooldown: 0.08
+    parameters:
+    - key: waveCount
+      value: 3
+    - key: waveCountBravo
+      value: 5
+    - key: waveSpread
+      value: 14
+    - key: waveSpeed
+      value: 6.5
+    - key: waveSpeedBravo
+      value: 8.5
+    - key: waveDamage
+      value: 14
+    - key: waveRadius
+      value: 0.5
+    - key: resonanceRadius
+      value: 3.6
+    - key: resonanceRadiusBravo
+      value: 4.6
+    - key: resonanceDelay
+      value: 1.2
+    - key: resonanceDelayBravo
+      value: 0.9
+    - key: resonanceDamage
+      value: 26
+    - key: noteCount
+      value: 7
+    - key: noteCountBravo
+      value: 11
+    - key: noteArc
+      value: 110
+    - key: noteSpeed
+      value: 5.2
+    - key: noteTurn
+      value: 0.7
+    - key: noteDamage
+      value: 10
+    - key: concertSeconds
+      value: 2.4
+    - key: concertEvery
+      value: 0.3
+    - key: concertEveryBravo
+      value: 0.22
+    - key: concertRing
+      value: 8
+    - key: concertRingBravo
+      value: 12
+    - key: concertMarks
+      value: 1
+    - key: concertMarkRadius
+      value: 1.8
+    - key: concertMarkDelay
+      value: 1.1
+    - key: chorusRing
+      value: 16
+    - key: cooldown
+      value: 2.2
+    - key: cooldownBravo
+      value: 1.45
+    - key: windup
+      value: 0.55
+    - key: windupBravo
+      value: 0.4
+    - key: recover
+      value: 0.8
+    - key: recoverBravo
+      value: 0.5
+    - key: keepMin
+      value: 2.5
+    - key: keepMax
+      value: 5.5
+  idle: {fileID: 21300000, guid: cb7e4bafcc27ac244996b9131d6bd78d, type: 3}

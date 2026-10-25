@@ -104,7 +104,7 @@ test('ícones para todas as habilidades e especiais do conteúdo; inimigos com e
   const content = JSON.parse(readFileSync(join(root, 'Assets', '_Project', 'Content', 'Data', 'sp1-content.json'), 'utf8'));
   for (const a of content.abilities) assert.ok(byId.has(`icon_${a.id}`), `ícone ${a.id}`);
   for (const s of content.specials) assert.ok(byId.has(`icon_${s.id}`), `ícone ${s.id}`);
-  for (const e of content.enemies) for (const f of [0, 1]) {
+  for (const e of content.enemies.filter((x) => x.role !== 'boss')) for (const f of [0, 1]) {
     assert.ok(byId.has(`enemy_${e.id}_${f}`) && byId.has(`enemy_${e.id}_elite_${f}`), `inimigo ${e.id}`);
   }
 });
@@ -123,7 +123,7 @@ test('dígitos 0–9 e pixel 2×2 para números de dano, arcos e anéis', () => 
 
 test('inimigos têm silhueta branca (piscar ao levar dano) com a mesma máscara', () => {
   const content = JSON.parse(readFileSync(join(root, 'Assets', '_Project', 'Content', 'Data', 'sp1-content.json'), 'utf8'));
-  for (const e of content.enemies) for (const v of ['', 'elite_']) for (const f of [0, 1]) {
+  for (const e of content.enemies.filter((x) => x.role !== 'boss')) for (const v of ['', 'elite_']) for (const f of [0, 1]) {
     const src = img(`enemy_${e.id}_${v}${f}`), fl = img(`enemy_${e.id}_${v}flash_${f}`);
     assert.equal(fl.w, src.w); assert.equal(fl.h, src.h);
     for (let i = 3; i < src.data.length; i += 4) {
@@ -167,4 +167,24 @@ test('sprites de todas as armas dos personagens (enum AllySprite)', () => {
   const names = [...body.matchAll(/\b([A-Z][A-Za-z]+),/g)].map((m) => m[1].toLowerCase()).filter((n) => n !== 'byte');
   assert.ok(names.length >= 40);
   for (const n of names) assert.ok(byId.has(`ally_${n}_0`), `ally_${n}_0`);
+});
+
+test('bosses: 8 direções (normal e bravo), ataques, dano, fúria, morte e desaparecimento, tamanho constante', () => {
+  const content = JSON.parse(readFileSync(join(root, 'Assets', '_Project', 'Content', 'Data', 'sp1-content.json'), 'utf8'));
+  const dirs = ['down', 'up', 'left', 'right', 'downleft', 'downright', 'upleft', 'upright'];
+  const anims = { idle: 2, idle_bravo: 2, attack: 3, attack_bravo: 3, special: 3, special_bravo: 3, charge: 2, hurt: 2, heavy: 2, rage: 3, death: 4, vanish: 3 };
+  assert.equal(content.bosses.length, 2);
+  for (const b of content.bosses) {
+    const size = byId.get(`boss_${b.id}_idle_down_0`);
+    assert.ok(size && size.w >= 48 && size.h >= 48, `boss ${b.id} maior que os personagens`);
+    for (const walk of ['walk', 'walk_bravo']) for (const d of dirs) for (let f = 0; f < 4; f++) {
+      const s = byId.get(`boss_${b.id}_${walk}_${d}_${f}`);
+      assert.ok(s, `boss_${b.id}_${walk}_${d}_${f}`);
+      assert.equal(s.w, size.w); assert.equal(s.h, size.h);
+    }
+    for (const [a, n] of Object.entries(anims)) for (let f = 0; f < n; f++) assert.ok(byId.has(`boss_${b.id}_${a}_down_${f}`), `boss_${b.id}_${a}_down_${f}`);
+    // normal e bravo diferem de fato
+    assert.notDeepEqual([...img(`boss_${b.id}_idle_down_0`).data], [...img(`boss_${b.id}_idle_bravo_down_0`).data], `bravo ${b.id}`);
+  }
+  for (const id of ['fx_boss_note', 'fx_boss_wave', 'fx_boss_orb_0', 'fx_boss_spark']) assert.ok(byId.has(id), id);
 });

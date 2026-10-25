@@ -6,9 +6,12 @@ namespace ES.SimTests.Match
     public class MatchTests
     {
         [Test]
-        public void Victory_At600s()
+        public void Victory_At600s_WhenContentHasNoFinalBoss()
         {
-            var w = TestWorlds.Disarm(TestWorlds.CreateOpen());
+            var def = ContentLoader.LoadSp1();
+            def.bosses = new BossDef[0];
+            foreach (var a in def.arenas) a.obstacles = new RectDef[0];
+            var w = TestWorlds.Disarm(TestWorlds.Create(db: GameDatabase.Build(def).Db));
             w.SpawningEnabled = false;
             while (w.Phase == MatchPhase.Running && w.Elapsed < 700) w.Step(TestWorlds.NoInput());
             Assert.That(w.Phase, Is.EqualTo(MatchPhase.Victory));

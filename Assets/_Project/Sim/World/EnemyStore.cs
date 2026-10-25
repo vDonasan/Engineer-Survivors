@@ -8,6 +8,8 @@ namespace ES.Sim
         public const byte Telegraphing = 1 << 3;
         /// <summary>Morto neste tick; removido no fim do combate.</summary>
         public const byte Dead = 1 << 4;
+        /// <summary>Boss entrando na arena: não recebe dano.</summary>
+        public const byte Invulnerable = 1 << 5;
     }
 
     /// <summary>Inimigos em estrutura de arrays; remoção por troca com o último.</summary>

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System;
 
 namespace ES.Sim
@@ -5,7 +6,7 @@ namespace ES.Sim
     public enum AbilityKind { Weapon, Component, Attribute, Survival }
     public enum Rarity { Comum, Incomum, Raro, Reliquia }
     public enum SpecialKind { Blackout, Turbine, Overclock }
-    public enum EnemyBehavior { Chase, KiteShoot }
+    public enum EnemyBehavior { Chase, KiteShoot, Boss }
     public enum RequirementKind { AbilityLevel, TagCount, Specialization, StatAtLeast, Branch, AnyAbilityLevel }
     public enum SynergyEffect { ChargeEveryN }
     public enum TemplateScope { Player, All, Self, Tag, Ability }
@@ -99,6 +100,25 @@ namespace ES.Sim
         public TagSet StunTags;
         /// <summary>Tag que recebe o bônus de dano (Turbina/Overclock).</summary>
         public Tag BoostTag;
+    }
+
+    public sealed class ResolvedBoss
+    {
+        public int Index;
+        public BossDef Def;
+        public int Enemy;
+        readonly Dictionary<string, float> _params = new Dictionary<string, float>();
+
+        public ResolvedBoss(BossDef def)
+        {
+            Def = def;
+            foreach (var p in def.parameters ?? new ParamDef[0]) if (p?.key != null) _params[p.key] = p.value;
+        }
+
+        public float Param(string key, float fallback = 0) => _params.TryGetValue(key, out float v) ? v : fallback;
+
+        /// <summary>Na fase BRAVO usa "&lt;chave&gt;Bravo" quando existir.</summary>
+        public float Param(string key, bool bravo, float fallback = 0) => bravo && _params.TryGetValue(key + "Bravo", out float b) ? b : Param(key, fallback);
     }
 
     public sealed class ResolvedEnemy

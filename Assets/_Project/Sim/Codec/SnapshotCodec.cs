@@ -62,6 +62,20 @@ namespace ES.Sim
         public int Tick;
     }
 
+    /// <summary>Estado de animação de um boss (a vida vem no registro do inimigo).</summary>
+    public struct BossSnap
+    {
+        public BossState State;
+        public BossAttack Attack;
+        /// <summary>1 = BRAVO, 2 = invulnerável (entrada).</summary>
+        public byte Flags;
+        /// <summary>Direção de animação 0..7 (<see cref="BossSystem.Dir8"/>).</summary>
+        public byte Dir;
+        public int Tick;
+
+        public const byte FlagBravo = 1, FlagInvulnerable = 2;
+    }
+
     public struct HostileSnap
     {
         public Vec2 Pos;
@@ -77,6 +91,7 @@ namespace ES.Sim
         public readonly Dictionary<ushort, EnemySnap> Enemies = new Dictionary<ushort, EnemySnap>(512);
         public readonly Dictionary<ushort, HostileSnap> Hostile = new Dictionary<ushort, HostileSnap>(256);
         public readonly Dictionary<ushort, AllySnap> Allies = new Dictionary<ushort, AllySnap>(256);
+        public readonly Dictionary<ushort, BossSnap> Bosses = new Dictionary<ushort, BossSnap>(4);
         public readonly List<CosmeticEvent> Cosmetic = new List<CosmeticEvent>(64);
     }
 
@@ -87,13 +102,13 @@ namespace ES.Sim
     public static class SnapshotCodec
     {
         const byte Magic = 0xE5;
-        const byte Version = 2;
+        const byte Version = 3;
         const int HeaderSize = 8;
         const int RunHeaderSize = 2;
 
-        const byte RunPlayers = 1, RunEnemies = 2, RunHostile = 3, RunCosmetic = 4, RunAllies = 5;
+        const byte RunPlayers = 1, RunEnemies = 2, RunHostile = 3, RunCosmetic = 4, RunAllies = 5, RunBoss = 6;
         // Jogador: slot, status, x, y, vx, vy, fx, fy, hp, maxHp, flags, seq, recarga, ativo, nível, xp, velocidade.
-        const int PlayerSize = 22, EnemySize = 7, HostileSize = 7, CosmeticSize = 20, AllySize = 8;
+        const int PlayerSize = 22, EnemySize = 7, HostileSize = 7, CosmeticSize = 20, AllySize = 8, BossSize = 6;
         const byte TypeMask = 0x0F, BitStatus = 1 << 4, BitElite = 1 << 5, BitStunned = 1 << 6, BitFlash = 1 << 7;
         /// <summary>Aliados por snapshot (os mais próximos dos jogadores primeiro).</summary>
         public const int MaxAllies = 200;
@@ -142,6 +157,16 @@ namespace ES.Sim
                 PutU8((byte)Math.Min(255, p.Progress.Level));
                 PutU8((byte)Math.Min(255, Math.Round(255f * p.Progress.Xp / Math.Max(1, XpCurve.ToNext(w.Rules, p.Progress.Level)))));
                 PutU8((byte)Math.Min(255, Math.Round(p.Stats.Get(StatId.MoveSpeed) * 10f)));
+            }
+
+            foreach (var b in w.Bosses.Active)
+            {
+                Record(RunBoss, BossSize);
+                PutU16(b.EnemyId);
+                PutU8((byte)b.State);
+                PutU8((byte)b.Attack);
+                PutU8(BossFlags(w, b));
+                PutU8(BossSystem.Dir8(b.Facing));
             }
 
             var h = w.Hostile;
@@ -252,6 +277,13 @@ namespace ES.Sim
             _buf[_runCountPos] = (byte)_runCount;
         }
 
+        public static byte BossFlags(World w, BossRuntime b)
+        {
+            byte f = b.Bravo ? BossSnap.FlagBravo : (byte)0;
+            if (b.State == BossState.Entering) f |= BossSnap.FlagInvulnerable;
+            return f;
+        }
+
         static void PutU8(byte v) => _buf[_pos++] = v;
         static void PutU16(ushort v) { _buf[_pos++] = (byte)v; _buf[_pos++] = (byte)(v >> 8); }
         static void PutU32(uint v) { for (int i = 0; i < 4; i++) _buf[_pos++] = (byte)(v >> (8 * i)); }
@@ -281,6 +313,10 @@ namespace ES.Sim
                         case RunHostile: ReadHostile(ref r, arenaW, arenaH, tick, into); break;
                         case RunCosmetic: ReadCosmetic(ref r, arenaW, arenaH, into); break;
                         case RunAllies: ReadAlly(ref r, arenaW, arenaH, tick, into); break;
+                        case RunBoss:
+                            r.TryU16(out ushort id); r.TryU8(out byte st); r.TryU8(out byte at); r.TryU8(out byte fl); r.TryU8(out byte dir);
+                            into.Bosses[id] = new BossSnap { State = (BossState)st, Attack = (BossAttack)at, Flags = fl, Dir = dir, Tick = tick };
+                            break;
                     }
                 }
             }
@@ -323,6 +359,10 @@ namespace ES.Sim
                             break;
                         case RunHostile:
                             size = HostileSize;
+                            break;
+                        case RunBoss:
+                            if (r.Remaining < BossSize || chunk[r.Position + 2] > (byte)BossState.Rage || chunk[r.Position + 3] > (byte)BossAttack.Teleporte || chunk[r.Position + 5] > 7) return false;
+                            size = BossSize;
                             break;
                         case RunCosmetic:
                             if (r.Remaining < CosmeticSize || chunk[r.Position] > (byte)CosmeticKind.Swing) return false;

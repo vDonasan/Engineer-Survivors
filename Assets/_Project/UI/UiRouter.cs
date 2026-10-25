@@ -128,9 +128,12 @@ namespace ES.UI
             ShowMessage(Strings.Get(key));
         }
 
+        bool _resultDisconnected;
+
         void ShowResult(bool disconnected)
         {
             _resultShown = true;
+            _resultDisconnected = disconnected;
             Result.Fill(_lastFeed?.Summary, _lastFeed, _lastSlot, disconnected);
             ShowMain(Result);
         }
@@ -185,6 +188,8 @@ namespace ES.UI
                 }
                 else
                 {
+                    // o anfitrião continuou no Modo Infinito: todos voltam para a partida
+                    if (Result.Visible && _resultShown && !_resultDisconnected) { _resultShown = false; _endTimer = 0; ShowMain(Hud); }
                     bool offer = net.Feed.CurrentOffer != null && !Pause.Visible && !Settings.Visible && Hud.Visible;
                     if (offer && !LevelUp.Visible) LevelUp.Show();
                     else if (!offer && LevelUp.Visible) LevelUp.Hide();

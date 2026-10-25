@@ -24,6 +24,7 @@ namespace ES.Game
         PlayerViews _players;
         FxSystem _fx;
         AllyViews _allies;
+        BossViews _bosses;
         readonly RenderFrame _frame = new RenderFrame();
         float _now;
         int _surges;
@@ -36,6 +37,8 @@ namespace ES.Game
         public event Action<DecodedRuleEvent> RuleEvent;
         /// <summary>O jogador local levou dano (valor final).</summary>
         public event Action<float> LocalHit;
+        public BossViews Bosses => _bosses;
+
         /// <summary>Começou um surto (a cada 60 s).</summary>
         public event Action Surge;
 
@@ -72,6 +75,7 @@ namespace ES.Game
             _players = new PlayerViews(_root, _assets, cfg);
             _fx = new FxSystem(_root, _assets, db);
             _allies = new AllyViews(_root, _assets);
+            _bosses = new BossViews(_root, _assets, db);
             _prensa = db.EnemyIndex("prensa_ambulante");
             _light = FindFirstObjectByType<Light2D>();
             if (_light != null) _lightBase = _light.intensity;
@@ -89,6 +93,7 @@ namespace ES.Game
             _players = null;
             _fx = null;
             _allies = null;
+            _bosses = null;
             SfxPlayer.Instance?.StopMusic();
         }
 
@@ -126,6 +131,7 @@ namespace ES.Game
 
             Vec2? localPos = _net.Client?.Prediction != null ? _net.Client.Prediction.RenderPosition : (Vec2?)null;
             _enemies.Sync(_frame.Enemies, _now);
+            _bosses.Sync(feed, _frame, _now);
             _players.Sync(feed, _frame, local, localPos, _now);
             float tickSeconds = 1f / Mathf.Max(1, _net.Db.Def.rules.tickRate);
             _fx.Tick(_now, feed, _frame, _players, feed.RenderTick * tickSeconds);
@@ -252,6 +258,35 @@ namespace ES.Game
                     case RuleEventKind.PlayerDowned:
                         sfx?.Play("dano_jogador", AudioBus.Sfx, 1f, 0f);
                         break;
+                    case RuleEventKind.BossIncoming:
+                        sfx?.Play("boss_aviso", AudioBus.Sfx, 0.9f, 0f);
+                        break;
+                    case RuleEventKind.BossSpawned:
+                    {
+                        bool mago = e.A >= 0 && e.A < _net.Db.BossCount && _net.Db.Boss(e.A).Def.id == "mago";
+                        sfx?.Play(mago ? "boss_mago_entrada" : "boss_guirotto_entrada", AudioBus.Sfx, 1f, 0f);
+                        _rig.AddShake(0.25f);
+                        break;
+                    }
+                    case RuleEventKind.BossBravo:
+                        sfx?.Play("boss_furia", AudioBus.Sfx, 1f, 0f);
+                        _rig.AddShake(0.35f);
+                        break;
+                    case RuleEventKind.BossAction:
+                    {
+                        string s = BossSound((BossAttack)e.B, (BossState)e.C);
+                        if (s != null) sfx?.Play(s, AudioBus.Sfx, 0.75f);
+                        break;
+                    }
+                    case RuleEventKind.BossDefeated:
+                        _bosses.OnDefeated(e.A, new Vector2(e.X, e.Y), _now);
+                        sfx?.Play("boss_morte", AudioBus.Sfx, 1f, 0f);
+                        _rig.AddShake(0.4f);
+                        break;
+                    case RuleEventKind.MatchContinued:
+                        sfx?.Play("modo_infinito", AudioBus.Sfx, 1f, 0f);
+                        SfxPlayer.Instance?.PlayMusic("loop_tensao");
+                        break;
                     case RuleEventKind.MatchEnded:
                         SfxPlayer.Instance?.StopMusic();
                         sfx?.Play((MatchPhase)e.A == MatchPhase.Victory ? "vitoria" : "derrota", AudioBus.Sfx, 1f, 0f);
@@ -260,6 +295,26 @@ namespace ES.Game
                 RuleEvent?.Invoke(d);
             }
             feed.RuleEvents.Clear();
+        }
+
+        /// <summary>Som da preparação ou da execução de um ataque de boss.</summary>
+        static string BossSound(BossAttack a, BossState s)
+        {
+            if (s == BossState.Windup)
+                return a == BossAttack.Sobrecarga ? "carga" : a == BossAttack.Raio ? "raio_mira" : a == BossAttack.Ressonancia || a == BossAttack.Concerto ? "coaxar" : null;
+            switch (a)
+            {
+                case BossAttack.Acorde: return "onda_sonora";
+                case BossAttack.Ressonancia: return "ressonancia";
+                case BossAttack.ChuvaNotas: return "notas";
+                case BossAttack.Concerto: case BossAttack.Refrao: return "banjo";
+                case BossAttack.Raio: case BossAttack.Cadeia: return "raio";
+                case BossAttack.Tempestade: return "tempestade";
+                case BossAttack.Orbes: return "osciloscopio";
+                case BossAttack.Sobrecarga: return "sobrecarga";
+                case BossAttack.Teleporte: return "teleporte";
+                default: return null;
+            }
         }
 
         /// <summary>Som de disparo: "sfx"[variante] da habilidade; o laser antigo não tem lista.</summary>

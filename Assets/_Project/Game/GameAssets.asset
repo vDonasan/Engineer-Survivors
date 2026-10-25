@@ -2227,6 +2227,400 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: ff1572edcad4df5488445a771cf34adf, type: 3}
   - id: portrait_donasa_derrota
     sprite: {fileID: 21300000, guid: e55d32c7db538d94ba1e9069306eb94d, type: 3}
+  - id: boss_guirotto_walk_down_0
+    sprite: {fileID: 21300000, guid: b2ff02e22ef7d5240a14c69e365cab41, type: 3}
+  - id: boss_guirotto_walk_down_1
+    sprite: {fileID: 21300000, guid: dc486bf6f0baa3c4daa2a5279ba319fe, type: 3}
+  - id: boss_guirotto_walk_down_2
+    sprite: {fileID: 21300000, guid: e0b49733979478847ad383c34f26376d, type: 3}
+  - id: boss_guirotto_walk_down_3
+    sprite: {fileID: 21300000, guid: 1980164f4c3f8eb408ae5f43ad61d345, type: 3}
+  - id: boss_guirotto_walk_up_0
+    sprite: {fileID: 21300000, guid: 1a3aa1e318c2b7a429d83e9a07885802, type: 3}
+  - id: boss_guirotto_walk_up_1
+    sprite: {fileID: 21300000, guid: e148f13e3723d9b4ba52194b25caa85f, type: 3}
+  - id: boss_guirotto_walk_up_2
+    sprite: {fileID: 21300000, guid: e7087f63cc4b51c4bb532b527126fd87, type: 3}
+  - id: boss_guirotto_walk_up_3
+    sprite: {fileID: 21300000, guid: b281056bcd7cee3419bd0c08385c36a7, type: 3}
+  - id: boss_guirotto_walk_left_0
+    sprite: {fileID: 21300000, guid: fa2c08d3acb4512429f42b0d64114715, type: 3}
+  - id: boss_guirotto_walk_left_1
+    sprite: {fileID: 21300000, guid: e100c66087985e64a8acc31e9db26256, type: 3}
+  - id: boss_guirotto_walk_left_2
+    sprite: {fileID: 21300000, guid: 4990e5dfffd5f034ab5944ca776e3e23, type: 3}
+  - id: boss_guirotto_walk_left_3
+    sprite: {fileID: 21300000, guid: 8eeeea0a5886fab4cb7e803b8248704c, type: 3}
+  - id: boss_guirotto_walk_right_0
+    sprite: {fileID: 21300000, guid: 4bc7ffcfa30795e4bad9017a16620614, type: 3}
+  - id: boss_guirotto_walk_right_1
+    sprite: {fileID: 21300000, guid: 45980acddf42a974a9b00b37cb458c8a, type: 3}
+  - id: boss_guirotto_walk_right_2
+    sprite: {fileID: 21300000, guid: 764ce1a6cd935dc4e947b6da13ee713e, type: 3}
+  - id: boss_guirotto_walk_right_3
+    sprite: {fileID: 21300000, guid: b7093dc808d7960458c22cc7f5a18609, type: 3}
+  - id: boss_guirotto_walk_downleft_0
+    sprite: {fileID: 21300000, guid: 4745863b80c404849a16ca24ffb4eebb, type: 3}
+  - id: boss_guirotto_walk_downleft_1
+    sprite: {fileID: 21300000, guid: 0230613b0147cbf419e4e60dbdeb1d49, type: 3}
+  - id: boss_guirotto_walk_downleft_2
+    sprite: {fileID: 21300000, guid: 0aad409caf0a18f49a3c10acb2c6bbcc, type: 3}
+  - id: boss_guirotto_walk_downleft_3
+    sprite: {fileID: 21300000, guid: 931b9e2dea72a284ab70e4b9eeb33b1c, type: 3}
+  - id: boss_guirotto_walk_downright_0
+    sprite: {fileID: 21300000, guid: f3d326f1e815cab48a24a4d9ec0bb292, type: 3}
+  - id: boss_guirotto_walk_downright_1
+    sprite: {fileID: 21300000, guid: b5d083ed95a6dc8429bc644e9e52cad8, type: 3}
+  - id: boss_guirotto_walk_downright_2
+    sprite: {fileID: 21300000, guid: 1e3012c26375ae54bb9e4ae4c8a2ffa9, type: 3}
+  - id: boss_guirotto_walk_downright_3
+    sprite: {fileID: 21300000, guid: 21eb8499f3e600348a940e795acabcce, type: 3}
+  - id: boss_guirotto_walk_upleft_0
+    sprite: {fileID: 21300000, guid: 8a572618d92c45f42b9c549cfd7f6859, type: 3}
+  - id: boss_guirotto_walk_upleft_1
+    sprite: {fileID: 21300000, guid: 270fe8ccd3f7d60459b50fd2c629876a, type: 3}
+  - id: boss_guirotto_walk_upleft_2
+    sprite: {fileID: 21300000, guid: e12eb6f22d1fb314d90189ac8daeabb3, type: 3}
+  - id: boss_guirotto_walk_upleft_3
+    sprite: {fileID: 21300000, guid: c7d8d9a50ac36414787877d246b7ff8f, type: 3}
+  - id: boss_guirotto_walk_upright_0
+    sprite: {fileID: 21300000, guid: 907624baf1afa1845a73570473ae28ac, type: 3}
+  - id: boss_guirotto_walk_upright_1
+    sprite: {fileID: 21300000, guid: d1e19ad9856e7894499b6f07f7b6dde8, type: 3}
+  - id: boss_guirotto_walk_upright_2
+    sprite: {fileID: 21300000, guid: 7a5c9eab7ef1ba44ba11e2731f52fdeb, type: 3}
+  - id: boss_guirotto_walk_upright_3
+    sprite: {fileID: 21300000, guid: 7020a49fdd3378347b9eac85d4ab76a3, type: 3}
+  - id: boss_guirotto_walk_bravo_down_0
+    sprite: {fileID: 21300000, guid: bfa73346beea87b46b7d8a19822c2ac9, type: 3}
+  - id: boss_guirotto_walk_bravo_down_1
+    sprite: {fileID: 21300000, guid: 16bac7d5052a0d24ab901d095f21d7dc, type: 3}
+  - id: boss_guirotto_walk_bravo_down_2
+    sprite: {fileID: 21300000, guid: febea17144d7db74aa5316e993025ee1, type: 3}
+  - id: boss_guirotto_walk_bravo_down_3
+    sprite: {fileID: 21300000, guid: 4a5111fd1ef639f419c42cbb75f143f1, type: 3}
+  - id: boss_guirotto_walk_bravo_up_0
+    sprite: {fileID: 21300000, guid: 4d55ac9db43fc284fb962bea77d35ca2, type: 3}
+  - id: boss_guirotto_walk_bravo_up_1
+    sprite: {fileID: 21300000, guid: a60d090c90059eb4496875e56cd834bf, type: 3}
+  - id: boss_guirotto_walk_bravo_up_2
+    sprite: {fileID: 21300000, guid: be3277d28d5922d4aab8037b26e31394, type: 3}
+  - id: boss_guirotto_walk_bravo_up_3
+    sprite: {fileID: 21300000, guid: 6be4656419df8eb438934d380e9bea4e, type: 3}
+  - id: boss_guirotto_walk_bravo_left_0
+    sprite: {fileID: 21300000, guid: ccc43447e79d5aa42ae4257be6094110, type: 3}
+  - id: boss_guirotto_walk_bravo_left_1
+    sprite: {fileID: 21300000, guid: 48fd377c4eca1204c891cd10013e20e2, type: 3}
+  - id: boss_guirotto_walk_bravo_left_2
+    sprite: {fileID: 21300000, guid: f23bcd99622e78c45bf455fa809a6f41, type: 3}
+  - id: boss_guirotto_walk_bravo_left_3
+    sprite: {fileID: 21300000, guid: 2be1e82b8e648b44ca2fe6477484efae, type: 3}
+  - id: boss_guirotto_walk_bravo_right_0
+    sprite: {fileID: 21300000, guid: 336d60168576ec744a96695a6f3e8ebf, type: 3}
+  - id: boss_guirotto_walk_bravo_right_1
+    sprite: {fileID: 21300000, guid: 16fa9216ca7d0fd498a9a7d97cab6298, type: 3}
+  - id: boss_guirotto_walk_bravo_right_2
+    sprite: {fileID: 21300000, guid: d5c42135c3d342b4baa10b6f30a3ad2d, type: 3}
+  - id: boss_guirotto_walk_bravo_right_3
+    sprite: {fileID: 21300000, guid: b7e80dc9401685043aef34de3ea30e2b, type: 3}
+  - id: boss_guirotto_walk_bravo_downleft_0
+    sprite: {fileID: 21300000, guid: 2e764e986734d7140ba3fc89d96ca5e6, type: 3}
+  - id: boss_guirotto_walk_bravo_downleft_1
+    sprite: {fileID: 21300000, guid: f66aa095c03edef43b2b0c7d5c6a7369, type: 3}
+  - id: boss_guirotto_walk_bravo_downleft_2
+    sprite: {fileID: 21300000, guid: d2081cb50fb5d234b85b5af754dbdaa0, type: 3}
+  - id: boss_guirotto_walk_bravo_downleft_3
+    sprite: {fileID: 21300000, guid: 40f91299aac9cc94fb39bb6aa8259e2e, type: 3}
+  - id: boss_guirotto_walk_bravo_downright_0
+    sprite: {fileID: 21300000, guid: 4d380522adb52a74d878401704f69f48, type: 3}
+  - id: boss_guirotto_walk_bravo_downright_1
+    sprite: {fileID: 21300000, guid: ebcd124f75208ae43912d8c2d83ed7c0, type: 3}
+  - id: boss_guirotto_walk_bravo_downright_2
+    sprite: {fileID: 21300000, guid: 663f2820aff62b1448aacf3c3f3a2fba, type: 3}
+  - id: boss_guirotto_walk_bravo_downright_3
+    sprite: {fileID: 21300000, guid: 718d6a1883004d446bc901f886adc2f5, type: 3}
+  - id: boss_guirotto_walk_bravo_upleft_0
+    sprite: {fileID: 21300000, guid: 09c4a67cc73427c459ee7b0e4ead25e7, type: 3}
+  - id: boss_guirotto_walk_bravo_upleft_1
+    sprite: {fileID: 21300000, guid: 92815ebd118b4ff4fb9eb31b35441d62, type: 3}
+  - id: boss_guirotto_walk_bravo_upleft_2
+    sprite: {fileID: 21300000, guid: 207d8c17a7af3784d9405665b3735b25, type: 3}
+  - id: boss_guirotto_walk_bravo_upleft_3
+    sprite: {fileID: 21300000, guid: 361abe50cf770bd429bcefe372051e75, type: 3}
+  - id: boss_guirotto_walk_bravo_upright_0
+    sprite: {fileID: 21300000, guid: 649cea43a5d8ebe4caef1da7226de659, type: 3}
+  - id: boss_guirotto_walk_bravo_upright_1
+    sprite: {fileID: 21300000, guid: de77516e051c56e4690363fdb3faf403, type: 3}
+  - id: boss_guirotto_walk_bravo_upright_2
+    sprite: {fileID: 21300000, guid: 05a21fa5bd267284a981fb09ab070a09, type: 3}
+  - id: boss_guirotto_walk_bravo_upright_3
+    sprite: {fileID: 21300000, guid: 5e8cebd31e17110479f3b0617f0e5b53, type: 3}
+  - id: boss_guirotto_idle_down_0
+    sprite: {fileID: 21300000, guid: cb7e4bafcc27ac244996b9131d6bd78d, type: 3}
+  - id: boss_guirotto_idle_down_1
+    sprite: {fileID: 21300000, guid: 27cbf800011774542a783ea46e1e15e5, type: 3}
+  - id: boss_guirotto_idle_bravo_down_0
+    sprite: {fileID: 21300000, guid: 7d762829be6b51845b7312d6325b1709, type: 3}
+  - id: boss_guirotto_idle_bravo_down_1
+    sprite: {fileID: 21300000, guid: 17eccd4866badc94e8e8cad50cf1eaf2, type: 3}
+  - id: boss_guirotto_attack_down_0
+    sprite: {fileID: 21300000, guid: c98c6003b2847db4eac271a34ba5342a, type: 3}
+  - id: boss_guirotto_attack_down_1
+    sprite: {fileID: 21300000, guid: d733187aaca4cfa4a8f7567e4161170b, type: 3}
+  - id: boss_guirotto_attack_down_2
+    sprite: {fileID: 21300000, guid: 3b26a715af5bbf249a0e2b851dfed402, type: 3}
+  - id: boss_guirotto_attack_bravo_down_0
+    sprite: {fileID: 21300000, guid: 730fc7ae9c09b2545b71cca8cdc80447, type: 3}
+  - id: boss_guirotto_attack_bravo_down_1
+    sprite: {fileID: 21300000, guid: 17c71a9bb153f6e4784e5be2306275c5, type: 3}
+  - id: boss_guirotto_attack_bravo_down_2
+    sprite: {fileID: 21300000, guid: 1c1169cddad8e114ca71993b370b3332, type: 3}
+  - id: boss_guirotto_special_down_0
+    sprite: {fileID: 21300000, guid: b54e472224b09084ca34ddf410ed4274, type: 3}
+  - id: boss_guirotto_special_down_1
+    sprite: {fileID: 21300000, guid: 28ba4cd5cbb2a34448b5d24af5afc3d5, type: 3}
+  - id: boss_guirotto_special_down_2
+    sprite: {fileID: 21300000, guid: 50e58f7c64e890149a2d52cfa385eaa7, type: 3}
+  - id: boss_guirotto_special_bravo_down_0
+    sprite: {fileID: 21300000, guid: 3fea5a55eb00cce48b8a738d21090e56, type: 3}
+  - id: boss_guirotto_special_bravo_down_1
+    sprite: {fileID: 21300000, guid: 5d0c9d5eb5160d44f9310a71d882c2b0, type: 3}
+  - id: boss_guirotto_special_bravo_down_2
+    sprite: {fileID: 21300000, guid: c010050903f225243a9527d32ce29dcd, type: 3}
+  - id: boss_guirotto_charge_down_0
+    sprite: {fileID: 21300000, guid: d65ad5f47cd2eef40a7806c50a6062b2, type: 3}
+  - id: boss_guirotto_charge_down_1
+    sprite: {fileID: 21300000, guid: fc7477fcfaa520b459e2011b5797a9ff, type: 3}
+  - id: boss_guirotto_hurt_down_0
+    sprite: {fileID: 21300000, guid: d2105cda016b74141acf55f6ffaf45ec, type: 3}
+  - id: boss_guirotto_hurt_down_1
+    sprite: {fileID: 21300000, guid: 2667621967d49f8429643e08654b38b9, type: 3}
+  - id: boss_guirotto_heavy_down_0
+    sprite: {fileID: 21300000, guid: 88353deefc4cf774e9174be4dbe91e34, type: 3}
+  - id: boss_guirotto_heavy_down_1
+    sprite: {fileID: 21300000, guid: 1cf4dd5427d02464484512ae2242e999, type: 3}
+  - id: boss_guirotto_rage_down_0
+    sprite: {fileID: 21300000, guid: 8976e509e9ebc714d8ecdeab0ffdcfcd, type: 3}
+  - id: boss_guirotto_rage_down_1
+    sprite: {fileID: 21300000, guid: ff3f1cd81eb39b2408a5f048651baa7a, type: 3}
+  - id: boss_guirotto_rage_down_2
+    sprite: {fileID: 21300000, guid: 63e74408b525f954cac2bb762a6e9fff, type: 3}
+  - id: boss_guirotto_death_down_0
+    sprite: {fileID: 21300000, guid: 242af73f6be3abc4bb8442189a39cfa0, type: 3}
+  - id: boss_guirotto_death_down_1
+    sprite: {fileID: 21300000, guid: e660fa0d78dca044bac7988e6cc1818c, type: 3}
+  - id: boss_guirotto_death_down_2
+    sprite: {fileID: 21300000, guid: 972d62dff1e2929449e38bbcca847903, type: 3}
+  - id: boss_guirotto_death_down_3
+    sprite: {fileID: 21300000, guid: 5ba7dcdea3dc6364e99c979058ac0575, type: 3}
+  - id: boss_guirotto_vanish_down_0
+    sprite: {fileID: 21300000, guid: 83fcb9fde183a3442a6b7751d65f9825, type: 3}
+  - id: boss_guirotto_vanish_down_1
+    sprite: {fileID: 21300000, guid: 9f6fa2495c273784381ff6fc3611ccd5, type: 3}
+  - id: boss_guirotto_vanish_down_2
+    sprite: {fileID: 21300000, guid: 5d913f4bda783b642a17441636241e03, type: 3}
+  - id: boss_mago_walk_down_0
+    sprite: {fileID: 21300000, guid: 9ff63f38662fdd246b08d763cb210d1c, type: 3}
+  - id: boss_mago_walk_down_1
+    sprite: {fileID: 21300000, guid: 2dbbd221bcc39b248b3bcbb3e6e8fc1e, type: 3}
+  - id: boss_mago_walk_down_2
+    sprite: {fileID: 21300000, guid: 966d209e7be7eb0448950592cf8d7e22, type: 3}
+  - id: boss_mago_walk_down_3
+    sprite: {fileID: 21300000, guid: 8541529aa5534694f81c5f1334900735, type: 3}
+  - id: boss_mago_walk_up_0
+    sprite: {fileID: 21300000, guid: a54169ba7db891f40bda3599615f63a7, type: 3}
+  - id: boss_mago_walk_up_1
+    sprite: {fileID: 21300000, guid: b450414e128573d4697431cce3cd5d78, type: 3}
+  - id: boss_mago_walk_up_2
+    sprite: {fileID: 21300000, guid: 61a8e32171ab96d4f9f3604f424ab917, type: 3}
+  - id: boss_mago_walk_up_3
+    sprite: {fileID: 21300000, guid: edc76ac509c186c4ba39a3d998a967a0, type: 3}
+  - id: boss_mago_walk_left_0
+    sprite: {fileID: 21300000, guid: 12ccf91d3fe6fec48981648d2f79a3d8, type: 3}
+  - id: boss_mago_walk_left_1
+    sprite: {fileID: 21300000, guid: 547a238038c949d45906a9891a6245bc, type: 3}
+  - id: boss_mago_walk_left_2
+    sprite: {fileID: 21300000, guid: 0040891358f36e047be11c9343fc19df, type: 3}
+  - id: boss_mago_walk_left_3
+    sprite: {fileID: 21300000, guid: c42e3b2913ec1ec4dbc2011c83f84c61, type: 3}
+  - id: boss_mago_walk_right_0
+    sprite: {fileID: 21300000, guid: c1eda027e7a88564f9eb8c01bc72a223, type: 3}
+  - id: boss_mago_walk_right_1
+    sprite: {fileID: 21300000, guid: 6f5226ca5a62ed543bc289d9ec84ef58, type: 3}
+  - id: boss_mago_walk_right_2
+    sprite: {fileID: 21300000, guid: c84869d7dc555a140918869fdf928613, type: 3}
+  - id: boss_mago_walk_right_3
+    sprite: {fileID: 21300000, guid: 17a0b4a19e42f344a8a6fb13425ae3bb, type: 3}
+  - id: boss_mago_walk_downleft_0
+    sprite: {fileID: 21300000, guid: 33878d68b675c8e498bf488d2a8a3bd3, type: 3}
+  - id: boss_mago_walk_downleft_1
+    sprite: {fileID: 21300000, guid: cf95cff8850e62c41895f7468e485d12, type: 3}
+  - id: boss_mago_walk_downleft_2
+    sprite: {fileID: 21300000, guid: c15e80e5d99d77246b04795468e082f3, type: 3}
+  - id: boss_mago_walk_downleft_3
+    sprite: {fileID: 21300000, guid: dd7140f22b4357b42801e1c16296fb44, type: 3}
+  - id: boss_mago_walk_downright_0
+    sprite: {fileID: 21300000, guid: 532c09b9abfdf044ca85de95e461764d, type: 3}
+  - id: boss_mago_walk_downright_1
+    sprite: {fileID: 21300000, guid: b97fa42845ec99b4b84a1d4b3768cddd, type: 3}
+  - id: boss_mago_walk_downright_2
+    sprite: {fileID: 21300000, guid: c65f5ea22b5fdb24a8288288896bd471, type: 3}
+  - id: boss_mago_walk_downright_3
+    sprite: {fileID: 21300000, guid: 82d31122253d054449bc308f3d3d95ad, type: 3}
+  - id: boss_mago_walk_upleft_0
+    sprite: {fileID: 21300000, guid: 3f1589181ccd1f74e8ef9de38e3aff3d, type: 3}
+  - id: boss_mago_walk_upleft_1
+    sprite: {fileID: 21300000, guid: cdedcc0c0f9bbaa4c8c95163aa54cf5f, type: 3}
+  - id: boss_mago_walk_upleft_2
+    sprite: {fileID: 21300000, guid: 200dcaeefe601074f9068519a7fc28cf, type: 3}
+  - id: boss_mago_walk_upleft_3
+    sprite: {fileID: 21300000, guid: 04e28071683070f428abfe5cad71b765, type: 3}
+  - id: boss_mago_walk_upright_0
+    sprite: {fileID: 21300000, guid: 2b5b07f011fa6cd44b8d601ef13f1463, type: 3}
+  - id: boss_mago_walk_upright_1
+    sprite: {fileID: 21300000, guid: 48fe34d5aef4311438e2cc56782c5cde, type: 3}
+  - id: boss_mago_walk_upright_2
+    sprite: {fileID: 21300000, guid: 67dd0f65a36deb54fa8a990df67ce2a0, type: 3}
+  - id: boss_mago_walk_upright_3
+    sprite: {fileID: 21300000, guid: 4229e6d1c6fa432469ca0e56cc728b7e, type: 3}
+  - id: boss_mago_walk_bravo_down_0
+    sprite: {fileID: 21300000, guid: 91bcf376aada39943b79a15cd128ea70, type: 3}
+  - id: boss_mago_walk_bravo_down_1
+    sprite: {fileID: 21300000, guid: a1348bf6329a73849a7e1b4b785f987b, type: 3}
+  - id: boss_mago_walk_bravo_down_2
+    sprite: {fileID: 21300000, guid: ba5b6b599a180fe44bc83b7e9f23e308, type: 3}
+  - id: boss_mago_walk_bravo_down_3
+    sprite: {fileID: 21300000, guid: 350e1e389d5f9c747b4d3d2c4f41d8dd, type: 3}
+  - id: boss_mago_walk_bravo_up_0
+    sprite: {fileID: 21300000, guid: 83487df989f25b547a82068569cab5b6, type: 3}
+  - id: boss_mago_walk_bravo_up_1
+    sprite: {fileID: 21300000, guid: 31a6e88908ee4b64baf91f2314c1ed99, type: 3}
+  - id: boss_mago_walk_bravo_up_2
+    sprite: {fileID: 21300000, guid: d3a7b7a3f10b4f145aff243c8c240501, type: 3}
+  - id: boss_mago_walk_bravo_up_3
+    sprite: {fileID: 21300000, guid: 5f2a243615b652a4d9e73922238c9bc7, type: 3}
+  - id: boss_mago_walk_bravo_left_0
+    sprite: {fileID: 21300000, guid: 4ba393bedc2f68042966674a8834b4e0, type: 3}
+  - id: boss_mago_walk_bravo_left_1
+    sprite: {fileID: 21300000, guid: 63a8d142d32fcbe4e90178db630f5ca4, type: 3}
+  - id: boss_mago_walk_bravo_left_2
+    sprite: {fileID: 21300000, guid: 6b36fbe26aec7e44e9a66d7f28947e02, type: 3}
+  - id: boss_mago_walk_bravo_left_3
+    sprite: {fileID: 21300000, guid: 586934705800495488ce97049574058c, type: 3}
+  - id: boss_mago_walk_bravo_right_0
+    sprite: {fileID: 21300000, guid: cf367b2c28352bd459a75d11f1be1453, type: 3}
+  - id: boss_mago_walk_bravo_right_1
+    sprite: {fileID: 21300000, guid: c68255eb2baeee9478d3d35fc177070c, type: 3}
+  - id: boss_mago_walk_bravo_right_2
+    sprite: {fileID: 21300000, guid: b606ebdc7034f7b409b7d4ff64a7fbbb, type: 3}
+  - id: boss_mago_walk_bravo_right_3
+    sprite: {fileID: 21300000, guid: 0c99819adb938d94e9ab9de649fdacc5, type: 3}
+  - id: boss_mago_walk_bravo_downleft_0
+    sprite: {fileID: 21300000, guid: ca7ab1119df7d5f4ba2daa1c384f9d08, type: 3}
+  - id: boss_mago_walk_bravo_downleft_1
+    sprite: {fileID: 21300000, guid: 0324731eef3ee0f4598ff8813ac8799c, type: 3}
+  - id: boss_mago_walk_bravo_downleft_2
+    sprite: {fileID: 21300000, guid: ba7e2a5a09088944fa30c43e5e247970, type: 3}
+  - id: boss_mago_walk_bravo_downleft_3
+    sprite: {fileID: 21300000, guid: a210741605297e849982523bd78cca84, type: 3}
+  - id: boss_mago_walk_bravo_downright_0
+    sprite: {fileID: 21300000, guid: 626182374db1d4b4b876262e34893431, type: 3}
+  - id: boss_mago_walk_bravo_downright_1
+    sprite: {fileID: 21300000, guid: 4d0990205c4ff364c84d29983d86e990, type: 3}
+  - id: boss_mago_walk_bravo_downright_2
+    sprite: {fileID: 21300000, guid: fa8c0c29f2d78a045843af54c0d644c5, type: 3}
+  - id: boss_mago_walk_bravo_downright_3
+    sprite: {fileID: 21300000, guid: e14b4c0490607ca40909fae6e3900c42, type: 3}
+  - id: boss_mago_walk_bravo_upleft_0
+    sprite: {fileID: 21300000, guid: f3f21af9c42148d4e8dd1fab6758576a, type: 3}
+  - id: boss_mago_walk_bravo_upleft_1
+    sprite: {fileID: 21300000, guid: fabf488b5f4fce64b991a5f914970e24, type: 3}
+  - id: boss_mago_walk_bravo_upleft_2
+    sprite: {fileID: 21300000, guid: ee4aa756dca1a1547a9d6883bc0f438d, type: 3}
+  - id: boss_mago_walk_bravo_upleft_3
+    sprite: {fileID: 21300000, guid: 92de6b7b5d35c2e40a2fd829da0e8e58, type: 3}
+  - id: boss_mago_walk_bravo_upright_0
+    sprite: {fileID: 21300000, guid: 724b885b4c5e75c4a89023a9c1af42ed, type: 3}
+  - id: boss_mago_walk_bravo_upright_1
+    sprite: {fileID: 21300000, guid: 4aa9f2cf7600258478bca239a600b42e, type: 3}
+  - id: boss_mago_walk_bravo_upright_2
+    sprite: {fileID: 21300000, guid: adfffe7c3f864e24ea717958c49d0426, type: 3}
+  - id: boss_mago_walk_bravo_upright_3
+    sprite: {fileID: 21300000, guid: 4a66d4ba57a7acf4c88be4a284fbeaa8, type: 3}
+  - id: boss_mago_idle_down_0
+    sprite: {fileID: 21300000, guid: 240e2242aca6bd3468c73a90561da7fb, type: 3}
+  - id: boss_mago_idle_down_1
+    sprite: {fileID: 21300000, guid: cb0e05fa839581b4fb9b7787f2b9d458, type: 3}
+  - id: boss_mago_idle_bravo_down_0
+    sprite: {fileID: 21300000, guid: 9b71b821037dfc443bcbe2e02ae7c48c, type: 3}
+  - id: boss_mago_idle_bravo_down_1
+    sprite: {fileID: 21300000, guid: c5943ad27ce04714a85d4ec0c8789f46, type: 3}
+  - id: boss_mago_attack_down_0
+    sprite: {fileID: 21300000, guid: 92ea897fb31526d44bfac1f3afea438f, type: 3}
+  - id: boss_mago_attack_down_1
+    sprite: {fileID: 21300000, guid: c7eb42d5b3bfe7c4bb6b46265108e018, type: 3}
+  - id: boss_mago_attack_down_2
+    sprite: {fileID: 21300000, guid: 80a656feeaa16d0489167d6bc944325e, type: 3}
+  - id: boss_mago_attack_bravo_down_0
+    sprite: {fileID: 21300000, guid: 0a10f218b55b1174ebb9f5e83db3e7dd, type: 3}
+  - id: boss_mago_attack_bravo_down_1
+    sprite: {fileID: 21300000, guid: 34af6f17dc7bd3c4f95b24f35bb25770, type: 3}
+  - id: boss_mago_attack_bravo_down_2
+    sprite: {fileID: 21300000, guid: d85480af0c955324c91e41ea238ba34f, type: 3}
+  - id: boss_mago_special_down_0
+    sprite: {fileID: 21300000, guid: 4f440595f40c2cd449bd0128d880ac78, type: 3}
+  - id: boss_mago_special_down_1
+    sprite: {fileID: 21300000, guid: aa0b787a797dbdd48b6fd0b6610e3df6, type: 3}
+  - id: boss_mago_special_down_2
+    sprite: {fileID: 21300000, guid: bb9d99fc1025eeb4d899a749f06fadbc, type: 3}
+  - id: boss_mago_special_bravo_down_0
+    sprite: {fileID: 21300000, guid: 56ab8a7e380563d48ab0a6b23e9831d7, type: 3}
+  - id: boss_mago_special_bravo_down_1
+    sprite: {fileID: 21300000, guid: 52d4b0b7205484c4aa88a176139e613e, type: 3}
+  - id: boss_mago_special_bravo_down_2
+    sprite: {fileID: 21300000, guid: 4fafcb04b3eff7347b65a8cb592992c4, type: 3}
+  - id: boss_mago_charge_down_0
+    sprite: {fileID: 21300000, guid: 91221d4cb33bda94d80b8886877e94bb, type: 3}
+  - id: boss_mago_charge_down_1
+    sprite: {fileID: 21300000, guid: 951dc457776dd2148b4bc2a605a5a7d7, type: 3}
+  - id: boss_mago_hurt_down_0
+    sprite: {fileID: 21300000, guid: 43d3fa317bdbc8746b6a2c6f653202ee, type: 3}
+  - id: boss_mago_hurt_down_1
+    sprite: {fileID: 21300000, guid: 94f88b8fd3c112348a3d1ee7606a584b, type: 3}
+  - id: boss_mago_heavy_down_0
+    sprite: {fileID: 21300000, guid: 3fd9840d96caf7b458239139aac33616, type: 3}
+  - id: boss_mago_heavy_down_1
+    sprite: {fileID: 21300000, guid: 76d2357ac81ec3d4dad075b56c6e0fb6, type: 3}
+  - id: boss_mago_rage_down_0
+    sprite: {fileID: 21300000, guid: 90b5e5ecde7374442bb67145cab1e4da, type: 3}
+  - id: boss_mago_rage_down_1
+    sprite: {fileID: 21300000, guid: b121ad46ace0dd84e85728e1998b4285, type: 3}
+  - id: boss_mago_rage_down_2
+    sprite: {fileID: 21300000, guid: a1852e7bd5d93c1419db21f3b43e7bbe, type: 3}
+  - id: boss_mago_death_down_0
+    sprite: {fileID: 21300000, guid: e0e36d9efa4f8194ab2662d53137327c, type: 3}
+  - id: boss_mago_death_down_1
+    sprite: {fileID: 21300000, guid: e9ec13e75ef08be4eb17ac074d5cef1b, type: 3}
+  - id: boss_mago_death_down_2
+    sprite: {fileID: 21300000, guid: 6347a7f8015bc524e97794ab49d75449, type: 3}
+  - id: boss_mago_death_down_3
+    sprite: {fileID: 21300000, guid: feffd1e5fcf62d946b4a56c05fc6aa8b, type: 3}
+  - id: boss_mago_vanish_down_0
+    sprite: {fileID: 21300000, guid: 8c50fe261017a21429aeab2e6f7012a7, type: 3}
+  - id: boss_mago_vanish_down_1
+    sprite: {fileID: 21300000, guid: cd4350d215bffee4aabebfcb447a57ee, type: 3}
+  - id: boss_mago_vanish_down_2
+    sprite: {fileID: 21300000, guid: 893581e91b0adac4491a7ffb80bd7588, type: 3}
+  - id: fx_boss_note
+    sprite: {fileID: 21300000, guid: 5b3184b24b3d3b346b5136f005ef5381, type: 3}
+  - id: fx_boss_wave
+    sprite: {fileID: 21300000, guid: ec2a6246966ab674e8f284b9f00c935c, type: 3}
+  - id: fx_boss_orb_0
+    sprite: {fileID: 21300000, guid: 8adee76098c120147b9f6a0c569cf4e2, type: 3}
+  - id: fx_boss_orb_1
+    sprite: {fileID: 21300000, guid: 76ea65e92d9f65d40977bfef7057630b, type: 3}
+  - id: fx_boss_spark
+    sprite: {fileID: 21300000, guid: ba7fc64b0b6791841b49ca8a7efcb163, type: 3}
   - id: select_artur
     sprite: {fileID: -3306322564025884505, guid: 65ad2c937131ffd488185e7b3c62ce85, type: 3}
   - id: select_badotti
@@ -2256,14 +2650,28 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: a214496bfb272374fb2961a751d8fcb0, type: 3}
   - id: arco
     clip: {fileID: 8300000, guid: e3467929c1b51cf488b4b19292aff877, type: 3}
+  - id: banjo
+    clip: {fileID: 8300000, guid: 8b398925d4b580a4496ddc0ba78d4262, type: 3}
   - id: bolha
     clip: {fileID: 8300000, guid: 72c9f61d4491f4a47b1aecafab29ba35, type: 3}
   - id: bolha_grande
     clip: {fileID: 8300000, guid: ff040beb1e03e234585061814fa873d2, type: 3}
+  - id: boss_aviso
+    clip: {fileID: 8300000, guid: f1dc2f46fb58f00459a8b38fc4782275, type: 3}
+  - id: boss_furia
+    clip: {fileID: 8300000, guid: 1d9e8bb71e1028e4f9dcc0073e46bc43, type: 3}
+  - id: boss_guirotto_entrada
+    clip: {fileID: 8300000, guid: ea5cb8d3793be0746843ba6d274b04e1, type: 3}
+  - id: boss_mago_entrada
+    clip: {fileID: 8300000, guid: 1b017320cdc61354f82588929717dcca, type: 3}
+  - id: boss_morte
+    clip: {fileID: 8300000, guid: 3f3d47945f4c30a44939f790563082a5, type: 3}
   - id: braco
     clip: {fileID: 8300000, guid: 8e3e48fff699127428e04dd407ee64aa, type: 3}
   - id: campo
     clip: {fileID: 8300000, guid: 7180230259ee72548bd89056e0e71350, type: 3}
+  - id: carga
+    clip: {fileID: 8300000, guid: bde38e95a68e6524fa25e2340647560e, type: 3}
   - id: celular
     clip: {fileID: 8300000, guid: 0d55989bf080b584d8a31c3d0a115078, type: 3}
   - id: chuva
@@ -2272,6 +2680,8 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: a2b067e01238886469ec95c420a9e380, type: 3}
   - id: clique_ui
     clip: {fileID: 8300000, guid: 6e2c10882d7a28848938c16d6f24819d, type: 3}
+  - id: coaxar
+    clip: {fileID: 8300000, guid: f74e6bd6d36044c48858bfd8bf289ba6, type: 3}
   - id: computador
     clip: {fileID: 8300000, guid: 32a58588c19761c4395e3325f4956339, type: 3}
   - id: dano_jogador
@@ -2328,12 +2738,16 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: dfda07468899f694e86f7bd8b9267cf8, type: 3}
   - id: master_soco
     clip: {fileID: 8300000, guid: 9f01210a415aa7442aacba574020994f, type: 3}
+  - id: modo_infinito
+    clip: {fileID: 8300000, guid: 1c3444266c7904b47b0f4758f33cbd86, type: 3}
   - id: moedas
     clip: {fileID: 8300000, guid: 7eb7297e6f7dcfc4d949143188fb4326, type: 3}
   - id: montagem
     clip: {fileID: 8300000, guid: 8d9416cf63c928740bb90874aac857dd, type: 3}
   - id: nivel
     clip: {fileID: 8300000, guid: 38a69f2bc89f838448b754f96fa8ef71, type: 3}
+  - id: notas
+    clip: {fileID: 8300000, guid: f740a243948a0664a971924e75b8f225, type: 3}
   - id: numero
     clip: {fileID: 8300000, guid: 4d9605af1d932274fa1a76f0ba93da98, type: 3}
   - id: onda_sonora
@@ -2348,8 +2762,14 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 897d3e9f3dc2448409fb9fdaa5b40b22, type: 3}
   - id: pneu
     clip: {fileID: 8300000, guid: 144649d50ad9d7a4a889a0ed88c825bd, type: 3}
+  - id: raio
+    clip: {fileID: 8300000, guid: 43b8489810f2c594a9808e3a5975fafc, type: 3}
+  - id: raio_mira
+    clip: {fileID: 8300000, guid: 258a19ba81b0ae246a05918b36f7b473, type: 3}
   - id: resistor
     clip: {fileID: 8300000, guid: 54339491dc6bcea41af050f0576a857f, type: 3}
+  - id: ressonancia
+    clip: {fileID: 8300000, guid: 43fd12c58dd39074c93de636a937f217, type: 3}
   - id: robo_combo
     clip: {fileID: 8300000, guid: 8cb4dd1d400790a4bbd722810ecaab7c, type: 3}
   - id: robo_dash
@@ -2360,6 +2780,8 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 53b768c1075104949a13ae450565c5f7, type: 3}
   - id: seringa
     clip: {fileID: 8300000, guid: a41c84a7aa3b1c5488978d834a660bae, type: 3}
+  - id: sobrecarga
+    clip: {fileID: 8300000, guid: 27a7e0a8eca104f41adf086b73e8ac6c, type: 3}
   - id: soco
     clip: {fileID: 8300000, guid: 8ff7a50bb3682b745bf2c4f6da99ffb1, type: 3}
   - id: soco_forte
@@ -2368,6 +2790,8 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 988ed9ba77991b544be172f2fc5c0a13, type: 3}
   - id: sushi
     clip: {fileID: 8300000, guid: bb39231687179e34e83effbfc1124b5c, type: 3}
+  - id: teleporte
+    clip: {fileID: 8300000, guid: c98d1a7e3fa2eff4eafadc88df24902c, type: 3}
   - id: tempestade
     clip: {fileID: 8300000, guid: 684ab6ceff7724e4aa8de2798c8fb3a9, type: 3}
   - id: transistor

@@ -168,6 +168,26 @@ namespace ES.Sim
         /// <summary>Abates da equipe contados pelos eventos EnemyDied.</summary>
         public int TeamKills;
 
+        /// <summary>Bosses vivos por id de inimigo (estado de animação do último snapshot).</summary>
+        public readonly Dictionary<ushort, BossInfo> Bosses = new Dictionary<ushort, BossInfo>(4);
+        /// <summary>Áreas sinalizadas ainda por explodir (a apresentação remove as vencidas).</summary>
+        public readonly List<HazardInfo> Hazards = new List<HazardInfo>(64);
+        /// <summary>Próximo boss da contagem: −1 nenhum, 255 dueto.</summary>
+        public int NextBoss = -1;
+        public float NextBossAt;
+        public bool Infinite;
+        public int BossesDefeated;
+
+        public void SetBoss(ushort enemyId, in BossSnap s)
+        {
+            if (!Bosses.TryGetValue(enemyId, out var b)) return;
+            b.State = s.State;
+            b.Attack = s.Attack;
+            b.Bravo |= (s.Flags & BossSnap.FlagBravo) != 0;
+            b.Invulnerable = (s.Flags & BossSnap.FlagInvulnerable) != 0;
+            b.Dir = s.Dir;
+        }
+
         public void ApplyRuleEvent(in DecodedRuleEvent d)
         {
             var e = d.Event;
@@ -186,9 +206,58 @@ namespace ES.Sim
                     if (e.A == LocalSlot) CurrentOffer = null;
                     break;
                 case RuleEventKind.MatchEnded: Phase = (MatchPhase)e.A; break;
+                case RuleEventKind.BossSpawned:
+                    Bosses[(ushort)e.B] = new BossInfo { Boss = e.A, EnemyId = (ushort)e.B, Cycle = e.C, State = BossState.Entering, Invulnerable = true, SpawnedAt = Elapsed };
+                    break;
+                case RuleEventKind.BossBravo:
+                    if (Bosses.TryGetValue((ushort)e.B, out var bb)) { bb.Bravo = true; bb.State = BossState.Rage; bb.BravoAt = Elapsed; }
+                    break;
+                case RuleEventKind.BossAction:
+                    if (Bosses.TryGetValue((ushort)e.A, out var ba)) { ba.Attack = (BossAttack)e.B; ba.State = (BossState)e.C; ba.ActionAt = Elapsed; }
+                    break;
+                case RuleEventKind.BossDefeated:
+                    Bosses.Remove((ushort)e.B);
+                    BossesDefeated++;
+                    break;
+                case RuleEventKind.BossSchedule:
+                    NextBoss = e.A == 254 ? -1 : e.A;
+                    NextBossAt = e.X;
+                    break;
+                case RuleEventKind.BossHazard:
+                    if (e.A == 255) { Hazards.Clear(); break; }
+                    Hazards.Add(new HazardInfo
+                    {
+                        Shape = (HazardShape)(e.A & 15), Style = (FxStyle)(e.A >> 4), Pos = new Vec2(e.X, e.Y), Size = e.B / 20f,
+                        Extra = e.Z, Width = e.W, CreatedAt = Elapsed, FireAt = Elapsed + e.C / 1000f,
+                    });
+                    break;
+                case RuleEventKind.MatchContinued:
+                    Phase = MatchPhase.Running;
+                    Infinite = true;
+                    Summary = null;
+                    break;
             }
             Loadouts?.Apply(e);
             RuleEvents.Add(d);
         }
+    }
+
+    public sealed class BossInfo
+    {
+        public int Boss, Cycle;
+        public ushort EnemyId;
+        public BossState State;
+        public BossAttack Attack;
+        public bool Bravo, Invulnerable;
+        public byte Dir;
+        public float SpawnedAt, BravoAt = -1, ActionAt = -1;
+    }
+
+    public struct HazardInfo
+    {
+        public HazardShape Shape;
+        public FxStyle Style;
+        public Vec2 Pos;
+        public float Size, Extra, Width, CreatedAt, FireAt;
     }
 }

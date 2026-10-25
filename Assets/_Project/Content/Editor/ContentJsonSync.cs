@@ -57,6 +57,11 @@ namespace ES.ContentEditor
             db.enemies = Sync<EnemyAsset, EnemyDef>("Enemies", def.enemies, d => d.id, (a, d) => a.def = d);
             db.synergies = Sync<SynergyAsset, SynergyDef>("Synergies", def.synergies, d => d.id, (a, d) => a.def = d);
             db.evolutions = Sync<EvolutionAsset, EvolutionDef>("Evolutions", def.evolutions, d => d.id, (a, d) => a.def = d);
+            db.bosses = Sync<BossAsset, BossDef>("Bosses", def.bosses, d => d.id, (a, d) =>
+            {
+                a.def = d;
+                a.idle = Sprite($"Assets/_Project/Art/Bosses/{d.id}/boss_{d.id}_idle_down_0.png") ?? a.idle;
+            });
 
             EditorUtility.SetDirty(db);
             AssetDatabase.SaveAssets();

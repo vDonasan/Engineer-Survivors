@@ -13343,6 +13343,2370 @@
     32
    ],
    "border": null
+  },
+  {
+   "id": "boss_guirotto_walk_down_0",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_walk_down_0.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_walk_down_1",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_walk_down_1.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_walk_down_2",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_walk_down_2.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_walk_down_3",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_walk_down_3.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_walk_up_0",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_walk_up_0.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_walk_up_1",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_walk_up_1.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_walk_up_2",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_walk_up_2.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_walk_up_3",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_walk_up_3.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_walk_left_0",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_walk_left_0.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_walk_left_1",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_walk_left_1.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_walk_left_2",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_walk_left_2.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_walk_left_3",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_walk_left_3.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_walk_right_0",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_walk_right_0.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_walk_right_1",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_walk_right_1.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_walk_right_2",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_walk_right_2.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_walk_right_3",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_walk_right_3.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_walk_downleft_0",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_walk_downleft_0.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_walk_downleft_1",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_walk_downleft_1.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_walk_downleft_2",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_walk_downleft_2.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_walk_downleft_3",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_walk_downleft_3.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_walk_downright_0",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_walk_downright_0.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_walk_downright_1",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_walk_downright_1.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_walk_downright_2",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_walk_downright_2.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_walk_downright_3",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_walk_downright_3.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_walk_upleft_0",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_walk_upleft_0.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_walk_upleft_1",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_walk_upleft_1.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_walk_upleft_2",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_walk_upleft_2.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_walk_upleft_3",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_walk_upleft_3.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_walk_upright_0",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_walk_upright_0.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_walk_upright_1",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_walk_upright_1.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_walk_upright_2",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_walk_upright_2.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_walk_upright_3",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_walk_upright_3.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_walk_bravo_down_0",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_walk_bravo_down_0.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_walk_bravo_down_1",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_walk_bravo_down_1.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_walk_bravo_down_2",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_walk_bravo_down_2.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_walk_bravo_down_3",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_walk_bravo_down_3.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_walk_bravo_up_0",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_walk_bravo_up_0.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_walk_bravo_up_1",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_walk_bravo_up_1.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_walk_bravo_up_2",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_walk_bravo_up_2.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_walk_bravo_up_3",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_walk_bravo_up_3.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_walk_bravo_left_0",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_walk_bravo_left_0.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_walk_bravo_left_1",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_walk_bravo_left_1.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_walk_bravo_left_2",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_walk_bravo_left_2.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_walk_bravo_left_3",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_walk_bravo_left_3.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_walk_bravo_right_0",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_walk_bravo_right_0.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_walk_bravo_right_1",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_walk_bravo_right_1.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_walk_bravo_right_2",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_walk_bravo_right_2.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_walk_bravo_right_3",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_walk_bravo_right_3.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_walk_bravo_downleft_0",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_walk_bravo_downleft_0.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_walk_bravo_downleft_1",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_walk_bravo_downleft_1.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_walk_bravo_downleft_2",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_walk_bravo_downleft_2.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_walk_bravo_downleft_3",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_walk_bravo_downleft_3.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_walk_bravo_downright_0",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_walk_bravo_downright_0.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_walk_bravo_downright_1",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_walk_bravo_downright_1.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_walk_bravo_downright_2",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_walk_bravo_downright_2.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_walk_bravo_downright_3",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_walk_bravo_downright_3.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_walk_bravo_upleft_0",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_walk_bravo_upleft_0.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_walk_bravo_upleft_1",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_walk_bravo_upleft_1.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_walk_bravo_upleft_2",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_walk_bravo_upleft_2.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_walk_bravo_upleft_3",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_walk_bravo_upleft_3.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_walk_bravo_upright_0",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_walk_bravo_upright_0.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_walk_bravo_upright_1",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_walk_bravo_upright_1.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_walk_bravo_upright_2",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_walk_bravo_upright_2.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_walk_bravo_upright_3",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_walk_bravo_upright_3.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_idle_down_0",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_idle_down_0.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_idle_down_1",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_idle_down_1.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_idle_bravo_down_0",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_idle_bravo_down_0.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_idle_bravo_down_1",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_idle_bravo_down_1.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_attack_down_0",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_attack_down_0.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_attack_down_1",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_attack_down_1.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_attack_down_2",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_attack_down_2.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_attack_bravo_down_0",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_attack_bravo_down_0.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_attack_bravo_down_1",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_attack_bravo_down_1.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_attack_bravo_down_2",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_attack_bravo_down_2.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_special_down_0",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_special_down_0.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_special_down_1",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_special_down_1.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_special_down_2",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_special_down_2.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_special_bravo_down_0",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_special_bravo_down_0.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_special_bravo_down_1",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_special_bravo_down_1.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_special_bravo_down_2",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_special_bravo_down_2.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_charge_down_0",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_charge_down_0.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_charge_down_1",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_charge_down_1.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_hurt_down_0",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_hurt_down_0.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_hurt_down_1",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_hurt_down_1.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_heavy_down_0",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_heavy_down_0.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_heavy_down_1",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_heavy_down_1.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_rage_down_0",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_rage_down_0.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_rage_down_1",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_rage_down_1.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_rage_down_2",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_rage_down_2.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_death_down_0",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_death_down_0.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_death_down_1",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_death_down_1.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_death_down_2",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_death_down_2.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_death_down_3",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_death_down_3.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_vanish_down_0",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_vanish_down_0.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_vanish_down_1",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_vanish_down_1.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_guirotto_vanish_down_2",
+   "category": "Bosses",
+   "file": "Bosses/guirotto/boss_guirotto_vanish_down_2.png",
+   "w": 48,
+   "h": 48,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_walk_down_0",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_walk_down_0.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_walk_down_1",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_walk_down_1.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_walk_down_2",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_walk_down_2.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_walk_down_3",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_walk_down_3.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_walk_up_0",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_walk_up_0.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_walk_up_1",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_walk_up_1.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_walk_up_2",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_walk_up_2.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_walk_up_3",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_walk_up_3.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_walk_left_0",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_walk_left_0.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_walk_left_1",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_walk_left_1.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_walk_left_2",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_walk_left_2.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_walk_left_3",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_walk_left_3.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_walk_right_0",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_walk_right_0.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_walk_right_1",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_walk_right_1.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_walk_right_2",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_walk_right_2.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_walk_right_3",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_walk_right_3.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_walk_downleft_0",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_walk_downleft_0.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_walk_downleft_1",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_walk_downleft_1.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_walk_downleft_2",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_walk_downleft_2.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_walk_downleft_3",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_walk_downleft_3.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_walk_downright_0",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_walk_downright_0.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_walk_downright_1",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_walk_downright_1.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_walk_downright_2",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_walk_downright_2.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_walk_downright_3",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_walk_downright_3.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_walk_upleft_0",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_walk_upleft_0.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_walk_upleft_1",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_walk_upleft_1.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_walk_upleft_2",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_walk_upleft_2.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_walk_upleft_3",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_walk_upleft_3.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_walk_upright_0",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_walk_upright_0.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_walk_upright_1",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_walk_upright_1.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_walk_upright_2",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_walk_upright_2.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_walk_upright_3",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_walk_upright_3.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_walk_bravo_down_0",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_walk_bravo_down_0.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_walk_bravo_down_1",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_walk_bravo_down_1.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_walk_bravo_down_2",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_walk_bravo_down_2.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_walk_bravo_down_3",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_walk_bravo_down_3.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_walk_bravo_up_0",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_walk_bravo_up_0.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_walk_bravo_up_1",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_walk_bravo_up_1.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_walk_bravo_up_2",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_walk_bravo_up_2.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_walk_bravo_up_3",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_walk_bravo_up_3.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_walk_bravo_left_0",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_walk_bravo_left_0.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_walk_bravo_left_1",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_walk_bravo_left_1.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_walk_bravo_left_2",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_walk_bravo_left_2.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_walk_bravo_left_3",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_walk_bravo_left_3.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_walk_bravo_right_0",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_walk_bravo_right_0.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_walk_bravo_right_1",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_walk_bravo_right_1.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_walk_bravo_right_2",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_walk_bravo_right_2.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_walk_bravo_right_3",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_walk_bravo_right_3.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_walk_bravo_downleft_0",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_walk_bravo_downleft_0.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_walk_bravo_downleft_1",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_walk_bravo_downleft_1.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_walk_bravo_downleft_2",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_walk_bravo_downleft_2.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_walk_bravo_downleft_3",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_walk_bravo_downleft_3.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_walk_bravo_downright_0",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_walk_bravo_downright_0.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_walk_bravo_downright_1",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_walk_bravo_downright_1.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_walk_bravo_downright_2",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_walk_bravo_downright_2.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_walk_bravo_downright_3",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_walk_bravo_downright_3.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_walk_bravo_upleft_0",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_walk_bravo_upleft_0.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_walk_bravo_upleft_1",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_walk_bravo_upleft_1.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_walk_bravo_upleft_2",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_walk_bravo_upleft_2.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_walk_bravo_upleft_3",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_walk_bravo_upleft_3.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_walk_bravo_upright_0",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_walk_bravo_upright_0.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_walk_bravo_upright_1",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_walk_bravo_upright_1.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_walk_bravo_upright_2",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_walk_bravo_upright_2.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_walk_bravo_upright_3",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_walk_bravo_upright_3.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_idle_down_0",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_idle_down_0.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_idle_down_1",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_idle_down_1.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_idle_bravo_down_0",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_idle_bravo_down_0.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_idle_bravo_down_1",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_idle_bravo_down_1.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_attack_down_0",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_attack_down_0.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_attack_down_1",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_attack_down_1.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_attack_down_2",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_attack_down_2.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_attack_bravo_down_0",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_attack_bravo_down_0.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_attack_bravo_down_1",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_attack_bravo_down_1.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_attack_bravo_down_2",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_attack_bravo_down_2.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_special_down_0",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_special_down_0.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_special_down_1",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_special_down_1.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_special_down_2",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_special_down_2.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_special_bravo_down_0",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_special_bravo_down_0.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_special_bravo_down_1",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_special_bravo_down_1.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_special_bravo_down_2",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_special_bravo_down_2.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_charge_down_0",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_charge_down_0.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_charge_down_1",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_charge_down_1.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_hurt_down_0",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_hurt_down_0.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_hurt_down_1",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_hurt_down_1.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_heavy_down_0",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_heavy_down_0.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_heavy_down_1",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_heavy_down_1.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_rage_down_0",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_rage_down_0.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_rage_down_1",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_rage_down_1.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_rage_down_2",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_rage_down_2.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_death_down_0",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_death_down_0.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_death_down_1",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_death_down_1.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_death_down_2",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_death_down_2.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_death_down_3",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_death_down_3.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_vanish_down_0",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_vanish_down_0.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_vanish_down_1",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_vanish_down_1.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "boss_mago_vanish_down_2",
+   "category": "Bosses",
+   "file": "Bosses/mago/boss_mago_vanish_down_2.png",
+   "w": 48,
+   "h": 56,
+   "pivot": [
+    24,
+    2
+   ],
+   "border": null
+  },
+  {
+   "id": "fx_boss_note",
+   "category": "Effects",
+   "file": "Effects/fx_boss_note.png",
+   "w": 10,
+   "h": 10,
+   "pivot": [
+    5,
+    5
+   ],
+   "border": null
+  },
+  {
+   "id": "fx_boss_wave",
+   "category": "Effects",
+   "file": "Effects/fx_boss_wave.png",
+   "w": 14,
+   "h": 14,
+   "pivot": [
+    7,
+    7
+   ],
+   "border": null
+  },
+  {
+   "id": "fx_boss_orb_0",
+   "category": "Effects",
+   "file": "Effects/fx_boss_orb_0.png",
+   "w": 12,
+   "h": 12,
+   "pivot": [
+    6,
+    6
+   ],
+   "border": null
+  },
+  {
+   "id": "fx_boss_orb_1",
+   "category": "Effects",
+   "file": "Effects/fx_boss_orb_1.png",
+   "w": 12,
+   "h": 12,
+   "pivot": [
+    6,
+    6
+   ],
+   "border": null
+  },
+  {
+   "id": "fx_boss_spark",
+   "category": "Effects",
+   "file": "Effects/fx_boss_spark.png",
+   "w": 7,
+   "h": 7,
+   "pivot": [
+    3.5,
+    3.5
+   ],
+   "border": null
   }
  ]
 }

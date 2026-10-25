@@ -257,3 +257,25 @@ export function bossSprites() {
 for (const pal of [FROG, MAGE])
   for (const v of Object.values(pal))
     for (const hex of typeof v === 'string' ? [v] : Object.values(v)) if (!PALETTE_HEX.includes(hex)) PALETTE_HEX.push(hex);
+
+// ---------- projéteis dos bosses (Effects) ----------
+
+function blob(w, h, fn) { const p = new Px(w, h); for (let y = 0; y < h; y++) for (let x = 0; x < w; x++) { const c = fn(x, y); if (c) p.set(x, y, c); } return p; }
+
+export function bossFxSprites() {
+  const C0 = '#2a1a0a', note = '#ffd23f', noteDark = '#c8781a';
+  // nota musical (colcheia) 10×10
+  const n = new Px(10, 10);
+  for (let y = 1; y < 8; y++) n.set(6, y, C0);
+  for (const [x, y] of [[7, 1], [8, 2], [8, 3]]) n.set(x, y, C0);
+  for (let y = 6; y <= 8; y++) for (let x = 2; x <= 6; x++) if ((x - 4) ** 2 / 4 + (y - 7) ** 2 <= 1.6) n.set(x, y, note);
+  n.set(3, 7, noteDark); n.set(4, 8, noteDark); n.set(3, 6, '#fff6d8');
+  for (const [x, y] of n.ring()) n.set(x, y, C0);
+  // onda sonora: arco 14×14
+  const wave = blob(14, 14, (x, y) => { const d = Math.hypot(x - 2, y - 7); return d > 8.6 && d < 11.2 && Math.abs(y - 7) < 6.5 ? (d < 9.6 ? '#93a84a' : d < 10.4 ? '#e2d29a' : '#6f8a2e') : null; });
+  // orbe elétrico 12×12 (2 quadros)
+  const orb = (k) => blob(12, 12, (x, y) => { const d = Math.hypot(x - 5.5, y - 5.5); if (d < 2.6) return '#ffffff'; if (d < 4) return MAGE.bolt; if (d < 5.2 && (x * 3 + y * 5 + k * 7) % 4 === 0) return MAGE.boltDark; return null; });
+  const spark = blob(7, 7, (x, y) => { const d = Math.abs(x - 3) + Math.abs(y - 3); return d === 0 ? '#ffffff' : d <= 1 ? MAGE.bolt : d <= 3 && (x === 3 || y === 3) ? MAGE.boltDark : null; });
+  const fx = (id, px) => ({ id, category: 'Effects', w: px.w, h: px.h, pivot: [px.w / 2, px.h / 2], px });
+  return [fx('fx_boss_note', n), fx('fx_boss_wave', wave), fx('fx_boss_orb_0', orb(0)), fx('fx_boss_orb_1', orb(1)), fx('fx_boss_spark', spark)];
+}

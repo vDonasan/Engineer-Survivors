@@ -1,1 +1,1 @@
-Chefes chegam no SP5 (sprites maiores, mesma linguagem de pixel art).
+Guirotto (04:00) e Mago da Elétrica (09:00): gerados por ArtSource/lib/bosses.mjs a partir das imagens de referência.

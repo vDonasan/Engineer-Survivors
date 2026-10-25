@@ -271,6 +271,15 @@ namespace ES.Sim
             return d;
         }
 
+        /// <summary>Só o anfitrião decide: a partida vencida continua no Modo Infinito para todos.</summary>
+        public bool ContinueInfinite()
+        {
+            if (World == null || !BossSystem.ContinueInfinite(World)) return false;
+            Harvest();
+            FeedFromWorld();
+            return true;
+        }
+
         void SendSummary()
         {
             Feed.Summary = MatchSummary.FromWorld(World);
@@ -305,6 +314,8 @@ namespace ES.Sim
             AllyList.Collect(w, _allies, SnapshotCodec.MaxAllies * 2);
             foreach (var a in _allies) Feed.Tracks.SetAlly(a.Id, a.Pos, a.Sprite, a.Param, w.Tick);
             Feed.Tracks.PruneAllies(w.Tick);
+            foreach (var b in w.Bosses.Active)
+                Feed.SetBoss(b.EnemyId, new BossSnap { State = b.State, Attack = b.Attack, Flags = SnapshotCodec.BossFlags(w, b), Dir = BossSystem.Dir8(b.Facing), Tick = w.Tick });
             var h = w.Hostile;
             for (int i = 0; i < h.Count; i++) Feed.Tracks.SetHostile(h.Id[i], h.Pos[i], h.Type[i], w.Tick);
             Feed.Tracks.PruneHostile(w.Tick);

@@ -14,7 +14,8 @@ namespace ES.UI
         public override string[] Buttons => new[] { "btn-hud-menu" };
 
         VisualElement _hpFill, _xpFill, _portrait, _special, _abilities, _evolutions, _allies;
-        Label _hp, _level, _time, _name, _synergy, _banner, _warning, _specialKey;
+        Label _hp, _level, _time, _name, _synergy, _banner, _warning, _specialKey, _bossNext, _bossName, _bossPhase, _bossMore;
+        VisualElement _bossBar, _bossFill;
         RadialCooldown _radial;
         string _loadoutSig, _portraitId, _alliesSig;
         float _now, _hurtAt = -9, _healAt = -9, _evolutionAt = -9, _bannerUntil;
@@ -41,6 +42,12 @@ namespace ES.UI
             _banner = Q<Label>("label-banner");
             _warning = Q<Label>("label-warning");
             _specialKey = Q<Label>("label-special-key");
+            _bossNext = Q<Label>("label-boss-next");
+            _bossName = Q<Label>("label-boss-name");
+            _bossPhase = Q<Label>("label-boss-phase");
+            _bossMore = Q<Label>("label-boss-more");
+            _bossBar = Q<VisualElement>("boss-bar");
+            _bossFill = Q<VisualElement>("bar-boss-fill");
             Bind("btn-hud-menu", () => Ctx.Router.OpenPause());
             Ctx.Match.LocalHit += _ => _hurtAt = _now;
             Ctx.Match.Surge += () => Banner(Strings.Get("hud_surto"), 3f);
@@ -63,8 +70,45 @@ namespace ES.UI
                 _evolutionAt = _now;
                 if (e.B >= 0 && e.B < Ctx.Db.EvolutionCount) Banner(Strings.Format("carta_dica_evolucao", Ctx.Db.Evolution(e.B).Def.name), 3f);
             }
+            if (e.Kind == RuleEventKind.BossIncoming) Banner(Strings.Format(BossFinal(e.A) ? "boss_aviso_final" : "boss_aviso", BossName(e.A)), 5f);
+            if (e.Kind == RuleEventKind.BossSpawned) Banner(Strings.Format("boss_chegou", BossName(e.A)), 3f);
+            if (e.Kind == RuleEventKind.BossBravo) Banner(Strings.Format("boss_bravo", BossName(e.A)), 2.5f);
+            if (e.Kind == RuleEventKind.BossDefeated) Banner(Strings.Format(e.C == 1 ? "boss_derrotado_final" : "boss_derrotado", BossName(e.A)), 4f);
+            if (e.Kind == RuleEventKind.MatchContinued) Banner(Strings.Get("modo_infinito_inicio"), 4f);
             if (e.Kind == RuleEventKind.SynergyChanged && e.A == local && e.C != 0 && e.B >= 0 && e.B < Ctx.Db.SynergyCount)
                 Banner(Strings.Format("hud_sinergia_ativa", Ctx.Db.Synergy(e.B).Def.name), 2.5f);
+        }
+
+        string BossName(int boss) => boss == 255 ? Strings.Get("boss_dueto") : boss >= 0 && boss < Ctx.Db.BossCount ? Ctx.Db.Boss(boss).Def.name : "?";
+        bool BossFinal(int boss) => boss >= 0 && boss < Ctx.Db.BossCount && Ctx.Db.Boss(boss).Def.final;
+
+        /// <summary>Barra do boss ativo (o de menor vida quando há dois) e contagem até o próximo.</summary>
+        void UpdateBoss(MatchFeed feed)
+        {
+            BossInfo shown = null;
+            float shownHp = 2f;
+            int alive = 0;
+            foreach (var kv in feed.Bosses)
+            {
+                if (!feed.Tracks.TryGetEnemy(kv.Key, out var t)) continue;
+                alive++;
+                if (t.Hp < shownHp) { shownHp = t.Hp; shown = kv.Value; }
+            }
+            _bossBar.style.display = shown != null ? DisplayStyle.Flex : DisplayStyle.None;
+            if (shown != null)
+            {
+                _bossName.text = BossName(shown.Boss) + (shown.Cycle > 0 ? " " + Strings.Format("boss_ciclo", shown.Cycle) : "");
+                _bossPhase.text = Strings.Get(shown.Invulnerable ? "boss_fase_entrada" : shown.Bravo ? "boss_fase_bravo" : "boss_fase_normal");
+                _bossPhase.EnableInClassList("boss-phase-bravo", shown.Bravo);
+                _bossFill.style.width = Length.Percent(Mathf.Clamp01(shownHp) * 100f);
+                _bossFill.EnableInClassList("boss-fill-bravo", shown.Bravo);
+                _bossMore.text = alive > 1 ? Strings.Format("boss_mais", alive - 1) : "";
+            }
+            float left = feed.NextBossAt - feed.Elapsed;
+            if (feed.NextBoss >= 0 && left > 0) _bossNext.text = Strings.Format("boss_proximo", BossName(feed.NextBoss), UiText.Clock(left));
+            else if (shown == null && feed.Infinite) _bossNext.text = Strings.Get("modo_infinito");
+            else _bossNext.text = shown == null || !BossFinal(shown.Boss) || feed.Elapsed < Ctx.Db.Def.rules.matchSeconds ? "" : Strings.Get("boss_tempo_estendido");
+            _time.EnableInClassList("hud-time-extended", !feed.Infinite && feed.Elapsed >= Ctx.Db.Def.rules.matchSeconds);
         }
 
         void Banner(string text, float seconds)
@@ -98,6 +142,7 @@ namespace ES.UI
             _xpFill.style.width = Length.Percent(Mathf.Clamp01(me.XpProgress) * 100f);
             _level.text = Strings.Format("hud_nivel", me.Level);
             _time.text = UiText.Clock(feed.Elapsed);
+            UpdateBoss(feed);
             if (_now > _bannerUntil) _banner.text = "";
 
             string warning = feed.HostBackgrounded ? Strings.Get("aviso_host_minimizou") : me.Status == PlayerStatus.Downed ? Strings.Get("hud_caido") : "";
@@ -371,9 +416,13 @@ namespace ES.UI
     public sealed class ResultController : UiScreen
     {
         public override string Uxml => "Result";
-        public override string[] Buttons => new[] { "btn-result-menu" };
+        public override string[] Buttons => new[] { "btn-result-infinite", "btn-result-menu" };
 
-        protected override void OnCreate() => Bind("btn-result-menu", () => Ctx.Router.Leave());
+        protected override void OnCreate()
+        {
+            Bind("btn-result-menu", () => Ctx.Router.Leave());
+            Bind("btn-result-infinite", () => { if (Ctx.Net.ContinueInfinite()) Q<Button>("btn-result-infinite").SetEnabled(false); });
+        }
 
         /// <summary>Preenche com o resumo do host; sem resumo (conexão perdida), usa o que o cliente sabe.</summary>
         public void Fill(MatchSummary summary, MatchFeed feed, int local, bool disconnected)
@@ -389,6 +438,13 @@ namespace ES.UI
             Q<Label>("label-result-mykills").text = mine != null ? Strings.Format("resultado_seus_abates", mine.Kills) : "";
             int level = mine?.Level ?? (feed != null && local >= 0 && local < PlayerStore.MaxSlots ? feed.Players[local].Level : 1);
             Q<Label>("label-result-level").text = Strings.Format("resultado_nivel", level);
+            Q<Label>("label-result-bosses").text = Strings.Format("resultado_bosses", summary?.BossesDefeated ?? feed?.BossesDefeated ?? 0);
+            // Modo Infinito: só depois de vencer o boss final; quem decide é o anfitrião (ou o solo)
+            bool canContinue = !disconnected && phase == MatchPhase.Victory && !(summary?.Infinite ?? false) && Ctx.Db.FinalBoss >= 0;
+            var infinite = Q<Button>("btn-result-infinite");
+            infinite.style.display = canContinue && Ctx.Net.CanDecideInfinite ? DisplayStyle.Flex : DisplayStyle.None;
+            infinite.SetEnabled(true);
+            Q<Label>("label-result-wait").style.display = canContinue && !Ctx.Net.CanDecideInfinite ? DisplayStyle.Flex : DisplayStyle.None;
             var list = Q<VisualElement>("list-damage");
             list.Clear();
             if (mine == null || mine.Damage.Count == 0) { UiText.Line(list, Strings.Get("resultado_sem_dano"), "small"); return; }

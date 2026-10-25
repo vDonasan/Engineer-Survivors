@@ -14,7 +14,7 @@ namespace ES.Sim
         public static bool DamageEnemy(World w, int i, float amount, Vec2 knockDir, float knockback, int sourcePlayer, int abilityIndex)
         {
             var e = w.Enemies;
-            if (i < 0 || i >= e.Count || (e.Flags[i] & EnemyFlags.Dead) != 0 || amount <= 0) return false;
+            if (i < 0 || i >= e.Count || (e.Flags[i] & (EnemyFlags.Dead | EnemyFlags.Invulnerable)) != 0 || amount <= 0) return false;
             if (w.Balance.AbilityDamage > 0) amount *= w.Balance.AbilityDamage;
 
             w.Stats.AddDamage(sourcePlayer, abilityIndex, Math.Min(amount, e.Hp[i]));
@@ -46,6 +46,18 @@ namespace ES.Sim
             var pos = e.Pos[i];
             bool elite = (e.Flags[i] & EnemyFlags.Elite) != 0;
             w.Events.AddRule(new RuleEvent { Kind = RuleEventKind.EnemyDied, A = e.Id[i], B = e.Type[i], C = w.Tick, X = pos.X, Y = pos.Y });
+            if (w.Db.Enemy(e.Type[i]).Behavior == EnemyBehavior.Boss)
+            {
+                BossSystem.OnKilled(w, i);
+                // recompensa: chuva de experiência e uma cura garantida
+                for (int k = 0; k < 8; k++)
+                {
+                    double a = Math.PI * 2 * k / 8;
+                    SpawnPickup(w, PickupKind.Xp, pos + new Vec2((float)Math.Cos(a), (float)Math.Sin(a)) * 1.2f, e.XpValue[i] / 8f);
+                }
+                SpawnPickup(w, PickupKind.Heal, pos, 0.5f);
+                return;
+            }
 
             SpawnPickup(w, PickupKind.Xp, pos, e.XpValue[i]);
             float healChance = elite ? w.Rules.eliteHealChance : w.Balance.HealDropChance;
@@ -167,23 +179,64 @@ namespace ES.Sim
             var h = w.Hostile;
             for (int i = h.Count - 1; i >= 0; i--)
             {
+                Steer(w, i, dt);
+                var prev = h.Pos[i];
                 h.Pos[i] += h.Vel[i] * dt;
                 h.LifeLeft[i] -= dt;
-                bool remove = h.LifeLeft[i] <= 0 || ArenaCollision.Blocked(h.Pos[i], h.Radius[i], w.Arena);
+                bool remove = h.LifeLeft[i] <= 0;
+                if (!remove && ArenaCollision.Blocked(h.Pos[i], h.Radius[i], w.Arena))
+                {
+                    if (h.Bounces[i] > 0)
+                    {
+                        // ricochete: inverte o eixo que bateu
+                        h.Bounces[i]--;
+                        var v = h.Vel[i];
+                        if (ArenaCollision.Blocked(new Vec2(h.Pos[i].X, prev.Y), h.Radius[i], w.Arena)) v = new Vec2(-v.X, v.Y);
+                        if (ArenaCollision.Blocked(new Vec2(prev.X, h.Pos[i].Y), h.Radius[i], w.Arena)) v = new Vec2(v.X, -v.Y);
+                        h.Vel[i] = v;
+                        h.Pos[i] = prev;
+                    }
+                    else remove = true;
+                }
                 if (!remove)
                 {
                     foreach (var p in w.Players.Slots)
                     {
-                        if (p == null || !p.IsActive) continue;
+                        if (p == null || !p.IsActive || (h.HitMask[i] & (1 << p.Slot)) != 0) continue;
                         float r = p.Radius + h.Radius[i];
                         if (Vec2.DistanceSq(p.Pos, h.Pos[i]) >= r * r) continue;
                         DamagePlayer(w, p.Slot, h.Damage[i]);
+                        if (h.Pierce[i]) { h.HitMask[i] |= (byte)(1 << p.Slot); continue; }
                         remove = true;
                         break;
                     }
                 }
                 if (remove) h.RemoveAt(i);
             }
+        }
+
+        /// <summary>Curva e perseguição dos projéteis dos bosses.</summary>
+        static void Steer(World w, int i, float dt)
+        {
+            var h = w.Hostile;
+            float turn = h.Turn[i] * dt;
+            if (h.Homing[i] > 0 && h.HomingLeft[i] > 0)
+            {
+                h.HomingLeft[i] -= dt;
+                var target = EnemyAISystem.Nearest(w, h.Pos[i], out _);
+                if (target != null)
+                {
+                    var v = h.Vel[i];
+                    var to = target.Pos - h.Pos[i];
+                    float cross = v.X * to.Y - v.Y * to.X;
+                    float max = h.Homing[i] * dt;
+                    turn += cross > 0 ? max : -max;
+                }
+            }
+            if (turn == 0) return;
+            float c = (float)Math.Cos(turn), s = (float)Math.Sin(turn);
+            var u = h.Vel[i];
+            h.Vel[i] = new Vec2(u.X * c - u.Y * s, u.X * s + u.Y * c);
         }
 
         static void Pickups(World w)

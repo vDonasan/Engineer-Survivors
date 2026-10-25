@@ -13,7 +13,10 @@
                     <ui:Label name="label-level" picking-mode="Ignore" />
                 </ui:VisualElement>
             </ui:VisualElement>
-            <ui:Label name="label-time" class="hud-time" picking-mode="Ignore" />
+            <ui:VisualElement class="hud-center" picking-mode="Ignore">
+                <ui:Label name="label-time" class="hud-time" picking-mode="Ignore" />
+                <ui:Label name="label-boss-next" class="boss-next" picking-mode="Ignore" />
+            </ui:VisualElement>
             <ui:VisualElement class="side" picking-mode="Ignore">
                 <ui:Button name="btn-hud-menu" text="#hud_menu" class="btn" style="align-self: flex-end; font-size: 22px;" />
                 <ui:VisualElement name="list-allies" picking-mode="Ignore" />
@@ -21,6 +24,14 @@
                 <ui:Label text="#hud_evolucoes" class="small" picking-mode="Ignore" />
                 <ui:VisualElement name="list-evolutions" picking-mode="Ignore" />
             </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="boss-bar" class="boss-bar" picking-mode="Ignore">
+            <ui:VisualElement class="row boss-bar-head" picking-mode="Ignore">
+                <ui:Label name="label-boss-name" class="boss-name" picking-mode="Ignore" />
+                <ui:Label name="label-boss-phase" class="boss-phase" picking-mode="Ignore" />
+            </ui:VisualElement>
+            <ui:VisualElement class="bar boss-bar-track" picking-mode="Ignore"><ui:VisualElement name="bar-boss-fill" class="bar-fill boss-fill" picking-mode="Ignore" /></ui:VisualElement>
+            <ui:Label name="label-boss-more" class="small" picking-mode="Ignore" />
         </ui:VisualElement>
         <ui:Label name="label-banner" class="banner" picking-mode="Ignore" />
         <ui:Label name="label-warning" class="warning-line" picking-mode="Ignore" />

@@ -47,6 +47,21 @@ MonoBehaviour:
     farEnemyDistance: 30
     farEnemyUpdateEvery: 3
     cameraHalfDiagonal: 12
+    bossVictoryDelay: 3
+    infiniteFirstBoss: 60
+    infiniteBossEvery: 150
+    infiniteBossHpPerCycle: 0.6
+    infiniteHpPerMinute: 0.1
+    infiniteHpMax: 10
+    infiniteDamagePerMinute: 0.05
+    infiniteDamageMax: 3.5
+    infiniteSpawnPerMinute: 0.07
+    infiniteSpawnMax: 3
+    infiniteElitePerMinute: 0.008
+    infiniteEliteMax: 0.35
+    infiniteStormEvery: 40
+    infiniteStormMarks: 4
+    infiniteStormMarksMax: 12
   balance:
     difficulties:
     - id: easy
@@ -228,6 +243,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: be3a23cfb4b940e468891f3dda86ceb3, type: 2}
   - {fileID: 11400000, guid: caca7a0c0b4509040896d6c712b6473f, type: 2}
   - {fileID: 11400000, guid: f8c6b6ac38361f74da81d6a6230852c4, type: 2}
+  - {fileID: 11400000, guid: 049eb8f665a3a084e9e798074556ee8a, type: 2}
+  - {fileID: 11400000, guid: 682f27ac2bafc7a40a4662cf05feea22, type: 2}
   synergies:
   - {fileID: 11400000, guid: bcac7a67ecd50254580813ef8874022b, type: 2}
   evolutions:
@@ -252,3 +269,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c8c74cc7e0b650b4ab22dd0a6444b2b9, type: 2}
   - {fileID: 11400000, guid: 030e00285a1b6944a8c67aaddd7ccca8, type: 2}
   - {fileID: 11400000, guid: da12c55ae753fc4488164e1ef168630f, type: 2}
+  bosses:
+  - {fileID: 11400000, guid: ed230d44117d5f74a95274acafc3252f, type: 2}
+  - {fileID: 11400000, guid: bcc6d69d62a149b42beb47fedcdedd6e, type: 2}

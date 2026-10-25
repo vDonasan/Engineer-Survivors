@@ -29,6 +29,10 @@ namespace ES.UI
         public string FatalError { get; private set; }
 
         int _autostart, _bench, _evolve;
+        float _skipTo, _bossHp;
+        readonly HashSet<ushort> _scaledBosses = new HashSet<ushort>();
+        bool _god, _autopick;
+        float _pickAt;
         bool _log;
         float _logAt, _benchAt, _benchChoiceAt;
 
@@ -77,6 +81,11 @@ namespace ES.UI
             _log = q.TryGetValue("log", out var l) && l == "1";
             if (q.TryGetValue("bench", out var b)) int.TryParse(b, out _bench);
             if (_log && q.TryGetValue("evolve", out var ev)) int.TryParse(ev, out _evolve);
+            // depuração dos bosses: ?log=1&t=235 adianta o relógio; &god=1 deixa o jogador invulnerável
+            if (_log && q.TryGetValue("t", out var tt)) float.TryParse(tt, System.Globalization.NumberStyles.Float, System.Globalization.CultureInfo.InvariantCulture, out _skipTo);
+            _god = _log && q.TryGetValue("god", out var g) && g == "1";
+            _autopick = _log && q.TryGetValue("autopick", out var ap) && ap == "1";
+            if (_log && q.TryGetValue("bosshp", out var bh)) float.TryParse(bh, System.Globalization.NumberStyles.Float, System.Globalization.CultureInfo.InvariantCulture, out _bossHp);
             if (mode == "setup") { Router.ShowMain(Router.Solo); return; }
             if (mode == "solo") Net.StartSolo(name, spec, Difficulty.Normal, (ulong)DateTime.UtcNow.Ticks);
             else if (mode == "host")
@@ -107,6 +116,26 @@ namespace ES.UI
                 Debug.Log("[ES] START players=" + Net.Lobby.Players.Count);
             }
             if (_bench > 0 && Net.Mode == NetMode.Solo && Net.Started) Bench();
+            var dw = Net.Host?.World;
+            if (dw != null && Net.Started)
+            {
+                if (_skipTo > 0)
+                {
+                    dw.Elapsed = _skipTo;
+                    dw.NextSurgeAt = (float)Math.Ceiling(_skipTo / 60f) * 60f;
+                    _skipTo = 0;
+                }
+                if (_god) foreach (var p in dw.Players.Slots) if (p != null) p.InvulnUntil = float.MaxValue;
+                var pick = Net.Feed?.CurrentOffer;
+                if (_autopick && pick != null && Time.unscaledTime >= _pickAt) { _pickAt = Time.unscaledTime + 0.3f; Net.Choose(pick.OfferId, 0); }
+                if (_bossHp > 0)
+                    foreach (var b in dw.Bosses.Active)
+                    {
+                        if (!_scaledBosses.Add(b.EnemyId)) continue;
+                        for (int i = 0; i < dw.Enemies.Count; i++)
+                            if (dw.Enemies.Id[i] == b.EnemyId) { dw.Enemies.MaxHp[i] *= _bossHp; dw.Enemies.Hp[i] = dw.Enemies.MaxHp[i]; }
+                    }
+            }
             if (_evolve > 0 && Net.Started && Net.Host?.World != null)
             {
                 DebugEvolve.All(Net.Host.World, _evolve);
@@ -146,9 +175,14 @@ namespace ES.UI
             var f = Net.Feed;
             if (f == null) return;
             var sb = new StringBuilder();
-            sb.Append(FormattableString.Invariant($"STATE mode={Net.Mode} slot={Net.LocalSlot} tick={f.Tick} t={f.Elapsed:0.0} enemies={f.Tracks.EnemyCount} allies={f.Tracks.AllyCount} phase={f.Phase} fps={Context.Perf.Fps:0}"));
+            sb.Append(FormattableString.Invariant($"STATE mode={Net.Mode} slot={Net.LocalSlot} tick={f.Tick} t={f.Elapsed:0.0} enemies={f.Tracks.EnemyCount} allies={f.Tracks.AllyCount} phase={f.Phase} fps={Context.Perf.Fps:0} bosses={f.Bosses.Count} hazards={f.Hazards.Count} defeated={f.BossesDefeated} infinite={f.Infinite}"));
             for (int s = 0; s < PlayerStore.MaxSlots; s++)
                 if (f.Players[s].Present) sb.Append(FormattableString.Invariant($" p{s}=({f.Players[s].Pos.X:0.0};{f.Players[s].Pos.Y:0.0}) hp={f.Players[s].Hp:0} lv={f.Players[s].Level}"));
+            foreach (var kv in f.Bosses)
+            {
+                float hp = f.Tracks.TryGetEnemy(kv.Key, out var t) ? t.Hp : -1f;
+                sb.Append(FormattableString.Invariant($" boss{kv.Value.Boss}={kv.Value.State}/{kv.Value.Attack}{(kv.Value.Bravo ? "/BRAVO" : "")} hp={hp:0.00}"));
+            }
             Debug.Log("[ES] " + sb);
         }
 

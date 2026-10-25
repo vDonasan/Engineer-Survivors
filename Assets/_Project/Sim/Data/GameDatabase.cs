@@ -25,6 +25,7 @@ namespace ES.Sim
         ResolvedEnemy[] _enemies;
         ResolvedSynergy[] _synergies;
         ResolvedEvolution[] _evolutions;
+        ResolvedBoss[] _bosses = new ResolvedBoss[0];
 
         Dictionary<string, int> _abilityIds, _specializationIds, _specialIds, _enemyIds, _synergyIds, _evolutionIds, _arenaIds;
 
@@ -34,6 +35,25 @@ namespace ES.Sim
         public int EnemyCount => _enemies.Length;
         public int SynergyCount => _synergies.Length;
         public int EvolutionCount => _evolutions.Length;
+        public int BossCount => _bosses.Length;
+        public ResolvedBoss Boss(int i) => _bosses[i];
+
+        /// <summary>Índice do boss cujo inimigo é <paramref name="enemyType"/>, ou -1.</summary>
+        public int BossOfEnemy(int enemyType)
+        {
+            for (int i = 0; i < _bosses.Length; i++) if (_bosses[i].Enemy == enemyType) return i;
+            return -1;
+        }
+
+        /// <summary>Índice do boss final (a morte dele vence a partida padrão), ou -1.</summary>
+        public int FinalBoss
+        {
+            get
+            {
+                for (int i = 0; i < _bosses.Length; i++) if (_bosses[i].Def.final) return i;
+                return -1;
+            }
+        }
 
         public ResolvedAbility Ability(int i) => _abilities[i];
         public ResolvedSpecialization Specialization(int i) => _specializations[i];
@@ -106,6 +126,7 @@ namespace ES.Sim
                 ResolveSynergies();
                 ResolveEvolutions();
                 ResolveSpawn();
+                ResolveBosses();
                 ValidateBalance();
                 ValidateArenas();
             }
@@ -232,6 +253,7 @@ namespace ES.Sim
                     var r = new ResolvedEnemy { Index = i, Def = d, Tags = ParseTags(d.tags, "enemy " + d.id) };
                     if (d.behavior == "chase") r.Behavior = EnemyBehavior.Chase;
                     else if (d.behavior == "kite_shoot") r.Behavior = EnemyBehavior.KiteShoot;
+                    else if (d.behavior == "boss") r.Behavior = EnemyBehavior.Boss;
                     else Err($"behavior desconhecido: {d.behavior} em enemy {d.id}");
                     if (d.hp <= 0 || d.radius <= 0) Err($"enemy {d.id}: hp e radius precisam ser > 0");
                     list[i] = r;
@@ -280,6 +302,29 @@ namespace ES.Sim
                     list[i] = r;
                 }
                 _db._evolutions = list;
+            }
+
+            void ResolveBosses()
+            {
+                var defs = _def.bosses ?? new BossDef[0];
+                var list = new ResolvedBoss[defs.Length];
+                var seen = new HashSet<string>();
+                int finals = 0;
+                for (int i = 0; i < defs.Length; i++)
+                {
+                    var d = defs[i];
+                    if (d == null || string.IsNullOrEmpty(d.id)) { Err($"boss #{i}: id vazio"); continue; }
+                    if (!seen.Add(d.id)) Err($"duplicado: boss {d.id}");
+                    var r = new ResolvedBoss(d) { Index = i, Enemy = _db.EnemyIndex(d.enemyId) };
+                    if (r.Enemy < 0) Err($"boss {d.id}: enemyId inexistente {d.enemyId}");
+                    else if (_db._enemies[r.Enemy].Behavior != EnemyBehavior.Boss) Err($"boss {d.id}: o inimigo {d.enemyId} precisa ter behavior boss");
+                    if (d.spawnSeconds <= 0) Err($"boss {d.id}: spawnSeconds precisa ser > 0");
+                    if (d.bravoThreshold <= 0 || d.bravoThreshold >= 1) Err($"boss {d.id}: bravoThreshold fora de (0, 1)");
+                    if (d.final) finals++;
+                    list[i] = r;
+                }
+                if (finals > 1) Err("mais de um boss final");
+                _db._bosses = list;
             }
 
             void ResolveSpawn()

@@ -48,6 +48,10 @@ Projéteis, companheiros e zonas em `Weapons/Personagens/ally_<sprite>_<quadro>.
 
 Montado no porco em todas as animações, menos caído/reviver (ele cai do porco).
 
+## Bosses
+
+Guirotto 48×48 e Mago da Elétrica 48×56 em `Bosses/<boss>/boss_<boss>_<animação>_<direção>_<quadro>.png`. Andar (normal e bravo) nas 8 direções (as da direita espelham as da esquerda); demais animações de frente: walk (4), walk_bravo (4), idle (2), idle_bravo (2), attack (3), attack_bravo (3), special (3), special_bravo (3), charge (2), hurt (2), heavy (2), rage (3), death (4), vanish (3). Projéteis em `Effects/fx_boss_*`.
+
 ## Inimigos
 
 Microbô 16×16, torreta 32×32, prensa 48×48; 2 quadros cada + variante elite (contorno magenta).

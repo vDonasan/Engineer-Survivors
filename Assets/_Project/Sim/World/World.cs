@@ -38,6 +38,9 @@ namespace ES.Sim
 
         public readonly MatchStats Stats;
 
+        /// <summary>Bosses, áreas sinalizadas e Modo Infinito.</summary>
+        public readonly BossDirector Bosses = new BossDirector();
+
         /// <summary>Evoluções descobertas nesta partida (códice).</summary>
         public readonly System.Collections.Generic.HashSet<int> Discovered = new System.Collections.Generic.HashSet<int>();
 
@@ -141,6 +144,7 @@ namespace ES.Sim
             SpecialSystem.ApplyInputs(this, inputs);
             SpawnDirector.Step(this, Dt);
             EnemyAISystem.Step(this, Dt);
+            BossSystem.Step(this, Dt);
             AbilitySystem.Step(this, Dt);
             SpecialSystem.Step(this, Dt);
             CombatSystem.Step(this, Dt);

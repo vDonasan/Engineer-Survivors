@@ -15,6 +15,9 @@ namespace ES.Sim
             return (s.baseBudget + s.rampPerMinute * b.SpawnRamp * minutes) * b.SpawnBudget * b.EnemyCount;
         }
 
+        /// <summary>Durante uma luta de boss (fora do Modo Infinito) a horda diminui para o boss ser o foco.</summary>
+        const float BossFightBudget = 0.6f;
+
         /// <summary>Bracket vigente; <paramref name="shiftMinutes"/> positivo antecipa.</summary>
         public static int BracketIndexAt(ResolvedBracket[] brackets, float elapsedMinutes, float shiftMinutes)
         {
@@ -32,10 +35,11 @@ namespace ES.Sim
             if (w.Elapsed >= w.NextSurgeAt)
             {
                 w.NextSurgeAt += s.surgeIntervalSeconds;
-                Surge(w, (int)Math.Round(s.surgeCount * w.Balance.EnemyCount));
+                Surge(w, (int)Math.Round(s.surgeCount * w.Balance.EnemyCount * (w.Bosses.Infinite ? BossSystem.InfiniteSpawn(w) : 1f)));
             }
 
-            w.SpawnAccumulator = Math.Min(w.SpawnAccumulator + Budget(s, w.Balance, w.Elapsed) * dt, MaxBacklog);
+            float mult = w.Bosses.Infinite ? BossSystem.InfiniteSpawn(w) : w.Bosses.Active.Count > 0 ? BossFightBudget : 1f;
+            w.SpawnAccumulator = Math.Min(w.SpawnAccumulator + Budget(s, w.Balance, w.Elapsed) * mult * dt, MaxBacklog * mult);
             var bracket = w.Db.Brackets[BracketIndexAt(w.Db.Brackets, w.Elapsed / 60f, w.Balance.CompositionShiftMinutes)];
 
             for (int n = 0; n < MaxSpawnsPerTick; n++)
@@ -45,7 +49,7 @@ namespace ES.Sim
                 float cost = w.Db.Enemy(type).Def.cost;
                 if (w.SpawnAccumulator < cost) return;
                 if (!TryRingPoint(w, out var pos, out _)) return;
-                bool elite = w.Rng.NextFloat() < w.Balance.EliteChance;
+                bool elite = w.Rng.NextFloat() < w.Balance.EliteChance + BossSystem.InfiniteElite(w);
                 SpawnEnemy(w, type, pos, elite);
                 w.SpawnAccumulator -= cost;
             }
@@ -120,11 +124,11 @@ namespace ES.Sim
             var d = w.Db.Enemy(type).Def;
             var r = w.Rules;
             var e = w.Enemies;
-            float hp = d.hp * w.Balance.EnemyHp * (elite ? r.eliteHp : 1f);
+            float hp = d.hp * w.Balance.EnemyHp * (elite ? r.eliteHp : 1f) * BossSystem.InfiniteHp(w);
             e.Hp[i] = e.MaxHp[i] = hp;
             e.Radius[i] = d.radius * (elite ? r.eliteSize : 1f);
             e.Speed[i] = d.speed;
-            e.ContactDamage[i] = d.contactDamage * w.Balance.EnemyDamage * (elite ? r.eliteDamage : 1f);
+            e.ContactDamage[i] = d.contactDamage * w.Balance.EnemyDamage * (elite ? r.eliteDamage : 1f) * BossSystem.InfiniteDamage(w);
             e.XpValue[i] = d.xp * (elite ? r.eliteXp : 1f);
             e.NextFire[i] = w.Elapsed + d.fireInterval * (0.5f + 0.5f * w.Rng.NextFloat());
             if (elite) e.Flags[i] |= EnemyFlags.Elite;

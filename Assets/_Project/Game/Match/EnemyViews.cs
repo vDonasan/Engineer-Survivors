@@ -10,6 +10,8 @@ namespace ES.Game
         // [tipo][variante: 0 normal, 1 elite, 2 piscar, 3 elite piscar][quadro]
         readonly Sprite[][][] _sprites;
         readonly float[] _feet;
+        /// <summary>Bosses são desenhados por <see cref="BossViews"/>.</summary>
+        readonly bool[] _boss;
         readonly Dictionary<ushort, SpriteRenderer> _live = new Dictionary<ushort, SpriteRenderer>(512);
         readonly HashSet<ushort> _seen = new HashSet<ushort>();
         readonly List<ushort> _gone = new List<ushort>(64);
@@ -31,10 +33,12 @@ namespace ES.Game
             });
             _sprites = new Sprite[db.EnemyCount][][];
             _feet = new float[db.EnemyCount];
+            _boss = new bool[db.EnemyCount];
             string[] variants = { "", "elite_", "flash_", "elite_flash_" };
             for (int t = 0; t < db.EnemyCount; t++)
             {
                 string id = db.Enemy(t).Def.id;
+                _boss[t] = db.Enemy(t).Behavior == EnemyBehavior.Boss;
                 _sprites[t] = new Sprite[4][];
                 for (int v = 0; v < 4; v++)
                     _sprites[t][v] = new[] { assets.Sprite($"enemy_{id}_{variants[v]}0"), assets.Sprite($"enemy_{id}_{variants[v]}1") };
@@ -48,6 +52,7 @@ namespace ES.Game
             _seen.Clear();
             foreach (var e in enemies)
             {
+                if (e.Type < _boss.Length && _boss[e.Type]) continue;
                 _seen.Add(e.Id);
                 if (!_live.TryGetValue(e.Id, out var r))
                 {

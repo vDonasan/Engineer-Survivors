@@ -20,6 +20,7 @@ namespace ES.Content
         public List<EnemyAsset> enemies = new List<EnemyAsset>();
         public List<SynergyAsset> synergies = new List<SynergyAsset>();
         public List<EvolutionAsset> evolutions = new List<EvolutionAsset>();
+        public List<BossAsset> bosses = new List<BossAsset>();
 
         public ContentDef ToContentDef()
         {
@@ -35,6 +36,7 @@ namespace ES.Content
                 enemies = enemies.ConvertAll(a => a.def).ToArray(),
                 synergies = synergies.ConvertAll(a => a.def).ToArray(),
                 evolutions = evolutions.ConvertAll(a => a.def).ToArray(),
+                bosses = bosses.ConvertAll(a => a.def).ToArray(),
             };
         }
 

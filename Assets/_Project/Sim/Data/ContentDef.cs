@@ -19,6 +19,22 @@ namespace ES.Sim
         public EnemyDef[] enemies = new EnemyDef[0];
         public SynergyDef[] synergies = new SynergyDef[0];
         public EvolutionDef[] evolutions = new EvolutionDef[0];
+        public BossDef[] bosses = new BossDef[0];
+    }
+
+    /// <summary>Boss com horário de chegada, limiar de fúria (BRAVO) e parâmetros dos ataques.</summary>
+    [Serializable]
+    public class BossDef
+    {
+        public string id, enemyId, name, title;
+        /// <summary>Segundos de partida em que surge (uma vez por partida).</summary>
+        public float spawnSeconds;
+        /// <summary>Boss final: sua morte encerra a partida padrão com vitória.</summary>
+        public bool final;
+        public float bravoThreshold = 0.3f, entrySeconds = 2, rageSeconds = 1.5f;
+        /// <summary>Por jogador além do primeiro: vida extra e recarga menor.</summary>
+        public float teamHp = 0.55f, teamCooldown = 0.08f;
+        public ParamDef[] parameters = new ParamDef[0];
     }
 
     [Serializable]
@@ -40,6 +56,14 @@ namespace ES.Sim
         public float farEnemyDistance = 30;
         public int farEnemyUpdateEvery = 3;
         public float cameraHalfDiagonal = 12;
+        /// <summary>Segundos entre a morte do boss final e a tela de vitória (animação de morte).</summary>
+        public float bossVictoryDelay = 3;
+        /// <summary>Modo Infinito: bosses recorrentes, curva de dificuldade (por minuto desde a vitória) e tempestades.</summary>
+        public float infiniteFirstBoss = 60, infiniteBossEvery = 150, infiniteBossHpPerCycle = 0.6f;
+        public float infiniteHpPerMinute = 0.1f, infiniteHpMax = 10, infiniteDamagePerMinute = 0.05f, infiniteDamageMax = 3.5f;
+        public float infiniteSpawnPerMinute = 0.07f, infiniteSpawnMax = 3, infiniteElitePerMinute = 0.008f, infiniteEliteMax = 0.35f;
+        public float infiniteStormEvery = 40;
+        public int infiniteStormMarks = 4, infiniteStormMarksMax = 12;
     }
 
     [Serializable]

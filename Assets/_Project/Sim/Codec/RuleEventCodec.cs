@@ -67,6 +67,31 @@ namespace ES.Sim
                     case RuleEventKind.MatchEnded:
                         w.U8((byte)e.A); w.F32(e.X);
                         break;
+                    case RuleEventKind.BossIncoming:
+                    case RuleEventKind.BossSchedule:
+                        w.U8((byte)e.A); w.F32(e.X);
+                        break;
+                    case RuleEventKind.BossSpawned:
+                        w.U8((byte)e.A); w.U16((ushort)e.B); w.U16((ushort)Math.Min(ushort.MaxValue, Math.Max(0, e.C))); Pos(w, e, aw, ah);
+                        break;
+                    case RuleEventKind.BossBravo:
+                        w.U8((byte)e.A); w.U16((ushort)e.B); Pos(w, e, aw, ah);
+                        break;
+                    case RuleEventKind.BossAction:
+                        w.U16((ushort)e.A); w.U8((byte)e.B); w.U8((byte)e.C); w.F32(e.X);
+                        break;
+                    case RuleEventKind.BossHazard:
+                        w.U8((byte)e.A);
+                        if (e.A == 255) break;
+                        w.U16((ushort)Math.Min(ushort.MaxValue, Math.Max(0, e.B))); w.U16((ushort)Math.Min(ushort.MaxValue, Math.Max(0, e.C)));
+                        Pos(w, e, aw, ah); w.F32(e.Z); w.F32(e.W);
+                        break;
+                    case RuleEventKind.BossDefeated:
+                        w.U8((byte)e.A); w.U16((ushort)e.B); w.U8((byte)e.C); Pos(w, e, aw, ah);
+                        break;
+                    case RuleEventKind.MatchContinued:
+                        w.F32(e.X);
+                        break;
                 }
             }
         }
@@ -85,7 +110,7 @@ namespace ES.Sim
             var parsed = new List<DecodedRuleEvent>(count);
             for (int i = 0; i < count; i++)
             {
-                if (!r.TryU8(out byte kind) || kind > (byte)RuleEventKind.MatchEnded) return false;
+                if (!r.TryU8(out byte kind) || kind > (byte)RuleEventKind.MatchContinued) return false;
                 var e = new RuleEvent { Kind = (RuleEventKind)kind };
                 var options = NoOptions;
                 var actions = new byte[3];
@@ -146,6 +171,40 @@ namespace ES.Sim
                         ok = r.TryU8(out byte a11) & r.TryF32(out float x11);
                         e.A = a11; e.X = x11;
                         ok &= a11 <= (byte)MatchPhase.Defeat;
+                        break;
+                    case RuleEventKind.BossIncoming:
+                    case RuleEventKind.BossSchedule:
+                        ok = r.TryU8(out byte a12) & r.TryF32(out float x12);
+                        e.A = a12; e.X = x12;
+                        break;
+                    case RuleEventKind.BossSpawned:
+                        ok = r.TryU8(out byte a13) & r.TryU16(out ushort b13) & r.TryU16(out ushort c13) & ReadPos(ref r, arenaW, arenaH, ref e);
+                        e.A = a13; e.B = b13; e.C = c13;
+                        break;
+                    case RuleEventKind.BossBravo:
+                        ok = r.TryU8(out byte a14) & r.TryU16(out ushort b14) & ReadPos(ref r, arenaW, arenaH, ref e);
+                        e.A = a14; e.B = b14;
+                        break;
+                    case RuleEventKind.BossAction:
+                        ok = r.TryU16(out ushort a15) & r.TryU8(out byte b15) & r.TryU8(out byte c15) & r.TryF32(out float x15);
+                        e.A = a15; e.B = b15; e.C = c15; e.X = x15;
+                        break;
+                    case RuleEventKind.BossHazard:
+                        ok = r.TryU8(out byte a16);
+                        e.A = a16;
+                        if (ok && a16 != 255)
+                        {
+                            ok = r.TryU16(out ushort b16) & r.TryU16(out ushort c16) & ReadPos(ref r, arenaW, arenaH, ref e) & r.TryF32(out float z16) & r.TryF32(out float w16);
+                            e.B = b16; e.C = c16; e.Z = z16; e.W = w16;
+                        }
+                        break;
+                    case RuleEventKind.BossDefeated:
+                        ok = r.TryU8(out byte a17) & r.TryU16(out ushort b17) & r.TryU8(out byte c17) & ReadPos(ref r, arenaW, arenaH, ref e);
+                        e.A = a17; e.B = b17; e.C = c17;
+                        break;
+                    case RuleEventKind.MatchContinued:
+                        ok = r.TryF32(out float x18);
+                        e.X = x18;
                         break;
                     default:
                         return false;

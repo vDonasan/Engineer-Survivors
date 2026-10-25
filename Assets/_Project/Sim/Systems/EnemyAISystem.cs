@@ -24,6 +24,8 @@ namespace ES.Sim
                 if ((e.Flags[i] & EnemyFlags.Dead) != 0) continue;
                 bool flashing = e.FlashUntil[i] > w.Elapsed;
                 e.Flags[i] = (byte)(flashing ? e.Flags[i] | EnemyFlags.HitFlash : e.Flags[i] & ~EnemyFlags.HitFlash);
+                // bosses: movimento e ataques em BossSystem (não ficam atordoados nem são empurrados)
+                if (w.Db.Enemy(e.Type[i]).Behavior == EnemyBehavior.Boss) { e.Knock[i] = Vec2.Zero; continue; }
 
                 if (e.StunUntil[i] > w.Elapsed)
                 {
@@ -86,7 +88,7 @@ namespace ES.Sim
                 e.NextFire[i] = w.Elapsed + def.fireInterval;
                 if (w.Hostile.Count >= w.Hostile.Capacity) return;
                 var dir = (target.Pos - e.Pos[i]).Normalized();
-                float dmg = def.projectileDamage * w.Balance.EnemyDamage * ((e.Flags[i] & EnemyFlags.Elite) != 0 ? w.Rules.eliteDamage : 1f);
+                float dmg = def.projectileDamage * w.Balance.EnemyDamage * ((e.Flags[i] & EnemyFlags.Elite) != 0 ? w.Rules.eliteDamage : 1f) * BossSystem.InfiniteDamage(w);
                 w.Hostile.Spawn(e.Type[i], e.Pos[i] + dir * e.Radius[i], dir * def.projectileSpeed, dmg, HostileProjectileRadius, HostileProjectileLife);
                 return;
             }
