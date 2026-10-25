@@ -92,7 +92,7 @@ FPS com 300 e 400 inimigos, memória, tamanho e capturas em `Build/perf/` (`--he
 ## Publicar (Cloudflare Pages)
 
 1. Login (uma vez, feito pelo autor): `npx wrangler@4.147.0 login`.
-2. `powershell -File Tools/deploy.ps1` copia `Hosting/_headers` para a build e publica no projeto `engineering-survivors`.
+2. Na primeira vez o projeto foi criado no Pages clássico com `npx wrangler@4.147.0 pages project create engineering-survivors --production-branch main --force` (sem `--force` o wrangler novo tenta migrar para Workers e falha). Depois, `powershell -File Tools/deploy.ps1` copia `Hosting/_headers` para a build e publica no projeto `engineering-survivors`.
 3. Abra a URL publicada e jogue antes de divulgar.
 
 ## Serviços da Unity

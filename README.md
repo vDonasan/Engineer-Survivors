@@ -3,6 +3,8 @@
 Survivor-like 2D de cima, em pixel art 32×32, sobre engenheiros exaustos segurando o turno da madrugada num laboratório
 tomado por máquinas. Roda no navegador (Unity WebGL), solo ou cooperativo online de 1 a 4 jogadores.
 
+**Jogar:** https://engineering-survivors.pages.dev (Chrome, Edge ou Firefox de computador)
+
 **Estado:** SP1 (fundação jogável + prova online). Veja `docs/superpowers/specs/2026-10-24-sp1-fundacao-design.md`.
 
 ## Como jogar

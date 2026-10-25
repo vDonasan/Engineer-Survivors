@@ -152,3 +152,10 @@ Observações:
 - O Chromium do Playwright não tem o codec AAC (formato que a Unity usa para áudio na Web) e acusa `decodeAudioData`; no Edge
   não há erro. Chrome, Edge e Firefox de desktop decodificam AAC. Por isso as provas usam o Edge instalado.
 - `ERROR: Shader` (texto cortado pela própria Unity) aparece no console também com GPU; o jogo desenha normalmente. Registrado em `LIMITACOES.md`.
+
+## 2026-10-25 — Publicação (Cloudflare Pages)
+
+- Publicado em **https://engineering-survivors.pages.dev** (`npx wrangler@4.147.0 pages deploy`, 8 arquivos + `_headers`).
+- Prova de rede **na URL pública** (`ES_BROWSER=msedge node Tools/netproof/proof.mjs https://engineering-survivors.pages.dev 0 publico`):
+  **8/8 aprovada** — sala LLLRNG pelo Relay; 34 inimigos nos dois lados; jogadores em (33,5; 32,0) e (48,5; 32,0); nenhum erro de página.
+- Pendente: teste em 2 computadores pelo autor (roteiro acima).

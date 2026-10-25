@@ -9,12 +9,16 @@ import { fileURLToPath } from 'node:url';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const root = resolve(here, '..', '..');
-const buildDir = resolve(root, process.argv[2] || 'Build/WebGL-proof');
+const target = process.argv[2] || 'Build/WebGL-proof';
+// alvo pode ser uma pasta de build (servida localmente) ou uma URL publicada
+const remote = /^https?:/.test(target);
+const buildDir = remote ? null : resolve(root, target);
 const port = Number(process.argv[3] || 8081);
 const outDir = join(root, 'Build', 'netproof', process.argv[4] || '');
 mkdirSync(outDir, { recursive: true });
 
-const server = spawn(process.execPath, [join(root, 'Tools', 'serve-local.mjs'), buildDir, String(port)], { stdio: 'ignore' });
+const server = remote ? null : spawn(process.execPath, [join(root, 'Tools', 'serve-local.mjs'), buildDir, String(port)], { stdio: 'ignore' });
+const base = remote ? target.replace(/\/$/, '') : `http://localhost:${port}`;
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
 
@@ -60,13 +64,13 @@ try {
   watch(host, 'HOST  ', hl);
   watch(client, 'CLIENT', cl);
 
-  await host.goto(`http://localhost:${port}/?mode=host&autostart=2&name=Host&spec=eletrica&log=1`);
+  await host.goto(`${base}/?mode=host&autostart=2&name=Host&spec=eletrica&log=1`);
   const code = await waitFor(hl, /CODE=([A-Z0-9]+)/, 120000);
   report.checks.roomCreated = !!code;
   if (!code) throw new Error('host não criou a sala');
   log('código da sala:', code[1]);
 
-  await client.goto(`http://localhost:${port}/?mode=join&code=${code[1]}&name=Cliente&spec=mecanica&log=1`);
+  await client.goto(`${base}/?mode=join&code=${code[1]}&name=Cliente&spec=mecanica&log=1`);
   const started = await waitFor(hl, /START players=(\d)/, 120000);
   report.checks.matchStarted = !!started;
   if (!started) throw new Error('partida não iniciou com 2 jogadores');
@@ -102,6 +106,6 @@ try {
   writeFileSync(join(outDir, 'report.json'), JSON.stringify(report, null, 2));
   log('RESULTADO', report.ok ? 'APROVADO' : 'REPROVADO', JSON.stringify(report.checks), report.error || '');
   await browser.close();
-  server.kill();
+  server?.kill();
   process.exit(report.ok ? 0 : 1);
 }
