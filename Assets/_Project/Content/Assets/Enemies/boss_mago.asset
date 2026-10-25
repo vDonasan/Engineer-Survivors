@@ -19,7 +19,7 @@ MonoBehaviour:
     behavior: boss
     tags:
     - Maquina
-    hp: 7200
+    hp: 1500
     speed: 2.2
     contactDamage: 16
     contactInterval: 0.8

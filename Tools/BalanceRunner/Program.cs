@@ -21,7 +21,7 @@ for (int i = 0; i < args.Length - 1; i++)
 }
 
 var db = ContentLoader.Sp1Database();
-var csv = new StringBuilder("difficulty,team,spec,seed,survivedSeconds,result,levelAvg,kills,damageTaken,peakEnemies,maxStepMs,avgStepMs\n");
+var csv = new StringBuilder("difficulty,team,spec,seed,survivedSeconds,result,levelAvg,kills,damageTaken,peakEnemies,maxStepMs,avgStepMs,guirottoDiedAt,magoDiedAt,bravoCount\n");
 var specs = Enumerable.Range(0, db.SpecializationCount).Select(i => db.Specialization(i).Def.id).ToArray();
 var total = Stopwatch.StartNew();
 
@@ -37,6 +37,8 @@ for (ulong seed = 1; seed <= (ulong)seeds; seed++)
     int peak = 0;
     double maxMs = 0, sumMs = 0;
     long steps = 0;
+    float guirottoAt = -1, magoAt = -1;
+    int bravos = 0;
     var sw = new Stopwatch();
     while (w.Phase == MatchPhase.Running && w.Elapsed < minutes * 60f)
     {
@@ -49,6 +51,12 @@ for (ulong seed = 1; seed <= (ulong)seeds; seed++)
         sumMs += ms;
         steps++;
         peak = Math.Max(peak, w.Enemies.Count);
+        foreach (var ev in w.Events.Rule)
+        {
+            if (ev.Kind == RuleEventKind.BossBravo) bravos++;
+            if (ev.Kind != RuleEventKind.BossDefeated) continue;
+            if (db.Boss(ev.A).Def.id == "guirotto") guirottoAt = w.Elapsed; else magoAt = w.Elapsed;
+        }
     }
 
     var players = w.Players.Slots.Where(p => p != null).ToArray();
@@ -61,8 +69,9 @@ for (ulong seed = 1; seed <= (ulong)seeds; seed++)
         w.Stats.DamageTaken.Sum().ToString("0", CultureInfo.InvariantCulture),
         peak,
         maxMs.ToString("0.00", CultureInfo.InvariantCulture),
-        (sumMs / Math.Max(1, steps)).ToString("0.000", CultureInfo.InvariantCulture)));
-    Console.WriteLine($"{Difficulties.Id(d)}/{team}/{spec}/{seed}: {result} em {w.Elapsed:0}s, nível médio {players.Average(p => p.Progress.Level):0.0}, abates {w.Stats.Kills}, pico {peak}");
+        (sumMs / Math.Max(1, steps)).ToString("0.000", CultureInfo.InvariantCulture),
+        guirottoAt.ToString("0", CultureInfo.InvariantCulture), magoAt.ToString("0", CultureInfo.InvariantCulture), bravos));
+    Console.WriteLine($"{Difficulties.Id(d)}/{team}/{spec}/{seed}: {result} em {w.Elapsed:0}s, nível médio {players.Average(p => p.Progress.Level):0.0}, abates {w.Stats.Kills}, pico {peak}, Guirotto {guirottoAt:0}s, Mago {magoAt:0}s");
 }
 
 Directory.CreateDirectory(Path.GetDirectoryName(Path.GetFullPath(output)));

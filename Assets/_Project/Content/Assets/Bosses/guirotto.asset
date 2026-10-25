@@ -22,7 +22,7 @@ MonoBehaviour:
     bravoThreshold: 0.3
     entrySeconds: 2
     rageSeconds: 1.6
-    teamHp: 0.55
+    teamHp: 0.25
     teamCooldown: 0.08
     parameters:
     - key: waveCount

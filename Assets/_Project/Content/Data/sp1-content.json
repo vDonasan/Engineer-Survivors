@@ -1933,7 +1933,7 @@
       "role": "boss",
       "behavior": "boss",
       "tags": ["Maquina"],
-      "hp": 2600,
+      "hp": 800,
       "speed": 2.4,
       "contactDamage": 14,
       "contactInterval": 0.8,
@@ -1954,7 +1954,7 @@
       "role": "boss",
       "behavior": "boss",
       "tags": ["Maquina"],
-      "hp": 7200,
+      "hp": 1500,
       "speed": 2.2,
       "contactDamage": 16,
       "contactInterval": 0.8,
@@ -2188,7 +2188,7 @@
       "bravoThreshold": 0.3,
       "entrySeconds": 2.0,
       "rageSeconds": 1.6,
-      "teamHp": 0.55,
+      "teamHp": 0.25,
       "teamCooldown": 0.08,
       "parameters": [
         {"key": "waveCount", "value": 3.0},
@@ -2238,7 +2238,7 @@
       "bravoThreshold": 0.3,
       "entrySeconds": 2.4,
       "rageSeconds": 1.8,
-      "teamHp": 0.55,
+      "teamHp": 0.25,
       "teamCooldown": 0.08,
       "parameters": [
         {"key": "boltAim", "value": 0.7},
@@ -2283,9 +2283,9 @@
         {"key": "windupBravo", "value": 0.35},
         {"key": "recover", "value": 0.7},
         {"key": "recoverBravo", "value": 0.45},
-        {"key": "keepMin", "value": 5.0},
-        {"key": "keepMax", "value": 9.0},
-        {"key": "teleportBelow", "value": 3.0}
+        {"key": "keepMin", "value": 4.0},
+        {"key": "keepMax", "value": 7.5},
+        {"key": "teleportBelow", "value": 2.5}
       ]
     }
   ]

@@ -48,6 +48,7 @@ namespace ES.Sim
         public float StateUntil, NextAttackAt, StepAt;
         public int Step, AttackCount, Target = -1;
         public Vec2 Aim, Facing = new Vec2(0, -1);
+        /// <summary>Número do ataque em que cada jogador foi visado por último.</summary>
         public readonly int[] Targeted = new int[PlayerStore.MaxSlots];
     }
 
@@ -303,7 +304,7 @@ namespace ES.Sim
             return r;
         }
 
-        /// <summary>Alvo da vez: o jogador ativo menos visado recentemente (empate: o mais perto).</summary>
+        /// <summary>Alvo da vez: o jogador ativo há mais ataques sem ser visado (empate: o mais perto).</summary>
         static PlayerState TargetOf(World w, BossRuntime b, Vec2 pos)
         {
             var cur = b.Target >= 0 ? w.Players[b.Target] : null;
@@ -319,7 +320,9 @@ namespace ES.Sim
             foreach (var p in w.Players.Slots)
             {
                 if (p == null || !p.IsActive) continue;
-                float score = (float)Math.Sqrt(Vec2.DistanceSq(p.Pos, pos)) + 8f * b.Targeted[p.Slot];
+                // quem está há mais ataques sem ser visado vem primeiro; a distância só desempata
+                int waited = b.AttackCount - b.Targeted[p.Slot];
+                float score = (float)Math.Sqrt(Vec2.DistanceSq(p.Pos, pos)) * 0.25f - 10f * Math.Min(waited, 8);
                 if (score < bestScore) { bestScore = score; best = p.Slot; }
             }
             return best;
@@ -378,8 +381,7 @@ namespace ES.Sim
             b.Target = PickTarget(w, b, e.Pos[i]);
             target = b.Target >= 0 ? w.Players[b.Target] : target;
             if (target == null) return;
-            for (int s = 0; s < b.Targeted.Length; s++) b.Targeted[s] = Math.Max(0, b.Targeted[s] - 1);
-            b.Targeted[target.Slot] += 2;
+            b.Targeted[target.Slot] = b.AttackCount + 1;
 
             float dist = (float)Math.Sqrt(Vec2.DistanceSq(target.Pos, e.Pos[i]));
             var atk = b.Combo != BossAttack.None ? b.Combo : IsMago(rb) ? ChooseMago(w, b, rb, dist) : ChooseGuirotto(w, b, dist);

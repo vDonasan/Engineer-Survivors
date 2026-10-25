@@ -50,6 +50,25 @@ namespace ES.Sim
                 if (d < 3f) dir += away.Normalized() * (1f - d / 3f) * 2f;
             }
 
+            // áreas sinalizadas dos bosses: sai pelo caminho mais curto, como um jogador atento
+            var hz = w.Bosses;
+            for (int i = 0; i < hz.HazardCount; i++)
+            {
+                var h = hz.Hazards[i];
+                if (!BossSystem.Inside(h, p.Pos, p.Radius + 0.6f)) continue;
+                var to = p.Pos - h.Pos;
+                Vec2 escape;
+                if (h.Shape == HazardShape.Line)
+                {
+                    var ld = new Vec2((float)Math.Cos(h.Extra), (float)Math.Sin(h.Extra));
+                    var side = new Vec2(-ld.Y, ld.X);
+                    escape = to.X * side.X + to.Y * side.Y >= 0 ? side : -side;
+                }
+                else if (h.Shape == HazardShape.Ring) escape = to.Length() < (h.Size + h.Extra) * 0.5f ? -to.Normalized() : to.Normalized();
+                else escape = to.LengthSq() > 1e-4f ? to.Normalized() : new Vec2(1, 0);
+                dir += escape * 6f;
+            }
+
             float hpFrac = p.Hp / Math.Max(1f, p.Stats.Get(StatId.MaxHp));
             int gem = NearestPickup(w, p.Pos, hpFrac < 0.6f);
             if (gem >= 0) dir += (w.Gems.Pos[gem] - p.Pos).Normalized() * (w.Gems.Kind[gem] == PickupKind.Heal ? 1.5f : 0.7f);

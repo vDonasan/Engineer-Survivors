@@ -19,15 +19,15 @@ def enemy(id, name, hp, speed, contact, radius, xp):
 
 
 ENEMIES = [
-    enemy("boss_guirotto", "Guirotto", 2600, 2.4, 14, 1.0, 120),
-    enemy("boss_mago", "Mago da Elétrica", 7200, 2.2, 16, 0.9, 300),
+    enemy("boss_guirotto", "Guirotto", 800, 2.4, 14, 1.0, 120),
+    enemy("boss_mago", "Mago da Elétrica", 1500, 2.2, 16, 0.9, 300),
 ]
 
 BOSSES = [
     {
         "id": "guirotto", "enemyId": "boss_guirotto", "name": "GUIROTTO", "title": "O Sapo do Banjo",
         "spawnSeconds": 240, "final": False, "bravoThreshold": 0.3, "entrySeconds": 2.0, "rageSeconds": 1.6,
-        "teamHp": 0.55, "teamCooldown": 0.08,
+        "teamHp": 0.25, "teamCooldown": 0.08,
         "parameters": par(
             # Acorde do Brejo: ondas sonoras que atravessam
             waveCount=3, waveCountBravo=5, waveSpread=14, waveSpeed=6.5, waveSpeedBravo=8.5, waveDamage=14, waveRadius=0.5,
@@ -48,7 +48,7 @@ BOSSES = [
     {
         "id": "mago", "enemyId": "boss_mago", "name": "MAGO DA ELÉTRICA", "title": "Chefe final",
         "spawnSeconds": 540, "final": True, "bravoThreshold": 0.3, "entrySeconds": 2.4, "rageSeconds": 1.8,
-        "teamHp": 0.55, "teamCooldown": 0.08,
+        "teamHp": 0.25, "teamCooldown": 0.08,
         "parameters": par(
             # Raio Direcionado: linha mirada
             boltAim=0.7, boltAimBravo=0.45, boltLength=16, boltWidth=0.9, boltDamage=22, boltCountBravo=3, boltFan=22,
@@ -63,7 +63,7 @@ BOSSES = [
             overloadRingInner=7.5, overloadRingOuter=11.5, overloadRingDelay=1.0,
             # ritmo e posicionamento
             cooldown=2.0, cooldownBravo=1.3, windup=0.5, windupBravo=0.35, recover=0.7, recoverBravo=0.45,
-            keepMin=5, keepMax=9, teleportBelow=3,
+            keepMin=4, keepMax=7.5, teleportBelow=2.5,
         ),
     },
 ]
