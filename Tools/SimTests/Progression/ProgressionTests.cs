@@ -126,20 +126,58 @@ namespace ES.SimTests.Progression
         }
 
         [Test]
-        public void Coop_Timeout_AppliesFirstOption()
+        public void Coop_Timeout_AppliesFirstOption_WhileWorldFrozen()
         {
             var w = Open(coop: true);
             ProgressionSystem.AddSharedXp(w, 5);
-            Assert.That(w.PausedForChoice, Is.False);
+            Assert.That(w.PausedForChoice, Is.True, "no coop a partida também congela na escolha");
+            float t0 = w.Elapsed;
             bool applied = false;
-            for (int t = 0; t < 30 * 13 && !applied; t++)
+            int steps = 0;
+            for (; steps < 30 * 13 && !applied; steps++)
             {
                 w.Step(TestWorlds.NoInput());
                 applied = w.Events.Rule.Any(r => r.Kind == RuleEventKind.ChoiceApplied);
             }
-            Assert.That(applied, Is.True);
-            Assert.That(w.Elapsed, Is.InRange(11.9f, 12.2f));
+            Assert.That(applied, Is.True, "quem não escolhe não trava a partida: prazo de 12 s de pausa");
+            Assert.That(steps / 30f, Is.InRange(11.9f, 12.2f));
+            Assert.That(w.Elapsed, Is.EqualTo(t0), "o relógio da partida não andou");
             Assert.That(w.Players[0].Progress.Current, Is.Null);
+            Assert.That(w.PausedForChoice, Is.False);
+        }
+
+        [Test]
+        public void Coop_FrozenUntilEveryoneChooses()
+        {
+            var w = TestWorlds.Disarm(TestWorlds.CreateOpen(team: 2, coop: true));
+            w.SpawningEnabled = false;
+            ProgressionSystem.AddSharedXp(w, 40);
+            Assert.That(w.Players[0].Progress.Current, Is.Not.Null);
+            Assert.That(w.Players[1].Progress.Current, Is.Not.Null);
+            float t0 = w.Elapsed;
+            var pos = w.Players[1].Pos;
+            var move = TestWorlds.NoInput();
+            move[1].MoveX = 127;
+            for (int k = 0; k < 10; k++) w.Step(move);
+            Assert.That(w.Elapsed, Is.EqualTo(t0));
+            Assert.That(w.Players[1].Pos, Is.EqualTo(pos), "ninguém anda durante a escolha");
+            var inputs = TestWorlds.NoInput();
+            inputs[0].ChoiceOfferId = w.Players[0].Progress.Current.OfferId; inputs[0].ChoiceIndex = 0;
+            w.Step(inputs);
+            Assert.That(w.PausedForChoice, Is.True, "ainda falta um jogador");
+            inputs = TestWorlds.NoInput();
+            inputs[1].ChoiceOfferId = w.Players[1].Progress.Current.OfferId; inputs[1].ChoiceIndex = 0;
+            w.Step(inputs);
+            // níveis acumulados abrem novas ofertas: continua congelado até todos escolherem tudo
+            for (int guard = 0; guard < 40 && w.PausedForChoice; guard++)
+            {
+                var all = TestWorlds.NoInput();
+                for (int s = 0; s < 2; s++)
+                    if (w.Players[s].Progress.Current is LevelUpOffer o) { all[s].ChoiceOfferId = o.OfferId; all[s].ChoiceIndex = 0; }
+                w.Step(all);
+            }
+            w.Step(TestWorlds.NoInput());
+            Assert.That(w.Elapsed, Is.GreaterThan(t0));
         }
 
         [Test]

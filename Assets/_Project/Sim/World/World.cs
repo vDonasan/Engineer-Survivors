@@ -47,16 +47,21 @@ namespace ES.Sim
         /// <summary>Evoluções descobertas nesta partida (códice).</summary>
         public readonly System.Collections.Generic.HashSet<int> Discovered = new System.Collections.Generic.HashSet<int>();
 
-        /// <summary>Solo com oferta aberta: o tempo não avança até a escolha.</summary>
+        /// <summary>
+        /// Alguém com oferta aberta: a partida congela (solo e coop) até todos escolherem. No coop o prazo
+        /// de escolha corre no <see cref="ChoiceClock"/>, que só anda durante essa pausa.
+        /// </summary>
         public bool PausedForChoice
         {
             get
             {
-                if (Config.Coop) return false;
                 foreach (var p in Players.Slots) if (p != null && p.IsActive && p.Progress.Current != null) return true;
                 return false;
             }
         }
+
+        /// <summary>Segundos passados com a partida congelada pela escolha (prazo das ofertas no coop).</summary>
+        public float ChoiceClock;
 
         /// <summary>XP coletado neste tick, distribuído pela progressão.</summary>
         public float PendingXp;
@@ -137,7 +142,9 @@ namespace ES.Sim
             Events.Clear();
             if (PausedForChoice)
             {
+                ChoiceClock += Dt;
                 ProgressionSystem.ApplyInputs(this, inputs);
+                ProgressionSystem.ExpireOffers(this);
                 return;
             }
             Tick++;

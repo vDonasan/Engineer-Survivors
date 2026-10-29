@@ -73,6 +73,8 @@ namespace ES.Sim
         public byte Flags;
         /// <summary>Direção de animação 0..7 (<see cref="BossSystem.Dir8"/>).</summary>
         public byte Dir;
+        /// <summary>Fração da vida (a barra do boss; o registro do inimigo não leva vida).</summary>
+        public float Hp;
         public int Tick;
 
         public const byte FlagBravo = 1, FlagInvulnerable = 2;
@@ -110,7 +112,7 @@ namespace ES.Sim
 
         const byte RunPlayers = 1, RunEnemies = 2, RunHostile = 3, RunCosmetic = 4, RunAllies = 5, RunBoss = 6;
         // Jogador: slot, status, x, y, vx, vy, fx, fy, hp, maxHp, flags, seq, recarga, ativo, nível, xp, velocidade.
-        const int PlayerSize = 23, EnemySize = 7, HostileSize = 7, CosmeticSize = 20, AllySize = 8, BossSize = 6;
+        const int PlayerSize = 23, EnemySize = 7, HostileSize = 7, CosmeticSize = 20, AllySize = 8, BossSize = 8;
         const byte TypeMask = 0x0F, BitStatus = 1 << 4, BitElite = 1 << 5, BitStunned = 1 << 6, BitFlash = 1 << 7;
         /// <summary>Aliados por snapshot (os mais próximos dos jogadores primeiro).</summary>
         public const int MaxAllies = 200;
@@ -170,6 +172,7 @@ namespace ES.Sim
                 PutU8((byte)b.Attack);
                 PutU8(BossFlags(w, b));
                 PutU8(BossSystem.Dir8(b.Facing));
+                PutU16(BossHp(w, b));
             }
 
             var h = w.Hostile;
@@ -280,6 +283,15 @@ namespace ES.Sim
             _buf[_runCountPos] = (byte)_runCount;
         }
 
+        /// <summary>Vida do boss em 0..65535 (fração da vida máxima).</summary>
+        public static ushort BossHp(World w, BossRuntime b)
+        {
+            var e = w.Enemies;
+            for (int i = 0; i < e.Count; i++)
+                if (e.Id[i] == b.EnemyId) return (ushort)Math.Round(65535f * Math.Max(0f, Math.Min(1f, e.Hp[i] / Math.Max(1e-3f, e.MaxHp[i]))));
+            return 0;
+        }
+
         public static byte BossFlags(World w, BossRuntime b)
         {
             byte f = b.Bravo ? BossSnap.FlagBravo : (byte)0;
@@ -317,8 +329,8 @@ namespace ES.Sim
                         case RunCosmetic: ReadCosmetic(ref r, arenaW, arenaH, into); break;
                         case RunAllies: ReadAlly(ref r, arenaW, arenaH, tick, into); break;
                         case RunBoss:
-                            r.TryU16(out ushort id); r.TryU8(out byte st); r.TryU8(out byte at); r.TryU8(out byte fl); r.TryU8(out byte dir);
-                            into.Bosses[id] = new BossSnap { State = (BossState)st, Attack = (BossAttack)at, Flags = fl, Dir = dir, Tick = tick };
+                            r.TryU16(out ushort id); r.TryU8(out byte st); r.TryU8(out byte at); r.TryU8(out byte fl); r.TryU8(out byte dir); r.TryU16(out ushort bhp);
+                            into.Bosses[id] = new BossSnap { State = (BossState)st, Attack = (BossAttack)at, Flags = fl, Dir = dir, Hp = bhp / 65535f, Tick = tick };
                             break;
                     }
                 }

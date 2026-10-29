@@ -23,7 +23,7 @@ namespace ES.Game
         readonly Sprite[] _explosion = new Sprite[4], _digits = new Sprite[10];
         readonly Sprite _bossNote, _bossWave, _bossOrb0, _bossOrb1, _bossSpark, _coxinha, _coxinhaSuprema;
         readonly Sprite[] _motoLeft = new Sprite[2], _motoRight = new Sprite[2];
-        readonly Sprite _bolt1, _hostileHalo;
+        readonly Sprite _bolt1, _hostileHalo, _totem, _totemSuprema;
         readonly int[] _orbitAbilities, _auraAbilities;
         int _numbers;
 
@@ -62,6 +62,8 @@ namespace ES.Game
             _bossSpark = assets.Sprite("fx_boss_spark");
             _bolt1 = assets.Sprite("fx_hostile_bolt_1") ?? _bolt;
             _hostileHalo = assets.Sprite("fx_hostile_halo");
+            _totem = assets.Sprite("fx_coxinha_totem");
+            _totemSuprema = assets.Sprite("fx_coxinha_totem_suprema");
             _coxinha = assets.Sprite("fx_coxinha");
             _coxinhaSuprema = assets.Sprite("fx_coxinha_suprema");
             for (int i = 0; i < 2; i++) { _motoLeft[i] = assets.Sprite("fx_moto_left_" + i); _motoRight[i] = assets.Sprite("fx_moto_right_" + i); }
@@ -123,6 +125,35 @@ namespace ES.Game
             }
         }
 
+        /// <summary>Totem de coxinha: a coxinha gigante cai do alto, anel dourado do alcance e brilhos subindo.</summary>
+        void DrawTotems(MatchFeed feed, float now)
+        {
+            foreach (var kv in feed.Totems)
+            {
+                var t = kv.Value;
+                var at = Layers.V(t.Pos);
+                float age = feed.Elapsed - t.PlacedAt;
+                float drop = age < 0.4f ? (1f - age / 0.4f) * 4f : 0f;
+                float bob = Mathf.Round(Mathf.Sin(now * 2.5f) * 1.5f) * Layers.Pixel;
+                var gold = t.Supreme ? new Color(1f, 0.85f, 0.25f) : new Color(1f, 0.72f, 0.35f);
+                // anel do alcance (tracejado, pulsando)
+                int n = Mathf.Clamp(Mathf.RoundToInt(t.Radius * 32f * Mathf.PI * 2f / 6f), 16, 160);
+                float alpha = 0.55f + 0.3f * Mathf.Sin(now * 4f);
+                for (int i = 0; i < n; i += 2)
+                {
+                    float a = Mathf.PI * 2f * i / n + now * 0.3f;
+                    _stamps.Add(_px, Layers.Snap(at + new Vector2(Mathf.Cos(a), Mathf.Sin(a)) * t.Radius), new Color(gold.r, gold.g, gold.b, alpha), Layers.Shadow + 5);
+                }
+                _stamps.Add(t.Supreme ? _totemSuprema : _totem, Layers.Snap(at + new Vector2(0, 0.85f + drop)) + new Vector2(0, bob), Color.white, Layers.Actor(at.y));
+                // brilhos subindo
+                for (int k = 0; k < 4; k++)
+                {
+                    float h = Mathf.Repeat(now * 0.8f + k * 0.25f, 1f), x = Mathf.Sin(k * 2.3f + now) * 0.5f;
+                    _stamps.Add(_spark, Layers.Snap(at + new Vector2(x, 0.3f + h * 1.4f)), new Color(gold.r, gold.g, gold.b, 1f - h), Layers.Fx);
+                }
+            }
+        }
+
         /// <summary>Moto: aviso com a trajetória (piscando) e depois a travessia com poeira.</summary>
         void DrawMotos(MatchFeed feed, float now)
         {
@@ -139,7 +170,7 @@ namespace ES.Game
                 {
                     bool on = ((int)(now * 10) & 1) == 0;
                     var col = new Color(1f, 0.3f, 0.3f, on ? 0.9f : 0.45f);
-                    var side = new Vector2(-dir.y, dir.x) * 0.9f;
+                    var side = new Vector2(-dir.y, dir.x) * 1.2f;
                     int n = Mathf.RoundToInt(m.Length * 32f / 6f);
                     for (int k = 0; k <= n; k++)
                     {
@@ -221,6 +252,7 @@ namespace ES.Game
 
             DrawAbilities(feed, players, renderSeconds, now);
             DrawMotos(feed, now);
+            DrawTotems(feed, now);
 
             _numbers = 0;
             for (int i = _timed.Count - 1; i >= 0; i--)

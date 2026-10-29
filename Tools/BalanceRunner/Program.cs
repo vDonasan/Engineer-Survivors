@@ -21,7 +21,7 @@ for (int i = 0; i < args.Length - 1; i++)
 }
 
 var db = ContentLoader.Sp1Database();
-var csv = new StringBuilder("difficulty,team,spec,seed,survivedSeconds,result,levelAvg,kills,damageTaken,peakEnemies,maxStepMs,avgStepMs,guirottoDiedAt,magoDiedAt,bravoCount\n");
+var csv = new StringBuilder("difficulty,team,spec,seed,survivedSeconds,result,levelAvg,kills,damageTaken,peakEnemies,maxStepMs,avgStepMs,guirottoDiedAt,magoDiedAt,bravoCount,startDamage,totalDamage,startDamage5min\n");
 var specs = Enumerable.Range(0, db.SpecializationCount).Select(i => db.Specialization(i).Def.id).ToArray();
 var total = Stopwatch.StartNew();
 
@@ -37,7 +37,8 @@ for (ulong seed = 1; seed <= (ulong)seeds; seed++)
     int peak = 0;
     double maxMs = 0, sumMs = 0;
     long steps = 0;
-    float guirottoAt = -1, magoAt = -1;
+    float guirottoAt = -1, magoAt = -1, start5 = -1;
+    int startAbility = db.Specialization(db.SpecializationIndex(spec)).StartingAbility;
     int bravos = 0;
     var sw = new Stopwatch();
     while (w.Phase == MatchPhase.Running && w.Elapsed < minutes * 60f)
@@ -51,6 +52,7 @@ for (ulong seed = 1; seed <= (ulong)seeds; seed++)
         sumMs += ms;
         steps++;
         peak = Math.Max(peak, w.Enemies.Count);
+        if (start5 < 0 && w.Elapsed >= 300) start5 = StartDamage(w, startAbility);
         foreach (var ev in w.Events.Rule)
         {
             if (ev.Kind == RuleEventKind.BossBravo) bravos++;
@@ -70,10 +72,32 @@ for (ulong seed = 1; seed <= (ulong)seeds; seed++)
         peak,
         maxMs.ToString("0.00", CultureInfo.InvariantCulture),
         (sumMs / Math.Max(1, steps)).ToString("0.000", CultureInfo.InvariantCulture),
-        guirottoAt.ToString("0", CultureInfo.InvariantCulture), magoAt.ToString("0", CultureInfo.InvariantCulture), bravos));
+        guirottoAt.ToString("0", CultureInfo.InvariantCulture), magoAt.ToString("0", CultureInfo.InvariantCulture), bravos,
+        StartDamage(w, startAbility).ToString("0", CultureInfo.InvariantCulture), TotalDamage(w).ToString("0", CultureInfo.InvariantCulture), start5.ToString("0", CultureInfo.InvariantCulture)));
     Console.WriteLine($"{Difficulties.Id(d)}/{team}/{spec}/{seed}: {result} em {w.Elapsed:0}s, nível médio {players.Average(p => p.Progress.Level):0.0}, abates {w.Stats.Kills}, pico {peak}, Guirotto {guirottoAt:0}s, Mago {magoAt:0}s");
 }
 
 Directory.CreateDirectory(Path.GetDirectoryName(Path.GetFullPath(output)));
 File.WriteAllText(output, csv.ToString());
 Console.WriteLine($"CSV: {Path.GetFullPath(output)} ({total.Elapsed.TotalSeconds:0}s)");
+
+/// <summary>Dano da arma inicial (e da sua evolução) somado entre os jogadores.</summary>
+static float StartDamage(World w, int start)
+{
+    float d = 0;
+    foreach (var p in w.Players.Slots)
+    {
+        if (p == null) continue;
+        var row = w.Stats.DamageByAbility[p.Slot];
+        d += row[start];
+        for (int e = 0; e < w.Db.EvolutionCount; e++) if (w.Db.Evolution(e).From == start) d += row[w.Db.Evolution(e).Result];
+    }
+    return d;
+}
+
+static float TotalDamage(World w)
+{
+    float d = 0;
+    foreach (var p in w.Players.Slots) if (p != null) foreach (var v in w.Stats.DamageByAbility[p.Slot]) d += v;
+    return d;
+}

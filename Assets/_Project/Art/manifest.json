@@ -18644,11 +18644,11 @@
    "id": "fx_moto_right_0",
    "category": "Effects",
    "file": "Effects/fx_moto_right_0.png",
-   "w": 24,
-   "h": 14,
+   "w": 44,
+   "h": 30,
    "pivot": [
-    12,
-    7
+    22,
+    15
    ],
    "border": null
   },
@@ -18656,11 +18656,11 @@
    "id": "fx_moto_left_0",
    "category": "Effects",
    "file": "Effects/fx_moto_left_0.png",
-   "w": 24,
-   "h": 14,
+   "w": 44,
+   "h": 30,
    "pivot": [
-    12,
-    7
+    22,
+    15
    ],
    "border": null
   },
@@ -18668,11 +18668,11 @@
    "id": "fx_moto_right_1",
    "category": "Effects",
    "file": "Effects/fx_moto_right_1.png",
-   "w": 24,
-   "h": 14,
+   "w": 44,
+   "h": 30,
    "pivot": [
-    12,
-    7
+    22,
+    15
    ],
    "border": null
   },
@@ -18680,11 +18680,35 @@
    "id": "fx_moto_left_1",
    "category": "Effects",
    "file": "Effects/fx_moto_left_1.png",
-   "w": 24,
-   "h": 14,
+   "w": 44,
+   "h": 30,
    "pivot": [
-    12,
-    7
+    22,
+    15
+   ],
+   "border": null
+  },
+  {
+   "id": "fx_coxinha_totem",
+   "category": "Effects",
+   "file": "Effects/fx_coxinha_totem.png",
+   "w": 44,
+   "h": 60,
+   "pivot": [
+    22,
+    30
+   ],
+   "border": null
+  },
+  {
+   "id": "fx_coxinha_totem_suprema",
+   "category": "Effects",
+   "file": "Effects/fx_coxinha_totem_suprema.png",
+   "w": 44,
+   "h": 60,
+   "pivot": [
+    22,
+    30
    ],
    "border": null
   },

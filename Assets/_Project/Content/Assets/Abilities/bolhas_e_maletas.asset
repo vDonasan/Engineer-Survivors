@@ -34,28 +34,28 @@ MonoBehaviour:
     - moedas
     baseStats:
     - stat: Damage
-      value: 14
+      value: 20
     - stat: Cooldown
-      value: 1
+      value: 0.85
     - stat: Range
       value: 7.5
     - stat: ProjectileSpeed
-      value: 3.8
+      value: 4.6
     - stat: Count
       value: 4
     - stat: Area
-      value: 1.2
+      value: 1.45
     - stat: Duration
       value: 1
     levels:
     - add:
       - stat: Damage
-        value: 3
+        value: 4
       mult: []
       text: +1 maleta por arremesso e +2 moedas por maleta
     - add:
       - stat: Damage
-        value: 3
+        value: 4
       mult: []
       text: "Avan\xE7ada: as moedas ricocheteiam entre inimigos pr\xF3ximos"
     grants: []
@@ -63,7 +63,7 @@ MonoBehaviour:
     - key: evolved
       value: 1
     - key: bubbleLife
-      value: 3
+      value: 3.6
     - key: caseEvery
       value: 2.2
   icon: {fileID: 21300000, guid: 772f4712202f7364584b9cf4221e120d, type: 3}

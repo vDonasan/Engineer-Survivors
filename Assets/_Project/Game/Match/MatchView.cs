@@ -112,7 +112,7 @@ namespace ES.Game
             int local = _net.LocalSlot;
             ReadInput(feed);
 
-            bool frozen = _net.Mode == NetMode.Solo && (_net.Paused || feed.CurrentOffer != null);
+            bool frozen = (_net.Mode == NetMode.Solo && _net.Paused) || ChoosingAnyone(feed);
             if (!frozen && feed.Phase == MatchPhase.Running) _now += Time.unscaledDeltaTime;
             else if (feed.Phase != MatchPhase.Running) _now += Time.unscaledDeltaTime;
 
@@ -133,10 +133,8 @@ namespace ES.Game
             _enemies.Sync(_frame.Enemies, _now);
             _bosses.Sync(feed, _frame, _now);
             bool lab = LabActive(feed);
+            _labFlicker = lab && _settings.Effects != EffectsLevel.Low;
             _players.Sync(feed, _frame, local, localPos, _now, lab);
-            // Laboratório Incompleto: luzes piscando
-            if (_light != null && lab && Time.unscaledTime - _blackoutAt > BlackoutSeconds)
-                _light.intensity = _lightBase * (((int)(Time.unscaledTime * 4f) % 5) == 0 ? 0.55f : 1f);
             float tickSeconds = 1f / Mathf.Max(1, _net.Db.Def.rules.tickRate);
             _fx.Tick(_now, feed, _frame, _players, feed.RenderTick * tickSeconds);
             if (_motoSoundAt > 0 && _now >= _motoSoundAt) { _motoSoundAt = -1; SfxPlayer.Instance?.Play("moto", AudioBus.Sfx, 0.9f, 0f); }
@@ -153,7 +151,10 @@ namespace ES.Game
             if (_light == null) return;
             float k = (_now - _blackoutAt) / BlackoutSeconds;
             bool dim = _settings.Effects != EffectsLevel.Low && k >= 0f && k < 1f;
-            _light.intensity = dim ? _lightBase * Mathf.Lerp(0.35f, 1f, k * k) : _lightBase;
+            float intensity = dim ? _lightBase * Mathf.Lerp(0.35f, 1f, k * k) : _lightBase;
+            // Laboratório Incompleto: as luzes piscam (antes o valor era sobrescrito aqui a cada quadro)
+            if (!dim && _labFlicker && ((int)(Time.unscaledTime * 4f) % 5) == 0) intensity = _lightBase * 0.55f;
+            _light.intensity = intensity;
         }
 
         Vector2? CameraTarget(MatchFeed feed, int local)
@@ -167,7 +168,8 @@ namespace ES.Game
         void ReadInput(MatchFeed feed)
         {
             var input = PlayerInput.None;
-            if (!InputBlocked && _input != null && feed.Phase == MatchPhase.Running)
+            // escolha de melhoria (de qualquer jogador): a partida está congelada, ninguém anda
+            if (!InputBlocked && _input != null && feed.Phase == MatchPhase.Running && !ChoosingAnyone(feed))
             {
                 var m = _input.MoveValue;
                 input.MoveX = Quant.Axis(m.x);
@@ -176,6 +178,15 @@ namespace ES.Game
                 if (_input.DebugSpawn.WasPressedThisFrame()) DebugSpawn(50);
             }
             _net.SetLocalInput(input);
+        }
+
+        /// <summary>Alguém do grupo está escolhendo uma melhoria: a partida fica congelada para todos.</summary>
+        public static bool ChoosingAnyone(MatchFeed feed)
+        {
+            if (feed.CurrentOffer != null) return true;
+            foreach (var p in feed.Players)
+                if (p.Present && p.Status == PlayerStatus.Active && (p.Flags & PlayerSnap.FlagHasOffer) != 0) return true;
+            return false;
         }
 
         /// <summary>Comando de depuração (F4, só no solo): gera inimigos perto do jogador para medir desempenho.</summary>
@@ -317,6 +328,7 @@ namespace ES.Game
         }
 
         float _motoSoundAt = -1;
+        bool _labFlicker;
 
         bool IsLab(int ev) => ev >= 0 && ev < _net.Db.EventCount && _net.Db.Event(ev).Def.behavior == "lab";
 

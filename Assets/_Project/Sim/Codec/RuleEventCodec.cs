@@ -104,6 +104,12 @@ namespace ES.Sim
                     case RuleEventKind.EventBonus:
                         w.U8((byte)e.A); w.U8((byte)e.B); Pos(w, e, aw, ah); w.F32(e.Z);
                         break;
+                    case RuleEventKind.EnemyRemoved:
+                        w.U16((ushort)e.A); w.U32((uint)Math.Max(0, e.C));
+                        break;
+                    case RuleEventKind.EventTotem:
+                        w.U16((ushort)e.A); w.U8((byte)e.B); Pos(w, e, aw, ah); w.F32(e.Z);
+                        break;
                     case RuleEventKind.EventMoto:
                         w.U16((ushort)e.A); w.U16((ushort)e.B); w.U16((ushort)Math.Max(0, Math.Min(65535, e.C))); w.F32(e.X); w.F32(e.Y); w.F32(e.Z); w.F32(e.W);
                         break;
@@ -125,7 +131,7 @@ namespace ES.Sim
             var parsed = new List<DecodedRuleEvent>(count);
             for (int i = 0; i < count; i++)
             {
-                if (!r.TryU8(out byte kind) || kind > (byte)RuleEventKind.EventMoto) return false;
+                if (!r.TryU8(out byte kind) || kind > (byte)RuleEventKind.EventTotem) return false;
                 var e = new RuleEvent { Kind = (RuleEventKind)kind };
                 var options = NoOptions;
                 var actions = new byte[3];
@@ -238,6 +244,15 @@ namespace ES.Sim
                         ok = r.TryU8(out byte a22) & r.TryU8(out byte b22) & ReadPos(ref r, arenaW, arenaH, ref e) & r.TryF32(out float z22);
                         e.A = a22; e.B = b22; e.Z = z22;
                         ok &= a22 == 255 || a22 < PlayerStore.MaxSlots;
+                        break;
+                    case RuleEventKind.EnemyRemoved:
+                        ok = r.TryU16(out ushort a24) & r.TryU32(out uint c24);
+                        e.A = a24; e.C = (int)Math.Min(c24, int.MaxValue);
+                        break;
+                    case RuleEventKind.EventTotem:
+                        ok = r.TryU16(out ushort a25) & r.TryU8(out byte b25) & ReadPos(ref r, arenaW, arenaH, ref e) & r.TryF32(out float z25);
+                        e.A = a25; e.B = b25; e.Z = z25;
+                        ok &= !float.IsNaN(z25) && z25 >= 0 && z25 < 50;
                         break;
                     case RuleEventKind.EventMoto:
                         ok = r.TryU16(out ushort a23) & r.TryU16(out ushort b23) & r.TryU16(out ushort c23) & r.TryF32(out float x23) & r.TryF32(out float y23) & r.TryF32(out float z23) & r.TryF32(out float w23);

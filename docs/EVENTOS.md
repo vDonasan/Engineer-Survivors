@@ -15,8 +15,8 @@ e `noBoss`. No Modo Infinito o peso cresce com `infiniteWeightPerMinute` (Labora
 | Zero na Prova | um jogador | perde 25% do XP ainda não convertido (nunca o nível), ataques 15% mais lentos, inimigos próximos 25% mais rápidos por 6 s | 20 abates em 18 s: devolve o XP +20% e tira a penalidade |
 | Chamado de Burro | um jogador | ataques 12% mais lentos; cada abate dá XP extra | 15 abates: tira a penalidade, +20% de dano por 8 s e explosão de símbolos |
 | Laboratório Incompleto | arena | aviso de 3 s; surgimento ×1,8, dois surtos, vazamentos sinalizados (vapor/descarga) a cada 3,5 s | 40 abates por jogador em 30 s: +50% da barra e 35% de chance de melhoria extra |
-| Atropelou o Motoqueiro | arena | aviso de 1,6 s com a pista; a moto derruba inimigos (dano e empurrão) e machuca quem estiver na pista | passou raspando e a moto derrubou 3+: Reflexo de Piloto (+25% de velocidade, 6 s) |
-| Ganhou uma Coxinha | um jogador (só ele coleta) | coxinha a 3–5 m: cura 20%, XP e +20% de velocidade por 5 s; 10% de chance de Coxinha Suprema (onda de impacto) | some no fim se não for coletada |
+| Atropelou o Motoqueiro | arena | aviso de 1,6 s com a pista; a moto (grande, 44×30) derruba inimigos (dano e empurrão) e machuca quem estiver na pista | passou raspando e a moto derrubou 3+: Reflexo de Piloto (+25% de velocidade, 6 s) |
+| Ganhou uma Coxinha | um jogador (perto dele) | coxinha GIGANTE vira totem por 20 s: solta XP a cada 1,2 s; quem fica no alcance (3,5 m) ganha +15% de dano, +15% de velocidade e regeneração (sai do alcance, perde) | 15%: Coxinha Suprema (dourada, 4,5 m, pulso de dano a cada 2 s) |
 | Jalapeño | um jogador | +20% de dano, ataques 20% mais rápidos e queimadura ao redor por 10 s; com a Cenoura Podre, nuvem picante (dano contínuo) | no fim, explosão de calor e 1,5 s de lentidão |
 
 ## Visual dos personagens
@@ -27,6 +27,7 @@ Camadas separadas (não redesenham o personagem), presas ao **ponto da cabeça d
 - Itens (pela lista de habilidades, igual para todos no coop): Chapéu de Japonês, Camiseta ao Contrário (etiqueta e costuras), Protoboard
   (brilho e componentes a mais na evolução, trilhas piscando), Cenoura Podre na cintura, engrenagens do Motor do Astra em órbita.
   Cachorro e Mamão já eram companheiros visíveis.
+- Durante a escolha de melhoria a partida congela para todos (solo e coop); no coop o prazo de 12 s corre só na pausa.
 - Estados (snapshot): Tequila (rubor, balanço só no desenho, estrelas/espirais, garrafa na ativação, rastro), Jalapeño (rubor, chamas,
   pegadas de calor), Iogurte (partículas nos pés), Bolha (esfera com mensagens, corações e notificações), Burro (balão e símbolos),
   Zero (prova com zero), Reflexo de Piloto (rastro).

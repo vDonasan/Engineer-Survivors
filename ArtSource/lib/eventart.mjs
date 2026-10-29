@@ -13,7 +13,7 @@ const P = {
   cheek: '#ff6a6a', pink: '#ff8ab8', white: '#ffffff', gray: '#7a808a', smoke: '#b8bec6', flame: '#ff8a1e', flameL: '#ffd23f', clock: '#e6e9ed',
   tag: '#ffffff', seam: '#8a8f99', purple: '#8a5ad6',
 };
-for (const v of [...Object.values(P), K]) if (!PALETTE_HEX.includes(v)) PALETTE_HEX.push(v);
+for (const v of [...Object.values(P), K, '#ff6a6a', '#3a3e48', '#24272e', '#e6e9ed', '#b8bec6', '#1a1418', '#7a808a', '#3a7ad6', '#ffffff']) if (!PALETTE_HEX.includes(v)) PALETTE_HEX.push(v);
 
 const px = (w, h) => new Px(w, h);
 function put(p, rows, map, ox = 0, oy = 0) {
@@ -88,16 +88,74 @@ export function eventIcons() {
 
 // ---------- no mundo: coxinhas, moto, emotes, partículas ----------
 
+/** Moto grande de lado (virada para a direita): rodas raiadas, tanque, escapamento, piloto de capacete. */
+function bigMoto(frame) {
+  const p = px(44, 30);
+  const wheel = (cx, cy) => {
+    for (let y = -6; y <= 6; y++) for (let x = -6; x <= 6; x++) {
+      const d = x * x + y * y;
+      if (d <= 40) p.set(cx + x, cy + y, d > 24 ? P.tire : d > 4 ? '#3a3e48' : P.chrome);
+    }
+    // raios (giram entre os quadros)
+    const spokes = frame ? [[1, 1], [-1, 1], [1, -1], [-1, -1]] : [[1, 0], [-1, 0], [0, 1], [0, -1]];
+    for (const [dx, dy] of spokes) for (let k = 2; k <= 4; k++) p.set(cx + dx * k, cy + dy * k, P.chrome);
+  };
+  wheel(9, 22); wheel(34, 22);
+  // chassi, tanque e banco
+  for (let x = 10; x <= 33; x++) { p.set(x, 17, P.motoD); p.set(x, 16, P.moto); }
+  for (let y = 11; y <= 16; y++) for (let x = 16; x <= 29; x++) if ((x - 22.5) ** 2 / 50 + (y - 14) ** 2 / 9 <= 1) p.set(x, y, y < 13 ? '#ff6a6a' : P.moto);
+  for (let x = 12; x <= 19; x++) { p.set(x, 13, '#24272e'); p.set(x, 14, '#24272e'); }
+  // garfo e farol
+  for (let k = 0; k < 8; k++) { p.set(30 + Math.floor(k / 2), 14 + k, P.chrome); p.set(31 + Math.floor(k / 2), 14 + k, '#7a808a'); }
+  for (let y = 10; y <= 13; y++) for (let x = 33; x <= 36; x++) p.set(x, y, y === 10 ? P.chrome : P.gold);
+  for (let x = 29; x <= 33; x++) p.set(x, 9, P.chrome); // guidão
+  // escapamento
+  for (let x = 4; x <= 14; x++) { p.set(x, 19, P.chrome); p.set(x, 20, '#7a808a'); }
+  // piloto: jaqueta, braço no guidão, capacete com viseira
+  for (let y = 6; y <= 13; y++) for (let x = 14; x <= 21; x++) if (!(y < 8 && x > 20)) p.set(x, y, P.jacket);
+  for (let k = 0; k < 9; k++) p.set(21 + k, 8 + Math.floor(k / 3), P.jacket);
+  for (let y = 0; y <= 6; y++) for (let x = 15; x <= 22; x++) if ((x - 18.5) ** 2 + (y - 3.2) ** 2 <= 14) p.set(x, y, P.helmet);
+  for (let x = 19; x <= 22; x++) { p.set(x, 3, '#1a1418'); p.set(x, 4, '#3a7ad6'); }
+  for (let y = 13; y <= 18; y++) for (let x = 15; x <= 18; x++) p.set(x, y, '#24272e'); // perna
+  return outline(p);
+}
+
+/** Coxinha GIGANTE do totem (44×60, ~2× a altura de um personagem): massa empanada com brilho, pratinho e vapor. */
+function totem(gold) {
+  const W = 44, H = 60, cx = 22, top = 4, bottom = 50;
+  const p = px(W, H);
+  const a = gold ? P.gold : P.dough, l = gold ? P.strawL : P.doughL, d = gold ? P.goldD : P.doughD;
+  for (let y = top; y <= bottom; y++) {
+    // gota: ponta no alto, base larga e arredondada
+    const t = (y - top) / (bottom - top);
+    const half = t < 0.62 ? 1.5 + t * 24 : 16.4 * Math.sqrt(Math.max(0, 1 - ((t - 0.62) / 0.42) ** 2)) + 1;
+    for (let x = Math.round(cx - half); x <= Math.round(cx + half); x++) {
+      const edge = x - (cx - half);
+      p.set(x, y, edge < 3.2 ? d : x > cx + half * 0.35 && y < bottom - 9 ? l : a);
+    }
+  }
+  // empanado (farelos) e brilho
+  for (let y = 12; y <= bottom - 2; y += 4) for (let x = 8 + (y % 3); x <= 36; x += 5) if (p.get(x, y)) { p.set(x, y, d); if (p.get(x + 1, y)) p.set(x + 1, y, d); }
+  for (let y = 14; y <= 32; y++) for (const x of [28, 29]) if (p.get(x, y) && (x === 28 || y < 26)) p.set(x, y, '#ffffff');
+  // pratinho
+  for (let x = 3; x <= 40; x++) { p.set(x, 53, '#ffffff'); p.set(x, 54, '#e6e9ed'); p.set(x, 55, '#b8bec6'); }
+  // vapor de quentinha
+  for (const [x, y] of [[17, 0], [18, 1], [17, 2], [24, 0], [25, 1], [24, 2]]) p.set(x, y, P.smoke);
+  return outline(p);
+}
+
 export function eventWorldSprites() {
   const out = [];
   const add = (id, p, cat = 'Effects') => out.push({ id, category: cat, w: p.w, h: p.h, pivot: [p.w / 2, p.h / 2], px: p });
   for (const [id, gold] of [['fx_coxinha', false], ['fx_coxinha_suprema', true]]) { const p = px(13, 12); coxinha(p, 2, 1, gold); add(id, p); }
-  // moto: direita (e esquerda espelhada), 2 quadros (rodas)
+  // moto grande (44×30): direita (e esquerda espelhada), 2 quadros (raios das rodas girando)
   for (let f = 0; f < 2; f++) {
-    const p = px(24, 14); moto(p, 1, 2);
-    if (f) for (const x of [2, 15]) p.set(x + 1, 10, P.chrome);
+    const p = bigMoto(f);
     add(`fx_moto_right_${f}`, p); add(`fx_moto_left_${f}`, p.flipX());
   }
+  // coxinha GIGANTE do totem (normal e Suprema dourada)
+  add('fx_coxinha_totem', totem(false));
+  add('fx_coxinha_totem_suprema', totem(true));
   // emotes sobre a cabeça (12×12)
   const emote = (id, draw) => { const p = px(12, 12); draw(p); add(`emote_${id}`, outline(p)); };
   emote('dez', (p) => { for (let y = 1; y < 11; y++) for (let x = 2; x < 10; x++) p.set(x, y, P.paper); put(p, ['X.XX', 'X.XX', 'X.XX'], { X: P.red }, 4, 4); });

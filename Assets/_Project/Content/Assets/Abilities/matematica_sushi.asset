@@ -35,9 +35,9 @@ MonoBehaviour:
     - esteira
     baseStats:
     - stat: Damage
-      value: 10
+      value: 14
     - stat: Cooldown
-      value: 0.75
+      value: 0.65
     - stat: Range
       value: 9.5
     - stat: ProjectileSpeed
@@ -45,18 +45,18 @@ MonoBehaviour:
     - stat: Count
       value: 5
     - stat: Area
-      value: 1.1
+      value: 1.35
     - stat: Duration
       value: 1
     levels:
     - add:
       - stat: Damage
-        value: 2
+        value: 3
       mult: []
       text: "+1 sushi por lan\xE7amento"
     - add:
       - stat: Damage
-        value: 2
+        value: 3
       mult: []
       text: "Avan\xE7ada: esteira de pratos explode em cadeia numa linha de inimigos"
     grants: []

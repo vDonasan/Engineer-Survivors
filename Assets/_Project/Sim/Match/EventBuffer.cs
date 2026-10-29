@@ -32,6 +32,10 @@ namespace ES.Sim
         EventBonus,
         /// <summary>Trajetória da moto: A = id, B = comprimento × 10, C = atraso em ms, X/Y = início, Z = ângulo, W = velocidade.</summary>
         EventMoto,
+        /// <summary>Inimigo reciclado (longe de todos): some sem abate, explosão ou som. A = id, C = tick.</summary>
+        EnemyRemoved,
+        /// <summary>Totem no chão (Coxinha): A = id do evento, B = 1 se Suprema, X/Y = posição, Z = alcance.</summary>
+        EventTotem,
     }
 
     /// <summary>Evento de regra: entregue de forma confiável a todos os clientes.</summary>

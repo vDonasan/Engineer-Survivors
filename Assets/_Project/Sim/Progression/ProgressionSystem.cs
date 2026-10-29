@@ -57,7 +57,7 @@ namespace ES.Sim
             pr.NextOfferId = (short)(pr.NextOfferId == short.MaxValue ? 1 : pr.NextOfferId + 1);
             if (w.Config.Coop)
             {
-                offer.Deadline = float.IsNaN(keepDeadline) ? w.Elapsed + w.Rules.coopChoiceSeconds : keepDeadline;
+                offer.Deadline = float.IsNaN(keepDeadline) ? w.ChoiceClock + w.Rules.coopChoiceSeconds : keepDeadline;
                 p.InvulnUntil = Math.Max(p.InvulnUntil, w.Elapsed + w.Rules.choiceInvuln);
             }
             offer.RerollsLeft = (byte)Math.Max(0, pr.RerollsLeft);
@@ -170,18 +170,22 @@ namespace ES.Sim
             }
         }
 
+        /// <summary>Coop: quem não escolheu no prazo (tempo de pausa) leva a primeira carta, para ninguém travar o grupo.</summary>
+        public static void ExpireOffers(World w)
+        {
+            foreach (var p in w.Players.Slots)
+            {
+                var offer = p?.Progress.Current;
+                if (offer != null && p.IsActive && w.ChoiceClock >= offer.Deadline) Choose(w, p.Slot, offer.OfferId, 0);
+            }
+        }
+
         public static void Step(World w, float dt)
         {
             if (w.PendingXp > 0)
             {
                 AddSharedXp(w, w.PendingXp);
                 w.PendingXp = 0;
-            }
-            if (!w.Config.Coop) return;
-            foreach (var p in w.Players.Slots)
-            {
-                var offer = p?.Progress.Current;
-                if (offer != null && w.Elapsed >= offer.Deadline) Choose(w, p.Slot, offer.OfferId, 0);
             }
         }
     }

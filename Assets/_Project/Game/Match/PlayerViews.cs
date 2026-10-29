@@ -242,7 +242,7 @@ namespace ES.Game
                         float a = Mathf.PI * 2f * k / n;
                         _fx.Add(_px, Layers.Snap(pos + new Vector2(Mathf.Cos(a), Mathf.Sin(a)) * 1.25f), new Color(0.55f, 0.8f, 1f, 0.55f), order + 4);
                     }
-                    var icons = new[] { _msg, _heart, _notif, _msg };
+                    var icons = _bubbleIcons ??= new[] { _msg, _heart, _notif, _msg };
                     for (int k = 0; k < icons.Length; k++)
                     {
                         float a = now * 1.2f + k * Mathf.PI / 2f;
@@ -277,7 +277,15 @@ namespace ES.Game
             r.transform.localPosition = at;
         }
 
-        void ShowEmote(Vector2 at, string id, int order) => _fx.Add(_assets.Sprite("emote_" + id), Layers.Snap(at), Color.white, order + 6);
+        Sprite[] _bubbleIcons;
+        readonly System.Collections.Generic.Dictionary<string, Sprite> _emotes = new System.Collections.Generic.Dictionary<string, Sprite>();
+
+        void ShowEmote(Vector2 at, string id, int order)
+        {
+            // cache: sem concatenar texto a cada quadro (menos coleta de lixo no WebGL)
+            if (!_emotes.TryGetValue(id, out var sprite)) _emotes[id] = sprite = _assets.Sprite("emote_" + id);
+            _fx.Add(sprite, Layers.Snap(at), Color.white, order + 6);
+        }
 
         /// <summary>Rastro discreto: cópias esmaecidas nas últimas posições.</summary>
         void Trail(View v, Vector2 pos, Vector2 feet, float now, bool moving, Sprite sprite, int order, Color color)

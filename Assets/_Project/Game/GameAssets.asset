@@ -3973,6 +3973,12 @@ MonoBehaviour:
   - id: fx_moto_left_1
     sprite: {fileID: 21300000, guid: 4016e1f8c41653b4da2e00f7c405031b, type: 3}
     anchor: {x: -1, y: -1}
+  - id: fx_coxinha_totem
+    sprite: {fileID: 21300000, guid: 70b6612df4b04af40ad6cd39d8787cc1, type: 3}
+    anchor: {x: -1, y: -1}
+  - id: fx_coxinha_totem_suprema
+    sprite: {fileID: 21300000, guid: cbdc06e271e49b34f9844b8ca770b7a7, type: 3}
+    anchor: {x: -1, y: -1}
   - id: emote_dez
     sprite: {fileID: 21300000, guid: 02ee901f71d608c4bbd12fcd6d77e554, type: 3}
     anchor: {x: -1, y: -1}

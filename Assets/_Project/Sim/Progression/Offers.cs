@@ -34,6 +34,8 @@ namespace ES.Sim
         public int RerollsLeft, BansLeft, SkipsLeft;
         /// <summary>Até este segundo, cartas incomuns, raras e relíquias aparecem mais (Dez na Prova).</summary>
         public float LuckUntil;
+        /// <summary>Por habilidade: ofertas seguidas em que ela podia aparecer e não apareceu (anti-seca).</summary>
+        public int[] SinceSeen;
         /// <summary>Habilidades banidas: não voltam a aparecer nesta partida.</summary>
         public readonly System.Collections.Generic.HashSet<int> Banned = new System.Collections.Generic.HashSet<int>();
     }

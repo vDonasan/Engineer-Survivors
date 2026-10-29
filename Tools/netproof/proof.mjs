@@ -70,8 +70,11 @@ try {
   const bossQ = bossMode ? '&t=535&god=1&autopick=1&bosshp=0.06' : '';
   // PROOF_EVENTS=1: o host dispara Jalapeño e Bolha Social e equipa itens visuais (o cliente precisa ver tudo)
   const eventsMode = process.env.PROOF_EVENTS === '1';
+  // PROOF_HOSTDIES=1: o host cai aos 35 s; mede quadros e inimigos antes e depois nos dois lados
+  const hostDies = process.env.PROOF_HOSTDIES === '1';
+  const dieQ = hostDies ? '&morre=35&godclient=1&autopick=1' : '';
   const evtQ = eventsMode ? '&god=1&autopick=1&evt=jalapeno,bolha_social&itens=chapeu_japones,camiseta_contrario,tequila' : '';
-  await host.goto(`${base}/?mode=host&autostart=2&name=Host&spec=giulia&log=1&evolve=3${bossQ}${evtQ}`);
+  await host.goto(`${base}/?mode=host&autostart=2&name=Host&spec=giulia&log=1&evolve=3${bossQ}${evtQ}${dieQ}`);
   const code = await waitFor(hl, /CODE=([A-Z0-9]+)/, 120000);
   report.checks.roomCreated = !!code;
   if (!code) throw new Error('host não criou a sala');
@@ -116,6 +119,8 @@ try {
     await client.screenshot({ path: join(outDir, 'boss-client-vitoria.png') });
     report.checks.clientSeesBoss = cl.some((l) => /bosses=[1-9]/.test(l));
     report.checks.clientSeesBravo = cl.some((l) => l.includes('/BRAVO'));
+    // a barra do boss no cliente acompanha a vida (antes ficava cheia: o snapshot não levava a vida do boss)
+    report.checks.clientBossHpDrops = cl.some((l) => /boss\d=[^ ]+ hp=0\.[0-8]/.test(l));
     report.checks.bothVictory = /phase=Victory/.test(lastLine(hl)) && /phase=Victory/.test(lastLine(cl));
     const [ix, iy] = (process.env.PROOF_INFINITE_CLICK || '480,422').split(',').map(Number); // botão na janela 960×600
     await host.mouse.move(ix, iy); await sleep(300);
@@ -130,6 +135,20 @@ try {
     report.checks.clientSeesEvent = cl.some((l) => /events=[1-9]/.test(l));
     report.checks.clientSeesHostLook = cl.some((l) => /look0=([4-9]|[1-9]\d+)/.test(l) && (Number(/look0=(\d+)/.exec(l)[1]) & 4) !== 0);
     report.checks.clientSeesHostItems = cl.some((l) => /acc0=([4-9]|\d\d)/.test(l));
+  }
+  if (hostDies) {
+    await sleep(Math.max(0, 60000));
+    const parse = (l) => ({ t: +(/ t=([\d.]+)/.exec(l) || [0, 0])[1], fps: +(/fps=(\d+)/.exec(l) || [0, 0])[1], enemies: +(/enemies=(\d+)/.exec(l) || [0, 0])[1], tick: +(/tick=(\d+)/.exec(l) || [0, 0])[1] });
+    const series = (lines) => lines.filter((l) => l.includes('STATE')).map(parse);
+    const avg = (xs, f) => xs.length ? xs.reduce((a, x) => a + f(x), 0) / xs.length : 0;
+    const split = (xs) => ({ before: xs.filter((x) => x.t > 15 && x.t < 34), after: xs.filter((x) => x.t > 40) });
+    const h = split(series(hl)), c = split(series(cl));
+    report.hostDies = {
+      hostFps: [avg(h.before, (x) => x.fps), avg(h.after, (x) => x.fps)], clientFps: [avg(c.before, (x) => x.fps), avg(c.after, (x) => x.fps)],
+      enemies: [avg(h.before, (x) => x.enemies), avg(h.after, (x) => x.enemies)],
+      hostTicksPerSec: h.after.length > 1 ? (h.after.at(-1).tick - h.after[0].tick) / (h.after.at(-1).t - h.after[0].t) : 0,
+    };
+    console.log(JSON.stringify(report.hostDies));
   }
   report.ok = Object.values(report.checks).every(Boolean);
   writeFileSync(join(outDir, 'host-log.txt'), hl.join('\n'));

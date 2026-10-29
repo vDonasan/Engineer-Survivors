@@ -53,6 +53,7 @@
   "bonus_zero": "Recuperou a nota! Experiência devolvida.",
   "bonus_melhoria": "Laboratório entregue: melhoria extra!",
   "bonus_jalapeno": "Ufa... alívio depois da pimenta.",
+  "hud_aguardando_escolha": "Partida pausada: aguardando {0} escolher a melhoria...",
   "ficha_dica": "Clique num personagem para ver a ficha completa.",
   "ficha_ver": "Ver ficha completa",
   "ficha_fechar": "Voltar",

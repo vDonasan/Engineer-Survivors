@@ -212,12 +212,15 @@ namespace ES.Sim
                 }
                 World.Step(_inputs);
                 Harvest();
-                if (World.Tick % SnapshotEveryTicks == 0) SendSnapshot();
+                // conta passos, não o tick do mundo: durante a pausa da escolha o tick para, mas os clientes seguem recebendo
+                if (++_steps % SnapshotEveryTicks == 0) SendSnapshot();
                 FeedFromWorld();
             }
             Feed.RenderTick = World.Tick - 1 + (float)_clock.Alpha;
             return ticks;
         }
+
+        int _steps;
 
         public void SetBackgrounded(bool hidden)
         {
@@ -315,7 +318,7 @@ namespace ES.Sim
             foreach (var a in _allies) Feed.Tracks.SetAlly(a.Id, a.Pos, a.Sprite, a.Param, w.Tick);
             Feed.Tracks.PruneAllies(w.Tick);
             foreach (var b in w.Bosses.Active)
-                Feed.SetBoss(b.EnemyId, new BossSnap { State = b.State, Attack = b.Attack, Flags = SnapshotCodec.BossFlags(w, b), Dir = BossSystem.Dir8(b.Facing), Tick = w.Tick });
+                Feed.SetBoss(b.EnemyId, new BossSnap { State = b.State, Attack = b.Attack, Flags = SnapshotCodec.BossFlags(w, b), Dir = BossSystem.Dir8(b.Facing), Hp = SnapshotCodec.BossHp(w, b) / 65535f, Tick = w.Tick });
             var h = w.Hostile;
             for (int i = 0; i < h.Count; i++) Feed.Tracks.SetHostile(h.Id[i], h.Pos[i], h.Type[i], w.Tick);
             Feed.Tracks.PruneHostile(w.Tick);

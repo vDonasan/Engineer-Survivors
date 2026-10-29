@@ -445,7 +445,7 @@ MonoBehaviour:
     - key: speed
       value: 22
     - key: width
-      value: 0.9
+      value: 1.2
     - key: enemyDamage
       value: 60
     - key: playerDamage
@@ -464,34 +464,41 @@ MonoBehaviour:
       value: 5
   - id: coxinha
     name: Ganhou uma Coxinha
-    description: "Uma coxinha aparece por perto: cura, experi\xEAncia e velocidade.
-      \xC0s vezes \xE9 a Coxinha Suprema."
+    description: "Uma coxinha GIGANTE vira totem no ch\xE3o por 20 s: solta experi\xEAncia
+      e quem fica no alcance ganha +15% de dano, +15% de velocidade e regenera\xE7\xE3o.
+      \xC0s vezes \xE9 a Coxinha Suprema, que tamb\xE9m pulsa dano."
     banner: "A verdadeira recompensa universit\xE1ria chegou."
     kind: positivo
     scope: player
     behavior: coxinha
     weight: 12
     rarity: comum
-    duration: 25
+    duration: 20
     warning: 0
     minMinute: 0
     infiniteWeightPerMinute: 0
     noBoss: 0
     parameters:
-    - key: heal
-      value: 0.2
-    - key: xp
-      value: 8
-    - key: speed
-      value: 0.2
-    - key: speedSeconds
-      value: 5
-    - key: supremeChance
-      value: 0.1
+    - key: radius
+      value: 3.5
     - key: supremeRadius
+      value: 4.5
+    - key: xpEvery
+      value: 1.2
+    - key: xp
       value: 3
+    - key: damage
+      value: 0.15
+    - key: speed
+      value: 0.15
+    - key: regen
+      value: 3
+    - key: supremeChance
+      value: 0.15
+    - key: supremePulseEvery
+      value: 2
     - key: supremeDamage
-      value: 40
+      value: 25
   - id: jalapeno
     name: "Jalape\xF1o"
     description: "Calor extremo: +20% de dano, ataques 20% mais r\xE1pidos e queimadura

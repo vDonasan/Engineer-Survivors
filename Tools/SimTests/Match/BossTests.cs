@@ -460,6 +460,28 @@ namespace ES.SimTests.Match
         }
 
         [Test]
+        public void Client_SeesBossHpDrop()
+        {
+            var net = new ES.SimTests.Netcode.LoopbackNet();
+            var (_, client, _) = net.Connect("Ana");
+            net.Host.Start(5);
+            net.Pump();
+            var w = net.Host.World;
+            w.SpawningEnabled = false;
+            foreach (var p in w.Players.Slots) if (p != null) p.InvulnUntil = float.MaxValue;
+            var b = BossSystem.Spawn(w, BossIndex(w, "guirotto"), 0);
+            net.Run(3.0);
+            int i = EnemyOf(w, b);
+            CombatSystem.DamageEnemy(w, i, w.Enemies.MaxHp[i] * 0.4f, Vec2.Zero, 0, 0, -1);
+            net.Run(0.5);
+            Assert.That(client.Feed.Bosses.TryGetValue(b.EnemyId, out var info), Is.True);
+            float real = w.Enemies.Hp[EnemyOf(w, b)] / w.Enemies.MaxHp[EnemyOf(w, b)];
+            Assert.That(real, Is.LessThan(0.65f));
+            Assert.That(info.Hp, Is.EqualTo(real).Within(0.03f), "a barra do cliente acompanha a vida do boss");
+            Assert.That(net.Host.Feed.Bosses[b.EnemyId].Hp, Is.EqualTo(real).Within(0.01f));
+        }
+
+        [Test]
         public void Summary_RoundTripsBossesAndInfinite()
         {
             var s = new MatchSummary { Phase = MatchPhase.Victory, Elapsed = 612, TeamKills = 900, BossesDefeated = 2, Infinite = false };

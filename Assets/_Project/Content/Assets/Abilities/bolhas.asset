@@ -34,17 +34,17 @@ MonoBehaviour:
     - moedas
     baseStats:
     - stat: Damage
-      value: 9
+      value: 12
     - stat: Cooldown
-      value: 1.1
+      value: 0.95
     - stat: Range
       value: 7
     - stat: ProjectileSpeed
-      value: 3.2
+      value: 4.2
     - stat: Count
       value: 2
     - stat: Area
-      value: 1
+      value: 1.25
     - stat: Duration
       value: 1
     levels:
@@ -55,16 +55,16 @@ MonoBehaviour:
       text: +1 bolha por rajada
     - add:
       - stat: Damage
-        value: 2
+        value: 3
       mult: []
       text: "Bolha-pris\xE3o: a cada 3\xAA rajada uma bolha grande prende o alvo"
     - add:
       - stat: Damage
-        value: 3
+        value: 4
       - stat: ProjectileSpeed
         value: 0.6
       mult: []
-      text: "+3 de dano, bolhas mais r\xE1pidas"
+      text: "+4 de dano, bolhas mais r\xE1pidas"
     - add:
       - stat: Count
         value: 1
@@ -75,5 +75,5 @@ MonoBehaviour:
     grants: []
     parameters:
     - key: bubbleLife
-      value: 3
+      value: 3.6
   icon: {fileID: 21300000, guid: c6ff0c6760cc48a468904542037ea575, type: 3}

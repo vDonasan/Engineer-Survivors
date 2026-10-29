@@ -12,6 +12,8 @@ namespace ES.Sim
         public bool Started, Finished, Success, Rewarded, Child;
         public int Goal, Progress, KillsAtStart, Source, Hits;
         public readonly int[] SlotKills = new int[PlayerStore.MaxSlots];
+        /// <summary>Fonte de modificadores por jogador (bônus de área, como o totem de coxinha).</summary>
+        public readonly int[] SlotSources = new int[PlayerStore.MaxSlots];
         public float A, B, C;
         public Vec2 Pos, Dir;
         public byte HitPlayers;
@@ -594,7 +596,7 @@ namespace ES.Sim
         {
             a.Dir = new Vec2((float)Math.Cos(angle), (float)Math.Sin(angle));
             // passa ao lado do alvo: parado, é atingido; um passo para o lado basta
-            var side = new Vec2(-a.Dir.Y, a.Dir.X) * 1.1f;
+            var side = new Vec2(-a.Dir.Y, a.Dir.X) * 1.4f;
             a.Pos = through + side - a.Dir * (Length * 0.5f);
             float speed = ev.Param("speed", 22);
             a.EndsAt = a.StartAt + Length / speed + 0.1f;
@@ -658,41 +660,78 @@ namespace ES.Sim
         }
     }
 
-    /// <summary>Coxinha: aparece perto do jogador sorteado (só ele coleta); às vezes é a Suprema.</summary>
+    /// <summary>
+    /// Coxinha: uma coxinha GIGANTE vira totem perto do jogador sorteado. Solta XP e dá bônus a quem estiver no
+    /// alcance (entra: ganha; sai: perde). A Suprema tem alcance maior e pulsa dano nos inimigos.
+    /// </summary>
     sealed class CoxinhaEvent : GameEventBehavior
     {
         public override void Start(World w, ActiveEvent a, ResolvedEvent ev)
         {
             var p = w.Players[a.Target];
             if (p == null) { a.Finished = true; return; }
-            var kind = w.Rng.NextFloat() < ev.Param("supremeChance", 0.1f) ? PickupKind.CoxinhaSuprema : PickupKind.Coxinha;
-            Vec2 at = p.Pos;
-            for (int k = 0; k < 8; k++)
+            bool supreme = w.Rng.NextFloat() < ev.Param("supremeChance", 0.15f);
+            a.C = supreme ? 1 : 0;
+            a.A = supreme ? ev.Param("supremeRadius", 4.5f) : ev.Param("radius", 3.5f);
+            a.Pos = p.Pos;
+            for (int k = 0; k < 10; k++)
             {
                 float ang = w.Rng.NextFloat() * (float)Math.PI * 2;
-                var c = p.Pos + new Vec2((float)Math.Cos(ang), (float)Math.Sin(ang)) * (3f + w.Rng.NextFloat() * 2f);
-                if (ArenaCollision.Blocked(c, 0.4f, w.Arena)) continue;
-                at = c;
+                var c = p.Pos + new Vec2((float)Math.Cos(ang), (float)Math.Sin(ang)) * (2.5f + w.Rng.NextFloat());
+                if (ArenaCollision.Blocked(c, 0.8f, w.Arena)) continue;
+                a.Pos = c;
                 break;
             }
-            int g = CombatSystem.SpawnPickup(w, kind, at, a.Id, (byte)p.Slot);
-            a.Goal = 0;
-            a.A = g >= 0 ? w.Gems.Id[g] : 0;
-            a.B = (float)kind;
+            a.NextTick = w.Elapsed + ev.Param("xpEvery", 1.2f);
+            a.B = w.Elapsed + ev.Param("supremePulseEvery", 2f);
+            w.Events.AddRule(new RuleEvent { Kind = RuleEventKind.EventTotem, A = a.Id, B = (int)a.C, X = a.Pos.X, Y = a.Pos.Y, Z = a.A });
+        }
+
+        public override bool Tick(World w, ActiveEvent a, ResolvedEvent ev, float dt)
+        {
+            // bônus de quem está no alcance (entra: ganha; sai: perde)
+            foreach (var p in w.Players.Slots)
+            {
+                if (p == null) continue;
+                int bit = 1 << p.Slot;
+                bool inside = p.IsActive && Vec2.DistanceSq(p.Pos, a.Pos) <= a.A * a.A;
+                bool had = (a.HitPlayers & bit) != 0;
+                if (inside && !had)
+                {
+                    a.HitPlayers |= (byte)bit;
+                    int src = a.SlotSources[p.Slot] = w.NextSourceId++;
+                    EventSystem.AddMod(w, p.Slot, StatId.Damage, ModOp.Mult, ev.Param("damage", 0.15f), src, true);
+                    EventSystem.AddMod(w, p.Slot, StatId.MoveSpeed, ModOp.Mult, ev.Param("speed", 0.15f), src, false);
+                    EventSystem.AddMod(w, p.Slot, StatId.Regen, ModOp.Add, ev.Param("regen", 3), src, false);
+                    if ((a.Hits & bit) == 0) { a.Hits |= bit; EventSystem.Bonus(w, p.Slot, a.C == 1 ? EventOutcome.BonusSupreme : EventOutcome.BonusCoxinha, p.Pos); }
+                }
+                else if (!inside && had)
+                {
+                    a.HitPlayers &= (byte)~bit;
+                    EventSystem.RemoveMods(w, p.Slot, a.SlotSources[p.Slot]);
+                    a.SlotSources[p.Slot] = 0;
+                }
+            }
+            // experiência caindo em volta do totem
+            if (w.Elapsed >= a.NextTick)
+            {
+                a.NextTick = w.Elapsed + ev.Param("xpEvery", 1.2f);
+                float ang = w.Rng.NextFloat() * (float)Math.PI * 2, r = a.A * (0.3f + 0.5f * w.Rng.NextFloat());
+                CombatSystem.SpawnPickup(w, PickupKind.Xp, a.Pos + new Vec2((float)Math.Cos(ang), (float)Math.Sin(ang)) * r, ev.Param("xp", 3));
+            }
+            // Suprema: pulso de energia nos inimigos do alcance
+            if (a.C == 1 && w.Elapsed >= a.B)
+            {
+                a.B = w.Elapsed + ev.Param("supremePulseEvery", 2f);
+                Area.Burst(w, a.Target, -1, a.Pos, a.A, ev.Param("supremeDamage", 25) * w.Balance.EnemyHp, 0.5f, 0, FxStyle.Coins);
+            }
+            return true;
         }
 
         public override void Finish(World w, ActiveEvent a, ResolvedEvent ev)
         {
-            if (a.Success) return;
-            // não coletada: some com o fim do evento
-            var g = w.Gems;
-            for (int i = 0; i < g.Count; i++)
-            {
-                if (g.Id[i] != (ushort)a.A || (g.Kind[i] != PickupKind.Coxinha && g.Kind[i] != PickupKind.CoxinhaSuprema)) continue;
-                w.Events.AddRule(new RuleEvent { Kind = RuleEventKind.GemCollected, A = g.Id[i], B = -1 });
-                g.RemoveAt(i);
-                break;
-            }
+            for (int s = 0; s < PlayerStore.MaxSlots; s++) EventSystem.RemoveMods(w, s, a.SlotSources[s]);
+            a.Success = true;
         }
     }
 

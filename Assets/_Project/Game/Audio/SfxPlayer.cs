@@ -65,6 +65,12 @@ namespace ES.Game
             var clip = _assets != null ? _assets.Clip(id) : null;
             if (clip == null) return false;
             double now = Time.unscaledTimeAsDouble;
+            // ainda carregando (WebGL): pula este disparo em vez de tocar um som vazio
+            if (clip.loadState != AudioDataLoadState.Loaded)
+            {
+                if (clip.loadState == AudioDataLoadState.Unloaded) clip.LoadAudioData();
+                return false;
+            }
             if (!_limiter.TryAcquire(id, now, clip.length)) return false;
             for (int i = 0; i < _voices.Length; i++)
             {
@@ -85,6 +91,7 @@ namespace ES.Game
         {
             var clip = _assets != null ? _assets.Clip(id) : null;
             if (clip == null || (_music.isPlaying && _music.clip == clip)) return;
+            if (clip.loadState == AudioDataLoadState.Unloaded) clip.LoadAudioData();
             _musicBase = volume;
             _music.clip = clip;
             _music.volume = _musicBase * _master * _musicVolume;

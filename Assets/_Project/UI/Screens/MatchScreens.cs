@@ -228,9 +228,10 @@ namespace ES.UI
             int alive = 0;
             foreach (var kv in feed.Bosses)
             {
-                if (!feed.Tracks.TryGetEnemy(kv.Key, out var t)) continue;
+                if (!feed.Tracks.TryGetEnemy(kv.Key, out _)) continue;
                 alive++;
-                if (t.Hp < shownHp) { shownHp = t.Hp; shown = kv.Value; }
+                // vida pelo bloco do boss no snapshot (igual no host e nos clientes)
+                if (kv.Value.Hp < shownHp) { shownHp = kv.Value.Hp; shown = kv.Value; }
             }
             _bossBar.style.display = shown != null ? DisplayStyle.Flex : DisplayStyle.None;
             if (shown != null)
@@ -285,6 +286,13 @@ namespace ES.UI
             if (_now > _bannerUntil) _banner.text = "";
 
             string warning = feed.HostBackgrounded ? Strings.Get("aviso_host_minimizou") : me.Status == PlayerStatus.Downed ? Strings.Get("hud_caido") : "";
+            if (warning == "" && feed.CurrentOffer == null)
+                for (int s = 0; s < PlayerStore.MaxSlots; s++)
+                    if (s != local && feed.Players[s].Present && (feed.Players[s].Flags & PlayerSnap.FlagHasOffer) != 0)
+                    {
+                        warning = Strings.Format("hud_aguardando_escolha", cfg != null && s < cfg.Roster.Length ? cfg.Roster[s].Name : "?");
+                        break;
+                    }
             _warning.text = warning;
 
             // especial

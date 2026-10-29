@@ -180,6 +180,8 @@ namespace ES.Sim
         /// <summary>Eventos aleatórios em andamento (por id) e trajetórias de moto.</summary>
         public readonly Dictionary<int, EventInfo> Events = new Dictionary<int, EventInfo>(8);
         public readonly List<MotoInfo> Motos = new List<MotoInfo>(4);
+        /// <summary>Totens de coxinha no chão (por id do evento).</summary>
+        public readonly Dictionary<int, TotemInfo> Totems = new Dictionary<int, TotemInfo>(4);
 
         public void SetBoss(ushort enemyId, in BossSnap s)
         {
@@ -189,6 +191,7 @@ namespace ES.Sim
             b.Bravo |= (s.Flags & BossSnap.FlagBravo) != 0;
             b.Invulnerable = (s.Flags & BossSnap.FlagInvulnerable) != 0;
             b.Dir = s.Dir;
+            b.Hp = s.Hp;
         }
 
         public void ApplyRuleEvent(in DecodedRuleEvent d)
@@ -197,6 +200,7 @@ namespace ES.Sim
             switch (e.Kind)
             {
                 case RuleEventKind.EnemyDied: Tracks.RemoveEnemy((ushort)e.A, e.C); TeamKills++; break;
+                case RuleEventKind.EnemyRemoved: Tracks.RemoveEnemy((ushort)e.A, e.C); break;
                 case RuleEventKind.GemSpawned:
                     Gems[(ushort)e.A] = new GemInfo { Pos = new Vec2(e.X, e.Y), Kind = (PickupKind)e.B, Value = e.C };
                     break;
@@ -245,6 +249,10 @@ namespace ES.Sim
                     break;
                 case RuleEventKind.EventEnded:
                     Events.Remove(e.A);
+                    Totems.Remove(e.A);
+                    break;
+                case RuleEventKind.EventTotem:
+                    Totems[e.A] = new TotemInfo { Pos = new Vec2(e.X, e.Y), Radius = e.Z, Supreme = e.B == 1, PlacedAt = Elapsed };
                     break;
                 case RuleEventKind.EventMoto:
                     Motos.Add(new MotoInfo { Id = e.A, Start = new Vec2(e.X, e.Y), Angle = e.Z, Speed = e.W, Length = e.B / 10f, WarnAt = Elapsed, GoAt = Elapsed + e.C / 1000f });
@@ -269,6 +277,8 @@ namespace ES.Sim
         public bool Bravo, Invulnerable;
         public byte Dir;
         public float SpawnedAt, BravoAt = -1, ActionAt = -1;
+        /// <summary>Fração da vida (vem do snapshot; o host preenche direto).</summary>
+        public float Hp = 1f;
     }
 
     public struct HazardInfo
@@ -283,6 +293,13 @@ namespace ES.Sim
     {
         public int Id, Event, Target, Progress, Goal;
         public float StartedAt, StartsAt, EndsAt;
+    }
+
+    public struct TotemInfo
+    {
+        public Vec2 Pos;
+        public float Radius, PlacedAt;
+        public bool Supreme;
     }
 
     public struct MotoInfo

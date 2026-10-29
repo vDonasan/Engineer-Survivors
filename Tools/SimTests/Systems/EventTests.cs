@@ -297,47 +297,57 @@ namespace ES.SimTests.Systems
         }
 
         [Test]
-        public void Coxinha_OnlyTargetCollects_HealsXpSpeed_Supreme()
+        public void Coxinha_IsTotem_DropsXp_BuffsWhoeverIsInRange()
         {
             var w = Fresh(team: 2);
+            float speedIn = w.Players[0].Stats.Get(StatId.MoveSpeed), speedOut = w.Players[1].Stats.Get(StatId.MoveSpeed);
             var a = EventSystem.Begin(w, Ev(w, "coxinha"), 1);
-            w.Step(TestWorlds.NoInput());
-            int g = Enumerable.Range(0, w.Gems.Count).First(i => w.Gems.Kind[i] == PickupKind.Coxinha || w.Gems.Kind[i] == PickupKind.CoxinhaSuprema);
-            var at = w.Gems.Pos[g];
-            w.Players[0].Pos = at;
-            w.Step(TestWorlds.NoInput());
-            Assert.That(w.Gems.Count, Is.EqualTo(1), "o outro jogador não pega");
-            var p = w.Players[1];
-            p.Hp = 50;
-            float speed = p.Stats.Get(StatId.MoveSpeed);
-            p.Pos = at;
-            w.Players[0].Pos = at + new Vec2(10, 10);
-            w.Step(TestWorlds.NoInput());
-            Assert.That(w.Gems.Count, Is.EqualTo(0));
-            Assert.That(p.Hp, Is.GreaterThan(50));
-            Assert.That(p.Stats.Get(StatId.MoveSpeed), Is.GreaterThan(speed));
-            Assert.That(a.Success, Is.True);
-
-            var w2 = Fresh();
-            var q = w2.Players[0];
-            int e = Enemy(w2, q.Pos + new Vec2(1, 0));
-            float ehp = w2.Enemies.Hp[e];
-            EnemyAISystem.RebuildGrid(w2);
-            EventSystem.OnCoxinha(w2, q, PickupKind.CoxinhaSuprema, q.Pos);
-            Assert.That(w2.Enemies.Hp[0], Is.LessThan(ehp), "Suprema: onda de impacto");
+            var log = new List<RuleEvent>();
+            Step(w, 0.1f, log);
+            var placed = log.First(e => e.Kind == RuleEventKind.EventTotem);
+            var at = new Vec2(placed.X, placed.Y);
+            Assert.That(placed.Z, Is.GreaterThanOrEqualTo(3.5f), "alcance do totem");
+            var inside = w.Players[0];
+            var outside = w.Players[1];
+            inside.Pos = at + new Vec2(1, 0);
+            outside.Pos = at + new Vec2(15, 0);
+            int gems = w.Gems.Count;
+            Step(w, 3f, log);
+            Assert.That(inside.Stats.Get(StatId.MoveSpeed), Is.GreaterThan(speedIn), "quem está no alcance ganha velocidade");
+            Assert.That(ModSum(inside, StatId.Damage, ScopeKind.AllAbilities), Is.EqualTo(0.15f).Within(1e-3f));
+            Assert.That(outside.Stats.Get(StatId.MoveSpeed), Is.EqualTo(speedOut), "fora do alcance, nada");
+            Assert.That(w.Gems.Count, Is.GreaterThan(gems), "solta experiência");
+            // saiu do alcance: perde o bônus
+            inside.Pos = at + new Vec2(15, 5);
+            Step(w, 0.2f, log);
+            Assert.That(inside.Stats.Get(StatId.MoveSpeed), Is.EqualTo(speedIn).Within(1e-3f));
+            Step(w, 20f, log);
+            Assert.That(log.Any(e => e.Kind == RuleEventKind.EventEnded && e.A == a.Id), Is.True);
+            Assert.That(ModSum(inside, StatId.Damage, ScopeKind.AllAbilities), Is.EqualTo(0f));
         }
 
         [Test]
-        public void Coxinha_NotCollected_DisappearsAtEnd()
+        public void CoxinhaSuprema_PulsesDamage_LargerRange()
         {
             var w = Fresh();
-            EventSystem.Begin(w, Ev(w, "coxinha"), 0);
-            w.Step(TestWorlds.NoInput());
-            Assert.That(w.Gems.Count, Is.EqualTo(1));
-            w.Players[0].Pos += new Vec2(0, 0); // fica longe (aparece a 3–5 m)
-            w.Players[0].Stats.SetBase(StatId.PickupRadius, 0.1f);
-            Step(w, 26f);
-            Assert.That(w.Gems.Count, Is.EqualTo(0));
+            w.Rng = new Rng(1);
+            ActiveEvent a = null;
+            // força a Suprema (chance configurável): tenta sementes até sair
+            for (ulong seed = 1; seed < 200; seed++)
+            {
+                w = Fresh();
+                w.Rng = new Rng(seed);
+                a = EventSystem.Begin(w, Ev(w, "coxinha"), 0);
+                w.Step(TestWorlds.NoInput());
+                if (a.C == 1) break;
+            }
+            Assert.That(a.C, Is.EqualTo(1), "Suprema sorteada");
+            int e = Enemy(w, a.Pos + new Vec2(1.5f, 0));
+            w.Enemies.StunUntil[e] = 99;
+            float hp = w.Enemies.Hp[e];
+            Step(w, 2.5f);
+            Assert.That(w.Enemies.Hp[0], Is.LessThan(hp), "pulso de dano");
+            Assert.That(a.A, Is.GreaterThanOrEqualTo(4.5f));
         }
 
         [Test]

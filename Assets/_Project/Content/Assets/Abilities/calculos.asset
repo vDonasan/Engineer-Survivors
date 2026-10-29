@@ -35,9 +35,9 @@ MonoBehaviour:
     - esteira
     baseStats:
     - stat: Damage
-      value: 6
+      value: 8
     - stat: Cooldown
-      value: 0.85
+      value: 0.8
     - stat: Range
       value: 9
     - stat: ProjectileSpeed
@@ -45,7 +45,7 @@ MonoBehaviour:
     - stat: Count
       value: 3
     - stat: Area
-      value: 1
+      value: 1.2
     - stat: Duration
       value: 1
     levels:
@@ -56,16 +56,16 @@ MonoBehaviour:
       text: "+1 d\xEDgito por rajada"
     - add:
       - stat: Damage
-        value: 1
+        value: 2
       mult: []
       text: "Os d\xEDgitos ricocheteiam em outro alvo"
     - add:
       - stat: Damage
-        value: 2
+        value: 3
       mult:
       - stat: Cooldown
         value: -0.1
-      text: "+2 de dano, recarga \u221210%"
+      text: "+3 de dano, recarga \u221210%"
     - add:
       - stat: Count
         value: 1

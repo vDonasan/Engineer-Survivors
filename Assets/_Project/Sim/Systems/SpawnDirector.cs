@@ -15,6 +15,52 @@ namespace ES.Sim
             return (s.baseBudget + s.rampPerMinute * b.SpawnRamp * minutes) * b.SpawnBudget * b.EnemyCount;
         }
 
+        /// <summary>
+        /// Coop com alguém caído: a horda segue o perfil de equipe dos jogadores ativos (senão o orçamento de
+        /// 2–4 jogadores cai inteiro na tela de quem sobrou). 1 com todos ativos.
+        /// </summary>
+        public static float TeamFactor(World w)
+        {
+            int team = w.Players.CountWith(PlayerStatus.Active) + w.Players.CountWith(PlayerStatus.Downed);
+            int active = w.Players.CountWith(PlayerStatus.Active);
+            if (active <= 0 || active >= team) return 1f;
+            float full = TeamEnemyCount(w, team), now = TeamEnemyCount(w, active);
+            return full > 0 ? now / full : 1f;
+        }
+
+        static float TeamEnemyCount(World w, int size)
+        {
+            foreach (var t in w.Db.Def.balance.teams) if (t.size == size) return t.enemyCount;
+            return size;
+        }
+
+        /// <summary>Distância (a todos os jogadores ativos) a partir da qual um inimigo comum é reciclado.</summary>
+        public const float RecycleDistance = 40f;
+        const float RecycleEvery = 1f;
+
+        /// <summary>
+        /// Remove inimigos comuns longe de todo jogador ativo (ex.: os que cercavam quem caiu): não são abate nem dão XP;
+        /// o orçamento recria a horda perto de quem está jogando. Bosses nunca. Retorna quantos saíram.
+        /// </summary>
+        public static int Recycle(World w)
+        {
+            var e = w.Enemies;
+            int removed = 0;
+            float r2 = RecycleDistance * RecycleDistance;
+            for (int i = e.Count - 1; i >= 0; i--)
+            {
+                if ((e.Flags[i] & EnemyFlags.Dead) != 0 || w.Db.Enemy(e.Type[i]).Behavior == EnemyBehavior.Boss) continue;
+                bool near = false;
+                foreach (var p in w.Players.Slots)
+                    if (p != null && p.IsActive && Vec2.DistanceSq(p.Pos, e.Pos[i]) < r2) { near = true; break; }
+                if (near) continue;
+                w.Events.AddRule(new RuleEvent { Kind = RuleEventKind.EnemyRemoved, A = e.Id[i], C = w.Tick });
+                e.RemoveAt(i);
+                removed++;
+            }
+            return removed;
+        }
+
         /// <summary>Durante uma luta de boss (fora do Modo Infinito) a horda diminui para o boss ser o foco.</summary>
         const float BossFightBudget = 0.6f;
 
@@ -29,16 +75,18 @@ namespace ES.Sim
 
         public static void Step(World w, float dt)
         {
+            // reciclagem vale mesmo sem surgimento (fim da luta final, testes): é desempenho, não regra
+            if (w.Tick % (int)Math.Max(1, Math.Round(RecycleEvery / w.Dt)) == 0 && w.Players.CountWith(PlayerStatus.Active) > 0) Recycle(w);
             if (!w.SpawningEnabled) return;
             var s = w.Db.Def.spawn;
 
             if (w.Elapsed >= w.NextSurgeAt)
             {
                 w.NextSurgeAt += s.surgeIntervalSeconds;
-                Surge(w, (int)Math.Round(s.surgeCount * w.Balance.EnemyCount * (w.Bosses.Infinite ? BossSystem.InfiniteSpawn(w) : 1f)));
+                Surge(w, (int)Math.Round(s.surgeCount * w.Balance.EnemyCount * TeamFactor(w) * (w.Bosses.Infinite ? BossSystem.InfiniteSpawn(w) : 1f)));
             }
 
-            float mult = (w.Bosses.Infinite ? BossSystem.InfiniteSpawn(w) : w.Bosses.Active.Count > 0 ? BossFightBudget : 1f) * w.EventDir.SpawnMult;
+            float mult = TeamFactor(w) * (w.Bosses.Infinite ? BossSystem.InfiniteSpawn(w) : w.Bosses.Active.Count > 0 ? BossFightBudget : 1f) * w.EventDir.SpawnMult;
             w.SpawnAccumulator = Math.Min(w.SpawnAccumulator + Budget(s, w.Balance, w.Elapsed) * mult * dt, MaxBacklog * mult);
             var bracket = w.Db.Brackets[BracketIndexAt(w.Db.Brackets, w.Elapsed / 60f, w.Balance.CompositionShiftMinutes)];
 

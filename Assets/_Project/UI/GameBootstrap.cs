@@ -31,7 +31,8 @@ namespace ES.UI
         int _autostart, _bench, _evolve;
         float _skipTo, _bossHp;
         readonly HashSet<ushort> _scaledBosses = new HashSet<ushort>();
-        bool _god, _autopick;
+        bool _god, _autopick, _godClient;
+        float _dieAt;
         string[] _evts = new string[0], _items = new string[0];
         int _evtNext;
         float _evtAt = 4f;
@@ -88,6 +89,9 @@ namespace ES.UI
             if (_log && q.TryGetValue("t", out var tt)) float.TryParse(tt, System.Globalization.NumberStyles.Float, System.Globalization.CultureInfo.InvariantCulture, out _skipTo);
             _god = _log && q.TryGetValue("god", out var g) && g == "1";
             _autopick = _log && q.TryGetValue("autopick", out var ap) && ap == "1";
+            // depuração do coop: &morre=40 derruba o host nesse segundo; &godclient=1 protege os outros jogadores
+            if (_log && q.TryGetValue("morre", out var mo)) float.TryParse(mo, System.Globalization.NumberStyles.Float, System.Globalization.CultureInfo.InvariantCulture, out _dieAt);
+            _godClient = _log && q.TryGetValue("godclient", out var gc) && gc == "1";
             // depuração dos eventos: ?log=1&evt=jalapeno,motoqueiro (um a cada 12 s) e &itens=chapeu_japones,tequila
             if (_log && q.TryGetValue("evt", out var evs)) _evts = evs.Split(',');
             if (_log && q.TryGetValue("itens", out var its)) _items = its.Split(',');
@@ -133,6 +137,14 @@ namespace ES.UI
                     _skipTo = 0;
                 }
                 if (_god) foreach (var p in dw.Players.Slots) if (p != null) p.InvulnUntil = float.MaxValue;
+                if (_godClient) foreach (var p in dw.Players.Slots) if (p != null && p.Slot != 0) p.InvulnUntil = float.MaxValue;
+                if (_dieAt > 0 && dw.Elapsed >= _dieAt && dw.Players[0] != null)
+                {
+                    _dieAt = 0;
+                    dw.Players[0].InvulnUntil = 0;
+                    dw.Players[0].Shield = 0;
+                    CombatSystem.DamagePlayer(dw, 0, 1e6f);
+                }
                 if (_items.Length > 0)
                 {
                     foreach (var id in _items)
@@ -209,7 +221,7 @@ namespace ES.UI
                 if (f.Players[s].Present) sb.Append(FormattableString.Invariant($" p{s}=({f.Players[s].Pos.X:0.0};{f.Players[s].Pos.Y:0.0}) hp={f.Players[s].Hp:0} lv={f.Players[s].Level}"));
             foreach (var kv in f.Bosses)
             {
-                float hp = f.Tracks.TryGetEnemy(kv.Key, out var t) ? t.Hp : -1f;
+                float hp = kv.Value.Hp;
                 sb.Append(FormattableString.Invariant($" boss{kv.Value.Boss}={kv.Value.State}/{kv.Value.Attack}{(kv.Value.Bravo ? "/BRAVO" : "")} hp={hp:0.00}"));
             }
             Debug.Log("[ES] " + sb);
