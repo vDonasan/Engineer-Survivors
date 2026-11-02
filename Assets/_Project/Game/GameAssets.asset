@@ -2587,6 +2587,27 @@ MonoBehaviour:
   - id: ui_btn_primary
     sprite: {fileID: 21300000, guid: 660c70f587ccdee4db2850a27fbefa47, type: 3}
     anchor: {x: -1, y: -1}
+  - id: ui_card_comum
+    sprite: {fileID: 21300000, guid: d7c769c20bc37e94fb882c1d5d33377c, type: 3}
+    anchor: {x: -1, y: -1}
+  - id: ui_card_incomum
+    sprite: {fileID: 21300000, guid: d4156dbe22ff20a4497bb328a5435444, type: 3}
+    anchor: {x: -1, y: -1}
+  - id: ui_card_raro
+    sprite: {fileID: 21300000, guid: ba29f9ce04539c641afcd0befec25724, type: 3}
+    anchor: {x: -1, y: -1}
+  - id: ui_card_reliquia
+    sprite: {fileID: 21300000, guid: 4415de7d44de565498e413842f7f61e7, type: 3}
+    anchor: {x: -1, y: -1}
+  - id: ui_card_hover
+    sprite: {fileID: 21300000, guid: fc87801b66e561a4883383c648a94205, type: 3}
+    anchor: {x: -1, y: -1}
+  - id: ui_track
+    sprite: {fileID: 21300000, guid: c78337af6213f3d479c5ae8c7e20db6e, type: 3}
+    anchor: {x: -1, y: -1}
+  - id: ui_slot
+    sprite: {fileID: 21300000, guid: 3a787136bff91f5449fe2295c08a031e, type: 3}
+    anchor: {x: -1, y: -1}
   - id: ui_menu_bg
     sprite: {fileID: 21300000, guid: 8b8b2c6cce6a2ed499d9973a0eefd409, type: 3}
     anchor: {x: -1, y: -1}

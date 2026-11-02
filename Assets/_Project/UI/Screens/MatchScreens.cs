@@ -544,6 +544,8 @@ namespace ES.UI
                 rarity.RemoveFromClassList("rarity-raro");
                 rarity.RemoveFromClassList("rarity-reliquia");
                 rarity.AddToClassList(info.RarityClass);
+                foreach (var r in CardRarities) card.RemoveFromClassList(r);
+                card.AddToClassList("card-" + info.RarityClass.Replace("rarity-", ""));
                 card.Q<Label>("card-desc").text = info.Description;
                 card.Q<Label>("card-change").text = info.Change;
                 card.Q<Label>("card-tags").text = info.Tags;
@@ -551,6 +553,8 @@ namespace ES.UI
                 UiText.Image(card.Q<VisualElement>("card-icon"), Ctx.Assets.Sprite(info.IconId));
             }
         }
+
+        static readonly string[] CardRarities = { "card-comum", "card-incomum", "card-raro", "card-reliquia" };
 
         protected override void OnHide() => _offerId = -1;
     }

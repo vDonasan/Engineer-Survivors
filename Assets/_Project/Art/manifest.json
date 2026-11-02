@@ -13145,6 +13145,125 @@
    ]
   },
   {
+   "id": "ui_card_comum",
+   "category": "UI",
+   "file": "UI/ui_card_comum.png",
+   "w": 24,
+   "h": 24,
+   "pivot": [
+    12,
+    12
+   ],
+   "border": [
+    8,
+    8,
+    8,
+    8
+   ]
+  },
+  {
+   "id": "ui_card_incomum",
+   "category": "UI",
+   "file": "UI/ui_card_incomum.png",
+   "w": 24,
+   "h": 24,
+   "pivot": [
+    12,
+    12
+   ],
+   "border": [
+    8,
+    8,
+    8,
+    8
+   ]
+  },
+  {
+   "id": "ui_card_raro",
+   "category": "UI",
+   "file": "UI/ui_card_raro.png",
+   "w": 24,
+   "h": 24,
+   "pivot": [
+    12,
+    12
+   ],
+   "border": [
+    8,
+    8,
+    8,
+    8
+   ]
+  },
+  {
+   "id": "ui_card_reliquia",
+   "category": "UI",
+   "file": "UI/ui_card_reliquia.png",
+   "w": 24,
+   "h": 24,
+   "pivot": [
+    12,
+    12
+   ],
+   "border": [
+    8,
+    8,
+    8,
+    8
+   ]
+  },
+  {
+   "id": "ui_card_hover",
+   "category": "UI",
+   "file": "UI/ui_card_hover.png",
+   "w": 24,
+   "h": 24,
+   "pivot": [
+    12,
+    12
+   ],
+   "border": [
+    8,
+    8,
+    8,
+    8
+   ]
+  },
+  {
+   "id": "ui_track",
+   "category": "UI",
+   "file": "UI/ui_track.png",
+   "w": 12,
+   "h": 12,
+   "pivot": [
+    6,
+    6
+   ],
+   "border": [
+    4,
+    4,
+    4,
+    4
+   ]
+  },
+  {
+   "id": "ui_slot",
+   "category": "UI",
+   "file": "UI/ui_slot.png",
+   "w": 24,
+   "h": 24,
+   "pivot": [
+    12,
+    12
+   ],
+   "border": [
+    8,
+    8,
+    8,
+    8
+   ]
+  },
+  {
    "id": "ui_menu_bg",
    "category": "UI",
    "file": "UI/ui_menu_bg.png",
@@ -13568,11 +13687,11 @@
    "id": "icon_descarga_direcionada",
    "category": "Abilities",
    "file": "Abilities/icon_descarga_direcionada.png",
-   "w": 32,
-   "h": 32,
+   "w": 64,
+   "h": 64,
    "pivot": [
-    16,
-    16
+    32,
+    32
    ],
    "border": null
   },
@@ -13580,11 +13699,11 @@
    "id": "icon_braco_giratorio",
    "category": "Abilities",
    "file": "Abilities/icon_braco_giratorio.png",
-   "w": 32,
-   "h": 32,
+   "w": 64,
+   "h": 64,
    "pivot": [
-    16,
-    16
+    32,
+    32
    ],
    "border": null
   },
@@ -13592,11 +13711,11 @@
    "id": "icon_laser_industrial",
    "category": "Abilities",
    "file": "Abilities/icon_laser_industrial.png",
-   "w": 32,
-   "h": 32,
+   "w": 64,
+   "h": 64,
    "pivot": [
-    16,
-    16
+    32,
+    32
    ],
    "border": null
   },
@@ -13604,11 +13723,11 @@
    "id": "icon_campo_eletromagnetico",
    "category": "Abilities",
    "file": "Abilities/icon_campo_eletromagnetico.png",
-   "w": 32,
-   "h": 32,
+   "w": 64,
+   "h": 64,
    "pivot": [
-    16,
-    16
+    32,
+    32
    ],
    "border": null
   },
@@ -13616,11 +13735,11 @@
    "id": "icon_bateria_portatil",
    "category": "Abilities",
    "file": "Abilities/icon_bateria_portatil.png",
-   "w": 32,
-   "h": 32,
+   "w": 64,
+   "h": 64,
    "pivot": [
-    16,
-    16
+    32,
+    32
    ],
    "border": null
   },
@@ -13628,11 +13747,11 @@
    "id": "icon_turbina",
    "category": "Abilities",
    "file": "Abilities/icon_turbina.png",
-   "w": 32,
-   "h": 32,
+   "w": 64,
+   "h": 64,
    "pivot": [
-    16,
-    16
+    32,
+    32
    ],
    "border": null
   },
@@ -13640,11 +13759,11 @@
    "id": "icon_pulso_amplificado",
    "category": "Abilities",
    "file": "Abilities/icon_pulso_amplificado.png",
-   "w": 32,
-   "h": 32,
+   "w": 64,
+   "h": 64,
    "pivot": [
-    16,
-    16
+    32,
+    32
    ],
    "border": null
   },
@@ -13652,11 +13771,11 @@
    "id": "icon_rotor_de_impacto",
    "category": "Abilities",
    "file": "Abilities/icon_rotor_de_impacto.png",
-   "w": 32,
-   "h": 32,
+   "w": 64,
+   "h": 64,
    "pivot": [
-    16,
-    16
+    32,
+    32
    ],
    "border": null
   },
@@ -13664,11 +13783,11 @@
    "id": "icon_attr_dano",
    "category": "Abilities",
    "file": "Abilities/icon_attr_dano.png",
-   "w": 32,
-   "h": 32,
+   "w": 64,
+   "h": 64,
    "pivot": [
-    16,
-    16
+    32,
+    32
    ],
    "border": null
   },
@@ -13676,11 +13795,11 @@
    "id": "icon_attr_vida",
    "category": "Abilities",
    "file": "Abilities/icon_attr_vida.png",
-   "w": 32,
-   "h": 32,
+   "w": 64,
+   "h": 64,
    "pivot": [
-    16,
-    16
+    32,
+    32
    ],
    "border": null
   },
@@ -13688,11 +13807,11 @@
    "id": "icon_attr_recuperacao",
    "category": "Abilities",
    "file": "Abilities/icon_attr_recuperacao.png",
-   "w": 32,
-   "h": 32,
+   "w": 64,
+   "h": 64,
    "pivot": [
-    16,
-    16
+    32,
+    32
    ],
    "border": null
   },
@@ -13700,11 +13819,11 @@
    "id": "icon_attr_coleta",
    "category": "Abilities",
    "file": "Abilities/icon_attr_coleta.png",
-   "w": 32,
-   "h": 32,
+   "w": 64,
+   "h": 64,
    "pivot": [
-    16,
-    16
+    32,
+    32
    ],
    "border": null
   },
@@ -13712,11 +13831,11 @@
    "id": "icon_attr_vel_ataque",
    "category": "Abilities",
    "file": "Abilities/icon_attr_vel_ataque.png",
-   "w": 32,
-   "h": 32,
+   "w": 64,
+   "h": 64,
    "pivot": [
-    16,
-    16
+    32,
+    32
    ],
    "border": null
   },
@@ -13724,11 +13843,11 @@
    "id": "icon_kit_primeiros_socorros",
    "category": "Abilities",
    "file": "Abilities/icon_kit_primeiros_socorros.png",
-   "w": 32,
-   "h": 32,
+   "w": 64,
+   "h": 64,
    "pivot": [
-    16,
-    16
+    32,
+    32
    ],
    "border": null
   },
@@ -13736,11 +13855,11 @@
    "id": "icon_cartao_corporativo",
    "category": "Abilities",
    "file": "Abilities/icon_cartao_corporativo.png",
-   "w": 32,
-   "h": 32,
+   "w": 64,
+   "h": 64,
    "pivot": [
-    16,
-    16
+    32,
+    32
    ],
    "border": null
   },
@@ -13748,11 +13867,11 @@
    "id": "icon_cafe_expresso",
    "category": "Abilities",
    "file": "Abilities/icon_cafe_expresso.png",
-   "w": 32,
-   "h": 32,
+   "w": 64,
+   "h": 64,
    "pivot": [
-    16,
-    16
+    32,
+    32
    ],
    "border": null
   },
@@ -13760,11 +13879,11 @@
    "id": "icon_halter",
    "category": "Abilities",
    "file": "Abilities/icon_halter.png",
-   "w": 32,
-   "h": 32,
+   "w": 64,
+   "h": 64,
    "pivot": [
-    16,
-    16
+    32,
+    32
    ],
    "border": null
   },
@@ -13772,11 +13891,11 @@
    "id": "icon_marmita",
    "category": "Abilities",
    "file": "Abilities/icon_marmita.png",
-   "w": 32,
-   "h": 32,
+   "w": 64,
+   "h": 64,
    "pivot": [
-    16,
-    16
+    32,
+    32
    ],
    "border": null
   },
@@ -13784,11 +13903,11 @@
    "id": "icon_pote_whey",
    "category": "Abilities",
    "file": "Abilities/icon_pote_whey.png",
-   "w": 32,
-   "h": 32,
+   "w": 64,
+   "h": 64,
    "pivot": [
-    16,
-    16
+    32,
+    32
    ],
    "border": null
   },
@@ -13796,11 +13915,11 @@
    "id": "icon_kit_arduino",
    "category": "Abilities",
    "file": "Abilities/icon_kit_arduino.png",
-   "w": 32,
-   "h": 32,
+   "w": 64,
+   "h": 64,
    "pivot": [
-    16,
-    16
+    32,
+    32
    ],
    "border": null
   },
@@ -13808,11 +13927,11 @@
    "id": "icon_cabo_hdmi",
    "category": "Abilities",
    "file": "Abilities/icon_cabo_hdmi.png",
-   "w": 32,
-   "h": 32,
+   "w": 64,
+   "h": 64,
    "pivot": [
-    16,
-    16
+    32,
+    32
    ],
    "border": null
   },
@@ -13820,11 +13939,11 @@
    "id": "icon_megafone",
    "category": "Abilities",
    "file": "Abilities/icon_megafone.png",
-   "w": 32,
-   "h": 32,
+   "w": 64,
+   "h": 64,
    "pivot": [
-    16,
-    16
+    32,
+    32
    ],
    "border": null
   },
@@ -13832,11 +13951,11 @@
    "id": "icon_bolhas",
    "category": "Abilities",
    "file": "Abilities/icon_bolhas.png",
-   "w": 32,
-   "h": 32,
+   "w": 64,
+   "h": 64,
    "pivot": [
-    16,
-    16
+    32,
+    32
    ],
    "border": null
   },
@@ -13844,11 +13963,11 @@
    "id": "icon_bolhas_e_maletas",
    "category": "Abilities",
    "file": "Abilities/icon_bolhas_e_maletas.png",
-   "w": 32,
-   "h": 32,
+   "w": 64,
+   "h": 64,
    "pivot": [
-    16,
-    16
+    32,
+    32
    ],
    "border": null
   },
@@ -13856,11 +13975,11 @@
    "id": "icon_calculos",
    "category": "Abilities",
    "file": "Abilities/icon_calculos.png",
-   "w": 32,
-   "h": 32,
+   "w": 64,
+   "h": 64,
    "pivot": [
-    16,
-    16
+    32,
+    32
    ],
    "border": null
   },
@@ -13868,11 +13987,11 @@
    "id": "icon_matematica_sushi",
    "category": "Abilities",
    "file": "Abilities/icon_matematica_sushi.png",
-   "w": 32,
-   "h": 32,
+   "w": 64,
+   "h": 64,
    "pivot": [
-    16,
-    16
+    32,
+    32
    ],
    "border": null
   },
@@ -13880,11 +13999,11 @@
    "id": "icon_componentes_eletricos",
    "category": "Abilities",
    "file": "Abilities/icon_componentes_eletricos.png",
-   "w": 32,
-   "h": 32,
+   "w": 64,
+   "h": 64,
    "pivot": [
-    16,
-    16
+    32,
+    32
    ],
    "border": null
   },
@@ -13892,11 +14011,11 @@
    "id": "icon_fontes_osciloscopios",
    "category": "Abilities",
    "file": "Abilities/icon_fontes_osciloscopios.png",
-   "w": 32,
-   "h": 32,
+   "w": 64,
+   "h": 64,
    "pivot": [
-    16,
-    16
+    32,
+    32
    ],
    "border": null
   },
@@ -13904,11 +14023,11 @@
    "id": "icon_lanches",
    "category": "Abilities",
    "file": "Abilities/icon_lanches.png",
-   "w": 32,
-   "h": 32,
+   "w": 64,
+   "h": 64,
    "pivot": [
-    16,
-    16
+    32,
+    32
    ],
    "border": null
   },
@@ -13916,11 +14035,11 @@
    "id": "icon_pneus_crossfit",
    "category": "Abilities",
    "file": "Abilities/icon_pneus_crossfit.png",
-   "w": 32,
-   "h": 32,
+   "w": 64,
+   "h": 64,
    "pivot": [
-    16,
-    16
+    32,
+    32
    ],
    "border": null
   },
@@ -13928,11 +14047,11 @@
    "id": "icon_bonesmashing",
    "category": "Abilities",
    "file": "Abilities/icon_bonesmashing.png",
-   "w": 32,
-   "h": 32,
+   "w": 64,
+   "h": 64,
    "pivot": [
-    16,
-    16
+    32,
+    32
    ],
    "border": null
   },
@@ -13940,11 +14059,11 @@
    "id": "icon_pilulas_seringas",
    "category": "Abilities",
    "file": "Abilities/icon_pilulas_seringas.png",
-   "w": 32,
-   "h": 32,
+   "w": 64,
+   "h": 64,
    "pivot": [
-    16,
-    16
+    32,
+    32
    ],
    "border": null
   },
@@ -13952,11 +14071,11 @@
    "id": "icon_cabazords",
    "category": "Abilities",
    "file": "Abilities/icon_cabazords.png",
-   "w": 32,
-   "h": 32,
+   "w": 64,
+   "h": 64,
    "pivot": [
-    16,
-    16
+    32,
+    32
    ],
    "border": null
   },
@@ -13964,11 +14083,11 @@
    "id": "icon_cabazord_master",
    "category": "Abilities",
    "file": "Abilities/icon_cabazord_master.png",
-   "w": 32,
-   "h": 32,
+   "w": 64,
+   "h": 64,
    "pivot": [
-    16,
-    16
+    32,
+    32
    ],
    "border": null
   },
@@ -13976,11 +14095,11 @@
    "id": "icon_celulares_cola",
    "category": "Abilities",
    "file": "Abilities/icon_celulares_cola.png",
-   "w": 32,
-   "h": 32,
+   "w": 64,
+   "h": 64,
    "pivot": [
-    16,
-    16
+    32,
+    32
    ],
    "border": null
   },
@@ -13988,11 +14107,11 @@
    "id": "icon_computadores_tvs",
    "category": "Abilities",
    "file": "Abilities/icon_computadores_tvs.png",
-   "w": 32,
-   "h": 32,
+   "w": 64,
+   "h": 64,
    "pivot": [
-    16,
-    16
+    32,
+    32
    ],
    "border": null
   },
@@ -14000,11 +14119,11 @@
    "id": "icon_jabutis",
    "category": "Abilities",
    "file": "Abilities/icon_jabutis.png",
-   "w": 32,
-   "h": 32,
+   "w": 64,
+   "h": 64,
    "pivot": [
-    16,
-    16
+    32,
+    32
    ],
    "border": null
   },
@@ -14012,11 +14131,11 @@
    "id": "icon_carro_drift",
    "category": "Abilities",
    "file": "Abilities/icon_carro_drift.png",
-   "w": 32,
-   "h": 32,
+   "w": 64,
+   "h": 64,
    "pivot": [
-    16,
-    16
+    32,
+    32
    ],
    "border": null
   },
@@ -14024,11 +14143,11 @@
    "id": "icon_socos_fortes",
    "category": "Abilities",
    "file": "Abilities/icon_socos_fortes.png",
-   "w": 32,
-   "h": 32,
+   "w": 64,
+   "h": 64,
    "pivot": [
-    16,
-    16
+    32,
+    32
    ],
    "border": null
   },
@@ -14036,11 +14155,11 @@
    "id": "icon_socos_insulina",
    "category": "Abilities",
    "file": "Abilities/icon_socos_insulina.png",
-   "w": 32,
-   "h": 32,
+   "w": 64,
+   "h": 64,
    "pivot": [
-    16,
-    16
+    32,
+    32
    ],
    "border": null
   },
@@ -14048,11 +14167,11 @@
    "id": "icon_fala_alta",
    "category": "Abilities",
    "file": "Abilities/icon_fala_alta.png",
-   "w": 32,
-   "h": 32,
+   "w": 64,
+   "h": 64,
    "pivot": [
-    16,
-    16
+    32,
+    32
    ],
    "border": null
   },
@@ -14060,11 +14179,11 @@
    "id": "icon_fala_amplificada",
    "category": "Abilities",
    "file": "Abilities/icon_fala_amplificada.png",
-   "w": 32,
-   "h": 32,
+   "w": 64,
+   "h": 64,
    "pivot": [
-    16,
-    16
+    32,
+    32
    ],
    "border": null
   },
@@ -14072,11 +14191,11 @@
    "id": "icon_protoboard",
    "category": "Abilities",
    "file": "Abilities/icon_protoboard.png",
-   "w": 32,
-   "h": 32,
+   "w": 64,
+   "h": 64,
    "pivot": [
-    16,
-    16
+    32,
+    32
    ],
    "border": null
   },
@@ -14084,11 +14203,11 @@
    "id": "icon_protoboard_experimental",
    "category": "Abilities",
    "file": "Abilities/icon_protoboard_experimental.png",
-   "w": 32,
-   "h": 32,
+   "w": 64,
+   "h": 64,
    "pivot": [
-    16,
-    16
+    32,
+    32
    ],
    "border": null
   },
@@ -14096,11 +14215,11 @@
    "id": "icon_cenoura_podre",
    "category": "Abilities",
    "file": "Abilities/icon_cenoura_podre.png",
-   "w": 32,
-   "h": 32,
+   "w": 64,
+   "h": 64,
    "pivot": [
-    16,
-    16
+    32,
+    32
    ],
    "border": null
   },
@@ -14108,11 +14227,11 @@
    "id": "icon_hortalica_desgraca",
    "category": "Abilities",
    "file": "Abilities/icon_hortalica_desgraca.png",
-   "w": 32,
-   "h": 32,
+   "w": 64,
+   "h": 64,
    "pivot": [
-    16,
-    16
+    32,
+    32
    ],
    "border": null
   },
@@ -14120,11 +14239,11 @@
    "id": "icon_iogurte_80",
    "category": "Abilities",
    "file": "Abilities/icon_iogurte_80.png",
-   "w": 32,
-   "h": 32,
+   "w": 64,
+   "h": 64,
    "pivot": [
-    16,
-    16
+    32,
+    32
    ],
    "border": null
   },
@@ -14132,11 +14251,11 @@
    "id": "icon_dieta_milagrosa",
    "category": "Abilities",
    "file": "Abilities/icon_dieta_milagrosa.png",
-   "w": 32,
-   "h": 32,
+   "w": 64,
+   "h": 64,
    "pivot": [
-    16,
-    16
+    32,
+    32
    ],
    "border": null
   },
@@ -14144,11 +14263,11 @@
    "id": "icon_motor_astra",
    "category": "Abilities",
    "file": "Abilities/icon_motor_astra.png",
-   "w": 32,
-   "h": 32,
+   "w": 64,
+   "h": 64,
    "pivot": [
-    16,
-    16
+    32,
+    32
    ],
    "border": null
   },
@@ -14156,11 +14275,11 @@
    "id": "icon_astra_alta_rotacao",
    "category": "Abilities",
    "file": "Abilities/icon_astra_alta_rotacao.png",
-   "w": 32,
-   "h": 32,
+   "w": 64,
+   "h": 64,
    "pivot": [
-    16,
-    16
+    32,
+    32
    ],
    "border": null
   },
@@ -14168,11 +14287,11 @@
    "id": "icon_cachorro_quente",
    "category": "Abilities",
    "file": "Abilities/icon_cachorro_quente.png",
-   "w": 32,
-   "h": 32,
+   "w": 64,
+   "h": 64,
    "pivot": [
-    16,
-    16
+    32,
+    32
    ],
    "border": null
   },
@@ -14180,11 +14299,11 @@
    "id": "icon_cao_turbo",
    "category": "Abilities",
    "file": "Abilities/icon_cao_turbo.png",
-   "w": 32,
-   "h": 32,
+   "w": 64,
+   "h": 64,
    "pivot": [
-    16,
-    16
+    32,
+    32
    ],
    "border": null
   },
@@ -14192,11 +14311,11 @@
    "id": "icon_camiseta_contrario",
    "category": "Abilities",
    "file": "Abilities/icon_camiseta_contrario.png",
-   "w": 32,
-   "h": 32,
+   "w": 64,
+   "h": 64,
    "pivot": [
-    16,
-    16
+    32,
+    32
    ],
    "border": null
   },
@@ -14204,11 +14323,11 @@
    "id": "icon_moda_incompreensivel",
    "category": "Abilities",
    "file": "Abilities/icon_moda_incompreensivel.png",
-   "w": 32,
-   "h": 32,
+   "w": 64,
+   "h": 64,
    "pivot": [
-    16,
-    16
+    32,
+    32
    ],
    "border": null
   },
@@ -14216,11 +14335,11 @@
    "id": "icon_mamao",
    "category": "Abilities",
    "file": "Abilities/icon_mamao.png",
-   "w": 32,
-   "h": 32,
+   "w": 64,
+   "h": 64,
    "pivot": [
-    16,
-    16
+    32,
+    32
    ],
    "border": null
   },
@@ -14228,11 +14347,11 @@
    "id": "icon_mamao_supremo",
    "category": "Abilities",
    "file": "Abilities/icon_mamao_supremo.png",
-   "w": 32,
-   "h": 32,
+   "w": 64,
+   "h": 64,
    "pivot": [
-    16,
-    16
+    32,
+    32
    ],
    "border": null
   },
@@ -14240,11 +14359,11 @@
    "id": "icon_tequila",
    "category": "Abilities",
    "file": "Abilities/icon_tequila.png",
-   "w": 32,
-   "h": 32,
+   "w": 64,
+   "h": 64,
    "pivot": [
-    16,
-    16
+    32,
+    32
    ],
    "border": null
   },
@@ -14252,11 +14371,11 @@
    "id": "icon_fiesta_caotica",
    "category": "Abilities",
    "file": "Abilities/icon_fiesta_caotica.png",
-   "w": 32,
-   "h": 32,
+   "w": 64,
+   "h": 64,
    "pivot": [
-    16,
-    16
+    32,
+    32
    ],
    "border": null
   },
@@ -14264,11 +14383,11 @@
    "id": "icon_chapeu_japones",
    "category": "Abilities",
    "file": "Abilities/icon_chapeu_japones.png",
-   "w": 32,
-   "h": 32,
+   "w": 64,
+   "h": 64,
    "pivot": [
-    16,
-    16
+    32,
+    32
    ],
    "border": null
   },
@@ -14276,11 +14395,11 @@
    "id": "icon_mestre_projeteis",
    "category": "Abilities",
    "file": "Abilities/icon_mestre_projeteis.png",
-   "w": 32,
-   "h": 32,
+   "w": 64,
+   "h": 64,
    "pivot": [
-    16,
-    16
+    32,
+    32
    ],
    "border": null
   },
@@ -14288,11 +14407,11 @@
    "id": "icon_apagao",
    "category": "Abilities",
    "file": "Abilities/icon_apagao.png",
-   "w": 32,
-   "h": 32,
+   "w": 64,
+   "h": 64,
    "pivot": [
-    16,
-    16
+    32,
+    32
    ],
    "border": null
   },
@@ -14300,11 +14419,11 @@
    "id": "icon_turbina_emergencia",
    "category": "Abilities",
    "file": "Abilities/icon_turbina_emergencia.png",
-   "w": 32,
-   "h": 32,
+   "w": 64,
+   "h": 64,
    "pivot": [
-    16,
-    16
+    32,
+    32
    ],
    "border": null
   },
@@ -14312,11 +14431,11 @@
    "id": "icon_overclock",
    "category": "Abilities",
    "file": "Abilities/icon_overclock.png",
-   "w": 32,
-   "h": 32,
+   "w": 64,
+   "h": 64,
    "pivot": [
-    16,
-    16
+    32,
+    32
    ],
    "border": null
   },

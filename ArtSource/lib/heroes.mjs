@@ -101,7 +101,8 @@ function face(m, L, view, b, expr) {
   const ey = 12 + b;
   if (view === 'down') {
     if (expr === 'closed') m.rect(12, ey + 1, 2, 1, 'eye').rect(18, ey + 1, 2, 1, 'eye');
-    else if (L.eyes === 'almond') m.rect(12, ey, 2, 1, 'eye').rect(18, ey, 2, 1, 'eye').set(13, ey + 1, 'eye').set(18, ey + 1, 'eye');
+    // olhos puxados: fenda fina com o canto de fora levantado
+    else if (L.eyes === 'almond') m.set(11, ey, 'eye').rect(12, ey + 1, 2, 1, 'eye').set(20, ey, 'eye').rect(18, ey + 1, 2, 1, 'eye');
     else m.rect(13, ey, 1, 2, 'eye').rect(18, ey, 1, 2, 'eye');
     if (L.blush) m.set(11, ey + 2, 'blush').set(20, ey + 2, 'blush');
     const my = 15 + b;
@@ -109,7 +110,7 @@ function face(m, L, view, b, expr) {
     else if (L.smile) m.rect(15, my, 2, 1, 'teeth').set(14, my, 'mouth').set(17, my, 'mouth');
     else m.rect(15, my, 2, 1, L.lips ? 'lips' : 'mouth');
   } else if (view === 'left') {
-    if (L.eyes === 'almond') m.rect(10, ey, 2, 1, 'eye').set(10, ey + 1, 'eye');
+    if (L.eyes === 'almond') m.set(10, ey + 1, 'eye').set(11, ey, 'eye');
     else if (expr === 'closed') m.rect(10, ey + 1, 2, 1, 'eye');
     else m.rect(10, ey, 1, 2, 'eye');
     if (L.blush) m.set(10, ey + 2, 'blush');
@@ -408,7 +409,8 @@ export function heroSprites() {
 // Olhos 7×5 (esquerdo; o direito é espelhado). L cílio, W branco, I íris, P pupila, H brilho, S pálpebra.
 const EYES = {
   open: ['.LLLLL.', 'LWIHIWL', 'LWIPIWL', '.WIIIW.', '..SSS..'],
-  almond: ['LLLLLLL', 'LWIHIWL', '.WIPIW.', '..SSS..', '.......'],
+  almond: ['L......', '.LLLLLL', '.WHPIWL', '..SSSL.', '.......'],
+  almondWide: ['L......', '.LLLLLL', 'LWHPIWL', '.WIIIWL', '..LLL..'],
   wide: ['.LLLLL.', 'LWWIWWL', 'LWIPIWL', 'LWWIWWL', '.LLLLL.'],
   narrow: ['.......', 'LLLLLLL', 'LWIPIWL', '.SSSSS.', '.......'],
   half: ['.......', 'SSSSSSS', 'LLLLLLL', 'LWIPIWL', '.SSSSS.'],
@@ -548,7 +550,7 @@ function portrait(id, emo) {
   const skin = L.pal.skin;
   const iris = P.eyes === 'almond' ? '#2a1a14' : '#4a3020';
   const legend = { L: '#1a1418', W: '#f4f6f8', I: iris, P: '#0e0c10', H: '#ffffff', S: skin.s };
-  const eye = EYES[E.eye === 'open' && P.eyes === 'almond' ? 'almond' : E.eye];
+  const eye = EYES[P.eyes === 'almond' && E.eye === 'open' ? 'almond' : P.eyes === 'almond' && E.eye === 'wide' ? 'almondWide' : E.eye];
   stampTxt(out, eye, legend, 20, 28);
   stampTxt(out, eye.map((r) => [...r].reverse().join('')), legend, 37, 28);
   if (P.liner && ['open', 'wide', 'narrow', 'half'].includes(E.eye)) for (const [x, y] of [[27, 28], [28, 27], [36, 28], [35, 27]]) out.set(x, y, '#1a1418');

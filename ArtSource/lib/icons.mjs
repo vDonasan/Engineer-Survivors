@@ -1,15 +1,105 @@
-// Ícones de habilidades 32×32 (moldura na cor da raridade).
+// Ícones de habilidades 64×64: símbolo desenhado na grade de 32, ampliado com Scale2x e sombreado
+// (luz, sombra, brilho e contorno fino), sobre uma moldura com a cor da raridade.
 import { C } from './palette.mjs';
 import { Px, rect, box, line, disc, ellipse, circleLine, stamp } from './draw.mjs';
 import { iconArt } from './kitart.mjs';
+import { HI } from './iconhi.mjs';
 
 const RARITY = { comum: C.gray5, incomum: C.cyan2, raro: C.amber, reliquia: C.magenta };
+const SIZE = 64;
 
+const rgb = (h) => [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16));
+const hex = (c) => '#' + c.map((v) => Math.max(0, Math.min(255, Math.round(v))).toString(16).padStart(2, '0')).join('');
+const mix = (a, b, t) => { const x = rgb(a), y = rgb(b); return hex(x.map((v, i) => v + (y[i] - v) * t)); };
+/** Clareia (k > 0, rumo a um branco quente) ou escurece (k < 0, rumo a um azul profundo). */
+const shade = (h, k) => (k >= 0 ? mix(h, '#fff6e0', k) : mix(h, '#0b0d18', -k));
+
+/** Scale2x (EPX): dobra a resolução arredondando diagonais sem inventar cores. */
+function scale2x(src) {
+  const out = new Px(src.w * 2, src.h * 2);
+  for (let y = 0; y < src.h; y++) for (let x = 0; x < src.w; x++) {
+    const P = src.get(x, y), A = src.get(x, y - 1), B = src.get(x + 1, y), Cc = src.get(x - 1, y), D = src.get(x, y + 1);
+    out.set(2 * x, 2 * y, Cc === A && Cc !== D && A !== B ? A : P);
+    out.set(2 * x + 1, 2 * y, A === B && A !== Cc && B !== D ? B : P);
+    out.set(2 * x, 2 * y + 1, D === Cc && D !== B && Cc !== A ? Cc : P);
+    out.set(2 * x + 1, 2 * y + 1, B === D && B !== A && D !== Cc ? D : P);
+  }
+  return out;
+}
+
+/**
+ * Volume em alta resolução: luz de cima/esquerda (borda clara de 1 px), sombra embaixo/direita, um leve
+ * degradê vertical e contorno fino em volta do desenho.
+ */
+function detail(sym) {
+  const out = sym.clone();
+  const solid = (v) => v && v !== C.outline;
+  for (let y = 0; y < sym.h; y++) for (let x = 0; x < sym.w; x++) {
+    const v = sym.get(x, y);
+    if (!solid(v)) continue;
+    const up = sym.get(x, y - 1), left = sym.get(x - 1, y), down = sym.get(x, y + 1), right = sym.get(x + 1, y);
+    const up2 = sym.get(x, y - 2), down2 = sym.get(x, y + 2);
+    let k = 0.1 - (y / sym.h) * 0.2;
+    if (up !== v || left !== v) k += 0.32;
+    else if (up2 !== v) k += 0.14;
+    else if (down !== v || right !== v) k -= 0.3;
+    else if (down2 !== v) k -= 0.12;
+    out.set(x, y, shade(v, k));
+  }
+  // brilho especular nas áreas grandes (2×2 no canto de cima de cada bloco cheio)
+  for (let y = 2; y < sym.h - 6; y++) for (let x = 2; x < sym.w - 6; x++) {
+    const v = sym.get(x, y);
+    if (!solid(v) || sym.get(x - 1, y) === v || sym.get(x, y - 1) === v) continue;
+    let full = true;
+    for (let j = 0; j < 6 && full; j++) for (let i = 0; i < 6; i++) if (sym.get(x + i, y + j) !== v) { full = false; break; }
+    if (full) { out.set(x + 2, y + 2, shade(v, 0.7)); out.set(x + 3, y + 2, shade(v, 0.5)); out.set(x + 2, y + 3, shade(v, 0.5)); }
+  }
+  for (const [x, y] of sym.ring()) out.set(x, y, C.outline);
+  return out;
+}
+
+/** Moldura 64×64: cantos arredondados, borda na cor da raridade, fundo em degradê e brilho atrás do símbolo. */
 function frame(rarity) {
-  const p = new Px(32, 32);
-  box(p, 0, 0, 32, 32, RARITY[rarity] || C.gray5);
-  box(p, 1, 1, 30, 30, C.gray1);
-  rect(p, 2, 2, 28, 1, C.gray2);
+  const accent = RARITY[rarity] || C.gray5;
+  const p = new Px(SIZE, SIZE), n = SIZE;
+  const corner = (x, y, r) => { const cx = x < r ? r : x > n - 1 - r ? n - 1 - r : x, cy = y < r ? r : y > n - 1 - r ? n - 1 - r : y; return Math.hypot(x - cx, y - cy); };
+  const top = mix('#1a1d26', accent, 0.16), bottom = '#0f1116';
+  for (let y = 0; y < n; y++) for (let x = 0; x < n; x++) {
+    const d = corner(x, y, 6);
+    if (d > 6.4) continue;
+    if (d > 5.4 || x === 0 || y === 0 || x === n - 1 || y === n - 1) { p.set(x, y, C.outline); continue; }
+    if (d > 4.4 || x === 1 || y === 1 || x === n - 2 || y === n - 2) { p.set(x, y, y < n / 2 ? shade(accent, 0.25) : shade(accent, -0.25)); continue; }
+    if (x === 2 || y === 2 || x === n - 3 || y === n - 3) { p.set(x, y, C.outline); continue; }
+    // fundo: degradê em 6 faixas + brilho radial quantizado
+    const t = Math.floor((y / n) * 6) / 6;
+    let col = mix(top, bottom, t);
+    const g = Math.hypot(x - n / 2 + 0.5, y - n / 2 + 0.5) / (n / 2);
+    if (g < 0.75) col = mix(col, accent, 0.07 + 0.05 * Math.floor((0.75 - g) * 6) / 2);
+    p.set(x, y, col);
+  }
+  rect(p, 8, 3, n - 16, 1, mix(top, '#ffffff', 0.12));
+  // gema da raridade no canto
+  if (rarity === 'raro' || rarity === 'reliquia') {
+    stamp(p, ['.OO.', 'OAAO', 'OAaO', '.OO.'].map((r) => r), { O: C.outline, A: shade(accent, 0.15), a: shade(accent, -0.3) }, n - 10, 5);
+    p.set(n - 8, 6, '#ffffff');
+  }
+  if (rarity === 'reliquia') for (const [x, y] of [[6, n - 8], [n - 8, n - 9], [7, 8]]) { p.set(x, y, C.yellow3); p.set(x - 1, y, shade(accent, 0.4)); p.set(x + 1, y, shade(accent, 0.4)); p.set(x, y - 1, shade(accent, 0.4)); p.set(x, y + 1, shade(accent, 0.4)); }
+  return p;
+}
+
+/** Ícone final: símbolo nativo de 64 (iconhi.mjs) ou da grade de 32 ampliado com Scale2x; sombreado e com sombra no chão. */
+function compose(rarity, draw, hi) {
+  let sym;
+  if (hi) { sym = new Px(SIZE, SIZE); hi(sym); }
+  else { const base = new Px(32, 32); draw(base); sym = scale2x(base); }
+  sym = detail(sym);
+  const p = frame(rarity);
+  for (let y = 0; y < SIZE; y++) for (let x = 0; x < SIZE; x++) {
+    if (!sym.get(x - 2, y - 3) || sym.get(x, y)) continue;
+    const bg = p.get(x, y);
+    if (bg && x > 2 && y > 2 && x < SIZE - 3 && y < SIZE - 3) p.set(x, y, shade(bg, -0.55));
+  }
+  for (let y = 3; y < SIZE - 3; y++) for (let x = 3; x < SIZE - 3; x++) { const v = sym.get(x, y); if (v) p.set(x, y, v); }
   return p;
 }
 
@@ -91,9 +181,7 @@ export function iconSprites(content) {
   for (const [id, r] of rarity) {
     const fn = SYMBOL[id];
     if (!fn) throw new Error(`sem ícone para ${id}`);
-    const p = frame(r);
-    fn(p);
-    out.push({ id: `icon_${id}`, category: 'Abilities', w: 32, h: 32, pivot: [16, 16], px: p });
+    out.push({ id: `icon_${id}`, category: 'Abilities', w: SIZE, h: SIZE, pivot: [SIZE / 2, SIZE / 2], px: compose(r, fn, HI[id]) });
   }
   return out;
 }

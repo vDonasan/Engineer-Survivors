@@ -64,7 +64,7 @@ export class Px {
     this.c.forEach((v, i) => {
       if (!v) return;
       out[i * 4] = parseInt(v.slice(1, 3), 16); out[i * 4 + 1] = parseInt(v.slice(3, 5), 16);
-      out[i * 4 + 2] = parseInt(v.slice(5, 7), 16); out[i * 4 + 3] = 255;
+      out[i * 4 + 2] = parseInt(v.slice(5, 7), 16); out[i * 4 + 3] = v.length === 9 ? parseInt(v.slice(7, 9), 16) : 255;
     });
     return out;
   }

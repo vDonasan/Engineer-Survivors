@@ -1,32 +1,66 @@
-// Interface em pixel art: molduras e botões 9-slice e o fundo do menu (laboratório à noite).
+// Interface em pixel art: painéis, botões, cartas e trilhos 9-slice e o fundo do menu (laboratório à noite).
 import { C } from './palette.mjs';
 import { Px, rect, box, line, disc, ellipse, rng } from './draw.mjs';
 
 const O = C.outline;
 
-/** Moldura de painel 24×24 (bordas de 8 px): aço com rebites e faixa de destaque no topo. */
-function frame(accent, fill = C.gray1) {
-  const p = new Px(24, 24);
-  rect(p, 0, 0, 24, 24, O);
-  rect(p, 1, 1, 22, 22, C.gray3);
-  rect(p, 1, 1, 22, 1, C.gray4);
-  rect(p, 1, 22, 22, 1, C.gray2);
-  rect(p, 3, 3, 18, 18, O);
-  rect(p, 4, 4, 16, 16, fill);
-  rect(p, 4, 4, 16, 1, C.gray2);
-  rect(p, 1, 1, 22, 2, accent); rect(p, 1, 3, 22, 1, C.gray2);
-  for (const [x, y] of [[1, 5], [21, 5], [1, 20], [21, 20]]) { p.set(x + 0, y, C.gray5); p.set(x + 1, y + 1, C.gray2); }
+// Visual moderno em pixel art: vidro escuro translúcido, cantos arredondados de pixel, colchetes de destaque
+// nos cantos (não esticam no 9-slice) e botões chapados com degrau de profundidade embaixo.
+const GLASS = '#121620e8', EDGE = '#2e3648', EDGE_HI = '#46506a';
+
+/** Pixel dentro de um retângulo de cantos arredondados (raio r, em pixels). */
+const inside = (x, y, w, h, r) => {
+  const cx = x < r ? r : x > w - 1 - r ? w - 1 - r : x, cy = y < r ? r : y > h - 1 - r ? h - 1 - r : y;
+  return Math.hypot(x - cx, y - cy) <= r + 0.35;
+};
+
+/** Painel 24×24 (bordas de 8 px): vidro escuro, contorno fino e colchetes na cor de destaque. */
+function frame(accent, fill = GLASS) {
+  const n = 24, p = new Px(n, n);
+  for (let y = 0; y < n; y++) for (let x = 0; x < n; x++) {
+    if (!inside(x, y, n, n, 4)) continue;
+    const edge = !inside(x - 1, y, n, n, 4) || !inside(x + 1, y, n, n, 4) || !inside(x, y - 1, n, n, 4) || !inside(x, y + 1, n, n, 4);
+    if (edge) { p.set(x, y, O); continue; }
+    const inner = !inside(x - 2, y, n, n, 4) || !inside(x + 2, y, n, n, 4) || !inside(x, y - 2, n, n, 4) || !inside(x, y + 2, n, n, 4);
+    p.set(x, y, inner ? (y < 8 ? EDGE_HI : EDGE) : fill);
+  }
+  // colchetes nos quatro cantos
+  for (const [x, y, sx, sy] of [[2, 2, 1, 1], [21, 2, -1, 1], [2, 21, 1, -1], [21, 21, -1, -1]]) {
+    for (let i = 1; i < 6; i++) { p.set(x + sx * i, y, accent); p.set(x, y + sy * i, accent); }
+    p.set(x + sx, y + sy, accent);
+  }
   return p;
 }
 
-/** Botão 16×16 (bordas de 5 px). */
-function button(face, light, dark, edge) {
-  const p = new Px(16, 16);
-  rect(p, 0, 0, 16, 16, O);
-  rect(p, 1, 1, 14, 14, face);
-  rect(p, 1, 1, 14, 2, light);
-  rect(p, 1, 13, 14, 2, dark);
-  rect(p, 1, 1, 1, 14, edge); rect(p, 14, 1, 1, 14, edge);
+/** Botão 16×16 (bordas de 5 px): face chapada, brilho de 1 px no topo e degrau escuro embaixo. */
+function button(face, top, depth, rim = O) {
+  const n = 16, p = new Px(n, n);
+  for (let y = 0; y < n; y++) for (let x = 0; x < n; x++) {
+    if (!inside(x, y, n, n, 3)) continue;
+    const edge = !inside(x - 1, y, n, n, 3) || !inside(x + 1, y, n, n, 3) || !inside(x, y - 1, n, n, 3) || !inside(x, y + 1, n, n, 3);
+    if (edge) p.set(x, y, rim);
+    else if (y >= n - 4) p.set(x, y, depth);
+    else if (y <= 2) p.set(x, y, top);
+    else p.set(x, y, face);
+  }
+  return p;
+}
+
+/** Carta de subida de nível 24×24: vidro com faixa grossa da raridade no topo. */
+function card(accent) {
+  const p = frame(accent, '#151a26f0');
+  for (let x = 3; x < 21; x++) { p.set(x, 2, accent); p.set(x, 3, accent); p.set(x, 4, '#00000040'); }
+  return p;
+}
+
+/** Trilho de barra 12×12 (bordas de 4 px). */
+function track() {
+  const n = 12, p = new Px(n, n);
+  for (let y = 0; y < n; y++) for (let x = 0; x < n; x++) {
+    if (!inside(x, y, n, n, 2)) continue;
+    const edge = !inside(x - 1, y, n, n, 2) || !inside(x + 1, y, n, n, 2) || !inside(x, y - 1, n, n, 2) || !inside(x, y + 1, n, n, 2);
+    p.set(x, y, edge ? O : y < 3 ? '#07080cf0' : '#0d1018e0');
+  }
   return p;
 }
 
@@ -79,13 +113,20 @@ function menuBg() {
 export function uiSprites() {
   const s = (id, px, border) => ({ id, category: 'UI', w: px.w, h: px.h, pivot: [px.w / 2, px.h / 2], px, border });
   return [
-    s('ui_frame', frame(C.yellow2), [8, 8, 8, 8]),
-    s('ui_frame_cyan', frame(C.cyan2, '#1b2f36'), [8, 8, 8, 8]),
-    s('ui_frame_dark', frame(C.gray3, '#14161b'), [8, 8, 8, 8]),
-    s('ui_btn', button(C.gray2, C.gray3, C.gray1, C.gray3), [5, 5, 5, 5]),
-    s('ui_btn_hover', button(C.gray3, C.yellow2, C.gray1, C.yellow1), [5, 5, 5, 5]),
-    s('ui_btn_selected', button(C.petrol2, C.cyan2, C.petrol1, C.cyan1), [5, 5, 5, 5]),
-    s('ui_btn_primary', button(C.orange1, C.orange2, C.rust1, C.orange2), [5, 5, 5, 5]),
+    s('ui_frame', frame(C.amber), [8, 8, 8, 8]),
+    s('ui_frame_cyan', frame(C.cyan2, '#10202ae8'), [8, 8, 8, 8]),
+    s('ui_frame_dark', frame(C.gray3, '#0d1016f0'), [8, 8, 8, 8]),
+    s('ui_btn', button('#262d3c', '#3a4458', '#171b25', O), [5, 5, 5, 5]),
+    s('ui_btn_hover', button('#323b4f', '#58d8f0', '#1b2130', C.cyan2), [5, 5, 5, 5]),
+    s('ui_btn_selected', button('#1c4f5e', '#5fe6ff', '#123540', C.cyan2), [5, 5, 5, 5]),
+    s('ui_btn_primary', button('#ff8a1f', '#ffc066', '#b5520a', O), [5, 5, 5, 5]),
+    s('ui_card_comum', card(C.gray5), [8, 8, 8, 8]),
+    s('ui_card_incomum', card(C.cyan2), [8, 8, 8, 8]),
+    s('ui_card_raro', card(C.amber), [8, 8, 8, 8]),
+    s('ui_card_reliquia', card(C.magenta), [8, 8, 8, 8]),
+    s('ui_card_hover', card(C.white), [8, 8, 8, 8]),
+    s('ui_track', track(), [4, 4, 4, 4]),
+    s('ui_slot', frame(C.gray4, '#0d1018e0'), [8, 8, 8, 8]),
     s('ui_menu_bg', menuBg()),
   ];
 }
