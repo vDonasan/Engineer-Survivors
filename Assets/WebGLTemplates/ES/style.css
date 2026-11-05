@@ -1,18 +1,75 @@
-html, body { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background: #14161b; }
-body { font-family: "Consolas", "Courier New", monospace; color: #eef1f4; }
-#unity-canvas { position: fixed; left: 0; top: 0; width: 100%; height: 100%; display: block; background: #14161b; outline: none; image-rendering: pixelated; }
-#es-loading, #es-error { position: fixed; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; background: #14161b; text-align: center; padding: 16px; }
+/* Tela de carregamento: laboratório à noite, heróis fugindo da horda, itens flutuando e a bateria enchendo. */
+@font-face { font-family: "Pixelify"; src: url("PixelifySans.ttf") format("truetype"); font-weight: 400 700; font-display: swap; }
+html, body { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background: #0b0d14; }
+body { font-family: "Pixelify", "Consolas", monospace; color: #eef1f4; }
+#unity-canvas { position: fixed; left: 0; top: 0; width: 100%; height: 100%; display: block; background: #0b0d14; outline: none; image-rendering: pixelated; }
+
+#es-loading, #es-error { position: fixed; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; background: #0b0d14; text-align: center; padding: 16px; overflow: hidden; }
+#es-loading { transition: opacity 0.6s ease, transform 0.6s ease; }
+#es-loading.es-done { opacity: 0; transform: scale(1.04); pointer-events: none; }
 #es-loading[hidden], #es-error[hidden] { display: none; }
-.es-title { font-size: 40px; color: #e8b923; letter-spacing: 2px; }
-.es-sub { color: #a7b0bb; font-size: 18px; }
-.es-bar { width: min(520px, 90vw); height: 18px; border: 2px solid #5a626d; background: #2c3038; }
-#es-bar-fill { height: 100%; width: 0; background: #3fe0ff; transition: width 0.2s; }
-#es-status { font-size: 18px; }
-.es-hint { position: absolute; bottom: 18px; left: 16px; right: 16px; color: #7d8794; font-size: 15px; }
+
+/* fundo: o laboratório em pixel art, deslizando devagar, com vinheta */
+.es-bg { position: absolute; inset: -4%; background: url("loading-bg.png") center bottom / cover no-repeat; image-rendering: pixelated; filter: brightness(0.55) saturate(1.15); animation: es-pan 26s ease-in-out infinite alternate; }
+.es-bg::after { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 42%, rgba(11, 13, 20, 0.15) 0%, rgba(11, 13, 20, 0.55) 55%, rgba(5, 6, 10, 0.95) 100%); }
+@keyframes es-pan { from { transform: translateX(-2%) scale(1.02); } to { transform: translateX(2%) scale(1.06); } }
+
+/* efeito de monitor CRT por cima de tudo */
+.es-crt { position: absolute; inset: 0; pointer-events: none; background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.22) 0 1px, transparent 1px 3px); mix-blend-mode: multiply; animation: es-flicker 4s steps(1) infinite; }
+@keyframes es-flicker { 0%, 100% { opacity: 1; } 47% { opacity: 0.85; } 48% { opacity: 1; } 72% { opacity: 0.92; } }
+
+.es-center { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 14px; margin-bottom: 9vh; padding: 26px 34px 22px;
+  background: rgba(14, 17, 27, 0.78); border: 3px solid #0a0b12; box-shadow: 0 0 0 3px #2e3648, 0 0 0 6px #0a0b12, 0 18px 40px rgba(0, 0, 0, 0.6);
+  clip-path: polygon(10px 0, calc(100% - 10px) 0, 100% 10px, 100% calc(100% - 10px), calc(100% - 10px) 100%, 10px 100%, 0 calc(100% - 10px), 0 10px); }
+.es-badge { font-size: 13px; letter-spacing: 3px; color: #7ee8ff; background: rgba(63, 208, 255, 0.12); border: 2px solid rgba(63, 208, 255, 0.5); padding: 3px 10px; }
+
+/* título com sombra de pixel e um "glitch" de vez em quando */
+.es-title { position: relative; font-size: clamp(30px, 6vw, 64px); font-weight: 700; color: #ffd65c; letter-spacing: 3px; line-height: 1; text-shadow: 0 4px 0 #b5520a, 0 8px 0 #0a0b12; animation: es-bob 3s ease-in-out infinite; }
+.es-title::before, .es-title::after { content: attr(data-text); position: absolute; inset: 0; opacity: 0; }
+.es-title::before { color: #3fd0ff; animation: es-glitch 5s steps(1) infinite; }
+.es-title::after { color: #ff3df0; animation: es-glitch 5s steps(1) 0.08s infinite reverse; }
+@keyframes es-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+@keyframes es-glitch { 0%, 91%, 100% { opacity: 0; transform: none; clip-path: none; } 92% { opacity: 0.9; transform: translate(-4px, 1px); clip-path: inset(10% 0 55% 0); } 94% { opacity: 0.9; transform: translate(4px, -1px); clip-path: inset(60% 0 8% 0); } 96% { opacity: 0; } }
+
+/* bateria de 20 células que acende da esquerda para a direita */
+.es-battery { display: flex; align-items: center; margin-top: 8px; }
+#es-cells { display: flex; gap: 3px; padding: 5px; background: #0a0b12; border: 3px solid #5a6476; box-shadow: inset 0 0 0 2px #1b2030; }
+.es-cell { width: clamp(10px, 2.2vw, 22px); height: 30px; background: #1b2030; transition: background 0.2s, box-shadow 0.2s; }
+.es-cell.on { background: linear-gradient(#b0f3ff 0 4px, #3fd0ff 4px 22px, #1a8fb0 22px); box-shadow: 0 0 10px rgba(63, 208, 255, 0.55); }
+.es-cell.full { background: linear-gradient(#c8ffd8 0 4px, #4dff88 4px 22px, #169a45 22px); box-shadow: 0 0 10px rgba(77, 255, 136, 0.6); }
+.es-battery-tip { width: 8px; height: 18px; background: #5a6476; border: 3px solid #0a0b12; border-left: 0; }
+.es-readout { font-size: 34px; font-weight: 700; color: #eef1f4; text-shadow: 0 3px 0 #0a0b12; letter-spacing: 2px; }
+.es-pct-sign { font-size: 20px; color: #7ee8ff; margin-left: 2px; }
+#es-status { min-height: 22px; font-size: 17px; color: #c4ccd8; text-shadow: 0 2px 0 #0a0b12; }
+.es-cursor { color: #ffd65c; animation: es-blink 0.8s steps(1) infinite; }
+@keyframes es-blink { 50% { opacity: 0; } }
+
+/* desfile: heróis correndo da horda de microbôs pelo chão do laboratório */
+#es-parade { position: absolute; left: 0; right: 0; bottom: 8vh; height: 96px; z-index: 1; pointer-events: none; }
+.es-runner { position: absolute; bottom: 0; width: 96px; height: 96px; background-image: url("loading-runners.png"); background-size: 384px 1056px; image-rendering: pixelated; animation: es-walk 0.48s steps(4) infinite, es-cross var(--dur) linear var(--delay) infinite; left: -120px; filter: drop-shadow(0 4px 0 rgba(0, 0, 0, 0.45)); }
+.es-runner.bot { width: 72px; height: 72px; background-size: 288px 792px; animation: es-walk-bot 0.3s steps(4) infinite, es-cross var(--dur) linear var(--delay) infinite; }
+@keyframes es-walk { from { background-position-x: 0; } to { background-position-x: -384px; } }
+@keyframes es-walk-bot { from { background-position-x: 0; } to { background-position-x: -288px; } }
+@keyframes es-cross { from { transform: translateX(0); } to { transform: translateX(calc(100vw + 240px)); } }
+
+/* itens que sobem como recompensa */
+#es-loot { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
+.es-item { position: absolute; width: 64px; height: 64px; background-image: url("loading-icons.png"); background-size: 768px 64px; image-rendering: pixelated; animation: es-rise var(--dur) ease-in forwards; opacity: 0; }
+@keyframes es-rise { 0% { opacity: 0; transform: translateY(40px) scale(0.6); } 15% { opacity: 0.85; transform: translateY(0) scale(1); } 80% { opacity: 0.7; } 100% { opacity: 0; transform: translateY(-46vh) scale(0.9); } }
+
+.es-hint { position: absolute; bottom: 14px; left: 16px; right: 16px; z-index: 2; color: #a0aab8; font-size: 14px; text-shadow: 0 2px 0 #0a0b12; }
+.es-hint b { color: #ffd65c; font-weight: 700; }
+
+#es-error .es-title { font-size: 34px; animation: none; }
 #es-error-text { max-width: 640px; font-size: 18px; color: #ff9090; line-height: 1.4; }
-#es-reload { font: inherit; font-size: 18px; color: #eef1f4; background: #3e444e; border: 2px solid #7d8794; padding: 8px 18px; cursor: pointer; }
-#es-reload:hover { border-color: #e8b923; }
+#es-reload { font: inherit; font-size: 18px; color: #fff; background: #ff8a1f; border: 3px solid #0a0b12; box-shadow: 0 4px 0 #b5520a; padding: 8px 20px; cursor: pointer; }
+#es-reload:hover { filter: brightness(1.12); }
 #es-banner { position: fixed; top: 10px; left: 50%; transform: translateX(-50%); width: min(720px, 92vw); z-index: 10; }
 #es-banner div { padding: 8px 12px; margin-bottom: 6px; border: 2px solid; font-size: 15px; }
 .es-banner-warning { background: #3e3410; border-color: #e8b923; color: #ffe27a; }
 .es-banner-error { background: #3e1414; border-color: #e03a3a; color: #ff9090; }
+
+@media (prefers-reduced-motion: reduce) {
+  .es-bg, .es-title, .es-title::before, .es-title::after, .es-crt { animation: none; }
+  #es-parade, #es-loot { display: none; }
+}

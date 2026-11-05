@@ -2,7 +2,7 @@
     <ui:VisualElement name="screen-lobby" class="screen center dim menu-bg">
         <ui:Label text="#lobby_titulo" class="heading" />
         <ui:VisualElement class="row">
-            <ui:Label name="label-code" class="title" style="font-size: 56px;" />
+            <ui:Label name="label-code" class="title" style="font-size: 45px;" />
             <ui:Button name="btn-copy" text="#copiar" class="btn" />
         </ui:VisualElement>
         <ui:Label name="label-copied" class="small ok" />

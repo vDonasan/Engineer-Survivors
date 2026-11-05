@@ -18,7 +18,7 @@
                 <ui:Label name="label-boss-next" class="boss-next" picking-mode="Ignore" />
             </ui:VisualElement>
             <ui:VisualElement class="side" picking-mode="Ignore">
-                <ui:Button name="btn-hud-menu" text="#hud_menu" class="btn" style="align-self: flex-end; font-size: 22px;" />
+                <ui:Button name="btn-hud-menu" text="#hud_menu" class="btn" style="align-self: flex-end; font-size: 18px;" />
                 <ui:VisualElement name="list-allies" picking-mode="Ignore" />
                 <ui:Label name="label-synergy" class="small" style="color: rgb(255, 61, 240);" picking-mode="Ignore" />
                 <ui:Label text="#hud_evolucoes" class="small" picking-mode="Ignore" />

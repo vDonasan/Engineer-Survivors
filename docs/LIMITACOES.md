@@ -20,7 +20,7 @@
 - **Tiros e companheiros no cooperativo** chegam no snapshot (até 200 por snapshot, os mais perto dos jogadores primeiro): com mais que isso na tela, tiros longe de todos podem piscar no cliente; o dano é sempre calculado no anfitrião.
 - **Sprites dos personagens** são caricaturas em pixel art 32×32 a partir das fotos (cabelo, óculos, boné, roupa); não retratos fiéis.
 - **Montagem do Cabazord Master** é só visual (1,1 s); o Master já ataca durante a animação.
-- **Fonte VT323** renderizada pelo UI Toolkit (SDF): nítida, mas não alinhada à grade de pixels como a arte do jogo.
+- **Fonte Pixelify Sans** renderizada pelo UI Toolkit (SDF): nítida, mas não alinhada à grade de pixels como a arte do jogo.
 - **Comandos de depuração na build publicada:** F4 (solo) gera 50 inimigos; `?mode=solo&bench=N` mantém N inimigos com o jogador invulnerável. Servem para medir desempenho; não funcionam no cooperativo. `&log=1&evolve=N` (solo ou anfitrião) começa com todas as armas evoluídas no nível N, para testes.
 - **Primeiro áudio só após um clique** (política de reprodução automática do navegador).
 

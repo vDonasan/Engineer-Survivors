@@ -181,7 +181,7 @@ namespace ES.UI
             _seconds.style.top = 0;
             _seconds.style.bottom = 0;
             _seconds.style.unityTextAlign = TextAnchor.MiddleCenter;
-            _seconds.style.fontSize = 40;
+            _seconds.style.fontSize = 32;
             _seconds.style.color = new Color(1f, 0.89f, 0.48f);
             Add(_seconds);
         }

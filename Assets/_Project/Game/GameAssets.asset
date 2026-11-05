@@ -4357,5 +4357,5 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 1356f91882503784482d116bd174873f, type: 3}
   - id: volta
     clip: {fileID: 8300000, guid: 2f3d9599560b9a44293dd256828e20cb, type: 3}
-  font: {fileID: 12800000, guid: d47109686bc7e754dbebe7fbc0f69398, type: 3}
+  font: {fileID: 12800000, guid: df71aa5a848d92547af3a607324aa7da, type: 3}
   strings: {fileID: 4900000, guid: f98bd284c452bed49a02c9ca9e7bd7fa, type: 3}

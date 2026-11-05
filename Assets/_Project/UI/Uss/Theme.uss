@@ -2,8 +2,9 @@
    e botões chapados com degrau (ArtSource/lib/uiart.mjs); mesma paleta da pixel art (palette.mjs). */
 .root {
     flex-grow: 1;
-    color: rgb(238, 241, 244);
-    font-size: 26px;
+    color: rgb(242, 245, 248);
+    text-shadow: 0 2px 0 rgba(6, 8, 14, 0.95);
+    font-size: 21px;
 }
 
 .screen {
@@ -19,11 +20,11 @@
 .wrap { flex-wrap: wrap; }
 .grow { flex-grow: 1; }
 
-.title { font-size: 88px; color: rgb(255, 214, 92); -unity-text-align: middle-center; text-shadow: 0 6px 0 rgb(181, 82, 10); letter-spacing: 2px; }
-.subtitle { font-size: 26px; color: rgb(126, 232, 255); -unity-text-align: middle-center; margin-top: 6px; margin-bottom: 22px; letter-spacing: 3px; text-shadow: 2px 2px 0 rgb(10, 12, 20); }
-.heading { font-size: 44px; color: rgb(255, 214, 92); margin-bottom: 14px; letter-spacing: 2px; text-shadow: 0 4px 0 rgb(10, 12, 20); }
+.title { font-size: 70px; color: rgb(255, 214, 92); -unity-text-align: middle-center; text-shadow: 0 6px 0 rgb(181, 82, 10); letter-spacing: 2px; }
+.subtitle { font-size: 21px; color: rgb(126, 232, 255); -unity-text-align: middle-center; margin-top: 6px; margin-bottom: 22px; letter-spacing: 3px; text-shadow: 2px 2px 0 rgb(10, 12, 20); }
+.heading { font-size: 35px; color: rgb(255, 214, 92); margin-bottom: 14px; letter-spacing: 2px; text-shadow: 0 4px 0 rgb(10, 12, 20); }
 .center-text { -unity-text-align: middle-center; }
-.section-label { font-size: 20px; color: rgb(63, 224, 255); margin-bottom: 8px; letter-spacing: 2px; }
+.section-label { font-size: 16px; color: rgb(63, 224, 255); margin-bottom: 8px; letter-spacing: 2px; }
 
 /* Fundo dos menus: o laboratório à noite, escurecido */
 .menu-bg { background-image: url("/Assets/_Project/Art/UI/ui_menu_bg.png"); -unity-background-scale-mode: scale-and-crop; background-color: rgb(22, 24, 31); }
@@ -32,10 +33,10 @@
 .menu-layout { flex-grow: 1; align-items: center; justify-content: center; padding-bottom: 110px; }
 .hero-lineup { position: absolute; left: 0; right: 0; bottom: 14px; flex-direction: row; justify-content: center; }
 .hero-lineup > * { margin: 0 4px; }
-.small { font-size: 22px; color: rgb(167, 176, 187); }
+.small { font-size: 18px; color: rgb(196, 204, 216); }
 .warn { color: rgb(255, 144, 144); }
 .ok { color: rgb(77, 255, 136); }
-.footer { position: absolute; bottom: 12px; right: 18px; font-size: 20px; color: rgb(125, 135, 148); }
+.footer { position: absolute; bottom: 12px; right: 18px; font-size: 16px; color: rgb(160, 170, 184); }
 
 .panel {
     background-image: url("/Assets/_Project/Art/UI/ui_frame.png");
@@ -57,7 +58,7 @@
     border-width: 0;
     border-radius: 0;
     color: rgb(238, 241, 244);
-    font-size: 26px;
+    font-size: 21px;
     padding: 6px 18px 10px 18px;
     margin: 5px;
     -unity-text-align: middle-center;
@@ -72,8 +73,8 @@
 .btn.selected { background-image: url("/Assets/_Project/Art/UI/ui_btn_selected.png"); color: rgb(176, 243, 255); }
 .btn.primary { background-image: url("/Assets/_Project/Art/UI/ui_btn_primary.png"); color: rgb(255, 255, 255); text-shadow: 0 2px 0 rgb(120, 50, 6); }
 .btn.primary:hover { background-image: url("/Assets/_Project/Art/UI/ui_btn_primary.png"); -unity-background-image-tint-color: rgb(255, 236, 200); color: rgb(255, 255, 255); }
-.btn:disabled { color: rgb(125, 135, 148); translate: 0 0; }
-.big { height: 58px; font-size: 30px; min-width: 150px; }
+.btn:disabled { color: rgb(160, 170, 184); translate: 0 0; }
+.big { height: 58px; font-size: 24px; min-width: 150px; }
 
 /* Escolha de personagem */
 .setup-layout { flex-grow: 1; align-items: center; justify-content: center; }
@@ -82,18 +83,18 @@
 .hero-grid { justify-content: center; }
 .hero-card { width: 140px; height: 150px; flex-direction: column; align-items: center; justify-content: flex-start; padding: 8px 4px; margin: 4px; }
 .hero-card .portrait { width: 76px; height: 76px; flex-shrink: 0; margin-bottom: 2px; }
-.hero-card .spec-name { font-size: 26px; color: rgb(255, 210, 63); -unity-text-align: middle-center; }
-.hero-card .spec-eng { font-size: 16px; color: rgb(167, 176, 187); -unity-text-align: middle-center; white-space: normal; }
+.hero-card .spec-name { font-size: 21px; color: rgb(255, 210, 63); -unity-text-align: middle-center; }
+.hero-card .spec-eng { font-size: 13px; color: rgb(196, 204, 216); -unity-text-align: middle-center; white-space: normal; }
 .hero-card-small { width: 96px; height: 92px; flex-direction: column; align-items: center; padding: 6px 3px; margin: 3px; }
 .hero-card-small .portrait { width: 52px; height: 52px; flex-shrink: 0; }
-.hero-card-small .spec-name { font-size: 18px; color: rgb(255, 210, 63); }
+.hero-card-small .spec-name { font-size: 14px; color: rgb(255, 210, 63); }
 .summary-panel { width: 400px; align-items: stretch; }
 .summary-stage { height: 140px; align-items: center; justify-content: flex-end; background-color: rgba(8, 10, 18, 0.55); border-width: 2px; border-color: rgb(46, 54, 72); margin-bottom: 10px; }
-.summary-name { font-size: 36px; color: rgb(255, 210, 63); -unity-text-align: middle-center; text-shadow: 3px 3px 0 rgb(20, 22, 27); }
-.summary-bio { font-size: 18px; color: rgb(238, 241, 244); white-space: normal; -unity-text-align: middle-center; margin: 8px 0 10px 0; -unity-font-style: italic; }
+.summary-name { font-size: 29px; color: rgb(255, 210, 63); -unity-text-align: middle-center; text-shadow: 3px 3px 0 rgb(20, 22, 27); }
+.summary-bio { font-size: 14px; color: rgb(238, 241, 244); white-space: normal; -unity-text-align: middle-center; margin: 8px 0 10px 0; -unity-font-style: italic; }
 .summary-row { margin: 3px 0; min-height: 46px; flex-shrink: 0; }
 .summary-icon { width: 44px; height: 44px; margin-right: 12px; flex-shrink: 0; }
-.summary-item { font-size: 21px; white-space: normal; }
+.summary-item { font-size: 17px; white-space: normal; }
 .bottom-row { width: 1200px; justify-content: space-between; align-items: center; }
 .diff-panel { width: 760px; }
 .diff-panel .small { white-space: normal; }
@@ -106,41 +107,41 @@
 .sheet-left { width: 280px; align-items: center; margin-right: 24px; flex-shrink: 0; }
 .sheet-portrait { width: 176px; height: 176px; flex-shrink: 0; border-width: 4px; border-color: rgb(46, 54, 72); }
 .sheet-stage { width: 230px; height: 128px; align-items: center; justify-content: flex-end; background-color: rgba(8, 10, 18, 0.6); border-width: 2px; border-color: rgb(46, 54, 72); margin: 14px 0; }
-.sheet-name { font-size: 44px; color: rgb(255, 210, 63); text-shadow: 4px 4px 0 rgb(20, 22, 27); }
-.sheet-eng { font-size: 19px; color: rgb(63, 224, 255); }
+.sheet-name { font-size: 35px; color: rgb(255, 210, 63); text-shadow: 4px 4px 0 rgb(20, 22, 27); }
+.sheet-eng { font-size: 15px; color: rgb(63, 224, 255); }
 .sheet-right { flex-grow: 1; flex-shrink: 1; }
-.sheet-bio { font-size: 21px; white-space: normal; -unity-font-style: italic; color: rgb(238, 241, 244); margin-bottom: 14px; }
+.sheet-bio { font-size: 17px; white-space: normal; -unity-font-style: italic; color: rgb(238, 241, 244); margin-bottom: 14px; }
 .sheet-section { align-items: flex-start; margin-top: 14px; padding-top: 10px; border-top-width: 2px; border-top-color: rgb(62, 68, 78); }
 .sheet-icon { width: 56px; height: 56px; margin-right: 16px; flex-shrink: 0; }
-.sheet-kind { font-size: 17px; color: rgb(63, 224, 255); }
-.sheet-title { font-size: 28px; color: rgb(255, 210, 63); }
-.sheet-desc { font-size: 19px; white-space: normal; flex-shrink: 1; color: rgb(221, 225, 230); }
+.sheet-kind { font-size: 14px; color: rgb(63, 224, 255); }
+.sheet-title { font-size: 22px; color: rgb(255, 210, 63); }
+.sheet-desc { font-size: 15px; white-space: normal; flex-shrink: 1; color: rgb(221, 225, 230); }
 .sheet-list { margin-left: 72px; margin-top: 4px; }
 .sheet-bullet { align-items: flex-start; margin: 2px 0; }
-.sheet-level { font-size: 19px; color: rgb(167, 176, 187); width: 80px; flex-shrink: 0; }
-.sheet-level-hi { font-size: 19px; color: rgb(255, 61, 240); width: 80px; flex-shrink: 0; }
+.sheet-level { font-size: 15px; color: rgb(196, 204, 216); width: 80px; flex-shrink: 0; }
+.sheet-level-hi { font-size: 15px; color: rgb(255, 61, 240); width: 80px; flex-shrink: 0; }
 .sheet-req { margin-left: 72px; margin-top: 6px; flex-wrap: wrap; }
-.sheet-label { font-size: 18px; color: rgb(167, 176, 187); margin-right: 8px; }
+.sheet-label { font-size: 14px; color: rgb(196, 204, 216); margin-right: 8px; }
 .chip { flex-direction: row; align-items: center; background-color: rgba(18, 22, 32, 0.9); border-width: 2px; border-color: rgb(46, 54, 72); padding: 2px 10px 2px 4px; margin: 3px 6px 3px 0; }
-.chip Label { font-size: 18px; }
+.chip Label { font-size: 14px; }
 .chip-icon { width: 32px; height: 32px; margin-right: 6px; }
 .sheet-buttons { justify-content: flex-end; margin-top: 14px; }
 
 .spec-card { width: 420px; min-height: 220px; flex-direction: row; align-items: flex-start; -unity-text-align: upper-left; white-space: normal; }
 .spec-card .portrait { width: 128px; height: 128px; margin-right: 12px; flex-shrink: 0; }
-.spec-card Label { white-space: normal; font-size: 22px; }
-.spec-card .spec-name { font-size: 30px; color: rgb(232, 185, 35); }
+.spec-card Label { white-space: normal; font-size: 18px; }
+.spec-card .spec-name { font-size: 24px; color: rgb(232, 185, 35); }
 
-TextField { font-size: 28px; }
+TextField { font-size: 22px; }
 TextField > .unity-text-field__input {
     background-color: rgb(13, 16, 24);
     border-color: rgb(63, 224, 255);
     border-width: 2px;
     color: rgb(238, 241, 244);
-    font-size: 28px;
+    font-size: 22px;
     -unity-font-style: normal;
 }
-.unity-base-field__label { color: rgb(201, 205, 210); min-width: 260px; font-size: 26px; }
+.unity-base-field__label { color: rgb(201, 205, 210); min-width: 260px; font-size: 21px; }
 Slider { margin: 8px 0; }
 Toggle { margin: 8px 0; }
 
@@ -156,20 +157,20 @@ Toggle { margin: 8px 0; }
 .hud-bottom { position: absolute; bottom: 12px; left: 12px; right: 12px; flex-direction: row; align-items: flex-end; justify-content: space-between; }
 .portrait-frame { width: 136px; height: 136px; padding: 8px; background-image: url("/Assets/_Project/Art/UI/ui_frame.png"); -unity-slice-left: 8; -unity-slice-right: 8; -unity-slice-top: 8; -unity-slice-bottom: 8; -unity-slice-scale: 2px; background-color: rgba(0, 0, 0, 0); }
 .portrait-img { flex-grow: 1; }
-.hud-time { font-size: 52px; color: rgb(238, 241, 244); -unity-text-align: upper-center; letter-spacing: 2px; text-shadow: 0 3px 0 rgb(10, 12, 20); }
+.hud-time { font-size: 42px; color: rgb(238, 241, 244); -unity-text-align: upper-center; letter-spacing: 2px; text-shadow: 0 3px 0 rgb(10, 12, 20); }
 .ability { width: 72px; height: 72px; margin: 3px; background-image: url("/Assets/_Project/Art/UI/ui_slot.png"); -unity-slice-left: 8; -unity-slice-right: 8; -unity-slice-top: 8; -unity-slice-bottom: 8; -unity-slice-scale: 1px; background-color: rgba(0, 0, 0, 0); }
 .ability-icon { position: absolute; left: 4px; top: 4px; width: 64px; height: 64px; }
-.ability-level { position: absolute; right: 2px; bottom: -4px; font-size: 24px; color: rgb(255, 226, 122); text-shadow: 0 2px 0 rgb(10, 12, 20); }
+.ability-level { position: absolute; right: 2px; bottom: -4px; font-size: 19px; color: rgb(255, 226, 122); text-shadow: 0 2px 0 rgb(10, 12, 20); }
 .special { width: 104px; height: 104px; margin-left: 12px; background-image: url("/Assets/_Project/Art/UI/ui_frame.png"); -unity-slice-left: 8; -unity-slice-right: 8; -unity-slice-top: 8; -unity-slice-bottom: 8; -unity-slice-scale: 2px; background-color: rgba(0, 0, 0, 0); }
 .special-icon { position: absolute; left: 8px; top: 8px; right: 8px; bottom: 8px; }
-.special-key { position: absolute; bottom: -30px; left: 0; right: 0; font-size: 22px; -unity-text-align: middle-center; }
-.banner { position: absolute; top: 250px; left: 0; right: 0; font-size: 44px; color: rgb(255, 181, 46); -unity-text-align: middle-center; letter-spacing: 2px; text-shadow: 0 4px 0 rgb(10, 12, 20); }
-.warning-line { position: absolute; top: 160px; left: 0; right: 0; font-size: 28px; color: rgb(255, 144, 144); -unity-text-align: middle-center; text-shadow: 0 2px 0 rgb(10, 12, 20); }
+.special-key { position: absolute; bottom: -30px; left: 0; right: 0; font-size: 18px; -unity-text-align: middle-center; }
+.banner { position: absolute; top: 250px; left: 0; right: 0; font-size: 35px; color: rgb(255, 181, 46); -unity-text-align: middle-center; letter-spacing: 2px; text-shadow: 0 4px 0 rgb(10, 12, 20); }
+.warning-line { position: absolute; top: 160px; left: 0; right: 0; font-size: 22px; color: rgb(255, 144, 144); -unity-text-align: middle-center; text-shadow: 0 2px 0 rgb(10, 12, 20); }
 .side { width: 330px; }
 .ally { width: 230px; margin-bottom: 6px; }
 
 /* Cartas de subida de nível */
-.card { width: 340px; min-height: 380px; flex-direction: column; align-items: stretch; justify-content: flex-start; padding: 22px 18px 16px 18px; margin: 8px; white-space: normal; -unity-text-align: upper-left;
+.card { width: 340px; height: 440px; overflow: hidden; flex-direction: column; align-items: stretch; justify-content: flex-start; padding: 16px 16px 12px 16px; margin: 6px; white-space: normal; -unity-text-align: upper-left;
     background-image: url("/Assets/_Project/Art/UI/ui_card_comum.png"); -unity-slice-left: 8; -unity-slice-right: 8; -unity-slice-top: 8; -unity-slice-bottom: 8; -unity-slice-scale: 2px; background-color: rgba(0, 0, 0, 0); }
 .card-incomum { background-image: url("/Assets/_Project/Art/UI/ui_card_incomum.png"); }
 .card-raro { background-image: url("/Assets/_Project/Art/UI/ui_card_raro.png"); }
@@ -177,14 +178,14 @@ Toggle { margin: 8px 0; }
 .card:hover { background-image: url("/Assets/_Project/Art/UI/ui_card_hover.png"); translate: 0 -8px; scale: 1.02 1.02; }
 .card Label { white-space: normal; -unity-text-align: upper-left; text-shadow: 0 2px 0 rgb(10, 12, 20); }
 .card .card-name, .card .card-rarity { -unity-text-align: upper-center; }
-.card-icon { width: 96px; height: 96px; align-self: center; margin: 6px; }
-.card-kind { font-size: 20px; color: rgb(63, 224, 255); letter-spacing: 2px; }
-.card-name { font-size: 32px; color: rgb(255, 214, 92); }
-.card-rarity { font-size: 22px; }
-.card-desc { font-size: 22px; }
-.card-change { font-size: 22px; color: rgb(77, 255, 136); }
-.card-tags { font-size: 20px; color: rgb(167, 176, 187); }
-.card-hint { font-size: 22px; color: rgb(255, 61, 240); }
+.card-icon { width: 72px; height: 72px; align-self: center; margin: 2px; }
+.card-kind { font-size: 16px; color: rgb(63, 224, 255); letter-spacing: 2px; }
+.card-name { font-size: 26px; color: rgb(255, 214, 92); }
+.card-rarity { font-size: 18px; }
+.card-desc { font-size: 18px; }
+.card-change { font-size: 18px; color: rgb(77, 255, 136); }
+.card-tags { font-size: 16px; color: rgb(196, 204, 216); }
+.card-hint { font-size: 18px; color: rgb(255, 61, 240); }
 .rarity-comum { color: rgb(201, 205, 210); }
 .rarity-incomum { color: rgb(63, 224, 255); }
 .rarity-raro { color: rgb(255, 181, 46); }
@@ -212,20 +213,20 @@ Toggle { margin: 8px 0; }
 /* ações da subida de nível */
 /* posição fixa: os botões não mudam de lugar quando as cartas têm alturas diferentes */
 .offer-actions { position: absolute; bottom: 26px; left: 0; right: 0; justify-content: center; }
-.offer-actions .btn { font-size: 22px; min-width: 190px; }
+.offer-actions .btn { font-size: 18px; min-width: 190px; }
 .offer-actions .btn.selected { -unity-background-image-tint-color: rgb(255, 120, 120); color: rgb(255, 255, 255); }
-.ban-hint { position: absolute; bottom: 78px; left: 0; right: 0; font-size: 24px; -unity-text-align: middle-center; color: rgb(255, 120, 120); }
+.ban-hint { position: absolute; bottom: 78px; left: 0; right: 0; font-size: 19px; -unity-text-align: middle-center; color: rgb(255, 120, 120); }
 .card.ban-target { -unity-background-image-tint-color: rgb(255, 150, 150); }
 .rarity-reliquia { color: rgb(255, 61, 240); }
 
 /* bosses */
 .hud-center { align-items: center; flex-shrink: 0; }
 .hud-time-extended { color: rgb(255, 90, 90); }
-.boss-next { font-size: 18px; color: rgb(255, 210, 63); -unity-text-align: middle-center; }
+.boss-next { font-size: 14px; color: rgb(255, 210, 63); -unity-text-align: middle-center; }
 .boss-bar { position: absolute; top: 172px; left: 50%; width: 460px; margin-left: -230px; padding: 10px 14px; background-image: url("/Assets/_Project/Art/UI/ui_frame.png"); -unity-slice-left: 8; -unity-slice-right: 8; -unity-slice-top: 8; -unity-slice-bottom: 8; -unity-slice-scale: 2px; background-color: rgba(0, 0, 0, 0); display: none; }
 .boss-bar-head { justify-content: space-between; align-items: center; }
-.boss-name { font-size: 20px; color: rgb(255, 230, 160); -unity-font-style: bold; }
-.boss-phase { font-size: 16px; color: rgb(170, 230, 255); }
+.boss-name { font-size: 16px; color: rgb(255, 230, 160); -unity-font-style: bold; }
+.boss-phase { font-size: 13px; color: rgb(170, 230, 255); }
 .boss-phase-bravo { color: rgb(255, 80, 80); }
 .boss-bar-track { height: 20px; margin-top: 4px; padding: 3px; }
 .boss-fill { background-color: rgb(255, 160, 40); }
@@ -236,22 +237,29 @@ Toggle { margin: 8px 0; }
 .event-row { flex-direction: row; align-items: center; margin-bottom: 6px; padding: 6px 10px; background-image: url("/Assets/_Project/Art/UI/ui_frame_dark.png"); -unity-slice-left: 8; -unity-slice-right: 8; -unity-slice-top: 8; -unity-slice-bottom: 8; -unity-slice-scale: 1px; background-color: rgba(0, 0, 0, 0); }
 .event-row-icon { width: 32px; height: 32px; flex-shrink: 0; margin-right: 6px; }
 .event-row-col { flex-grow: 1; flex-shrink: 1; }
-.event-row-name { font-size: 16px; color: rgb(238, 241, 244); }
+.event-row-name { font-size: 13px; color: rgb(238, 241, 244); }
 .event-row-bar { height: 12px; margin-top: 2px; padding: 2px; -unity-slice-scale: 1px; }
 .event-row-fill { background-color: rgb(170, 230, 255); }
 .event-fill-positivo { background-color: rgb(110, 210, 110); }
 .event-fill-negativo { background-color: rgb(230, 80, 80); }
 .event-fill-especial { background-color: rgb(170, 120, 240); }
 .event-fill-warning { background-color: rgb(255, 210, 63); }
-.event-row-info { font-size: 14px; color: rgb(190, 196, 206); }
+.event-row-info { font-size: 12px; color: rgb(190, 196, 206); }
 .event-toast { position: absolute; bottom: 104px; left: 50%; width: 620px; margin-left: -310px; flex-direction: row; align-items: center; padding: 12px 16px;
     background-image: url("/Assets/_Project/Art/UI/ui_frame.png"); -unity-slice-left: 8; -unity-slice-right: 8; -unity-slice-top: 8; -unity-slice-bottom: 8; -unity-slice-scale: 2px; background-color: rgba(0, 0, 0, 0); display: none; }
 .event-toast-icon { width: 64px; height: 64px; flex-shrink: 0; margin-right: 12px; }
 .event-toast-text { flex-grow: 1; flex-shrink: 1; }
-.event-title { font-size: 24px; -unity-font-style: bold; }
+.event-title { font-size: 19px; -unity-font-style: bold; }
 .event-positivo { color: rgb(120, 220, 120); }
 .event-negativo { color: rgb(255, 100, 100); }
 .event-especial { color: rgb(190, 150, 255); }
 .event-neutro { color: rgb(220, 220, 220); }
-.event-banner { font-size: 18px; color: rgb(255, 230, 160); white-space: normal; }
-.event-desc { font-size: 16px; color: rgb(200, 206, 216); white-space: normal; }
+.event-banner { font-size: 14px; color: rgb(255, 230, 160); white-space: normal; }
+.event-desc { font-size: 13px; color: rgb(200, 206, 216); white-space: normal; }
+
+/* subida de nível: fundo mais escuro (o HUD fica atrás) e texto das cartas mais compacto */
+.levelup-screen { background-color: rgba(8, 10, 18, 0.86); padding-top: 8px; }
+.levelup-screen .heading { margin-bottom: 4px; }
+.card .card-desc, .card .card-change, .card .card-hint { font-size: 18px; }
+.card .card-tags, .card .card-kind, .card .card-rarity { font-size: 14px; }
+.card .card-name { font-size: 22px; }

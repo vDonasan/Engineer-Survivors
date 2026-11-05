@@ -10,11 +10,18 @@
   <body>
     <canvas id="unity-canvas" tabindex="-1"></canvas>
     <div id="es-loading">
-      <div class="es-title">ENGINEERING SURVIVORS</div>
-      <div class="es-sub">Ligando os equipamentos do laboratório...</div>
-      <div class="es-bar"><div id="es-bar-fill"></div></div>
-      <div id="es-status">Baixando 0%</div>
-      <div class="es-hint">WASD ou setas para mover · Espaço para o especial · Esc para o menu · F3 desempenho</div>
+      <div class="es-bg"></div>
+      <div id="es-loot"></div>
+      <div class="es-center">
+        <div class="es-badge">TURNO DA MADRUGADA · LAB. DE PESQUISA</div>
+        <div class="es-title" data-text="ENGINEERING SURVIVORS">ENGINEERING SURVIVORS</div>
+        <div class="es-battery"><div id="es-cells"></div><div class="es-battery-tip"></div></div>
+        <div class="es-readout"><span id="es-pct">0</span><span class="es-pct-sign">%</span></div>
+        <div id="es-status"><span id="es-tip">Ligando os equipamentos do laboratório</span><span class="es-cursor">_</span></div>
+      </div>
+      <div id="es-parade"></div>
+      <div class="es-hint"><b>WASD</b> mover · <b>Espaço</b> especial · <b>1 2 3</b> escolher carta · <b>Esc</b> menu</div>
+      <div class="es-crt"></div>
     </div>
     <div id="es-error" hidden>
       <div class="es-title">Não foi possível iniciar o jogo</div>

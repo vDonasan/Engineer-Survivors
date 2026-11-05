@@ -9,6 +9,7 @@ import { characterSprites, SPECS, CHAR_ANIMS } from './lib/characters.mjs';
 import { enemySprites } from './lib/enemies.mjs';
 import { worldSprites } from './lib/world.mjs';
 import { iconSprites } from './lib/icons.mjs';
+import { buildLoading } from './loading.mjs';
 import { portraitSprites, EMOTIONS } from './lib/portraits.mjs';
 import { heroSprites, heroPortraitSprites, HEROES } from './lib/heroes.mjs';
 import { allySprites } from './lib/kitart.mjs';
@@ -97,6 +98,7 @@ export function buildAll({ outDir = join(root, 'Assets', '_Project', 'Art'), dry
     writeFileSync(join(outDir, 'manifest.json'), JSON.stringify({ sprites: manifest.sprites }, null, 1));
     writeFileSync(join(outDir, 'ANIMACOES.md'), animationsDoc(manifest.sprites));
     writeFileSync(join(outDir, 'Bosses', 'LEIA-ME.txt'), 'Guirotto (04:00) e Mago da Elétrica (09:00): gerados por ArtSource/lib/bosses.mjs a partir das imagens de referência.\n');
+    if (outDir === join(root, 'Assets', '_Project', 'Art')) buildLoading();
   }
   void relative;
   return manifest;

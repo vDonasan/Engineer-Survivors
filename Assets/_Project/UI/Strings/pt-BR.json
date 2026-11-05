@@ -174,7 +174,7 @@
   "config_padroes": "Restaurar padrões",
 
   "creditos_titulo": "Créditos",
-  "creditos_texto": "Engineering Survivors — SP1 (fundação)\n\nDireção e projeto: vDonasan\nDesenvolvimento, pixel art e áudio gerados por código: Claude (Anthropic), com o autor\n\nFerramentas: Unity 6.3 LTS, Netcode for GameObjects, Unity Multiplayer Services (Relay), .NET, Node.js\n\nFonte: VT323 — Copyright 2011, The VT323 Project Authors. Licença SIL Open Font License 1.1.\n\nArte e sons: originais, gerados pixel a pixel e por síntese neste projeto.",
+  "creditos_texto": "Engineering Survivors — SP1 (fundação)\n\nDireção e projeto: vDonasan\nDesenvolvimento, pixel art e áudio gerados por código: Claude (Anthropic), com o autor\n\nFerramentas: Unity 6.3 LTS, Netcode for GameObjects, Unity Multiplayer Services (Relay), .NET, Node.js\n\nFonte: Pixelify Sans — Copyright 2021, The Pixelify Sans Project Authors. Licença SIL Open Font License 1.1.\n\nArte e sons: originais, gerados pixel a pixel e por síntese neste projeto.",
 
   "erro_codigo_invalido": "Código inválido ou sala expirada.",
   "erro_sala_cheia": "Sala cheia (4/4).",

@@ -13,7 +13,7 @@ namespace ES.GameEditor
         public const string ArtDir = "Assets/_Project/Art";
         public const string AudioDir = "Assets/_Project/Audio";
         public const string SelectionDir = "Assets/_Project/UI/Selection";
-        public const string FontPath = "Assets/_Project/UI/Fonts/VT323-Regular.ttf";
+        public const string FontPath = "Assets/_Project/UI/Fonts/PixelifySans.ttf";
         public const string StringsPath = "Assets/_Project/UI/Strings/pt-BR.json";
 
         [Serializable] public class ManifestSprite { public string id, category, file; public int[] anchor; }
