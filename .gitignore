@@ -54,3 +54,6 @@ desktop.ini
 
 # Superpowers (área de trabalho dos planos)
 .superpowers/
+
+# grafo de conhecimento gerado pelo graphify
+graphify-out/

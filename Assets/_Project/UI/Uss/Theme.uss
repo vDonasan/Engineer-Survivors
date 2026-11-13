@@ -82,11 +82,11 @@
 .pick-panel { width: 790px; }
 .hero-grid { justify-content: center; }
 .hero-card { width: 140px; height: 150px; flex-direction: column; align-items: center; justify-content: flex-start; padding: 8px 4px; margin: 4px; }
-.hero-card .portrait { width: 76px; height: 76px; flex-shrink: 0; margin-bottom: 2px; }
+.hero-card .portrait { width: 64px; height: 64px; flex-shrink: 0; margin-bottom: 2px; }
 .hero-card .spec-name { font-size: 21px; color: rgb(255, 210, 63); -unity-text-align: middle-center; }
 .hero-card .spec-eng { font-size: 13px; color: rgb(196, 204, 216); -unity-text-align: middle-center; white-space: normal; }
-.hero-card-small { width: 96px; height: 92px; flex-direction: column; align-items: center; padding: 6px 3px; margin: 3px; }
-.hero-card-small .portrait { width: 52px; height: 52px; flex-shrink: 0; }
+.hero-card-small { width: 96px; height: 104px; flex-direction: column; align-items: center; padding: 6px 3px; margin: 3px; }
+.hero-card-small .portrait { width: 64px; height: 64px; flex-shrink: 0; }
 .hero-card-small .spec-name { font-size: 14px; color: rgb(255, 210, 63); }
 .summary-panel { width: 400px; align-items: stretch; }
 .summary-stage { height: 140px; align-items: center; justify-content: flex-end; background-color: rgba(8, 10, 18, 0.55); border-width: 2px; border-color: rgb(46, 54, 72); margin-bottom: 10px; }
@@ -105,7 +105,7 @@
 .sheet-panel { width: 1180px; height: 670px; padding-top: 30px; }
 .sheet-columns { flex-direction: row; flex-grow: 1; flex-shrink: 1; }
 .sheet-left { width: 280px; align-items: center; margin-right: 24px; flex-shrink: 0; }
-.sheet-portrait { width: 176px; height: 176px; flex-shrink: 0; border-width: 4px; border-color: rgb(46, 54, 72); }
+.sheet-portrait { width: 200px; height: 200px; flex-shrink: 0; border-width: 4px; border-color: rgb(46, 54, 72); }
 .sheet-stage { width: 230px; height: 128px; align-items: center; justify-content: flex-end; background-color: rgba(8, 10, 18, 0.6); border-width: 2px; border-color: rgb(46, 54, 72); margin: 14px 0; }
 .sheet-name { font-size: 35px; color: rgb(255, 210, 63); text-shadow: 4px 4px 0 rgb(20, 22, 27); }
 .sheet-eng { font-size: 15px; color: rgb(63, 224, 255); }

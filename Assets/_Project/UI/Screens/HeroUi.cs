@@ -71,7 +71,8 @@ namespace ES.UI
         }
 
         /// <summary>Retrato da tela de escolha; sem imagem própria, usa o retrato do jogo.</summary>
-        public static Sprite SelectPortrait(GameAssets assets, string id) => assets.Sprite($"select_{id}") ?? assets.Sprite($"portrait_{id}_determinacao");
+        /// <summary>Retrato em pixel art do personagem (o mesmo do HUD, com a expressão de determinação).</summary>
+        public static Sprite SelectPortrait(GameAssets assets, string id) => assets.Sprite($"portrait_{id}_determinacao");
 
         public static string ShortEngineering(string e) => string.IsNullOrEmpty(e) ? "" : e.Replace("Engenharia da ", "").Replace("Engenharia ", "");
 
