@@ -4132,36 +4132,6 @@ MonoBehaviour:
   - id: acc_rubor_right
     sprite: {fileID: 21300000, guid: a5b7294d4eab884418fa32f705db0c70, type: 3}
     anchor: {x: -1, y: -1}
-  - id: select_artur
-    sprite: {fileID: -3306322564025884505, guid: 65ad2c937131ffd488185e7b3c62ce85, type: 3}
-    anchor: {x: -1, y: -1}
-  - id: select_badotti
-    sprite: {fileID: 3713323545179370112, guid: 6ce422a4cf039984180966ce38544df9, type: 3}
-    anchor: {x: -1, y: -1}
-  - id: select_breno
-    sprite: {fileID: 4983272785094378631, guid: a7979dbd47cb1aa4db8a536b1d1a80ee, type: 3}
-    anchor: {x: -1, y: -1}
-  - id: select_donasa
-    sprite: {fileID: 3956293270821965212, guid: 4799d42f45733c64396fe44f24ba6e64, type: 3}
-    anchor: {x: -1, y: -1}
-  - id: select_fufu
-    sprite: {fileID: -5847101299534709712, guid: 7915a37f37423994389c2d27a1781970, type: 3}
-    anchor: {x: -1, y: -1}
-  - id: select_garcia
-    sprite: {fileID: -2145723634121170334, guid: e00d1024907b7724e86d05d32fa3f54a, type: 3}
-    anchor: {x: -1, y: -1}
-  - id: select_giulia
-    sprite: {fileID: 5257578262635926358, guid: d80292b95523c30469666f6b575e29b2, type: 3}
-    anchor: {x: -1, y: -1}
-  - id: select_jean
-    sprite: {fileID: 9143357645298391461, guid: 7f568685ce5d8354899a5c37f6b080a0, type: 3}
-    anchor: {x: -1, y: -1}
-  - id: select_miyuki
-    sprite: {fileID: 4412237732209013822, guid: a97468a17fb70d14ba26258a9747d84f, type: 3}
-    anchor: {x: -1, y: -1}
-  - id: select_staut
-    sprite: {fileID: -1789184527952783755, guid: 2848a83e746f02d4285fcfc2f2dd5d14, type: 3}
-    anchor: {x: -1, y: -1}
   clips:
   - id: loop_tensao
     clip: {fileID: 8300000, guid: 123e5ebce16a46445895d4813dbfcecd, type: 3}
