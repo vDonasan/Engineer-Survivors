@@ -3,7 +3,7 @@
 **Engineering Survivors — SP1 (fundação)**
 
 - Direção, projeto e decisões: vDonasan (autor).
-- Código, pixel art e áudio: gerados por código neste repositório por Claude (Anthropic), em parceria com o autor.
+- Código, pixel art e áudio: gerados por código neste repositório pelo autor.
   - Pixel art: mapas de pixels escritos à mão e compostos por `ArtSource/` (Node), gravados pixel a pixel. Nenhum asset de terceiros.
   - Efeitos sonoros e música: sintetizados por `AudioSource/` (Node), a partir de osciladores, ruído, envelopes e filtros.
 
